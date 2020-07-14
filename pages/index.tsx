@@ -10,7 +10,7 @@ const Index = () => {
       </Head>
 
       <main>
-        <h1 className="title">Welcome to Pedro Arantes blog</h1>
+        <h1 className="title">Welcome to Pedro Arantes blog.</h1>
       </main>
 
       <style jsx>{`
