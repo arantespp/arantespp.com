@@ -4,10 +4,10 @@ import { Container } from '@material-ui/core';
 
 import Header from './Header';
 
-const Layout: React.FC<{ groups: string[] }> = ({ children, groups }) => {
+const Layout: React.FC = ({ children }) => {
   return (
     <>
-      <Header groups={groups} />
+      <Header />
       <Container maxWidth="md">{children}</Container>
     </>
   );

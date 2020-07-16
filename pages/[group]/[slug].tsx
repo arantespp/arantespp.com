@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import { GetStaticProps, GetStaticPaths } from 'next';
 
-import Layout from '../../components/Layout';
 import NotFound from '../../components/NotFound';
 import PostComponent from '../../components/Post';
 import * as files from '../../lib/files';
@@ -44,25 +43,17 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   return { props: { post, posts, groups } };
 };
 
-const Post = ({ post, posts, groups }: Props) => {
+const Post = ({ post, posts }: Props) => {
   const {
     content,
     metadata: { title },
   } = post;
 
   if (!content || !title) {
-    return (
-      <Layout groups={groups}>
-        <NotFound />
-      </Layout>
-    );
+    return <NotFound />;
   }
 
-  return (
-    <Layout groups={groups}>
-      <PostComponent title={title} content={content} posts={posts} />
-    </Layout>
-  );
+  return <PostComponent title={title} content={content} posts={posts} />;
 };
 
 export default Post;

@@ -17,7 +17,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 type Props = {
   group: string;
-  groups: string[];
   content: string;
   posts: Array<{
     metadata: any;
@@ -31,22 +30,17 @@ export const getStaticProps: GetStaticProps<Props> = async ({
 }) => {
   const { group } = params;
   const { content } = files.getGroupPresentation(group);
-  const groups = files.getPostsGroups();
   const posts = files.getPosts({
     group: {
       name: group,
     },
     onlyMetadata: true,
   });
-  return { props: { content, groups, group, posts } };
+  return { props: { content, group, posts } };
 };
 
-const GroupPresentation = ({ content, groups, group, posts }: Props) => {
-  return (
-    <Layout groups={groups}>
-      <Post title={pascalCase(group)} content={content} posts={posts} />
-    </Layout>
-  );
+const GroupPresentation = ({ content, group, posts }: Props) => {
+  return <Post title={pascalCase(group)} content={content} posts={posts} />;
 };
 
 export default GroupPresentation;

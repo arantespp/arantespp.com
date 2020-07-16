@@ -42,6 +42,20 @@ class MyDocument extends Document {
             property="og:image"
             content={'https://weally.org/static/images/fb_splash.jpg'}
           /> */}
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-149485554-1"
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());              
+                gtag('config', 'UA-149485554-1');
+              `,
+            }}
+          />
         </Head>
         <body>
           <Main />

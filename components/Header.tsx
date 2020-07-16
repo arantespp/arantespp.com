@@ -6,7 +6,9 @@ import Link from 'next/link';
 
 import NavLink from './NavLink';
 
-const Header = ({ groups }: { groups: string[] }) => {
+import { groups } from '../lib/groups';
+
+const Header = () => {
   return (
     <Box
       component="header"
