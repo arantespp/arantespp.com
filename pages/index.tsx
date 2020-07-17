@@ -12,7 +12,9 @@ import {
 type Props = PostAndPostsRecommendations;
 
 export const getStaticProps: GetStaticProps<PostAndPostsRecommendations> = async () => {
-  return { props: getPostAndPostsRecommendations({ slug: 'index' }) };
+  return {
+    props: getPostAndPostsRecommendations({ slug: 'index', limit: 50 }),
+  };
 };
 
 const Index = (props: Props) => {

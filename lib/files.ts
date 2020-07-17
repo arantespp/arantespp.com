@@ -1,6 +1,7 @@
 /**
  * https://github.com/vercel/next.js/blob/canary/examples/blog-starter/lib/
  */
+import * as dateFns from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
@@ -43,10 +44,22 @@ export const getPost = ({
 
   const href = path.join('/', group, slug);
 
-  const post: Post = {
+  const getDate = () => {
+    if (!date) return undefined;
+    /**
+     * https://stackoverflow.com/a/52352512/8786986
+     */
+    const dt = new Date(date);
+    const dtDateOnly = new Date(
+      dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000
+    );
+    return dateFns.format(dtDateOnly, 'yyyy-MM-dd');
+  };
+
+  const post = {
     title,
     excerpt,
-    date,
+    date: getDate(),
     href,
     group,
     slug,
@@ -110,15 +123,25 @@ export const getPosts = <T extends keyof Post>({
 export const getPostAndPostsRecommendations = ({
   group,
   slug,
+  limit,
 }: {
   group?: Group;
   slug: string;
+  limit?: number;
 }) => {
   const post = getPost({ group, slug });
   const recommendations = getPosts({
     groups: group ? [group] : undefined,
-    fields: ['date', 'excerpt', 'href', 'title'],
-  });
+    fields: ['date', 'excerpt', 'href', 'title', 'group'],
+  })
+    /**
+     * Don't return the post as recommendation.
+     */
+    .filter(({ href }) => href !== post?.href)
+    /**
+     * Limit the number of posts returned.
+     */
+    .slice(0, limit);
   return { post, recommendations };
 };
 

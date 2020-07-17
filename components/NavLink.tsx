@@ -6,7 +6,7 @@ import Link from 'next/link';
 const NavLink = ({ href, name }) => {
   return (
     <Link href={href} passHref>
-      <Typography color="primary" component="a">
+      <Typography color="primary" component="a" variant="h6">
         {name}
       </Typography>
     </Link>

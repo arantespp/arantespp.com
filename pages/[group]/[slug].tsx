@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps<PostAndPostsRecommendations> = async
 }: {
   params: { group: Group; slug: string };
 }) => {
-  return { props: getPostAndPostsRecommendations({ slug, group }) };
+  return { props: getPostAndPostsRecommendations({ slug, group, limit: 25 }) };
 };
 
 const GroupSlug = (props: Props) => {

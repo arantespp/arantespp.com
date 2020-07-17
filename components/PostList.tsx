@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { Box, Typography } from '@material-ui/core';
+import { pascalCase } from 'change-case';
 import Link from 'next/link';
 
 import type { PostAndPostsRecommendations } from '../lib/files';
@@ -22,7 +23,7 @@ const PostsList = ({
       <Box mt={3} mb={2}>
         <Typography variant="h4">More posts</Typography>
       </Box>
-      {recommendations.map(({ href, title, excerpt, date }) => {
+      {recommendations.map(({ href, title, excerpt, date, group }) => {
         return (
           <Box my={1} key={title} display="flex" flexDirection="column">
             <Link as={href} href="/[group]/[slug]" passHref>
@@ -32,6 +33,9 @@ const PostsList = ({
             </Link>
             <Typography component="span" variant="body1">
               {excerpt}
+            </Typography>
+            <Typography component="span" variant="body2">
+              {pascalCase(group)}
             </Typography>
             <Typography component="span" variant="body2">
               {date}

@@ -14,7 +14,7 @@ date: '2020-05-29'
 ## Notes
 
 - It's a method that you can use the learn about anything.
-- It makes you reading in a [metacognitive](./ReadingMetacognitively.md) way.
+- It makes you reading in a [metacognitive](./reading-metacognitively.md) way.
 - It has 4 steps:
   1. Choose the subject you want to learn.
   2. Try to explain what you know to a 12 years old child.
