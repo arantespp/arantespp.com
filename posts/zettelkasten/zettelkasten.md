@@ -1,10 +1,10 @@
 ---
 title: Zettelkasten
+excerpt: Zettelkasten is a method in which you write down your thoughts in notes, tag and connect them over time.
+date: '2020-05-21'
 ---
 
 # Zettelkasten
-
-2019-05-21
 
 ## Tags
 

@@ -5,81 +5,123 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 
+import { GROUPS, Group } from './groups';
+
 const postsDirectory = path.join(process.cwd(), 'posts');
 
-export const getPostsGroups = () => {
-  return fs.readdirSync(postsDirectory);
+export type { Group };
+
+export type Post = {
+  title: string;
+  excerpt: string;
+  date: string;
+  href: string;
+  group: string;
+  slug: string;
+  content: string;
 };
 
-const getMarkdownData = ({ group, slug }: { group: string; slug: string }) => {
-  const fullPath = path.join(postsDirectory, group, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-  const href = path.join('/', group, slug);
-  return { content, metadata: { ...data, group, slug, href } };
-};
+export const getGroups = () => [...GROUPS];
 
-export const getGroupPresentation = (group: string) => {
-  const { content } = getMarkdownData({ group, slug: 'index' });
-  return { content };
-};
-
-type Post = {
-  content?: string;
-  metadata: any;
-};
-
-const getPostsGroupsSlugs = (group: string) => {
-  return fs
-    .readdirSync(path.join(postsDirectory, group))
-    .map((dir) => dir.replace(/\.md$/, ''));
-};
-
-export const getPosts = ({
-  group,
-  onlyMetadata = false,
+export const getPost = ({
+  group = '.',
+  slug,
 }: {
-  group?: {
-    name: string;
-    slug?: string;
+  group?: Group | '.';
+  slug: string;
+}) => {
+  const fullPath = path.join(postsDirectory, group, `${slug}.md`);
+
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+  const defaultProperties = { excerpt: '' };
+
+  const {
+    data: { title, excerpt = defaultProperties.excerpt, date },
+    content,
+  } = matter(fileContents);
+
+  const href = path.join('/', group, slug);
+
+  const post: Post = {
+    title,
+    excerpt,
+    date,
+    href,
+    group,
+    slug,
+    content,
   };
-  onlyMetadata?: boolean;
-}): Post[] => {
-  const getPostsByGroup = (groupName: string) => {
-    return getPostsGroupsSlugs(groupName)
+
+  /**
+   * Return null if some value of the post is null or undefined.
+   */
+  if (
+    Object.values(post).some((value) => value == null || value == undefined)
+  ) {
+    return null;
+  }
+
+  return post;
+};
+
+const getPostsByGroup = (group: Group) => {
+  return (
+    fs
+      /**
+       * Read all files inside group folder.
+       */
+      .readdirSync(path.join(postsDirectory, group))
+      /**
+       * Get the slug from filename.
+       */
+      .map((dir) => dir.replace(/\.md$/, ''))
+      /**
+       * Remove index.md file
+       */
       .filter((slug) => slug !== 'index')
-      .map((slug) => {
-        return getMarkdownData({ group: groupName, slug });
-      });
-  };
+      /**
+       * Return the post
+       */
+      .map((slug) => getPost({ group, slug }))
+      /**
+       * Return only posts that are not null.
+       */
+      .filter((post) => !!post) as Post[]
+  );
+};
 
-  const posts: Post[] = (() => {
-    if (group) {
-      if (group.slug) {
-        return [getMarkdownData({ group: group.name, slug: group.slug })];
-      }
-
-      return getPostsByGroup(group.name);
-    }
-
-    return getPostsGroups().reduce(
+export const getPosts = <T extends keyof Post>({
+  groups = [...getGroups()],
+}: {
+  groups?: Group[];
+  fields?: T[];
+} = {}): Array<{ [key in T]: Post[key] }> =>
+  groups
+    .reduce<Post[]>(
       (acc, groupName) => [...acc, ...getPostsByGroup(groupName)],
       []
-    );
-  })();
+    )
+    .sort((post1, post2) => post2.date.localeCompare(post1.date));
 
-  return posts
-    .map((post) => {
-      if (onlyMetadata) {
-        const { content, ...rest } = post;
-        return { ...rest };
-      }
-      return post;
-    })
-    .sort((post1, post2) => {
-      if (!post1.metadata.date || !post2.metadata.date) {
-        return 0;
-      }
-      return post1.metadata.date > post2.metadata.date ? -1 : 1;
-    });
+/**
+ * Return specific post and post recommendations.
+ */
+export const getPostAndPostsRecommendations = ({
+  group,
+  slug,
+}: {
+  group?: Group;
+  slug: string;
+}) => {
+  const post = getPost({ group, slug });
+  const recommendations = getPosts({
+    groups: group ? [group] : undefined,
+    fields: ['date', 'excerpt', 'href', 'title'],
+  });
+  return { post, recommendations };
 };
+
+export type PostAndPostsRecommendations = ReturnType<
+  typeof getPostAndPostsRecommendations
+>;

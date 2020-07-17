@@ -2,58 +2,36 @@ import * as React from 'react';
 
 import { GetStaticProps, GetStaticPaths } from 'next';
 
-import NotFound from '../../components/NotFound';
-import PostComponent from '../../components/Post';
-import * as files from '../../lib/files';
+import Post from '../../components/Post';
+
+import {
+  getPosts,
+  getPostAndPostsRecommendations,
+  Group,
+  PostAndPostsRecommendations,
+} from '../../lib/files';
+
+type Props = PostAndPostsRecommendations;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = files.getPosts({ onlyMetadata: true });
   return {
-    paths: posts.map(({ metadata: { group, slug } }) => ({
+    paths: getPosts().map(({ group, slug }) => ({
       params: { group, slug },
     })),
     fallback: false,
   };
 };
 
-type Props = {
-  groups: string[];
-  post: {
-    content?: string;
-    metadata: any;
-  };
-  posts: Array<{
-    metadata: any;
-  }>;
-};
-
-export const getStaticProps: GetStaticProps<Props> = async ({
+export const getStaticProps: GetStaticProps<PostAndPostsRecommendations> = async ({
   params: { group, slug },
 }: {
-  params: { group: string; slug: string };
+  params: { group: Group; slug: string };
 }) => {
-  const post = files.getPosts({
-    group: {
-      name: group,
-      slug,
-    },
-  })[0];
-  const posts = files.getPosts({ group: { name: group }, onlyMetadata: true });
-  const groups = files.getPostsGroups();
-  return { props: { post, posts, groups } };
+  return { props: getPostAndPostsRecommendations({ slug, group }) };
 };
 
-const Post = ({ post, posts }: Props) => {
-  const {
-    content,
-    metadata: { title },
-  } = post;
-
-  if (!content || !title) {
-    return <NotFound />;
-  }
-
-  return <PostComponent title={title} content={content} posts={posts} />;
+const GroupSlug = (props: Props) => {
+  return <Post {...props} />;
 };
 
-export default Post;
+export default GroupSlug;

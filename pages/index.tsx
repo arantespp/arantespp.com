@@ -1,15 +1,22 @@
 import * as React from 'react';
 
-import { Typography } from '@material-ui/core';
+import { GetStaticProps } from 'next';
 
-const Index = () => {
-  return (
-    <main>
-      <Typography align="center" variant="h1">
-        Welcome to Pedro Arantes blog
-      </Typography>
-    </main>
-  );
+import Post from '../components/Post';
+
+import {
+  getPostAndPostsRecommendations,
+  PostAndPostsRecommendations,
+} from '../lib/files';
+
+type Props = PostAndPostsRecommendations;
+
+export const getStaticProps: GetStaticProps<PostAndPostsRecommendations> = async () => {
+  return { props: getPostAndPostsRecommendations({ slug: 'index' }) };
+};
+
+const Index = (props: Props) => {
+  return <Post {...props} />;
 };
 
 export default Index;

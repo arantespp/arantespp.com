@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "change-case": "^4.1.1",
     "gray-matter": "^4.0.2",
     "next": "9.4.4",

@@ -1,30 +1,22 @@
 import * as React from 'react';
 
-import { Box, Typography } from '@material-ui/core';
-import ReactMarkdown from 'react-markdown';
+import { Box } from '@material-ui/core';
 
-import PostList from './PostsList';
+import NotFound from './NotFound';
+import PostBody from './PostBody';
+import PostList from './PostList';
 
-const Post = ({
-  content,
-  title,
-  posts,
-}: {
-  content: string;
-  title: string;
-  posts: Array<{ metadata: any }>;
-}) => {
+import type { PostAndPostsRecommendations } from '../lib/files';
+
+const Post = ({ post, recommendations }: PostAndPostsRecommendations) => {
   return (
     <>
-      <Box component="article">
-        <Typography component="h2" variant="h3" align="center">
-          {title}
-        </Typography>
-        <Box>
-          <ReactMarkdown source={content} />
-        </Box>
+      <Box component="article" my={5}>
+        {post ? <PostBody {...post} /> : <NotFound />}
       </Box>
-      <PostList posts={posts} />
+      <Box component="section" my={5}>
+        <PostList recommendations={recommendations} />
+      </Box>
     </>
   );
 };

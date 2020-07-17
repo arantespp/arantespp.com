@@ -6,7 +6,7 @@ export const defaultTheme = responsiveFontSizes(
   createMuiTheme({
     palette: {
       common: { black: '#000', white: '#fff' },
-      background: { paper: '#fff', default: colors.grey[50] },
+      background: { paper: '#fff', default: '#fff' },
       primary: {
         main: colors.blue[500],
       },
@@ -32,8 +32,22 @@ export const defaultTheme = responsiveFontSizes(
       },
     },
     typography: {
-      fontFamily:
-        '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Roboto',
+        'Oxygen',
+        'Ubuntu',
+        'Cantarell',
+        'Fira Sans',
+        'Droid Sans',
+        'Helvetica Neue',
+        'sans-serif',
+      ].join(','),
+      h1: {
+        fontSize: '4rem',
+      },
     },
   })
 );

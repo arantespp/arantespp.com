@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import NavLink from './NavLink';
 
-import { groups } from '../lib/groups';
+import { GROUPS } from '../lib/groups';
 
 const Header = () => {
   return (
@@ -21,11 +21,15 @@ const Header = () => {
       borderColor="primary.main"
     >
       <Link href="/" passHref>
-        <Typography variant="h4">Pedro Arantes</Typography>
+        <Typography component="span" variant="h4">
+          Pedro Arantes
+        </Typography>
       </Link>
-      <Box>
-        {groups.map((group) => (
-          <NavLink key={group} name={pascalCase(group)} href={`/${group}`} />
+      <Box component="nav" display="flex">
+        {GROUPS.map((group) => (
+          <Box key={group} mx={4}>
+            <NavLink name={pascalCase(group)} href={`/${group}`} />
+          </Box>
         ))}
       </Box>
       {/* <div /> */}

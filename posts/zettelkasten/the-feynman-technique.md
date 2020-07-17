@@ -1,10 +1,10 @@
 ---
 title: The Feynman Technique
+excerpt: It's a method that you can use the learn about anything.
+date: '2020-05-29'
 ---
 
 # The Feynman Technique
-
-2020-05-29
 
 ## Tags
 
