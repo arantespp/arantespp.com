@@ -17,15 +17,12 @@ type Post = NonNullable<PostAndPostsRecommendations['post']>;
 const renderers = {
   heading: ({ children, level }) => {
     return (
-      <Box my={4}>
-        <Typography
-          component={`h${level}` as React.ElementType<any>}
-          variant={`h${level}` as TypographyVariant}
-          align={level === 1 ? 'center' : 'left'}
-        >
-          {children}
-        </Typography>
-      </Box>
+      <Typography
+        component={`h${level}` as React.ElementType<any>}
+        variant={`h${level}` as TypographyVariant}
+      >
+        {children}
+      </Typography>
     );
   },
   link: ({ children, href }: { children: React.ReactNode; href: string }) => {

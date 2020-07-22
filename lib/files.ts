@@ -79,29 +79,36 @@ export const getPost = ({
 };
 
 const getPostsByGroup = (group: Group) => {
-  return (
-    fs
-      /**
-       * Read all files inside group folder.
-       */
-      .readdirSync(path.join(postsDirectory, group))
-      /**
-       * Get the slug from filename.
-       */
-      .map((dir) => dir.replace(/\.md$/, ''))
-      /**
-       * Remove index.md file
-       */
-      .filter((slug) => slug !== 'index')
-      /**
-       * Return the post
-       */
-      .map((slug) => getPost({ group, slug }))
-      /**
-       * Return only posts that are not null.
-       */
-      .filter((post) => !!post) as Post[]
-  );
+  try {
+    return (
+      fs
+        /**
+         * Read all files inside group folder.
+         */
+        .readdirSync(path.join(postsDirectory, group))
+        /**
+         * Get the slug from filename.
+         */
+        .map((dir) => dir.replace(/\.md$/, ''))
+        /**
+         * Remove index.md file
+         */
+        .filter((slug) => slug !== 'index')
+        /**
+         * Return the post
+         */
+        .map((slug) => getPost({ group, slug }))
+        /**
+         * Return only posts that are not null.
+         */
+        .filter((post) => !!post) as Post[]
+    );
+    /**
+     * Catch some group that not have .md files, as "me".
+     */
+  } catch {
+    return [];
+  }
 };
 
 export const getPosts = <T extends keyof Post>({

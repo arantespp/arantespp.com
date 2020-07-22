@@ -1,7 +1,7 @@
 ---
 title: Chunking and Memory
 excerpt: Also, chunking improves our creativity because we need to create a meaningful connection among groups.
-date: '2020-05-24'
+date: 2020-05-24
 ---
 
 # Chunking and Memory
