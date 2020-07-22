@@ -6,7 +6,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 
-import { GROUPS, Group } from './groups';
+import { Group } from './groups';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -22,7 +22,10 @@ export type Post = {
   content: string;
 };
 
-export const getGroups = () => [...GROUPS];
+/**
+ * Only groups that have posts.
+ */
+export const getGroups = (): Group[] => ['essays', 'zettelkasten'];
 
 export const getPost = ({
   group = '.',
@@ -31,51 +34,55 @@ export const getPost = ({
   group?: Group | '.';
   slug: string;
 }) => {
-  const fullPath = path.join(postsDirectory, group, `${slug}.md`);
+  try {
+    const fullPath = path.join(postsDirectory, group, `${slug}.md`);
 
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-  const defaultProperties = { excerpt: '' };
+    const defaultProperties = { excerpt: '' };
 
-  const {
-    data: { title, excerpt = defaultProperties.excerpt, date },
-    content,
-  } = matter(fileContents);
+    const {
+      data: { title, excerpt = defaultProperties.excerpt, date },
+      content,
+    } = matter(fileContents);
 
-  const href = path.join('/', group, slug);
+    const href = path.join('/', group, slug);
 
-  const getDate = () => {
-    if (!date) return undefined;
+    const getDate = () => {
+      if (!date) return undefined;
+      /**
+       * https://stackoverflow.com/a/52352512/8786986
+       */
+      const dt = new Date(date);
+      const dtDateOnly = new Date(
+        dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000
+      );
+      return dateFns.format(dtDateOnly, 'yyyy-MM-dd');
+    };
+
+    const post = {
+      title,
+      excerpt,
+      date: getDate(),
+      href,
+      group,
+      slug,
+      content,
+    };
+
     /**
-     * https://stackoverflow.com/a/52352512/8786986
+     * Return null if some value of the post is null or undefined.
      */
-    const dt = new Date(date);
-    const dtDateOnly = new Date(
-      dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000
-    );
-    return dateFns.format(dtDateOnly, 'yyyy-MM-dd');
-  };
+    if (
+      Object.values(post).some((value) => value == null || value == undefined)
+    ) {
+      return null;
+    }
 
-  const post = {
-    title,
-    excerpt,
-    date: getDate(),
-    href,
-    group,
-    slug,
-    content,
-  };
-
-  /**
-   * Return null if some value of the post is null or undefined.
-   */
-  if (
-    Object.values(post).some((value) => value == null || value == undefined)
-  ) {
+    return post;
+  } catch {
     return null;
   }
-
-  return post;
 };
 
 const getPostsByGroup = (group: Group) => {
