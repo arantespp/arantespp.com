@@ -29,19 +29,15 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          {/* <link rel="icon" href="/static/images/favicon.ico" /> */}
-          {/* <script type="text/javascript" src="/static/js/scripts.js"></script> */}
-          <meta property="og:url" content={`https://arantespp.com`} />
+          <link rel="icon" href="/favicon.ico" />
+          <meta property="og:url" content="https://arantespp.com" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Pedro Arantes blog" />
-          {/* <meta
-            property="og:description"
-            content="Make your complaint about any company visible to the entire world on WeAlly.org. We can finally look at the problems companies have with their customers, complain on WeAlly and join the responsible citizens"
-          />
           <meta
-            property="og:image"
-            content={'https://weally.org/static/images/fb_splash.jpg'}
-          /> */}
+            property="og:description"
+            content="I use this blog as a online note of the subjects I study about."
+          />
+          <meta property="og:image" content="/me.jpg" />
           <script
             async
             defer
