@@ -1,8 +1,7 @@
 import * as React from 'react';
 
 import { GetStaticProps, GetStaticPaths } from 'next';
-
-import Post from '../../components/Post';
+import dynamic from 'next/dynamic';
 
 import {
   getPosts,
@@ -10,6 +9,8 @@ import {
   Group,
   PostAndPostsRecommendations,
 } from '../../lib/files';
+
+const Post = dynamic(() => import('../../components/Post'));
 
 type Props = PostAndPostsRecommendations;
 

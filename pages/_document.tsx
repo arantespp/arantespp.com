@@ -44,6 +44,7 @@ class MyDocument extends Document {
           /> */}
           <script
             async
+            defer
             src="https://www.googletagmanager.com/gtag/js?id=UA-149485554-1"
           ></script>
           <script

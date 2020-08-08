@@ -1,13 +1,14 @@
 import * as React from 'react';
 
 import { GetStaticProps } from 'next';
-
-import Post from '../components/Post';
+import dynamic from 'next/dynamic';
 
 import {
   getPostAndPostsRecommendations,
   PostAndPostsRecommendations,
 } from '../lib/files';
+
+const Post = dynamic(() => import('../components/Post'));
 
 type Props = PostAndPostsRecommendations;
 
