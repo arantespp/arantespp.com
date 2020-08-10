@@ -1,10 +1,26 @@
-import { Facebook, Instagram, LinkedIn, Twitter } from '@material-ui/icons';
+import {
+  Facebook,
+  GitHub,
+  Instagram,
+  LinkedIn,
+  Telegram,
+  Twitter,
+} from '@material-ui/icons';
 
-export const socialMedias = [
+export const socialMedias: Array<{
+  name: string;
+  href: string;
+  Icon: typeof Facebook;
+}> = [
   {
     name: 'Twitter',
     href: 'https://twitter.com/arantespp',
     Icon: Twitter,
+  },
+  {
+    name: 'Telegram',
+    href: 'https://t.me/arantespp',
+    Icon: Telegram,
   },
   {
     name: 'Instagram',
@@ -20,5 +36,10 @@ export const socialMedias = [
     name: 'LinkedIn',
     href: 'https://linkedin.com/in/arantespp',
     Icon: LinkedIn,
+  },
+  {
+    name: 'GitHub',
+    href: 'https://github.com/arantespp',
+    Icon: GitHub,
   },
 ];

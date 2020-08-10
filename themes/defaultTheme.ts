@@ -69,6 +69,10 @@ export const defaultTheme = responsiveFontSizes(
         margin: spacing(4),
         textAlign: 'center',
       },
+      h2: {
+        fontSize: '3rem',
+        margin: spacing(4),
+      },
       body1: {
         marginTop: spacing(2),
         marginBottom: spacing(2),

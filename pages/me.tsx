@@ -44,14 +44,14 @@ const Me = () => {
         media by the username <strong>arantespp</strong>*.
       </Paragraph>
       <ul>
-        {socialMedias.map(({ name, href }) => (
+        {socialMedias.map(({ name, href, Icon }) => (
           <Typography
             key={name}
             component="li"
             variant="body1"
             style={{ margin: 0 }}
           >
-            {name}:{' '}
+            <Icon style={{ position: 'relative', top: '5' }} /> {name}:{' '}
             <a href={href} target="_blank" rel="noopener noreferrer">
               {href}
             </a>

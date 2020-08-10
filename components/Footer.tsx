@@ -14,6 +14,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   link: { margin: theme.spacing(2), color: theme.palette.text.primary },
+  icons: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
 }));
 
 const SocialLink: React.FC<{ href: string }> = ({ children, href }) => {
@@ -37,7 +42,7 @@ const Footer = () => {
       <NextLink href="/" passHref>
         <Typography variant="h3">Pedro Arantes</Typography>
       </NextLink>
-      <Box mt={4}>
+      <Box mt={4} className={classes.icons}>
         {socialMedias.map(({ name, href, Icon }) => (
           <SocialLink key={name} href={href}>
             <Icon />

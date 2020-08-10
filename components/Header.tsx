@@ -3,6 +3,7 @@ import * as React from 'react';
 import {
   Box,
   IconButton,
+  makeStyles,
   Menu,
   MenuItem,
   Typography,
@@ -13,11 +14,20 @@ import { Menu as MenuIcon } from '@material-ui/icons';
 import { pascalCase } from 'change-case';
 import Link from 'next/link';
 
-import NavLink from './NavLink';
-
 import { GROUPS } from '../lib/groups';
 
+import NavLink from './NavLink';
+import Rose from './Rose';
+
+const useClasses = makeStyles((theme) => ({
+  rose: {
+    height: '28px',
+    marginLeft: theme.spacing(1),
+  },
+}));
+
 const Header = () => {
+  const classes = useClasses();
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -43,8 +53,13 @@ const Header = () => {
       borderColor="primary.main"
     >
       <Link href="/" passHref>
-        <Typography component="span" variant="h4">
+        <Typography
+          component="span"
+          variant="h4"
+          style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+        >
           Pedro Arantes
+          <Rose className={classes.rose} />
         </Typography>
       </Link>
       {isSmall ? (
