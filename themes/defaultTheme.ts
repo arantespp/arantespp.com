@@ -70,7 +70,7 @@ export const defaultTheme = responsiveFontSizes(
         textAlign: 'center',
       },
       h2: {
-        fontSize: '3rem',
+        fontSize: '2.5rem',
         margin: spacing(4),
       },
       body1: {
