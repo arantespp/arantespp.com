@@ -25,6 +25,7 @@ const useClasses = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     fontWeight: 500,
+    whiteSpace: 'nowrap',
   },
   rose: {
     position: 'relative',
