@@ -28,12 +28,12 @@ const useClasses = makeStyles((theme) => ({
   },
   rose: {
     position: 'relative',
-    top: '0px',
-    height: '1.2em',
+    height: '1.25em',
+    top: '1.5px',
     marginLeft: theme.spacing(1),
     [theme.breakpoints.up('md')]: {
-      marginLeft: theme.spacing(1.5),
       top: '2px',
+      marginLeft: theme.spacing(1.5),
     },
   },
 }));
