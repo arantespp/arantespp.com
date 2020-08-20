@@ -20,9 +20,21 @@ import NavLink from './NavLink';
 import Rose from './Rose';
 
 const useClasses = makeStyles((theme) => ({
+  name: {
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    fontWeight: 500,
+  },
   rose: {
-    height: '28px',
+    position: 'relative',
+    top: '0px',
+    height: '1.2em',
     marginLeft: theme.spacing(1),
+    [theme.breakpoints.up('md')]: {
+      marginLeft: theme.spacing(1.5),
+      top: '2px',
+    },
   },
 }));
 
@@ -53,11 +65,7 @@ const Header = () => {
       borderColor="primary.main"
     >
       <Link href="/" passHref>
-        <Typography
-          component="span"
-          variant="h4"
-          style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
-        >
+        <Typography component="span" variant="h4" className={classes.name}>
           Pedro Arantes
           <Rose className={classes.rose} />
         </Typography>
