@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
 import Layout from '../components/Layout';
-import { defaultTheme } from '../themes/defaultTheme';
+
+import '../styles.css';
 
 const App = ({ Component, pageProps }: AppProps) => {
   React.useEffect(() => {
@@ -25,13 +25,9 @@ const App = ({ Component, pageProps }: AppProps) => {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <ThemeProvider theme={defaultTheme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 };

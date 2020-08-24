@@ -1,45 +1,45 @@
 import {
-  Facebook,
-  GitHub,
-  Instagram,
-  LinkedIn,
-  Telegram,
-  Twitter,
-} from '@material-ui/icons';
+  faFacebookSquare,
+  faGithub,
+  faInstagram,
+  faLinkedinIn,
+  faTelegramPlane,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 
 export const socialMedias: Array<{
   name: string;
   href: string;
-  Icon: typeof Facebook;
+  faIcon: typeof faTwitter;
 }> = [
   {
     name: 'Twitter',
     href: 'https://twitter.com/arantespp',
-    Icon: Twitter,
+    faIcon: faTwitter,
   },
   {
     name: 'Telegram',
     href: 'https://t.me/arantespp',
-    Icon: Telegram,
+    faIcon: faTelegramPlane,
   },
   {
     name: 'Instagram',
     href: 'https://instagram.com/arantespp_',
-    Icon: Instagram,
+    faIcon: faInstagram,
   },
   {
     name: 'Facebook',
     href: 'https://facebook.com/arantespp',
-    Icon: Facebook,
+    faIcon: faFacebookSquare,
   },
   {
     name: 'LinkedIn',
     href: 'https://linkedin.com/in/arantespp',
-    Icon: LinkedIn,
+    faIcon: faLinkedinIn,
   },
   {
     name: 'GitHub',
     href: 'https://github.com/arantespp',
-    Icon: GitHub,
+    faIcon: faGithub,
   },
 ];

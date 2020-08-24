@@ -1,14 +1,10 @@
 import * as React from 'react';
 
-import { Box, Typography } from '@material-ui/core';
-
 const NotFound = () => {
   return (
-    <Box m={6}>
-      <Typography variant="h4" align="center">
-        Page Not Found
-      </Typography>
-    </Box>
+    <div className="m-6">
+      <h2 className="text-center">Page Not Found</h2>
+    </div>
   );
 };
 
