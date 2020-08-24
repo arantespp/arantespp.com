@@ -11,7 +11,7 @@ const Header = () => {
       <Link href="/" passHref>
         <span className="text-3xl flex items-center whitespace-no-wrap">
           Pedro Arantes
-          <img className="h-8 ml-2" src="/rose.png" />
+          <img className="h-8 ml-3" src="/rose.png" />
         </span>
       </Link>
       <nav className="flex flex-col md:flex-row">

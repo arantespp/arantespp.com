@@ -44,7 +44,6 @@ const Me = () => {
       <ul>
         {socialMedias.map(({ name, href, faIcon }) => (
           <li key={name}>
-            {/* <Icon style={{ position: 'relative', top: '5' }} /> {name}:{' '} */}
             <a href={href} target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon className="text-xl mr-3" icon={faIcon} />
               {href}
