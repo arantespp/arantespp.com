@@ -1,7 +1,7 @@
-import * as React from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
+import NextLink from 'next/link';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 
 import { socialMedias } from '../lib/socialMedias';
 
@@ -9,15 +9,16 @@ const Me = () => {
   return (
     <>
       <h1>Me</h1>
-      <div className="flex flex-col items-center m-4">
-        <img
-          className="max-w-full"
-          style={{ margin: 0 }}
-          src="me.jpg"
-          alt="My best picture"
-          width="400px"
-        />
-        <caption className="text-normal">My current best photo.</caption>
+      <div
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          margin: 2,
+        }}
+      >
+        <img src="me.jpg" alt="My best picture" width="400px" />
+        <caption sx={{ fontSize: 1 }}>My current best photo.</caption>
       </div>
       <h3>Hello there!</h3>
       <p>
@@ -27,11 +28,16 @@ const Me = () => {
         study about, as psychology, mind, brain or even web design.
       </p>
       <p>
-        I use the <Link href="/zettelkasten">Zettelkasten</Link> method to
-        improve the way a learn some topic, so you can find tons of notes about
-        several subjects. Also, I write some{' '}
-        <Link href="/zettelkasten">essays</Link>, which are posts I express my
-        opinion about some theme.
+        I use the{' '}
+        <NextLink href="/zettelkasten">
+          <a>Zettelkasten</a>
+        </NextLink>{' '}
+        method to improve the way a learn some topic, so you can find tons of
+        notes about several subjects. Also, I write some{' '}
+        <NextLink href="/zettelkasten">
+          <a>essays</a>
+        </NextLink>
+        , which are posts I express my opinion about some theme.
       </p>
       <p>
         This blog is under construction, I have many ideas to write and design
@@ -44,14 +50,19 @@ const Me = () => {
       <ul>
         {socialMedias.map(({ name, href, faIcon }) => (
           <li key={name}>
-            <a href={href} target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon className="text-xl mr-3" icon={faIcon} />
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: 'black' }}
+            >
+              <FontAwesomeIcon sx={{ marginRight: 3 }} icon={faIcon} />
               {href}
             </a>
           </li>
         ))}
       </ul>
-      <p className="text-sm">
+      <p sx={{ fontSize: 1 }}>
         * I know, it's very sad, but Instagram is the only social media that I
         don't have <strong>arantespp</strong> as username. Sometime ago I've
         create the account with that username but I couldn't remember the

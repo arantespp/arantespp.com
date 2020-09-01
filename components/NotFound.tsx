@@ -1,10 +1,12 @@
-import * as React from 'react';
+import { Box, Heading } from 'theme-ui';
 
 const NotFound = () => {
   return (
-    <div className="m-6">
-      <h2 className="text-center">Page Not Found</h2>
-    </div>
+    <Box sx={{ margin: 4 }}>
+      <Heading as="h2" sx={{ textAlign: 'center' }}>
+        Page Not Found ;(
+      </Heading>
+    </Box>
   );
 };
 

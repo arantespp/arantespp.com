@@ -8,16 +8,6 @@ class MyDocument extends Document {
       <html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          {/* PWA primary color */}
-          <meta name="theme-color" content="red" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
           <link rel="icon" href="/favicon.ico" />
           <meta property="og:url" content="https://arantespp.com" />
           <meta property="og:type" content="website" />

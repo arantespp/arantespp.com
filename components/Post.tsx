@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Box } from 'theme-ui';
 
 import NotFound from './NotFound';
 import PostBody from './PostBody';
@@ -8,9 +8,15 @@ import type { PostAndPostsRecommendations } from '../lib/files';
 
 const Post = ({ post, recommendations }: PostAndPostsRecommendations) => {
   return (
-    <div className="mx-3">
+    <div>
       <>{post ? <PostBody {...post} /> : <NotFound />}</>
-      <div className="border-b-2 mt-12 mb-8" />
+      <Box
+        sx={{
+          border: '2px solid',
+          borderColor: 'muted',
+          marginY: [5],
+        }}
+      />
       <PostList recommendations={recommendations} />
     </div>
   );

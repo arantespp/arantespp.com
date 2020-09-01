@@ -1,29 +1,58 @@
-import * as React from 'react';
-
 import { pascalCase } from 'change-case';
-import Link from 'next/link';
+import NextLink from 'next/link';
+import * as React from 'react';
+import { Box, Image, Link, Text } from 'theme-ui';
 
 import { GROUPS } from '../lib/groups';
 
 const Header = () => {
   return (
-    <header className="flex flex-col md:flex-row justify-between items-center border-b-2 p-2 md:p-6 cursor-pointer">
-      <Link href="/" passHref>
-        <span className="text-3xl flex items-center whitespace-no-wrap">
+    <Box
+      as="header"
+      sx={{
+        display: 'flex',
+        flexDirection: ['column', null, 'row'],
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderBottom: '2px solid',
+        borderBottomColor: 'muted',
+        padding: [3, null, 4],
+      }}
+    >
+      <NextLink href="/" passHref>
+        <Text
+          as="span"
+          sx={{
+            fontSize: 4,
+            fontWeight: '600',
+            display: 'flex',
+            alignItems: 'center',
+            whiteSpace: 'nowrap',
+            cursor: 'pointer',
+          }}
+        >
           Pedro Arantes
-          <img className="h-8 ml-3" src="/rose.png" />
-        </span>
-      </Link>
-      <nav className="flex flex-col md:flex-row">
+          <Image sx={{ height: '1em', marginLeft: 1 }} src="/rose.png" />
+        </Text>
+      </NextLink>
+      <Box sx={{ display: 'flex', flexDirection: ['column', null, 'row'] }}>
         {GROUPS.map((group) => (
-          <Link key={group} href={`/${group}`}>
-            <a className="text-red-700 text-xl text-center mx-2 md:mx-8 underline">
+          <NextLink key={group} href={`/${group}`}>
+            <Link
+              sx={{
+                color: 'primary',
+                textAlign: 'center',
+                textDecoration: 'underline',
+                marginX: [2, 3],
+                cursor: 'pointer',
+              }}
+            >
               {pascalCase(group)}
-            </a>
-          </Link>
+            </Link>
+          </NextLink>
         ))}
-      </nav>
-    </header>
+      </Box>
+    </Box>
   );
 };
 

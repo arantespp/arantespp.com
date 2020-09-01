@@ -1,4 +1,5 @@
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NextLink from 'next/link';
@@ -7,15 +8,34 @@ import { socialMedias } from '../lib/socialMedias';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center bg-gray-200 p-3 sm:p-10">
+    <footer
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: [3, 4],
+        backgroundColor: 'muted',
+      }}
+    >
       <NextLink href="/" passHref>
-        <span className="text-4xl font-medium">Pedro Arantes</span>
+        <span sx={{ fontSize: [4, 5], fontWeight: '500' }}>Pedro Arantes</span>
       </NextLink>
-      <div className="flex flex-wrap mt-3 space-x-5">
+      <nav
+        sx={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          marginTop: 3,
+        }}
+      >
         {socialMedias.map(({ name, href, faIcon }) => (
           <a
             key={name}
-            className="text-black text-xl"
+            sx={{
+              color: 'black',
+              fontSize: [2, 3],
+              marginX: 2,
+            }}
             target="_blank"
             rel="noopener noreferrer"
             href={href}
@@ -23,7 +43,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faIcon} />
           </a>
         ))}
-      </div>
+      </nav>
     </footer>
   );
 };

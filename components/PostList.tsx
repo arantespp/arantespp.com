@@ -1,7 +1,6 @@
-import * as React from 'react';
-
 import { pascalCase } from 'change-case';
-import Link from 'next/link';
+import NextLink from 'next/link';
+import { Box, Text } from 'theme-ui';
 
 import type { PostAndPostsRecommendations } from '../lib/files';
 
@@ -13,24 +12,35 @@ const PostsList = ({
   recommendations: Recommendations;
 }) => {
   return (
-    <section className="flex flex-col">
-      <span className="text-3xl font-bold">More posts</span>
+    <Box as="section" sx={{ display: 'flex', flexDirection: 'column' }}>
+      <Text as="span" sx={{ fontSize: 3, fontWeight: 'bold' }}>
+        More posts
+      </Text>
       {recommendations.map(({ href, title, excerpt, date, group }) => {
         return (
-          <div key={title} className="flex flex-col mb-6">
-            <Link as={href} href="/[group]/[slug]" passHref>
-              <a>{title}</a>
-            </Link>
-            <span className="text-lg italic">
+          <Box
+            key={title}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              marginTop: 4,
+            }}
+          >
+            <NextLink as={href} href="/[group]/[slug]" passHref>
+              <Text as="a" sx={{ fontSize: 2 }}>
+                {title}
+              </Text>
+            </NextLink>
+            <Text as="span" sx={{ fontSize: [2], fontStyle: 'italic' }}>
               "{excerpt.replace(/"/g, '')}"
-            </span>
-            <span className="text-base text-gray-500">
+            </Text>
+            <Text as="span" sx={{ color: 'gray', fontSize: 1 }}>
               {`${pascalCase(group)} - ${date}`}
-            </span>
-          </div>
+            </Text>
+          </Box>
         );
       })}
-    </section>
+    </Box>
   );
 };
 

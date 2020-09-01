@@ -2,22 +2,18 @@ import * as React from 'react';
 
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { ThemeProvider } from 'theme-ui';
+
+import 'typeface-quattrocento-sans';
+import 'typeface-work-sans';
 
 import Layout from '../components/Layout';
 
-import '../styles.css';
+import theme from '../theme';
 
 const App = ({ Component, pageProps }: AppProps) => {
-  React.useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement?.removeChild(jssStyles);
-    }
-  }, []);
-
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Head>
         <title>Pedro Arantes</title>
         <meta
@@ -28,7 +24,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </ThemeProvider>
   );
 };
 

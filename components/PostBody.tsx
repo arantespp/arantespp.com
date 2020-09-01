@@ -1,10 +1,9 @@
-import * as React from 'react';
-
 import Head from 'next/head';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import path from 'path';
 import ReactMarkdown from 'react-markdown';
+import { Link } from 'theme-ui';
 
 import type { PostAndPostsRecommendations } from '../lib/files';
 
@@ -20,16 +19,16 @@ const renderers = {
     if (href.startsWith('.')) {
       const newPath = path.join(asPath, '..', href).replace(/\.md$/, '');
       return (
-        <Link as={newPath} href={pathname} passHref>
-          <a>{children}</a>
-        </Link>
+        <NextLink as={newPath} href={pathname} passHref>
+          <Link as="a">{children}</Link>
+        </NextLink>
       );
     }
 
     return (
-      <a color="primary" href={href} target="_blank" rel="noopener noreferrer">
+      <Link as="a" href={href} target="_blank" rel="noopener noreferrer">
         {children}
-      </a>
+      </Link>
     );
   },
 };
