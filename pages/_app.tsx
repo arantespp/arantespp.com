@@ -16,11 +16,11 @@ import { getTheme } from '../theme';
  */
 const useTheme = () => {
   const responsiveFontSize = useResponsiveValue(['16px', '18px', '20px']);
-  const [baseFontSize, setBaseFontSize] = React.useState('20px');
+  const [baseFontSize, setBaseFontSize] = React.useState('16px');
   React.useEffect(() => {
     setTimeout(() => {
       setBaseFontSize(responsiveFontSize);
-    }, 10);
+    }, 1);
   }, [responsiveFontSize]);
   return getTheme(baseFontSize);
 };
