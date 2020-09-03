@@ -35,11 +35,12 @@ const Me = () => {
         study about, as psychology, mind, brain or even web design.
       </Styled.p>
       <Styled.p>
-        <span>I use the</span>
+        <span>I use the </span>
         <NextLink href="/zettelkasten">
-          <Styled.a>Zettelkasten</Styled.a>
-        </NextLink>{' '}
+          <a>Zettelkasten</a>
+        </NextLink>
         <span>
+          {' '}
           method to improve the way a learn some topic, so you can find tons of
           notes about several subjects. Also, I write some{' '}
         </span>
@@ -55,14 +56,14 @@ const Me = () => {
       <Styled.p>
         <span>
           By any reason, if you want to contact me, you can find me in any
-          social media by the username
+          social media by the username{' '}
         </span>
         <strong>arantespp</strong>*.
       </Styled.p>
       <Styled.ul>
         {socialMedias.map(({ name, href, faIcon }) => (
           <Styled.li key={name}>
-            <Styled.a
+            <a
               href={href}
               target="_blank"
               rel="noopener noreferrer"
@@ -70,7 +71,7 @@ const Me = () => {
             >
               <FontAwesomeIcon sx={{ marginRight: 3 }} icon={faIcon} />
               {href}
-            </Styled.a>
+            </a>
           </Styled.li>
         ))}
       </Styled.ul>
