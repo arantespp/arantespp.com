@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { pascalCase } from 'change-case';
 import NextLink from 'next/link';
-import { Link, jsx } from 'theme-ui';
+import { jsx } from 'theme-ui';
 
 import { GROUPS } from '../lib/groups';
 
@@ -16,6 +16,7 @@ const Header = () => {
         borderBottom: 0,
         borderBottomColor: 'muted',
         padding: [3, null, 4],
+        backgroundColor: 'muted',
       }}
     >
       <NextLink href="/" passHref>
