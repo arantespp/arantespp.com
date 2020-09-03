@@ -1,3 +1,4 @@
+import { useResponsiveValue } from '@theme-ui/match-media';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'theme-ui';
@@ -7,11 +8,12 @@ import 'typeface-work-sans';
 
 import Layout from '../components/Layout';
 
-import theme from '../theme';
+import { getTheme } from '../theme';
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const baseFontSize = useResponsiveValue(['16px', '18px', '20px']);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={getTheme(baseFontSize)}>
       <Head>
         <title>Pedro Arantes</title>
         <meta

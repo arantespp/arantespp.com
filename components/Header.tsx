@@ -21,7 +21,7 @@ const Header = () => {
       <NextLink href="/" passHref>
         <span
           sx={{
-            fontSize: 4,
+            fontSize: [5, null, 4],
             fontWeight: '600',
             display: 'flex',
             alignItems: 'center',
@@ -38,7 +38,7 @@ const Header = () => {
           <NextLink key={group} href={`/${group}`}>
             <a
               sx={{
-                fontSize: [2, null, 3],
+                fontSize: [3],
                 color: 'primary',
                 textAlign: 'center',
                 textDecoration: 'underline',

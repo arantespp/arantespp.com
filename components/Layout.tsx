@@ -10,8 +10,8 @@ const Layout: React.FC = ({ children }) => {
       <Container
         as="main"
         sx={{
-          marginTop: 5,
-          marginBottom: 6,
+          marginTop: [4, null, 5],
+          marginBottom: [5, null, 6],
           paddingX: [3, 4],
           maxWidth: '40em',
         }}

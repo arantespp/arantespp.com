@@ -17,7 +17,7 @@ const Footer = () => {
       }}
     >
       <NextLink href="/" passHref>
-        <span sx={{ fontSize: [4, 5], fontWeight: '500' }}>Pedro Arantes</span>
+        <span sx={{ fontSize: [5], fontWeight: '500' }}>Pedro Arantes</span>
       </NextLink>
       <nav
         sx={{
@@ -32,7 +32,7 @@ const Footer = () => {
             key={name}
             sx={{
               color: 'black',
-              fontSize: [2, 3],
+              fontSize: 3,
               marginX: [2, 3],
             }}
             target="_blank"

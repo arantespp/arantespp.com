@@ -17,7 +17,14 @@ const Me = () => {
           margin: 2,
         }}
       >
-        <img src="me.jpg" alt="My best picture" width="400px" />
+        <img
+          src="me.jpg"
+          alt="My best picture"
+          sx={{
+            maxWidth: '400px',
+            width: '90vw',
+          }}
+        />
         <caption sx={{ fontSize: 1 }}>My current best photo.</caption>
       </div>
       <Styled.h3>Hello there!</Styled.h3>

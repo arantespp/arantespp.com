@@ -15,7 +15,7 @@ const Post = ({ post, recommendations }: PostAndPostsRecommendations) => {
         sx={{
           borderBottom: 0,
           borderColor: 'muted',
-          marginY: [5],
+          marginY: [4, null, 5],
         }}
       />
       <PostList recommendations={recommendations} />
