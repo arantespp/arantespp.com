@@ -1,12 +1,11 @@
-import { Box, Heading } from 'theme-ui';
+/** @jsx jsx */
+import { Styled, jsx } from 'theme-ui';
 
 const NotFound = () => {
   return (
-    <Box sx={{ margin: 4 }}>
-      <Heading as="h2" sx={{ textAlign: 'center' }}>
-        Page Not Found ;(
-      </Heading>
-    </Box>
+    <div sx={{ margin: 4 }}>
+      <Styled.h2 sx={{ textAlign: 'center' }}>Page Not Found ;(</Styled.h2>
+    </div>
   );
 };
 

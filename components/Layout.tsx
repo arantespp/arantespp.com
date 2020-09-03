@@ -9,7 +9,12 @@ const Layout: React.FC = ({ children }) => {
       <Header />
       <Container
         as="main"
-        sx={{ marginTop: 5, marginBottom: 6, paddingX: [3, 4], maxWidth: 760 }}
+        sx={{
+          marginTop: 5,
+          marginBottom: 6,
+          paddingX: [3, 4],
+          maxWidth: '40em',
+        }}
       >
         {children}
       </Container>

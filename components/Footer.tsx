@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NextLink from 'next/link';
+import { jsx } from 'theme-ui';
 
 import { socialMedias } from '../lib/socialMedias';
 
@@ -34,7 +33,7 @@ const Footer = () => {
             sx={{
               color: 'black',
               fontSize: [2, 3],
-              marginX: 2,
+              marginX: [2, 3],
             }}
             target="_blank"
             rel="noopener noreferrer"

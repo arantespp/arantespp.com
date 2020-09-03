@@ -1,4 +1,5 @@
-import { Box } from 'theme-ui';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 
 import NotFound from './NotFound';
 import PostBody from './PostBody';
@@ -10,9 +11,9 @@ const Post = ({ post, recommendations }: PostAndPostsRecommendations) => {
   return (
     <div>
       <>{post ? <PostBody {...post} /> : <NotFound />}</>
-      <Box
+      <div
         sx={{
-          border: '2px solid',
+          borderBottom: 0,
           borderColor: 'muted',
           marginY: [5],
         }}

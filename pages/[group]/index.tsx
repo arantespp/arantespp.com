@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { GetStaticProps, GetStaticPaths } from 'next';
 import dynamic from 'next/dynamic';
 

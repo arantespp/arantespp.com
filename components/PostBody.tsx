@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import path from 'path';
 import ReactMarkdown from 'react-markdown';
-import { Link } from 'theme-ui';
+import { Link, Styled } from 'theme-ui';
 
 import type { PostAndPostsRecommendations } from '../lib/files';
 
@@ -13,6 +13,24 @@ type Post = NonNullable<PostAndPostsRecommendations['post']>;
  * https://github.com/rexxars/react-markdown/tree/c63dccb8185869cfc73c257d098a123ef7a7cd33#node-types
  */
 const renderers = {
+  heading: ({
+    level,
+    children,
+  }: {
+    level: number;
+    children: React.ReactNode;
+  }) => {
+    const componentsByLevel = [
+      Styled.h1,
+      Styled.h2,
+      Styled.h3,
+      Styled.h4,
+      Styled.h5,
+      Styled.h6,
+    ];
+    const ResolvedComponent = componentsByLevel[level - 1];
+    return <ResolvedComponent>{children}</ResolvedComponent>;
+  },
   link: ({ children, href }: { children: React.ReactNode; href: string }) => {
     const { asPath, pathname } = useRouter();
 
@@ -31,6 +49,8 @@ const renderers = {
       </Link>
     );
   },
+  root: Styled.root,
+  paragraph: Styled.p,
 };
 
 const PostBody = ({ title, content }: Post) => {

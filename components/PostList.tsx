@@ -1,6 +1,7 @@
+/** @jsx jsx */
 import { pascalCase } from 'change-case';
 import NextLink from 'next/link';
-import { Box, Text } from 'theme-ui';
+import { jsx } from 'theme-ui';
 
 import type { PostAndPostsRecommendations } from '../lib/files';
 
@@ -12,13 +13,11 @@ const PostsList = ({
   recommendations: Recommendations;
 }) => {
   return (
-    <Box as="section" sx={{ display: 'flex', flexDirection: 'column' }}>
-      <Text as="span" sx={{ fontSize: 3, fontWeight: 'bold' }}>
-        More posts
-      </Text>
+    <section sx={{ display: 'flex', flexDirection: 'column' }}>
+      <span sx={{ fontSize: 4, fontWeight: 'bold' }}>More posts</span>
       {recommendations.map(({ href, title, excerpt, date, group }) => {
         return (
-          <Box
+          <div
             key={title}
             sx={{
               display: 'flex',
@@ -27,20 +26,18 @@ const PostsList = ({
             }}
           >
             <NextLink as={href} href="/[group]/[slug]" passHref>
-              <Text as="a" sx={{ fontSize: 2 }}>
-                {title}
-              </Text>
+              <a sx={{ fontSize: 2 }}>{title}</a>
             </NextLink>
-            <Text as="span" sx={{ fontSize: [2], fontStyle: 'italic' }}>
+            <span sx={{ fontSize: [2], fontStyle: 'italic' }}>
               "{excerpt.replace(/"/g, '')}"
-            </Text>
-            <Text as="span" sx={{ color: 'gray', fontSize: 1 }}>
+            </span>
+            <span sx={{ color: 'gray', fontSize: 1 }}>
               {`${pascalCase(group)} - ${date}`}
-            </Text>
-          </Box>
+            </span>
+          </div>
         );
       })}
-    </Box>
+    </section>
   );
 };
 
