@@ -1,6 +1,7 @@
 import { useResponsiveValue } from '@theme-ui/match-media';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import * as React from 'react';
 import { ThemeProvider } from 'theme-ui';
 
 import 'typeface-quattrocento-sans';
@@ -10,10 +11,24 @@ import Layout from '../components/Layout';
 
 import { getTheme } from '../theme';
 
+/**
+ * Create this hook because theme is not updated initially.
+ */
+const useTheme = () => {
+  const responsiveFontSize = useResponsiveValue(['16px', '18px', '20px']);
+  const [baseFontSize, setBaseFontSize] = React.useState('20px');
+  React.useEffect(() => {
+    setTimeout(() => {
+      setBaseFontSize(responsiveFontSize);
+    }, 10);
+  }, [responsiveFontSize]);
+  return getTheme(baseFontSize);
+};
+
 const App = ({ Component, pageProps }: AppProps) => {
-  const baseFontSize = useResponsiveValue(['16px', '18px', '20px']);
+  const theme = useTheme();
   return (
-    <ThemeProvider theme={getTheme(baseFontSize)}>
+    <ThemeProvider theme={theme}>
       <Head>
         <title>Pedro Arantes</title>
         <meta
