@@ -1,12 +1,24 @@
 import { pascalCase } from 'change-case';
+import * as dateFns from 'date-fns';
 import NextLink from 'next/link';
-import { Box, Flex, Link, Text } from 'theme-ui';
+import { Box, Flex, Link, Message, Text } from 'theme-ui';
 
 import type { Recommendation } from '../lib/files';
 
 import Tag from './Tag';
 
-const Recommendations = ({ excerpt, group, date, tags }: Recommendation) => {
+const getDate = (date: string) => {
+  /**
+   * https://stackoverflow.com/a/52352512/8786986
+   */
+  const dt = new Date(date);
+  const dtDateOnly = new Date(
+    dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000
+  );
+  return dateFns.format(dtDateOnly, 'MMMM dd, yyyy');
+};
+
+const PostResume = ({ excerpt, group, date, tags }: Recommendation) => {
   return (
     <Box
       sx={{
@@ -17,22 +29,20 @@ const Recommendations = ({ excerpt, group, date, tags }: Recommendation) => {
         paddingBottom: 3,
       }}
     >
-      <Text sx={{ fontSize: [2], fontStyle: 'italic' }}>
-        "{excerpt.replace(/"/g, '')}"
-      </Text>
-      <Flex>
+      <Message variant="quote">{excerpt}</Message>
+      <Flex sx={{ flexWrap: 'wrap', marginY: 2 }}>
         {tags.map((tag) => (
           <Tag key={tag} tag={tag} />
         ))}
       </Flex>
       <Text sx={{ fontSize: 1 }}>
-        <NextLink as={`/${group}`} href="/[group]" passHref>
+        <NextLink href={`/${group}`} passHref>
           <Link sx={{ fontSize: 1, paddingRight: 2 }}>{pascalCase(group)}</Link>
         </NextLink>
-        <Text as="span">{date}</Text>
+        <Text as="span">{getDate(date)}</Text>
       </Text>
     </Box>
   );
 };
 
-export default Recommendations;
+export default PostResume;

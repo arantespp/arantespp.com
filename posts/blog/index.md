@@ -1,3 +1,0 @@
-# Essays
-
-Working in progress...

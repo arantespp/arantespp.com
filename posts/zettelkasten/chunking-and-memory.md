@@ -10,11 +10,6 @@ tags:
 
 # Chunking and Memory
 
-## Tags
-
-- tag-chunking
-- tag-memory
-
 ## Notes
 
 - Chunking is a memorization method in which you group pieces of information in groups.

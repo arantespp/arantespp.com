@@ -1,16 +1,15 @@
 ---
 title: Design - Density
 excerpt: Dense UI should be applied to display tables, lists and long forms because the user can scan, interact and compare the information easily.
-date: '2020-07-03'
+date: 2020-07-03
+tags:
+  - design
+  - ui
+  - ux
+rating: 2
 ---
 
 # Design - Density
-
-## Tags
-
-- tag-design
-- tag-ui
-- tag-ux
 
 ## Notes
 

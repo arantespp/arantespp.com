@@ -2,17 +2,16 @@
 title: Information and Digital Content in Modern Society
 excerpt: People use the Internet to connect to others, entertainment, or to be informed.
 date: 2020-05-30
+tags:
+  - digital content
+  - modern society
+  - psychological trigger
+  - psychology
+  - robert-b-cialdini
+rating: 1
 ---
 
 # Information and Digital Content in Modern Society
-
-## Tags
-
-- tag-digital-content
-- tag-modern-society
-- tag-psychological-trigger
-- tag-psychology
-- tag-robert-b-cialdini
 
 ## Notes
 
@@ -23,5 +22,5 @@ date: 2020-05-30
   1. Only informs.
   2. Informs and does some analysis.
   3. Informs, does some analysis and gives a recommendation.
-- If you want to increase the importance of your content, you may add some [psychological trigger](./psychological-trigger.md), also described as [psychology of selling by Robert B. Cialdini, Ph.D](./-robert-b-cialdinis-psychology-of-selling.md).
+- If you want to increase the importance of your content, you may add some [psychological trigger](/zettelkasten/psychological-trigger.md), also described as [psychology of selling by Robert B. Cialdini, Ph.D](/zettelkasten/-robert-b-cialdinis-psychology-of-selling.md).
   - For instance, if the content author is an authority, his/her recommendation will have more relevance.

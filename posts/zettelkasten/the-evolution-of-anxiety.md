@@ -2,18 +2,17 @@
 title: The Evolution of Anxiety
 excerpt: The Delayed Return Environment causes chronic anxiety and stress because our brain was designed to live in an Immediate Return Environment.
 date: 2020-05-22
+tags:
+  - anxiety
+  - stress
+  - emotions
+  - brain
+  - psychology
+  - human-behavior
+rating: 3
 ---
 
 # The Evolution of Anxiety
-
-## Tags
-
-- tag-anxiety
-- tag-stress
-- tag-emotions
-- tag-brain
-- tag-psychology
-- tag-human-behavior
 
 ## Notes
 

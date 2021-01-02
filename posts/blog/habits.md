@@ -1,10 +1,5 @@
 ---
 title: Habits
-excerpt: It was created to understand better the process, os steps that the consumer goes thought, before purchasing a product.
-date: 2020-08-08
-rating: 2
-tags:
-  - digital marketing
 ---
 
 Habits are the less spent energy strategy that we can use to achieve goals in your life.

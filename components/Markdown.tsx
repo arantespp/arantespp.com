@@ -50,6 +50,7 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
   },
   root: Styled.root,
   paragraph: Styled.p,
+  strong: Styled.strong,
 });
 
 const Markdown = ({ content, noH1 }: { content: string; noH1?: boolean }) => {

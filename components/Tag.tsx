@@ -4,7 +4,7 @@ import { Link } from 'theme-ui';
 const Tag = ({ tag }: { tag: string }) => {
   return (
     <NextLink href={`/tags/${tag}`} passHref>
-      <Link sx={{ fontSize: 1, paddingRight: 2 }}>#{tag}</Link>
+      <Link variant="tag">#{tag}</Link>
     </NextLink>
   );
 };

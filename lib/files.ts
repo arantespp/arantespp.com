@@ -5,6 +5,7 @@ import { paramCase } from 'change-case';
 import * as dateFns from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
+import { connect } from 'http2';
 import path from 'path';
 
 import { Group } from './groups';
@@ -19,6 +20,7 @@ type PostMeta = {
   date: string;
   tags: string[];
   rating: number;
+  backlinks: Array<{ title: string; href: string }>;
 };
 
 export type Post = PostMeta & {
@@ -28,6 +30,8 @@ export type Post = PostMeta & {
   content: string;
 };
 
+export type PostWithoutContent = Omit<Post, 'content'>;
+
 const LIMIT = 15;
 
 /**
@@ -35,18 +39,15 @@ const LIMIT = 15;
  */
 export const getGroups = (): Group[] => ['blog', 'zettelkasten'];
 
-export const getIndex = (group: Group | '.') => {
-  try {
-    const fullPath = path.join(postsDirectory, group, `index.md`);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { content } = matter(fileContents);
-    return content;
-  } catch (err) {
-    return undefined;
-  }
+type GetPartialPostProps = {
+  group: Group;
+  slug: string;
 };
 
-export const getPost = ({ group, slug }: { group: Group; slug: string }) => {
+/**
+ * It does not return backlinks.
+ */
+const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
   try {
     const fullPath = path.join(postsDirectory, group || '', `${slug}.md`);
 
@@ -69,6 +70,11 @@ export const getPost = ({ group, slug }: { group: Group; slug: string }) => {
       return dateFns.format(dtDateOnly, 'yyyy-MM-dd');
     };
 
+    const getTags = () =>
+      tags
+        .map((tag) => paramCase(tag))
+        .sort((tagA, tagB) => tagA.localeCompare(tagB));
+
     const post = {
       title,
       excerpt,
@@ -78,9 +84,7 @@ export const getPost = ({ group, slug }: { group: Group; slug: string }) => {
       slug,
       content,
       rating,
-      tags: tags
-        .map((tag) => paramCase(tag))
-        .sort((tagA, tagB) => tagA.localeCompare(tagB)),
+      tags: getTags(),
     };
 
     /**
@@ -117,7 +121,7 @@ const getPostsByGroup = (group: Group) => {
         /**
          * Return the post
          */
-        .map((slug) => getPost({ group, slug }))
+        .map((slug) => getPartialPost({ group, slug }))
         /**
          * Return only posts that are not null.
          */
@@ -128,6 +132,52 @@ const getPostsByGroup = (group: Group) => {
      */
   } catch {
     return [];
+  }
+};
+
+const allPosts = getGroups()
+  .reduce((acc, group) => [...acc, getPostsByGroup(group)], [])
+  .flat();
+
+const getPost = (props: GetPartialPostProps): Post | undefined => {
+  const partialPost = getPartialPost(props);
+
+  if (!partialPost) {
+    return undefined;
+  }
+
+  const backlinks = allPosts
+    .filter(({ content }) => content.includes(partialPost.href))
+    .map(({ title, href }) => ({ title, href }));
+
+  /**
+   * If backlinks exist, add them to content.
+   */
+  const newContent = (() => {
+    const { content } = partialPost;
+
+    if (backlinks.length === 0) {
+      return content;
+    }
+
+    return [
+      partialPost.content,
+      '### Backlinks',
+      ...backlinks.map(({ href, title }) => `- [${title}](${href})`),
+    ].join('\n');
+  })();
+
+  return { ...partialPost, content: newContent, backlinks };
+};
+
+export const getIndex = (group: Group | '.') => {
+  try {
+    const fullPath = path.join(postsDirectory, group, `index.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { content } = matter(fileContents);
+    return content;
+  } catch (err) {
+    return undefined;
   }
 };
 
@@ -144,10 +194,6 @@ type GetPostsProps = {
  */
 export const getPosts = ({ group, tags }: GetPostsProps = {}) => {
   const groupPosts = group ? getPostsByGroup(group) : [];
-
-  const allPosts = getGroups()
-    .reduce((acc, group) => [...acc, getPostsByGroup(group)], [])
-    .flat();
 
   const tagsPosts = tags
     ? allPosts
@@ -174,6 +220,7 @@ export const getPosts = ({ group, tags }: GetPostsProps = {}) => {
    */
   return (
     (groupAndTagsPosts.length === 0 ? allPosts : groupAndTagsPosts)
+      .sort((postA, postB) => postB.date.localeCompare(postA.date))
       .sort((postA, postB) => postB.rating - postA.rating)
       /**
        * Limit the number of posts returned.
@@ -199,7 +246,7 @@ export const getRecommendations = (props: GetPostsProps = {}) => {
   );
 };
 
-export type Recommendation = ReturnType<typeof getRecommendations>[0];
+export type Recommendation = PostWithoutContent;
 
 /**
  * Return specific post and post recommendations.

@@ -24,7 +24,7 @@ const Recommendations = ({
         borderTopStyle: 'solid',
       }}
     >
-      <Text sx={{ fontSize: 4, fontWeight: 'bold' }}>More posts</Text>
+      <Text sx={{ fontSize: 4, fontWeight: 'bold' }}>More Posts</Text>
       {recommendations.map((recommendation) => {
         const { href, title } = recommendation;
         return (

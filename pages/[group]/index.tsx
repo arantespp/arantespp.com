@@ -22,7 +22,7 @@ export const getStaticProps = async ({
 }: {
   params: { group: Group };
 }) => {
-  const content = getIndex(group);
+  const content = getIndex(group) || '';
   const recommendations = getRecommendations({ group });
   return { props: { content, recommendations } };
 };
