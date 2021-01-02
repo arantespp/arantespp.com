@@ -11,7 +11,7 @@ const Layout: React.FC = ({ children }) => {
         as="main"
         sx={{
           marginTop: [4, null, 5],
-          marginBottom: [4, null, 5],
+          marginBottom: [5, null, 6],
           paddingX: [3, 4],
         }}
       >
