@@ -17,14 +17,14 @@ const Recommendations = ({
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        marginTop: 5,
+        marginTop: 4,
         paddingTop: 4,
-        borderTopColor: 'muted',
-        borderTopWidth: 2,
+        borderTopColor: 'primary',
+        borderTopWidth: 1,
         borderTopStyle: 'solid',
       }}
     >
-      <Text sx={{ fontSize: 4, fontWeight: 'bold' }}>More Posts</Text>
+      <Text sx={{ fontSize: 5, fontWeight: 'bold' }}>More Posts</Text>
       {recommendations.map((recommendation) => {
         const { href, title } = recommendation;
         return (

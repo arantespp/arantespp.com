@@ -8,6 +8,7 @@ export const getTheme = () => {
    */
   const typography = toTheme({
     ...themeFairyGates,
+    baseFontSize: '18px',
   });
 
   /**
@@ -35,7 +36,7 @@ export const getTheme = () => {
     },
     space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
     sizes: {
-      container: '42em',
+      container: '48em',
     },
     links: {
       tag: {

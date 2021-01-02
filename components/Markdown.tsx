@@ -2,7 +2,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import path from 'path';
 import ReactMarkdown from 'react-markdown';
-import { Link, Styled } from 'theme-ui';
+import { Box, Link, Styled } from 'theme-ui';
 
 /**
  * https://github.com/rexxars/react-markdown/tree/c63dccb8185869cfc73c257d098a123ef7a7cd33#node-types
@@ -55,7 +55,11 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
 });
 
 const Markdown = ({ content, noH1 }: { content: string; noH1?: boolean }) => {
-  return <ReactMarkdown renderers={renderers({ noH1 })} source={content} />;
+  return (
+    <Box sx={{ marginBottom: 6 }}>
+      <ReactMarkdown renderers={renderers({ noH1 })} source={content} />
+    </Box>
+  );
 };
 
 export default Markdown;
