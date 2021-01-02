@@ -1,6 +1,9 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
+import NextLink from 'next/link';
+import { Link, Styled } from 'theme-ui';
 
-import TagsPage from '../../components/TagsPage';
+import Recommendations from '../../components/Recommendations';
 
 import { getAllTags, getRecommendations } from '../../lib/files';
 
@@ -18,18 +21,28 @@ export const getStaticProps = async ({
 }: {
   params: { tag: string };
 }) => {
-  const tags = getAllTags();
   const recommendations = getRecommendations({ tags: [tag] });
   return {
-    props: { tags, recommendations },
+    props: { tag, recommendations },
   };
 };
 
 const TagsIndex = ({
   recommendations,
-  tags,
+  tag,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return <TagsPage tags={tags} recommendations={recommendations} />;
+  return (
+    <>
+      <Head>
+        <title>#{tag}</title>
+      </Head>
+      <Styled.h1>#{tag}</Styled.h1>
+      <NextLink href="/tags" passHref>
+        <Link>See all tags</Link>
+      </NextLink>
+      <Recommendations recommendations={recommendations} />
+    </>
+  );
 };
 
 export default TagsIndex;

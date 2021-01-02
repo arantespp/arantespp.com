@@ -37,13 +37,13 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
       const newPath = path.join(asPath, '..', href).replace(/\.md$/, '');
       return (
         <NextLink as={newPath} href={pathname} passHref>
-          <Link as="a">{children}</Link>
+          <Link>{children}</Link>
         </NextLink>
       );
     }
 
     return (
-      <Link as="a" href={href} target="_blank" rel="noopener noreferrer">
+      <Link href={href} target="_blank" rel="noopener noreferrer">
         {children}
       </Link>
     );
@@ -51,6 +51,7 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
   root: Styled.root,
   paragraph: Styled.p,
   strong: Styled.strong,
+  listItem: Styled.li,
 });
 
 const Markdown = ({ content, noH1 }: { content: string; noH1?: boolean }) => {
