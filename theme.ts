@@ -2,19 +2,16 @@ import { toTheme } from '@theme-ui/typography';
 import { merge } from 'theme-ui';
 import themeFairyGates from 'typography-theme-fairy-gates';
 
-export const getTheme = (baseFontSize: string) => {
+export const getTheme = () => {
   /**
    * https://kyleamathews.github.io/typography.js/
    */
   const typography = toTheme({
     ...themeFairyGates,
-    baseFontSize,
-    baseLineHeight: 1.6,
-    scaleRatio: 2,
   });
 
   const theme: any = {
-    borders: ['3px solid'],
+    borderWidths: [0, 3, 6],
     colors: {
       text: 'hsla(0,0%,0%,0.8)',
       background: '#fff',
@@ -22,10 +19,8 @@ export const getTheme = (baseFontSize: string) => {
       muted: '#f6f6f6',
     },
     space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-    styles: {
-      h1: {
-        textAlign: 'center',
-      },
+    sizes: {
+      container: '42em',
     },
   };
 

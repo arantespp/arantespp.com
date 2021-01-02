@@ -1,13 +1,13 @@
-/** @jsx jsx */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NextLink from 'next/link';
-import { jsx } from 'theme-ui';
+import { Flex, Link, Text } from 'theme-ui';
 
 import { socialMedias } from '../lib/socialMedias';
 
 const Footer = () => {
   return (
-    <footer
+    <Flex
+      as="footer"
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -17,9 +17,10 @@ const Footer = () => {
       }}
     >
       <NextLink href="/" passHref>
-        <span sx={{ fontSize: [5], fontWeight: '500' }}>Pedro Arantes</span>
+        <Text sx={{ fontSize: [5], fontWeight: '500' }}>Pedro Arantes</Text>
       </NextLink>
-      <nav
+      <Flex
+        as="nav"
         sx={{
           display: 'flex',
           flexWrap: 'wrap',
@@ -28,7 +29,7 @@ const Footer = () => {
         }}
       >
         {socialMedias.map(({ name, href, faIcon }) => (
-          <a
+          <Link
             key={name}
             sx={{
               color: 'black',
@@ -40,10 +41,10 @@ const Footer = () => {
             href={href}
           >
             <FontAwesomeIcon icon={faIcon} />
-          </a>
+          </Link>
         ))}
-      </nav>
-    </footer>
+      </Flex>
+    </Flex>
   );
 };
 

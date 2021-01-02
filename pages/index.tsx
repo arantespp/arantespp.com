@@ -1,23 +1,16 @@
-import { GetStaticProps } from 'next';
-import dynamic from 'next/dynamic';
+import { InferGetStaticPropsType } from 'next';
 
-import {
-  getPostAndPostsRecommendations,
-  PostAndPostsRecommendations,
-} from '../lib/files';
+import { getIndex, getRecommendations } from '../lib/files';
 
-const Post = dynamic(() => import('../components/Post'));
+import IndexPage from '../components/IndexPage';
 
-type Props = PostAndPostsRecommendations;
-
-export const getStaticProps: GetStaticProps<PostAndPostsRecommendations> = async () => {
-  return {
-    props: getPostAndPostsRecommendations({ slug: 'index', limit: 50 }),
-  };
+export const getStaticProps = async () => {
+  const content = getIndex('.');
+  const recommendations = getRecommendations();
+  return { props: { content, recommendations } };
 };
-
-const Index = (props: Props) => {
-  return <Post {...props} />;
+const Index = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+  return <IndexPage {...props} />;
 };
 
 export default Index;

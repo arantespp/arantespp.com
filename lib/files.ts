@@ -1,6 +1,7 @@
 /**
  * https://github.com/vercel/next.js/blob/canary/examples/blog-starter/lib/
  */
+import { paramCase } from 'change-case';
 import * as dateFns from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -12,44 +13,52 @@ const postsDirectory = path.join(process.cwd(), 'posts');
 
 export type { Group };
 
-export type Post = {
+type PostMeta = {
   title: string;
   excerpt: string;
   date: string;
+  tags: string[];
+  rating: number;
+};
+
+export type Post = PostMeta & {
   href: string;
   group: string;
   slug: string;
   content: string;
 };
 
+const LIMIT = 15;
+
 /**
  * Only groups that have posts.
  */
-export const getGroups = (): Group[] => ['essays', 'zettelkasten'];
+export const getGroups = (): Group[] => ['blog', 'zettelkasten'];
 
-export const getPost = ({
-  group = '.',
-  slug,
-}: {
-  group?: Group | '.';
-  slug: string;
-}) => {
+export const getIndex = (group: Group | '.') => {
   try {
-    const fullPath = path.join(postsDirectory, group, `${slug}.md`);
+    const fullPath = path.join(postsDirectory, group, `index.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { content } = matter(fileContents);
+    return content;
+  } catch (err) {
+    return undefined;
+  }
+};
+
+export const getPost = ({ group, slug }: { group: Group; slug: string }) => {
+  try {
+    const fullPath = path.join(postsDirectory, group || '', `${slug}.md`);
+
+    const href = path.join('/', group || '', slug);
 
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-    const defaultProperties = { excerpt: '' };
+    const { data, content } = matter(fileContents);
 
-    const {
-      data: { title, excerpt = defaultProperties.excerpt, date },
-      content,
-    } = matter(fileContents);
-
-    const href = path.join('/', group, slug);
+    const { title, excerpt, date, rating, tags } = data as PostMeta;
 
     const getDate = () => {
-      if (!date) return undefined;
       /**
        * https://stackoverflow.com/a/52352512/8786986
        */
@@ -68,6 +77,10 @@ export const getPost = ({
       group,
       slug,
       content,
+      rating,
+      tags: tags
+        .map((tag) => paramCase(tag))
+        .sort((tagA, tagB) => tagA.localeCompare(tagB)),
     };
 
     /**
@@ -76,12 +89,12 @@ export const getPost = ({
     if (
       Object.values(post).some((value) => value == null || value == undefined)
     ) {
-      return null;
+      return undefined;
     }
 
     return post;
   } catch {
-    return null;
+    return undefined;
   }
 };
 
@@ -118,47 +131,97 @@ const getPostsByGroup = (group: Group) => {
   }
 };
 
-export const getPosts = <T extends keyof Post>({
-  groups = [...getGroups()],
-}: {
-  groups?: Group[];
-  fields?: T[];
-} = {}): Array<{ [key in T]: Post[key] }> =>
-  groups
-    .reduce<Post[]>(
-      (acc, groupName) => [...acc, ...getPostsByGroup(groupName)],
-      []
-    )
-    .sort((post1, post2) => post2.date.localeCompare(post1.date));
+type GetPostsProps = {
+  group?: Group;
+  tags?: string[];
+};
+
+/**
+ * Get posts. Filter by "group" and "tags".
+ *
+ * @param param.group return posts that belong to a group.
+ * @param param.tags return posts that have tags.
+ */
+export const getPosts = ({ group, tags }: GetPostsProps = {}) => {
+  const groupPosts = group ? getPostsByGroup(group) : [];
+
+  const allPosts = getGroups()
+    .reduce((acc, group) => [...acc, getPostsByGroup(group)], [])
+    .flat();
+
+  const tagsPosts = tags
+    ? allPosts
+        /**
+         * Return only posts that contain the tags.
+         */
+        .filter((post) =>
+          tags.reduce((acc, tag) => acc || post.tags.includes(tag), false)
+        )
+    : [];
+
+  const groupAndTagsPosts = [...tagsPosts, ...groupPosts]
+    /**
+     * Remove duplicated posts that may come from group and tags posts.
+     * https://stackoverflow.com/a/56757215/8786986
+     */
+    .filter(
+      (post, index, arr) =>
+        arr.findIndex(({ href }) => href === post.href) === index
+    );
+
+  /**
+   * If group and tags posts have no posts, all posts are returned instead.
+   */
+  return (
+    (groupAndTagsPosts.length === 0 ? allPosts : groupAndTagsPosts)
+      .sort((postA, postB) => postB.rating - postA.rating)
+      /**
+       * Limit the number of posts returned.
+       */
+      .slice(0, LIMIT)
+  );
+};
+
+export const getAllTags = () => {
+  return getPosts()
+    .flatMap(({ tags }) => tags)
+    .filter((tag, index, arr) => arr.indexOf(tag) === index)
+    .sort((tagA, tagB) => tagA.localeCompare(tagB));
+};
+
+export const getRecommendations = (props: GetPostsProps = {}) => {
+  return (
+    getPosts(props)
+      /**
+       * Do not return the content.
+       */
+      .map(({ content, ...rest }) => rest)
+  );
+};
+
+export type Recommendation = ReturnType<typeof getRecommendations>[0];
 
 /**
  * Return specific post and post recommendations.
  */
 export const getPostAndPostsRecommendations = ({
-  group,
   slug,
-  limit,
+  group,
 }: {
-  group?: Group;
+  group: Group;
   slug: string;
-  limit?: number;
 }) => {
   const post = getPost({ group, slug });
-  const recommendations = getPosts({
-    groups: group ? [group] : undefined,
-    fields: ['date', 'excerpt', 'href', 'title', 'group'],
-  })
-    /**
-     * Don't return the post as recommendation.
-     */
-    .filter(({ href }) => href !== post?.href)
-    /**
-     * Limit the number of posts returned.
-     */
-    .slice(0, limit);
+
+  const { tags } = post || {};
+
+  const recommendations = post
+    ? getRecommendations({ tags, group })
+        /**
+         * Don't return the post as recommendation.
+         */
+        .filter(({ href }) => href !== post?.href)
+    : [];
+
   return { post, recommendations };
 };
-
-export type PostAndPostsRecommendations = ReturnType<
-  typeof getPostAndPostsRecommendations
->;

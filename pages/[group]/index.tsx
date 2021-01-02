@@ -1,16 +1,13 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
-import dynamic from 'next/dynamic';
+import { GetStaticProps, GetStaticPaths, InferGetStaticPropsType } from 'next';
 
 import {
   getGroups,
-  getPostAndPostsRecommendations,
+  getIndex,
+  getRecommendations,
   Group,
-  PostAndPostsRecommendations,
 } from '../../lib/files';
 
-const Post = dynamic(() => import('../../components/Post'));
-
-type Props = PostAndPostsRecommendations;
+import IndexPage from '../../components/IndexPage';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const groups = getGroups();
@@ -20,16 +17,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<PostAndPostsRecommendations> = async ({
+export const getStaticProps = async ({
   params: { group },
 }: {
   params: { group: Group };
 }) => {
-  return { props: getPostAndPostsRecommendations({ slug: 'index', group }) };
+  const content = getIndex(group);
+  const recommendations = getRecommendations({ group });
+  return { props: { content, recommendations } };
 };
 
-const GroupIndex = (props: Props) => {
-  return <Post {...props} />;
+const GroupIndex = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+  return <IndexPage {...props} />;
 };
 
 export default GroupIndex;

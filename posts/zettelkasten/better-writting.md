@@ -2,14 +2,13 @@
 title: Better Writing
 excerpt: Write like you speak, do not try writing with more elegant prose.
 date: 2020-06-09
+rating: 2
+tags:
+  - grammar
+  - writing
 ---
 
 # Better Writing
-
-## Tags
-
-- tag-grammar
-- tag-writing
 
 ## Notes
 

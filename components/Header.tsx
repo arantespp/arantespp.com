@@ -1,13 +1,13 @@
-/** @jsx jsx */
 import { pascalCase } from 'change-case';
 import NextLink from 'next/link';
-import { jsx } from 'theme-ui';
+import { Flex, Image, Link, Text } from 'theme-ui';
 
 import { GROUPS } from '../lib/groups';
 
 const Header = () => {
   return (
-    <header
+    <Flex
+      as="header"
       sx={{
         display: 'flex',
         flexDirection: ['column', null, 'row'],
@@ -20,9 +20,9 @@ const Header = () => {
       }}
     >
       <NextLink href="/" passHref>
-        <span
+        <Text
           sx={{
-            fontSize: [5, null, 4],
+            fontSize: [5],
             fontWeight: '600',
             display: 'flex',
             alignItems: 'center',
@@ -31,15 +31,15 @@ const Header = () => {
           }}
         >
           Pedro Arantes
-          <img sx={{ height: '1em', marginLeft: 1 }} src="/rose.png" />
-        </span>
+          <Image sx={{ height: '1em', marginLeft: 1 }} src="/rose.png" />
+        </Text>
       </NextLink>
-      <div sx={{ display: 'flex', flexDirection: ['column', null, 'row'] }}>
+      <Flex sx={{ display: 'flex', flexDirection: ['column', null, 'row'] }}>
         {GROUPS.map((group) => (
           <NextLink key={group} href={`/${group}`}>
-            <a
+            <Link
               sx={{
-                fontSize: [2],
+                fontSize: [3],
                 color: 'primary',
                 textAlign: 'center',
                 textDecoration: 'underline',
@@ -48,11 +48,11 @@ const Header = () => {
               }}
             >
               {pascalCase(group)}
-            </a>
+            </Link>
           </NextLink>
         ))}
-      </div>
-    </header>
+      </Flex>
+    </Flex>
   );
 };
 

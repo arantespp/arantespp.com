@@ -1,16 +1,17 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
-import dynamic from 'next/dynamic';
+import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
+import { Box, Styled } from 'theme-ui';
 
 import {
   getPosts,
   getPostAndPostsRecommendations,
   Group,
-  PostAndPostsRecommendations,
 } from '../../lib/files';
 
-const Post = dynamic(() => import('../../components/Post'));
-
-type Props = PostAndPostsRecommendations;
+import Markdown from '../../components/Markdown';
+import NotFound from '../../components/NotFound';
+import PostResume from '../../components/PostResume';
+import Recommendations from '../../components/Recommendations';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -21,16 +22,35 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<PostAndPostsRecommendations> = async ({
+export const getStaticProps = async ({
   params: { group, slug },
 }: {
   params: { group: Group; slug: string };
 }) => {
-  return { props: getPostAndPostsRecommendations({ slug, group, limit: 25 }) };
+  return { props: getPostAndPostsRecommendations({ slug, group }) };
 };
 
-const GroupSlug = (props: Props) => {
-  return <Post {...props} />;
+const GroupSlug = ({
+  post,
+  recommendations,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  if (!post) {
+    return <NotFound />;
+  }
+
+  return (
+    <>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
+      <Styled.h1>{post.title}</Styled.h1>
+      <Box sx={{ marginBottom: 5, marginTop: 4 }}>
+        <PostResume {...post} />
+      </Box>
+      <Markdown content={post.content} />
+      <Recommendations recommendations={recommendations} />
+    </>
+  );
 };
 
 export default GroupSlug;
