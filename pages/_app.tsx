@@ -17,6 +17,14 @@ const App = ({ Component, pageProps }: AppProps) => {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <meta property="og:url" content="https://arantespp.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Pedro Arantes blog" />
+        <meta
+          property="og:description"
+          content="I use this blog as a online note of the subjects I study about."
+        />
+        <meta property="og:image" content="/me.jpg" />
       </Head>
       <Layout>
         <Component {...pageProps} />

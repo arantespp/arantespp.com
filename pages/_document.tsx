@@ -7,14 +7,6 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link rel="icon" href="/favicon.ico" />
-          <meta property="og:url" content="https://arantespp.com" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Pedro Arantes blog" />
-          <meta
-            property="og:description"
-            content="I use this blog as a online note of the subjects I study about."
-          />
-          <meta property="og:image" content="/me.jpg" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
