@@ -1,4 +1,5 @@
 import { InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
 
 import { getFile, getRecommendations } from '../lib/files';
 
@@ -10,7 +11,26 @@ export const getStaticProps = async () => {
   return { props: { content, recommendations } };
 };
 const Index = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return <IndexPage {...props} />;
+  return (
+    <>
+      <Head>
+        <title>Pedro Arantes' Blog</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+        <meta property="og:url" content="https://arantespp.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Pedro Arantes blog" />
+        <meta
+          property="og:description"
+          content="I use this blog as a online note of the subjects I study about."
+        />
+        <meta property="og:image" content="/me.jpg" />
+      </Head>
+      <IndexPage {...props} />
+    </>
+  );
 };
 
 export default Index;

@@ -45,6 +45,7 @@ const GroupSlug = ({
     <>
       <Head>
         <title>{title}</title>
+        <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://arantespp.com${href}`} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={excerpt} />
