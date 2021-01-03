@@ -20,11 +20,11 @@ type PostMeta = {
   tags: string[];
   rating: number;
   backlinks: Array<{ title: string; href: string }>;
-  image?: {
+  image: {
     url: string;
     alt: string;
     caption: string;
-  };
+  } | null;
 };
 
 export type Post = PostMeta & {
@@ -102,7 +102,11 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       return undefined;
     }
 
-    const post = { ...requiredPostProperties, image };
+    /**
+     * All not required properties should have null if undefined to avoid this error:
+     * Reason: `undefined` cannot be serialized as JSON. Please use `null` or omit this value.
+     */
+    const post = { ...requiredPostProperties, image: image || null };
 
     return post;
   } catch {
