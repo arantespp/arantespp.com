@@ -15,10 +15,6 @@ const Index = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     <>
       <Head>
         <title>Pedro Arantes' Blog</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
         <meta property="og:url" content="https://arantespp.com" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Pedro Arantes blog" />

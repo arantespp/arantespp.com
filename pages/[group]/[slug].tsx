@@ -49,7 +49,12 @@ const GroupSlug = ({
         <meta property="og:url" content={`https://arantespp.com${href}`} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={excerpt} />
-        <meta property="og:image" content={image?.url} />
+        {image && (
+          <meta
+            property="og:image"
+            content={`https://arantespp.com${image.url}`}
+          />
+        )}
       </Head>
       <Styled.h1>{title}</Styled.h1>
       <Box
