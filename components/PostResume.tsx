@@ -22,24 +22,27 @@ const PostResume = ({ excerpt, group, date, tags }: Recommendation) => {
   return (
     <Box
       sx={{
-        borderBottomColor: 'muted',
-        borderBottomWidth: 1,
-        borderBottomStyle: 'solid',
-        color: 'gray',
-        paddingBottom: 3,
+        color: 'black',
+        paddingBottom: 2,
       }}
     >
       <Message variant="quote">{excerpt}</Message>
-      <Flex sx={{ flexWrap: 'wrap', marginY: 2 }}>
+      <Flex sx={{ flexWrap: 'wrap', marginY: 1 }}>
         {tags.map((tag) => (
-          <Tag key={tag} tag={tag} />
+          <Box key={tag} sx={{ paddingRight: 3 }}>
+            <Tag tag={tag} />
+          </Box>
         ))}
       </Flex>
       <Text sx={{ fontSize: 1 }}>
         <NextLink href={`/${group}`} passHref>
-          <Link sx={{ fontSize: 1, paddingRight: 2 }}>{pascalCase(group)}</Link>
+          <Link sx={{ fontSize: 1, paddingRight: 1, textDecoration: 'none' }}>
+            {pascalCase(group)}.
+          </Link>
         </NextLink>
-        <Text as="span">{getDate(date)}</Text>
+        <Text as="span" sx={{ color: 'gray' }}>
+          {getDate(date)}
+        </Text>
       </Text>
     </Box>
   );

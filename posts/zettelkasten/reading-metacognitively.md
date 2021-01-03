@@ -2,15 +2,14 @@
 title: Reading Metacognitively
 excerpt: You try every time to make connections with another subject.
 date: '2020-05-29'
+tags:
+  - learning
+  - reading
+  - reading-metacognitively
+rating: 2
 ---
 
 # Reading Metacognitively
-
-## Tags
-
-- tag-learning
-- tag-reading
-- tag-reading-metacognitively
 
 ## Notes
 
@@ -21,10 +20,6 @@ date: '2020-05-29'
   - "How can this can be applied to my life?"
 - You try every time to make connections with another subject.
 - Slows down your speed reading because you need more time to engage with the material.
-
-## Backlinks
-
-- [The Feynman Technique](./the-feynman-technique.md)
 
 ## References
 

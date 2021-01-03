@@ -1,11 +1,6 @@
-import { GetStaticProps, GetStaticPaths, InferGetStaticPropsType } from 'next';
+import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 
-import {
-  getGroups,
-  getIndex,
-  getRecommendations,
-  Group,
-} from '../../lib/files';
+import { getGroups, getFile, getRecommendations, Group } from '../../lib/files';
 
 import IndexPage from '../../components/IndexPage';
 
@@ -22,7 +17,7 @@ export const getStaticProps = async ({
 }: {
   params: { group: Group };
 }) => {
-  const content = getIndex(group) || '';
+  const content = getFile(`${group}/index.md`) || getFile(`${group}.md`) || '';
   const recommendations = getRecommendations({ group });
   return { props: { content, recommendations } };
 };

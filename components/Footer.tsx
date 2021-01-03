@@ -10,31 +10,33 @@ const Footer = () => {
       as="footer"
       sx={{
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        flexDirection: ['column', 'row'],
+        justifyContent: 'center',
+        alignItems: ['center', 'baseline'],
         padding: [3, 4],
-        backgroundColor: 'muted',
       }}
     >
       <NextLink href="/" passHref>
-        <Text sx={{ fontSize: [5], fontWeight: '500' }}>Pedro Arantes</Text>
+        <Text
+          sx={{
+            color: 'gray',
+            cursor: 'pointer',
+            fontSize: [3],
+            fontWeight: '500',
+            marginRight: [0, 2],
+          }}
+        >
+          Pedro Arantes 🌹
+        </Text>
       </NextLink>
-      <Flex
-        as="nav"
-        sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          marginTop: 3,
-        }}
-      >
+      <Flex>
         {socialMedias.map(({ name, href, faIcon }) => (
           <Link
             key={name}
             sx={{
-              color: 'black',
-              fontSize: 3,
-              marginX: [2, 3],
+              color: 'gray',
+              fontSize: 2,
+              marginX: [2],
             }}
             target="_blank"
             rel="noopener noreferrer"

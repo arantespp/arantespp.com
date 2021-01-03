@@ -2,16 +2,15 @@
 title: Organic vs Paid Social Media
 excerpt: 'Organic social media: Is the way you post your content and let the platform distribute it organically.'
 date: 2020-06-16
+tags:
+  - marketing
+  - organic-social-media
+  - paid-social-media
+  - social-media
+rating: 1
 ---
 
 # Organic vs Paid Social Media
-
-## Tags
-
-- tag-marketing
-- tag-organic-social-media
-- tag-paid-social-media
-- tag-social-media
 
 ## Notes
 

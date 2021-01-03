@@ -2,13 +2,12 @@
 title: Lightning Decision Jam
 excerpt: Replace all open and unstructured discussion with a clear solving problem process.
 date: 2020-08-10
+rating: 2
+tags:
+  - problem-solving
 ---
 
 # Lightning Decision Jam
-
-## Tags
-
-- tag-problem-solving
 
 ## Notes
 

@@ -1,15 +1,14 @@
 ---
 title: Facts Don't Change Our Minds
 excerpt: It's hard to change someone's mind because we're telling to him/her leaves some group and this causes fear of being alone about the new fact.
-date: '2020-06-01'
+date: 2020-06-01
+tags:
+  - human-connection
+  - mind
+rating: 1
 ---
 
 # Facts Don't Change Our Minds
-
-## Tags
-
-- tag-human-connection
-- tag-mind
 
 ## Notes
 

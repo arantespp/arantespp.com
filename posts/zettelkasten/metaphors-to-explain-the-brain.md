@@ -2,21 +2,20 @@
 title: Metaphors to Explain the Brain
 excerpt: In the 1940s, the current one, with the creation of the computers, the brain was said to operate as a computer - we save and process memories as computers does. This analogy is also called Information Processing (IP) metaphor.
 date: 2020-05-23
+tags:
+  - brain
+  - memory
+  - hydraulic-engineering
+  - humours
+  - telegraph
+  - computer
+  - thomas-hobbes
+  - hermann-von-helmholtz
+  - information-processing-metaphor
+rating: 2
 ---
 
 # Metaphors to Explain the Brain
-
-## Tags
-
-- tag-brain
-- tag-memory
-- tag-hydraulic-engineering
-- tag-humours
-- tag-telegraph
-- tag-computer
-- tag-thomas-hobbes
-- tag-hermann-von-helmholtz
-- tag-information-processing-metaphor
 
 ## Notes
 

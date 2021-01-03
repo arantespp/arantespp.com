@@ -5,9 +5,13 @@ date: 2021-01-02
 tags:
   - habits
 rating: 5
+image:
+  url: /images/drew-beamer-uejtDqpJ7ig-unsplash.jpg
+  alt: Photo by Drew Beamer on Unsplash
+  caption: Photo by <a href="https://unsplash.com/@drew_beamer?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Drew Beamer</a> on <a href="https://unsplash.com/s/photos/habits?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
 ---
 
-# FIve habits for the next five years
+# Fve habits for the next five years
 
 2020 was an atypical year for everyone, in particular related to motivation. At the beginning of the pandemics, I tried to achieve some goals, like reading or training more. After a few days, as you can imagine, I gave up on achieving those goals. But these dropouts didn't happen only in the last year, over the years I have a big list of projects that I start but couldn't finish.
 

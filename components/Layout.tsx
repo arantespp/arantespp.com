@@ -10,9 +10,12 @@ const Layout: React.FC = ({ children }) => {
       <Container
         as="main"
         sx={{
-          marginTop: [4, null, 5],
-          marginBottom: [5, null, 6],
-          paddingX: [3, 4],
+          marginTop: [5, null, 5],
+          marginBottom: [4],
+          /**
+           * To text doesn't touch the screen border.
+           */
+          paddingX: 3,
         }}
       >
         {children}

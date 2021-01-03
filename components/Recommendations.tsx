@@ -1,8 +1,7 @@
-import { pascalCase } from 'change-case';
 import NextLink from 'next/link';
 import { Flex, Link, Text } from 'theme-ui';
 
-import PostResume from './PostResume';
+import RecommendationCard from './RecommendationCard';
 
 import type { Recommendation } from '../lib/files';
 
@@ -21,32 +20,22 @@ const Recommendations = ({
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        marginTop: 4,
+        marginTop: 6,
         paddingTop: 4,
         borderTopColor: 'primary',
         borderTopWidth: 1,
         borderTopStyle: 'solid',
       }}
     >
-      <Text sx={{ fontSize: 5, fontWeight: 'bold' }}>More Posts</Text>
-      {recommendations.map((recommendation) => {
-        const { href, title } = recommendation;
-        return (
-          <Flex
-            key={title}
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              marginTop: 4,
-            }}
-          >
-            <NextLink as={href} href="/[group]/[slug]" passHref>
-              <Link sx={{ fontSize: 3, marginBottom: 2 }}>{title}</Link>
-            </NextLink>
-            <PostResume {...recommendation} />
-          </Flex>
-        );
-      })}
+      <Text sx={{ fontSize: 5, fontWeight: 'bold' }}>Recommended Posts</Text>
+      <NextLink href="/all-posts" passHref>
+        <Link sx={{ fontSize: 1, marginBottom: 2 }}>
+          Do you want to see all posts instead?
+        </Link>
+      </NextLink>
+      {recommendations.map((recommendation) => (
+        <RecommendationCard recommendation={recommendation} />
+      ))}
     </Flex>
   );
 };

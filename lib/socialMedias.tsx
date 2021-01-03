@@ -6,6 +6,7 @@ import {
   faTelegramPlane,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export const socialMedias: Array<{
   name: string;
@@ -16,6 +17,11 @@ export const socialMedias: Array<{
     name: 'Twitter',
     href: 'https://twitter.com/arantespp',
     faIcon: faTwitter,
+  },
+  {
+    name: 'Email',
+    href: 'mailto:arantespp@gmail.com',
+    faIcon: faEnvelope,
   },
   {
     name: 'Telegram',

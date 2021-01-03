@@ -1,15 +1,14 @@
 ---
 title: Zettelkasten
 excerpt: Zettelkasten is a method in which you write down your thoughts in notes, tag and connect them over time.
-date: '2020-05-21'
+date: 2020-05-21
+tags:
+  - learning
+  - zettelkasten
+rating: 3
 ---
 
 # Zettelkasten
-
-## Tags
-
-- tag-zettelkasten
-- tag-learning
 
 ## Notes
 

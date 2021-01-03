@@ -4,6 +4,7 @@ import NextLink from 'next/link';
 import { Link, Styled } from 'theme-ui';
 
 import Recommendations from '../../components/Recommendations';
+import Tag from '../../components/Tag';
 
 import { getAllTags, getRecommendations } from '../../lib/files';
 
@@ -37,6 +38,9 @@ const TagsIndex = ({
         <title>#{tag}</title>
       </Head>
       <Styled.h1>#{tag}</Styled.h1>
+      <Styled.p>
+        Recommended posts related to the tag <Tag tag={tag} /> are shown below.
+      </Styled.p>
       <NextLink href="/tags" passHref>
         <Link>See all tags</Link>
       </NextLink>

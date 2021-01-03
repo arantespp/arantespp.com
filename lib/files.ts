@@ -5,10 +5,9 @@ import { paramCase } from 'change-case';
 import * as dateFns from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
-import { connect } from 'http2';
 import path from 'path';
 
-import { Group } from './groups';
+import { Group, GROUPS } from './groups';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -21,6 +20,11 @@ type PostMeta = {
   tags: string[];
   rating: number;
   backlinks: Array<{ title: string; href: string }>;
+  image?: {
+    url: string;
+    alt: string;
+    caption: string;
+  };
 };
 
 export type Post = PostMeta & {
@@ -32,12 +36,12 @@ export type Post = PostMeta & {
 
 export type PostWithoutContent = Omit<Post, 'content'>;
 
-const LIMIT = 15;
+const LIMIT = 10;
 
 /**
  * Only groups that have posts.
  */
-export const getGroups = (): Group[] => ['blog', 'zettelkasten'];
+export const getGroups = () => GROUPS;
 
 type GetPartialPostProps = {
   group: Group;
@@ -57,7 +61,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
 
     const { data, content } = matter(fileContents);
 
-    const { title, excerpt, date, rating, tags } = data as PostMeta;
+    const { title, excerpt, date, rating, tags, image } = data as PostMeta;
 
     const getDate = () => {
       /**
@@ -75,7 +79,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
         .map((tag) => paramCase(tag))
         .sort((tagA, tagB) => tagA.localeCompare(tagB));
 
-    const post = {
+    const requiredPostProperties = {
       title,
       excerpt,
       date: getDate(),
@@ -91,10 +95,14 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
      * Return null if some value of the post is null or undefined.
      */
     if (
-      Object.values(post).some((value) => value == null || value == undefined)
+      Object.values(requiredPostProperties).some(
+        (value) => value == null || value == undefined
+      )
     ) {
       return undefined;
     }
+
+    const post = { ...requiredPostProperties, image };
 
     return post;
   } catch {
@@ -135,7 +143,7 @@ const getPostsByGroup = (group: Group) => {
   }
 };
 
-const allPosts = getGroups()
+export const allPosts = getGroups()
   .reduce((acc, group) => [...acc, getPostsByGroup(group)], [])
   .flat();
 
@@ -150,9 +158,6 @@ const getPost = (props: GetPartialPostProps): Post | undefined => {
     .filter(({ content }) => content.includes(partialPost.href))
     .map(({ title, href }) => ({ title, href }));
 
-  /**
-   * If backlinks exist, add them to content.
-   */
   const newContent = (() => {
     const { content } = partialPost;
 
@@ -160,19 +165,26 @@ const getPost = (props: GetPartialPostProps): Post | undefined => {
       return content;
     }
 
+    /**
+     * If backlinks exist, add them to content.
+     */
     return [
       partialPost.content,
       '### Backlinks',
       ...backlinks.map(({ href, title }) => `- [${title}](${href})`),
     ].join('\n');
-  })();
+  })()
+    /**
+     * Highlight excerpt.
+     */
+    .replace(partialPost.excerpt, `\`${partialPost.excerpt}\``);
 
   return { ...partialPost, content: newContent, backlinks };
 };
 
-export const getIndex = (group: Group | '.') => {
+export const getFile = (filePath: string) => {
   try {
-    const fullPath = path.join(postsDirectory, group, `index.md`);
+    const fullPath = path.join(postsDirectory, filePath);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { content } = matter(fileContents);
     return content;
@@ -182,44 +194,47 @@ export const getIndex = (group: Group | '.') => {
 };
 
 type GetPostsProps = {
+  all?: boolean;
   group?: Group;
   tags?: string[];
 };
 
 /**
- * Get posts. Filter by "group" and "tags".
+ * Get posts. Con be filtered by "group" and "tags".
  *
+ * @param param.all return all posts. It ignores "group" and "tags" params.
  * @param param.group return posts that belong to a group.
  * @param param.tags return posts that have tags.
  */
-export const getPosts = ({ group, tags }: GetPostsProps = {}) => {
-  const groupPosts = group ? getPostsByGroup(group) : [];
+export const getPosts = ({ all, group, tags }: GetPostsProps = {}) => {
+  const getGroupAndTagsPosts = () => {
+    const groupPosts = group ? getPostsByGroup(group) : [];
 
-  const tagsPosts = tags
-    ? allPosts
+    const tagsPosts = tags
+      ? allPosts
+          /**
+           * Return only posts that contain the tags.
+           */
+          .filter((post) =>
+            tags.reduce((acc, tag) => acc || post.tags.includes(tag), false)
+          )
+      : [];
+
+    return (
+      [...tagsPosts, ...groupPosts]
         /**
-         * Return only posts that contain the tags.
+         * Remove duplicated posts that may come from group and tags posts.
+         * https://stackoverflow.com/a/56757215/8786986
          */
-        .filter((post) =>
-          tags.reduce((acc, tag) => acc || post.tags.includes(tag), false)
+        .filter(
+          (post, index, arr) =>
+            arr.findIndex(({ href }) => href === post.href) === index
         )
-    : [];
-
-  const groupAndTagsPosts = [...tagsPosts, ...groupPosts]
-    /**
-     * Remove duplicated posts that may come from group and tags posts.
-     * https://stackoverflow.com/a/56757215/8786986
-     */
-    .filter(
-      (post, index, arr) =>
-        arr.findIndex(({ href }) => href === post.href) === index
     );
+  };
 
-  /**
-   * If group and tags posts have no posts, all posts are returned instead.
-   */
   return (
-    (groupAndTagsPosts.length === 0 ? allPosts : groupAndTagsPosts)
+    (all ? allPosts : getGroupAndTagsPosts())
       .sort((postA, postB) => postB.date.localeCompare(postA.date))
       .sort((postA, postB) => postB.rating - postA.rating)
       /**
@@ -230,7 +245,7 @@ export const getPosts = ({ group, tags }: GetPostsProps = {}) => {
 };
 
 export const getAllTags = () => {
-  return getPosts()
+  return getPosts({ all: true })
     .flatMap(({ tags }) => tags)
     .filter((tag, index, arr) => arr.indexOf(tag) === index)
     .sort((tagA, tagB) => tagA.localeCompare(tagB));

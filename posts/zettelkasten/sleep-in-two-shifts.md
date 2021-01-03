@@ -2,19 +2,18 @@
 title: Sleep in Two Shifts
 excerpt: A notable advantage of first and second sleep is that it provides two periods of increased activity, creativity, and alertness across the day, rather than one long period of activity in which sleepiness builds up across the day and the productivity wanes.
 date: 2020-05-26
+tags:
+  - anxiety
+  - bimodal-sleep
+  - healthy
+  - insomnia
+  - sleep
+  - sleep-two-shifts
+  - two-phase-sleep
+rating: 2
 ---
 
 # Sleep in Two Shifts
-
-## Tags
-
-- tag-anxiety
-- tag-bimodal-sleep
-- tag-healthy
-- tag-insomnia
-- tag-sleep
-- tag-sleep-two-shifts
-- tag-two-phase-sleep
 
 ## Notes
 

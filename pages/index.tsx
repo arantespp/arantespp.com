@@ -1,12 +1,12 @@
 import { InferGetStaticPropsType } from 'next';
 
-import { getIndex, getRecommendations } from '../lib/files';
+import { getFile, getRecommendations } from '../lib/files';
 
 import IndexPage from '../components/IndexPage';
 
 export const getStaticProps = async () => {
-  const content = getIndex('.');
-  const recommendations = getRecommendations();
+  const content = getFile('index.md');
+  const recommendations = getRecommendations({ all: true });
   return { props: { content, recommendations } };
 };
 const Index = (props: InferGetStaticPropsType<typeof getStaticProps>) => {

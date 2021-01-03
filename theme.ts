@@ -32,7 +32,7 @@ export const getTheme = () => {
       secondary: palette.celadonBlue,
       accent: palette.imperialRed,
       highlight: palette.honeydew,
-      muted: '#f6f6f6',
+      muted: 'hsla(0, 0%, 0%, 0.2)',
     },
     space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
     sizes: {
@@ -43,7 +43,7 @@ export const getTheme = () => {
         color: 'secondary',
         fontFamily: 'heading',
         fontSize: 1,
-        paddingRight: 3,
+        textDecoration: 'none',
       },
     },
     messages: {
@@ -51,6 +51,7 @@ export const getTheme = () => {
         fontSize: [2],
         fontStyle: 'italic',
         padding: 2,
+        paddingLeft: 3,
       },
     },
     styles: {
@@ -74,6 +75,12 @@ export const getTheme = () => {
       },
       ul: {
         ml: 4,
+      },
+    },
+    text: {
+      highlighted: {
+        backgroundColor: 'highlight',
+        fontStyle: 'italic',
       },
     },
   };

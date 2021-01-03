@@ -1,9 +1,10 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import { Box, Styled } from 'theme-ui';
+import Image from 'next/image';
+import { Box, Styled, Text } from 'theme-ui';
 
 import {
-  getPosts,
+  allPosts,
   getPostAndPostsRecommendations,
   Group,
 } from '../../lib/files';
@@ -15,7 +16,7 @@ import Recommendations from '../../components/Recommendations';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: getPosts().map(({ group, slug }) => ({
+    paths: allPosts.map(({ group, slug }) => ({
       params: { group, slug },
     })),
     fallback: false,
@@ -38,15 +39,42 @@ const GroupSlug = ({
     return <NotFound />;
   }
 
+  const { excerpt, image, href, title } = post;
+
   return (
     <>
       <Head>
-        <title>{post.title}</title>
+        <title>{title}</title>
+        <meta property="og:url" content={`https://arantespp.com${href}`} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={excerpt} />
+        <meta property="og:image" content={image?.url} />
       </Head>
-      <Styled.h1>{post.title}</Styled.h1>
-      <Box sx={{ marginBottom: 4, paddingBottom: 3 }}>
+      <Styled.h1>{title}</Styled.h1>
+      <Box
+        sx={{
+          marginBottom: 4,
+          borderWidth: 1,
+          borderColor: 'muted',
+          borderBottomStyle: 'solid',
+        }}
+      >
         <PostResume {...post} />
       </Box>
+      {image && (
+        <Box sx={{ marginBottom: 4 }}>
+          <Image src={image.url} alt={image.alt} width={1000} height={500} />
+          <Text
+            as="span"
+            sx={{
+              fontSize: 1,
+              fontStyle: 'italic',
+              color: 'gray',
+            }}
+            dangerouslySetInnerHTML={{ __html: image.caption }}
+          />
+        </Box>
+      )}
       <Markdown content={post.content} />
       <Recommendations recommendations={recommendations} />
     </>
