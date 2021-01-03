@@ -52,6 +52,12 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
   paragraph: Styled.p,
   strong: Styled.strong,
   listItem: Styled.li,
+  list: ({ ordered, ...props }) => {
+    if (ordered) {
+      return <Styled.ol {...props} />;
+    }
+    return <Styled.ul {...props} />;
+  },
 });
 
 const Markdown = ({ content, noH1 }: { content: string; noH1?: boolean }) => {

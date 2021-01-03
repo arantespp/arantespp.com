@@ -11,6 +11,10 @@ const Recommendations = ({
 }: {
   recommendations: Recommendation[];
 }) => {
+  if (recommendations.length === 0) {
+    return null;
+  }
+
   return (
     <Flex
       as="section"

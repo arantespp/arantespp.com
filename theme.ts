@@ -57,11 +57,23 @@ export const getTheme = () => {
       h1: {
         marginY: 4,
       },
+      h2: {
+        marginY: 4,
+      },
+      h3: {
+        marginY: 4,
+      },
       a: {
         color: 'secondary',
       },
       strong: {
         color: 'accent',
+      },
+      ol: {
+        ml: 4,
+      },
+      ul: {
+        ml: 4,
       },
     },
   };

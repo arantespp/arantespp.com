@@ -44,7 +44,7 @@ const GroupSlug = ({
         <title>{post.title}</title>
       </Head>
       <Styled.h1>{post.title}</Styled.h1>
-      <Box sx={{ marginBottom: 5, marginTop: 4 }}>
+      <Box sx={{ marginBottom: 4, paddingBottom: 3 }}>
         <PostResume {...post} />
       </Box>
       <Markdown content={post.content} />
