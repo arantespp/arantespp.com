@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NextLink from 'next/link';
 import { Flex, Link, Text } from 'theme-ui';
 
+import PedroArantes from '../components/PedroArantes';
+
 import { socialMedias } from '../lib/socialMedias';
 
 const Footer = () => {
@@ -17,7 +19,7 @@ const Footer = () => {
       }}
     >
       <NextLink href="/" passHref>
-        <Text
+        <PedroArantes
           sx={{
             color: 'gray',
             cursor: 'pointer',
@@ -25,9 +27,7 @@ const Footer = () => {
             fontWeight: '500',
             marginRight: [0, 2],
           }}
-        >
-          Pedro Arantes 🌹
-        </Text>
+        />
       </NextLink>
       <Flex>
         {socialMedias.map(({ name, href, faIcon }) => (
