@@ -1,7 +1,4 @@
-// import Image from 'next/image';
 import NextLink from 'next/link';
-import { useRouter } from 'next/router';
-import path from 'path';
 import ReactMarkdown from 'react-markdown';
 import { Flex, Image, Link, Styled, Text } from 'theme-ui';
 
@@ -32,12 +29,9 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
     return <ResolvedComponent hidden={hiddenH1}>{children}</ResolvedComponent>;
   },
   link: ({ children, href }: { children: React.ReactNode; href: string }) => {
-    const { asPath, pathname } = useRouter();
-
-    if (href.startsWith('.')) {
-      const newPath = path.join(asPath, '..', href).replace(/\.md$/, '');
+    if (href.startsWith('/')) {
       return (
-        <NextLink as={newPath} href={pathname} passHref>
+        <NextLink href={href} passHref>
           <Link>{children}</Link>
         </NextLink>
       );

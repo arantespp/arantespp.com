@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
 
-import { Box, Styled, Text } from 'theme-ui';
+import { Box, Link, Styled, Text } from 'theme-ui';
 
 import { socialMedias } from '../lib/socialMedias';
 
@@ -21,14 +21,14 @@ const Contact = () => {
           {socialMedias.map(({ href, name, faIcon }) => {
             return (
               <Styled.li key={name}>
-                <Styled.a href={href} target="_blank" rel="noopener noreferrer">
+                <Link href={href} target="_blank" rel="noopener noreferrer">
                   <Text as="span" sx={{ fontSize: 3, marginX: 2 }}>
                     <FontAwesomeIcon icon={faIcon} />
                   </Text>
                   <Text as="span" sx={{ marginLeft: 1 }}>
                     {href}
                   </Text>
-                </Styled.a>
+                </Link>
               </Styled.li>
             );
           })}
