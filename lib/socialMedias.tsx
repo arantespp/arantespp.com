@@ -1,4 +1,5 @@
 import {
+  faDev,
   faFacebookSquare,
   faGithub,
   faInstagram,
@@ -47,5 +48,10 @@ export const socialMedias: Array<{
     name: 'GitHub',
     href: 'https://github.com/arantespp',
     faIcon: faGithub,
+  },
+  {
+    name: 'Dev.to',
+    href: 'https://dev.to/arantespp',
+    faIcon: faDev,
   },
 ];

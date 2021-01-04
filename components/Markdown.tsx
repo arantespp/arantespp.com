@@ -1,9 +1,9 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import path from 'path';
 import ReactMarkdown from 'react-markdown';
-import { Box, Link, Styled, Text } from 'theme-ui';
+import { Flex, Image, Link, Styled, Text } from 'theme-ui';
 
 /**
  * https://github.com/rexxars/react-markdown/tree/c63dccb8185869cfc73c257d098a123ef7a7cd33#node-types
@@ -62,8 +62,30 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
   inlineCode: ({ ...props }) => {
     return <Text as="span" variant="highlighted" {...props} />;
   },
-  image: ({ src, alt }) => {
-    return <Image src={src} alt={alt} width={1000} height={500} />;
+  image: ({ src, alt, title }) => {
+    return (
+      <Flex
+        as="span"
+        sx={{
+          flexDirection: 'column',
+          width: '100%',
+          alignItems: 'center',
+        }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          title={title}
+          sx={{ maxHeight: [300, 400], objectFit: 'contain' }}
+        />
+        <Text
+          as="span"
+          sx={{ fontSize: 1, fontStyle: 'italic', textAlign: 'center' }}
+        >
+          {title}
+        </Text>
+      </Flex>
+    );
   },
 });
 

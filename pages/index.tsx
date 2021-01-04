@@ -11,22 +11,7 @@ export const getStaticProps = async () => {
   return { props: { content, recommendations } };
 };
 const Index = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return (
-    <>
-      <Head>
-        <title>Pedro Arantes' Blog</title>
-        <meta property="og:url" content="https://arantespp.com" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Pedro Arantes blog" />
-        <meta
-          property="og:description"
-          content="I use this blog as a online note of the subjects I study about."
-        />
-        <meta property="og:image" content="/me.jpg" />
-      </Head>
-      <IndexPage {...props} />
-    </>
-  );
+  return <IndexPage {...props} />;
 };
 
 export default Index;

@@ -34,7 +34,10 @@ const Recommendations = ({
         </Link>
       </NextLink>
       {recommendations.map((recommendation) => (
-        <RecommendationCard recommendation={recommendation} />
+        <RecommendationCard
+          key={recommendation.href}
+          recommendation={recommendation}
+        />
       ))}
     </Flex>
   );

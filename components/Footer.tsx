@@ -12,9 +12,9 @@ const Footer = () => {
       as="footer"
       sx={{
         display: 'flex',
-        flexDirection: ['column', 'row'],
+        flexDirection: ['column'],
+        alignItems: 'center',
         justifyContent: 'center',
-        alignItems: ['center', 'baseline'],
         padding: [3, 4],
       }}
     >
@@ -29,13 +29,13 @@ const Footer = () => {
           }}
         />
       </NextLink>
-      <Flex>
+      <Flex sx={{ flexWrap: 'wrap', justifyContent: 'center', marginTop: 2 }}>
         {socialMedias.map(({ name, href, faIcon }) => (
           <Link
             key={name}
             sx={{
               color: 'gray',
-              fontSize: 2,
+              fontSize: 3,
               marginX: [2],
             }}
             target="_blank"
