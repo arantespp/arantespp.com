@@ -15,7 +15,7 @@ const PostResume = ({
   return (
     <Box
       sx={{
-        color: 'black',
+        color: 'gray',
         paddingBottom: 2,
       }}
     >
@@ -30,7 +30,7 @@ const PostResume = ({
       <Text sx={{ fontSize: 1 }}>
         <NextLink href={`/${group}`} passHref>
           <Link sx={{ fontSize: 1, paddingRight: 1, textDecoration: 'none' }}>
-            {pascalCase(group)}.
+            {pascalCase(group)},
           </Link>
         </NextLink>
         <Text as="span" sx={{ color: 'gray' }}>

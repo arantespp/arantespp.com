@@ -1,10 +1,12 @@
-import { Box, Styled } from 'theme-ui';
+import { Flex, Text } from 'theme-ui';
 
 const NotFound = () => {
   return (
-    <Box sx={{ margin: 4 }}>
-      <Styled.h2 sx={{ textAlign: 'center' }}>Page Not Found ;(</Styled.h2>
-    </Box>
+    <Flex sx={{ justifyContent: 'center', margin: 4 }}>
+      <Text sx={{ fontSize: 5, fontWeight: 'bold' }}>
+        Ops, page not found 😢😢
+      </Text>
+    </Flex>
   );
 };
 

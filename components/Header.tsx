@@ -30,7 +30,7 @@ const Header = () => {
           }}
         />
       </NextLink>
-      <Flex sx={{ display: 'flex', flexDirection: ['column', null, 'row'] }}>
+      <Flex sx={{ display: 'flex', flexDirection: ['row', null, 'row'] }}>
         {GROUPS.map((group) => (
           <NextLink key={group} href={`/${group}`}>
             <Link

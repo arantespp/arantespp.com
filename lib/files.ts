@@ -37,7 +37,7 @@ export type Post = PostMeta & {
 
 export type PostWithoutContent = Omit<Post, 'content'>;
 
-const LIMIT = 10;
+const LIMIT = 7;
 
 /**
  * Only groups that have posts.

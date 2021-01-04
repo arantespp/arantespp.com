@@ -33,6 +33,9 @@ const partialTheme: any = {
     highlight: palette.honeydew,
     muted: 'hsla(0, 0%, 0%, 0.2)',
   },
+  fonts: {
+    monospace: "'Overpass Mono', monospace",
+  },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes: {
     container: '44em',
@@ -74,6 +77,11 @@ const partialTheme: any = {
     },
     ul: {
       ml: 4,
+    },
+    pre: {
+      fontFamily: 'monospace',
+      fontSize: 1,
+      overflowX: 'auto',
     },
   },
   text: {
