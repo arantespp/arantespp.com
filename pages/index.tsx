@@ -1,5 +1,4 @@
 import { InferGetStaticPropsType } from 'next';
-import Head from 'next/head';
 
 import { getFile, getRecommendations } from '../lib/files';
 

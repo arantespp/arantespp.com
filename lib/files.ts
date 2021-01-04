@@ -17,6 +17,7 @@ type PostMeta = {
   title: string;
   excerpt: string;
   date: string;
+  formattedDate: string;
   tags: string[];
   rating: number;
   backlinks: Array<{ title: string; href: string }>;
@@ -71,7 +72,13 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       const dtDateOnly = new Date(
         dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000
       );
-      return dateFns.format(dtDateOnly, 'yyyy-MM-dd');
+      return {
+        date: dateFns.format(dtDateOnly, 'yyyy-MM-dd'),
+        /**
+         * Added formattedDate to don't need to use date-fns in the App.
+         */
+        formattedDate: dateFns.format(dtDateOnly, 'MMMM dd, yyyy'),
+      };
     };
 
     const getTags = () =>
@@ -82,7 +89,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
     const requiredPostProperties = {
       title,
       excerpt,
-      date: getDate(),
+      ...getDate(),
       href,
       group,
       slug,

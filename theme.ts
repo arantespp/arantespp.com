@@ -2,88 +2,86 @@ import { toTheme } from '@theme-ui/typography';
 import { merge } from 'theme-ui';
 import themeFairyGates from 'typography-theme-fairy-gates';
 
-export const getTheme = () => {
-  /**
-   * https://kyleamathews.github.io/typography.js/
-   */
-  const typography = toTheme({
-    ...themeFairyGates,
-    baseFontSize: '18px',
-  });
+/**
+ * https://kyleamathews.github.io/typography.js/
+ */
+const typography = toTheme({
+  ...themeFairyGates,
+  baseFontSize: '18px',
+});
 
-  /**
-   * https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
-   */
-  const palette = {
-    imperialRed: '#e63946',
-    honeydew: '#f1faee',
-    powderBlue: '#a8dadc',
-    celadonBlue: '#457b9d',
-    prussianBlue: '#1d3557',
-  };
-
-  const theme: any = {
-    borderWidths: [0, 2, 6],
-    colors: {
-      text: 'hsla(0, 0%, 0%, 1)',
-      gray: 'hsla(0, 0%, 0%, 0.8)',
-      background: '#fff',
-      primary: palette.prussianBlue,
-      secondary: palette.celadonBlue,
-      accent: palette.imperialRed,
-      highlight: palette.honeydew,
-      muted: 'hsla(0, 0%, 0%, 0.2)',
-    },
-    space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-    sizes: {
-      container: '44em',
-    },
-    links: {
-      tag: {
-        color: 'secondary',
-        fontFamily: 'heading',
-        fontSize: 1,
-        textDecoration: 'none',
-      },
-    },
-    messages: {
-      quote: {
-        fontSize: [2],
-        fontStyle: 'italic',
-        padding: 2,
-        paddingLeft: 3,
-      },
-    },
-    styles: {
-      h1: {
-        marginY: 4,
-      },
-      h2: {
-        marginY: 4,
-      },
-      h3: {
-        marginY: 4,
-      },
-      a: {
-        color: 'secondary',
-      },
-      strong: {
-        color: 'accent',
-      },
-      ol: {
-        ml: 4,
-      },
-      ul: {
-        ml: 4,
-      },
-    },
-    text: {
-      highlighted: {
-        backgroundColor: 'highlight',
-        fontStyle: 'italic',
-      },
-    },
-  };
-
-  return merge(typography, theme);
+/**
+ * https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
+ */
+const palette = {
+  imperialRed: '#e63946',
+  honeydew: '#f1faee',
+  powderBlue: '#a8dadc',
+  celadonBlue: '#457b9d',
+  prussianBlue: '#1d3557',
 };
+
+const partialTheme: any = {
+  borderWidths: [0, 2, 6],
+  colors: {
+    text: 'hsla(0, 0%, 0%, 1)',
+    gray: 'hsla(0, 0%, 0%, 0.8)',
+    background: '#fff',
+    primary: palette.prussianBlue,
+    secondary: palette.celadonBlue,
+    accent: palette.imperialRed,
+    highlight: palette.honeydew,
+    muted: 'hsla(0, 0%, 0%, 0.2)',
+  },
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  sizes: {
+    container: '44em',
+  },
+  links: {
+    tag: {
+      color: 'secondary',
+      fontFamily: 'heading',
+      fontSize: 1,
+      textDecoration: 'none',
+    },
+  },
+  messages: {
+    quote: {
+      fontSize: [2],
+      fontStyle: 'italic',
+      padding: 2,
+      paddingLeft: 3,
+    },
+  },
+  styles: {
+    h1: {
+      marginY: 4,
+    },
+    h2: {
+      marginY: 4,
+    },
+    h3: {
+      marginY: 4,
+    },
+    a: {
+      color: 'secondary',
+    },
+    strong: {
+      color: 'accent',
+    },
+    ol: {
+      ml: 4,
+    },
+    ul: {
+      ml: 4,
+    },
+  },
+  text: {
+    highlighted: {
+      backgroundColor: 'highlight',
+      fontStyle: 'italic',
+    },
+  },
+};
+
+export const theme = merge(typography, partialTheme);

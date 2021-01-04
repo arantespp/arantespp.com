@@ -1,5 +1,4 @@
 import { pascalCase } from 'change-case';
-import * as dateFns from 'date-fns';
 import NextLink from 'next/link';
 import { Box, Flex, Link, Message, Text } from 'theme-ui';
 
@@ -7,18 +6,12 @@ import type { Recommendation } from '../lib/files';
 
 import Tag from './Tag';
 
-const getDate = (date: string) => {
-  /**
-   * https://stackoverflow.com/a/52352512/8786986
-   */
-  const dt = new Date(date);
-  const dtDateOnly = new Date(
-    dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000
-  );
-  return dateFns.format(dtDateOnly, 'MMMM dd, yyyy');
-};
-
-const PostResume = ({ excerpt, group, date, tags }: Recommendation) => {
+const PostResume = ({
+  excerpt,
+  group,
+  formattedDate,
+  tags,
+}: Recommendation) => {
   return (
     <Box
       sx={{
@@ -41,7 +34,7 @@ const PostResume = ({ excerpt, group, date, tags }: Recommendation) => {
           </Link>
         </NextLink>
         <Text as="span" sx={{ color: 'gray' }}>
-          {getDate(date)}
+          {formattedDate}
         </Text>
       </Text>
     </Box>

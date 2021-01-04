@@ -1,7 +1,7 @@
 import { Recommendation } from '../lib/files';
 
-import Markdown from '../components/Markdown';
-import Recommendations from '../components/Recommendations';
+import Markdown from './Markdown';
+import Recommendations from './Recommendations';
 
 const IndexPage = ({
   content,
