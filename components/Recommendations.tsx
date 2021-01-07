@@ -20,16 +20,29 @@ const Recommendations = ({
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        marginTop: 6,
         paddingTop: 4,
         borderTopColor: 'primary',
         borderTopWidth: 1,
         borderTopStyle: 'solid',
       }}
     >
-      <Text sx={{ fontSize: 5, fontWeight: 'bold' }}>Recommended Posts</Text>
+      <Text
+        sx={{
+          fontSize: 5,
+          fontWeight: 'bold',
+          textAlign: 'center',
+        }}
+      >
+        Recommended Posts
+      </Text>
       <NextLink href="/all-posts" passHref>
-        <Link sx={{ fontSize: 1, marginBottom: 2 }}>
+        <Link
+          sx={{
+            fontSize: 1,
+            marginBottom: 3,
+            textAlign: 'center',
+          }}
+        >
           Do you want to see all posts instead?
         </Link>
       </NextLink>

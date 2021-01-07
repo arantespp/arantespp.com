@@ -1,7 +1,7 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import { Box, Styled, Text } from 'theme-ui';
+import NextImage from 'next/image';
+import { Box, Flex, Image, Styled, Text } from 'theme-ui';
 
 import {
   allPosts,
@@ -69,7 +69,20 @@ const GroupSlug = ({
       </Box>
       {image && (
         <Box sx={{ marginBottom: 4 }}>
-          <Image src={image.url} alt={image.alt} width={1000} height={500} />
+          <Box
+            sx={{
+              position: 'relative',
+              width: '100%',
+              height: [300, 400, 500],
+            }}
+          >
+            <NextImage
+              src={image.url}
+              alt={image.alt}
+              layout="fill"
+              objectFit="cover"
+            />
+          </Box>
           <Text
             as="span"
             sx={{
@@ -82,6 +95,9 @@ const GroupSlug = ({
         </Box>
       )}
       <Markdown content={post.content} />
+      <Flex sx={{ justifyContent: 'center', marginTop: 5, marginBottom: 5 }}>
+        <Image sx={{ height: '1.5em', marginLeft: 1 }} src="/rose.png" />
+      </Flex>
       <Recommendations recommendations={recommendations} />
     </>
   );

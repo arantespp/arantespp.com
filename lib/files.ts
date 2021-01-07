@@ -166,7 +166,7 @@ const getPost = (props: GetPartialPostProps): Post | undefined => {
   }
 
   const backlinks = allPosts
-    .filter(({ content }) => content.includes(partialPost.href))
+    .filter(({ content }) => content.includes(`(${partialPost.href})`))
     .map(({ title, href }) => ({ title, href }));
 
   const newContent = (() => {
@@ -181,7 +181,7 @@ const getPost = (props: GetPartialPostProps): Post | undefined => {
      */
     return [
       partialPost.content,
-      '### Backlinks',
+      '## Backlinks',
       ...backlinks.map(({ href, title }) => `- [${title}](${href})`),
     ].join('\n');
   })()

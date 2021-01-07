@@ -1,3 +1,5 @@
+import { Box } from 'theme-ui';
+
 import { Recommendation } from '../lib/files';
 
 import Markdown from './Markdown';
@@ -12,7 +14,11 @@ const IndexPage = ({
 }) => {
   return (
     <>
-      {content && <Markdown content={content} noH1={false} />}
+      {content && (
+        <Box sx={{ marginBottom: 5 }}>
+          <Markdown content={content} noH1={false} />
+        </Box>
+      )}
       <Recommendations recommendations={recommendations} />
     </>
   );

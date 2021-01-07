@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown, { Renderer } from 'react-markdown';
 import { Flex, Image, Link, Styled, Text } from 'theme-ui';
 
 /**
@@ -79,6 +79,18 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
           {title}
         </Text>
       </Flex>
+    );
+  },
+  html: ({ value }: { value: string }) => {
+    const justifyContent = value.includes('class="twitter-tweet"')
+      ? 'center'
+      : 'flex-start';
+
+    return (
+      <Flex
+        sx={{ justifyContent }}
+        dangerouslySetInnerHTML={{ __html: value }}
+      />
     );
   },
 });

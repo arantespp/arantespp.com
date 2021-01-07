@@ -11,7 +11,7 @@ const Layout: React.FC = ({ children }) => {
         as="main"
         sx={{
           marginTop: [5, null, 5],
-          marginBottom: [4],
+          marginBottom: [6],
           /**
            * To text doesn't touch the screen border.
            */

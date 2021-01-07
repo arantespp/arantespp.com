@@ -17,7 +17,7 @@ const Header = () => {
         alignItems: 'center',
         padding: [3, null, 4],
         borderWidth: 1,
-        borderColor: 'muted',
+        borderColor: 'primary',
         borderBottomStyle: 'solid',
       }}
     >

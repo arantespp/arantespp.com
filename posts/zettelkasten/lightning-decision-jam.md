@@ -44,11 +44,11 @@ tags:
      - They can vote on their own posts.
      - They can put two votes on the same post.
      - After voting, the moderator arrange the posts ir order of priority.
-  4. Reframe/rewrite the problems as standardised challenges.
+  4. Reframe/rewrite the problems as standardized challenges.
      - 6 minutes.
-     - Reformat problems to standardised "How might we...".
-     - Focus only on the prioritised problems (most voted).
-     - Rewrite in a way that makes the problem solvable and standardised.
+     - Reformat problems to standardized "How might we...".
+     - Focus only on the prioritized problems (most voted).
+     - Rewrite in a way that makes the problem solvable and standardized.
        - For instance, instead "I have to idea whats going on project X", rewrite as "How might we make sure everyone stays in the loop with all running projects".
   5. Produce solutions.
      - The top-left-most voted problem is chosen.
@@ -61,7 +61,7 @@ tags:
      - 10 minutes.
      - The moderator gives six green voting dots to each team member.
      - Each member votes on the solutions they think would best solve the problem.
-  7. Prioritise solutions
+  7. Prioritize solutions
      - 30 seconds.
      - The team arrange the solutions list.
      - Ignore the solutions with the less than two votes.

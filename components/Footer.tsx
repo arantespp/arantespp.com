@@ -15,13 +15,14 @@ const Footer = () => {
         flexDirection: ['column'],
         alignItems: 'center',
         justifyContent: 'center',
-        padding: [3, 4],
+        padding: [3, 3],
+        backgroundColor: 'primary',
       }}
     >
       <NextLink href="/" passHref>
         <PedroArantes
           sx={{
-            color: 'gray',
+            color: 'white',
             cursor: 'pointer',
             fontSize: [3],
             fontWeight: '500',
@@ -34,7 +35,7 @@ const Footer = () => {
           <Link
             key={name}
             sx={{
-              color: 'gray',
+              color: 'white',
               fontSize: 3,
               marginX: [2],
             }}

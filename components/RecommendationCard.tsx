@@ -18,7 +18,7 @@ const RecommendationCard = ({
         display: 'flex',
         flexDirection: 'column',
         marginTop: 4,
-        marginBottom: 2,
+        marginBottom: 3,
       }}
     >
       <NextLink as={href} href="/[group]/[slug]" passHref>
