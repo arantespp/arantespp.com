@@ -40,7 +40,7 @@ export type PostWithoutContent = Omit<Post, 'content'>;
 const LIMIT = 7;
 
 /**
- * Only groups that have posts.
+ * Only groups that are written in md files.
  */
 export const getGroups = () => GROUPS;
 

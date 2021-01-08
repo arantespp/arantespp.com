@@ -24,7 +24,7 @@ const palette = {
 const partialTheme: any = {
   borderWidths: [0, 1, 4],
   colors: {
-    text: 'hsla(0, 0%, 0%, 1)',
+    text: 'hsla(0, 0%, 0%, 0.9)',
     gray: 'hsla(0, 0%, 0%, 0.8)',
     background: '#fff',
     primary: palette.prussianBlue,
