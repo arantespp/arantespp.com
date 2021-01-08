@@ -4,6 +4,8 @@ import {
   faGithub,
   faInstagram,
   faLinkedinIn,
+  faReddit,
+  faStackOverflow,
   faTelegramPlane,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
@@ -53,5 +55,15 @@ export const socialMedias: Array<{
     name: 'Dev.to',
     href: 'https://dev.to/arantespp',
     faIcon: faDev,
+  },
+  {
+    name: 'StackOverflow',
+    href: 'https://stackoverflow.com/users/8786986/pedro-arantes',
+    faIcon: faStackOverflow,
+  },
+  {
+    name: 'Reddit',
+    href: 'https://www.reddit.com/user/arantespp',
+    faIcon: faReddit,
   },
 ];

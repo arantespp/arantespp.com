@@ -13,7 +13,7 @@ const Contact = () => {
       </Head>
       <Styled.h1>Contact</Styled.h1>
       <Styled.p>
-        If you want to contact me by any reason, you can find me at almost
+        If you want to contact me by any reason, you can find me at almost all
         social media by the username <strong>arantespp</strong>*.
       </Styled.p>
       <Box sx={{ marginY: 4 }}>
@@ -34,7 +34,7 @@ const Contact = () => {
           })}
         </Styled.ul>
       </Box>
-      <Text sx={{ fontSize: 1 }}>
+      <Text sx={{ fontSize: 1, fontStyle: 'italic' }}>
         * I know, it's very sad, but Instagram is the only social media that I
         don't have <strong>arantespp</strong> as username. Sometime ago I've
         create the account with that username but I couldn't remember the
