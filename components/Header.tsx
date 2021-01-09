@@ -39,7 +39,7 @@ const Header = () => {
           <NextLink key={group} href={`/${group}`}>
             <Link
               sx={{
-                fontSize: [2, 3],
+                fontSize: [2, 2],
                 color: 'primary',
                 textAlign: 'center',
                 textDecoration: 'underline',

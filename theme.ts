@@ -24,6 +24,7 @@ const palette = {
 const partialTheme: any = {
   borderWidths: [0, 1, 4],
   colors: {
+    ...palette,
     text: 'hsla(0, 0%, 0%, 0.9)',
     gray: 'hsla(0, 0%, 0%, 0.8)',
     background: '#fff',
@@ -82,6 +83,8 @@ const partialTheme: any = {
       fontFamily: 'monospace',
       fontSize: 1,
       overflowX: 'auto',
+      backgroundColor: 'primary',
+      color: 'white',
     },
   },
   text: {

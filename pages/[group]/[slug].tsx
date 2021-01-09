@@ -1,6 +1,5 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import NextImage from 'next/image';
 import { Box, Flex, Image, Styled, Text } from 'theme-ui';
 
 import {
@@ -9,6 +8,7 @@ import {
   Group,
 } from '../../lib/files';
 
+import CustomImage from '../../components/CustomImage';
 import Markdown from '../../components/Markdown';
 import NotFound from '../../components/NotFound';
 import PostResume from '../../components/PostResume';
@@ -67,33 +67,7 @@ const GroupSlug = ({
       >
         <PostResume {...post} />
       </Box>
-      {image && (
-        <Box sx={{ marginBottom: 4 }}>
-          <Box
-            sx={{
-              position: 'relative',
-              width: '100%',
-              height: [300, 400, 500],
-            }}
-          >
-            <NextImage
-              src={image.url}
-              alt={image.alt}
-              layout="fill"
-              objectFit="cover"
-            />
-          </Box>
-          <Text
-            as="span"
-            sx={{
-              fontSize: 1,
-              fontStyle: 'italic',
-              color: 'gray',
-            }}
-            dangerouslySetInnerHTML={{ __html: image.caption }}
-          />
-        </Box>
-      )}
+      {!!image && <CustomImage {...image} src={image.url} />}
       <Markdown content={post.content} />
       <Flex sx={{ justifyContent: 'center', marginTop: 5, marginBottom: 5 }}>
         <Image sx={{ height: '1.5em', marginLeft: 1 }} src="/rose.png" />

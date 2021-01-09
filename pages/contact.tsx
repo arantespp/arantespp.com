@@ -6,6 +6,9 @@ import { Box, Link, Styled, Text } from 'theme-ui';
 import { socialMedias } from '../lib/socialMedias';
 
 const Contact = () => {
+  const twitter = socialMedias.find(({ name }) => name === 'Twitter')!;
+  const email = socialMedias.find(({ name }) => name === 'Email')!;
+
   return (
     <>
       <Head>
@@ -13,10 +16,24 @@ const Contact = () => {
       </Head>
       <Styled.h1>Contact</Styled.h1>
       <Styled.p>
-        If you want to contact me by any reason, you can find me at almost all
-        social media by the username <strong>arantespp</strong>*.
+        If you'd like to get in touch with me,{' '}
+        <Link href={email.href} target="_blank" rel="noopener noreferrer">
+          <Text as="span">email </Text>
+          <FontAwesomeIcon icon={email.faIcon} />
+        </Link>{' '}
+        and{' '}
+        <Link href={twitter.href} target="_blank" rel="noopener noreferrer">
+          <Text as="span">Twitter </Text>
+          <FontAwesomeIcon icon={twitter.faIcon} />
+        </Link>{' '}
+        are your best channels because I check them more frequently.
       </Styled.p>
-      <Box sx={{ marginY: 4 }}>
+      <Styled.p>
+        You can find me at almost all social media by the username
+        <strong> arantespp</strong>*. Some of them I just created to get the
+        username and I don't use very often.
+      </Styled.p>
+      <Box sx={{ marginY: 3 }}>
         <Styled.ul>
           {socialMedias.map(({ href, name, faIcon }) => {
             return (

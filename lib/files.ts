@@ -16,6 +16,7 @@ export type { Group };
 type PostMeta = {
   title: string;
   excerpt: string;
+  draft?: boolean;
   date: string;
   formattedDate: string;
   tags: string[];
@@ -62,7 +63,19 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
 
     const { data, content } = matter(fileContents);
 
-    const { title, excerpt, date, rating, tags, image } = data as PostMeta;
+    const {
+      title,
+      excerpt,
+      date,
+      rating,
+      tags,
+      image,
+      draft,
+    } = data as PostMeta;
+
+    if (draft) {
+      return undefined;
+    }
 
     const getDate = () => {
       /**

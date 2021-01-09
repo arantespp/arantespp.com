@@ -1,6 +1,8 @@
 import NextLink from 'next/link';
-import ReactMarkdown, { Renderer } from 'react-markdown';
-import { Flex, Image, Link, Styled, Text } from 'theme-ui';
+import ReactMarkdown from 'react-markdown';
+import { Flex, Link, Styled, Text } from 'theme-ui';
+
+import CustomImage from './CustomImage';
 
 /**
  * https://github.com/rexxars/react-markdown/tree/c63dccb8185869cfc73c257d098a123ef7a7cd33#node-types
@@ -56,30 +58,8 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
   inlineCode: ({ ...props }) => {
     return <Text as="span" variant="highlighted" {...props} />;
   },
-  image: ({ src, alt, title }) => {
-    return (
-      <Flex
-        as="span"
-        sx={{
-          flexDirection: 'column',
-          width: '100%',
-          alignItems: 'center',
-        }}
-      >
-        <Image
-          src={src}
-          alt={alt}
-          title={title}
-          sx={{ maxHeight: [300, 400], objectFit: 'contain' }}
-        />
-        <Text
-          as="span"
-          sx={{ fontSize: 1, fontStyle: 'italic', textAlign: 'center' }}
-        >
-          {title}
-        </Text>
-      </Flex>
-    );
+  image: ({ src, alt, title: caption }) => {
+    return <CustomImage {...{ src, alt, caption }} />;
   },
   html: ({ value }: { value: string }) => {
     const justifyContent = value.includes('class="twitter-tweet"')
@@ -88,7 +68,7 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
 
     return (
       <Flex
-        sx={{ justifyContent }}
+        sx={{ justifyContent, marginBottom: 3 }}
         dangerouslySetInnerHTML={{ __html: value }}
       />
     );

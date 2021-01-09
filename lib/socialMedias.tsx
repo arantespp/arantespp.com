@@ -11,11 +11,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-export const socialMedias: Array<{
-  name: string;
-  href: string;
-  faIcon: typeof faTwitter;
-}> = [
+export const socialMedias = [
   {
     name: 'Twitter',
     href: 'https://twitter.com/arantespp',
@@ -66,4 +62,4 @@ export const socialMedias: Array<{
     href: 'https://www.reddit.com/user/arantespp',
     faIcon: faReddit,
   },
-];
+] as const;
