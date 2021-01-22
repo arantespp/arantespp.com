@@ -32,6 +32,9 @@ const CustomImage = ({
           fontSize: 1,
           fontStyle: 'italic',
           textAlign: 'center',
+          a: {
+            color: 'secondary',
+          },
         }}
         dangerouslySetInnerHTML={{ __html: caption }}
       />

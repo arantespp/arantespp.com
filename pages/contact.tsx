@@ -42,7 +42,13 @@ const Contact = () => {
                   <Text as="span" sx={{ fontSize: 3, marginX: 2 }}>
                     <FontAwesomeIcon icon={faIcon} />
                   </Text>
-                  <Text as="span" sx={{ marginLeft: 1 }}>
+                  <Text
+                    as="span"
+                    sx={{
+                      marginLeft: 1,
+                      overflowWrap: 'break-word',
+                    }}
+                  >
                     {href}
                   </Text>
                 </Link>

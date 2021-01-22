@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import { Box, Flex, Image, Styled, Text } from 'theme-ui';
@@ -39,7 +41,7 @@ const GroupSlug = ({
     return <NotFound />;
   }
 
-  const { excerpt, image, href, title } = post;
+  const { excerpt, image, href, title, tags } = post;
 
   return (
     <>
@@ -50,10 +52,7 @@ const GroupSlug = ({
         <meta property="og:title" content={title} />
         <meta property="og:description" content={excerpt} />
         {image && (
-          <meta
-            property="og:image"
-            content={`https://arantespp.com${image.url}`}
-          />
+          <meta property="og:image" content={`${image.url}/1200x627`} />
         )}
       </Head>
       <Styled.h1>{title}</Styled.h1>
@@ -67,11 +66,24 @@ const GroupSlug = ({
       >
         <PostResume {...post} />
       </Box>
-      {!!image && <CustomImage {...image} src={image.url} />}
+      {!!image && <CustomImage {...image} src={`${image.url}/1024×576`} />}
       <Markdown content={post.content} />
-      <Flex sx={{ justifyContent: 'center', marginTop: 5, marginBottom: 5 }}>
+      <Flex sx={{ justifyContent: 'center', marginTop: 4, marginBottom: 4 }}>
         <Image sx={{ height: '1.5em', marginLeft: 1 }} src="/rose.png" />
       </Flex>
+      <Text
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          fontSize: 4,
+          marginBottom: 5,
+          marginTop: 4,
+        }}
+      >
+        <FontAwesomeIcon icon={faTwitter} />
+        <FontAwesomeIcon icon={faTwitter} />
+        <FontAwesomeIcon icon={faTwitter} />
+      </Text>
       <Recommendations recommendations={recommendations} />
     </>
   );

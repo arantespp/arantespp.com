@@ -6,7 +6,7 @@ tags:
   - habits
 rating: 5
 image:
-  url: https://source.unsplash.com/uejtDqpJ7ig/1024×576
+  url: https://source.unsplash.com/uejtDqpJ7ig
   alt: Photo by Drew Beamer on Unsplash
   caption: Photo by <a href="https://unsplash.com/@drew_beamer?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Drew Beamer</a> on <a href="https://unsplash.com/s/photos/habits?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
 ---
