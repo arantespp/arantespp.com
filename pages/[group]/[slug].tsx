@@ -71,7 +71,7 @@ const GroupSlug = ({
       <Flex sx={{ justifyContent: 'center', marginTop: 4, marginBottom: 4 }}>
         <Image sx={{ height: '1.5em', marginLeft: 1 }} src="/rose.png" />
       </Flex>
-      <Text
+      {/* <Text
         sx={{
           display: 'flex',
           justifyContent: 'center',
@@ -83,7 +83,7 @@ const GroupSlug = ({
         <FontAwesomeIcon icon={faTwitter} />
         <FontAwesomeIcon icon={faTwitter} />
         <FontAwesomeIcon icon={faTwitter} />
-      </Text>
+      </Text> */}
       <Recommendations recommendations={recommendations} />
     </>
   );
