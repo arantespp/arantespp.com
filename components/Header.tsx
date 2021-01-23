@@ -6,6 +6,8 @@ import PedroArantes from '../components/PedroArantes';
 
 import { GROUPS } from '../lib/groups';
 
+const navs = [...GROUPS, 'now'];
+
 const Header = () => {
   return (
     <Flex
@@ -38,7 +40,7 @@ const Header = () => {
           justifyContent: 'center',
         }}
       >
-        {GROUPS.map((group) => (
+        {navs.map((group) => (
           <NextLink key={group} href={`/${group}`}>
             <Link
               sx={{

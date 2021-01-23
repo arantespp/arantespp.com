@@ -8,7 +8,7 @@ Hello there 👋
 
 I like to say that "I'm an entrepreneur that sometimes uses some coding to solve problems". The "entrepreneur" part is due to the fact that I'm [Triângulos Tecnologia](https://triangulostecnologia.com) co-founder. The "uses some code" part is because I'm a frontend/serverless developer, normally based in [São Carlos, SP, Brazil](https://www.google.com.br/maps/place/S%C3%A3o+Carlos,+State+of+S%C3%A3o+Paulo/@-22.0184565,-47.9311626,13z/data=!3m1!4b1!4m5!3m4!1s0x94b87726bb9dd181:0xd9d7d71505999bc!8m2!3d-22.0087082!4d-47.8909263).
 
-[Do you want to contact me?](/contact)
+_[Do you want to contact me?](/contact)_
 
 ## Now
 

@@ -11,6 +11,7 @@ const PostResume = ({
   group,
   formattedDate,
   tags,
+  href,
 }: Recommendation) => {
   return (
     <Box
@@ -19,8 +20,12 @@ const PostResume = ({
         paddingBottom: 2,
       }}
     >
-      <Message variant="quote">{excerpt}</Message>
-      <Flex sx={{ flexWrap: 'wrap', marginY: 1 }}>
+      <NextLink as={href} href="/[group]/[slug]" passHref>
+        <Message variant="quote" sx={{ cursor: 'pointer' }}>
+          {excerpt}
+        </Message>
+      </NextLink>
+      <Flex sx={{ flexWrap: 'wrap', marginTop: 1 }}>
         {tags.map((tag) => (
           <Box key={tag} sx={{ paddingRight: 3 }}>
             <Tag tag={tag} />

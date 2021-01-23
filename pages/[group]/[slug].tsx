@@ -47,12 +47,20 @@ const GroupSlug = ({
     <>
       <Head>
         <title>{title}</title>
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://arantespp.com${href}`} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={excerpt} />
+        <meta property="og:type" key="og:type" content="website" />
+        <meta
+          property="og:url"
+          key="og:url"
+          content={`https://arantespp.com${href}`}
+        />
+        <meta property="og:title" key="og:title" content={title} />
+        <meta
+          property="og:description"
+          key="og:description"
+          content={excerpt}
+        />
         {image && (
-          <meta property="og:image" content={`${image.url}/1200x627`} />
+          <meta property="og:image" key="og:image" content={image.url} />
         )}
       </Head>
       <Styled.h1>{title}</Styled.h1>
@@ -68,7 +76,7 @@ const GroupSlug = ({
       </Box>
       {!!image && <CustomImage {...image} src={`${image.url}/1024×576`} />}
       <Markdown content={post.content} />
-      <Flex sx={{ justifyContent: 'center', marginTop: 4, marginBottom: 4 }}>
+      <Flex sx={{ justifyContent: 'center', marginTop: 5, marginBottom: 6 }}>
         <Image sx={{ height: '1.5em', marginLeft: 1 }} src="/rose.png" />
       </Flex>
       {/* <Text
