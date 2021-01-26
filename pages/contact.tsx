@@ -39,12 +39,13 @@ const Contact = () => {
             return (
               <Styled.li key={name}>
                 <Link href={href} target="_blank" rel="noopener noreferrer">
-                  <Text as="span" sx={{ fontSize: 3, marginX: 2 }}>
+                  <Text as="span" sx={{ fontSize: [4, 3], marginX: 2 }}>
                     <FontAwesomeIcon icon={faIcon} />
                   </Text>
                   <Text
                     as="span"
                     sx={{
+                      display: ['none', 'inline'],
                       marginLeft: 1,
                       overflowWrap: 'break-word',
                     }}

@@ -16,7 +16,7 @@ const CustomImage = ({
         flexDirection: 'column',
         width: '100%',
         alignItems: 'center',
-        marginBottom: 5,
+        marginY: 4,
       }}
     >
       <Image

@@ -21,7 +21,7 @@ const RecommendationCard = ({
         marginBottom: 3,
       }}
     >
-      <NextLink as={href} href="/[group]/[slug]" passHref>
+      <NextLink href={href} passHref>
         <Link sx={{ fontSize: 2, marginBottom: 2 }}>{title}</Link>
       </NextLink>
       <PostResume {...recommendation} />

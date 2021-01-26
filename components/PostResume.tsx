@@ -16,11 +16,11 @@ const PostResume = ({
   return (
     <Box
       sx={{
-        color: 'gray',
+        color: 'text',
         paddingBottom: 2,
       }}
     >
-      <NextLink as={href} href="/[group]/[slug]" passHref>
+      <NextLink href={href} passHref>
         <Message variant="quote" sx={{ cursor: 'pointer' }}>
           {excerpt}
         </Message>

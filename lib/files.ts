@@ -22,11 +22,14 @@ type PostMeta = {
   tags: string[];
   rating: number;
   backlinks: Array<{ title: string; href: string }>;
-  image: {
-    url: string;
-    alt: string;
-    caption: string;
-  } | null;
+  image:
+    | {
+        url: string;
+        alt: string;
+        caption: string;
+      }
+    | null
+    | undefined;
 };
 
 export type Post = PostMeta & {
@@ -36,14 +39,36 @@ export type Post = PostMeta & {
   content: string;
 };
 
-export type PostWithoutContent = Omit<Post, 'content'>;
-
 const LIMIT = 7;
 
 /**
  * Only groups that are written in md files.
  */
 export const getGroups = () => GROUPS;
+
+let drafts: Array<
+  Partial<PostMeta> & {
+    href: string;
+    group: Group;
+    slug: string;
+    content: string;
+  }
+> = [];
+
+export const getDrafts = () =>
+  drafts.map((draft) => ({
+    title: 'DRAFT TITLE',
+    excerpt: 'DRAFT EXCERPT',
+    date: 'DRAFT DATE',
+    formattedDate: 'DRAFT FORMATTED DATE',
+    tags: [],
+    rating: 0,
+    image: null,
+    backlinks: [],
+    ...draft,
+    href: `/_drafts${draft.href}`,
+    draft: true,
+  }));
 
 type GetPartialPostProps = {
   group: Group;
@@ -73,10 +98,6 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       draft,
     } = data as PostMeta;
 
-    if (draft) {
-      return undefined;
-    }
-
     const getDate = () => {
       /**
        * https://stackoverflow.com/a/52352512/8786986
@@ -99,7 +120,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
         .map((tag) => paramCase(tag))
         .sort((tagA, tagB) => tagA.localeCompare(tagB));
 
-    const requiredPostProperties = {
+    const post = {
       title,
       excerpt,
       ...getDate(),
@@ -109,26 +130,46 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       content,
       rating,
       tags: getTags(),
+      image,
+      draft,
     };
 
-    /**
-     * Return null if some value of the post is null or undefined.
-     */
-    if (
-      Object.values(requiredPostProperties).some(
-        (value) => value == null || value == undefined
-      )
-    ) {
+    if (!href || !group || !slug) {
       return undefined;
     }
 
     /**
-     * All not required properties should have null if undefined to avoid this error:
-     * Reason: `undefined` cannot be serialized as JSON. Please use `null` or omit this value.
+     * All properties most not have undefined to void this error:
+     * Reason: `undefined` cannot be serialized as JSON. Please use `null`
+     * or omit this value.
      */
-    const post = { ...requiredPostProperties, image: image || null };
+    Object.entries(post).forEach(([key, value]) => {
+      if (!value) {
+        delete post[key];
+      }
+    });
 
-    return post;
+    const requiredPostProperties: Array<keyof Post> = [
+      'title',
+      'excerpt',
+      'date',
+      'formattedDate',
+      'content',
+      'rating',
+      'tags',
+    ];
+
+    const doesPostHaveAllRequiredProperties = requiredPostProperties.reduce(
+      (acc, property) => acc && post[property],
+      true
+    );
+
+    if (!doesPostHaveAllRequiredProperties || post.draft) {
+      drafts.push(post);
+      return undefined;
+    } else {
+      return post;
+    }
   } catch {
     return undefined;
   }
@@ -284,6 +325,11 @@ export const getRecommendations = (props: GetPostsProps = {}) => {
       .map(({ content, ...rest }) => rest)
   );
 };
+
+/**
+ * Used by recommendations.
+ */
+export type PostWithoutContent = Omit<Post, 'content'>;
 
 export type Recommendation = PostWithoutContent;
 

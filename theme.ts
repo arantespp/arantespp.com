@@ -25,14 +25,14 @@ const partialTheme: any = {
   borderWidths: [0, 1, 4],
   colors: {
     ...palette,
-    text: 'hsla(0, 0%, 0%, 0.9)',
-    gray: 'hsla(0, 0%, 0%, 0.8)',
+    text: '#333',
+    gray: '#555',
     background: '#fff',
     primary: palette.prussianBlue,
     secondary: palette.celadonBlue,
     accent: palette.imperialRed,
     highlight: palette.honeydew,
-    muted: 'hsla(0, 0%, 0%, 0.2)',
+    muted: '#aaa',
   },
   fonts: {
     monospace: "'Overpass Mono', monospace",
