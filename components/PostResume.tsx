@@ -25,7 +25,7 @@ const PostResume = ({
           {excerpt}
         </Message>
       </NextLink>
-      <Flex sx={{ flexWrap: 'wrap', marginTop: 1 }}>
+      <Flex sx={{ flexWrap: 'wrap', marginY: 1 }}>
         {tags.map((tag) => (
           <Box key={tag} sx={{ paddingRight: 3 }}>
             <Tag tag={tag} />

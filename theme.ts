@@ -71,7 +71,7 @@ const partialTheme: any = {
       color: 'secondary',
     },
     strong: {
-      color: 'accent',
+      color: 'primary',
     },
     ol: {
       ml: 4,

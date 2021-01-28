@@ -117,6 +117,10 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
 
     const getTags = () =>
       tags
+        /**
+         * https://stackoverflow.com/a/37511463/8786986
+         */
+        .map((tag) => tag.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
         .map((tag) => paramCase(tag))
         .sort((tagA, tagB) => tagA.localeCompare(tagB));
 

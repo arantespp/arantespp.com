@@ -11,7 +11,7 @@ image:
   caption: Photo by <a href="https://unsplash.com/@karsten_wuerth?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Karsten Würth</a> on <a href="https://unsplash.com/s/photos/road?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
 ---
 
-We built an App recently for a researcher team about helping other researchers keep their projects in day, let's call this project as **ProRes**. But there was a problem with this project: we took so much time to finish it, and the quality wasn't the best as we were used to. Wondering about this project and others we've built at [Triângulos Tecnologia](https://triangulostecnologia.com), I had some insights about the issues we had.
+We built an App recently for a researchers team about helping other researchers to keep their projects in day. Let's call this project as **ProRes**. There was a problem with this project: we took so much time to finish it, and the quality wasn't the best as we were used to. I was wondering about this project and others we've built at [Triângulos Tecnologia](https://triangulostecnologia.com), I had some insights about the issues we had.
 
 THe other projects aren't necessarily easier, they were as difficult as **ProRes**, but it took 4x more time. The biggest difference we the scope.
 
@@ -19,7 +19,7 @@ I think this problem is correlated to the last mile problem.
 
 ## Last Mile Problem
 
-I first heard about last mile problem when I was studying telecommunications. It occurs when we have a whole telecommunication infrastructure available except the one that links the final client. For instance, suppose we have a optical fiber ring in a city that provides Internet to some buildings, but neighbor buildings don't have access to the ring. This is a last mile problem because all the infrastructure is working but some client can't access.
+I first heard about [last mile problem when I was studying telecommunications](https://en.wikipedia.org/wiki/Last_mile). It occurs when we have a whole telecommunication infrastructure available except the one that links the final client. For instance, suppose we have a optical fiber ring in a city that provides Internet to some buildings, but neighbor buildings don't have access to the ring. This is a last mile problem because all the infrastructure is working but some client can't access.
 
 We can see this problem in logistics too. A product may arrive in a capital of a country buy might not arrives to neighbor cities because there isn't a easy path to there, for instance, need to cross a river.
 
