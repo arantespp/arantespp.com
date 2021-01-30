@@ -16,7 +16,7 @@ rating: 3
 
 - It was identified by psychologists [David Dunning](https://en.wikipedia.org/wiki/David_Dunning) and [Justin Kruger](https://en.wikipedia.org/wiki/Justin_Kruger) in a 1999 study.
   - This identification derived from the criminal [case of McArthur Wheeler](https://steemit.com/steemstem/@rsc227/the-curious-case-of-mcarthur-wheeler), who robbed two banks while his face was covered with lemon juice because he thought that the juice would make it invisible.
-- "Is a cognitive bias in which people with low ability at a given task are prone to overestimate their ability at that task". [Reference](https://twitter.com/SahilBloom/status/1350077524546445314)
+- Is a cognitive bias hypothesis in which people with low ability at a given task overestimate their ability at that task.
   - Comes from people's inability to recognize their lack of ability and poor self-awareness.
   - Comes from people's ignorance of a given activity's standards of performance.
   - If you don't have competency, you can't know you don't have competency in a task. The skills you need to produce the right response about your competency is the same skills you need to know what a right response is.
