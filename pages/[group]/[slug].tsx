@@ -36,7 +36,7 @@ const GroupSlug = ({
     return <NotFound />;
   }
 
-  const { excerpt, image, href, title } = post;
+  const { excerpt, image, href, title, group } = post;
 
   return (
     <>
@@ -54,6 +54,13 @@ const GroupSlug = ({
           key="og:description"
           content={excerpt}
         />
+        {group === 'zettelkasten' && (
+          <meta
+            property="og:image"
+            key="og:image"
+            content="https://source.unsplash.com/HOrhCnQsxnQ"
+          />
+        )}
         {image && (
           <meta property="og:image" key="og:image" content={image.url} />
         )}

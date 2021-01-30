@@ -19,9 +19,9 @@ I think this problem is correlated to the last mile problem.
 
 ## Last Mile Problem
 
-I first heard about [last mile problem when I was studying telecommunications](https://en.wikipedia.org/wiki/Last_mile). It occurs when we have a whole telecommunication infrastructure available except the one that links the final client. For instance, suppose we have a optical fiber ring in a city that provides Internet to some buildings, but neighbor buildings don't have access to the ring. This is a last mile problem because all the infrastructure is working but some client can't access.
+I first heard about [last mile problem when I was studying telecommunications](https://en.wikipedia.org/wiki/Last_mile). It occurs when we have a whole telecommunication infrastructure available except the one that links the final client, the final leg. For instance, suppose we have a optical fiber ring in a city that provides Internet to some buildings, but neighbor buildings don't have access to the ring. This is a last mile problem because the ring is working but some clients can't access.
 
-We can see this problem in logistics too. A product may arrive in a capital of a country buy might not arrives to neighbor cities because there isn't a easy path to there, for instance, need to cross a river.
+We can see this problem in logistics too. A product may arrive in a capital of a country but might not arrives to neighbor cities because there isn't a easy path to there, for instance, need to cross a river.
 
 _In summary, last mile problem is the last thing that need to be done to something works/arrives/finishes._
 
@@ -29,8 +29,12 @@ _In summary, last mile problem is the last thing that need to be done to somethi
 
 Almost every App I build, I can see a last mile part in every feature I implement. The first part of a feature I create is the core. We can call core the most important and the essential functionalities that such feature must have. After the core implemented, we have what I call the final adjustments or the last mile. These adjustments doesn't change the functionalities, rather improve the user experience of the application. For instance, if we're building a form, the core features are the fields and the submit logic; the final adjustments are some input masks and design.
 
-In question of time, these final adjustments can have fewer tasks compared with the core, but it is the laborious part, then the time to finish it is almost as the core time implementation.
+These final adjustments can have fewer tasks compared with the core, but it is the laborious part, then the time to finish it is almost as the core time implementation. We may explain this using the [flow state](/zettelkasten/flow-state-psychology). Core tasks commonly are more challenging and interesting to be done, a condition to enter the state, whilst the last mile tasks, don't.
 
 ![plot](/images/time-vs-tasks.png 'asdas')
 
-Some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text
+## **ProRes** Execution
+
+The **ProRes** App had some features. The objective of the project was validating these features, the prototype. Then, since the beginning, we started implementing all the core features together.
+
+![plot](/images/last-mile-application-prores.png 'asdas')

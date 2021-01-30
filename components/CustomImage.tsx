@@ -23,7 +23,7 @@ const CustomImage = ({
         src={src}
         alt={alt}
         title={caption}
-        sx={{ maxHeight: [300, 500], objectFit: 'contain' }}
+        sx={{ maxHeight: [400, 600], objectFit: 'contain' }}
       />
       <Text
         as="span"

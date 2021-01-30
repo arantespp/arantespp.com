@@ -31,19 +31,21 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
     return <ResolvedComponent hidden={hiddenH1}>{children}</ResolvedComponent>;
   },
   link: ({ children, href }: { children: React.ReactNode; href: string }) => {
-    if (href.startsWith('/')) {
-      return (
-        <NextLink href={href} passHref>
-          <Link>{children}</Link>
-        </NextLink>
-      );
-    }
-
-    return (
+    const link = (
       <Link href={href} target="_blank" rel="noopener noreferrer">
         {children}
       </Link>
     );
+
+    if (href.startsWith('/')) {
+      return (
+        <NextLink href={href} passHref>
+          {link}
+        </NextLink>
+      );
+    }
+
+    return link;
   },
   root: Styled.root,
   paragraph: Styled.p,
