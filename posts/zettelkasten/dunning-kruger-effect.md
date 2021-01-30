@@ -1,6 +1,6 @@
 ---
 title: Dunning-Kruger Effect
-excerpt: 'Is a cognitive bias in which people with low ability at a given task are prone to overestimate their ability at that task'
+excerpt: Is a cognitive bias hypothesis in which people with low ability at a given task overestimate their ability at that task.
 date: 2021-01-30
 tags:
   - Dunning-Kruger Effect
