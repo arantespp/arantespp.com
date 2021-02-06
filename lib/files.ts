@@ -21,12 +21,11 @@ type PostMeta = {
   formattedDate: string;
   tags: string[];
   rating: number;
-  backlinks: Array<{ title: string; href: string }>;
+  backlinks?: Array<{ title: string; href: string }>;
   image:
     | {
         url: string;
         alt: string;
-        caption: string;
       }
     | null
     | undefined;
@@ -46,7 +45,10 @@ const LIMIT = 7;
  */
 export const getGroups = () => GROUPS;
 
-let drafts: Array<
+/**
+ * This array is created by side effect inside getPartialPost.
+ */
+const drafts: Array<
   Partial<PostMeta> & {
     href: string;
     group: Group;
@@ -56,19 +58,28 @@ let drafts: Array<
 > = [];
 
 export const getDrafts = () =>
-  drafts.map((draft) => ({
-    title: 'DRAFT TITLE',
-    excerpt: 'DRAFT EXCERPT',
-    date: 'DRAFT DATE',
-    formattedDate: 'DRAFT FORMATTED DATE',
-    tags: [],
-    rating: 0,
-    image: null,
-    backlinks: [],
-    ...draft,
-    href: `/_drafts${draft.href}`,
-    draft: true,
-  }));
+  drafts
+    .filter(({ group, slug }, index) => {
+      return (
+        index ===
+        drafts.findIndex(
+          (draft) => draft.group === group && draft.slug === slug
+        )
+      );
+    })
+    .map((draft) => ({
+      title: 'DRAFT TITLE',
+      excerpt: 'DRAFT EXCERPT',
+      date: 'DRAFT DATE',
+      formattedDate: 'DRAFT FORMATTED DATE',
+      tags: [],
+      rating: 0,
+      image: null,
+      backlinks: [],
+      ...draft,
+      href: `/_drafts${draft.href}`,
+      draft: true,
+    }));
 
 type GetPartialPostProps = {
   group: Group;
@@ -81,11 +92,8 @@ type GetPartialPostProps = {
 const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
   try {
     const fullPath = path.join(postsDirectory, group || '', `${slug}.md`);
-
     const href = path.join('/', group || '', slug);
-
     const fileContents = fs.readFileSync(fullPath, 'utf8');
-
     const { data, content } = matter(fileContents);
 
     const {
@@ -168,12 +176,20 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       true
     );
 
-    if (!doesPostHaveAllRequiredProperties || post.draft) {
-      drafts.push(post);
-      return undefined;
-    } else {
-      return post;
+    /**
+     * Highlight excerpt, even if it is a draft.
+     */
+    post.content = post.content.replace(post.excerpt, `\`${post.excerpt}\``);
+
+    if (!doesPostHaveAllRequiredProperties) {
+      post.draft = true;
     }
+
+    if (post.draft) {
+      drafts.push(post);
+    }
+
+    return post;
   } catch {
     return undefined;
   }
@@ -192,20 +208,24 @@ const getPostsByGroup = (group: Group) => {
          */
         .map((dir) => dir.replace(/\.md$/, ''))
         /**
-         * Remove index.md file
+         * Remove index.md file.
          */
         .filter((slug) => slug !== 'index')
         /**
-         * Return the post
+         * Return the post.
          */
         .map((slug) => getPartialPost({ group, slug }))
         /**
          * Return only posts that are not null.
          */
-        .filter((post) => !!post) as Post[]
+        .filter((post) => !!post)
+        /**
+         * Do not return drafts.
+         */
+        .filter((post) => !post?.draft) as Post[]
     );
     /**
-     * Catch some group that not have .md files, as "me".
+     * Catch some group that not have .md files.
      */
   } catch {
     return [];
@@ -242,11 +262,7 @@ const getPost = (props: GetPartialPostProps): Post | undefined => {
       '## Backlinks',
       ...backlinks.map(({ href, title }) => `- [${title}](${href})`),
     ].join('\n');
-  })()
-    /**
-     * Highlight excerpt.
-     */
-    .replace(partialPost.excerpt, `\`${partialPost.excerpt}\``);
+  })();
 
   return { ...partialPost, content: newContent, backlinks };
 };
@@ -361,3 +377,5 @@ export const getPostAndPostsRecommendations = ({
 
   return { post, recommendations };
 };
+
+export const getDraft = getPartialPost;

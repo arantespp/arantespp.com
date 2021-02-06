@@ -3,12 +3,16 @@ import { Flex, Image, Text } from 'theme-ui';
 const CustomImage = ({
   src,
   alt,
-  caption,
-}: {
+}: // caption,
+{
   src: string;
   alt: string;
-  caption: string;
+  // caption: string;
 }) => {
+  /**
+   * https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/
+   */
+  const altWithoutTags = alt.replace(/(<([^>]+)>)/gi, '');
   return (
     <Flex
       as="span"
@@ -21,8 +25,8 @@ const CustomImage = ({
     >
       <Image
         src={src}
-        alt={alt}
-        title={caption}
+        alt={altWithoutTags}
+        title={altWithoutTags}
         sx={{ maxHeight: [400, 600], objectFit: 'contain' }}
       />
       <Text
@@ -36,7 +40,7 @@ const CustomImage = ({
             color: 'secondary',
           },
         }}
-        dangerouslySetInnerHTML={{ __html: caption }}
+        dangerouslySetInnerHTML={{ __html: alt }}
       />
     </Flex>
   );

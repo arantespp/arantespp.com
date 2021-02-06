@@ -1,6 +1,12 @@
+import Tex from '@matejmazur/react-katex';
+import { paramCase } from 'change-case';
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
+import math from 'remark-math';
 import { Flex, Link, Styled, Text } from 'theme-ui';
+import url from 'url';
+import 'katex/dist/katex.min.css';
 
 import CustomImage from './CustomImage';
 
@@ -15,6 +21,11 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
     level: number;
     children: React.ReactNode;
   }) => {
+    const { asPath } = useRouter();
+    const { pathname } = url.parse(asPath);
+    const hash = paramCase((children as any)?.[0].props?.value);
+    const href = `${pathname}#${hash}`;
+
     const componentsByLevel = [
       Styled.h1,
       Styled.h2,
@@ -23,12 +34,29 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
       Styled.h5,
       Styled.h6,
     ];
+    const ResolvedComponent = componentsByLevel[level - 1];
+
     /**
      * Title will be shown at PostHeader component.
      */
     const hiddenH1 = level === 1 && noH1;
-    const ResolvedComponent = componentsByLevel[level - 1];
-    return <ResolvedComponent hidden={hiddenH1}>{children}</ResolvedComponent>;
+
+    return (
+      <ResolvedComponent id={hash} hidden={hiddenH1}>
+        <NextLink href={href}>
+          <Link
+            sx={{
+              color: 'inherit',
+              '&:hover': {
+                textDecoration: 'underline',
+              },
+            }}
+          >
+            {children}
+          </Link>
+        </NextLink>
+      </ResolvedComponent>
+    );
   },
   link: ({ children, href }: { children: React.ReactNode; href: string }) => {
     const link = (
@@ -60,8 +88,8 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
   inlineCode: ({ ...props }) => {
     return <Text as="span" variant="highlighted" {...props} />;
   },
-  image: ({ src, alt, title: caption }) => {
-    return <CustomImage {...{ src, alt, caption }} />;
+  image: ({ src, alt }) => {
+    return <CustomImage {...{ src, alt }} />;
   },
   html: ({ value }: { value: string }) => {
     const justifyContent = value.includes('class="twitter-tweet"')
@@ -75,10 +103,23 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
       />
     );
   },
+  /**
+   * https://katex.org/docs/supported.html
+   */
+  inlineMath: ({ value }) => <Tex math={value} />,
+  math: ({ value }) => <Tex block math={value} />,
 });
 
+const plugins = [math];
+
 const Markdown = ({ content, noH1 }: { content: string; noH1?: boolean }) => {
-  return <ReactMarkdown renderers={renderers({ noH1 })} children={content} />;
+  return (
+    <ReactMarkdown
+      renderers={renderers({ noH1 })}
+      plugins={plugins}
+      children={content}
+    />
+  );
 };
 
 export default Markdown;

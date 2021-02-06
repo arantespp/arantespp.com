@@ -1,7 +1,7 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 
-import { getDrafts } from '../../lib/files';
+import { getDrafts, getDraft } from '../../lib/files';
 
 import Post from '../../components/Post';
 
@@ -19,8 +19,8 @@ export const getStaticProps = async ({
 }: {
   params: { path: string[] };
 }) => {
-  const [group, slug] = path;
-  const draft = getDrafts().find((d) => d.group === group && d.slug === slug);
+  const [group, slug] = path as any;
+  const draft = getDraft({ group, slug });
 
   if (!draft) {
     throw new Error();
