@@ -6,6 +6,7 @@ date: 2021-01-02
 tags:
   - software-engineering
   - last-mile
+  - project-management
 rating: 5
 image:
   url: https://source.unsplash.com/Kuu5mmxkwW4
