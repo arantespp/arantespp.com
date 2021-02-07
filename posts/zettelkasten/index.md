@@ -6,5 +6,5 @@ My notes usually have 4 main parts:
 
 - Notes: they're my notes about the topic.
 - Questions: they're questions I made while studying the topic to perform a [metacognitive reading](/zettelkasten/reading-metacognitively).
-- Backlinks: links to other notes that made a reference to the current note.
 - References: are references that I consulted to write the notes.
+- Backlinks: links to other notes that made a reference to the current note.
