@@ -14,7 +14,7 @@ tags:
 ## Notes
 
 - It stands that "work expands so as to fill the time available for its completion".
-- Currently, it's referred by a mathematical equation describing the rate at which bureaucracies expand over time
+- Currently, it's referred by a mathematical equation describing the rate at which bureaucracies expand over time.
 - Correlated to growth of bureaucracy in a organization or committee.
   1. Officials wants to multiply subordinates, not rivals.
   2. Officials make work for each other. 🤦
@@ -25,6 +25,12 @@ tags:
   - _"Data expands to fill the space available for storage."_
     - **Is there a kind of "energy" concept here whose principle is the same as the potential energy that makes a fluid fills the area of a space?** I mean, if we drop a viscous fluid on the floor, it'll expand until the elements that was on top remain at the same level of the bottom elements.
       - The system had some gravitational potential energy of the top elements and this energy was reduced to a minimum.
+
+## Questions
+
+- What are the characteristics of the organizations in which the Parkinson's Law happens?
+
+- What are the characteristics of the organizations in which the Parkinson's Law doesn't happen?
 
 ## References
 
