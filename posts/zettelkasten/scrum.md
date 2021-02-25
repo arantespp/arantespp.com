@@ -1,6 +1,6 @@
 ---
 title: Scrum
-excerpt: Is describes a set of meetings, tools and roles to help teams structure and manage their work.
+excerpt: Is describes a set of meetings/events/ceremonies, tools/artifacts and roles to help teams structure and manage their work.
 date: 2021-02-25
 tags:
   - agile
