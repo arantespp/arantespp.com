@@ -1,6 +1,6 @@
 ---
 title: AIDA Model
-excerpt: It was created to understand better the process, os steps that the consumer goes thought, before purchasing a product.
+excerpt: It was created to understand better the process, or steps that the consumer goes thought, before purchasing a product.
 date: 2020-08-08
 rating: 2
 tags:
@@ -12,7 +12,7 @@ tags:
 
 ## Notes
 
-- It was created to understand better the process, os steps that the consumer goes thought, before purchasing a product.
+- It was created to understand better the process, or steps that the consumer goes thought, before purchasing a product.
 - It was developed by E. St. Elmo Lewis, in 1898.
 - AIDA stands for: **Attention**, **Interest**, **Desire** and **Action**.
   - **Attention**: attract the consumer attention via advertising materials. _Example: consumer watches a YouTube ad._

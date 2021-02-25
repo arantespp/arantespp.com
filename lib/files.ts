@@ -292,6 +292,8 @@ type GetPostsProps = {
  * @param param.tags return posts that have tags.
  */
 export const getPosts = ({ all, group, tags }: GetPostsProps = {}) => {
+  const sortPosts = (postA: Post, postB: Post) => postB.rating - postA.rating;
+
   const getGroupAndTagsPosts = () => {
     const groupPosts = group ? getPostsByGroup(group) : [];
 
@@ -306,7 +308,7 @@ export const getPosts = ({ all, group, tags }: GetPostsProps = {}) => {
       : [];
 
     return (
-      [...tagsPosts, ...groupPosts]
+      [...tagsPosts.sort(sortPosts), ...groupPosts.sort(sortPosts)]
         /**
          * Remove duplicated posts that may come from group and tags posts.
          * https://stackoverflow.com/a/56757215/8786986
@@ -319,9 +321,7 @@ export const getPosts = ({ all, group, tags }: GetPostsProps = {}) => {
   };
 
   return (
-    (all ? allPosts : getGroupAndTagsPosts())
-      .sort((postA, postB) => postB.date.localeCompare(postA.date))
-      .sort((postA, postB) => postB.rating - postA.rating)
+    (all ? allPosts.sort(sortPosts) : getGroupAndTagsPosts())
       /**
        * Limit the number of posts returned.
        */

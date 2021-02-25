@@ -1,16 +1,22 @@
 import { pascalCase } from 'change-case';
 import { InferGetStaticPropsType } from 'next';
 import * as React from 'react';
-import { Box, Checkbox, Label, Radio, Styled, Text } from 'theme-ui';
+import { compareTwoStrings, findBestMatch } from 'string-similarity';
+import { Box, Checkbox, Input, Label, Radio, Styled, Text } from 'theme-ui';
+import { useDebounce } from 'use-debounce';
 
 import RecommendationCard from '../components/RecommendationCard';
 
-import { allPosts } from '../lib/files';
+import { allPosts, Post } from '../lib/files';
 import { Group, GROUPS } from '../lib/groups';
 
 export const getStaticProps = async () => {
   return { props: { allPosts } };
 };
+
+const POST_MIN_RATING = 0.5;
+
+const MAX_POSTS_BEST_MATCHES = 5;
 
 const sorts = ["Author's relevance", 'Date', 'Title'] as const;
 
@@ -41,8 +47,86 @@ const FilterBlock = ({
 const AllPosts = ({
   allPosts,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const [search, setSearch] = React.useState('');
+  const [debouncedSearch] = useDebounce(search, 500);
   const [sorting, setSorting] = React.useState<Sorts>("Author's relevance");
   const [showGroups, setShowGroups] = React.useState([...GROUPS]);
+
+  const [filteredPosts, setFilteredPosts] = React.useState(allPosts);
+
+  React.useEffect(() => {
+    const postsByGroups = allPosts.filter((post) =>
+      showGroups.includes(post.group)
+    );
+
+    const postsBySearch = (() => {
+      if (!debouncedSearch || postsByGroups.length === 0) {
+        return postsByGroups;
+      }
+
+      const postPropertiesToBeCompared: Array<keyof Post> = [
+        'title',
+        'content',
+      ];
+
+      /**
+       * Create an array of strings with posts title and excerpts to be
+       * compared by string similarity method.
+       */
+      const arrayCompare = postsByGroups.flatMap((post) =>
+        postPropertiesToBeCompared.map((property) => String(post[property]))
+      );
+
+      const { bestMatch, bestMatchIndex, ratings } = findBestMatch(
+        debouncedSearch.toLowerCase(),
+        arrayCompare.map((str) => str.toLowerCase())
+      );
+
+      /**
+       * Take the max rating between title and excerpt.
+       */
+      const mergeRatings = ratings
+        .reduce<number[]>((acc, cur, index) => {
+          const pos = Math.floor(index / postPropertiesToBeCompared.length);
+
+          if (acc[pos]) {
+            acc[pos] = Math.max(acc[pos], cur.rating);
+          } else {
+            acc[pos] = cur.rating;
+          }
+
+          return acc;
+        }, [])
+        .map((rating, index) => ({ rating, post: postsByGroups[index] }));
+
+      const bestMatches = mergeRatings
+        .sort((a, b) => b.rating - a.rating)
+        /**
+         * Take only the best five matches.
+         */
+        .filter((_, index) => index < MAX_POSTS_BEST_MATCHES)
+        /**
+         * Take only posts whose rating is greater than POST_MIN_RATING.
+         */
+        .filter(({ rating }) => rating > POST_MIN_RATING);
+
+      if (bestMatch.rating === 0) {
+        return [];
+      }
+
+      if (bestMatches.length === 0) {
+        return [
+          postsByGroups[
+            Math.floor(bestMatchIndex / postPropertiesToBeCompared.length)
+          ],
+        ];
+      }
+
+      return bestMatches.map(({ post }) => post);
+    })();
+
+    setFilteredPosts(postsBySearch);
+  }, [showGroups, debouncedSearch]);
 
   return (
     <>
@@ -58,18 +142,11 @@ const AllPosts = ({
           },
         }}
       >
-        <FilterBlock title="Sort Posts By:">
-          {sorts.map((sort) => (
-            <Label key={sort}>
-              <Radio
-                name="sorting"
-                value={sort}
-                checked={sorting === sort}
-                onChange={(e) => setSorting(e.target.value as Sorts)}
-              />
-              {sort}
-            </Label>
-          ))}
+        <FilterBlock title="Search:">
+          <Input
+            placeholder="What do you want to read?"
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </FilterBlock>
 
         <FilterBlock title="Show Groups:">
@@ -95,10 +172,24 @@ const AllPosts = ({
             </Label>
           ))}
         </FilterBlock>
+
+        <FilterBlock title="Sort Posts By:">
+          {sorts.map((sort) => (
+            <Label key={sort}>
+              <Radio
+                name="sorting"
+                value={sort}
+                checked={sorting === sort}
+                onChange={(e) => setSorting(e.target.value as Sorts)}
+              />
+              {sort}
+            </Label>
+          ))}
+        </FilterBlock>
       </Box>
 
-      {allPosts
-        .filter((post) => showGroups.includes(post.group))
+      {filteredPosts
+
         .sort((postA, postB) => {
           if (sorting === "Author's relevance") {
             return postB.rating - postA.rating;
@@ -114,6 +205,7 @@ const AllPosts = ({
 
           return 0;
         })
+
         .map((post) => (
           <RecommendationCard key={post.href} recommendation={post} />
         ))}

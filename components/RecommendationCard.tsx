@@ -22,7 +22,9 @@ const RecommendationCard = ({
       }}
     >
       <NextLink href={href} passHref>
-        <Link sx={{ fontSize: 2, marginBottom: 2 }}>{title}</Link>
+        <Link sx={{ fontSize: 2, marginBottom: 2, fontWeight: 'bold' }}>
+          {title}
+        </Link>
       </NextLink>
       <PostResume {...recommendation} />
     </Flex>
