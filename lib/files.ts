@@ -19,6 +19,7 @@ type PostMeta = {
   draft?: boolean;
   date: string;
   formattedDate: string;
+  updatedAt?: string;
   tags: string[];
   rating: number;
   backlinks?: Array<{ title: string; href: string }>;
@@ -81,6 +82,23 @@ export const getDrafts = () =>
       draft: true,
     }));
 
+const getDate = (date: string | Date) => {
+  /**
+   * https://stackoverflow.com/a/52352512/8786986
+   */
+  const dt = new Date(date);
+  const dtDateOnly = new Date(
+    dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000
+  );
+  return {
+    date: dateFns.format(dtDateOnly, 'yyyy-MM-dd'),
+    /**
+     * Added formattedDate to don't need to use date-fns in the App.
+     */
+    formattedDate: dateFns.format(dtDateOnly, 'MMMM dd, yyyy'),
+  };
+};
+
 type GetPartialPostProps = {
   group: Group;
   slug: string;
@@ -106,23 +124,6 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       draft,
     } = data as PostMeta;
 
-    const getDate = () => {
-      /**
-       * https://stackoverflow.com/a/52352512/8786986
-       */
-      const dt = new Date(date);
-      const dtDateOnly = new Date(
-        dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000
-      );
-      return {
-        date: dateFns.format(dtDateOnly, 'yyyy-MM-dd'),
-        /**
-         * Added formattedDate to don't need to use date-fns in the App.
-         */
-        formattedDate: dateFns.format(dtDateOnly, 'MMMM dd, yyyy'),
-      };
-    };
-
     const getTags = () =>
       tags
         /**
@@ -132,10 +133,14 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
         .map((tag) => paramCase(tag))
         .sort((tagA, tagB) => tagA.localeCompare(tagB));
 
+    const { mtime } = fs.statSync(fullPath);
+    const { formattedDate: updatedAt } = getDate(mtime);
+
     const post = {
       title,
       excerpt,
-      ...getDate(),
+      ...getDate(date),
+      updatedAt,
       href,
       group,
       slug,
@@ -320,13 +325,7 @@ export const getPosts = ({ all, group, tags }: GetPostsProps = {}) => {
     );
   };
 
-  return (
-    (all ? allPosts.sort(sortPosts) : getGroupAndTagsPosts())
-      /**
-       * Limit the number of posts returned.
-       */
-      .slice(0, LIMIT)
-  );
+  return all ? allPosts.sort(sortPosts) : getGroupAndTagsPosts();
 };
 
 export const getAllTags = () => {
@@ -343,6 +342,10 @@ export const getRecommendations = (props: GetPostsProps = {}) => {
        * Do not return the content.
        */
       .map(({ content, ...rest }) => rest)
+      /**
+       * Limit the number of posts returned.
+       */
+      .slice(0, LIMIT)
   );
 };
 

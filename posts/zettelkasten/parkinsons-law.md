@@ -9,8 +9,6 @@ tags:
   - parkinson's law
 ---
 
-# Parkinson's Law
-
 ## Notes
 
 - It stands that "work expands so as to fill the time available for its completion".

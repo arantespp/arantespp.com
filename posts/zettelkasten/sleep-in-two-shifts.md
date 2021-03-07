@@ -23,7 +23,7 @@ rating: 2
   - Ekirch found references that this modality of sleeping started to disappear in the late of 17th century.
     - The appearance of insomnia in the literature coincides with the end of the split sleep period.
 - **Modern society may place unnecessary pressure on individuals that they must have a good continuous consolidated sleep every night, adding the anxiety of sleeping and perpetuating the problem.**
-- The early 1990s, the psychiatrist Thomas A. Wehr conducted a laboratory experiment<sup>2</sup> which showed that human sleep is biphasic in short photoperiods.
+- The early 1990s, the psychiatrist Thomas A. Wehr conducted a [laboratory experiment](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2869.1992.tb00019.x) which showed that human sleep is biphasic in short photoperiods.
   - He exposed a group of people in a short photoperiod - they were left in the darkness for 14 hours every day - for a month.
   - By the fourth week, a distinct two-phase sleep emerged. They slept the first 4 hours, then woke up for 1 to 3 hours before falling into a second 4-hour sleep.
   - > This finding suggests bi-phasic sleep is a natural process with a biological basis.

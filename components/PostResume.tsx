@@ -1,5 +1,6 @@
 import { pascalCase } from 'change-case';
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import { Box, Flex, Link, Message, Text } from 'theme-ui';
 
 import type { Recommendation } from '../lib/files';
@@ -10,9 +11,14 @@ const PostResume = ({
   excerpt,
   group,
   formattedDate,
+  updatedAt,
   tags,
   href,
 }: Recommendation) => {
+  const { asPath } = useRouter();
+
+  const isPostPage = asPath === href;
+
   return (
     <Box
       sx={{
@@ -41,6 +47,12 @@ const PostResume = ({
         <Text as="span" sx={{ color: 'gray' }}>
           {formattedDate}
         </Text>
+        {isPostPage && (
+          <Text as="span" sx={{ color: 'gray', fontStyle: 'italic' }}>
+            {' '}
+            (updated at {updatedAt})
+          </Text>
+        )}
       </Text>
     </Box>
   );

@@ -59,11 +59,7 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
     );
   },
   link: ({ children, href }: { children: React.ReactNode; href: string }) => {
-    const link = (
-      <Link href={href} target="_blank" rel="noopener noreferrer">
-        {children}
-      </Link>
-    );
+    const link = <Link href={href}>{children}</Link>;
 
     if (href.startsWith('/')) {
       return (

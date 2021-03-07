@@ -1,5 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
 import Head from 'next/head';
-import { Box, Flex, Image, Styled, Text } from 'theme-ui';
+import { Box, Flex, Image, Link, Styled } from 'theme-ui';
 
 import type { Post } from '../lib/files';
 
@@ -9,6 +11,8 @@ import PostResume from './PostResume';
 
 const PostComponent = ({ post }: { post: Post }) => {
   const { excerpt, image, href, title, group } = post;
+
+  const editLink = `https://github.com/arantespp/arantespp.com/edit/main/posts/${href}.md`;
 
   return (
     <>
@@ -54,6 +58,19 @@ const PostComponent = ({ post }: { post: Post }) => {
         </Box>
       )}
       <Markdown content={post.content} />
+      <Flex sx={{ width: '100%', justifyContent: 'flex-end' }}>
+        <Link
+          sx={{
+            fontSize: 1,
+            color: 'gray',
+            fontStyle: 'italic',
+          }}
+          href={editLink}
+        >
+          <span>Edit this post </span>
+          <FontAwesomeIcon icon={faPen} />
+        </Link>
+      </Flex>
       <Flex sx={{ justifyContent: 'center', marginTop: 5, marginBottom: 6 }}>
         <Image sx={{ height: '1.5em', marginLeft: 1 }} src="/rose.png" />
       </Flex>

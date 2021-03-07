@@ -7,8 +7,7 @@ tags:
 rating: 5
 image:
   url: https://source.unsplash.com/uejtDqpJ7ig
-  alt: Photo by Drew Beamer on Unsplash
-  caption: Photo by <a href="https://unsplash.com/@drew_beamer?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Drew Beamer</a> on <a href="https://unsplash.com/s/photos/habits?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+  alt: Photo by <a href="https://unsplash.com/@drew_beamer?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Drew Beamer</a> on <a href="https://unsplash.com/s/photos/habits?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
 ---
 
 # Five habits for the next five years
