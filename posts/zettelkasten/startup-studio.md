@@ -9,7 +9,6 @@ tags:
   - entrepreneurship
   - venture capital
 rating: 3
-draft: true
 ---
 
 ## Notes
