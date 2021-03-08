@@ -19,6 +19,8 @@ const PostResume = ({
 
   const isPostPage = asPath === href;
 
+  const updatedAfterCreated = formattedDate !== updatedAt;
+
   return (
     <Box
       sx={{
@@ -47,7 +49,7 @@ const PostResume = ({
         <Text as="span" sx={{ color: 'gray' }}>
           {formattedDate}
         </Text>
-        {isPostPage && (
+        {isPostPage && updatedAfterCreated && (
           <Text as="span" sx={{ color: 'gray', fontStyle: 'italic' }}>
             {' '}
             (updated at {updatedAt})

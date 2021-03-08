@@ -1,7 +1,7 @@
 ---
 title: Startup Studio
 excerpt: It's an organization that creates startups following a repetitive process. It acts as a co-founder to startups.
-date: 2021-02-07
+date: 2021-03-08
 tags:
   - startup studio
   - venture building
