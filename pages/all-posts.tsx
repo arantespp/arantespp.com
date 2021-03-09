@@ -48,7 +48,7 @@ const AllPosts = ({
   allPosts,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [search, setSearch] = React.useState('');
-  const [debouncedSearch] = useDebounce(search, 500);
+  const [debouncedSearch] = useDebounce(search, 200);
   const [sorting, setSorting] = React.useState<Sorts>("Author's relevance");
   const [showGroups, setShowGroups] = React.useState([...GROUPS]);
 
@@ -67,6 +67,7 @@ const AllPosts = ({
       const postPropertiesToBeCompared: Array<keyof Post> = [
         'title',
         'content',
+        'tags',
       ];
 
       /**

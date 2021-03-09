@@ -20,7 +20,7 @@ const TagsIndex = ({
       <Styled.h1>Tags</Styled.h1>
       <Flex sx={{ flexWrap: 'wrap' }}>
         {tags.map((tag) => (
-          <Box sx={{ marginRight: 4, marginBottom: 2 }} key={tag}>
+          <Box sx={{ marginRight: 4, marginBottom: 3 }} key={tag}>
             <Tag tag={tag} />
           </Box>
         ))}

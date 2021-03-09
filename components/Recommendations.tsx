@@ -39,7 +39,7 @@ const Recommendations = ({
         <Link
           sx={{
             fontSize: 1,
-            marginBottom: 3,
+            marginBottom: 4,
             textAlign: 'center',
           }}
         >
