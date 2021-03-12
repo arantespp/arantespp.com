@@ -18,7 +18,11 @@ const PedroArantes = React.forwardRef(
          * Use Image instead emoji because not every browser render the
          * rose in the same way.
          **/}
-        <Image sx={{ height: '1.2em', marginLeft: 1 }} src="/rose.png" />
+        <Image
+          sx={{ height: '1em', marginLeft: 1 }}
+          src="/rose.png"
+          alt="rose"
+        />
       </Text>
     );
   }

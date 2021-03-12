@@ -13,6 +13,14 @@ const postsDirectory = path.join(process.cwd(), 'posts');
 
 export type { Group };
 
+export type Book = {
+  authors: string[];
+  link: string;
+  image?: string;
+  ASIN?: string;
+  ISBN?: string;
+};
+
 type PostMeta = {
   title: string;
   excerpt: string;
@@ -23,13 +31,11 @@ type PostMeta = {
   tags: string[];
   rating: number;
   backlinks?: Array<{ title: string; href: string }>;
-  image:
-    | {
-        url: string;
-        alt: string;
-      }
-    | null
-    | undefined;
+  image?: {
+    url: string;
+    alt: string;
+  } | null;
+  book?: Book | null;
 };
 
 export type Post = PostMeta & {
@@ -122,24 +128,54 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       tags,
       image,
       draft,
+      book,
     } = data as PostMeta;
 
-    const getTags = () =>
-      tags
+    const getTags = (customTags: string[] = []) =>
+      [...tags, ...customTags]
+        /**
+         * Remove invalid tags.
+         */
+        .filter((tag) => !!tag)
         /**
          * https://stackoverflow.com/a/37511463/8786986
          */
         .map((tag) => tag.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
         .map((tag) => paramCase(tag))
+        /**
+         * Remove duplicated tags.
+         * https://stackoverflow.com/a/56757215/8786986
+         */
+        .filter((tag, index, tags) => tags.indexOf(tag) === index)
         .sort((tagA, tagB) => tagA.localeCompare(tagB));
 
     const { mtime } = fs.statSync(fullPath);
     const { formattedDate: updatedAt } = getDate(mtime);
 
+    /**
+     * Add book image.
+     */
+    (() => {
+      if (!book || book?.image) {
+        return;
+      }
+
+      /**
+       * Check if image with same post name exists.
+       */
+      ['jpg', 'png'].forEach((ext) => {
+        const imageUrl = path.join('/', 'images', group, `${slug}.${ext}`);
+        const imageDir = path.join(process.cwd(), 'public', imageUrl);
+        if (fs.existsSync(imageDir)) {
+          book.image = imageUrl;
+        }
+      });
+    })();
+
     const post = {
       title,
       excerpt,
-      ...getDate(date),
+      ...(date ? getDate(date) : {}),
       updatedAt,
       href,
       group,
@@ -149,6 +185,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       tags: getTags(),
       image,
       draft,
+      book,
     };
 
     if (!href || !group || !slug) {
@@ -194,7 +231,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       drafts.push(post);
     }
 
-    return post;
+    return post as Post;
   } catch {
     return undefined;
   }
@@ -208,6 +245,10 @@ const getPostsByGroup = (group: Group) => {
          * Read all files inside group folder.
          */
         .readdirSync(path.join(postsDirectory, group))
+        /**
+         * Return only markdown files.
+         */
+        .filter((dir) => dir.endsWith('.md'))
         /**
          * Get the slug from filename.
          */
@@ -290,7 +331,7 @@ type GetPostsProps = {
 };
 
 /**
- * Get posts. Con be filtered by "group" and "tags".
+ * Get posts. Con be filtered by "group" and "tags". Return posts with backlinks.
  *
  * @param param.all return all posts. It ignores "group" and "tags" params.
  * @param param.group return posts that belong to a group.
@@ -325,7 +366,9 @@ export const getPosts = ({ all, group, tags }: GetPostsProps = {}) => {
     );
   };
 
-  return all ? allPosts.sort(sortPosts) : getGroupAndTagsPosts();
+  return (all ? allPosts.sort(sortPosts) : getGroupAndTagsPosts()).map(
+    (post) => getPost(post)!
+  );
 };
 
 export const getAllTags = () => {

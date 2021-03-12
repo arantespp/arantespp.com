@@ -17,12 +17,10 @@ const RecommendationCard = ({
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        marginTop: 4,
-        marginBottom: 4,
       }}
     >
       <NextLink href={href} passHref>
-        <Link sx={{ fontSize: 2, marginBottom: 2, fontWeight: 'bold' }}>
+        <Link sx={{ fontSize: 3, marginBottom: 2, fontWeight: 'bold' }}>
           {title}
         </Link>
       </NextLink>

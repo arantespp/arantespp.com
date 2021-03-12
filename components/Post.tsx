@@ -5,12 +5,13 @@ import { Box, Flex, Image, Link, Styled } from 'theme-ui';
 
 import type { Post } from '../lib/files';
 
+import BookHeader from './BookHeader';
 import CustomImage from './CustomImage';
 import Markdown from './Markdown';
 import PostResume from './PostResume';
 
 const PostComponent = ({ post }: { post: Post }) => {
-  const { excerpt, image, href, title, group } = post;
+  const { excerpt, image, href, title, group, book } = post;
 
   const editLink = `https://github.com/arantespp/arantespp.com/edit/main/posts/${href}.md`;
 
@@ -52,11 +53,10 @@ const PostComponent = ({ post }: { post: Post }) => {
       >
         <PostResume {...post} />
       </Box>
-      {!!image && (
-        <Box sx={{ marginBottom: 5 }}>
-          <CustomImage {...image} src={`${image.url}/1024×576`} />
-        </Box>
-      )}
+      <Box sx={{ marginBottom: 5 }}>
+        {!!image && <CustomImage {...image} src={`${image.url}/1024×576`} />}
+        {!!book && <BookHeader {...book} />}
+      </Box>
       <Markdown content={post.content} />
       <Flex sx={{ width: '100%', justifyContent: 'flex-end' }}>
         <Link

@@ -4,7 +4,7 @@ import { Styled } from 'theme-ui';
 
 import { getDrafts } from '../../lib/files';
 
-import RecommendationCard from '../../components/RecommendationCard';
+import RecommendationsList from '../../components/RecommendationsList';
 
 export const getStaticProps = async () => {
   const drafts = getDrafts();
@@ -21,9 +21,7 @@ const DraftsIndex = ({
         <meta key="googlebot" name="googlebot" content="noindex,follow" />
       </Head>
       <Styled.h1>Drafts</Styled.h1>
-      {drafts.map((draft, index) => (
-        <RecommendationCard key={index} recommendation={draft} />
-      ))}
+      <RecommendationsList recommendations={drafts} />
     </>
   );
 };

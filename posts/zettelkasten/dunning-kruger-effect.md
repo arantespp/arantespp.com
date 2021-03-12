@@ -19,7 +19,7 @@ rating: 3
 - Is a cognitive bias hypothesis in which people with low ability at a given task overestimate their ability at that task.
   - Comes from people's inability to recognize their lack of ability and poor self-awareness.
   - Comes from people's ignorance of a given activity's standards of performance.
-  - If you don't have competency, you can't know you don't have competency in a task. The skills you need to produce the right response about your competency is the same skills you need to know what a right response is.
+  - If you don't have competency, you can't know you don't have competency in a task. The skills you need to produce the right response about your competency are the same skills you need to know what a right response is.
 - Deficits in skill and expertise create a two-prolonged problem.
   1. People perform poorly in the domain which they're incompetent.
   2. The incompetence makes them unable to recognize their mistakes.

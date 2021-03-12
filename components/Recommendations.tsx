@@ -1,7 +1,7 @@
 import NextLink from 'next/link';
-import { Flex, Link, Text } from 'theme-ui';
+import { Box, Flex, Link, Text } from 'theme-ui';
 
-import RecommendationCard from './RecommendationCard';
+import RecommendationsList from './RecommendationsList';
 
 import type { Recommendation } from '../lib/files';
 
@@ -46,12 +46,7 @@ const Recommendations = ({
           Do you want to see all posts instead?
         </Link>
       </NextLink>
-      {recommendations.map((recommendation) => (
-        <RecommendationCard
-          key={recommendation.href}
-          recommendation={recommendation}
-        />
-      ))}
+      <RecommendationsList recommendations={recommendations} />
     </Flex>
   );
 };

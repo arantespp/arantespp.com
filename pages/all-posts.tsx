@@ -1,7 +1,7 @@
 import { pascalCase } from 'change-case';
 import { InferGetStaticPropsType } from 'next';
 import * as React from 'react';
-import { compareTwoStrings, findBestMatch } from 'string-similarity';
+import { findBestMatch } from 'string-similarity';
 import { Box, Checkbox, Input, Label, Radio, Styled, Text } from 'theme-ui';
 import { useDebounce } from 'use-debounce';
 

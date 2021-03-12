@@ -42,7 +42,7 @@ const PostResume = ({
       </Flex>
       <Text sx={{ fontSize: 1 }}>
         <NextLink href={`/${group}`} passHref>
-          <Link sx={{ fontSize: 1, paddingRight: 1 }}>
+          <Link sx={{ fontSize: 2, paddingRight: 1 }}>
             {pascalCase(group)},
           </Link>
         </NextLink>
