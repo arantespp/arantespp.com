@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
 import math from 'remark-math';
-import { Flex, Link, Styled, Text } from 'theme-ui';
+import { Box, Flex, Link, Styled, Text } from 'theme-ui';
 import url from 'url';
 import 'katex/dist/katex.min.css';
 
@@ -103,7 +103,11 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
    * https://katex.org/docs/supported.html
    */
   inlineMath: ({ value }) => <Tex math={value} />,
-  math: ({ value }) => <Tex block math={value} />,
+  math: ({ value }) => (
+    <Box sx={{ overflow: 'auto', marginY: 4 }}>
+      <Tex block math={value} />
+    </Box>
+  ),
 });
 
 const plugins = [math];
