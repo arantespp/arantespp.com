@@ -86,8 +86,6 @@ const AllPosts = ({
           .map((property) => String(property))
       );
 
-      console.log(arrayCompare);
-
       const { bestMatch, bestMatchIndex, ratings } = findBestMatch(
         debouncedSearch.toLowerCase(),
         arrayCompare.map((str) => str.toLowerCase())
