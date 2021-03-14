@@ -5,7 +5,7 @@ import { findBestMatch } from 'string-similarity';
 import { Box, Checkbox, Input, Label, Radio, Styled, Text } from 'theme-ui';
 import { useDebounce } from 'use-debounce';
 
-import RecommendationCard from '../components/RecommendationCard';
+import RecommendationsList from '../components/RecommendationsList';
 
 import { allPosts, Post } from '../lib/files';
 import { Group, GROUPS } from '../lib/groups';
@@ -75,8 +75,18 @@ const AllPosts = ({
        * compared by string similarity method.
        */
       const arrayCompare = postsByGroups.flatMap((post) =>
-        postPropertiesToBeCompared.map((property) => String(post[property]))
+        postPropertiesToBeCompared
+          .map((property) => {
+            if (Array.isArray(post[property])) {
+              return (post[property] as Array<any>).join(' ');
+            }
+
+            return post[property];
+          })
+          .map((property) => String(property))
       );
+
+      console.log(arrayCompare);
 
       const { bestMatch, bestMatchIndex, ratings } = findBestMatch(
         debouncedSearch.toLowerCase(),
@@ -189,9 +199,8 @@ const AllPosts = ({
         </FilterBlock>
       </Box>
 
-      {filteredPosts
-
-        .sort((postA, postB) => {
+      <RecommendationsList
+        recommendations={filteredPosts.sort((postA, postB) => {
           if (sorting === "Author's relevance") {
             return postB.rating - postA.rating;
           }
@@ -205,11 +214,8 @@ const AllPosts = ({
           }
 
           return 0;
-        })
-
-        .map((post) => (
-          <RecommendationCard key={post.href} recommendation={post} />
-        ))}
+        })}
+      />
     </>
   );
 };

@@ -18,10 +18,10 @@
     "@theme-ui/match-media": "^0.3.5",
     "@theme-ui/typography": "^0.3.5",
     "change-case": "^4.1.2",
-    "date-fns": "^2.17.0",
+    "date-fns": "^2.19.0",
     "gray-matter": "^4.0.2",
-    "katex": "^0.12.0",
-    "next": "10.0.7",
+    "katex": "^0.13.0",
+    "next": "10.0.8",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-markdown": "^5.0.3",
@@ -29,15 +29,15 @@
     "string-similarity": "^4.0.4",
     "theme-ui": "^0.3.5",
     "typography-theme-fairy-gates": "^0.16.19",
-    "use-debounce": "^5.2.1"
+    "use-debounce": "^6.0.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^10.0.7",
-    "@types/node": "^14.14.31",
-    "@types/react": "^17.0.2",
+    "@next/bundle-analyzer": "^10.0.8",
+    "@types/node": "^14.14.34",
+    "@types/react": "^17.0.3",
     "@types/string-similarity": "^4.0.0",
     "@types/theme-ui": "^0.3.7",
     "cross-env": "^7.0.3",
-    "typescript": "^4.2.2"
+    "typescript": "^4.2.3"
   }
 }

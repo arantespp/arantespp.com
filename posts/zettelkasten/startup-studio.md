@@ -19,9 +19,9 @@ rating: 3
 
 - It's an organization that creates startups following a repetitive process. It acts as a co-founder to startups.
 
-  - Besides providing funding for early-stage startups (as a VC do), Studios will also assign members of their own team to help the original founding team build the startup.
+  - Besides providing funding for early-stage startups (as a [venture capital](/zettelkasten/venture-capital) do), Studios will also assign members of their own team to help the original founding team build the startup.
 
-    - Because of this, Studios take more equity than VCs.
+    - Because of this, Studios take more equity than [venture capitals](/zettelkasten/venture-capital).
 
 - The products of Startup Studios are startups.
 
@@ -51,7 +51,7 @@ rating: 3
 
 - How many startups can a Startup Studio manage at the same time?
 
-- What are the differences between Studios and [startup incubator](/zettelkasten/startup-incubator)? And [startup accelerator](/zettelkasten/startup-accelerator)? And [Venture Capital](/zettelkasten/venture-capital)?
+- What are the differences between Studios and [startup incubator](/zettelkasten/startup-incubator)? And [startup accelerator](/zettelkasten/startup-accelerator)? And [venture capital](/zettelkasten/venture-capital)?
 
 ## References
 

@@ -6,6 +6,7 @@ import {
   Group,
 } from '../../lib/files';
 
+import Digest from '../../components/Digest';
 import NotFound from '../../components/NotFound';
 import Post from '../../components/Post';
 import Recommendations from '../../components/Recommendations';
@@ -39,6 +40,7 @@ const GroupSlug = ({
     <>
       <Post post={post} />
       <Recommendations recommendations={recommendations} />
+      <Digest />
     </>
   );
 };

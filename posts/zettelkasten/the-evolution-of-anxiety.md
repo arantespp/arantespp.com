@@ -9,6 +9,8 @@ tags:
   - brain
   - psychology
   - human-behavior
+  - Delayed Return Environment
+  - Immediate Return Environment
 rating: 3
 ---
 
@@ -34,4 +36,4 @@ rating: 3
 
 ## References
 
-- [The Evolution of Anxiety: Why We Worry and What to Do About It](https://jamesclear.com/evolution-of-anxiety)
+- [James Clear. The Evolution of Anxiety: Why We Worry and What to Do About It](https://jamesclear.com/evolution-of-anxiety)

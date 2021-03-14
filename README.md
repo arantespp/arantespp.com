@@ -1,6 +1,6 @@
 # Welcome to my Digital Garden
 
-![Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/plant?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](https://source.unsplash.com/vrbZVyX2k4I)
+![Photo by <a href="https://unsplash.com/@nagesh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nagesh Badu</a> on <a href="/s/photos/garden?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](https://source.unsplash.com/vYcH7pI6v1Q)
 
 I like to think that this site [is my "digital garden", not a blog](https://joelhooks.com/digital-garden). I use this term because I use here to write about some thoughts and ideas I have and want to share with the world. And like a garden, a place where things grow, here is a site in which I "seed" my ideas little by little.
 

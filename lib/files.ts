@@ -30,7 +30,7 @@ type PostMeta = {
   updatedAt?: string;
   tags: string[];
   rating: number;
-  backlinks?: Array<{ title: string; href: string }>;
+  backlinks?: PostWithoutContent[];
   image?: {
     url: string;
     alt: string;
@@ -44,6 +44,13 @@ export type Post = PostMeta & {
   slug: string;
   content: string;
 };
+
+/**
+ * Used by recommendations.
+ */
+export type PostWithoutContent = Omit<Post, 'content'>;
+
+export type Recommendation = PostWithoutContent;
 
 const LIMIT = 7;
 
@@ -291,7 +298,7 @@ const getPost = (props: GetPartialPostProps): Post | undefined => {
 
   const backlinks = allPosts
     .filter(({ content }) => content.includes(`(${partialPost.href})`))
-    .map(({ title, href }) => ({ title, href }));
+    .map(({ content, ...post }) => post);
 
   const newContent = (() => {
     const { content } = partialPost;
@@ -313,6 +320,9 @@ const getPost = (props: GetPartialPostProps): Post | undefined => {
   return { ...partialPost, content: newContent, backlinks };
 };
 
+/**
+ * Generally used to read index.md pages.
+ */
 export const getFile = (filePath: string) => {
   try {
     const fullPath = path.join(postsDirectory, filePath);
@@ -328,6 +338,14 @@ type GetPostsProps = {
   all?: boolean;
   group?: Group;
   tags?: string[];
+};
+
+/**
+ * Remove duplicated posts that may come from group and tags posts.
+ * https://stackoverflow.com/a/56757215/8786986
+ */
+const removeDuplicatedPosts = (post: Post, index: number, arr: Post[]) => {
+  return arr.findIndex(({ href }) => href === post.href) === index;
 };
 
 /**
@@ -353,16 +371,8 @@ export const getPosts = ({ all, group, tags }: GetPostsProps = {}) => {
           )
       : [];
 
-    return (
-      [...tagsPosts.sort(sortPosts), ...groupPosts.sort(sortPosts)]
-        /**
-         * Remove duplicated posts that may come from group and tags posts.
-         * https://stackoverflow.com/a/56757215/8786986
-         */
-        .filter(
-          (post, index, arr) =>
-            arr.findIndex(({ href }) => href === post.href) === index
-        )
+    return [...tagsPosts.sort(sortPosts), ...groupPosts.sort(sortPosts)].filter(
+      removeDuplicatedPosts
     );
   };
 
@@ -393,13 +403,6 @@ export const getRecommendations = (props: GetPostsProps = {}) => {
 };
 
 /**
- * Used by recommendations.
- */
-export type PostWithoutContent = Omit<Post, 'content'>;
-
-export type Recommendation = PostWithoutContent;
-
-/**
  * Return specific post and post recommendations.
  */
 export const getPostAndPostsRecommendations = ({
@@ -411,14 +414,18 @@ export const getPostAndPostsRecommendations = ({
 }) => {
   const post = getPost({ group, slug });
 
-  const { tags } = post || {};
+  const { tags, backlinks = [] } = post || {};
 
   const recommendations = post
-    ? getRecommendations({ tags, group })
+    ? [...backlinks, ...getRecommendations({ tags, group })]
         /**
          * Don't return the post as recommendation.
          */
         .filter(({ href }) => href !== post?.href)
+        /**
+         * Remove posts that may come from backlinks and getRecommendation.
+         */
+        .filter(removeDuplicatedPosts)
     : [];
 
   return { post, recommendations };

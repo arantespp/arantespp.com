@@ -56,6 +56,7 @@ const partialTheme: any = {
       fontStyle: 'italic',
       padding: 2,
       paddingLeft: 3,
+      backgroundColor: 'transparent',
     },
   },
   styles: {
