@@ -13,7 +13,9 @@ book:
   ASIN: B0753F6GFV
 ---
 
-## Chapter 1 - How to Turn Time into Money
+## Notes
+
+### Chapter 1 - How to Turn Time into Money
 
 The main idea is evaluating how much your work hour is worth, that he calls **base earning target** - $BET$. It uses your year base earning target, how many days you work in a year and your productivity rate. If you earn \$200,000.00 and work 220 days in a year, 8 hours per day and have a productivity rate of 33\%, your $BET$ is calculated by:
 
@@ -40,3 +42,23 @@ In a business perspective, two business life changes that this number may come t
 2. You have to eliminate tasks that aren't worth of your time.
 
 **It helps you to decide what you shouldn't be doing. This is as important as deciding what to invest your time in.**
+
+### Chapter 2 - How to Cheat Time
+
+This chapter show some ways to you multiply your time leveraging other people.
+
+Author said that there are ways to reduce $BET$. _Why is it good to reduce this number?_
+
+There are only three ways to make money:
+
+1. your own work;
+1. commission on other people's work;
+1. money making money for you.
+
+Three less obvious ways to leverage other people. The more you become adept at these methods, the less direct time and capital investment is required to grow your business.
+
+- **OPM - Other People's Money**: sometimes it's more efficient use debt or investor's capital to buy growth or expansion.
+
+- **OPR - Other's People Resources**: co-opt with other people's resources. Before you create or manage any resource with your time, you should ask yourself who is doing the same work and how you might use their work. SaaS constitute ORP - you don't need to invest time in building the platform, you can use the existing ones.
+
+- **OPC - Other's People Customers**: _"almost without exception, the most expensive, difficult, and time-consuming aspect of a business is acquiring needed new customers, one by one, by your own advertising, marketing and selling"_. You should find ways to access OPCs, even automating it, to put in your business.
