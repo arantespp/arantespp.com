@@ -15,7 +15,7 @@ book:
 
 ## Notes
 
-### Chapter 1 - How to Turn Time into Money
+### Chapter 1
 
 The main idea is evaluating how much your work hour is worth, that he calls **base earning target** - $BET$. It uses your year base earning target, how many days you work in a year and your productivity rate. If you earn \$200,000.00 and work 220 days in a year, 8 hours per day and have a productivity rate of 33\%, your $BET$ is calculated by:
 
@@ -43,7 +43,7 @@ In a business perspective, two business life changes that this number may come t
 
 **It helps you to decide what you shouldn't be doing. This is as important as deciding what to invest your time in.**
 
-### Chapter 2 - How to Cheat Time
+### Chapter 2
 
 This chapter show some ways to you multiply your time leveraging other people.
 
@@ -62,3 +62,17 @@ Three less obvious ways to leverage other people. The more you become adept at t
 - **OPR - Other's People Resources**: co-opt with other people's resources. Before you create or manage any resource with your time, you should ask yourself who is doing the same work and how you might use their work. SaaS constitute ORP - you don't need to invest time in building the platform, you can use the existing ones.
 
 - **OPC - Other's People Customers**: _"almost without exception, the most expensive, difficult, and time-consuming aspect of a business is acquiring needed new customers, one by one, by your own advertising, marketing and selling"_. You should find ways to access OPCs, even automating it, to put in your business.
+
+### Chapter 3
+
+This chapter talks about _Time Vampires_, that are people who take your time and energy during all day. Dan defines some _Time Vampires_:
+
+1. **Mr. Have-You-Got-a-Minute**: they're always asking for "have you got a minute?" or "I just need a couple of minutes of your time?", for every random thought and questions that passes to their mind (these requests take away your productivity because the inefficiency of the [human multitasking](/zettelkasten/human-multitasking)). **Solution**: discipline yourself and your team to organize the questions and communicate everything at once - not one thing at a time.
+
+1. **Mr. Meeting**: they seen to do nothing but attend meetings. **Solution**: "you need to stop and always ask yourself: do I really need to be in - or hold - this meeting? Is there a more time-efficient way to handle this? A conference call? A memo circulated to each person?"
+
+1. **Mr. Trivia**: they can't or doesn't want to differentiate what is important or not. They will interrupt you about anything, getting you to set aside your list of priorities in favor of his, that could be of the minimal importance. **Solution**: just ask "I'm only dealing with 9s and 10s on a 1 to 10 scale. Everything else MUST wait until tomorrow. Are you convinced that what you want to talk to me about is 9 or 10?"
+
+1. **Soap Opera Time**: they turn everything in a emotional crisis. They react to everything emotionally. They'll try to put you in their drama. The problem is they make you give up your time to put them back together emotionally. **Solutions**: 1) cut to the core of their problem and tell them what to do, probably this is not what they want. 2) Take over the conversation by launching into a long, boring and pointless story. Turn into a vampire yourself 😂
+
+Are there different varieties of Time Vampires? Yes. You must always be alert to notice any Time Vampire in your life.

@@ -11,9 +11,7 @@ import Markdown from './Markdown';
 import PostResume from './PostResume';
 
 const PostComponent = ({ post }: { post: Post }) => {
-  const { excerpt, image, href, title, group, book } = post;
-
-  const editLink = `https://github.com/arantespp/arantespp.com/edit/main/posts/${href}.md`;
+  const { excerpt, image, href, title, group, book, editLink } = post;
 
   return (
     <>
@@ -58,19 +56,21 @@ const PostComponent = ({ post }: { post: Post }) => {
         {!!book && <BookHeader {...book} />}
       </Box>
       <Markdown content={post.content} />
-      <Flex sx={{ width: '100%', justifyContent: 'flex-end' }}>
-        <Link
-          sx={{
-            fontSize: 1,
-            color: 'gray',
-            fontStyle: 'italic',
-          }}
-          href={editLink}
-        >
-          <span>Edit this post </span>
-          <FontAwesomeIcon icon={faPen} />
-        </Link>
-      </Flex>
+      {editLink && (
+        <Flex sx={{ width: '100%', justifyContent: 'flex-end' }}>
+          <Link
+            sx={{
+              fontSize: 1,
+              color: 'gray',
+              fontStyle: 'italic',
+            }}
+            href={editLink}
+          >
+            <span>Edit this post </span>
+            <FontAwesomeIcon icon={faPen} />
+          </Link>
+        </Flex>
+      )}
       <Flex sx={{ justifyContent: 'center', marginTop: 5, marginBottom: 6 }}>
         <Image sx={{ height: '1.5em', marginLeft: 1 }} src="/rose.png" />
       </Flex>

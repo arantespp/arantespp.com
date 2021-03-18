@@ -14,6 +14,7 @@ const PostResume = ({
   updatedAt,
   tags,
   href,
+  updateHistory,
 }: Recommendation) => {
   const { asPath } = useRouter();
 
@@ -52,7 +53,7 @@ const PostResume = ({
         {isPostPage && updatedAfterCreated && (
           <Text as="span" sx={{ color: 'gray', fontStyle: 'italic' }}>
             {' '}
-            (updated at {updatedAt})
+            <Link href={updateHistory}>(updated at {updatedAt})</Link>
           </Text>
         )}
       </Text>

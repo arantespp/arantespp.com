@@ -11,6 +11,8 @@ import { Group, GROUPS } from './groups';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
+const GITHUB_PROJECT = 'https://github.com/arantespp/arantespp.com';
+
 export type { Group };
 
 export type Book = {
@@ -28,6 +30,7 @@ type PostMeta = {
   date: string;
   formattedDate: string;
   updatedAt?: string;
+  updateHistory?: string;
   tags: string[];
   rating: number;
   backlinks?: PostWithoutContent[];
@@ -36,6 +39,8 @@ type PostMeta = {
     alt: string;
   } | null;
   book?: Book | null;
+  editLink?: string;
+  bitLink?: string;
 };
 
 export type Post = PostMeta & {
@@ -136,6 +141,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       image,
       draft,
       book,
+      bitLink,
     } = data as PostMeta;
 
     const getTags = (customTags: string[] = []) =>
@@ -184,6 +190,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       excerpt,
       ...(date ? getDate(date) : {}),
       updatedAt,
+      updateHistory: `${GITHUB_PROJECT}/commits/main/posts${href}.md`,
       href,
       group,
       slug,
@@ -193,6 +200,8 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       image,
       draft,
       book,
+      editLink: `${GITHUB_PROJECT}/edit/main/posts${href}.md`,
+      bitLink,
     };
 
     if (!href || !group || !slug) {

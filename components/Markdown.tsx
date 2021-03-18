@@ -1,5 +1,6 @@
-import Tex from '@matejmazur/react-katex';
+// import Tex from '@matejmazur/react-katex';
 import { paramCase } from 'change-case';
+import dynamic from 'next/dynamic';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
@@ -9,6 +10,8 @@ import url from 'url';
 import 'katex/dist/katex.min.css';
 
 import CustomImage from './CustomImage';
+
+const Tex = dynamic(() => import('@matejmazur/react-katex'));
 
 /**
  * https://github.com/rexxars/react-markdown/tree/c63dccb8185869cfc73c257d098a123ef7a7cd33#node-types
