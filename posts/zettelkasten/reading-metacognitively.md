@@ -20,7 +20,7 @@ rating: 2
 - Slows down your speed reading because you need more time to engage with the material.
 - You expand your knowledge base because you send more information to your long-term memory.
 
-##
+## Questions
 
 - How can I know that I'm reading/studying metacognitively?
 
