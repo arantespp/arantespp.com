@@ -63,7 +63,7 @@ const Graph = ({
   edges,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const {
-    theme: { fontSizes },
+    theme: { fontSizes, sizes },
   } = useThemeUI();
 
   const [selectedNode, setSelectedNode] = React.useState<{
@@ -128,7 +128,7 @@ const Graph = ({
           key="og:description"
           content="All posts and tags and their connections."
         />
-        <meta property="og:image" key="og:image" content="/graph" />
+        <meta property="og:image" key="og:image" content="/images/graph.png" />
       </Head>
       <Box
         sx={{
@@ -145,7 +145,7 @@ const Graph = ({
               position: 'absolute',
               backgroundColor: 'white',
               zIndex: 2,
-              maxWidth: '700px',
+              maxWidth: (sizes as any)?.container,
               borderWidth: 1,
               borderStyle: 'solid',
               borderColor: 'primary',
