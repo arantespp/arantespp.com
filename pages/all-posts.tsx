@@ -1,5 +1,6 @@
 import { pascalCase } from 'change-case';
 import { InferGetStaticPropsType } from 'next';
+import Link from 'next/link';
 import * as React from 'react';
 import { findBestMatch } from 'string-similarity';
 import { Box, Checkbox, Input, Label, Radio, Styled, Text } from 'theme-ui';
@@ -140,7 +141,11 @@ const AllPosts = ({
   return (
     <>
       <Styled.h1>All Posts</Styled.h1>
-
+      <Box sx={{ marginY: 3 }}>
+        <Link href="/graph">
+          Check the graph the see all posts and tags and their connections.
+        </Link>
+      </Box>
       <Box
         sx={{
           '& > div:last-child': {
