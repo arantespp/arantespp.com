@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
-import Head from 'next/head';
+
 import { Box, Flex, Image, Link, Styled } from 'theme-ui';
 
 import type { Post } from '../lib/files';
@@ -8,38 +8,15 @@ import type { Post } from '../lib/files';
 import BookHeader from './BookHeader';
 import CustomImage from './CustomImage';
 import Markdown from './Markdown';
+import PostHead from './PostHead';
 import PostResume from './PostResume';
 
 const PostComponent = ({ post }: { post: Post }) => {
-  const { excerpt, image, href, title, group, book, editLink } = post;
+  const { image, title, book, editLink } = post;
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta property="og:type" key="og:type" content="website" />
-        <meta
-          property="og:url"
-          key="og:url"
-          content={`https://arantespp.com${href}`}
-        />
-        <meta property="og:title" key="og:title" content={title} />
-        <meta
-          property="og:description"
-          key="og:description"
-          content={excerpt}
-        />
-        {group === 'zettelkasten' && (
-          <meta
-            property="og:image"
-            key="og:image"
-            content="https://source.unsplash.com/HOrhCnQsxnQ"
-          />
-        )}
-        {image && (
-          <meta property="og:image" key="og:image" content={image.url} />
-        )}
-      </Head>
+      <PostHead post={post} />
       <Styled.h1>{title}</Styled.h1>
       <Box
         sx={{

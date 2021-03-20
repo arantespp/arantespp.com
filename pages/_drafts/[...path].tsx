@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { getDrafts, getDraft } from '../../lib/files';
 
 import Post from '../../components/Post';
+import PostHead from '../../components/PostHead';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -34,6 +35,7 @@ const DraftsSlug = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
+      <PostHead post={draft} />
       <Head>
         <meta key="robots" name="robots" content="noindex,follow" />
         <meta key="googlebot" name="googlebot" content="noindex,follow" />

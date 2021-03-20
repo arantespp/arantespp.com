@@ -76,3 +76,39 @@ This chapter talks about _Time Vampires_, that are people who take your time and
 1. **Soap Opera Time**: they turn everything in a emotional crisis. They react to everything emotionally. They'll try to put you in their drama. The problem is they make you give up your time to put them back together emotionally. **Solutions**: 1) cut to the core of their problem and tell them what to do, probably this is not what they want. 2) Take over the conversation by launching into a long, boring and pointless story. Turn into a vampire yourself 😂
 
 Are there different varieties of Time Vampires? Yes. You must always be alert to notice any Time Vampire in your life.
+
+### Chapter 4
+
+Interruptions destroy productivity, and almost none of them have to do with necessity. In this chapter, the author shows five ways minimize these interruptions.
+
+#### Get lost
+
+_"If they can't find you, they can't interrupt you."_
+
+Be inaccessible to your coworkers. Working at home is possible solution. Dan says that when he was inaccessible, their people functioned just as well or better when he was there. They handled 80% of everything on their own, and the other 20% they asked quickly and efficiently.
+
+If you have to work in a office with the rest of our staff, it's very important that you have a **Closed Door Policy**.
+
+#### Don't answer the phone
+
+It's the productivity enemy number one. We have the culture to answer immediately every message, every phone call, but it doesn't have to be like this. Dan proposes a new philosophy: _"you have absolutely no legal, moral, or other responsibility to answer the phone or take a call unless you want to"_. If you're stopping your work on a task with a known priority in favor of something else with unknown priority, then you're turning the control of your day to the unknown.
+
+#### Get a grip on email, texts, and faxes
+
+Instant communication creates an aura of immediacy among us. People have an expectation of immediate or at least quick response from you.
+
+The easier the mean of communication is, the more the quantity of junk messages. Which is easier, sending "we make a delicious cake" via texting or email? Or cellphone? Or fax? We can compare this with the [proof-of-work](/zettelkasten/proof-of-work) method, that creates some cost to the sender but no or low cost to the receiver - the sender will only pay the cost if the request or message is more important than the cost.
+
+The author uses only fax. He compared the quality of the messages he receives with the messages of his clients that use email. His received messages are much more objective and organized.
+
+Wherever the communicating mean you use, you have to setup boundaries of the frequency and the screen time you allow yourself to check them. Also, you have to make them clear to your clients and coworkers.
+
+#### Set the timer on the bomb
+
+Whenever you have to take an incoming call or meet someone, it's a smart idea to set up an exit time.
+
+> _I have a conference call starting in just 15 minutes, but I wanted to take your call - I hope that will be enough time for our discussion. Do you agree or should we setup another telephone appointment?_
+
+#### Be busy and be obvious about it
+
+If you're sitting at your desk, appearing relaxed, to the others, you're it, even if you're disarming a nuclear bomb. When you're visible to others, it's best to be visibly busy.
