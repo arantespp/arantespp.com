@@ -90,6 +90,9 @@ const Graph = ({
       },
       smooth: true,
     },
+    layout: {
+      randomSeed: '0.07021729341431993:1616325872128',
+    },
     nodes: {
       shape: 'dot',
       scaling: {

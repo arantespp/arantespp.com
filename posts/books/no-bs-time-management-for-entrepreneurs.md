@@ -112,3 +112,17 @@ Whenever you have to take an incoming call or meet someone, it's a smart idea to
 #### Be busy and be obvious about it
 
 If you're sitting at your desk, appearing relaxed, to the others, you're it, even if you're disarming a nuclear bomb. When you're visible to others, it's best to be visibly busy.
+
+### Chapter 5
+
+This chapter is about punctuality. Dan starts the chapter stating that **everybody** he's met who adheres to this discipline becomes exceptionally successful, and everybody who ignores, fails. Some arguments to be punctual.
+
+- It gives to you the right to expect and demand that others respect your time. You can't expect others respect your time if you show no respect for theirs.
+
+- A person who cannot keep appointments on time, cannot keep scheduled commitments cannot be trusted in other ways either.
+
+- People judges you by your punctuality. Most successful people make a point of having "instant reject criteria" to save their time in determining who they want to deal with - punctuality is one of these criteria.
+
+- It's correlated to self-esteem. Someone that doesn't keep scheduled appointment is not only saying that you and your time are unimportant but is also revealing that he/she and his/time are important either - low self-esteem characteristic.
+
+- It's correlated to needy egos. They're always late as a means of trying to be and seen important. Their intended message is: _"I can be late because I'm more important than you"_.

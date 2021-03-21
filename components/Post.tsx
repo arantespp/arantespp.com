@@ -34,7 +34,7 @@ const PostComponent = ({ post }: { post: Post }) => {
       </Box>
       <Markdown content={post.content} />
       {editLink && (
-        <Flex sx={{ width: '100%', justifyContent: 'flex-end' }}>
+        <Flex sx={{ width: '100%', justifyContent: 'flex-end', marginY: 4 }}>
           <Link
             sx={{
               fontSize: 1,
@@ -43,7 +43,7 @@ const PostComponent = ({ post }: { post: Post }) => {
             }}
             href={editLink}
           >
-            <span>Edit this post </span>
+            <span>Recommend an edition for this post </span>
             <FontAwesomeIcon icon={faPen} />
           </Link>
         </Flex>

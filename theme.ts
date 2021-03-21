@@ -8,6 +8,11 @@ import themeFairyGates from 'typography-theme-fairy-gates';
 const typography = toTheme({
   ...themeFairyGates,
   baseFontSize: '18px',
+  overrideThemeStyles: () => ({
+    h1: {
+      wordBreak: 'break-word',
+    },
+  }),
 });
 
 /**
@@ -20,6 +25,8 @@ const palette = {
   celadonBlue: '#457b9d',
   prussianBlue: '#1d3557',
 };
+
+const wordBreak = 'break-word';
 
 const partialTheme: any = {
   borderWidths: [0, 1, 4],
@@ -62,12 +69,24 @@ const partialTheme: any = {
   styles: {
     h1: {
       marginY: 4,
+      wordBreak,
     },
     h2: {
       marginY: 4,
+      wordBreak,
     },
     h3: {
       marginY: 4,
+      wordBreak,
+    },
+    h4: {
+      wordBreak,
+    },
+    h5: {
+      wordBreak,
+    },
+    h6: {
+      wordBreak,
     },
     a: {
       color: 'secondary',

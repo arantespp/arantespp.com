@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import { Box, Flex, Link, Text } from 'theme-ui';
+import { Flex, Link, Text } from 'theme-ui';
 
 import RecommendationsList from './RecommendationsList';
 
@@ -28,7 +28,7 @@ const Recommendations = ({
     >
       <Text
         sx={{
-          fontSize: 5,
+          fontSize: [4, 5],
           fontWeight: 'bold',
           textAlign: 'center',
         }}
