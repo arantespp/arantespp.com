@@ -15,6 +15,7 @@ const Tex = dynamic(() => import('./Tex'));
  * https://github.com/rexxars/react-markdown/tree/c63dccb8185869cfc73c257d098a123ef7a7cd33#node-types
  */
 const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
+  ...(Styled as {}),
   heading: ({
     level,
     children,
@@ -72,9 +73,7 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
 
     return link;
   },
-  root: Styled.root,
   paragraph: Styled.p,
-  strong: Styled.strong,
   listItem: Styled.li,
   list: ({ ordered, ...props }) => {
     if (ordered) {

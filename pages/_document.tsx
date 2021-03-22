@@ -28,10 +28,15 @@ class MyDocument extends Document {
           <script
             dangerouslySetInnerHTML={{
               __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());              
-                gtag('config', 'UA-149485554-1');
+                var host = window.location.hostname;
+                if(host != "localhost") {
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());              
+                  gtag('config', 'UA-149485554-1');
+                } else {
+                  console.log("Running on localhost, not calling gtag.")
+                }
               `,
             }}
           />

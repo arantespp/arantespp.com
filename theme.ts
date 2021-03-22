@@ -107,6 +107,10 @@ const partialTheme: any = {
       backgroundColor: 'primary',
       color: 'white',
     },
+    blockquote: {
+      fontStyle: 'italic',
+      marginY: 4,
+    },
   },
   text: {
     highlighted: {
