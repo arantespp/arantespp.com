@@ -1,6 +1,6 @@
 ---
 title: Inflation
-excerpt: In macroeconomics, money supply is the quantity of the money in circulation that an economy have in a point of time.
+excerpt: Inflation is the rise of the general prices of a economy in a period of time caused by money supply growth.
 date: 2021-02-18
 rating: 2
 tags:
