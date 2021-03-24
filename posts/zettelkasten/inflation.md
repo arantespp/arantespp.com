@@ -11,7 +11,8 @@ tags:
 
 ## Notes
 
-- Inflation is the rise of the general prices of a economy in a period of time.
+- Inflation is the rise of the general prices of a economy in a period of time caused by [money supply](/zettelkasten/money-supply) growth.
+  - Note that the general prices may increase, but the cause may not be by [money supply](/zettelkasten/money-supply) growth, but for supply and demand changes, for example.
 - If the inflation is positive, the general prices increases and each unity of the currency buy few products and services.
 - The opposite of inflation is deflation.
   - The general prices of products and services decreases.

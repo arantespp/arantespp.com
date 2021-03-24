@@ -5,6 +5,8 @@ excerpt: "This book is expressively for entrepreneurs and business owners who we
 tags:
   - productivity
   - time-management
+  - habits
+
 rating: 5
 book:
   authors:
@@ -126,3 +128,55 @@ This chapter is about punctuality. Dan starts the chapter stating that **everybo
 - It's correlated to self-esteem. Someone that doesn't keep scheduled appointment is not only saying that you and your time are unimportant but is also revealing that he/she and his/time are important either - low self-esteem characteristic.
 
 - It's correlated to needy egos. They're always late as a means of trying to be and seen important. Their intended message is: _"I can be late because I'm more important than you"_.
+
+### Chapter 6
+
+This chapter talks about discipline and habits. As usual, it starts stating that you may achieve success if you have self-discipline. Beyond what everyone says, Dan talks about how demonstrated self-discipline is **magnetic**. If you demonstrate that you have self-discipline (the same to self-esteem and self-control), your clients will have an unconscious preference on you, to give their money to you.
+
+Very successful people are secretly lazy and become exceptionally self-disciplined ouy of necessity. Because some of them are their own boss, they can spend their time as please and because of this it's very important to be self-disciplined.
+
+Three steps to consistent successful achievement: **awareness**, **decision** and **action**.
+
+### Chapter 7
+
+Ten time management techniques really worth using.
+
+#### 1. Tame All the Interruptions
+
+[Chapter 4](#chapter-4).
+
+#### 2. Minimize Meetings
+
+Most meetings end where they being. Find strategies to abbreviate and focus them.
+
+#### 3. Practice Absolute Punctuality
+
+[Chapter 5](#chapter-5).
+
+#### 4. Make and Use Lists
+
+Dan uses four basic lists:
+
+1. **My Schedule**: for entire year, day by day.
+
+1. **Things to Do List**: is organized by the month, the week, and each day prioritized as A's, B's and C's.
+
+1. **People to Call List**.
+
+1. **Conference Planner**: a page for each person the author interacts a lot, where he jots down things he needs to talk to them about as they occur to him between meetings or conversations.
+
+The "magic" here is more in the making and using lists than in particular tool, medium, or format you use.
+
+> If you aren't making lists, you probably aren't making a lot of money.
+
+#### 5. Fight to Link Everything to Your Goals
+
+A secret to be more productive is to have more reasons to be productive. When you have your goals clearly in your mind, you'll have a good reason to be more productive. A definition of productivity:
+
+> Productivity is the deliberate, strategic investment of your time, talent, intelligence, energy, resources, and opportunities in a manner calculated to move you measurably closes to meaningful goals.
+
+By definition, productivity presupposes the existence of _meaningful goals_. You also have to find a way to measure them. Always ask to yourself:
+
+> Is what I'm doing, this minute, moving me measurably closes to my goals?
+
+The simply fact you measure your goals improve productivity. Just asking the question will enhance your productivity. Of course you need time for casual conversations, reading comics, and other activities that aren't correlated to your goals. Buy you should to do those things consciously and by choice.

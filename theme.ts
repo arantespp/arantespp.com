@@ -80,6 +80,7 @@ const partialTheme: any = {
       wordBreak,
     },
     h4: {
+      marginY: 4,
       wordBreak,
     },
     h5: {
