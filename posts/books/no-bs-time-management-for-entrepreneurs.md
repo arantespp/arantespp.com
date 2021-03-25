@@ -6,7 +6,6 @@ tags:
   - productivity
   - time-management
   - habits
-
 rating: 5
 book:
   authors:
@@ -180,3 +179,23 @@ By definition, productivity presupposes the existence of _meaningful goals_. You
 > Is what I'm doing, this minute, moving me measurably closes to my goals?
 
 The simply fact you measure your goals improve productivity. Just asking the question will enhance your productivity. Of course you need time for casual conversations, reading comics, and other activities that aren't correlated to your goals. Buy you should to do those things consciously and by choice.
+
+#### 6. Tickle the Memory with Tickler Files
+
+This technique reduce clutter and serve as automattic memory. You have 90 file folders, red, blue and white, all of them numbered 1 thought 30. Red, blue and white represent the current month, next month, and the month after that. If you assume meet a client on tenth next month, you drop his file into the blue file folder numbered 10.
+
+#### 7. Block Your Time
+
+Make inviolate appointments with yourself as you have yours locked-in-stone appointments with others. You have to find when your body and mind perform the tasks more effectively and assign that time for you. Also, throw out all norms, "rules", others' opinions and create the best work conditions for yourself that facilitate your best productivity.
+
+#### 8. Minimize Unplanned Activity
+
+This technique is very interesting. An unplanned activity means that it doesn't have start and end time, so it may never finish. As stated by [Parkinson's Law](/zettelkasten/parkinsons-law):
+
+> Work expands so as to fill the time available for its completion.
+
+But for you minimize unplanned activities, you have to put some pressure on you. Isn't it bad, it is? Pressure is good, stress, don't. Pressure helps you achieve better results than without it. Your days become more organized. Steve Jobs and Walt Disney were both notorious for placing "impossible" deadlines on projects.
+
+Without pressure, your tasks, routine and schedule become chaotic and disorganized. You will be juggling priorities, randomly responding to interruptions and letting work expand its consumption of time as it sees fit. This scenario causes a lot of pressure and stress.
+
+> There is a false idea that "creative people" work liberated from deadlines and time pressure and need the freedom to wait for inspiration. Not the successful ones. Not the productive ones.

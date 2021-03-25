@@ -35,7 +35,7 @@ const Recommendations = ({
       >
         Recommended Posts
       </Text>
-      <NextLink href="/all-posts" passHref>
+      <NextLink href="/all" passHref>
         <Link
           sx={{
             fontSize: 1,

@@ -28,6 +28,13 @@ const palette = {
 
 const wordBreak = 'break-word';
 
+const message = {
+  fontSize: [2],
+  fontStyle: 'italic',
+  padding: 2,
+  paddingLeft: 3,
+};
+
 const partialTheme: any = {
   borderWidths: [0, 1, 4],
   colors: {
@@ -58,12 +65,12 @@ const partialTheme: any = {
     },
   },
   messages: {
-    quote: {
-      fontSize: [2],
-      fontStyle: 'italic',
-      padding: 2,
-      paddingLeft: 3,
+    excerpt: {
+      ...message,
       backgroundColor: 'transparent',
+    },
+    quote: {
+      ...message,
     },
   },
   styles: {

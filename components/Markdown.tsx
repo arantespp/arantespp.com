@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
 import math from 'remark-math';
-import { Box, Flex, Link, Styled, Text } from 'theme-ui';
+import { Box, Flex, Link, Message, Styled, Text } from 'theme-ui';
 import url from 'url';
 
 import CustomImage from './CustomImage';
@@ -72,6 +72,22 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
     }
 
     return link;
+  },
+  blockquote: ({ children }) => {
+    return (
+      <Box sx={{ marginY: 4 }}>
+        <Message
+          variant="quote"
+          sx={{
+            p: {
+              marginY: 0,
+            },
+          }}
+        >
+          {Array.isArray(children) ? children[0] : children}
+        </Message>
+      </Box>
+    );
   },
   paragraph: Styled.p,
   listItem: Styled.li,

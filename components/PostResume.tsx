@@ -30,7 +30,7 @@ const PostResume = ({
       }}
     >
       <NextLink href={href} passHref>
-        <Message variant="quote" sx={{ cursor: 'pointer' }}>
+        <Message variant="excerpt" sx={{ cursor: 'pointer' }}>
           {excerpt}
         </Message>
       </NextLink>

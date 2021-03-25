@@ -15,8 +15,8 @@ tags:
 
 - People within an organization commonly give disproportionate weight to trivial issues.
   - If they need to discuss about a database architecture (more important) and the color of a button (less important), they'll dispend more time discussing about the button.
-  - This happens because the more important topic may be more complex and the group assumes that the ones who'll work on it understand it.
-    - An average person cannot understand it.
+  - This happens because the more important topic the more complex it may be, and the group assumes that the ones who'll work on it understand it.
+    - An average person cannot understand it, the majority of the group.
   - The less important topic may be less complex, everyone has an opinion and want to add a personal contribution.
     - **Can result in endless discussion.**
       - Now imagine this scenario and add a lot of bureaucracy and formalisms, like a parliamentary session.
