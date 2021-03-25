@@ -1,9 +1,18 @@
 import { pascalCase } from 'change-case';
 import { InferGetStaticPropsType } from 'next';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import * as React from 'react';
 import { findBestMatch } from 'string-similarity';
-import { Box, Checkbox, Input, Label, Radio, Styled, Text } from 'theme-ui';
+import {
+  Box,
+  Checkbox,
+  Input,
+  Label,
+  Link,
+  Radio,
+  Styled,
+  Text,
+} from 'theme-ui';
 import { useDebounce } from 'use-debounce';
 
 import RecommendationsList from '../components/RecommendationsList';
@@ -139,11 +148,14 @@ const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Styled.h1>All Posts</Styled.h1>
-      <Box sx={{ marginY: 3 }}>
-        <Link href="/graph">
-          Check the graph the see all posts and tags and their connections.
-        </Link>
+      <Box sx={{ marginY: 4 }}>
+        <NextLink href="/graph" passHref>
+          <Link>
+            Check the graph the see all posts and tags and their connections.
+          </Link>
+        </NextLink>
       </Box>
+
       <Box
         sx={{
           '& > div:last-child': {

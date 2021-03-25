@@ -140,6 +140,9 @@ const Graph = ({
           height: '95vh',
           marginX: 'auto',
           position: 'relative',
+          borderColor: 'primary',
+          borderStyle: 'solid',
+          borderWidth: 1,
         }}
       >
         {selectedNode && (
