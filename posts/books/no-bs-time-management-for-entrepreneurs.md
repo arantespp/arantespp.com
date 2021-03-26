@@ -46,7 +46,7 @@ In a business perspective, two business life changes that this number may come t
 
 ### Chapter 2
 
-This chapter show some ways to you multiply your time leveraging other people.
+This chapter shows some ways to you multiply your time leveraging other people.
 
 Author said that there are ways to reduce $BET$. _Why is it good to reduce this number?_
 
@@ -120,7 +120,7 @@ This chapter is about punctuality. Dan starts the chapter stating that **everybo
 
 - It gives to you the right to expect and demand that others respect your time. You can't expect others respect your time if you show no respect for theirs.
 
-- A person who cannot keep appointments on time, cannot keep scheduled commitments cannot be trusted in other ways either.
+- A person who cannot keep appointments on time or cannot keep scheduled commitments, cannot be trusted in other ways either.
 
 - People judges you by your punctuality. Most successful people make a point of having "instant reject criteria" to save their time in determining who they want to deal with - punctuality is one of these criteria.
 
@@ -132,7 +132,7 @@ This chapter is about punctuality. Dan starts the chapter stating that **everybo
 
 This chapter talks about discipline and habits. As usual, it starts stating that you may achieve success if you have self-discipline. Beyond what everyone says, Dan talks about how demonstrated self-discipline is **magnetic**. If you demonstrate that you have self-discipline (the same to self-esteem and self-control), your clients will have an unconscious preference on you, to give their money to you.
 
-Very successful people are secretly lazy and become exceptionally self-disciplined ouy of necessity. Because some of them are their own boss, they can spend their time as please and because of this it's very important to be self-disciplined.
+Very successful people are secretly lazy and become exceptionally self-disciplined out of necessity. Because some of them are their own boss, they can spend their time as please and because of this it's very important to be self-disciplined.
 
 Three steps to consistent successful achievement: **awareness**, **decision** and **action**.
 
@@ -178,7 +178,7 @@ By definition, productivity presupposes the existence of _meaningful goals_. You
 
 > Is what I'm doing, this minute, moving me measurably closes to my goals?
 
-The simply fact you measure your goals improve productivity. Just asking the question will enhance your productivity. Of course you need time for casual conversations, reading comics, and other activities that aren't correlated to your goals. Buy you should to do those things consciously and by choice.
+The simply fact you measure your goals improve productivity. Just asking the question will enhance your productivity. Of course you need time for casual conversations, reading comics, and other activities that aren't correlated to your goals. But you should to do those things consciously and by choice.
 
 #### 6. Tickle the Memory with Tickler Files
 
@@ -199,3 +199,16 @@ But for you minimize unplanned activities, you have to put some pressure on you.
 Without pressure, your tasks, routine and schedule become chaotic and disorganized. You will be juggling priorities, randomly responding to interruptions and letting work expand its consumption of time as it sees fit. This scenario causes a lot of pressure and stress.
 
 > There is a false idea that "creative people" work liberated from deadlines and time pressure and need the freedom to wait for inspiration. Not the successful ones. Not the productive ones.
+
+You can also use the value of a project to estimate how much time you allow yourself to dedicate to it. The number is the value of how much the project worth in total income divided by your [$BET$](#chapter-1).
+
+#### 9. Profit from "Odd-Lot" Time
+
+Use your free time waiting in a airport, stuck in a traffic, or parked in a reception in a effective way. Whenever you get in this situation, take it to listen to audios, read a book or any productive purpose, but not the ones that require properly preparation.
+
+#### 10. Live off Peak
+
+Avoid peaks.
+
+- Don't go to the bank at the same time everyone goes.
+- Don't travel at the same time everyone travels.
