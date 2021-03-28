@@ -2,7 +2,7 @@ import * as React from 'react';
 import GraphVis from 'react-graph-vis';
 import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import { Box, useThemeUI } from 'theme-ui';
+import { Box, Flex, Text, useThemeUI } from 'theme-ui';
 import 'vis-network/styles/vis-network.css';
 
 import { theme } from '../theme';
@@ -16,12 +16,18 @@ export const getStaticProps = async () => {
   const allPosts = getPosts({ all: true });
   const allTags = getAllTags();
 
+  const nodeColors = {
+    post: theme.colors?.primary,
+    tag: theme.colors?.highlight,
+    mostConnectedNode: theme.colors?.accent,
+  };
+
   const postsNodes = allPosts.map(({ href, title }) => ({
     id: href,
     group: 'post',
     label: title,
     value: 2,
-    color: theme.colors?.primary,
+    color: nodeColors.post,
   }));
 
   const tagsNodes = allTags.map((tag) => ({
@@ -29,16 +35,26 @@ export const getStaticProps = async () => {
     group: 'tag',
     label: tag,
     value: 1,
-    color: theme.colors?.highlight,
+    color: nodeColors.tag,
   }));
 
-  const backlinksEdges = allPosts.flatMap(({ backlinks, href }) =>
-    (backlinks || []).map((backlink) => ({
-      from: backlink.href,
-      to: href,
-      value: 2,
-    }))
-  );
+  const backlinksEdges = allPosts
+    .flatMap(({ backlinks, href }) =>
+      (backlinks || []).map((backlink) => ({
+        from: backlink.href,
+        to: href,
+        value: 2,
+      }))
+    )
+    /**
+     * Remove duplicated edges.
+     */
+    .filter((edge, _, edges) => {
+      const duplicatedEdge = edges.find(
+        (e) => e.from === edge.to && e.to === edge.from && edge.from > edge.to
+      );
+      return !duplicatedEdge;
+    });
 
   const tagsEdges = allPosts.flatMap(({ href, tags }) =>
     tags.map((tag) => ({
@@ -52,19 +68,83 @@ export const getStaticProps = async () => {
 
   const edges = [...backlinksEdges, ...tagsEdges];
 
+  const mostConnectedNodeId = Object.entries<number>(
+    edges.reduce((acc, edge) => {
+      if (!acc[edge.from]) {
+        acc[edge.from] = 1;
+      } else {
+        acc[edge.from] += 1;
+      }
+
+      if (!acc[edge.to]) {
+        acc[edge.to] = 1;
+      } else {
+        acc[edge.to] += 1;
+      }
+
+      return acc;
+    }, {})
+  ).reduce(
+    (acc, [nodeId, value]) => {
+      if (acc.value < value) {
+        return { nodeId, value };
+      } else {
+        return acc;
+      }
+    },
+    { nodeId: '', value: 0 }
+  ).nodeId;
+
+  const mostConnectedNode = nodes.find(
+    (node) => node.id === mostConnectedNodeId
+  );
+
+  if (mostConnectedNode) {
+    (mostConnectedNode as any).color = nodeColors.mostConnectedNode;
+  }
+
   return {
-    props: { allPosts, nodes, edges },
+    props: { allPosts, nodes, edges, nodeColors },
   };
+};
+
+const Legend = ({
+  border,
+  color,
+  label,
+}: {
+  border?: boolean;
+  color: string;
+  label: string;
+}) => {
+  return (
+    <Flex sx={{ justifyContent: 'center', alignItems: 'baseline', marginX: 2 }}>
+      <Box
+        sx={{
+          padding: 2,
+          borderRadius: 999,
+          backgroundColor: color,
+          borderWidth: border ? 1 : 0,
+          borderColor: 'black',
+          borderStyle: 'solid',
+        }}
+      />
+      <Text sx={{ marginX: 2, fontStyle: 'italic' }}>{label}</Text>
+    </Flex>
+  );
 };
 
 const Graph = ({
   allPosts,
   nodes,
   edges,
+  nodeColors,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const {
-    theme: { fontSizes, sizes },
+    theme: { colors, fontSizes, sizes },
   } = useThemeUI();
+
+  const [_showGraph, setShowGraph] = React.useState(false);
 
   const [selectedNode, setSelectedNode] = React.useState<{
     id: string;
@@ -112,6 +192,9 @@ const Graph = ({
     },
     deselectNode: () => {
       setSelectedNode(undefined);
+    },
+    startStabilizing: () => {
+      setShowGraph(true);
     },
   };
 
@@ -171,6 +254,21 @@ const Graph = ({
         )}
         <GraphVis graph={graph} options={options} events={events} />
       </Box>
+      <Flex
+        sx={{
+          width: '100%',
+          justifyContent: 'center',
+          marginY: 3,
+          flexWrap: 'wrap',
+        }}
+      >
+        <Legend color={nodeColors.post!} label="Post" />
+        <Legend color={nodeColors.tag!} label="Tag" border />
+        <Legend
+          color={nodeColors.mostConnectedNode!}
+          label="Most Connected Node"
+        />
+      </Flex>
     </>
   );
 };

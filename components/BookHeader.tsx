@@ -13,7 +13,7 @@ const BookHeader = ({ authors, image, link, ASIN, ISBN }: Book) => {
     `By <strong>${authors.join(', ')}</strong>`,
     ASIN && `ASIN: ${ASIN}`,
     ISBN && `ISBN: ${ISBN}`,
-    `<a href=${link}>Read more about the book here</a>`,
+    `<a href=${link}>Read more about the book here.</a>`,
   ]
     .filter((line) => !!line)
     .join('. ');

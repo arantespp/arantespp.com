@@ -16,7 +16,7 @@ book:
 
 ## Notes
 
-### Chapter 1
+### Chapter 1 - How to Turn Time into Money
 
 The main idea is evaluating how much your work hour is worth, that he calls **base earning target** - $BET$. It uses your year base earning target, how many days you work in a year and your productivity rate. If you earn \$200,000.00 and work 220 days in a year, 8 hours per day and have a productivity rate of 33\%, your $BET$ is calculated by:
 
@@ -44,7 +44,7 @@ In a business perspective, two business life changes that this number may come t
 
 **It helps you to decide what you shouldn't be doing. This is as important as deciding what to invest your time in.**
 
-### Chapter 2
+### Chapter 2 - How to Cheat Time
 
 This chapter shows some ways to you multiply your time leveraging other people.
 
@@ -64,7 +64,7 @@ Three less obvious ways to leverage other people. The more you become adept at t
 
 - **OPC - Other's People Customers**: _"almost without exception, the most expensive, difficult, and time-consuming aspect of a business is acquiring needed new customers, one by one, by your own advertising, marketing and selling"_. You should find ways to access OPCs, even automating it, to put in your business.
 
-### Chapter 3
+### Chapter 3 - How to Drive a Stake Through the Hearts of the Time Vampires Out to Suck You Dry
 
 This chapter talks about _Time Vampires_, that are people who take your time and energy during all day. Dan defines some _Time Vampires_:
 
@@ -78,7 +78,7 @@ This chapter talks about _Time Vampires_, that are people who take your time and
 
 Are there different varieties of Time Vampires? Yes. You must always be alert to notice any Time Vampire in your life.
 
-### Chapter 4
+### Chapter 4 - Stopping "Productivus Interruptus" Once and for All
 
 Interruptions destroy productivity, and almost none of them have to do with necessity. In this chapter, the author shows five ways minimize these interruptions.
 
@@ -114,7 +114,7 @@ Whenever you have to take an incoming call or meet someone, it's a smart idea to
 
 If you're sitting at your desk, appearing relaxed, to the others, you're it, even if you're disarming a nuclear bomb. When you're visible to others, it's best to be visibly busy.
 
-### Chapter 5
+### Chapter 5 - The Number-One Most Powerful Personal Discipline in All the World: And How It Can Make You Successful Beyond Your Wildest Dreams
 
 This chapter is about punctuality. Dan starts the chapter stating that **everybody** he's met who adheres to this discipline becomes exceptionally successful, and everybody who ignores, fails. Some arguments to be punctual.
 
@@ -128,7 +128,7 @@ This chapter is about punctuality. Dan starts the chapter stating that **everybo
 
 - It's correlated to needy egos. They're always late as a means of trying to be and seen important. Their intended message is: _"I can be late because I'm more important than you"_.
 
-### Chapter 6
+### Chapter 6 - The Magic Power That Makes You Unstoppable
 
 This chapter talks about discipline and habits. As usual, it starts stating that you may achieve success if you have self-discipline. Beyond what everyone says, Dan talks about how demonstrated self-discipline is **magnetic**. If you demonstrate that you have self-discipline (the same to self-esteem and self-control), your clients will have an unconscious preference on you, to give their money to you.
 
@@ -136,13 +136,13 @@ Very successful people are secretly lazy and become exceptionally self-disciplin
 
 Three steps to consistent successful achievement: **awareness**, **decision** and **action**.
 
-### Chapter 7
+### Chapter 7 - The Ten Time Management Techniques Really Worth Using
 
 Ten time management techniques really worth using.
 
 #### 1. Tame All the Interruptions
 
-[Chapter 4](#chapter-4).
+[Chapter 4](#chapter-4-stopping-productivus-interruptus-once-and-for-all).
 
 #### 2. Minimize Meetings
 
@@ -150,7 +150,7 @@ Most meetings end where they being. Find strategies to abbreviate and focus them
 
 #### 3. Practice Absolute Punctuality
 
-[Chapter 5](#chapter-5).
+[Chapter 5](#chapter-5-the-number-one-most-powerful-personal-discipline-in-all-the-world-and-how-it-can-make-you-successful-beyond-your-wildest-dreams).
 
 #### 4. Make and Use Lists
 
@@ -200,7 +200,7 @@ Without pressure, your tasks, routine and schedule become chaotic and disorganiz
 
 > There is a false idea that "creative people" work liberated from deadlines and time pressure and need the freedom to wait for inspiration. Not the successful ones. Not the productive ones.
 
-You can also use the value of a project to estimate how much time you allow yourself to dedicate to it. The number is the value of how much the project worth in total income divided by your [$BET$](#chapter-1).
+You can also use the value of a project to estimate how much time you allow yourself to dedicate to it. The number is the value of how much the project worth in total income divided by your [$BET$](#chapter-1-how-to-turn-time-into-money).
 
 #### 9. Profit from "Odd-Lot" Time
 
@@ -212,3 +212,56 @@ Avoid peaks.
 
 - Don't go to the bank at the same time everyone goes.
 - Don't travel at the same time everyone travels.
+
+### Chapter 8 - Decisiveness
+
+Learn to make decision quickly. **Decisiveness saves a lot of time**.
+
+In business proposals, Dan says that almost everybody in his field has a least a three-step client-conversation process:
+
+1. The initial fact-finding and diagnostic meeting.
+2. Developing and presenting a detailed proposal.
+3. The last meeting to close the sale.
+
+He closes his sales in one fell swoop in 90% of the cases once he stopped proposing and began prescribing. "Don't do proposals. Do action plans", Nido Qubein said.
+
+### Chapter 9 - Fire Yourself, Replace Yourself, Make More Money, and Have More Fun
+
+You must divest yourself of those activities you don't do well and don't do happily, or you must find a routine, so as to systematically invest your time in those things you do extraordinarily well and find intellectual stimulating ([flow state](/zettelkasten/flow-state-psychology)).
+
+Steps to achieve that:
+
+#### Step One: Honest Self-Analysis and Self-Understanding
+
+The typical entrepreneurs know that they can do anything and everything because, at some point in time, he has to. However, only few things they do extraordinary well, in a such way they wouldn't hire anybody else to do them.
+
+You should create three lists of things you do:
+
+1. extraordinary well.
+1. well, better than most, but cannot be considered your "specialties".
+1. not very well, but do anyway.
+
+#### Step Two: Delegation
+
+["Delegate or Stagnate."](https://www.youtube.com/watch?v=XrrgyQa25DQ). The only way to advance in any business is to keep delegating. You must keep in mind there's more than one way to be right, so when you delegate, you should accept that the other person may complete the task in a different way than yours. Also, that good enough is good enough. Sometimes people won't do tasks as perfectly as you would, but will wind up with the same result, and this is good enough.
+
+Mastering Delegation:
+
+1. Define what is to be done.
+2. Be certain the delegate understands what is to be done - never assuming you've successfully communicated.
+3. Explain why it is to be done as you prescribing it to be done. Should be a room for differences of opinions about the execution and you should encourage it.
+4. Establish what defines a successful outcome.
+5. Set a deadline for completion or progress report (see [Chapter 8](#chapter-8-decisiveness)).
+6. Follow-up. Act if the person and delegated task don't return to you at the agreed-on date and time.
+
+#### Step Three: Replacing Yourself
+
+Fire yourself from those tasks that aren't your specialty. Generally, marketing is the most difficult task to hire someone. Effectively market and promote the business should be the task that the entrepreneur should focus.
+
+#### Step Four: Welcoming Your Dispensability
+
+> The ultimate entrepreneurial achievement is complete replacement of self with the business thriving in new hands and your wealth secured or income continuing or even growing.
+
+#### What to Do with the Time You Liberate
+
+**Enjoy the success you create.** But, if you're looking for more money and wealth, then turn your attention to marketing. Marketing is the highest-paid profession and most valuable part of a business.
