@@ -171,7 +171,7 @@ const Graph = ({
       smooth: true,
     },
     layout: {
-      randomSeed: '0.07021729341431993:1616325872128',
+      randomSeed: '0.933197217011225:1617012065062',
     },
     nodes: {
       shape: 'dot',
@@ -252,7 +252,14 @@ const Graph = ({
             {selectedNode.group === 'tag' && <Tag tag={selectedNode.id} />}
           </Box>
         )}
-        <GraphVis graph={graph} options={options} events={events} />
+        <GraphVis
+          graph={graph}
+          options={options}
+          events={events}
+          getNetwork={(network) => {
+            console.log(network.getSeed());
+          }}
+        />
       </Box>
       <Flex
         sx={{
