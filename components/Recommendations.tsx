@@ -22,7 +22,7 @@ const Recommendations = ({
         flexDirection: 'column',
         paddingTop: 4,
         borderTopColor: 'primary',
-        borderTopWidth: 1,
+        borderWidth: 1,
         borderTopStyle: 'solid',
       }}
     >

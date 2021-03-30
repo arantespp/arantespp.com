@@ -14,6 +14,7 @@ const PostComponent = ({ post }: { post: Post }) => {
         key="og:url"
         content={`https://arantespp.com${href}`}
       />
+      <meta name="Description" content={excerpt} />
       <meta property="og:title" key="og:title" content={title} />
       <meta property="og:description" key="og:description" content={excerpt} />
       {group === 'zettelkasten' && (

@@ -9,6 +9,7 @@ export const getStaticProps = async () => {
   const recommendations = getRecommendations({ all: true });
   return { props: { content, recommendations } };
 };
+
 const Index = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   return <IndexPage {...props} />;
 };

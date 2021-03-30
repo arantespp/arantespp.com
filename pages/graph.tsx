@@ -269,10 +269,10 @@ const Graph = ({
           flexWrap: 'wrap',
         }}
       >
-        <Legend color={nodeColors.post!} label="Post" />
-        <Legend color={nodeColors.tag!} label="Tag" border />
+        <Legend color={nodeColors.post as string} label="Post" />
+        <Legend color={nodeColors.tag as string} label="Tag" border />
         <Legend
-          color={nodeColors.mostConnectedNode!}
+          color={nodeColors.mostConnectedNode as string}
           label="Most Connected Node"
         />
       </Flex>
