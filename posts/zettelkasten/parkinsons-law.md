@@ -1,6 +1,6 @@
 ---
 title: Parkinson's Law
-excerpt: It stands that "work expands so as to fill the time available for its completion".
+excerpt: It stands that "work expands to fill the time available for its completion".
 date: 2021-01-07
 rating: 2
 tags:
@@ -11,7 +11,7 @@ tags:
 
 ## Notes
 
-- It stands that "work expands so as to fill the time available for its completion".
+- It stands that "work expands to fill the time available for its completion".
 - Currently, it's referred by a mathematical equation describing the rate at which bureaucracies expand over time.
 - Correlated to growth of bureaucracy in a organization or committee.
   1. Officials wants to multiply subordinates, not rivals.

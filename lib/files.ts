@@ -137,7 +137,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       excerpt,
       date,
       rating,
-      tags,
+      tags = [],
       image,
       draft,
       book,
@@ -230,14 +230,17 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
     ];
 
     const doesPostHaveAllRequiredProperties = requiredPostProperties.reduce(
-      (acc, property) => acc && post[property],
+      (acc, property) => acc && !!post[property],
       true
     );
 
     /**
      * Highlight excerpt, even if it is a draft.
      */
-    post.content = post.content.replace(post.excerpt, `\`${post.excerpt}\``);
+    post.content = (post.content || '').replace(
+      post.excerpt,
+      `\`${post.excerpt}\``
+    );
 
     if (!doesPostHaveAllRequiredProperties) {
       post.draft = true;
@@ -248,7 +251,8 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
     }
 
     return post as Post;
-  } catch {
+  } catch (error) {
+    console.log(error);
     return undefined;
   }
 };
