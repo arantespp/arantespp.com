@@ -17,6 +17,7 @@ const CustomImage = ({ src, alt }: { src: string; alt: string }) => {
     >
       <Image
         src={src}
+        loading="lazy"
         alt={altWithoutTags}
         title={altWithoutTags}
         sx={{

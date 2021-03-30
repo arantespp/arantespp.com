@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
-
 import { Box, Link, Styled, Text } from 'theme-ui';
+
+import Digest from '../components/Digest';
 
 import { socialMedias } from '../lib/socialMedias';
 
@@ -14,7 +15,9 @@ const Contact = () => {
       <Head>
         <title>Contact</title>
       </Head>
+
       <Styled.h1>Contact</Styled.h1>
+
       <Styled.p>
         If you'd like to get in touch with me,{' '}
         <Link href={email.href} target="_blank" rel="noopener noreferrer">
@@ -28,6 +31,9 @@ const Contact = () => {
         </Link>{' '}
         are your best channels because I check them more frequently.
       </Styled.p>
+
+      <Digest />
+
       <Styled.p>
         You can find me at almost all social media by the username
         <strong> arantespp</strong>*. Some of them I just created to get the
@@ -58,6 +64,7 @@ const Contact = () => {
           })}
         </Styled.ul>
       </Box>
+
       <Text sx={{ fontSize: 1, fontStyle: 'italic' }}>
         * I know, it's very sad, but Instagram is the only social media that I
         don't have <strong>arantespp</strong> as username. Sometime ago I've

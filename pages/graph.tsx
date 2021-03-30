@@ -43,7 +43,7 @@ export const getStaticProps = async () => {
       (backlinks || []).map((backlink) => ({
         from: backlink.href,
         to: href,
-        value: 2,
+        value: 1,
       }))
     )
     /**
@@ -166,12 +166,12 @@ const Graph = ({
       },
       scaling: {
         min: 1,
-        max: 5,
+        max: 1,
       },
       smooth: true,
     },
     layout: {
-      randomSeed: '0.933197217011225:1617012065062',
+      randomSeed: '0.7642638873196506:1617134388361',
     },
     nodes: {
       shape: 'dot',
