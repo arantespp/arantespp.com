@@ -18,14 +18,22 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
   ...(Styled as {}),
   heading: ({
     level,
-    children,
+    children = [],
   }: {
     level: number;
-    children: React.ReactNode;
+    children: React.ReactNode[];
   }) => {
     const { asPath } = useRouter();
     const { pathname } = url.parse(asPath);
-    const hash = paramCase((children as any)?.[0].props?.value);
+
+    /**
+     * Solves the problem when there is only "#" without text on .md files.
+     */
+    if (children.length === 0) {
+      return null;
+    }
+
+    const hash = paramCase((children[0] as any)?.props?.value);
     const href = `${pathname}#${hash}`;
 
     const componentsByLevel = [
@@ -36,6 +44,7 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
       Styled.h5,
       Styled.h6,
     ];
+
     const ResolvedComponent = componentsByLevel[level - 1];
 
     /**

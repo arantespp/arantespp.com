@@ -252,7 +252,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
 
     return post as Post;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return undefined;
   }
 };
