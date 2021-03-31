@@ -8,15 +8,13 @@ tags:
 rating: 3
 ---
 
-# Zettelkasten
-
 ## Notes
 
-- Zettelkasten is a method in which you write down your thoughts in notes, tag and connect them over time.
+- Zettelkasten is a method in which you write down your thoughts in notes, tag, and connect them over time.
 - The Zettelkasten's massive advantage:
   - You'll learn better.
   - You'll focus better.
-  - You'll be less frustraded.
+  - You'll be less frustrated.
   - You'll waste less time.
   - You'll think better.
   - You'll be more productive.
@@ -28,7 +26,7 @@ rating: 3
   - Explain why you're linking notes.
   - Use your own words.
   - Keep references.
-  - Add your own thoughts to the Zettelkasten.
+  - Add your thoughts to the Zettelkasten.
   - Don't worry about structure.
   - Add connection notes.
   - Add outline notes.

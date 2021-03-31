@@ -21,7 +21,7 @@ rating: 1
   - Your followers' followers, if your followers share your post.
   - People following any hashtags you use.
 
-- Is a good way to test if your content will have a positive or negative feedback.
+- Is a good way to test if your content will have positive or negative feedback.
 
 - It is used to start your campaign.
 

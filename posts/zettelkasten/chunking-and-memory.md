@@ -8,8 +8,6 @@ tags:
   - memory
 ---
 
-# Chunking and Memory
-
 ## Notes
 
 - Chunking is a memorization method in which you group pieces of information in groups.

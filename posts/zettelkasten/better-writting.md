@@ -8,8 +8,6 @@ tags:
   - writing
 ---
 
-# Better Writing
-
 ## Notes
 
 - Create a "banned words" list. These words are the ones we use in casual conversations.
@@ -33,7 +31,7 @@ tags:
 - Avoid adverbs.
   - Your text becomes more cluttered and slower to read when you use many of them.
 - Use conjunctions at the beginning of your sentence.
-- Write like you speak, do not try writing with more elegant prose.
+- Write as you speak, do not try writing with more elegant prose.
   - If you want to write more eloquently, improve the way you speak.
 
 ## References

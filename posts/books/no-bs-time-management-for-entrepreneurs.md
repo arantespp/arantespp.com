@@ -279,3 +279,9 @@ Eliminate toxic people and saboteurs from your life, besides taking your time, t
 Deliberately increase the amount of your time with constructive associations, with creative, inspiring, encouraging, can-do, strivers, and achievers people.
 
 Find your [Mastermind](/zettelkasten/mastermind).
+
+### Chapter 11 - Buy Time by Buying Expertise
+
+This chapter is about how much is worth paying a higher fee for some service with an expert, who won't consume your time during the job and will deliver it with quality and on time, instead of paying a lower fee but spending your time micromanaging an untrustworthy job. Generally, the former option is the best. Sometimes, you can even have the same or better result if you did it by yourself, but your time is more valuable when you're doing other tasks.
+
+The same rule applies when you need to learn or master some skill. Instead of spending your time to master it alone from zero, sometimes is better to hire an excellent coach to speed up and move up your learning and projects.

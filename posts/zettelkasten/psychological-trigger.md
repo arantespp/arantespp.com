@@ -1,6 +1,6 @@
 ---
 title: Psychological Trigger
-excerpt: Psycological triggers are stimulus that create a reaction in a brain and/or body without he/she notices.
+excerpt: Psychological triggers are the stimulus that creates a reaction in a brain and/or body without he/she notices.
 date: 2020-06-29
 tags:
   - brain
@@ -9,12 +9,10 @@ tags:
 rating: 2
 ---
 
-# Psychological Trigger
-
 ## Notes
 
-- Psycological triggers are stimulus that create a reaction in a brain and/or body without he/she notices.
-- We don't know exact how triggers are formed, but some theories exist.
+- Psychological triggers are the stimulus that creates a reaction in a brain and/or body without he/she notices.
+- We don't know exactly how triggers are formed, but some theories exist.
 
 ## References
 

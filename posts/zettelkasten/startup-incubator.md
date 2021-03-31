@@ -16,11 +16,11 @@ rating: 2
 
 - The purpose of a startup incubator is to help entrepreneurs grow their business.
 
-- It's usually nonprofit organizations associated with universities and business school.
+- It's usually nonprofit organizations associated with universities and business schools.
 
-- It helps startups providing workspace, seed funding, mentoring and training.
+- It helps startups providing workspace, seed funding, mentoring, and training.
 
-- **Networking** is one of the many benefits when a startup join in a incubator.
+- **Networking** is one of the many benefits when a startup joins an incubator.
 
 - Some startup incubators:
   - [Y Combinator](https://www.ycombinator.com/).
@@ -29,7 +29,7 @@ rating: 2
 
 ## Questions
 
-- Does startup incubator program help startups that aren't in the early-stage?
+- Does the startup incubator program help startups that aren't in the early-stage?
 
 ## References
 

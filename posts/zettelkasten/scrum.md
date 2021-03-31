@@ -15,7 +15,7 @@ rating: 2
 
 - It helps teams and organizations generate the highest possible value for the project.
 
-- Is describes a set of meetings/events/ceremonies, tools/artifacts and roles to help teams structure and manage their work.
+- Is describes a set of meetings/events/ceremonies, tools/artifacts and roles to help teams structure, and manage their work.
 
 - Scrum Team:
 
@@ -29,14 +29,14 @@ rating: 2
       - A person that represents the business and stakeholders.
       - Create and manage the product backlog.
       - Give the team clear guidance on which features to deliver next.
-      - Decide when to ship de product.
+      - Decide when to ship the product.
       - Is individual.
     - Scrum Master (SM):
       - A team guide.
       - Knows the Scrum very well and coaches the whole team on the Scrum process.
       - Looks for ways to fine-tune the team Scrum process.
       - Is a facilitator, as he/she schedules the needed resources (human and logistical) for the events/ceremonies.
-      - Helps the team optimize their communication, transparency and delivery flow.
+      - Helps the team optimize their communication, transparency, and delivery flow.
     - Developers.
 
 - Tools, or artifacts:
@@ -46,9 +46,9 @@ rating: 2
     - Maintained by the PO.
     - It's used as sprints input.
     - It's the "To Do" list.
-    - It's constantly revisited, re-prioritized and maintained by the PO as the product priorities and the market changes.
+    - It's constantly revisited, re-prioritized, and maintained by the PO as the product priorities and the market changes.
   - Sprint Backlog:
-    - Items selected from product backlog to be executed on the current sprint.
+    - Items selected from the product backlog to be executed on the current sprint.
     - The "Doing" list.
   - Increment:
     - The result of a sprint.
@@ -59,7 +59,7 @@ rating: 2
 
   1. Organize the backlog:
      - PO's responsibility.
-     - Prioritize items as he/she knows more about the business, the market and the stakeholders priorities.
+     - Prioritize items as he/she knows more about the business, the market, and the stakeholders' priorities.
   2. Sprint planning:
      - The work to be performed during the current sprint.
      - Is planned by the entire team.
@@ -74,7 +74,7 @@ rating: 2
 
   4. Daily Scrum:
 
-     - Daily super-short meetings that happens at the same time and place.
+     - Daily super-short meetings that happen at the same time and place.
      - The goal is for everyone on the team to be on the same page, aligned with the sprint goal.
      - Each member team answer these questions:
        - What did I do yesterday?
@@ -90,17 +90,17 @@ rating: 2
 
   6. Sprint retrospective:
      - The team comes together to document and discuss what worked and what didn't work in the current sprint.
-       - The team can focus on what went well and what needs to be improved fot the next time.
+       - The team can focus on what went well and what needs to be improved for the next time.
 
 ## Questions
 
 - How do you define Scrum with few words?
 
-- Besides software development, which do other fields use Scrum?
+- Besides software development, which does other fields use Scrum?
 
 - What the Product Owner do? And the Scrum Master?
 
-- Scrum framework defines some tools, ceremonies and roles. List them.
+- Scrum framework defines some tools, ceremonies, and roles. List them.
 
 - Does Scrum work with a team working remotely?
 

@@ -9,8 +9,6 @@ tags:
 rating: 2
 ---
 
-# Flow State (Psychology)
-
 ## Notes
 
 - Is a mental state in which a person is performing an activity:
@@ -19,12 +17,12 @@ rating: 2
   - full involvement and enjoyment.
 - It's the most efficient state when doing a task.
 - Lose awareness of all other things.
-- The person may lost the sense of the time.
+- The person may lose the sense of time.
 - Named by [Mihály Csíkszentmihályi](https://en.wikipedia.org/wiki/Mihaly_Csikszentmihalyi) in 1975.
-- Three conditions ahve to be met to achieve a flow state:
+- Three conditions have to be met to achieve a flow state:
   1. Clear goals and progress.
   1. Clear and immediate feedback.
-  1. The task difficult must match the person skill level.
+  1. The task difficult must match the person's skill level.
      - If task difficult < person skill: boredom.
      - If task difficult = person skill: **flow**.
      - If task difficult > person skill: anxiety.

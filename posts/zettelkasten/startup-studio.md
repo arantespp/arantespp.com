@@ -19,7 +19,7 @@ rating: 3
 
 - It's an organization that creates startups following a repetitive process. It acts as a co-founder to startups.
 
-  - Besides providing funding for early-stage startups (as a [venture capital](/zettelkasten/venture-capital) do), Studios will also assign members of their own team to help the original founding team build the startup.
+  - Besides providing funding for early-stage startups (as a [venture capital](/zettelkasten/venture-capital) do), Studios will also assign members of their team to help the original founding team build the startup.
 
     - Because of this, Studios take more equity than [venture capitals](/zettelkasten/venture-capital).
 

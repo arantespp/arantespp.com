@@ -14,10 +14,10 @@ rating: 2
 
 - The last thing to be done to something works/arrives/finishes.
 - It's the most inefficient part of the delivery.
-- On telecommunication field, the last mile problem appears when the signal cannot reach more distant places.
-  - An optical fiber ring may exist in the dense part of a city, but doesn't react edges of the city.
-  - Cable branches must be installed so that the signal arrives to the edge.
-- On logistics, the products easily arrives in metropolitan distribution centers, but it's more difficult to reach far or more inaccessible places.
+- On the telecommunication field, the last mile problem appears when the signal cannot reach more distant places.
+  - An optical fiber ring may exist in the dense part of a city but doesn't react edges of the city.
+  - Cable branches must be installed so that the signal arrives in the edge.
+- On logistics, the products easily arrive in metropolitan distribution centers, but it's more difficult to reach far or more inaccessible places.
   - These places may be small cities or rural areas.
   - Maybe there isn't good infrastructure to connect these places to the distribution centers, i.e. there is a river between them and need a ship to deliver the goods.
 

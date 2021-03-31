@@ -19,13 +19,13 @@ rating: 2
 
 - "Be prepared: When you are 90% done with any large project (a house, a film, an event, an app), the rest of the myriad details will take a second 90% to complete." [Kevin Kelly.](https://kk.org/thetechnium/68-bits-of-unsolicited-advice/)
 
-- When you finished 90% of any project, the remaining 10% will take the same amount of time of the fist 90%.
+- When you finished 90% of any project, the remaining 10% will take the same amount of time as the first 90%.
 
-- It's always add more time to any software time estimation.
+- It always adds more time to any software time estimation.
 
 - This happens because:
 
-  - We don't account unexpected events. We may think that the time is linear - the first 90% takes 90% of the time, then the final 10% will take 10% of the time - and because [Parkinson's Law](/zettelkasten/parkinsons-law), we project the whole time to the expected tasks. This leaves us with a little time to unexpected.
+  - We don't account for unexpected events. We may think that the time is linear - the first 90% takes 90% of the time, then the final 10% will take 10% of the time - and because [Parkinson's Law](/zettelkasten/parkinsons-law), we project the whole time to the expected tasks. This leaves us with a little time to unexpected.
 
   - The first 90% may be the tasks that activate the [flow state](/zettelkasten/flow-state-psychology) and the last 10%, the boring tasks.
 

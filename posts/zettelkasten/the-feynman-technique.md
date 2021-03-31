@@ -8,8 +8,6 @@ tags:
 rating: 2
 ---
 
-# The Feynman Technique
-
 ## Notes
 
 - It's a method that you can use the learn about anything.

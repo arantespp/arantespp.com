@@ -13,9 +13,9 @@ rating: 1
 
 - Is another word for advertising.
 
-- You have more control about the public which will see your content.
+- You have more control over the public who will see your content.
 
-  - Target ideal costumers.
+  - Target ideal customers.
 
 - It is used to grow your campaign.
 

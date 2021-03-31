@@ -9,12 +9,10 @@ tags:
   - parkinson's law
 ---
 
-# Law of Triviality
-
 ## Notes
 
 - People within an organization commonly give disproportionate weight to trivial issues.
-  - If they need to discuss about a database architecture (more important) and the color of a button (less important), they'll dispend more time discussing about the button.
+  - If they need to discuss a database architecture (more important) and the color of a button (less important), they'll spend more time discussing the button.
   - This happens because the more important topic the more complex it may be, and the group assumes that the ones who'll work on it understand it.
     - An average person cannot understand it, the majority of the group.
   - The less important topic may be less complex, everyone has an opinion and want to add a personal contribution.

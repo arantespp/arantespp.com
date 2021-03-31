@@ -11,14 +11,14 @@ rating: 1
 
 ## Notes
 
-- It's type of financing that invertors provides to startup companies and small business with a potential long-term growth.
-  - The growth can be in terms of number of employees, annual revenue, scale of operations, etc.
+- It's a type of financing that investors provide to startup companies and small businesses with potential long-term growth.
 
+  - The growth can be in terms of the number of employees, annual revenue, the scale of operations, etc.
 
-- Generally comes from well-off investors, investments banks and any other financial institutions.
+- Generally comes from well-off investors, investment banks, and any other financial institutions.
 
 - It can be a monetary investment or in the form of technical or managerial expertise.
-   - In return, the companies give to investors equities or an ownership stake.
+  - In return, the companies give to investors equities or an ownership stake.
 
 ## References
 
