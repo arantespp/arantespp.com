@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 
-import { Box, Flex, Image, Link, Styled } from 'theme-ui';
+import { Box, Flex, Image, Link, Themed } from 'theme-ui';
 
 import type { Post } from '../lib/files';
 
@@ -17,7 +17,7 @@ const PostComponent = ({ post }: { post: Post }) => {
   return (
     <>
       <PostHead post={post} />
-      <Styled.h1>{title}</Styled.h1>
+      <Themed.h1>{title}</Themed.h1>
       <Box
         sx={{
           marginBottom: 4,

@@ -10,7 +10,7 @@ import {
   Label,
   Link,
   Radio,
-  Styled,
+  Themed,
   Text,
 } from 'theme-ui';
 import { useDebounce } from 'use-debounce';
@@ -147,7 +147,7 @@ const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <>
-      <Styled.h1>All Posts</Styled.h1>
+      <Themed.h1>All Posts</Themed.h1>
       <Box sx={{ marginY: 4 }}>
         <NextLink href="/graph" passHref>
           <Link>

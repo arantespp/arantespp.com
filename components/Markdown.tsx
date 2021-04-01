@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
 import math from 'remark-math';
-import { Box, Flex, Link, Message, Styled, Text } from 'theme-ui';
+import { Box, Flex, Link, Message, Themed, Text } from 'theme-ui';
 import url from 'url';
 
 import CustomImage from './CustomImage';
@@ -15,7 +15,7 @@ const Tex = dynamic(() => import('./Tex'));
  * https://github.com/rexxars/react-markdown/tree/c63dccb8185869cfc73c257d098a123ef7a7cd33#node-types
  */
 const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
-  ...(Styled as {}),
+  ...(Themed as {}),
   heading: ({
     level,
     children = [],
@@ -37,12 +37,12 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
     const href = `${pathname}#${hash}`;
 
     const componentsByLevel = [
-      Styled.h1,
-      Styled.h2,
-      Styled.h3,
-      Styled.h4,
-      Styled.h5,
-      Styled.h6,
+      Themed.h1,
+      Themed.h2,
+      Themed.h3,
+      Themed.h4,
+      Themed.h5,
+      Themed.h6,
     ];
 
     const ResolvedComponent = componentsByLevel[level - 1];
@@ -98,13 +98,13 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
       </Box>
     );
   },
-  paragraph: Styled.p,
-  listItem: Styled.li,
+  paragraph: Themed.p,
+  listItem: Themed.li,
   list: ({ ordered, ...props }) => {
     if (ordered) {
-      return <Styled.ol {...props} />;
+      return <Themed.ol {...props} />;
     }
-    return <Styled.ul {...props} />;
+    return <Themed.ul {...props} />;
   },
   inlineCode: ({ ...props }) => {
     return <Text as="span" variant="highlighted" {...props} />;

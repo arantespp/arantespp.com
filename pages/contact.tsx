@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
-import { Box, Link, Styled, Text } from 'theme-ui';
+import { Box, Link, Themed, Text } from 'theme-ui';
 
 import Digest from '../components/Digest';
 
@@ -16,9 +16,9 @@ const Contact = () => {
         <title>Contact</title>
       </Head>
 
-      <Styled.h1>Contact</Styled.h1>
+      <Themed.h1>Contact</Themed.h1>
 
-      <Styled.p>
+      <Themed.p>
         If you'd like to get in touch with me,{' '}
         <Link href={email.href} target="_blank" rel="noopener noreferrer">
           <Text as="span">email </Text>
@@ -30,20 +30,20 @@ const Contact = () => {
           <FontAwesomeIcon icon={twitter.faIcon} />
         </Link>{' '}
         are your best channels because I check them more frequently.
-      </Styled.p>
+      </Themed.p>
 
       <Digest />
 
-      <Styled.p>
+      <Themed.p>
         You can find me at almost all social media by the username
         <strong> arantespp</strong>*. Some of them I just created to get the
         username and I don't use very often.
-      </Styled.p>
+      </Themed.p>
       <Box sx={{ marginY: 3 }}>
-        <Styled.ul>
+        <Themed.ul>
           {socialMedias.map(({ href, name, faIcon }) => {
             return (
-              <Styled.li key={name}>
+              <Themed.li key={name}>
                 <Link href={href} target="_blank" rel="noopener noreferrer">
                   <Text as="span" sx={{ fontSize: [4, 3], marginX: 2 }}>
                     <FontAwesomeIcon icon={faIcon} />
@@ -59,10 +59,10 @@ const Contact = () => {
                     {href}
                   </Text>
                 </Link>
-              </Styled.li>
+              </Themed.li>
             );
           })}
-        </Styled.ul>
+        </Themed.ul>
       </Box>
 
       <Text sx={{ fontSize: 1, fontStyle: 'italic' }}>

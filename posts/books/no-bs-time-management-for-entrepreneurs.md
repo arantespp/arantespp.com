@@ -285,3 +285,13 @@ Find your [Mastermind](/zettelkasten/mastermind).
 This chapter is about how much is worth paying a higher fee for some service with an expert, who won't consume your time during the job and will deliver it with quality and on time, instead of paying a lower fee but spending your time micromanaging an untrustworthy job. Generally, the former option is the best. Sometimes, you can even have the same or better result if you did it by yourself, but your time is more valuable when you're doing other tasks.
 
 The same rule applies when you need to learn or master some skill. Instead of spending your time to master it alone from zero, sometimes is better to hire an excellent coach to speed up and move up your learning and projects.
+
+### Chapter 12 - The Inner Game of Peak Personal Productivity
+
+**Productivity is an inside-out game**. If you don't have your "inner game" or _the will_ to be productive, even with all productivity tools in the world in your hand, you can still be very unproductive.
+
+Dan tells that you can create a state of mind that best facilitates achieving peak productivity by mastering certain [Psycho-Cybernetics](/books/psycho-cybernetics) techniques. One technique requires that you become facile at stopping, storing, and cleaning the problem in your mind to direct 100% of your mental powers to one matter at a time.
+
+You can also rely on environment design to be more productive ([James Clear also wrote about this](https://jamesclear.com/environment-design-organ-donation)). You can surround yourself with objects that activate good [psychological triggers](/zettelkasten/psychological-trigger), for example, having in your room pictures and artifacts which remind you of wealth. You can also create a space functional for you to perform your job without the need to fetch something every minute.
+
+It's part of your inner game that you set your price and toughly value your time. Set your rules and don't let anyone break them. Dan, for instance, has a rule of only 20 minutes of phone calls. But don't impose control in a mean-spirited or diva-like manner. You can be polite and yet firm. Present your rules and the benefits to those you work with as well as to yourself.

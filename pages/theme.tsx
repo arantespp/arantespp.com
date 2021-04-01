@@ -1,12 +1,12 @@
-import { Styled } from 'theme-ui';
+import { Themed } from 'theme-ui';
 
 import { theme } from '../theme';
 
 const Theme = () => {
   return (
     <>
-      <Styled.h1>Theme</Styled.h1>
-      <Styled.pre>{JSON.stringify(theme, null, 2)}</Styled.pre>
+      <Themed.h1>Theme</Themed.h1>
+      <Themed.pre>{JSON.stringify(theme, null, 2)}</Themed.pre>
     </>
   );
 };

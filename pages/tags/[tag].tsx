@@ -1,7 +1,7 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import NextLink from 'next/link';
-import { Box, Link, Styled } from 'theme-ui';
+import { Box, Link, Themed } from 'theme-ui';
 
 import Recommendations from '../../components/Recommendations';
 import Tag from '../../components/Tag';
@@ -37,10 +37,10 @@ const TagsIndex = ({
       <Head>
         <title>#{tag}</title>
       </Head>
-      <Styled.h1>#{tag}</Styled.h1>
-      <Styled.p>
+      <Themed.h1>#{tag}</Themed.h1>
+      <Themed.p>
         Recommended posts related to the tag <Tag tag={tag} /> are shown below.
-      </Styled.p>
+      </Themed.p>
       <Box sx={{ marginBottom: 4 }}>
         <NextLink href="/tags" passHref>
           <Link>See all tags</Link>

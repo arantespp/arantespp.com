@@ -1,6 +1,6 @@
 import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import { Styled } from 'theme-ui';
+import { Themed } from 'theme-ui';
 
 import { getDrafts } from '../../lib/files';
 
@@ -20,7 +20,7 @@ const DraftsIndex = ({
         <meta key="robots" name="robots" content="noindex,follow" />
         <meta key="googlebot" name="googlebot" content="noindex,follow" />
       </Head>
-      <Styled.h1>Drafts</Styled.h1>
+      <Themed.h1>Drafts</Themed.h1>
       <RecommendationsList recommendations={drafts} />
     </>
   );
