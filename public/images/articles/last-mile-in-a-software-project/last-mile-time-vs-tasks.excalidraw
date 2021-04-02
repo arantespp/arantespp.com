@@ -215,8 +215,8 @@
     },
     {
       "type": "text",
-      "version": 103,
-      "versionNonce": 1148288587,
+      "version": 104,
+      "versionNonce": 1505199358,
       "isDeleted": false,
       "id": "I1nSRiIgdViZ8JANszTg2",
       "fillStyle": "hachure",
@@ -227,7 +227,7 @@
       "angle": 0,
       "x": 1431,
       "y": 514,
-      "strokeColor": "#333333",
+      "strokeColor": "#000000",
       "backgroundColor": "transparent",
       "width": 120,
       "height": 50,
@@ -244,8 +244,8 @@
     },
     {
       "type": "text",
-      "version": 70,
-      "versionNonce": 611124491,
+      "version": 71,
+      "versionNonce": 1682836606,
       "isDeleted": false,
       "id": "PnJgUEitlnkqzl45paCKv",
       "fillStyle": "hachure",
@@ -256,7 +256,7 @@
       "angle": 0,
       "x": 724,
       "y": 135,
-      "strokeColor": "#333333",
+      "strokeColor": "#000000",
       "backgroundColor": "transparent",
       "width": 59,
       "height": 25,
@@ -630,8 +630,8 @@
     },
     {
       "type": "text",
-      "version": 267,
-      "versionNonce": 956529253,
+      "version": 268,
+      "versionNonce": 1295471330,
       "isDeleted": false,
       "id": "-_772UnfYSzn5CCHdG9hl",
       "fillStyle": "solid",
@@ -642,7 +642,7 @@
       "angle": 0,
       "x": 716,
       "y": 0,
-      "strokeColor": "#333333",
+      "strokeColor": "#000000",
       "backgroundColor": "transparent",
       "width": 706,
       "height": 90,
@@ -660,6 +660,6 @@
   ],
   "appState": {
     "gridSize": null,
-    "viewBackgroundColor": "#f1faee"
+    "viewBackgroundColor": "#ffffff"
   }
 }

@@ -295,3 +295,15 @@ Dan tells that you can create a state of mind that best facilitates achieving pe
 You can also rely on environment design to be more productive ([James Clear also wrote about this](https://jamesclear.com/environment-design-organ-donation)). You can surround yourself with objects that activate good [psychological triggers](/zettelkasten/psychological-trigger), for example, having in your room pictures and artifacts which remind you of wealth. You can also create a space functional for you to perform your job without the need to fetch something every minute.
 
 It's part of your inner game that you set your price and toughly value your time. Set your rules and don't let anyone break them. Dan, for instance, has a rule of only 20 minutes of phone calls. But don't impose control in a mean-spirited or diva-like manner. You can be polite and yet firm. Present your rules and the benefits to those you work with as well as to yourself.
+
+### Chapter 13 - Reasons Why a Year Passes and No Meaningful Progress Is Made
+
+People think they're entitled to something, like free medical care, but the only thing everybody must be entitled to is **opportunity**. When people think they're entitled to something and live theirs lives with the alibi-itis (_"I'd do that if..."_), they prefer keeping that alibis than achieving something. As Eric Hoffer wrote: **_"There are many who find a good alibi far more attractive than an achievement"_**.
+
+> I say: No one is good at making excuses is good at making money. The skills are mutually exclusive.
+
+Strategies to overcome alibis:
+
+- Identify and write down the three most important and valuable things you can do to foster success in your business. Put them in practice every single day.
+
+- Practice the _"Principle of massive action_". Don't just try one solution to a problem, implement 20 all at the same time.

@@ -1,16 +1,17 @@
 import * as React from 'react';
-import GraphVis from 'react-graph-vis';
 import { InferGetStaticPropsType } from 'next';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { Box, Flex, Text, useThemeUI } from 'theme-ui';
 import 'vis-network/styles/vis-network.css';
 
-import { theme } from '../theme';
-
-import { getAllTags, getPosts } from '../lib/files';
-
 import RecommendationCard from '../components/RecommendationCard';
 import Tag from '../components/Tag';
+import { getAllTags, getPosts } from '../lib/files';
+import { theme } from '../theme';
+
+const GraphVis = dynamic<any>(() => import('react-graph-vis'), { ssr: false });
 
 export const getStaticProps = async () => {
   const allPosts = getPosts({ all: true });
@@ -136,12 +137,12 @@ const Legend = ({
 
 const Graph = ({
   allPosts,
-  nodes,
+  nodes: propsNodes,
   edges,
   nodeColors,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const {
-    theme: { colors, fontSizes, sizes },
+    theme: { fontSizes, sizes },
   } = useThemeUI();
 
   const [_showGraph, setShowGraph] = React.useState(false);
@@ -151,7 +152,52 @@ const Graph = ({
     group: string;
   }>();
 
-  const graph = { nodes, edges };
+  const [network, setNetwork] = React.useState<any>();
+
+  const { query } = useRouter();
+
+  const nodes = (() => {
+    if (query.node && typeof query.node === 'string') {
+      return propsNodes.map((node) => {
+        if (node.id === query.node) {
+          return {
+            ...node,
+            fixed: true,
+            x: 0,
+            y: 0,
+          };
+        }
+
+        return node;
+      });
+    }
+
+    return propsNodes;
+  })();
+
+  const selectNode = React.useCallback((id: string) => {
+    const node = nodes.find((node) => node.id === id);
+    setSelectedNode(node);
+  }, []);
+
+  /**
+   * Log seed.
+   */
+  React.useEffect(() => {
+    if (network) {
+      console.log(network.getSeed());
+    }
+  }, [network]);
+
+  /**
+   * Select fixed node.
+   */
+  React.useEffect(() => {
+    if (network && query.node) {
+      network.selectNodes([query.node]);
+      selectNode(query.node as string);
+    }
+  }, [network, query.node, selectNode]);
 
   const options = {
     clickToUse: true,
@@ -187,8 +233,7 @@ const Graph = ({
 
   const events = {
     selectNode: (event: any) => {
-      const node = nodes.find((node) => node.id === event.nodes[0]);
-      setSelectedNode(node);
+      selectNode(event.nodes[0]);
     },
     deselectNode: () => {
       setSelectedNode(undefined);
@@ -253,11 +298,13 @@ const Graph = ({
           </Box>
         )}
         <GraphVis
-          graph={graph}
+          graph={{ nodes, edges }}
           options={options}
           events={events}
-          getNetwork={(network) => {
-            console.log(network.getSeed());
+          getNetwork={(graphNetwork) => {
+            if (!network) {
+              setNetwork(graphNetwork);
+            }
           }}
         />
       </Box>
