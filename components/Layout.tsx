@@ -13,7 +13,7 @@ const Layout: React.FC = ({ children }) => {
       <Container
         as="main"
         sx={{
-          maxWidth: ['/graph'].includes(pathname) ? '100%' : undefined,
+          maxWidth: ['/network'].includes(pathname) ? '100%' : undefined,
           marginTop: [5, null, 5],
           marginBottom: [6],
           /**

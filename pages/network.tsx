@@ -135,7 +135,7 @@ const Legend = ({
   );
 };
 
-const Graph = ({
+const Network = ({
   allPosts,
   nodes: propsNodes,
   edges,
@@ -162,6 +162,15 @@ const Graph = ({
         if (node.id === query.node) {
           return {
             ...node,
+            /**
+             * We set this property to create an isolation of the fixed node.
+             *
+             * From docs https://visjs.github.io/vis-network/docs/network/nodes.html
+             * "The barnesHut physics model (which is enabled by default) is
+             * based on an inverted gravity model. By increasing the mass of a
+             * node, you increase it's repulsion."
+             */
+            mass: 2 ** 4,
             fixed: true,
             x: 0,
             y: 0,
@@ -180,12 +189,9 @@ const Graph = ({
     setSelectedNode(node);
   }, []);
 
-  /**
-   * Log seed.
-   */
   React.useEffect(() => {
     if (network) {
-      console.log(network.getSeed());
+      console.log('Network done.');
     }
   }, [network]);
 
@@ -194,12 +200,15 @@ const Graph = ({
    */
   React.useEffect(() => {
     if (network && query.node) {
-      network.selectNodes([query.node]);
       selectNode(query.node as string);
+      try {
+        network.selectNodes([query.node]);
+      } catch (err) {}
     }
   }, [network, query.node, selectNode]);
 
   const options = {
+    autoResize: true,
     clickToUse: true,
     edges: {
       arrows: {
@@ -216,9 +225,7 @@ const Graph = ({
       },
       smooth: true,
     },
-    layout: {
-      randomSeed: '0.7642638873196506:1617134388361',
-    },
+    layout: {},
     nodes: {
       shape: 'dot',
       scaling: {
@@ -228,7 +235,11 @@ const Graph = ({
         },
       },
     },
-    physics: {},
+    physics: {
+      enabled: true,
+      maxVelocity: 50,
+      minVelocity: 5,
+    },
   };
 
   const events = {
@@ -246,20 +257,24 @@ const Graph = ({
   return (
     <>
       <Head>
-        <title>Graph</title>
+        <title>Network</title>
         <meta property="og:type" key="og:type" content="website" />
         <meta
           property="og:url"
           key="og:url"
-          content={`https://arantespp.com/graph`}
+          content={`https://arantespp.com/network`}
         />
-        <meta property="og:title" key="og:title" content="Graph" />
+        <meta property="og:title" key="og:title" content="Network" />
         <meta
           property="og:description"
           key="og:description"
           content="All posts and tags and their connections."
         />
-        <meta property="og:image" key="og:image" content="/images/graph.png" />
+        <meta
+          property="og:image"
+          key="og:image"
+          content="/images/network.png"
+        />
       </Head>
       <Box
         sx={{
@@ -327,4 +342,4 @@ const Graph = ({
   );
 };
 
-export default Graph;
+export default Network;

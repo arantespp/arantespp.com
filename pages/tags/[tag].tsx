@@ -3,6 +3,7 @@ import Head from 'next/head';
 import NextLink from 'next/link';
 import { Box, Link, Themed } from 'theme-ui';
 
+import NetworkLink from '../../components/NetworkLink';
 import Recommendations from '../../components/Recommendations';
 import Tag from '../../components/Tag';
 
@@ -39,7 +40,8 @@ const TagsIndex = ({
       </Head>
       <Themed.h1>#{tag}</Themed.h1>
       <Themed.p>
-        Recommended posts related to the tag <Tag tag={tag} /> are shown below.
+        Recommended posts related to the tag <Tag tag={tag} /> are shown below.{' '}
+        <NetworkLink nodeId={tag} />
       </Themed.p>
       <Box sx={{ marginBottom: 4 }}>
         <NextLink href="/tags" passHref>

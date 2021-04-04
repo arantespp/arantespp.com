@@ -149,9 +149,9 @@ const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
     <>
       <Themed.h1>All Posts</Themed.h1>
       <Box sx={{ marginY: 4 }}>
-        <NextLink href="/graph" passHref>
+        <NextLink href="/network" passHref>
           <Link>
-            Check the graph the see all posts and tags and their connections.
+            Check The Network the see all posts, tags, and their connections.
           </Link>
         </NextLink>
       </Box>

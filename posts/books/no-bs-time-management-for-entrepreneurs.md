@@ -1,7 +1,7 @@
 ---
 title: No B.S. Time Management for Entrepreneurs
 excerpt: "This book is expressively for entrepreneurs and business owners who wear many hats—those who can't resist piling more responsibility onto his own shoulders, who has more great ideas that time and resources to take advantage of them, who runs (not walks) through each day. Your time is incredibly valuable to you, and you are constantly 'running out of it.'"
-# date: 2021-01-02
+date: 2021-04-04
 tags:
   - productivity
   - time-management
@@ -12,7 +12,30 @@ book:
     - Dan S. Kennedy
   link: https://www.amazon.com/B-S-Time-Management-Entrepreneurs-Productivity/dp/1599186152
   ASIN: B0753F6GFV
+  ISBN: 978-1-61308-376-5
 ---
+
+## TL;DR
+
+This was the first book I read about time management. It changed the way I perceive and value my and others' time and I highly recommend it. [Dan](/zettelkasten/dan-s-kennedy) has some unorthodox methods to protect his time, like using fax machines instead of emails, but the most important is understanding the essence to blind your time. The most important lessons that I took from the book are:
+
+1. Time is your most valuable asset.
+
+1. Productivity is an inside-out game.
+
+1. Transform your time in wealth, not money.
+
+1. Find your [Master Mind](/zettelkasten/master-mind).
+
+1. Be self-disciplined.
+
+1. Fire Yourself. Replace Yourself.
+
+1. Remove "Time Vampires" from your life.
+
+1. Be punctual.
+
+1. Be careful with social media.
 
 ## Notes
 
@@ -278,7 +301,7 @@ Eliminate toxic people and saboteurs from your life, besides taking your time, t
 
 Deliberately increase the amount of your time with constructive associations, with creative, inspiring, encouraging, can-do, strivers, and achievers people.
 
-Find your [Mastermind](/zettelkasten/mastermind).
+Find your [Master Mind](/zettelkasten/master-mind).
 
 ### Chapter 11 - Buy Time by Buying Expertise
 
@@ -307,3 +330,25 @@ Strategies to overcome alibis:
 - Identify and write down the three most important and valuable things you can do to foster success in your business. Put them in practice every single day.
 
 - Practice the _"Principle of massive action_". Don't just try one solution to a problem, implement 20 all at the same time.
+
+### Chapter 14 - Taming Tech and Surviving the Social Media Swamp
+
+This chapter explains how social media and technologies in general was designed to be [addictive](/zettelkasten/social-media-addiction) to us. Scientists, behavioral scientists, neurologists, psychologists, computer scientists, and others have invested they knowledge to create elements in technologies to catch our attention and time. Then we become less productive, we cannot keep focus and attention on a single task for much time.
+
+The more you use social medias, less time we have to pay attention in your life. Once this happens, you become more susceptible to others taking decisions in your life for you. If you try to reduce your time losses to social media, the society will pressure and intimidate you.
+
+Rescue yourself of this world in which technologies and social media are normal. Reverse your loss of capabilities, like focus, attention, and good decision making. Take back the control of your time and life.
+
+### Chapter 15 - How to Turn Time into Wealth
+
+One of the key factors that rich people are rich is because they link time to money and always looking for ways to get more for less.
+
+Money isn't everything, but is important and is a small part, maybe, of "wealth". Dan says that what he likes most of all things he does is receiving and depositing the checks. All wealthy people they met also think this way. Transforming time plus other ingredients in money is richly satisfying.
+
+Liking your work, the conditions in which you work, and the people you work for and with almost automatically begets financial wealth. This doesn't mean it all has to be fun. Sometimes you're going to be engaged in un-fun and uninteresting things that need to be done.
+
+**Time itself is an asset class all its own, the more important one.**. transform your time into wealth. Decides what "wealth" means to you. Develop a clear, detailed picture of what would look like. Construct a plan and establish targets to get there. Always ask yourself if the things you're doing with your present time are linked to creating the wealth you desire.
+
+## References
+
+[Derek Sivers. No B.S. Time Management for Entrepreneurs - by Dan S. Kennedy](https://sive.rs/book/NoBSTime)

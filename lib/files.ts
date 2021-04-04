@@ -196,7 +196,10 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       slug,
       content,
       rating,
-      tags: getTags(),
+      /**
+       * Book authors become tags.
+       */
+      tags: getTags(book?.authors || []),
       image,
       draft,
       book,
