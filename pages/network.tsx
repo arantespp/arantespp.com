@@ -162,15 +162,6 @@ const Network = ({
         if (node.id === query.node) {
           return {
             ...node,
-            /**
-             * We set this property to create an isolation of the fixed node.
-             *
-             * From docs https://visjs.github.io/vis-network/docs/network/nodes.html
-             * "The barnesHut physics model (which is enabled by default) is
-             * based on an inverted gravity model. By increasing the mass of a
-             * node, you increase it's repulsion."
-             */
-            mass: 2 ** 4,
             fixed: true,
             x: 0,
             y: 0,
@@ -235,11 +226,7 @@ const Network = ({
         },
       },
     },
-    physics: {
-      enabled: true,
-      maxVelocity: 50,
-      minVelocity: 5,
-    },
+    physics: {},
   };
 
   const events = {
