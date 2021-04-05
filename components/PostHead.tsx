@@ -3,7 +3,7 @@ import Head from 'next/head';
 import type { Post } from '../lib/files';
 
 const PostComponent = ({ post }: { post: Post }) => {
-  const { excerpt, image, href, title, group } = post;
+  const { excerpt, image, href, title, group, book } = post;
 
   return (
     <Head>
@@ -25,6 +25,9 @@ const PostComponent = ({ post }: { post: Post }) => {
         />
       )}
       {image && <meta property="og:image" key="og:image" content={image.url} />}
+      {book?.image && (
+        <meta property="og:image" key="og:image" content={book.image} />
+      )}
     </Head>
   );
 };
