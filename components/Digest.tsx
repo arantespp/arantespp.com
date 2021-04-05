@@ -16,7 +16,7 @@ const Digest = () => {
       </Heading>
       <Box sx={{ maxWidth: 450 }}>
         <form
-          action="http://digest.arantespp.com/add_subscriber"
+          action="https://www.getrevue.co/profile/arantespp/add_subscriber"
           method="post"
           id="revue-form"
           name="revue-form"
