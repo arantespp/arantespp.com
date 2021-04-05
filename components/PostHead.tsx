@@ -21,7 +21,7 @@ const PostComponent = ({ post }: { post: Post }) => {
         <meta
           property="og:image"
           key="og:image"
-          content="https://source.unsplash.com/HOrhCnQsxnQ"
+          content="https://source.unsplash.com/5bYxXawHOQg"
         />
       )}
       {image && <meta property="og:image" key="og:image" content={image.url} />}
