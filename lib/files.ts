@@ -42,7 +42,6 @@ type PostMeta = {
   } | null;
   book?: Book | null;
   editLink?: string;
-  url: string;
 };
 
 export type Post = PostMeta & {
@@ -89,6 +88,7 @@ export const getDrafts = () =>
       );
     })
     .map((draft) => ({
+      ...draft,
       title: 'DRAFT TITLE',
       excerpt: 'DRAFT EXCERPT',
       date: 'DRAFT DATE',

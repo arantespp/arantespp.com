@@ -2,13 +2,12 @@ import { paramCase } from 'change-case';
 import dynamic from 'next/dynamic';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import ReactMarkdown from 'react-markdown';
 import math from 'remark-math';
 import { Box, Flex, Link, Message, Themed, Text } from 'theme-ui';
 import url from 'url';
 
-import CustomImage from './CustomImage';
-
+const CustomImage = dynamic(() => import('./CustomImage'));
+const ReactMarkdown = dynamic(() => import('react-markdown'));
 const Tex = dynamic(() => import('./Tex'));
 
 /**
