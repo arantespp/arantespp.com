@@ -10,6 +10,7 @@ import Markdown from './Markdown';
 import NetworkLink from './NetworkLink';
 import PostHead from './PostHead';
 import PostResume from './PostResume';
+import SharePost from './SharePost';
 
 const PostComponent = ({ post }: { post: Post }) => {
   const { image, title, book, editLink, href } = post;
@@ -37,8 +38,10 @@ const PostComponent = ({ post }: { post: Post }) => {
         sx={{
           width: '100%',
           justifyContent: 'space-between',
-          marginY: 4,
+          marginTop: 5,
+          marginBottom: 4,
           fontSize: 1,
+          textAlign: 'center',
         }}
       >
         <NetworkLink nodeId={href} />
@@ -52,19 +55,7 @@ const PostComponent = ({ post }: { post: Post }) => {
       <Flex sx={{ justifyContent: 'center', marginTop: 5, marginBottom: 6 }}>
         <Image sx={{ height: '1.5em', marginLeft: 1 }} src="/rose.png" />
       </Flex>
-      {/* <Text
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          fontSize: 4,
-          marginBottom: 5,
-          marginTop: 4,
-        }}
-      >
-        <FontAwesomeIcon icon={faTwitter} />
-        <FontAwesomeIcon icon={faTwitter} />
-        <FontAwesomeIcon icon={faTwitter} />
-      </Text> */}
+      <SharePost post={post} />
     </>
   );
 };

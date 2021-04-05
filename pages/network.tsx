@@ -20,7 +20,8 @@ export const getStaticProps = async () => {
   const nodeColors = {
     post: theme.colors?.primary,
     tag: theme.colors?.highlight,
-    mostConnectedNode: theme.colors?.accent,
+    selectedNode: theme.colors?.accent,
+    border: theme.colors?.primary,
   };
 
   const postsNodes = allPosts.map(({ href, title }) => ({
@@ -37,6 +38,25 @@ export const getStaticProps = async () => {
     label: tag,
     value: 1,
     color: nodeColors.tag,
+  }));
+
+  const nodes = [...postsNodes, ...tagsNodes].map((node) => ({
+    ...node,
+    /**
+     * https://visjs.github.io/vis-network/docs/network/nodes.html
+     */
+    color: {
+      border: nodeColors.border,
+      background: node.color,
+      highlight: {
+        background: nodeColors.selectedNode,
+        border: nodeColors.border,
+      },
+      hover: {
+        background: node.color,
+        border: nodeColors.selectedNode,
+      },
+    },
   }));
 
   const backlinksEdges = allPosts
@@ -64,8 +84,6 @@ export const getStaticProps = async () => {
       value: 1,
     }))
   );
-
-  const nodes = [...postsNodes, ...tagsNodes];
 
   const edges = [...backlinksEdges, ...tagsEdges];
 
@@ -101,16 +119,17 @@ export const getStaticProps = async () => {
   );
 
   if (mostConnectedNode) {
-    (mostConnectedNode as any).color = nodeColors.mostConnectedNode;
+    /**
+     * Do something in the future.
+     */
   }
 
   return {
-    props: { allPosts, nodes, edges, nodeColors },
+    props: { allPosts, nodes, edges, nodeColors, mostConnectedNodeId },
   };
 };
 
 const Legend = ({
-  border,
   color,
   label,
 }: {
@@ -125,7 +144,7 @@ const Legend = ({
           padding: 2,
           borderRadius: 999,
           backgroundColor: color,
-          borderWidth: border ? 1 : 0,
+          borderWidth: 1,
           borderColor: 'black',
           borderStyle: 'solid',
         }}
@@ -142,7 +161,7 @@ const Network = ({
   nodeColors,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const {
-    theme: { fontSizes, sizes },
+    theme: { rawColors, fontSizes, sizes },
   } = useThemeUI();
 
   const [_showGraph, setShowGraph] = React.useState(false);
@@ -157,22 +176,17 @@ const Network = ({
   const { query } = useRouter();
 
   const nodes = (() => {
-    if (query.node && typeof query.node === 'string') {
-      return propsNodes.map((node) => {
-        if (node.id === query.node) {
-          return {
-            ...node,
-            fixed: true,
-            x: 0,
-            y: 0,
-          };
-        }
+    return propsNodes.map((node) => {
+      if (
+        query.node &&
+        typeof query.node === 'string' &&
+        query.node === node.id
+      ) {
+        Object.assign(node, { fixed: true, x: 0, y: 0 });
+      }
 
-        return node;
-      });
-    }
-
-    return propsNodes;
+      return node;
+    });
   })();
 
   const selectNode = React.useCallback((id: string) => {
@@ -319,10 +333,10 @@ const Network = ({
         }}
       >
         <Legend color={nodeColors.post as string} label="Post" />
-        <Legend color={nodeColors.tag as string} label="Tag" border />
+        <Legend color={nodeColors.tag as string} label="Tag" />
         <Legend
-          color={nodeColors.mostConnectedNode as string}
-          label="Most Connected Node"
+          color={nodeColors.selectedNode as string}
+          label="Selected Node"
         />
       </Flex>
     </>

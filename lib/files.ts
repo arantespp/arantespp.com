@@ -11,6 +11,8 @@ import { Group, GROUPS } from './groups';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
+const DOMAIN = 'https://arantespp.com';
+
 const GITHUB_PROJECT = 'https://github.com/arantespp/arantespp.com';
 
 export type { Group };
@@ -40,7 +42,7 @@ type PostMeta = {
   } | null;
   book?: Book | null;
   editLink?: string;
-  bitLink?: string;
+  url: string;
 };
 
 export type Post = PostMeta & {
@@ -141,7 +143,6 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       image,
       draft,
       book,
-      bitLink,
     } = data as PostMeta;
 
     const getTags = (customTags: string[] = []) =>
@@ -204,7 +205,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       draft,
       book,
       editLink: `${GITHUB_PROJECT}/edit/main/posts${href}.md`,
-      bitLink,
+      url: `${DOMAIN}${href}`,
     };
 
     if (!href || !group || !slug) {

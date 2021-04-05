@@ -347,7 +347,7 @@ Money isn't everything, but is important and is a small part, maybe, of "wealth"
 
 Liking your work, the conditions in which you work, and the people you work for and with almost automatically begets financial wealth. This doesn't mean it all has to be fun. Sometimes you're going to be engaged in un-fun and uninteresting things that need to be done.
 
-**Time itself is an asset class all its own, the more important one.**. transform your time into wealth. Decides what "wealth" means to you. Develop a clear, detailed picture of what would look like. Construct a plan and establish targets to get there. Always ask yourself if the things you're doing with your present time are linked to creating the wealth you desire.
+**Time itself is an asset class all its own, the more important one.** transform your time into wealth. Decides what "wealth" means to you. Develop a clear, detailed picture of what would look like. Construct a plan and establish targets to get there. Always ask yourself if the things you're doing with your present time are linked to creating the wealth you desire.
 
 ## References
 
