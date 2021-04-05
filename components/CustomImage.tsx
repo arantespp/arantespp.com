@@ -5,6 +5,7 @@ const CustomImage = ({ src, alt }: { src: string; alt: string }) => {
    * https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/
    */
   const altWithoutTags = alt.replace(/(<([^>]+)>)/gi, '');
+
   return (
     <Flex
       as="span"
@@ -21,6 +22,7 @@ const CustomImage = ({ src, alt }: { src: string; alt: string }) => {
         alt={altWithoutTags}
         title={altWithoutTags}
         sx={{
+          minHeight: [300, 500],
           maxHeight: [400, 600],
           objectFit: 'contain',
           height: '100%',
