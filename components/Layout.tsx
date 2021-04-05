@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { Container } from 'theme-ui';
 
+import Digest from './Digest';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -23,6 +24,7 @@ const Layout: React.FC = ({ children }) => {
         }}
       >
         {children}
+        <Digest />
       </Container>
       <Footer />
     </>

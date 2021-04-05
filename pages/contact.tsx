@@ -2,8 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
 import { Box, Link, Themed, Text } from 'theme-ui';
 
-import Digest from '../components/Digest';
-
 import { socialMedias } from '../lib/socialMedias';
 
 const Contact = () => {
@@ -31,8 +29,6 @@ const Contact = () => {
         </Link>{' '}
         are your best channels because I check them more frequently.
       </Themed.p>
-
-      <Digest />
 
       <Themed.p>
         You can find me at almost all social media by the username
