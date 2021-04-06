@@ -20,7 +20,7 @@ $$
 
 where $g(D)$ is the discount factor that multiples the reward's value, $D$ is the delay, and $k$ is the factor governing the degree of discounting.
 
-- This is the reason that humans prefer short-term than long-term rewards.
+- This is the reason that humans prefer short-term to long-term rewards.
 
 - It reveals a tendency to make choices that are inconsistent over time.
   - We regret some decisions we made in the past, despite knowing the same information.
