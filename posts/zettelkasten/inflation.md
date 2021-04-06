@@ -4,7 +4,7 @@ excerpt: Inflation is the rise of the general prices of an economy in a period o
 date: 2021-02-18
 rating: 2
 tags:
-  - economy
+  - economics
   - inflation
   - money-supply
 ---

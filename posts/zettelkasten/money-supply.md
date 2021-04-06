@@ -4,7 +4,7 @@ excerpt: In macroeconomics, money supply is the quantity of the money in circula
 date: 2021-02-18
 rating: 2
 tags:
-  - economy
+  - economics
   - macroeconomics
   - inflation
 ---

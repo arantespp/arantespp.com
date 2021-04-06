@@ -128,7 +128,7 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}) => ({
    */
   inlineMath: ({ value }) => <Tex math={value} />,
   math: ({ value }) => (
-    <Box sx={{ overflow: 'auto', marginY: 4 }}>
+    <Box sx={{ overflow: 'auto', marginY: 3 }}>
       <Tex block math={value} />
     </Box>
   ),
