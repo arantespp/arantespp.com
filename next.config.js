@@ -18,6 +18,11 @@ module.exports = withBundleAnalyzer({
         destination: '/network',
         permanent: true,
       },
+      {
+        source: '/zettelkasten/hyperbolic-discount',
+        destination: '/zettelkasten/hyperbolic-discounting',
+        permanent: true,
+      },
       /**
        * Bit links.
        */
