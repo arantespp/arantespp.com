@@ -1,5 +1,5 @@
 ---
-title: Hyperbolic discounting
+title: Hyperbolic Discounting
 excerpt: This theory states that humans discount the value of a later reward, by the factor that increases with the length of the delay.
 date: 2021-04-06
 tags:
