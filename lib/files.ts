@@ -79,14 +79,13 @@ const drafts: Array<
 
 export const getDrafts = () =>
   drafts
-    .filter(({ group, slug }, index) => {
-      return (
+    .filter(
+      ({ group, slug }, index) =>
         index ===
         drafts.findIndex(
-          (draft) => draft.group === group && draft.slug === slug
-        )
-      );
-    })
+          (draft) => draft.group === group && draft.slug === slug,
+        ),
+    )
     .map((draft) => ({
       ...draft,
       title: 'DRAFT TITLE',
@@ -108,7 +107,7 @@ const getDate = (date: string | Date) => {
    */
   const dt = new Date(date);
   const dtDateOnly = new Date(
-    dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000
+    dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000,
   );
   return {
     date: dateFns.format(dtDateOnly, 'yyyy-MM-dd'),
@@ -160,7 +159,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
          * Remove duplicated tags.
          * https://stackoverflow.com/a/56757215/8786986
          */
-        .filter((tag, index, tags) => tags.indexOf(tag) === index)
+        .filter((tag, index, array) => array.indexOf(tag) === index)
         .sort((tagA, tagB) => tagA.localeCompare(tagB));
 
     const { mtime } = fs.statSync(fullPath);
@@ -235,7 +234,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
 
     const doesPostHaveAllRequiredProperties = requiredPostProperties.reduce(
       (acc, property) => acc && !!post[property],
-      true
+      true,
     );
 
     /**
@@ -243,7 +242,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
      */
     post.content = (post.content || '').replace(
       post.excerpt,
-      `\`${post.excerpt}\``
+      `\`${post.excerpt}\``,
     );
 
     if (!doesPostHaveAllRequiredProperties) {
@@ -256,7 +255,6 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
 
     return post as Post;
   } catch (error) {
-    console.error(error);
     return undefined;
   }
 };
@@ -361,12 +359,11 @@ type GetPostsProps = {
  * Remove duplicated posts that may come from group and tags posts.
  * https://stackoverflow.com/a/56757215/8786986
  */
-const removeDuplicatedPosts = (post: Post, index: number, arr: Post[]) => {
-  return arr.findIndex(({ href }) => href === post.href) === index;
-};
+const removeDuplicatedPosts = (post: Post, index: number, arr: Post[]) =>
+  arr.findIndex(({ href }) => href === post.href) === index;
 
 /**
- * Get posts. Con be filtered by "group" and "tags". Return posts with backlinks.
+ * Get posts. Can be filtered by "group" and "tags". Return posts with backlinks.
  *
  * @param param.all return all posts. It ignores "group" and "tags" params.
  * @param param.group return posts that belong to a group.
@@ -384,40 +381,36 @@ export const getPosts = ({ all, group, tags }: GetPostsProps = {}) => {
            * Return only posts that contain the tags.
            */
           .filter((post) =>
-            tags.reduce((acc, tag) => acc || post.tags.includes(tag), false)
+            tags.reduce((acc, tag) => acc || post.tags.includes(tag), false),
           )
       : [];
 
     return [...tagsPosts.sort(sortPosts), ...groupPosts.sort(sortPosts)].filter(
-      removeDuplicatedPosts
+      removeDuplicatedPosts,
     );
   };
 
-  return (all ? allPosts.sort(sortPosts) : getGroupAndTagsPosts()).map(
-    (post) => getPost(post)!
-  );
+  return (all ? allPosts.sort(sortPosts) : getGroupAndTagsPosts())
+    .map((post) => getPost(post))
+    .filter((post): post is Post => !!post);
 };
 
-export const getAllTags = () => {
-  return getPosts({ all: true })
+export const getAllTags = () =>
+  getPosts({ all: true })
     .flatMap(({ tags }) => tags)
     .filter((tag, index, arr) => arr.indexOf(tag) === index)
     .sort((tagA, tagB) => tagA.localeCompare(tagB));
-};
 
-export const getRecommendations = (props: GetPostsProps = {}) => {
-  return (
-    getPosts(props)
-      /**
-       * Do not return the content.
-       */
-      .map(({ content, ...rest }) => rest)
-      /**
-       * Limit the number of posts returned.
-       */
-      .slice(0, LIMIT)
-  );
-};
+export const getRecommendations = (props: GetPostsProps = {}) =>
+  getPosts(props)
+    /**
+     * Do not return the content.
+     */
+    .map(({ content, ...rest }) => rest)
+    /**
+     * Limit the number of posts returned.
+     */
+    .slice(0, LIMIT);
 
 /**
  * Return specific post and post recommendations.
