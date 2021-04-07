@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Image, Text, TextProps } from 'theme-ui';
 
-const PedroArantes = React.forwardRef<any>(
+const PedroArantes = React.forwardRef(
   ({ ref: textRef, ...props }: TextProps, ref) => (
     <Text
-      ref={ref || textRef}
+      ref={ref as any}
       {...props}
       sx={{
         display: 'flex',

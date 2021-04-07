@@ -145,7 +145,7 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}): {
 
 const plugins = [math];
 
-const Markdown = ({ content, noH1 }: { content: string; noH1: boolean }) => (
+const Markdown = ({ content, noH1 }: { content: string; noH1?: boolean }) => (
   <ReactMarkdown renderers={renderers({ noH1 })} plugins={plugins}>
     {content}
   </ReactMarkdown>

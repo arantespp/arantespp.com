@@ -49,5 +49,6 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/require-default-props': 'off',
   },
 };
