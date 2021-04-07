@@ -1,6 +1,7 @@
 {
-  "name": "arantespp",
-  "version": "0.1.0",
+  "name": "arantespp.com",
+  "version": "1.0.0",
+  "license": "CC-BY-4.0",
   "scripts": {
     "test": "echo No tests yet!",
     "analyze": "cross-env ANALYZE=true next build",
@@ -30,7 +31,8 @@
     "string-similarity": "^4.0.4",
     "theme-ui": "^0.6.1",
     "typography-theme-fairy-gates": "^0.16.19",
-    "use-debounce": "^6.0.0"
+    "use-debounce": "^6.0.0",
+    "vis-network": "^9.0.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
