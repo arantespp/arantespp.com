@@ -41,24 +41,26 @@ export const getStaticProps = async () => {
     color: nodeColors.tag,
   }));
 
-  const nodes = [...postsNodes, ...tagsNodes].map((node) => ({
-    ...node,
-    /**
-     * https://visjs.github.io/vis-network/docs/network/nodes.html
-     */
-    color: {
-      border: nodeColors.border,
-      background: node.color,
-      highlight: {
-        background: nodeColors.selectedNode,
+  const nodes = [...postsNodes, ...tagsNodes]
+    .map((node) => ({
+      ...node,
+      /**
+       * https://visjs.github.io/vis-network/docs/network/nodes.html
+       */
+      color: {
         border: nodeColors.border,
-      },
-      hover: {
         background: node.color,
-        border: nodeColors.selectedNode,
+        highlight: {
+          background: nodeColors.selectedNode,
+          border: nodeColors.border,
+        },
+        hover: {
+          background: node.color,
+          border: nodeColors.selectedNode,
+        },
       },
-    },
-  }));
+    }))
+    .slice(0, 151);
 
   const backlinksEdges = allPosts
     .flatMap(({ backlinks, href }) =>
@@ -155,9 +157,6 @@ const Network = ({
     theme: { fontSizes, sizes },
   } = useThemeUI();
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_showGraph, setShowGraph] = React.useState(false);
-
   const [selectedNode, setSelectedNode] = React.useState<{
     id: string;
     group: string;
@@ -190,9 +189,9 @@ const Network = ({
 
   React.useEffect(() => {
     if (network) {
-      console.log('Network done.');
+      // network.moveTo({ scale: 60 / nodes.length });
     }
-  }, [network]);
+  }, [network, nodes.length]);
 
   /**
    * Select fixed node.
@@ -226,7 +225,10 @@ const Network = ({
       },
       smooth: true,
     },
-    layout: {},
+    interaction: {
+      hover: true,
+    },
+    layout: { improvedLayout: false, randomSeed: nodes.length },
     nodes: {
       shape: 'dot',
       scaling: {
@@ -236,7 +238,13 @@ const Network = ({
         },
       },
     },
-    physics: {},
+    physics: {
+      stabilization: {
+        iterations: Math.ceil(nodes.length / 2),
+        solver: 'barnesHut',
+        minVelocity: 20,
+      },
+    },
   };
 
   const events = {
@@ -245,9 +253,6 @@ const Network = ({
     },
     deselectNode: () => {
       setSelectedNode(undefined);
-    },
-    startStabilizing: () => {
-      setShowGraph(true);
     },
   };
 

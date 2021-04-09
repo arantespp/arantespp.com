@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Input, Link, Text } from 'theme-ui';
+import { Box, Button, Flex, Heading, Input, Link, Text } from 'theme-ui';
 
 const Digest = () => (
   <Flex
@@ -10,7 +10,7 @@ const Digest = () => (
       width: '100%',
     }}
   >
-    <Heading as="h2" sx={{ color: 'primary' }}>
+    <Heading as="h2" sx={{ color: 'primary', textAlign: 'center' }}>
       Subscribe to my weekly digest
     </Heading>
     <Box sx={{ maxWidth: 450 }}>
@@ -22,25 +22,35 @@ const Digest = () => (
         target="_blank"
         style={{ width: '100%' }}
       >
-        <Flex sx={{ marginTop: 4, marginBottom: 2 }}>
-          <Input
-            id="member_email"
-            placeholder="Your email address..."
-            name="member[email]"
-            type="email"
-            sx={{ flex: 1 }}
-          />
-          <Input
+        <Flex
+          sx={{
+            marginTop: 4,
+            marginBottom: 2,
+            flexDirection: ['column', 'row'],
+          }}
+        >
+          <Box sx={{ flex: 1, padding: 1 }}>
+            <Input
+              id="member_email"
+              placeholder="Your email address..."
+              name="member[email]"
+              type="email"
+            />
+          </Box>
+          <Button
             type="submit"
-            value="Subscribe"
             name="member[subscribe]"
             id="member_submit"
             sx={{
-              flex: '0 0 150px',
+              maxHeight: '44px',
+              flexBasis: [150],
               backgroundColor: 'primary',
               color: 'white',
+              margin: 1,
             }}
-          />
+          >
+            Subscribe
+          </Button>
         </Flex>
         <Text sx={{ fontSize: 1, color: 'gray' }}>
           By subscribing, you agree with Revue’s{' '}

@@ -22,7 +22,7 @@ const CustomImage = ({ src, alt }: { src: string; alt: string }) => {
         alt={altWithoutTags}
         title={altWithoutTags}
         sx={{
-          minHeight: [300, 500],
+          minHeight: [100, 300],
           maxHeight: [400, 600],
           objectFit: 'contain',
           height: '100%',

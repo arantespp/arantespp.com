@@ -21,7 +21,7 @@ const PostComponent = ({ post }: { post: Post }) => {
       <Themed.h1>{title}</Themed.h1>
       <Box
         sx={{
-          marginBottom: 4,
+          marginBottom: [4],
           borderWidth: 1,
           borderColor: 'muted',
           borderBottomStyle: 'solid',
@@ -29,7 +29,7 @@ const PostComponent = ({ post }: { post: Post }) => {
       >
         <PostResume post={post} />
       </Box>
-      <Box sx={{ marginBottom: 5 }}>
+      <Box sx={{ marginBottom: [5] }}>
         {!!image && (
           <CustomImage alt={image.alt} src={`${image.url}/1024×576`} />
         )}
