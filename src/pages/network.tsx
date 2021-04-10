@@ -184,7 +184,13 @@ const Network = ({
       const node = nodes.find((n) => n.id === id);
       setSelectedNode(node);
     },
-    [nodes],
+    /**
+     * Cannot add nodes as dependency because it will recreates this method
+     * every time and it'll affect the useEffect that handles the selected
+     * node by query params.
+     */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
   );
 
   React.useEffect(() => {
@@ -199,6 +205,7 @@ const Network = ({
   React.useEffect(() => {
     if (network && query.node) {
       selectNode(query.node as string);
+
       try {
         network.selectNodes([query.node]);
       } catch (err) {
@@ -240,10 +247,9 @@ const Network = ({
     },
     physics: {
       stabilization: {
-        iterations: Math.ceil(nodes.length / 2),
-        solver: 'barnesHut',
-        minVelocity: 20,
+        iterations: 200,
       },
+      solver: 'barnesHut',
     },
   };
 
