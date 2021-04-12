@@ -3,7 +3,7 @@ import { InferGetStaticPropsType } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Box, Flex, Text, useThemeUI } from 'theme-ui';
+import { Box, Flex, Spinner, Text, useThemeUI } from 'theme-ui';
 
 import 'vis-network/styles/vis-network.css';
 
@@ -162,6 +162,11 @@ const Network = ({
     group: string;
   }>();
 
+  const [
+    stabilizationIterationsDone,
+    setStabilizationIterationsDone,
+  ] = React.useState(false);
+
   const [network, setNetwork] = React.useState<any>();
 
   const { query } = useRouter();
@@ -260,6 +265,9 @@ const Network = ({
     deselectNode: () => {
       setSelectedNode(undefined);
     },
+    stabilizationIterationsDone: () => {
+      setStabilizationIterationsDone(true);
+    },
   };
 
   return (
@@ -319,6 +327,19 @@ const Network = ({
             )}
             {selectedNode.group === 'tag' && <Tag tag={selectedNode.id} />}
           </Box>
+        )}
+        {!stabilizationIterationsDone && (
+          <Flex
+            sx={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Spinner />
+          </Flex>
         )}
         <GraphVis
           graph={{ nodes, edges }}

@@ -15,6 +15,8 @@ rating: 3
 
 - Open loop is something that needs to be done but hasn't yet been fulfilled.
 
+  - You didn't think about it. You haven't clarified the intended outcome, the very next physical action step, and/or put reminders of the outcome and action required in a system you trust.
+
 - From time to time, your mind will remember that task, even if you can't execute it at that moment.
 
 - A lot of open loops require a lot of mental energy because they stole our attention.

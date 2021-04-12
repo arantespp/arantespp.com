@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
-import { Box, Link, Themed, Text } from 'theme-ui';
+import { Flex, Link, Themed, Text } from 'theme-ui';
 
 import { socialMedias } from '../lib/socialMedias';
 
@@ -38,31 +38,45 @@ const Contact = () => {
         <strong> arantespp</strong>*. Some of them I just created to get the
         username and I don&apos;t use very often.
       </Themed.p>
-      <Box sx={{ marginY: 3 }}>
-        <Themed.ul>
-          {socialMedias.map(({ href, name, faIcon }) => (
-            <Themed.li key={name}>
-              <Link href={href} target="_blank" rel="noopener noreferrer">
-                <Text as="span" sx={{ fontSize: [4, 3], marginX: 2 }}>
-                  <FontAwesomeIcon icon={faIcon} />
-                </Text>
-                <Text
-                  as="span"
-                  sx={{
-                    display: ['none', 'inline'],
-                    marginLeft: 1,
-                    overflowWrap: 'break-word',
-                  }}
-                >
-                  {href}
-                </Text>
-              </Link>
-            </Themed.li>
-          ))}
-        </Themed.ul>
-      </Box>
 
-      <Text sx={{ fontSize: 1, fontStyle: 'italic' }}>
+      <Flex
+        sx={{
+          marginY: 4,
+          flexDirection: ['row', 'column'],
+          justifyContent: ['center'],
+          flexWrap: 'wrap',
+        }}
+      >
+        {socialMedias.map(({ href, faIcon, name }) => (
+          <Link
+            key={href}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ margin: 2 }}
+            title={name}
+          >
+            <Text
+              as="span"
+              sx={{ color: 'primary', fontSize: [5, 3], marginX: 2 }}
+            >
+              <FontAwesomeIcon icon={faIcon} />
+            </Text>
+            <Text
+              as="span"
+              sx={{
+                display: ['none', 'inline'],
+                marginLeft: 1,
+                overflowWrap: 'break-word',
+              }}
+            >
+              {href}
+            </Text>
+          </Link>
+        ))}
+      </Flex>
+
+      <Text sx={{ fontSize: 1, fontStyle: 'italic', color: 'gray' }}>
         * I know, it&apos;s very sad, but Instagram is the only social media
         that I don&apos;t have <strong>arantespp</strong> as username. Sometime
         ago I&apos;ve create the account with that username but I couldn&apos;t

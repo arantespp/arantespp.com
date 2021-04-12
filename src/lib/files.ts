@@ -255,6 +255,8 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
 
     return post as Post;
   } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(error);
     return undefined;
   }
 };

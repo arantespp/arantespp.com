@@ -18,7 +18,7 @@ rating: 2
   - "How can this can be applied to my life?"
 - You try every time to make connections with another subject.
 - Slows down your speed reading because you need more time to engage with the material.
-- You expand your knowledge base because you send more information to your long-term memory.
+- You expand your knowledge base because you send more information to your [long-term memory](/zettelkasten/long-term-memory).
 
 ## Questions
 

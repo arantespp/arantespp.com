@@ -5,10 +5,6 @@ import CustomImage from './CustomImage';
 const BookHeader = ({ book }: { book: Book }) => {
   const { authors, image, link, ASIN, ISBN } = book;
 
-  if (!image) {
-    return null;
-  }
-
   const alt = [
     `By <strong>${authors.join(', ')}</strong>`,
     ISBN && `ISBN: ${ISBN}`,
@@ -18,7 +14,7 @@ const BookHeader = ({ book }: { book: Book }) => {
     .filter((line) => !!line)
     .join('. ');
 
-  return <CustomImage src={image} alt={alt} />;
+  return <CustomImage src={image || ''} alt={alt} />;
 };
 
 export default BookHeader;

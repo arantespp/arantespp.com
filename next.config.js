@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
@@ -35,6 +37,11 @@ module.exports = withBundleAnalyzer({
         source: '/no-bs-time',
         destination: '/books/no-bs-time-management-for-entrepreneurs',
         permanent: true,
+      },
+      {
+        source: '/getting-things-done',
+        destination: '/books/getting-things-done',
+        permanent: false,
       },
     ];
   },
