@@ -1,6 +1,6 @@
 ---
 title: Dopamine
-excerpt: It's known as "feel good" neurotransmitter.
+excerpt: It's known as the "feel-good" neurotransmitter.
 date: 2021-04-04
 rating: 2
 tags:

@@ -31,8 +31,12 @@ const wordBreak = 'break-word';
 const message = {
   fontSize: [2],
   fontStyle: 'italic',
-  padding: 2,
+  padding: 0,
   paddingLeft: 3,
+  marginY: 2,
+  backgroundColor: 'transparent',
+  color: 'gray',
+  borderColor: 'muted',
 };
 
 const partialTheme = {
@@ -40,7 +44,7 @@ const partialTheme = {
   colors: {
     ...palette,
     text: '#333',
-    gray: '#555',
+    gray: '#515151',
     background: '#fff',
     primary: palette.prussianBlue,
     secondary: palette.celadonBlue,
@@ -67,10 +71,10 @@ const partialTheme = {
   messages: {
     excerpt: {
       ...message,
-      backgroundColor: 'transparent',
     },
     quote: {
       ...message,
+      marginX: 4,
     },
   },
   styles: {

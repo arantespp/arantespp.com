@@ -22,9 +22,9 @@ draft: true
 
 ### Chapter 1 - A New Practice for a New Reality
 
-You can access an infinite amount of data through the Internet and receive many inputs from the world. This scenario's transformed the work and life boundaries because every new information increases the limits of your commitments and your lives.
+You can access an infinite amount of data through the Internet and receive many inputs from the world. This scenario's transformed your work and life boundaries because every new information increases the limits of your commitments and your lives.
 
-The amount of new information creates [**open loops**](/zettelkasten/ideas-in-open-loop), or "incomplete tasks" in your minds. An open loop is an action that you decided to execute, but you didn't define the actions and outputs desired. If you have a huge amount of open loops, they'll appear from time to time and steal your energy. Putting these incomplete tasks in a management tool, like a "to-do" list, won't help because they're unfinished and will be pulling on our attention.
+The amount of new information creates [**open loops**](/zettelkasten/ideas-in-open-loop), or "incomplete tasks" in your minds. An open loop is an action that you decided to execute, but you didn't define the actions and outputs desired. If you have a huge amount of open loops, they'll appear from time to time and steal your energy (because your [short-term memory](/zettelkasten/short-term-memory) is very limited). Putting these incomplete tasks in a management tool, like a "to-do" list, won't help because they're unplanned and will be pulling on our attention.
 
 To manage the open loops, you must follow 3 steps:
 
@@ -37,3 +37,17 @@ To manage the open loops, you must follow 3 steps:
 > You must _use_ your mind to get things _off_ your mind.
 
 The difference between following these steps and just putting a task on a "to-do" list is that you _thought_ about the task. Once you've planned the next physical steps, the outcomes, and put a reminder about them, you've clarified the task in your mind and the resulting data has been stored in a system that you know you'll access and think about when you need to. Your brain can give up the job of reminding you, you removed an open loop.
+
+### Chapter 2 - Getting Control of Your Life: The Five Steps of Mastering Workflow
+
+[David](/zettelkasten/david-allen) presents a method for mastering the art of relaxed and controlled engagement. It's a five-step method for managing your workflow. The steps are:
+
+1. **Capture**. Every open loop or task you decided to od must be captured in the systems you trust. You must empty them regularly.
+
+1. Clarify
+
+1. Organize
+
+1. Reflect
+
+1. Engage

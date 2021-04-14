@@ -107,7 +107,7 @@ Interruptions destroy productivity, and almost none of them have to do with nece
 
 #### Get lost
 
-_"If they can't find you, they can't interrupt you."_
+> "If they can't find you, they can't interrupt you."
 
 Be inaccessible to your coworkers. Working at home is a possible solution. Dan says that when he was inaccessible, their people functioned just as well or better when he was there. They handled 80% of everything on their own, and the other 20%, asked quickly and efficiently.
 

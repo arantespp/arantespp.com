@@ -40,7 +40,7 @@ module.exports = withBundleAnalyzer({
       },
       {
         source: '/getting-things-done',
-        destination: '/books/getting-things-done',
+        destination: '/_drafts/books/getting-things-done',
         permanent: false,
       },
     ];
