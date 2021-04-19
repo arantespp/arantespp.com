@@ -42,12 +42,29 @@ The difference between following these steps and just putting a task on a "to-do
 
 [David](/zettelkasten/david-allen) presents a method for mastering the art of relaxed and controlled engagement. It's a five-step method for managing your workflow. The steps are:
 
-1. **Capture**. Every open loop or task you decided to od must be captured in the systems you trust. You must empty them regularly.
+#### 1. Capture
 
-1. Clarify
+Every open loop or task you decided to do must be captured in the systems you trust. You must empty them regularly.
 
-1. Organize
+#### 2. Clarify
 
-1. Reflect
+You need to organize the actions you need to take based on the items you've captured. The author provides a diagram that helps you decide the actions. You have to answer some questions: **Is it Actionable?**:
 
-1. Engage
+- **No.**
+  1.  It's trash, no longer needed.
+  2.  No action now, but something need to be done later.
+  3.  The item might be used later for reference.
+- **Yes**, the item is actionable. Two things need to be determined about these items.
+
+  - What project or outcome have you committed to? If it is a project, you need to capture the outcomes and put on a "Projects" list. It'll stay fresh and alive in your management system until it is completed.
+
+  - What's the next action required?
+    1.  **Do it** at the moment the action is defined if if will take less than two minutes.
+    2.  **Delegate it** if the task will take longer than two minutes and if you're not the right person to do it.
+    3.  **Defer it** if the task will take longer than two minutes and if you're the right person to do it.
+
+#### 3. Organize
+
+#### 4. Reflect
+
+#### 5. Engage
