@@ -1,11 +1,43 @@
-import { Flex, Text } from 'theme-ui';
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
+import { Box, Flex, Link, Text } from 'theme-ui';
 
-const NotFound = () => (
-  <Flex sx={{ justifyContent: 'center', margin: 4 }}>
-    <Text sx={{ fontSize: 5, fontWeight: 'bold', textAlign: 'center' }}>
-      Ops, page not found 😢
-    </Text>
-  </Flex>
-);
+const NotFound = () => {
+  const { asPath } = useRouter();
+
+  const draftHref = asPath.startsWith('/_draft') ? asPath : `/_drafts${asPath}`;
+
+  return (
+    <Box sx={{ margin: 3 }}>
+      <Flex
+        sx={{
+          justifyContent: 'center',
+          marginBottom: 4,
+          flexDirection: 'column',
+        }}
+      >
+        <Text sx={{ fontSize: 5, fontWeight: 'bold', textAlign: 'center' }}>
+          404
+        </Text>
+        <Text sx={{ fontSize: 4, fontWeight: 'bold', textAlign: 'center' }}>
+          Ops, page not found 😢
+        </Text>
+      </Flex>
+      <Text>
+        That page does&apos;t exist. But, maybe it is unfinished post and it is
+        a{' '}
+        <NextLink href={draftHref}>
+          <Link
+            sx={{
+              textDecoration: 'underline',
+            }}
+          >
+            draft.
+          </Link>
+        </NextLink>
+      </Text>
+    </Box>
+  );
+};
 
 export default NotFound;

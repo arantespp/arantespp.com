@@ -8,6 +8,7 @@ const PostComponent = ({ post }: { post: Post }) => {
   return (
     <Head>
       <title>{title}</title>
+      <meta name="twitter:card" content="summary" />
       <meta property="og:type" key="og:type" content="website" />
       <meta
         property="og:url"

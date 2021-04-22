@@ -40,7 +40,7 @@ The difference between following these steps and just putting a task on a "to-do
 
 ### Chapter 2 - Getting Control of Your Life: The Five Steps of Mastering Workflow
 
-[David](/zettelkasten/david-allen) presents a method for mastering the art of relaxed and controlled engagement. It's a five-step method for managing your workflow. The steps are:
+[David](/zettelkasten/david-allen) presents a method for mastering the art of relaxed and controlled engagement. It's a five-step method for managing your workflow. The main goal is taking back the job of your mind to remember your tasks. The steps are:
 
 #### 1. Capture
 
@@ -51,12 +51,12 @@ Every open loop or task you decided to do must be captured in the systems you tr
 You need to organize the actions you need to take based on the items you've captured. The author provides a diagram that helps you decide the actions. You have to answer some questions: **Is it Actionable?**:
 
 - **No.**
-  1.  It's trash, no longer needed.
-  2.  No action now, but something need to be done later.
-  3.  The item might be used later for reference.
+  1. **Trash.** It's trash, no longer needed.
+  2. **Incubation.** No action now, but something need to be done later.
+  3. **Reference.** The item might be used later for reference.
 - **Yes**, the item is actionable. Two things need to be determined about these items.
 
-  - What project or outcome have you committed to? If it is a project, you need to capture the outcomes and put on a "Projects" list. It'll stay fresh and alive in your management system until it is completed.
+  - What project or outcome have you committed to? If it is a project, you need to capture the outcomes and put on a **Projects List** list and **Project Plans** list. It'll stay fresh and alive in your management system until it is completed.
 
   - What's the next action required?
     1.  **Do it** at the moment the action is defined if if will take less than two minutes.
@@ -64,6 +64,16 @@ You need to organize the actions you need to take based on the items you've capt
     3.  **Defer it** if the task will take longer than two minutes and if you're the right person to do it.
 
 #### 3. Organize
+
+For each output of the step above, you'll need some tools to help you organize them. Actions that requires less than two minutes or that have already been completed don't need to be tracked.
+
+- **Trash**, **Incubation**, or **Reference**: these outputs you just toss them, "tickle" them fo later reassessment, or file them for futures references.
+
+- **Projects List** and **Project Plans**: a list, storage or files. A project is any desired result that can be accomplished within a year that requires multiples action steps. If a step won't complete something, some kind of goalpost must be created to reminder you that there is something left. **Projects List** is a index for your projects. **Project Plans** is a reference of the details of each project.
+
+- **Do it** doesn't need a organization system because they're done at the moment they're defined.
+
+- **Delegate it** and **Defer it**: you can use calendars to time specific actions, and "Next Actions Lists" to keep the tasks you need to execute during the day.
 
 #### 4. Reflect
 
