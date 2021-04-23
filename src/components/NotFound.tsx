@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import { Box, Flex, Link, Text } from 'theme-ui';
+import { Flex, Link, Text } from 'theme-ui';
 
 const NotFound = () => {
   const { asPath } = useRouter();
@@ -8,7 +8,7 @@ const NotFound = () => {
   const draftHref = asPath.startsWith('/_draft') ? asPath : `/_drafts${asPath}`;
 
   return (
-    <Box sx={{ margin: 3 }}>
+    <Flex sx={{ margin: 3, flexDirection: 'column' }}>
       <Flex
         sx={{
           justifyContent: 'center',
@@ -23,9 +23,9 @@ const NotFound = () => {
           Ops, page not found 😢
         </Text>
       </Flex>
-      <Text>
+      <Text sx={{ textAlign: 'center' }}>
         That page does&apos;t exist. But, maybe it is unfinished post and it is
-        a{' '}
+        still a{' '}
         <NextLink href={draftHref}>
           <Link
             sx={{
@@ -36,7 +36,7 @@ const NotFound = () => {
           </Link>
         </NextLink>
       </Text>
-    </Box>
+    </Flex>
   );
 };
 

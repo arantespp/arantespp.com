@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NextLink from 'next/link';
-import { Flex, Link } from 'theme-ui';
+import { Flex, Link, Text } from 'theme-ui';
 
 import PedroArantes from './PedroArantes';
 
@@ -47,6 +47,26 @@ const Footer = () => (
         </Link>
       ))}
     </Flex>
+    <Text
+      sx={{
+        color: 'white',
+        fontSize: 1,
+        marginTop: 2,
+        textAlign: 'center',
+        a: {
+          color: 'white',
+        },
+      }}
+    >
+      <span>This website is </span>
+      <Link href="https://github.com/arantespp/arantespp.com">
+        open sourced
+      </Link>
+      <span> under </span>
+      <Link href="https://github.com/arantespp/arantespp.com/blob/main/LICENSE.md">
+        CC BY 4.0 licence.
+      </Link>
+    </Text>
   </Flex>
 );
 
