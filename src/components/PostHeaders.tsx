@@ -34,6 +34,7 @@ const PostHeaders = ({ post }: { post: Post }) => {
       <meta key="og:title" property="og:title" content={title} />
       <meta key="og:description" property="og:description" content={excerpt} />
       <meta key="og:image" property="og:image" content={imageContent} />
+      <meta key="twitter:image" name="twitter:image" content={imageContent} />
     </Head>
   );
 };
