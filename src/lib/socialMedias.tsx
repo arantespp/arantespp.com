@@ -11,55 +11,50 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-export const socialMedias = [
-  {
-    name: 'Twitter',
+export const socialMedias = {
+  Twitter: {
     href: 'https://twitter.com/arantespp',
     faIcon: faTwitter,
+    username: '@arantespp',
   },
-  {
-    name: 'Email',
+  Email: {
     href: 'mailto:arantespp@gmail.com',
     faIcon: faEnvelope,
   },
-  {
-    name: 'Telegram',
+  Telegram: {
     href: 'https://t.me/arantespp',
     faIcon: faTelegramPlane,
   },
-  {
-    name: 'Instagram',
+  Instagram: {
     href: 'https://instagram.com/arantespp_',
     faIcon: faInstagram,
   },
-  {
-    name: 'Facebook',
+  Facebook: {
     href: 'https://facebook.com/arantespp',
     faIcon: faFacebookSquare,
   },
-  {
-    name: 'LinkedIn',
+  LinkedIn: {
     href: 'https://linkedin.com/in/arantespp',
     faIcon: faLinkedinIn,
   },
-  {
-    name: 'GitHub',
+  GitHub: {
     href: 'https://github.com/arantespp',
     faIcon: faGithub,
   },
-  {
-    name: 'Dev.to',
+  'Dev.to': {
     href: 'https://dev.to/arantespp',
     faIcon: faDev,
   },
-  {
-    name: 'StackOverflow',
+  StackOverflow: {
     href: 'https://stackoverflow.com/users/8786986/pedro-arantes',
     faIcon: faStackOverflow,
   },
-  {
-    name: 'Reddit',
+  Reddit: {
     href: 'https://www.reddit.com/user/arantespp',
     faIcon: faReddit,
   },
-] as const;
+};
+
+export const socialMediasArr = Object.entries(
+  socialMedias,
+).map(([name, value]) => ({ name, ...value }));

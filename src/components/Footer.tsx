@@ -4,7 +4,7 @@ import { Flex, Link } from 'theme-ui';
 
 import PedroArantes from './PedroArantes';
 
-import { socialMedias } from '../lib/socialMedias';
+import { socialMediasArr } from '../lib/socialMedias';
 
 const Footer = () => (
   <Flex
@@ -30,7 +30,7 @@ const Footer = () => (
       />
     </NextLink>
     <Flex sx={{ flexWrap: 'wrap', justifyContent: 'center', marginTop: 2 }}>
-      {socialMedias.map(({ name, href, faIcon }) => (
+      {socialMediasArr.map(({ href, faIcon, name }) => (
         <Link
           key={name}
           sx={{

@@ -25,6 +25,13 @@ module.exports = withBundleAnalyzer({
         destination: '/zettelkasten/hyperbolic-discounting',
         permanent: true,
       },
+      {
+        source:
+          '/zettelkasten/mental-models-the-four-criteria-model-for-choosing-actions-in-the-moment',
+        destination:
+          '/zettelkasten/the-four-criteria-model-for-choosing-actions-in-the-moment',
+        permanent: true,
+      },
       /**
        * Bit links.
        */

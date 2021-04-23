@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { getDrafts, getDraft, Group } from '../../lib/files';
 
 import Post from '../../components/Post';
-import PostHead from '../../components/PostHead';
+import PostHeaders from '../../components/PostHeaders';
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: getDrafts().map(({ group, slug }) => ({
@@ -32,7 +32,7 @@ const DraftsSlug = ({
   draft,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <>
-    <PostHead post={draft} />
+    <PostHeaders post={draft} />
     <Head>
       <meta key="robots" name="robots" content="noindex,follow" />
       <meta key="googlebot" name="googlebot" content="noindex,follow" />

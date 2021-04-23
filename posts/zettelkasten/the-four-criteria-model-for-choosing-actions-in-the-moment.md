@@ -1,5 +1,5 @@
 ---
-title: Mental Models - The Four-Criteria Model for Choosing Actions in the Moment
+title: The Four-Criteria Model for Choosing Actions in the Moment
 excerpt: It helps you decide which action you take in the present moment.
 date: 2021-04-22
 rating: 2
@@ -15,7 +15,7 @@ tags:
 
 - It helps you decide which action you take in the present moment.
 
-- How to choose between studying about mental models, planning an application, or sending a WhatsApp message to your crush?
+- How to choose between studying about [mental models](/zettelkasten/mental-models), planning an application, or sending a WhatsApp message to your crush?
 
 - It was taken from the book [Getting Things Done](/books/getting-things-done), by [David Allen](/zettelkasten/david-allen).
 

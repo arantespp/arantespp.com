@@ -8,7 +8,7 @@ import BookHeader from './BookHeader';
 import CustomImage from './CustomImage';
 import Markdown from './Markdown';
 import NetworkLink from './NetworkLink';
-import PostHead from './PostHead';
+import PostHeaders from './PostHeaders';
 import PostResume from './PostResume';
 import SharePost from './SharePost';
 
@@ -17,7 +17,7 @@ const PostComponent = ({ post }: { post: Post }) => {
 
   return (
     <>
-      <PostHead post={post} />
+      <PostHeaders post={post} />
       <Themed.h1>{title}</Themed.h1>
       <Box
         sx={{

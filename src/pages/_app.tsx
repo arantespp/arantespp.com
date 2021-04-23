@@ -6,6 +6,8 @@ import { ThemeProvider } from 'theme-ui';
 
 import Layout from '../components/Layout';
 
+import { socialMedias } from '../lib/socialMedias';
+
 import { theme } from '../theme';
 
 const title = "Pedro Arantes' Digital Garden";
@@ -14,6 +16,12 @@ const App = ({ Component, pageProps }: AppProps) => {
   const description =
     "I'v created this website to make notes about the subjects I'm learning.";
 
+  /**
+   * Twitter meta tags:
+   *
+   * - https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup
+   * - https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary
+   */
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -32,6 +40,17 @@ const App = ({ Component, pageProps }: AppProps) => {
           content={description}
         />
         <meta property="og:image" key="og:image" content="/me.jpg" />
+        <meta key="twitter:card" name="twitter:card" content="summary" />
+        <meta
+          key="twitter:site"
+          name="twitter:site"
+          content={socialMedias.Twitter.username}
+        />
+        <meta
+          key="twitter:twitter:creator"
+          name="twitter:twitter:creator"
+          content={socialMedias.Twitter.username}
+        />
       </Head>
       <Layout>
         <Component {...pageProps} />
