@@ -39,9 +39,12 @@ const App = ({ Component, pageProps }: AppProps) => {
           key="og:description"
           content={description}
         />
-        <meta property="og:image" key="og:image" content="/me.jpg" />
+        <meta
+          property="og:image"
+          key="og:image"
+          content="https://arantespp.com/me.jpg"
+        />
         <meta key="twitter:card" name="twitter:card" content="summary" />
-        <meta key="twitter:image" name="twitter:image" content="/me.jpg" />
         <meta
           key="twitter:site"
           name="twitter:site"
