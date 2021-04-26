@@ -444,3 +444,51 @@ export const getPostAndPostsRecommendations = ({
 };
 
 export const getDraft = getPartialPost;
+
+const dayOfWeekMap = {
+  Mon: 1,
+  Tue: 2,
+  Wed: 3,
+  Thur: 4,
+  Fri: 5,
+  Sat: 6,
+  Sun: 7,
+};
+
+/**
+ * https://stackoverflow.com/a/54148600/8786986
+ */
+export const getClosestDayOfLastWeek = (
+  dayOfWeek: keyof typeof dayOfWeekMap,
+  fromDate = new Date(),
+) => {
+  // follow the getISODay format (7 for Sunday, 1 for Monday)
+
+  // -7 means last week
+  // dayOfWeekMap[dayOfWeek] get the ISODay for the desired dayOfWeek
+
+  // e.g. If today is Sunday, getISODay(fromDate) will returns 7
+  // if the day we want to find is Thursday(4), apart from subtracting one week(-7),
+  // we also need to account for the days between Sunday(7) and Thursday(4)
+  // Hence we need to also subtract (getISODay(fromDate) - dayOfWeekMap[dayOfWeek])
+  const offsetDays =
+    -7 - (dateFns.getISODay(fromDate) - dayOfWeekMap[dayOfWeek]);
+
+  return dateFns.addDays(fromDate, offsetDays);
+};
+
+/**
+ * Get all posts since last Tuesday, because the weekly digest is about all
+ * posts since last Tuesday.
+ */
+export const getRevuePosts = async () => {
+  const lastTuesday = getClosestDayOfLastWeek('Mon');
+
+  return allPosts
+    .filter(({ date }) => dateFns.isAfter(new Date(date), lastTuesday))
+    .sort(
+      (postA, postB) =>
+        dateFns.getUnixTime(new Date(postA.date)) -
+        dateFns.getUnixTime(new Date(postB.date)),
+    );
+};
