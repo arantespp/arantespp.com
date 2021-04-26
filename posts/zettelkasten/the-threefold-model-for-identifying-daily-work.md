@@ -1,6 +1,6 @@
 ---
 title: The Threefold Model for Identifying Daily Work
-excerpt: It helps you decide which action you take in the present moment.
+excerpt: It helps you to identify the kind of daily work that you can be engaged in.
 date: 2021-04-24
 rating: 2
 tags:
