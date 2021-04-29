@@ -5,7 +5,7 @@ date: 2021-04-26
 rating: 2
 tags:
   - computer science
-  - databases
+  - database
   - Andreas Reuter
   - Theo Härder
 ---
