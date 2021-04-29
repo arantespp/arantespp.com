@@ -166,10 +166,7 @@ const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Box
         sx={{
           '& > div:last-child': {
-            borderBottomStyle: 'solid',
-            borderWidth: 1,
-            borderColor: 'muted',
-            paddingBottom: 4,
+            paddingBottom: 5,
           },
         }}
       >

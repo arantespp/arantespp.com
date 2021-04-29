@@ -4,10 +4,10 @@ import NextLink from 'next/link';
 import { Box, Link, Themed } from 'theme-ui';
 
 import NetworkLink from '../../components/NetworkLink';
-import Recommendations from '../../components/Recommendations';
+import RecommendationsList from '../../components/RecommendationsList';
 import Tag from '../../components/Tag';
 
-import { getAllTags, getRecommendations } from '../../lib/files';
+import { getAllTags, getPosts } from '../../lib/files';
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: getAllTags().map((tag) => ({
@@ -21,14 +21,14 @@ export const getStaticProps = async ({
 }: {
   params: { tag: string };
 }) => {
-  const recommendations = getRecommendations({ tags: [tag] });
+  const posts = getPosts({ tags: [tag] });
   return {
-    props: { tag, recommendations },
+    props: { tag, posts },
   };
 };
 
 const TagsIndex = ({
-  recommendations,
+  posts,
   tag,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <>
@@ -45,7 +45,7 @@ const TagsIndex = ({
         <Link>See all tags</Link>
       </NextLink>
     </Box>
-    <Recommendations recommendations={recommendations} />
+    <RecommendationsList recommendations={posts} />
   </>
 );
 
