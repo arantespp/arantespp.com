@@ -1,8 +1,8 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
-import Head from 'next/head';
 
 import { getDrafts, getDraft, Group } from '../../lib/files';
 
+import NoIndexHeaders from '../../components/NoIndexHeaders';
 import Post from '../../components/Post';
 import PostHeaders from '../../components/PostHeaders';
 
@@ -33,10 +33,7 @@ const DraftsSlug = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <>
     <PostHeaders post={draft} />
-    <Head>
-      <meta key="robots" name="robots" content="noindex,follow" />
-      <meta key="googlebot" name="googlebot" content="noindex,follow" />
-    </Head>
+    <NoIndexHeaders />
     <Post post={draft} />
   </>
 );

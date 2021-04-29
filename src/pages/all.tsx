@@ -12,6 +12,7 @@ import {
   Radio,
   Themed,
   Text,
+  Flex,
 } from 'theme-ui';
 import { useDebounce } from 'use-debounce';
 
@@ -28,34 +29,42 @@ const POST_MIN_RATING = 0.5;
 
 const MAX_POSTS_BEST_MATCHES = 5;
 
-const sorts = ["Author's relevance", 'Date', 'Title'] as const;
+const sorts = ['Rating', 'Date', 'Title'] as const;
 
 type Sorts = typeof sorts[number];
 
 const FilterBlock = ({
   children,
+  hidden,
   title,
 }: {
   children: React.ReactNode;
   title: string;
-}) => (
-  <Box
-    sx={{
-      fontSize: 1,
-      paddingBottom: 3,
-    }}
-  >
-    <Text as="p" sx={{ fontWeight: 'bold', paddingBottom: 1 }}>
-      {title}
-    </Text>
-    {children}
-  </Box>
-);
+  hidden?: boolean;
+}) => {
+  if (hidden) {
+    return null;
+  }
+
+  return (
+    <Box
+      sx={{
+        fontSize: 1,
+        paddingBottom: 3,
+      }}
+    >
+      <Text as="p" sx={{ fontWeight: 'bold', paddingBottom: 1 }}>
+        {title}
+      </Text>
+      <Flex sx={{ justifyContent: 'flex-start' }}>{children}</Flex>
+    </Box>
+  );
+};
 
 const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [search, setSearch] = React.useState('');
   const [debouncedSearch] = useDebounce(search, 200);
-  const [sorting, setSorting] = React.useState<Sorts>("Author's relevance");
+  const [sorting, setSorting] = React.useState<Sorts>('Rating');
   const [showGroups, setShowGroups] = React.useState([...GROUPS]);
 
   const [filteredPosts, setFilteredPosts] = React.useState(allPosts);
@@ -171,7 +180,7 @@ const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
           />
         </FilterBlock>
 
-        <FilterBlock title="Show Groups:">
+        <FilterBlock title="Show Groups:" hidden>
           {GROUPS.map((group) => (
             <Label key={group}>
               <Checkbox
@@ -197,7 +206,7 @@ const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
         <FilterBlock title="Sort Posts By:">
           {sorts.map((sort) => (
-            <Label key={sort}>
+            <Label key={sort} sx={{ marginRight: 3, width: 'auto' }}>
               <Radio
                 name="sorting"
                 value={sort}
@@ -212,7 +221,7 @@ const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
       <RecommendationsList
         recommendations={filteredPosts.sort((postA, postB) => {
-          if (sorting === "Author's relevance") {
+          if (sorting === 'Rating') {
             return postB.rating - postA.rating;
           }
 
