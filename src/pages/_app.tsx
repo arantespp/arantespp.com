@@ -30,7 +30,8 @@ const App = ({ Component, pageProps }: AppProps) => {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
-        <meta name="Description" content={description} />
+        <meta name="author" content="Pedro Arantes" />
+        <meta key="description" name="description" content={description} />
         <meta property="og:url" key="og:url" content="https://arantespp.com" />
         <meta property="og:type" key="og:type" content="website" />
         <meta property="og:title" key="og:title" content={title} />

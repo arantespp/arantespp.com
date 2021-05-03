@@ -78,3 +78,5 @@ For each output of the step above, you'll need some tools to help you organize t
 #### 4. Reflect
 
 #### 5. Engage
+
+### Chapter 3 - Getting Projects Creatively Under Way: The Five Phases of Project Planning

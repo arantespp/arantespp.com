@@ -6,6 +6,7 @@ import type { Post } from '../lib/files';
 
 import BookHeader from './BookHeader';
 import CustomImage from './CustomImage';
+import KeywordsHead from './KeywordsHead';
 import Markdown from './Markdown';
 import NetworkLink from './NetworkLink';
 import PostHeaders from './PostHeaders';
@@ -13,11 +14,12 @@ import PostResume from './PostResume';
 import SharePost from './SharePost';
 
 const PostComponent = ({ post }: { post: Post }) => {
-  const { image, title, book, editLink, href } = post;
+  const { image, title, book, editLink, href, tags } = post;
 
   return (
     <>
       <PostHeaders post={post} />
+      <KeywordsHead keywords={tags} />
       <Themed.h1>{title}</Themed.h1>
       <Box
         sx={{

@@ -19,14 +19,15 @@ export const getStaticProps = async ({
 }) => {
   const content = getFile(`${group}/index.md`) || getFile(`${group}.md`) || '';
   const recommendations = getRecommendations({ group });
-  return { props: { content, recommendations } };
+  return { props: { content, recommendations, group } };
 };
 
 const GroupIndex = ({
   content,
+  group,
   recommendations,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <IndexPage {...{ content, recommendations }} />
+  <IndexPage {...{ content, recommendations, group }} />
 );
 
 export default GroupIndex;
