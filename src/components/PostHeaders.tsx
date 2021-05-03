@@ -34,7 +34,7 @@ const PostHeaders = ({ post }: { post: Post }) => {
         property="og:url"
         content={`https://arantespp.com${href}`}
       />
-      <meta name="Description" content={excerpt} />
+      <meta key="description" name="description" content={excerpt} />
       <meta key="og:title" property="og:title" content={title} />
       <meta key="og:description" property="og:description" content={excerpt} />
       <meta key="og:image" property="og:image" content={imageContentUrl} />
