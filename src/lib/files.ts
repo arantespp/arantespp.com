@@ -90,7 +90,6 @@ export const getDrafts = () =>
         ),
     )
     .map((draft) => ({
-      ...draft,
       title: 'DRAFT TITLE',
       excerpt: 'DRAFT EXCERPT',
       date: 'DRAFT DATE',
@@ -99,6 +98,8 @@ export const getDrafts = () =>
       rating: 0,
       image: null,
       backlinks: [],
+      keywords: [],
+      readingTime: 0,
       ...draft,
       href: `/_drafts${draft.href}`,
       draft: true,
