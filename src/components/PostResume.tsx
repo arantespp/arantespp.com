@@ -18,6 +18,7 @@ const PostResume = ({ post }: { post: PostWithoutContent }) => {
     tags,
     href,
     updateHistory,
+    readingTime,
   } = post;
 
   const isPostPage = asPath === href;
@@ -59,6 +60,13 @@ const PostResume = ({ post }: { post: PostWithoutContent }) => {
           </Text>
         )}
       </Text>
+      {readingTime > 1 && (
+        <Box>
+          <Text sx={{ color: 'muted', fontSize: 1 }}>
+            Reading time: {readingTime} minutes
+          </Text>
+        </Box>
+      )}
     </Box>
   );
 };

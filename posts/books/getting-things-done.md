@@ -80,3 +80,39 @@ For each output of the step above, you'll need some tools to help you organize t
 #### 5. Engage
 
 ### Chapter 3 - Getting Projects Creatively Under Way: The Five Phases of Project Planning
+
+**The Natural Planning Model** follows this way:
+
+1. Defining purpose and principles
+2. Outcome visioning
+3. Brainstorming
+4. Organizing
+5. Identifying next actions
+
+**The Reactive Planning Model** is the opposite:
+
+1. Identifying next actions
+2. Organizing
+3. Brainstorming
+4. Outcome visioning
+5. Defining purpose and principles
+
+Let's examine the five phases.
+
+#### Purpose
+
+It helps you to answer the _why_ question. "Why do you need more developers in your team?" A clear purpose gives you prime directives for appropriate focus, creative development, and cooperation. But this practice isn't commonly practiced.
+
+Some of the benefits of asking why.
+
+- **It defines success,** so you have a reference point for any investment of time and energy. You go toward success. You can't feel good about something if you don't know what is its purpose.
+
+- **It creates decision-making criteria.** You can choose among options effectively when you have the purpose well defined.
+
+- **It aligns resources.** _"How should we spend your staffing allocation in the corporate budget?"_
+
+- **It motivates.** If you don't have the purpose clear in your mind, then there's no good reason to be doing something, you don't have motivation do to that.
+
+- **It clarifies focus.** It makes things clearer. Sometimes, things grow clearer just by asking, "What are we really trying yo accomplish here?"
+
+- **It examples options.** It's a paradox. Defining a clear purpose gives you focus, but at the same time, it expands your thinking about how to make a desired result happen. If the purpose is well defined, you can think in options because you know which one of them is viable or not.

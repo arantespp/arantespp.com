@@ -6,6 +6,7 @@ import * as dateFns from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
+import readingTime from 'reading-time';
 
 import { Group, GROUPS } from './groups';
 
@@ -42,6 +43,8 @@ type PostMeta = {
   } | null;
   book?: Book | null;
   editLink?: string;
+  keywords: string[];
+  readingTime: number;
 };
 
 export type Post = PostMeta & {
@@ -185,6 +188,11 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       });
     })();
 
+    /**
+     * Book authors become tags.
+     */
+    const allTags = getTags(book?.authors || []);
+
     const post = {
       title,
       excerpt,
@@ -196,15 +204,14 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       slug,
       content,
       rating,
-      /**
-       * Book authors become tags.
-       */
-      tags: getTags(book?.authors || []),
+      tags: allTags,
       image,
       draft,
       book,
       editLink: `${GITHUB_PROJECT}/edit/main/posts${href}.md`,
       url: `${DOMAIN}${href}`,
+      keywords: [group, ...tags],
+      readingTime: Math.round(readingTime(content).minutes),
     };
 
     if (!href || !group || !slug) {

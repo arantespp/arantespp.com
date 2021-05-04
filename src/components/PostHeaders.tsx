@@ -3,7 +3,7 @@ import Head from 'next/head';
 import type { Post } from '../lib/files';
 
 const PostHeaders = ({ post }: { post: Post }) => {
-  const { excerpt, image, href, title, group, book } = post;
+  const { excerpt, image, href, title, group, book, keywords } = post;
 
   const imageContent = (() => {
     if (group === 'zettelkasten') {
@@ -38,6 +38,7 @@ const PostHeaders = ({ post }: { post: Post }) => {
       <meta key="og:title" property="og:title" content={title} />
       <meta key="og:description" property="og:description" content={excerpt} />
       <meta key="og:image" property="og:image" content={imageContentUrl} />
+      <meta key="keywords" property="keywords" content={keywords.join(', ')} />
     </Head>
   );
 };
