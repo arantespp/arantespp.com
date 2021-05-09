@@ -33,7 +33,7 @@ const Recommendations = ({
           textAlign: 'center',
         }}
       >
-        Recommended Posts
+        Recommended
       </Text>
       <NextLink href="/all" passHref>
         <Link

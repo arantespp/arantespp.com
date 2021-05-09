@@ -6,6 +6,8 @@ import PedroArantes from './PedroArantes';
 
 import { socialMediasArr } from '../lib/socialMedias';
 
+const SHOW_LOGO = false;
+
 const Footer = () => (
   <Flex
     as="footer"
@@ -18,17 +20,19 @@ const Footer = () => (
       backgroundColor: 'primary',
     }}
   >
-    <NextLink href="/" passHref>
-      <PedroArantes
-        sx={{
-          color: 'white',
-          cursor: 'pointer',
-          fontSize: [3],
-          fontWeight: '500',
-          marginRight: [0, 2],
-        }}
-      />
-    </NextLink>
+    {SHOW_LOGO && (
+      <NextLink href="/" passHref>
+        <PedroArantes
+          sx={{
+            color: 'white',
+            cursor: 'pointer',
+            fontSize: [3],
+            fontWeight: '500',
+            marginRight: [0, 2],
+          }}
+        />
+      </NextLink>
+    )}
     <Flex sx={{ flexWrap: 'wrap', justifyContent: 'center', marginTop: 2 }}>
       {socialMediasArr.map(({ href, faIcon, name }) => (
         <Link

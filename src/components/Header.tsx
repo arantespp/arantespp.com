@@ -44,7 +44,6 @@ const Header = () => (
           <Link
             sx={{
               fontSize: [2, 2],
-              color: 'primary',
               textAlign: 'center',
               textDecoration: 'underline',
               marginX: [2, null, 3],

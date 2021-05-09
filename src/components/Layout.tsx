@@ -5,6 +5,8 @@ import Digest from './Digest';
 import Footer from './Footer';
 import Header from './Header';
 
+const SHOW_DIGEST = false;
+
 const Layout: React.FC = ({ children }) => {
   const { pathname } = useRouter();
 
@@ -24,7 +26,7 @@ const Layout: React.FC = ({ children }) => {
         }}
       >
         {children}
-        <Digest />
+        {SHOW_DIGEST && <Digest />}
       </Container>
       <Footer />
     </>

@@ -49,7 +49,7 @@ const PostComponent = ({ post }: { post: Post }) => {
         }}
       >
         <NetworkLink nodeId={href} />
-        {editLink && (
+        {editLink && false && (
           <Link sx={{ color: 'gray', fontStyle: 'italic' }} href={editLink}>
             <span>Recommend an edition for this post </span>
             <FontAwesomeIcon icon={faPen} />

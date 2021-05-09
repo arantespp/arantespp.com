@@ -8,11 +8,11 @@ import themeFairyGates from 'typography-theme-fairy-gates';
 const typography = toTheme({
   ...themeFairyGates,
   baseFontSize: '18px',
-  overrideThemeStyles: () => ({
-    h1: {
-      wordBreak: 'break-word',
-    },
-  }),
+  /**
+   * Golden Ratio.
+   * https://en.wikipedia.org/wiki/Golden_ratio
+   */
+  baseLineHeight: 1.618033,
 });
 
 /**
@@ -47,8 +47,8 @@ const partialTheme = {
     gray: '#515151',
     background: '#fff',
     primary: palette.prussianBlue,
-    secondary: palette.celadonBlue,
-    accent: palette.imperialRed,
+    secondary: palette.imperialRed,
+    accent: palette.celadonBlue,
     highlight: palette.honeydew,
     muted: '#aaa',
   },
@@ -66,6 +66,9 @@ const partialTheme = {
       fontFamily: 'heading',
       fontSize: 1,
       textDecoration: 'none',
+      '&:hover': {
+        color: 'text',
+      },
     },
   },
   messages: {
@@ -101,7 +104,10 @@ const partialTheme = {
       wordBreak,
     },
     a: {
-      color: 'secondary',
+      color: 'text',
+      '&:hover': {
+        color: 'secondary',
+      },
     },
     strong: {
       color: 'primary',

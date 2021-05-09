@@ -1,10 +1,14 @@
-import { Flex, Image, Text } from 'theme-ui';
+import { Flex, Image, Text, useThemeUI } from 'theme-ui';
 
 const CustomImage = ({ src, alt }: { src: string; alt: string }) => {
   /**
    * https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/
    */
   const altWithoutTags = alt.replace(/(<([^>]+)>)/gi, '');
+
+  const {
+    theme: { styles },
+  } = useThemeUI();
 
   return (
     <Flex
@@ -29,6 +33,7 @@ const CustomImage = ({ src, alt }: { src: string; alt: string }) => {
           width: '100%',
         }}
       />
+
       <Text
         as="span"
         sx={{
@@ -36,9 +41,7 @@ const CustomImage = ({ src, alt }: { src: string; alt: string }) => {
           fontSize: 1,
           fontStyle: 'italic',
           textAlign: 'center',
-          a: {
-            color: 'secondary',
-          },
+          a: styles?.a,
         }}
         dangerouslySetInnerHTML={{ __html: alt }}
       />
