@@ -26,6 +26,7 @@ const RecommendationCard = ({
             fontSize: 3,
             fontWeight: 'bold',
             cursor: 'pointer',
+            color: 'text',
           }}
         >
           {title}

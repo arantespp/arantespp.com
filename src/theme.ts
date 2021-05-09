@@ -105,7 +105,7 @@ const partialTheme = {
       wordBreak,
     },
     a: {
-      color: 'text',
+      color: 'lightGray',
       '&:hover': {
         color: 'primary',
       },
@@ -129,11 +129,6 @@ const partialTheme = {
     blockquote: {
       fontStyle: 'italic',
       marginY: 4,
-    },
-    p: {
-      a: {
-        color: 'lightGray',
-      },
     },
   },
   text: {
