@@ -43,11 +43,12 @@ const partialTheme = {
   borderWidths: [0, 1, 4],
   colors: {
     ...palette,
-    text: '#333',
+    text: '#2a2a2a',
     gray: '#515151',
+    lightGray: '#777',
     background: '#fff',
-    primary: palette.prussianBlue,
-    secondary: palette.imperialRed,
+    primary: palette.imperialRed,
+    secondary: palette.prussianBlue,
     accent: palette.celadonBlue,
     highlight: palette.honeydew,
     muted: '#aaa',
@@ -62,7 +63,7 @@ const partialTheme = {
   },
   links: {
     tag: {
-      color: 'secondary',
+      color: 'primary',
       fontFamily: 'heading',
       fontSize: 1,
       textDecoration: 'none',
@@ -106,7 +107,7 @@ const partialTheme = {
     a: {
       color: 'text',
       '&:hover': {
-        color: 'secondary',
+        color: 'primary',
       },
     },
     strong: {
@@ -122,17 +123,21 @@ const partialTheme = {
       fontFamily: 'monospace',
       fontSize: 1,
       overflowX: 'auto',
-      backgroundColor: 'primary',
+      backgroundColor: 'secondary',
       color: 'white',
     },
     blockquote: {
       fontStyle: 'italic',
       marginY: 4,
     },
+    p: {
+      a: {
+        color: 'lightGray',
+      },
+    },
   },
   text: {
     highlighted: {
-      backgroundColor: 'highlight',
       fontStyle: 'italic',
     },
   },

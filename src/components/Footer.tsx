@@ -17,7 +17,8 @@ const Footer = () => (
       alignItems: 'center',
       justifyContent: 'center',
       padding: [3, 3],
-      backgroundColor: 'primary',
+
+      // backgroundColor: 'secondary',
     }}
   >
     {SHOW_LOGO && (
@@ -38,7 +39,6 @@ const Footer = () => (
         <Link
           key={name}
           sx={{
-            color: 'white',
             fontSize: 3,
             marginX: [2],
           }}
@@ -53,13 +53,9 @@ const Footer = () => (
     </Flex>
     <Text
       sx={{
-        color: 'white',
         fontSize: 1,
         marginTop: 2,
         textAlign: 'center',
-        a: {
-          color: 'white',
-        },
       }}
     >
       <span>This website is </span>

@@ -57,10 +57,7 @@ const Contact = () => (
           sx={{ margin: 2 }}
           title={name}
         >
-          <Text
-            as="span"
-            sx={{ color: 'primary', fontSize: [5, 3], marginX: 2 }}
-          >
+          <Text as="span" sx={{ color: 'text', fontSize: [5, 3], marginX: 2 }}>
             <FontAwesomeIcon icon={faIcon} />
           </Text>
           <Text

@@ -51,18 +51,23 @@ const Heading = ({
 
   return (
     <ResolvedComponent id={hash} hidden={hiddenH1}>
-      <NextLink href={href}>
-        <Link
-          sx={{
-            color: 'inherit',
-            '&:hover': {
-              textDecoration: 'underline',
-            },
-          }}
-        >
-          {children}
-        </Link>
-      </NextLink>
+      {level === 1 ? (
+        children
+      ) : (
+        <NextLink href={href}>
+          <Link
+            sx={{
+              cursor: 'pointer',
+              color: 'inherit',
+              '&:hover': {
+                textDecoration: 'underline',
+              },
+            }}
+          >
+            {children}
+          </Link>
+        </NextLink>
+      )}
     </ResolvedComponent>
   );
 };

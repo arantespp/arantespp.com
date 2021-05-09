@@ -19,10 +19,10 @@ export const getStaticProps = async () => {
   const allTags = getAllTags();
 
   const nodeColors = {
-    post: theme.colors?.primary,
-    tag: theme.colors?.highlight,
-    selectedNode: theme.colors?.accent,
-    border: theme.colors?.primary,
+    post: theme.colors?.prussianBlue,
+    tag: theme.colors?.honeydew,
+    selectedNode: theme.colors?.imperialRed,
+    border: theme.colors?.prussianBlue,
   };
 
   const postsNodes = allPosts.map(({ href, title }) => ({
@@ -299,7 +299,7 @@ const Network = ({
           height: '95vh',
           marginX: 'auto',
           position: 'relative',
-          borderColor: 'primary',
+          borderColor: 'black',
           borderStyle: 'solid',
           borderWidth: 1,
         }}

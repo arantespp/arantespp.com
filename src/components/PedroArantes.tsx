@@ -10,6 +10,9 @@ const PedroArantes = React.forwardRef(
         display: 'flex',
         alignItems: 'center',
         whiteSpace: 'nowrap',
+        '&:hover': {
+          color: 'primary',
+        },
         ...props.sx,
       }}
     >

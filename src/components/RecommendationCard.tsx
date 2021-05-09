@@ -20,7 +20,14 @@ const RecommendationCard = ({
       }}
     >
       <NextLink href={href} passHref>
-        <Link sx={{ fontSize: 3, marginBottom: 2, fontWeight: 'bold' }}>
+        <Link
+          as="h3"
+          sx={{
+            fontSize: 3,
+            fontWeight: 'bold',
+            cursor: 'pointer',
+          }}
+        >
           {title}
         </Link>
       </NextLink>
