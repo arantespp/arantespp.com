@@ -45,7 +45,7 @@ const Header = () => (
             sx={{
               fontSize: [2, 2],
               textAlign: 'center',
-              textDecoration: 'underline',
+              textDecoration: 'none',
               marginX: [2, null, 3],
               cursor: 'pointer',
               color: 'primary',
