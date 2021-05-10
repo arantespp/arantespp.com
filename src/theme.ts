@@ -48,7 +48,7 @@ const partialTheme = {
     lightGray: '#777',
     background: '#fff',
     primary: palette.imperialRed,
-    secondary: palette.prussianBlue,
+    secondary: palette.imperialRed,
     accent: palette.celadonBlue,
     highlight: palette.honeydew,
     muted: '#aaa',

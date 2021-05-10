@@ -36,8 +36,8 @@ const Contact = () => (
 
     <Themed.p>
       You can find me at almost all social media by the username
-      <strong> arantespp</strong>*. Some of them I just created to get the
-      username and I don&apos;t use very often.
+      <Themed.strong> arantespp</Themed.strong>*. Some of them I just created to
+      get the username and I don&apos;t use very often.
     </Themed.p>
 
     <Flex
@@ -54,10 +54,21 @@ const Contact = () => (
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ margin: 2 }}
+          sx={{
+            margin: 2,
+            '&:hover': {
+              color: 'primary',
+            },
+          }}
           title={name}
         >
-          <Text as="span" sx={{ color: 'text', fontSize: [5, 3], marginX: 2 }}>
+          <Text
+            as="span"
+            sx={{
+              fontSize: [5, 3],
+              marginX: 2,
+            }}
+          >
             <FontAwesomeIcon icon={faIcon} />
           </Text>
           <Text
@@ -76,10 +87,10 @@ const Contact = () => (
 
     <Text sx={{ fontSize: 1, fontStyle: 'italic', color: 'gray' }}>
       * I know, it&apos;s very sad, but Instagram is the only social media that
-      I don&apos;t have <strong>arantespp</strong> as username. Sometime ago
-      I&apos;ve create the account with that username but I couldn&apos;t
-      remember the password, the email or even if I&apos;ve deleted the account
-      or not.
+      I don&apos;t have <Themed.strong>arantespp</Themed.strong> as username.
+      Sometime ago I&apos;ve create the account with that username but I
+      couldn&apos;t remember the password, the email or even if I&apos;ve
+      deleted the account or not.
     </Text>
   </>
 );

@@ -48,6 +48,10 @@ const Header = () => (
               textDecoration: 'underline',
               marginX: [2, null, 3],
               cursor: 'pointer',
+              color: 'primary',
+              '&:hover': {
+                color: 'text',
+              },
             }}
           >
             {pascalCase(group)}
