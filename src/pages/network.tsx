@@ -289,7 +289,7 @@ const Network = ({
         <meta
           property="og:image"
           key="og:image"
-          content="/images/network.png"
+          content="https://arantespp.com/images/network.png"
         />
       </Head>
       <Box
