@@ -19,7 +19,7 @@ rating: 3
 
 - From time to time, your mind will remember that task, even if you can't execute it at that moment.
 
-- A lot of open loops require a lot of mental energy because they stole our attention.
+- A lot of open loops require a lot of mental energy because they stole your attention.
 
 - When you close an open loop, you free your mind.
 
@@ -29,4 +29,4 @@ rating: 3
 
 - [David Allen. Getting Things Done](/books/getting-things-done)
 
-- [FEE. 3 Basic Principles for Getting Things Done](https://fee.org/articles/3-basic-principles-for-getting-things-done/)
+- [T. K. Coleman. 3 Basic Principles for Getting Things Done](https://fee.org/articles/3-basic-principles-for-getting-things-done/)

@@ -63,9 +63,7 @@ const Footer = () => (
         open sourced
       </Link>
       <span> under </span>
-      <Link href="https://github.com/arantespp/arantespp.com/blob/main/LICENSE.md">
-        CC BY 4.0 licence.
-      </Link>
+      <Link href="/license">CC BY 4.0 licence.</Link>
     </Text>
   </Flex>
 );

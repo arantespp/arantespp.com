@@ -54,9 +54,12 @@ const PostResume = ({ post }: { post: PostWithoutContent }) => {
           {formattedDate}
         </Text>
         {isPostPage && updatedAfterCreated && (
-          <Text as="span" sx={{ color: 'gray', fontStyle: 'italic' }}>
+          <Text
+            as="span"
+            sx={{ color: 'gray', fontStyle: 'italic', fontSize: 1 }}
+          >
             {' '}
-            <Link href={updateHistory}>(updated at {updatedAt})</Link>
+            <Link href={updateHistory}>(updates)</Link>
           </Text>
         )}
       </Text>
