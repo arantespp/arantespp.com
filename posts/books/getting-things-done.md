@@ -116,3 +116,19 @@ Some of the benefits of asking why.
 - **It clarifies focus.** It makes things clearer. Sometimes, things grow clearer just by asking, "What are we really trying yo accomplish here?"
 
 - **It examples options.** It's a paradox. Defining a clear purpose gives you focus, but at the same time, it expands your thinking about how to make a desired result happen. If the purpose is well defined, you can think in options because you know which one of them is viable or not.
+
+#### Principles
+
+Principles are the standards and values you hold. Principles completes this sentence, _"I would give others totally free rein to do this as long as they...?"_.
+
+- _"As long as they stayed on budget?"_
+- _"As long as they keep the client satisfaction?"_
+- _"As long as they promoted a positive image?"_
+
+Other question you may want to ask is, _"What behavior might undermine what I'm doing, and how can I prevent it?"_. Purpose provides direction, principles define the parameters of action and the criteria for excellence of conduct.
+
+#### Outcome Visioning
+
+Vision is a clear picture in your mind of what success would look like, sounds, and feel like. Purpose and principles give to you impetus and monitoring, but vision provides the actual blueprint of the final result. Vision is the _what_.
+
+Focus has a great power in your brain. Your physiology will respond to an image in your head as if it were reality. The unconscious mind automatically works toward your goals when you create and focus on a clear picture of what you want. Such automatic guidance system helps you better than "you" ever could by conscious thought.
