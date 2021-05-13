@@ -8,7 +8,6 @@ const CustomImage = ({ src, alt }: { src: string; alt: string }) => {
 
   return (
     <Flex
-      as="span"
       sx={{
         flexDirection: 'column',
         width: '100%',

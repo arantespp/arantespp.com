@@ -45,7 +45,10 @@ const partialTheme = {
     ...palette,
     text: '#2a2a2a',
     gray: '#515151',
-    lightGray: '#777',
+    /**
+     * #6f6f6f has high contrast with white.
+     */
+    lightGray: '#6f6f6f',
     background: '#fff',
     primary: palette.imperialRed,
     secondary: palette.imperialRed,

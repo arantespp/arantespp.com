@@ -113,7 +113,22 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}): {
       </Message>
     </Box>
   ),
-  paragraph: Themed.p,
+  /**
+   * https://github.com/remarkjs/react-markdown/issues/93#issuecomment-399497496
+   */
+  paragraph: ({ children }) => {
+    if (
+      children &&
+      children[0] &&
+      children.length === 1 &&
+      children[0].props &&
+      children[0].props.src
+    ) {
+      return children;
+    }
+
+    return <Themed.p>{children}</Themed.p>;
+  },
   listItem: Themed.li,
   list: ({ ordered, ...props }: any) => {
     if (ordered) {
