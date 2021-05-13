@@ -82,6 +82,13 @@ const partialTheme = {
     },
   },
   styles: {
+    root: {
+      '*': {
+        '&::selection': {
+          background: '#ddd',
+        },
+      },
+    },
     h1: {
       marginY: 4,
       wordBreak,
@@ -99,9 +106,15 @@ const partialTheme = {
       wordBreak,
     },
     h5: {
+      fontSize: 2,
+      marginY: 4,
+      fontWeight: 'normal',
       wordBreak,
     },
     h6: {
+      fontSize: 2,
+      fontWeight: 'normal',
+      fontStyle: 'italic',
       wordBreak,
     },
     a: {

@@ -132,3 +132,22 @@ Other question you may want to ask is, _"What behavior might undermine what I'm 
 Vision is a clear picture in your mind of what success would look like, sounds, and feel like. Purpose and principles give to you impetus and monitoring, but vision provides the actual blueprint of the final result. Vision is the _what_.
 
 Focus has a great power in your brain. Your physiology will respond to an image in your head as if it were reality. The unconscious mind automatically works toward your goals when you create and focus on a clear picture of what you want. Such automatic guidance system helps you better than "you" ever could by conscious thought.
+
+#### Brainstorming
+
+[Brainstorming notes.](/zettelkasten/brainstorming)
+
+#### Organizing
+
+Once finished the [brainstorming phase](#brainstorming), you'll notice that a natural organization is emerging. You identify components and subcomponents, sequences of events, and/or priorities.
+
+Creative thinking doesn't stop here, it just takes another form. Your mind will start to think in how you can fill the blanks.
+
+##### The Basics of Organizing
+
+- Identify the significant pieces.
+- Sort by (one or more):
+  - components;
+  - sequences;
+  - priorities.
+- Detail to the required degree.
