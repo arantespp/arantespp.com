@@ -139,7 +139,11 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}): {
   inlineCode: ({ ...props }) => (
     <Text as="span" variant="highlighted" {...props} />
   ),
-  image: ({ src, alt }) => <CustomImage {...{ src, alt }} />,
+  image: ({ src, alt }) => (
+    <Box sx={{ marginY: 5 }}>
+      <CustomImage {...{ src, alt }} />
+    </Box>
+  ),
   html: ({ value }: { value: string }) => {
     const justifyContent = value.includes('class="twitter-tweet"')
       ? 'center'
@@ -157,7 +161,7 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}): {
    */
   inlineMath: ({ value }) => <Tex math={value} />,
   math: ({ value }) => (
-    <Box sx={{ overflow: 'auto', marginY: 3 }}>
+    <Box sx={{ overflow: 'auto', marginY: 4 }}>
       <Tex block math={value} />
     </Box>
   ),

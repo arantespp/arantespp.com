@@ -1,4 +1,5 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import dynamic from 'next/dynamic';
 
 import {
   allPosts,
@@ -6,9 +7,11 @@ import {
   Group,
 } from '../../lib/files';
 
-import NotFound from '../../components/NotFound';
-import Post from '../../components/Post';
-import Recommendations from '../../components/Recommendations';
+const Post = dynamic(() => import('../../components/Post'));
+const NotFound = dynamic(() => import('../../components/NotFound'));
+const Recommendations = dynamic(
+  () => import('../../components/Recommendations'),
+);
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: allPosts.map(({ group, slug }) => ({

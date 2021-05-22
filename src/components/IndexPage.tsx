@@ -1,12 +1,14 @@
 import { pascalCase } from 'change-case';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import { Box } from 'theme-ui';
 
 import { Recommendation, Group } from '../lib/files';
 
 import KeywordsHead from './KeywordsHead';
-import Markdown from './Markdown';
-import Recommendations from './Recommendations';
+
+const Markdown = dynamic(() => import('./Markdown'));
+const Recommendations = dynamic(() => import('./Recommendations'));
 
 const IndexPage = ({
   content,

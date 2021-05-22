@@ -1,6 +1,8 @@
 ---
 title: Skydiver Terminal Velocity
 rating: 3
+date: 2021-05-22
+excerpt: When a skydiver opens his/her parachute, after enough time, his/her velocity will be constant, considering that the parachute drag force is proportional to the square of the velocity.
 tags:
   - calculus
   - physics
@@ -14,13 +16,17 @@ draft: true
 
 ## The Problem
 
-I have a degree in electrical engineering. I've chosen this course because it's subjects interdependency. We study from math, physics, a little about computer science, electronics, economy, until a little about social science. At the mid of the course, maybe 2013 or 2014, I saw a article standing that a skydiver with a parachute whose drag force is proportional to the square of the speed will have its speed constant at some time. This proposition caught my attention. So I decided to investigate it more.
+I like interdependency between subjects, and this is the reason why I wrote this article. Some years ago, I saw an article standing that a [skydiver](https://www.skydiveoc.com/about/articles/terminal-velocity-mean-skydiving/) with a parachute whose drag force is proportional to the square of the speed will have its speed constant at some time. This proposition caught my attention. So I decided to investigate it more.
 
-It is a interesting question because involves math and physics, and I like studying both. The level of the calculus theory behind was not too easy neither too hard, a good point to achieve the [flow state](/zettelkasten/flow-state-psychology). Some days ago I remembered this problem and I decided to proof it again, this time writing this article.
+This is an interesting question because involves math and physics. The level of the calculus theory behind was not too easy neither too hard, it's a good point to achieve the [flow state](/zettelkasten/flow-state-psychology). We also need to understand some physics concepts to set up some boundaries conditions that will help us solve some integrations.
+
+Some days ago I remembered this problem and I decided to proof it again, this time writing this article. The questions we want to answer is:
+
+> When a skydiver opens his/her parachute, after enough time, his/her velocity will be constant, considering that the parachute drag force is proportional to the square of the velocity.
 
 ## Modeling
 
-The resultant force, $F_R$, acting in a skydriver falling can be expressed by:
+The resultant force, $F_R$, acting in a skydiver falling can be expressed by:
 
 $$
 \tag{1} \vec{F_R} = \vec{F_g} + \vec{F_d}
@@ -38,52 +44,96 @@ $$
 \tag{3} m\frac{dv}{dt} = mg - kv^2 \iff \frac{1}{\left(1 - \frac{k}{mg}v^2\right)}\frac{dv}{dt} = g
 $$
 
-Considering $a^2 = \cfrac{mg}{k}$, we can integrate $(3)$ in function of the time in a such way that on $t=0$, the initial velocity is $v_0$, we have:
+Considering $\beta^2 = \cfrac{mg}{k}$, we can integrate $(3)$ in function of the time in a such way that on $t=0$, the initial velocity is $v_0$, we have:
 
 $$
-\tag{4} \displaystyle\int_{v_0}^{v} \frac{dv}{1 - \left(\frac{v}{a}\right)^2} = g\displaystyle\int_{0}^{t}dt = gt
+\tag{4} \displaystyle\int_{v_0}^{v} \frac{dv}{1 - \left(\frac{v}{\beta}\right)^2} = g\displaystyle\int_{0}^{t}dt = gt
 $$
 
 Now we need to solve $(4)$.
 
 ### Hyperbolic Trigonometry
 
-If we consult a integral table, we can verify that the left side of $(4)$ is:
+How could we solve $(4)$? We can use [hyperbolic trigonometry](https://en.wikipedia.org/wiki/Hyperbolic_functions) to help us. Hyperbolic trigonometry uses the hyperbola $x^2 - y^2 = 1$ to determine its trigonometric identities, differently from the ordinary trigonometry, that uses the circle $x^2 + y^2 = 1$.
+
+![By <a href="//commons.wikimedia.org/wiki/File:Hyperbolic_functions.svg" title="File:Hyperbolic functions.svg">Hyperbolic_functions.svg</a>: The original uploader was <a href="https://en.wikipedia.org/wiki/User:Marco_Polo" class="extiw" title="wikipedia:User:Marco Polo">Marco Polo</a> at <a href="https://en.wikipedia.org/wiki/" class="extiw" title="wikipedia:">English Wikipedia</a>.derivative work: <a href="//commons.wikimedia.org/wiki/User:Jeandavid54" title="User:Jeandavid54">Jeandavid54</a> (<a href="//commons.wikimedia.org/wiki/User_talk:Jeandavid54" title="User talk:Jeandavid54"><span class="signature-talk">talk</span></a>) - <a href="//commons.wikimedia.org/wiki/File:Hyperbolic_functions.svg" title="File:Hyperbolic functions.svg">Hyperbolic_functions.svg</a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=8424555">Link</a>](/images/articles/skydiver-terminal-velocity/Hyperbolic_functions-2.svg)
+
+Before applying hyperbolic functions, we need to set up some physics boundaries. In a skydiving, or any situation that exists a drag force, the drag force never has its magnitude greater than the driver force, in this case, the gravitational force. So we can assume, from $(2)$, that:
 
 $$
-\tag{5} \displaystyle\int_{v_0}^{v} \frac{dv}{1 - \left(\frac{v}{a}\right)^2} = a\tanh^{-1}\left(\frac{v}{a}\right) - a\tanh^{-1}\left(\frac{v_0}{a}\right)
+m \frac{dv}{dt} = mg - kv^2 \geq 0 \iff v \leq \sqrt \frac{mg}{k} = \beta
 $$
 
-But, if we didn't have the integral table, how could we solve $(4)$?
+Thus,
 
-STEP BY STEP HERE
+$$
+\tag{5} \boxed{\frac{v}{\beta} \leq 1}
+$$
+
+The hyperbolic tangent, $\tanh$, is defined by:
+
+$$
+\tanh x = \frac{\sinh x}{\cosh x} = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+$$
+
+If we check its properties, we can see that $\tanh$ is a [bijective](https://math.stackexchange.com/questions/2341814/proving-hyperbolic-sine-and-tan-functions-are-bijective), which means that, for every $y \in \rbrack-1, 1\lbrack$, must exist a $x \in \reals$ such as $\tanh x = y$. If we consider the integral
+
+$$
+\tag{6} \displaystyle\int \frac{dv}{1 - \left(\frac{v}{\beta}\right)^2},
+$$
+
+we can assume, because of $(5)$, that must exists a $x$ such that:
+
+$$
+\tag{7} \tanh x = \cfrac{v}{\beta}
+$$
+
+Deriving $(7)$ in function of $v$, we have:
+
+$$
+\tag{8} \frac{1}{\cosh^2 x} \frac{dx}{dv} = \frac{1}{\beta} \iff dv = \beta \frac{1}{\cosh^2 x} dx
+$$
+
+Replacing $(7)$ and $(8)$ in $(6)$, we have:
+
+$$
+\displaystyle\int \frac{dv}{1 - \left(\frac{v}{\beta}\right)^2} = \beta \displaystyle\int \frac{1}{\cosh^2 x} \frac{1}{1 - \tanh^2 x}dx = \beta \displaystyle\int dx = \beta x
+$$
+
+Then, considering $(7)$, we have:
+
+$$
+\tag{9} \displaystyle\int \frac{dv}{1 - \left(\frac{v}{\beta}\right)^2} = \beta x = \beta\tanh^{-1}\left(\frac{v}{\beta}\right)
+$$
+
+Finally, applying integral limits in $(9)$, we have:
+
+$$
+\tag{10} \displaystyle\int_{v_0}^{v} \frac{dv}{1 - \left(\frac{v}{\beta}\right)^2} = \beta\tanh^{-1}\left(\frac{v}{\beta}\right) - \beta\tanh^{-1}\left(\frac{v_0}{\beta}\right)
+$$
 
 ### The Terminal Velocity
 
-If we substitute $(5)$ in $(4)$ and isolate $v$, we have the value of the velocity in function of the time:
+If we substitute $(10)$ in $(4)$ and isolate $v$, we have the value of the velocity in function of the time:
 
 $$
-\tag{6} v = a\tanh \left(\sqrt\frac{kg}{m}t + \tanh^{-1}\left(\frac{v_0}{a}\right) \right)
+\tag{11} v = \beta\tanh \left(\sqrt\frac{kg}{m}t + \tanh^{-1}\left(\frac{v_0}{\beta}\right) \right)
 $$
 
-Our question is:
-
-> What is the velocity when the time is sufficient large?
-
-To answer this question, let's see what happens when $t$ becomes large. Applying the limit in both sides of $(6)$, we have:
+Our question is, _"What is the velocity when the time is sufficient large?"_ To answer this question, let's see what happens when $t$ becomes large. Applying the limit on both sides of $(11)$, we have:
 
 $$
-\tag{7} v_t = \lim\limits_{t \rightarrow \infty }v = a \lim\limits_{t \rightarrow \infty}\tanh \left(c_1t + c_2\right) = a.1 = a = \sqrt\frac{mg}{k}
+\tag{12} v_t = \lim\limits_{t \rightarrow \infty }v = \beta \lim\limits_{t \rightarrow \infty}\tanh \left(c_1t + c_2\right) = \beta.1 = \beta = \sqrt\frac{mg}{k}
 $$
 
-where $v_t$ is the terminal velocity, and constants $c_1 = \sqrt\frac{kg}{m}$ and $c_2 = \tanh^{-1}\left(\frac{v_0}{a}\right)$.
+where $v_t$ is the terminal velocity, and constants $c_1 = \sqrt\frac{kg}{m}$ and $c_2 = \tanh^{-1}\left(\frac{v_0}{\beta}\right)$.
 
 ## Interpreting the Physics
 
-From $(7)$ we can conclude that after some time, the velocity of the skydiver becomes constant, what was to be demonstrated. Furthermore, if the velocity is constant, the acceleration must be equals $0$. If we take $(2)$ and assumes that $\cfrac{dv}{dt} = 0$, then we have:
+From $(12)$ we can conclude that after enough time, the velocity of the skydiver becomes constant, **what was to be demonstrated**. Furthermore, if the velocity is constant, the acceleration must be equals $0$. If we take $(2)$ and assumes that $\cfrac{dv}{dt} = 0$, then we have:
 
 $$
 0 = mg - kv^2 \iff v = \sqrt\frac{mg}{k},
 $$
 
-that is the same value we find on $(7)$.
+that is the same value we find on $(12)$.
