@@ -5,8 +5,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Box, Flex, Spinner, Text, useThemeUI } from 'theme-ui';
 
-import 'vis-network/styles/vis-network.css';
-
 import RecommendationCard from '../components/RecommendationCard';
 import Tag from '../components/Tag';
 import { getAllTags, getPosts } from '../lib/files';
@@ -218,6 +216,15 @@ const Network = ({
       }
     }
   }, [network, query.node, selectNode]);
+
+  /**
+   * Set stabilization after some time even if graph isn't stabilized.
+   */
+  React.useEffect(() => {
+    setTimeout(() => {
+      setStabilizationIterationsDone(true);
+    }, 5 * 1000);
+  });
 
   const options = {
     autoResize: true,

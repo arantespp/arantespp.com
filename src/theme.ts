@@ -139,7 +139,7 @@ const partialTheme = {
       fontFamily: 'monospace',
       fontSize: 1,
       overflowX: 'auto',
-      backgroundColor: 'secondary',
+      backgroundColor: 'prussianBlue',
       color: 'white',
     },
     blockquote: {
