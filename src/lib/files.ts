@@ -250,7 +250,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
      */
     post.content = (post.content || '').replace(
       post.excerpt,
-      `\`${post.excerpt}\``,
+      `*${post.excerpt}*`,
     );
 
     if (!doesPostHaveAllRequiredProperties) {

@@ -1,6 +1,6 @@
 ---
 title: Mental Models
-excerpt: Mental models are frameworks, worldview, representation, or explanation of how something works. They're how we understand the world.
+excerpt: Mental models are frameworks, worldviews, representations, or explanations of how something works. They're how we understand the world.
 date: 2021-04-06
 tags:
   - brain

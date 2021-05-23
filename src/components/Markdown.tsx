@@ -3,13 +3,24 @@ import dynamic from 'next/dynamic';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import math from 'remark-math';
-import { Box, Flex, Link, Message, Themed, Text } from 'theme-ui';
+import ReactMarkdown from 'react-markdown';
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
+import { Box, Flex, Link, Message, Themed } from 'theme-ui';
 import url from 'url';
 
+import 'katex/dist/katex.min.css';
+
 const CustomImage = dynamic(() => import('./CustomImage'));
-const ReactMarkdown = dynamic(() => import('react-markdown'));
-const Tex = dynamic(() => import('./Tex'));
+
+const componentsByLevel = [
+  Themed.h1,
+  Themed.h2,
+  Themed.h3,
+  Themed.h4,
+  Themed.h5,
+  Themed.h6,
+];
 
 const Heading = ({
   children = [],
@@ -30,17 +41,8 @@ const Heading = ({
     return null;
   }
 
-  const hash = paramCase((children[0] as any)?.props?.value);
+  const hash = paramCase(children[0] as any);
   const href = `${pathname}#${hash}`;
-
-  const componentsByLevel = [
-    Themed.h1,
-    Themed.h2,
-    Themed.h3,
-    Themed.h4,
-    Themed.h5,
-    Themed.h6,
-  ];
 
   const ResolvedComponent = componentsByLevel[level - 1];
 
@@ -75,17 +77,28 @@ const Heading = ({
 /**
  * https://github.com/rexxars/react-markdown/tree/c63dccb8185869cfc73c257d098a123ef7a7cd33#node-types
  */
-const renderers = ({ noH1 = true }: { noH1?: boolean } = {}): {
+const components = ({ noH1 = true }: { noH1?: boolean } = {}): {
   [nodeType: string]: React.ElementType;
 } => ({
   ...(Themed as any),
-  heading: ({
-    children,
-    level,
-  }: {
-    children: React.ReactNode[];
-    level: number;
-  }) => <Heading {...{ children, level, noH1 }} />,
+  h1: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
+    <Heading {...{ children, level, noH1 }} />
+  ),
+  h2: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
+    <Heading {...{ children, level, noH1 }} />
+  ),
+  h3: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
+    <Heading {...{ children, level, noH1 }} />
+  ),
+  h4: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
+    <Heading {...{ children, level, noH1 }} />
+  ),
+  h5: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
+    <Heading {...{ children, level, noH1 }} />
+  ),
+  h6: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
+    <Heading {...{ children, level, noH1 }} />
+  ),
   link: ({ children, href }: { children: React.ReactNode; href: string }) => {
     const link = <Link href={href}>{children}</Link>;
 
@@ -99,24 +112,31 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}): {
 
     return link;
   },
-  blockquote: ({ children }: { children: React.ReactNode }) => (
-    <Box sx={{ marginY: 4 }}>
-      <Message
-        variant="quote"
-        sx={{
-          p: {
-            marginY: 0,
-          },
-        }}
-      >
-        {Array.isArray(children) ? children[0] : children}
-      </Message>
-    </Box>
-  ),
+  blockquote: ({ children }: { children: React.ReactNode }) => {
+    return (
+      <Box sx={{ marginY: 4 }}>
+        <Message
+          variant="quote"
+          sx={{
+            p: {
+              marginY: 0,
+            },
+          }}
+        >
+          {Array.isArray(children)
+            ? children.map((child, index) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <React.Fragment key={index}>{child}</React.Fragment>
+              ))
+            : children}
+        </Message>
+      </Box>
+    );
+  },
   /**
    * https://github.com/remarkjs/react-markdown/issues/93#issuecomment-399497496
    */
-  paragraph: ({ children }) => {
+  p: ({ children }) => {
     if (
       children &&
       children[0] &&
@@ -136,10 +156,7 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}): {
     }
     return <Themed.ul {...props} />;
   },
-  inlineCode: ({ ...props }) => (
-    <Text as="span" variant="highlighted" {...props} />
-  ),
-  image: ({ src, alt }) => (
+  img: ({ src, alt }) => (
     <Box sx={{ marginY: 5 }}>
       <CustomImage {...{ src, alt }} />
     </Box>
@@ -156,23 +173,22 @@ const renderers = ({ noH1 = true }: { noH1?: boolean } = {}): {
       />
     );
   },
-  /**
-   * https://katex.org/docs/supported.html
-   */
-  inlineMath: ({ value }) => <Tex math={value} />,
-  math: ({ value }) => (
-    <Box sx={{ overflow: 'auto', marginY: 4 }}>
-      <Tex block math={value} />
-    </Box>
-  ),
 });
 
-const plugins = [math];
-
-const Markdown = ({ content, noH1 }: { content: string; noH1?: boolean }) => (
-  <ReactMarkdown renderers={renderers({ noH1 })} plugins={plugins}>
-    {content}
-  </ReactMarkdown>
-);
+const Markdown = ({ content, noH1 }: { content: string; noH1?: boolean }) => {
+  return (
+    <ReactMarkdown
+      components={components({ noH1 })}
+      /**
+       * https://katex.org/docs/supported.html
+       * https://github.com/remarkjs/remark-math
+       */
+      remarkPlugins={[remarkMath]}
+      rehypePlugins={[rehypeKatex]}
+    >
+      {content}
+    </ReactMarkdown>
+  );
+};
 
 export default Markdown;

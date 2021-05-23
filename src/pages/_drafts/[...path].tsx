@@ -32,8 +32,8 @@ const DraftsSlug = ({
   draft,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <>
-    <PostHeaders post={draft} />
     <NoIndexHeaders />
+    <PostHeaders post={draft} />
     <Post post={draft} />
   </>
 );

@@ -20,6 +20,7 @@ module.exports = {
       'error',
       { ignoreRestSiblings: true },
     ],
+    'arrow-body-style': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',

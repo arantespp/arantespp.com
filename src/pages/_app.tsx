@@ -10,6 +10,8 @@ import { socialMedias } from '../lib/socialMedias';
 
 import { theme } from '../theme';
 
+import '../katex.css';
+
 const title = "Pedro Arantes' Digital Garden";
 
 const App = ({ Component, pageProps }: AppProps) => {
