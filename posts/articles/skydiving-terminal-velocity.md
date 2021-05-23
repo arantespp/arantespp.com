@@ -15,7 +15,7 @@ image:
 
 ## The Problem
 
-I like interdependency between subjects, and this is the reason why I wrote this article. Some years ago, I saw an article standing that a [skydiving](https://www.skydiveoc.com/about/articles/terminal-velocity-mean-skydiving/) object whose drag force is proportional to the square of the velocity will have its velocity constant at some time. This proposition caught my attention. So I've decided to investigate it more.
+I like interdependency among subjects, and this is the reason why I wrote this article. Some years ago, I saw an article standing that a [skydiving](https://www.skydiveoc.com/about/articles/terminal-velocity-mean-skydiving/) object whose drag force is proportional to the square of the velocity will have its velocity constant at some time. This proposition caught my attention. So I've decided to investigate it more.
 
 This is an interesting question because involves math and physics. The level of the calculus theory behind is not too easy neither too hard, it's a good point to achieve the [flow state](/zettelkasten/flow-state-psychology). We also need to understand some physics concepts to set up some boundaries conditions that will help us solve some equations.
 
@@ -59,7 +59,7 @@ How could we solve $(4)$? We can use [hyperbolic trigonometry](https://en.wikipe
 
 ![By <a href="//commons.wikimedia.org/wiki/File:Hyperbolic_functions.svg" title="File:Hyperbolic functions.svg">Hyperbolic_functions.svg</a>: The original uploader was <a href="https://en.wikipedia.org/wiki/User:Marco_Polo" class="extiw" title="wikipedia:User:Marco Polo">Marco Polo</a> at <a href="https://en.wikipedia.org/wiki/" class="extiw" title="wikipedia:">English Wikipedia</a>.derivative work: <a href="//commons.wikimedia.org/wiki/User:Jeandavid54" title="User:Jeandavid54">Jeandavid54</a> (<a href="//commons.wikimedia.org/wiki/User_talk:Jeandavid54" title="User talk:Jeandavid54"><span class="signature-talk">talk</span></a>) - <a href="//commons.wikimedia.org/wiki/File:Hyperbolic_functions.svg" title="File:Hyperbolic functions.svg">Hyperbolic_functions.svg</a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=8424555">Link</a>](/images/articles/skydiver-terminal-velocity/Hyperbolic_functions-2.svg)
 
-Before applying hyperbolic functions, we need to set up some physics boundaries. In a skydiving, or any situation that exists a drag force, the drag force never has its magnitude greater than the driver force, in this case, the gravitational force. So we can assume, from $(2)$, that:
+Before applying hyperbolic functions, we need to set up some physics boundaries. In skydiving or any situation that exists a drag force, the drag force never has its magnitude greater than the driver force, in this case, the gravitational force. So we can assume, from $(2)$, that:
 
 $$
 m \frac{dv}{dt} = mg - kv^2 \geq 0 \iff v \leq \sqrt \frac{mg}{k} = \beta
@@ -77,7 +77,7 @@ $$
 \tanh x = \frac{\sinh x}{\cosh x} = \frac{e^x - e^{-x}}{e^x + e^{-x}}
 $$
 
-If we check its properties, we can see that $\tanh$ is a [bijective](https://math.stackexchange.com/questions/2341814/proving-hyperbolic-sine-and-tan-functions-are-bijective), which means that, for every $y \in \, \rbrack -1, 1\lbrack$, must exist a $x \in \reals$ such as $\tanh x = y$. If we consider the integral
+If we check its properties, we can see that $\tanh$ is a [bijective function](https://math.stackexchange.com/questions/2341814/proving-hyperbolic-sine-and-tan-functions-are-bijective), which means that, for every $y \in \, \rbrack -1, 1\lbrack$, must exist a $x \in \reals$ such as $\tanh x = y$. If we consider the integral
 
 $$
 \tag{6} \displaystyle\int \frac{dv}{1 - \left(\frac{v}{\beta}\right)^2},
@@ -121,7 +121,7 @@ $$
 \tag{11} v = \beta\tanh \left(\sqrt\frac{kg}{m}t + \tanh^{-1}\left(\frac{v_0}{\beta}\right) \right)
 $$
 
-Our question is, _"What is the velocity when the time is sufficient large?"_ To answer this question, let's see what happens when $t$ becomes large. Applying the limit on both sides of $(11)$, we have:
+Our question is, _"What is the velocity when the time is sufficiently large?"_ To answer this question, let's see what happens when $t$ becomes large. Applying the limit on both sides of $(11)$, we have:
 
 $$
 \tag{12} v_t = \lim\limits_{t \rightarrow \infty }v = \beta \lim\limits_{t \rightarrow \infty}\tanh \left(c_1t + c_2\right) = \beta = \sqrt\frac{mg}{k}
@@ -131,7 +131,7 @@ where $v_t$ is the terminal velocity, and constants $c_1 = \sqrt\frac{kg}{m}$ an
 
 ## Physics Analysis
 
-From $(12)$ we can conclude that after enough time, the velocity of the skydiver becomes constant, **what was to be demonstrated**. Furthermore, if the velocity is constant, the acceleration must be equals $0$. If we take $(2)$ and assumes that $\cfrac{dv}{dt} = 0$, then we have:
+From $(12)$ we can conclude that after enough time, the velocity of the skydiver becomes constant, **which was to be demonstrated**. Furthermore, if the velocity is constant, the acceleration must be equal $0$. If we take $(2)$ and assumes that $\cfrac{dv}{dt} = 0$, then we have:
 
 $$
 0 = mg - kv_t^2 \iff v_t = \sqrt\frac{mg}{k},
@@ -139,7 +139,7 @@ $$
 
 that is the same value we find on $(12)$.
 
-Other point we must consider is the initial velocity $v_0$. Because of $(11)$, if $v_0 > \beta$, the solution will have [complex numbers](https://en.wikipedia.org/wiki/Complex_number), which will lead to a completely interpretation of our problem (that I have no idea which is).
+Another point we must consider is the initial velocity $v_0$. Because of $(11)$, if $v_0 > \beta$, the solution will have [complex numbers](https://en.wikipedia.org/wiki/Complex_number), which will lead to a completely different interpretation of our problem (that I have no idea which is).
 
 Lastly, if we check [this "Speed skydiving" Wikipedia article](https://en.wikipedia.org/wiki/Speed_skydiving), we can see that their definition of the terminal velocity is
 
