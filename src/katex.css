@@ -2,7 +2,7 @@
   white-space: normal !important;
   margin: 1.5em 0 !important;
 }
-/* Add space between broken lines: */
+
 .katex-display .base {
-  padding: 0.5em 0 !important;
+  margin-bottom: 0.5em !important;
 }
