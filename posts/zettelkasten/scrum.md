@@ -72,11 +72,11 @@ rating: 2
      - The more unknown and complex the work, the shorter the sprint should be.
      - All events happen during the sprint.
 
-  4. Daily Scrum:
+  4. [Daily Scrum](/zettelkasten/daily-scrum):
 
      - Daily super-short meetings that happen at the same time and place.
      - The goal is for everyone on the team to be on the same page, aligned with the sprint goal.
-     - Each member team answer these questions:
+     - Each member of the team answer these questions:
        - What did I do yesterday?
        - What do I plan to do today?
        - Are there any obstacles?
