@@ -1,10 +1,12 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import dynamic from 'next/dynamic';
 
 import { getDrafts, getDraft, Group } from '../../lib/files';
 
 import NoIndexHeaders from '../../components/NoIndexHeaders';
-import Post from '../../components/Post';
 import PostHeaders from '../../components/PostHeaders';
+
+const Post = dynamic(() => import('../../components/Post'));
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: getDrafts().map(({ group, slug }) => ({
