@@ -1,13 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { paramCase } from 'change-case';
 import dynamic from 'next/dynamic';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
+import { Components } from 'react-markdown/src/ast-to-react';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
-import { Box, Flex, Link, Message, Themed } from 'theme-ui';
+import { Box, Link, Message, Themed } from 'theme-ui';
 import url from 'url';
+
+import Tweet from './Tweet';
 
 import 'katex/dist/katex.min.css';
 
@@ -77,9 +81,7 @@ const Heading = ({
 /**
  * https://github.com/rexxars/react-markdown/tree/c63dccb8185869cfc73c257d098a123ef7a7cd33#node-types
  */
-const components = ({ noH1 = true }: { noH1?: boolean } = {}): {
-  [nodeType: string]: React.ElementType;
-} => ({
+const components = ({ noH1 = true }: { noH1?: boolean } = {}): Components => ({
   ...(Themed as any),
   h1: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
     <Heading {...{ children, level, noH1 }} />
@@ -112,7 +114,7 @@ const components = ({ noH1 = true }: { noH1?: boolean } = {}): {
 
     return link;
   },
-  blockquote: ({ children }: { children: React.ReactNode }) => {
+  blockquote: ({ children }) => {
     return (
       <Box sx={{ marginY: 4 }}>
         <Message
@@ -137,12 +139,16 @@ const components = ({ noH1 = true }: { noH1?: boolean } = {}): {
    * https://github.com/remarkjs/react-markdown/issues/93#issuecomment-399497496
    */
   p: ({ children }) => {
+    if (Tweet.isTweet(children)) {
+      return <Tweet>{children}</Tweet>;
+    }
+
     if (
       children &&
       children[0] &&
       children.length === 1 &&
-      children[0].props &&
-      children[0].props.src
+      (children[0] as any).props &&
+      (children[0] as any).props.src
     ) {
       return children;
     }
@@ -156,23 +162,11 @@ const components = ({ noH1 = true }: { noH1?: boolean } = {}): {
     }
     return <Themed.ul {...props} />;
   },
-  img: ({ src, alt }) => (
+  img: ({ src, alt }: any) => (
     <Box sx={{ marginY: 5 }}>
       <CustomImage {...{ src, alt }} />
     </Box>
   ),
-  html: ({ value }: { value: string }) => {
-    const justifyContent = value.includes('class="twitter-tweet"')
-      ? 'center'
-      : 'flex-start';
-
-    return (
-      <Flex
-        sx={{ justifyContent, marginBottom: 3 }}
-        dangerouslySetInnerHTML={{ __html: value }}
-      />
-    );
-  },
 });
 
 const Markdown = ({ content, noH1 }: { content: string; noH1?: boolean }) => {

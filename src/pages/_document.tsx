@@ -24,8 +24,9 @@ class MyDocument extends Document {
             async
             defer
             src="https://www.googletagmanager.com/gtag/js?id=UA-149485554-1"
-           />
+          />
           <script
+            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: `
                 var host = window.location.hostname;
@@ -39,12 +40,6 @@ class MyDocument extends Document {
                 }
               `,
             }}
-          />
-          <script
-            async
-            defer
-            src="https://platform.twitter.com/widgets.js"
-            charSet="utf-8"
           />
         </Head>
         <body>
