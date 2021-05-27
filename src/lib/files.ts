@@ -355,7 +355,7 @@ export const getFile = (filePath: string) => {
     const { data, content } = matter(fileContents);
     return { data, content };
   } catch (err) {
-    return { data: {}, content: '' };
+    return undefined;
   }
 };
 
