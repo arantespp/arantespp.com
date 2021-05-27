@@ -5,7 +5,7 @@ import { getFile } from '../lib/files';
 import IndexPage from '../components/IndexPage';
 
 export const getStaticProps = async () => {
-  const content = getFile('questions.md') || '';
+  const { content } = getFile('questions.md') || '';
   return { props: { content } };
 };
 

@@ -352,10 +352,10 @@ export const getFile = (filePath: string) => {
   try {
     const fullPath = path.join(postsDirectory, filePath);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { content } = matter(fileContents);
-    return content;
+    const { data, content } = matter(fileContents);
+    return { data, content };
   } catch (err) {
-    return undefined;
+    return { data: {}, content: '' };
   }
 };
 
