@@ -39,26 +39,24 @@ export const getStaticProps = async () => {
     color: nodeColors.tag,
   }));
 
-  const nodes = [...postsNodes, ...tagsNodes]
-    .map((node) => ({
-      ...node,
-      /**
-       * https://visjs.github.io/vis-network/docs/network/nodes.html
-       */
-      color: {
+  const nodes = [...postsNodes, ...tagsNodes].map((node) => ({
+    ...node,
+    /**
+     * https://visjs.github.io/vis-network/docs/network/nodes.html
+     */
+    color: {
+      border: nodeColors.border,
+      background: node.color,
+      highlight: {
+        background: nodeColors.selectedNode,
         border: nodeColors.border,
-        background: node.color,
-        highlight: {
-          background: nodeColors.selectedNode,
-          border: nodeColors.border,
-        },
-        hover: {
-          background: node.color,
-          border: nodeColors.selectedNode,
-        },
       },
-    }))
-    .slice(0, 151);
+      hover: {
+        background: node.color,
+        border: nodeColors.selectedNode,
+      },
+    },
+  }));
 
   const backlinksEdges = allPosts
     .flatMap(({ backlinks, href }) =>
@@ -155,15 +153,14 @@ const Network = ({
     theme: { fontSizes, sizes },
   } = useThemeUI();
 
-  const [selectedNode, setSelectedNode] = React.useState<{
-    id: string;
-    group: string;
-  }>();
+  const [selectedNode, setSelectedNode] =
+    React.useState<{
+      id: string;
+      group: string;
+    }>();
 
-  const [
-    stabilizationIterationsDone,
-    setStabilizationIterationsDone,
-  ] = React.useState(false);
+  const [stabilizationIterationsDone, setStabilizationIterationsDone] =
+    React.useState(false);
 
   const [network, setNetwork] = React.useState<any>();
 
@@ -223,7 +220,7 @@ const Network = ({
   React.useEffect(() => {
     setTimeout(() => {
       setStabilizationIterationsDone(true);
-    }, 5 * 1000);
+    }, 3 * 1000);
   });
 
   const options = {
