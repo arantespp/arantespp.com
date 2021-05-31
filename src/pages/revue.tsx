@@ -18,10 +18,7 @@ const filterPostsSinceLastMonday = ({ date }: Post) => {
     postDate.getTimezoneOffset(),
   );
 
-  return (
-    dateFns.isAfter(postDateWithTimezone, getLastMonday()) ||
-    dateFns.isSameDay(postDateWithTimezone, getLastMonday())
-  );
+  return dateFns.isAfter(postDateWithTimezone, getLastMonday());
 };
 
 export const getStaticProps = async () => {
@@ -56,10 +53,10 @@ const Revue = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         , that will be released at{' '}
         <strong>{dateFns.format(nextDigestDate, 'PPPPpppp')}</strong>.
       </Themed.p>
-      <Themed.p>
-        Posts since {dateFns.format(getLastMonday(), 'PPPP')}:
-      </Themed.p>
       <Box sx={{ marginY: 5 }}>
+        <Themed.em>
+          Posts since {dateFns.format(getLastMonday(), 'PPPP')}:
+        </Themed.em>
         <RecommendationsList recommendations={postsSinceLastMonday} />
       </Box>
     </>

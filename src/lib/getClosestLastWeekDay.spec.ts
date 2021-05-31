@@ -1,4 +1,4 @@
-import { getClosestLastWeekDay } from './getClosestLastWeekDay';
+import { getClosestLastWeekDay, DayOfWeek } from './getClosestLastWeekDay';
 
 describe('method getClosestDayOfLastWeek', () => {
   beforeAll(() => {
@@ -9,8 +9,11 @@ describe('method getClosestDayOfLastWeek', () => {
     jest.useRealTimers();
   });
 
-  test('return last Monday - 2021-04-26', () => {
-    jest.setSystemTime(new Date(2021, 3, 27, 8));
-    expect(getClosestLastWeekDay('Mon')).toEqual(new Date(2021, 3, 26, 8));
+  test.each<[Date, DayOfWeek, Date]>([
+    [new Date(2021, 3, 27, 8), 'Mon', new Date(2021, 3, 26, 8)],
+    [new Date(2021, 4, 31, 8), 'Mon', new Date(2021, 4, 24, 8)],
+  ])('%s - %s - %s', (currentDate, lastWeekDay, lastDate) => {
+    jest.setSystemTime(currentDate);
+    expect(getClosestLastWeekDay(lastWeekDay)).toEqual(lastDate);
   });
 });

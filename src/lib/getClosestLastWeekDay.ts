@@ -10,13 +10,15 @@ const dayOfWeekMap = {
   Sun: 7,
 };
 
+export type DayOfWeek = keyof typeof dayOfWeekMap;
+
 /**
  * https://stackoverflow.com/a/54148600/8786986
  */
 export const getClosestLastWeekDay = (
-  dayOfWeek: keyof typeof dayOfWeekMap,
+  dayOfWeek: DayOfWeek,
   fromDate = new Date(),
 ) => {
   const offsetDays = dayOfWeekMap[dayOfWeek] - dateFns.getISODay(fromDate);
-  return dateFns.addDays(fromDate, offsetDays);
+  return dateFns.addDays(fromDate, offsetDays || -7);
 };
