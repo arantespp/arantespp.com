@@ -81,19 +81,27 @@ For each output of the step above, you'll need some tools to help you organize t
 
 ### Chapter 3 - Getting Projects Creatively Under Way: The Five Phases of Project Planning
 
-**The Natural Planning Model** follows this way:
+**The Natural Planning Model** of your mind follows this way:
 
 1. Defining purpose and principles
 2. Outcome visioning
-3. Brainstorming
+3. [Brainstorming](/zettelkasten/brainstorming)
 4. Organizing
 5. Identifying next actions
+
+Planning dinner out example:
+
+1. Why do you want to dinner out? Desire to satisfy hunger, socialize with friends, celebrate special occasion or develop a romance. These are your **purpose**. Your **principles** creates the boundaries of your plan: standards of food and service, affordability, convenience and comfort.
+2. What do you imagine about the dinner about the physical place, sounding, and feelings? It could be like, "Italian food at Giovanni's," or "Sitting at a sidewalk table at the Bistro Café." That is your **outcome visioning**.
+3. You'll think about how you achieve your vision. "What time should we go?" "Is it open tonight?" "Will it be crowded?" "Is there gas in the car?" That is the **[brainstorming](/zettelkasten/brainstorming)**.
+4. Once you have a lot of ideas, you start to **organize** them. You begin to sort them by components, priorities, and/or sequence of events.
+5. Finally, you focus in the **next action** that you need to take to make the first component happen. "Call Café Rouge to see if it's open, and make the reservation."
 
 **The Reactive Planning Model** is the opposite:
 
 1. Identifying next actions
 2. Organizing
-3. Brainstorming
+3. [Brainstorming](/zettelkasten/brainstorming)
 4. Outcome visioning
 5. Defining purpose and principles
 
@@ -133,9 +141,11 @@ Vision is a clear picture in your mind of what success would look like, sounds, 
 
 Focus has a great power in your brain. Your physiology will respond to an image in your head as if it were reality. The unconscious mind automatically works toward your goals when you create and focus on a clear picture of what you want. Such automatic guidance system helps you better than "you" ever could by conscious thought.
 
+[Focus brings unconscious support.](/zettelkasten/focus-brings-unconscious-support)
+
 #### Brainstorming
 
-[Brainstorming notes.](/zettelkasten/brainstorming)
+[Brainstorming notes.](/zettelkasten/brainstorming) It helps defining the _how_.
 
 #### Organizing
 
@@ -147,7 +157,7 @@ Creative thinking doesn't stop here, it just takes another form. Your mind will 
 
 - Identify the significant pieces.
 - Sort by (one or more):
-  - components;
-  - sequences;
-  - priorities.
+  - Components (subprojects): "We need to handle logistics, people, and location."
+  - Sequences: "First we need to check whether the restaurant is open, then call Andersons, then get dressed."
+  - Priorities: "It's critical to find out if the client really would like to go to dinner."
 - Detail to the required degree.

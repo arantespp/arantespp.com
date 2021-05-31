@@ -2,7 +2,7 @@
 title: Skydiving Terminal Velocity
 rating: 3
 date: 2021-05-23
-excerpt: When an object is in skydiving fall, after enough time, its velocity will be constant, considering that the drag force is proportional to the square of the velocity.
+excerpt: When an object is in a skydiving fall, its velocity will be constant after enough time, considering that the drag force is proportional to the square of the speed.
 tags:
   - calculus
   - physics
@@ -15,13 +15,13 @@ image:
 
 ## The Problem
 
-I like interdependency among subjects, and this is the reason why I wrote this article. Some years ago, I saw an article standing that a [skydiving](https://www.skydiveoc.com/about/articles/terminal-velocity-mean-skydiving/) object whose drag force is proportional to the square of the velocity will have its velocity constant at some time. This proposition caught my attention. So I've decided to investigate it more.
+I like interdependency among subjects, and this is the reason why I wrote this article. Some years ago, I saw an article standing that a [skydiving](https://www.skydiveoc.com/about/articles/terminal-velocity-mean-skydiving/) object whose drag force is proportional to the square of the velocity will have its speed constant at some time. This proposition caught my attention. So I've decided to investigate it more.
 
-This is an interesting question because involves math and physics. The level of the calculus theory behind is not too easy neither too hard, it's a good point to achieve the [flow state](/zettelkasten/flow-state-psychology). We also need to understand some physics concepts to set up some boundaries conditions that will help us solve some equations.
+Skydiving terminal velocity is an interesting question because it involves math and physics. The level of the calculus theory is not too easy neither too hard. It's an optimal point to achieve the [flow state](/zettelkasten/flow-state-psychology). We also need to understand some physics concepts to set up some boundaries conditions that will help us solve some equations.
 
-Some days ago I remembered this problem and I decided to proof it again, this time writing this article. The questions we want to answer is:
+Some days ago I remembered this problem and I decided to reproof it, this time writing this article. The questions we want to answer is:
 
-> When an object is in skydiving fall, after enough time, its velocity will be constant, considering that the drag force is proportional to the square of the velocity.
+> When an object is in a skydiving fall, its velocity will be constant after enough time, considering that the drag force is proportional to the square of the speed.
 
 ## Modeling
 
@@ -59,7 +59,7 @@ How could we solve $(4)$? We can use [hyperbolic trigonometry](https://en.wikipe
 
 ![By <a href="//commons.wikimedia.org/wiki/File:Hyperbolic_functions.svg" title="File:Hyperbolic functions.svg">Hyperbolic_functions.svg</a>: The original uploader was <a href="https://en.wikipedia.org/wiki/User:Marco_Polo" class="extiw" title="wikipedia:User:Marco Polo">Marco Polo</a> at <a href="https://en.wikipedia.org/wiki/" class="extiw" title="wikipedia:">English Wikipedia</a>.derivative work: <a href="//commons.wikimedia.org/wiki/User:Jeandavid54" title="User:Jeandavid54">Jeandavid54</a> (<a href="//commons.wikimedia.org/wiki/User_talk:Jeandavid54" title="User talk:Jeandavid54"><span class="signature-talk">talk</span></a>) - <a href="//commons.wikimedia.org/wiki/File:Hyperbolic_functions.svg" title="File:Hyperbolic functions.svg">Hyperbolic_functions.svg</a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=8424555">Link</a>](/images/articles/skydiver-terminal-velocity/Hyperbolic_functions-2.svg)
 
-Before applying hyperbolic functions, we need to set up some physics boundaries. In skydiving or any situation that exists a drag force, the drag force never has its magnitude greater than the driver force, in this case, the gravitational force. So we can assume, from $(2)$, that:
+Before applying hyperbolic functions, we need to set up some physics boundaries. In our modeling, we're going to assume that the drag force never has its magnitude greater than the gravitational force. So we can assume, from $(2)$, that:
 
 $$
 m \frac{dv}{dt} = mg - kv^2 \geq 0 \iff v \leq \sqrt \frac{mg}{k} = \beta
@@ -113,6 +113,8 @@ $$
 \tag{10} \displaystyle\int_{v_0}^{v} \frac{dv}{1 - \left(\frac{v}{\beta}\right)^2} = \beta\tanh^{-1}\left(\frac{v}{\beta}\right) - \beta\tanh^{-1}\left(\frac{v_0}{\beta}\right)
 $$
 
+Because of our assumption in $(5)$, we have that $v_0$ won't have its value greater than $\beta$.
+
 ### The Terminal Velocity
 
 If we substitute $(10)$ in $(4)$ and isolate $v$, we have the value of the velocity in function of the time:
@@ -138,8 +140,6 @@ $$
 $$
 
 that is the same value we find on $(12)$.
-
-Another point we must consider is the initial velocity $v_0$. Because of $(11)$, if $v_0 > \beta$, the solution will have [complex numbers](https://en.wikipedia.org/wiki/Complex_number), which will lead to a completely different interpretation of our problem (that I have no idea which is).
 
 Lastly, if we check [this "Speed skydiving" Wikipedia article](https://en.wikipedia.org/wiki/Speed_skydiving), we can see that their definition of the terminal velocity is
 
