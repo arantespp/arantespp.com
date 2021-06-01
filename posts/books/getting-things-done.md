@@ -123,7 +123,7 @@ Some of the benefits of asking why.
 
 - **It clarifies focus.** It makes things clearer. Sometimes, things grow clearer just by asking, "What are we really trying yo accomplish here?"
 
-- **It examples options.** It's a paradox. Defining a clear purpose gives you focus, but at the same time, it expands your thinking about how to make a desired result happen. If the purpose is well defined, you can think in options because you know which one of them is viable or not.
+- **It expands options.** It's a paradox. Defining a clear purpose gives you focus, but at the same time, it expands your thinking about how to make a desired result happen. If the purpose is well defined, you can think in options because you know which one of them is viable or not.
 
 #### Principles
 
