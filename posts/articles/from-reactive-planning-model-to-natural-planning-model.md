@@ -15,7 +15,7 @@ image:
 draft: true
 ---
 
-I work with software development. Two friends from university and me stared a software house at the end of 2018. Today we aren't only a software house, we're defining process and rules to become a [Venture Builder](/zettelkasten/startup-studio). Our first big application just started at the same time we founded [Triângulos Tecnologia](https://triangulostecnologia.com). We didn't have much experience in software development when we started such project, we made mistakes in some parts of the project, from hiring and estimating the costs until ensure quality of the application and architecture.
+I work with software development. Two friends from university and me stared a software house at the end of 2018. Today we aren't only a software house (SH), we're defining process and rules to become a [Venture Builder](/zettelkasten/startup-studio). Our first big application just started at the same time we founded [Triângulos Tecnologia](https://triangulostecnologia.com). We didn't have much experience in software development when we started such project, we made mistakes in some parts of the project, from hiring and estimating the costs until ensure quality of the application and architecture.
 
 ## The Reactive Planning Model
 
@@ -34,3 +34,5 @@ So we went to the next step of the Reactive Planning Model, the **vision**. We k
 Finally, after long time of struggles and learning, we've got the last step of the model, **purpose and principles**. It's the _why_. "Why do we want building good software?" "Why do we want to make our customers satisfied." "Why do we need to create tests and document well?" The _why_ is the last step of this model.
 
 After thought about this project and others, you've concluded that your biggest problem creating software without tests and documentation is about **time**, and consequently, money. The time you spent to create tests and documentation at the same period that the feature is being developed is much less than the time that you'll spent to fix it some months later. And there are some reasons why this happens: you forget the feature main idea, you're working on another feature and have the [context switching](/zettelkasten/context-switching) cost, the developer who worked on that feature doesn't work with you anymore, and so on. People generally don't realize the difference between these costs because of the [hyperbolic discounting](/zettelkasten/hyperbolic-discounting). A cost in the future may seen small in the present.
+
+It's risky keep technical debts when you're working with software because you don't know your future [opportunity costs](/zettelkasten/opportunity-cost).
