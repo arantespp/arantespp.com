@@ -1,8 +1,8 @@
 # What I'm doing now
 
-Hello there 👋
+![This is me. I took this photo at the best concert I've ever seen in my life! The show was performed by <a href="https://www.facebook.com/Orquestra-Jazz-Sinf%C3%B4nica-de-S%C3%A3o-Jo%C3%A3o-da-Boa-Vista-1414383348815275/">Orquestra Jazz Sinfônica de São João da Boa Vista</a>, and they performed songs like <a href="https://www.youtube.com/watch?v=AjFf1uNhc48">Another Brick in the Wall version orchestra.</a>](/me.jpg)
 
-![This is me. I took it in the best concert I've ever seen in my life! The concert was performed by <a href="https://www.facebook.com/Orquestra-Jazz-Sinf%C3%B4nica-de-S%C3%A3o-Jo%C3%A3o-da-Boa-Vista-1414383348815275/">Orquestra Jazz Sinfônica de São João da Boa Vista</a> and they performed songs like <a href="https://www.youtube.com/watch?v=AjFf1uNhc48">Another Brick in the Wall version orchestra.</a>](/me.jpg)
+Hello there 👋
 
 ## TL;DR
 
@@ -18,6 +18,6 @@ I was living in [São Carlos, SP, Brazil](https://www.google.com.br/maps/place/S
 
 Besides spending some time coding, in parallel, I'm cultivating good [five habits for the next five years](/articles/five-habits-for-the-next-five-years) to see how they may improve my life. Writing ✍️ is one of them and was a reason that motivates me to create this blog. Here I'm going to share topics about anything I'm studying.
 
-As a side project, I'm creating a project that I call [The Network](/network). We can see it as my second brain. I'm making connections among my posts and tags and displaying them in a network diagram. The most exciting part is that I can choose any two topics and create a relationship between them. This powers the [Zettelkasten](/zettelkasten) method because it may give some insights that I would overlook otherwise.
+As a side project, I'm creating a project that I call [The Network](/network). We can see it as my second brain. I'm making connections among my posts and tags and displaying them in a network diagram. The most exciting part is that I can choose any two topics and create a relationship between them. The relationship powers the [Zettelkasten](/zettelkasten) method because it may give some insights that I would overlook otherwise.
 
-_This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about)._
+_I create this page inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about)._
