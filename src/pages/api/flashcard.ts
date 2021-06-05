@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { getFlashcard } from '../src/lib/getFlashcard';
+import { getFlashcard } from '../../lib/getFlashcard';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const flashcard = await getFlashcard();
