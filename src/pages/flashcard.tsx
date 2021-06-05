@@ -21,7 +21,7 @@ const FlashcardSection = ({ flashcard }: { flashcard: FlashcardType }) => {
   const i18nDays = days === 1 ? 'day' : 'days';
 
   return (
-    <Box sx={{ marginTop: 4, marginBottom: 5 }}>
+    <>
       <Flex sx={{ alignItems: 'center' }}>
         <Flex
           sx={{
@@ -50,7 +50,7 @@ const FlashcardSection = ({ flashcard }: { flashcard: FlashcardType }) => {
         <Text sx={{ fontWeight: 'bold' }}>{days} </Text>
         <Text>{i18nDays}.</Text>
       </Text>
-    </Box>
+    </>
   );
 };
 
@@ -70,11 +70,13 @@ const Flashcard = () => {
       />
       <Themed.h1>Flashcard</Themed.h1>
       <Text sx={{ fontWeight: 'normal' }}>{description}</Text>
-      {data?.flashcard ? (
-        <FlashcardSection flashcard={data.flashcard} />
-      ) : (
-        <Loading />
-      )}
+      <Box sx={{ marginTop: 4, marginBottom: 5 }}>
+        {data?.flashcard ? (
+          <FlashcardSection flashcard={data.flashcard} />
+        ) : (
+          <Loading />
+        )}
+      </Box>
       <Flex sx={{ width: '100%', justifyContent: 'center' }}>
         <Button disabled={isValidating} onClick={() => mutate()}>
           New Flashcard
