@@ -58,14 +58,6 @@ const Flashcard = () => {
   const { data, isValidating, mutate } = useSWR<{ flashcard: FlashcardType }>(
     '/api/flashcard',
     fetcher,
-    {
-      revalidateOnFocus: false,
-      revalidateOnMount: false,
-      revalidateOnReconnect: false,
-      refreshWhenOffline: false,
-      refreshWhenHidden: false,
-      refreshInterval: 0,
-    },
   );
 
   return (
