@@ -6,20 +6,40 @@ import type { Post } from '../lib/files';
 
 import BookHeader from './BookHeader';
 import CustomImage from './CustomImage';
-import KeywordsHead from './KeywordsHead';
+import HTMLHeaders from './HTMLHeaders';
 import Markdown from './Markdown';
 import NetworkLink from './NetworkLink';
-import PostHeaders from './PostHeaders';
 import PostResume from './PostResume';
 import SharePost from './SharePost';
 
 const PostComponent = ({ post }: { post: Post }) => {
-  const { image, title, book, editLink, href, tags } = post;
+  const { image, title, book, editLink, href, tags, excerpt, group } = post;
+
+  const imageUrl = (() => {
+    if (group === 'zettelkasten') {
+      return '/images/david-travis-5bYxXawHOQg-unsplash.jpg';
+    }
+
+    if (image) {
+      return image.url;
+    }
+
+    if (book?.image) {
+      return book.image;
+    }
+
+    return '';
+  })();
 
   return (
     <>
-      <PostHeaders post={post} />
-      <KeywordsHead keywords={tags} />
+      <HTMLHeaders
+        title={title}
+        description={excerpt}
+        url={href}
+        keywords={tags}
+        image={{ url: imageUrl }}
+      />
       <Themed.h1>{title}</Themed.h1>
       <Box
         sx={{

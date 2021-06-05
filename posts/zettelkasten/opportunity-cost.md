@@ -12,11 +12,9 @@ tags:
 
 ## Notes
 
-- Opportunity cost is the loss of the benefit that could have been enjoyed if you've chosen the best option instead.
+- Opportunity cost is the loss of the benefit of the best foregone option that you could have chosen.
 
-  - You have choices A and B, with $G_a$ and $G_b$ as their respective gain. Suppose that A is the best choice and its gain $G_a$ is $100$, whereas B was the chosen option with the gain $G_b$, $80$. The opportunity of this scenario is $G_a - G_b = 20$.
-
-- It's calculated by $\text{Opportunity Cost} = FO_{(\text{foregone option})} - CO_{(\text{chosen option})}$.
+  - You have choices A, B, and C with $B_a = 100$, $B_b = 80$, and $B_c = 50$ as their respective benefit. Considering you've chosen the best option, A, your opportunity cost in this scenario is $80$ because it's the benefit of the best foregone option.
 
 - It's a microeconomic theory.
 

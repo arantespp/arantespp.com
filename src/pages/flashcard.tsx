@@ -1,0 +1,87 @@
+import NextLink from 'next/link';
+import useSWR from 'swr';
+import { Box, Button, Flex, Link, Text, Themed } from 'theme-ui';
+
+import { Flashcard as FlashcardType } from '../lib/getFlashcard';
+
+import HTMLHeaders from '../components/HTMLHeaders';
+import Loading from '../components/Loading';
+import RecommendationCard from '../components/RecommendationCard';
+
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
+
+const description =
+  'Without opening the note, how would you explain it to a 12 years old child?';
+
+const FlashcardSection = ({ flashcard }: { flashcard: FlashcardType }) => {
+  const weeks = Math.floor(flashcard.diffDays / 7);
+  const days = flashcard.diffDays % 7;
+
+  const i18nWeeks = weeks === 1 ? 'week' : 'weeks';
+  const i18nDays = days === 1 ? 'day' : 'days';
+
+  return (
+    <Box sx={{ marginTop: 4, marginBottom: 5 }}>
+      <Flex sx={{ alignItems: 'center' }}>
+        <Flex
+          sx={{
+            width: '100%',
+            padding: [3, 4],
+            marginY: 3,
+            alignItems: 'center',
+            borderWidth: 1,
+            borderStyle: 'solid',
+            borderColor: 'muted',
+            boxShadow: ({ colors }) => `10px 10px 10px -10px ${colors?.muted}`,
+          }}
+        >
+          <RecommendationCard recommendation={flashcard} />
+        </Flex>
+      </Flex>
+      <Text sx={{ fontSize: 1, fontStyle: 'italic', color: 'gray' }}>
+        <Text>Note </Text>
+        <NextLink href={flashcard.href} passHref>
+          <Link>{flashcard.title}</Link>
+        </NextLink>
+        <Text sx={{ fontWeight: 'bold' }}> </Text>
+        <Text>has a difference from today equals to </Text>
+        <Text sx={{ fontWeight: 'bold' }}>{weeks} </Text>
+        <Text>{i18nWeeks} and </Text>
+        <Text sx={{ fontWeight: 'bold' }}>{days} </Text>
+        <Text>{i18nDays}.</Text>
+      </Text>
+    </Box>
+  );
+};
+
+const Flashcard = () => {
+  const { data, isValidating, mutate } = useSWR<{ flashcard: FlashcardType }>(
+    '/api/flashcard',
+    fetcher,
+  );
+
+  return (
+    <>
+      <HTMLHeaders
+        title="Flashcard"
+        description={description}
+        image={{ url: '/images/amanda-jones-feLC4ZCxGqk-unsplash.jpg' }}
+        url="/flashcard"
+      />
+      <Themed.h1>Flashcard</Themed.h1>
+      <Text sx={{ fontWeight: 'normal' }}>{description}</Text>
+      {data?.flashcard ? (
+        <FlashcardSection flashcard={data.flashcard} />
+      ) : (
+        <Loading />
+      )}
+      <Flex sx={{ width: '100%', justifyContent: 'center' }}>
+        <Button disabled={isValidating} onClick={() => mutate()}>
+          New Flashcard
+        </Button>
+      </Flex>
+    </>
+  );
+};
+
+export default Flashcard;

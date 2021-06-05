@@ -5,7 +5,7 @@ import { Box, Themed } from 'theme-ui';
 import { allPosts, Post } from '../lib/files';
 import { getClosestLastWeekDay } from '../lib/getClosestLastWeekDay';
 
-import NoIndexHeaders from '../components/NoIndexHeaders';
+import HTMLHeaders from '../components/HTMLHeaders';
 import RecommendationsList from '../components/RecommendationsList';
 
 const getLastMonday = () => getClosestLastWeekDay('Mon');
@@ -43,7 +43,7 @@ const Revue = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <>
-      <NoIndexHeaders />
+      <HTMLHeaders noIndex />
       <Themed.h1>Revue Weekly Digest Posts</Themed.h1>
       <Themed.p>
         List of posts that will be used in my next{' '}

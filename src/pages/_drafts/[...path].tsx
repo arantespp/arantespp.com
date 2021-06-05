@@ -3,8 +3,7 @@ import dynamic from 'next/dynamic';
 
 import { getDrafts, getDraft, Group } from '../../lib/files';
 
-import NoIndexHeaders from '../../components/NoIndexHeaders';
-import PostHeaders from '../../components/PostHeaders';
+import HTMLHeaders from '../../components/HTMLHeaders';
 
 const Post = dynamic(() => import('../../components/Post'));
 
@@ -34,8 +33,14 @@ const DraftsSlug = ({
   draft,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <>
-    <NoIndexHeaders />
-    <PostHeaders post={draft} />
+    <HTMLHeaders
+      noIndex
+      title={draft.title}
+      description={draft.excerpt}
+      url={draft.href}
+      keywords={draft.tags}
+      image={draft.image || undefined}
+    />
     <Post post={draft} />
   </>
 );

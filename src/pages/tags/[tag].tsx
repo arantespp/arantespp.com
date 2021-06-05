@@ -1,9 +1,8 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
-import Head from 'next/head';
 import NextLink from 'next/link';
 import { Box, Link, Themed } from 'theme-ui';
 
-import KeywordsHead from '../../components/KeywordsHead';
+import HTMLHeaders from '../../components/HTMLHeaders';
 import NetworkLink from '../../components/NetworkLink';
 import RecommendationsList from '../../components/RecommendationsList';
 import Tag from '../../components/Tag';
@@ -31,24 +30,25 @@ export const getStaticProps = async ({
 const TagsIndex = ({
   posts,
   tag,
-}: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <>
-    <Head>
-      <title>#{tag}</title>
-    </Head>
-    <KeywordsHead keywords={[tag]} />
-    <Themed.h1>#{tag}</Themed.h1>
-    <Themed.p>
-      Recommended posts related to the tag <Tag tag={tag} /> are shown below.{' '}
-      <NetworkLink nodeId={tag} />
-    </Themed.p>
-    <Box sx={{ marginBottom: 5 }}>
-      <NextLink href="/tags" passHref>
-        <Link>See all tags</Link>
-      </NextLink>
-    </Box>
-    <RecommendationsList recommendations={posts} />
-  </>
-);
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const title = `#${tag}`;
+
+  return (
+    <>
+      <HTMLHeaders keywords={[tag]} title={title} />
+      <Themed.h1>{title}</Themed.h1>
+      <Themed.p>
+        Recommended posts related to the tag <Tag tag={tag} /> are shown below.{' '}
+        <NetworkLink nodeId={tag} />
+      </Themed.p>
+      <Box sx={{ marginBottom: 5 }}>
+        <NextLink href="/tags" passHref>
+          <Link>See all tags</Link>
+        </NextLink>
+      </Box>
+      <RecommendationsList recommendations={posts} />
+    </>
+  );
+};
 
 export default TagsIndex;

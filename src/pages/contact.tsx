@@ -1,17 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Head from 'next/head';
 import { Flex, Link, Themed, Text } from 'theme-ui';
+
+import HTMLHeaders from '../components/HTMLHeaders';
 
 import { socialMedias, socialMediasArr } from '../lib/socialMedias';
 
 const Contact = () => (
   <>
-    <Head>
-      <title>Contact</title>
-    </Head>
-
+    <HTMLHeaders title="Contact" />
     <Themed.h1>Contact</Themed.h1>
-
     <Themed.p>
       If you&apos;d like to get in touch with me,{' '}
       <Link

@@ -31,6 +31,7 @@
     "rehype-katex": "^5.0.0",
     "remark-math": "^4.0.0",
     "string-similarity": "^4.0.4",
+    "swr": "^0.5.6",
     "theme-ui": "^0.8.4",
     "typography-theme-fairy-gates": "^0.16.19",
     "use-debounce": "^6.0.1",

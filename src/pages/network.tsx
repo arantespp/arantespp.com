@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { InferGetStaticPropsType } from 'next';
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Box, Flex, Spinner, Text, useThemeUI } from 'theme-ui';
 
+import HTMLHeaders from '../components/HTMLHeaders';
 import RecommendationCard from '../components/RecommendationCard';
 import Tag from '../components/Tag';
 import { getAllTags, getPosts } from '../lib/files';
+
 import { theme } from '../theme';
 
 const GraphVis = dynamic<any>(() => import('react-graph-vis'), { ssr: false });
@@ -276,26 +277,12 @@ const Network = ({
 
   return (
     <>
-      <Head>
-        <title>Network</title>
-        <meta property="og:type" key="og:type" content="website" />
-        <meta
-          property="og:url"
-          key="og:url"
-          content="https://arantespp.com/network"
-        />
-        <meta property="og:title" key="og:title" content="Network" />
-        <meta
-          property="og:description"
-          key="og:description"
-          content="All posts and tags and their connections."
-        />
-        <meta
-          property="og:image"
-          key="og:image"
-          content="https://arantespp.com/images/network.png"
-        />
-      </Head>
+      <HTMLHeaders
+        title="Network"
+        url="/network"
+        description="All posts and tags and their connections."
+        image={{ url: 'https://arantespp.com/images/network.png' }}
+      />
       <Box
         sx={{
           backgroundColor: 'white',

@@ -1,8 +1,7 @@
 import { InferGetStaticPropsType } from 'next';
-import Head from 'next/head';
 import { Box, Flex, Themed } from 'theme-ui';
 
-import KeywordsHead from '../../components/KeywordsHead';
+import HTMLHeaders from '../../components/HTMLHeaders';
 import Tag from '../../components/Tag';
 
 import { getAllTags } from '../../lib/files';
@@ -18,10 +17,7 @@ const TagsIndex = ({
   tags,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <>
-    <Head>
-      <title>Tags</title>
-    </Head>
-    <KeywordsHead keywords={tags} />
+    <HTMLHeaders keywords={tags} title="Tags" />
     <Themed.h1>Tags</Themed.h1>
     <Flex sx={{ flexWrap: 'wrap' }}>
       {tags.map((tag) => (
