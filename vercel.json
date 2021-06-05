@@ -1,6 +1,6 @@
 {
   "functions": {
-    "src/pages/api/flashcard.ts": {
+    "api/flashcard.ts": {
       "includeFiles": "post/**",
       "maxDuration": 10
     }
