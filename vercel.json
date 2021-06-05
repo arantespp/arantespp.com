@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/flashcards.ts": {
+      "includeFiles": "posts/**"
+    }
+  }
+}
