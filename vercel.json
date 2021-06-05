@@ -1,7 +1,7 @@
 {
   "functions": {
-    "api/flashcard.js": {
-      "includeFiles": "posts/**"
+    "api/flashcard.ts": {
+      "maxDuration": 60
     }
   }
 }
