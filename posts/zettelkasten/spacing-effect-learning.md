@@ -23,8 +23,6 @@ rating: 3
 
 - It can be used to learn anything of any field.
 
--
-
 ## References
 
 - [Wikipedia. Spacing effect](https://en.wikipedia.org/wiki/Spacing_effect)
