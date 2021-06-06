@@ -26,14 +26,17 @@ const palette = {
   prussianBlue: '#1d3557',
 };
 
+/**
+ * #6f6f6f has high contrast with white.
+ */
+const lightGray = '#6f6f6f';
+
 const colors = {
   ...palette,
   text: '#2a2a2a',
   gray: '#515151',
-  /**
-   * #6f6f6f has high contrast with white.
-   */
-  lightGray: '#6f6f6f',
+  lightGray,
+  link: lightGray,
   background: '#fff',
   primary: palette.imperialRed,
   secondary: palette.imperialRed,
@@ -125,7 +128,7 @@ const partialTheme = {
       wordBreak,
     },
     a: {
-      color: 'lightGray',
+      color: 'link',
       '&:hover': {
         color: 'primary',
       },

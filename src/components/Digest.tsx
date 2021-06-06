@@ -10,8 +10,18 @@ const Digest = () => (
       width: '100%',
     }}
   >
-    <Heading as="h2" sx={{ color: 'primary', textAlign: 'center' }}>
-      Subscribe to my weekly digest
+    <Heading as="h2" sx={{ textAlign: 'center' }}>
+      <Link
+        href="https://www.getrevue.co/profile/arantespp"
+        sx={{
+          color: 'primary',
+          '&:hover': {
+            color: 'link',
+          },
+        }}
+      >
+        Subscribe to my weekly digest
+      </Link>
     </Heading>
     <Box sx={{ maxWidth: 450 }}>
       <form
