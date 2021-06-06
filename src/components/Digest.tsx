@@ -27,9 +27,10 @@ const Digest = () => (
             marginTop: 4,
             marginBottom: 2,
             flexDirection: ['column', 'row'],
+            alignItems: [null, 'baseline'],
           }}
         >
-          <Box sx={{ flex: 1, padding: 1 }}>
+          <Box sx={{ flex: 1, padding: 0 }}>
             <Input
               id="member_email"
               placeholder="Your email address..."
@@ -46,7 +47,8 @@ const Digest = () => (
               flexBasis: [150],
               backgroundColor: 'primary',
               color: 'white',
-              margin: 1,
+              marginTop: [2, 0],
+              marginLeft: [0, 2],
             }}
           >
             Subscribe
