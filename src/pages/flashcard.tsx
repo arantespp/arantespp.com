@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 import useSWR from 'swr';
-import { Box, Button, Flex, Link, Text, Themed } from 'theme-ui';
+import { Box, Button, Card, Flex, Link, Text, Themed } from 'theme-ui';
 
 import { Flashcard as FlashcardType } from '../lib/getFlashcard';
 
@@ -23,20 +23,9 @@ const FlashcardSection = ({ flashcard }: { flashcard: FlashcardType }) => {
   return (
     <>
       <Flex sx={{ alignItems: 'center' }}>
-        <Flex
-          sx={{
-            width: '100%',
-            padding: [3, 4],
-            marginY: 3,
-            alignItems: 'center',
-            borderWidth: 1,
-            borderStyle: 'solid',
-            borderColor: 'muted',
-            boxShadow: ({ colors }) => `10px 10px 10px -10px ${colors?.muted}`,
-          }}
-        >
+        <Card variant="flashcard">
           <RecommendationCard recommendation={flashcard} />
-        </Flex>
+        </Card>
       </Flex>
       <Text sx={{ fontSize: 1, fontStyle: 'italic', color: 'gray' }}>
         <Text>Note </Text>

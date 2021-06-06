@@ -26,6 +26,22 @@ const palette = {
   prussianBlue: '#1d3557',
 };
 
+const colors = {
+  ...palette,
+  text: '#2a2a2a',
+  gray: '#515151',
+  /**
+   * #6f6f6f has high contrast with white.
+   */
+  lightGray: '#6f6f6f',
+  background: '#fff',
+  primary: palette.imperialRed,
+  secondary: palette.imperialRed,
+  accent: palette.celadonBlue,
+  highlight: palette.honeydew,
+  muted: '#aaa',
+};
+
 const wordBreak = 'break-word';
 
 const message = {
@@ -41,21 +57,7 @@ const message = {
 
 const partialTheme = {
   borderWidths: [0, 1, 4],
-  colors: {
-    ...palette,
-    text: '#2a2a2a',
-    gray: '#515151',
-    /**
-     * #6f6f6f has high contrast with white.
-     */
-    lightGray: '#6f6f6f',
-    background: '#fff',
-    primary: palette.imperialRed,
-    secondary: palette.imperialRed,
-    accent: palette.celadonBlue,
-    highlight: palette.honeydew,
-    muted: '#aaa',
-  },
+  colors,
   fonts: {
     monospace: "'Overpass Mono', monospace",
   },
@@ -64,6 +66,8 @@ const partialTheme = {
   sizes: {
     container: '44em',
   },
+  radii: [0, '4px'],
+  shadows: ['none', `10px 10px 10px -10px #aaa`],
   links: {
     tag: {
       color: 'primary',
@@ -152,6 +156,25 @@ const partialTheme = {
       fontStyle: 'italic',
     },
   },
+  buttons: {
+    primary: {
+      cursor: 'pointer',
+    },
+  },
+  cards: {
+    flashcard: {
+      borderRadius: 1,
+      width: '100%',
+      padding: [3, 4],
+      marginY: 3,
+      alignItems: 'center',
+      borderWidth: 1,
+      borderStyle: 'solid',
+      borderColor: 'muted',
+      boxShadow: 1,
+    },
+  },
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const theme = merge(typography, partialTheme as any);
