@@ -4,8 +4,6 @@ import {
   getPNumber,
   getFlashcards,
   getFlashcardByProbability,
-  INTERVAL,
-  MAX_P_NUMBER,
 } from './getFlashcard';
 
 jest.mock('./files', () => ({
@@ -22,10 +20,11 @@ afterAll(() => {
 });
 
 test.each([
-  ...Array.from(Array(20)).map((_, index) => {
-    return [2 ** index * INTERVAL, MAX_P_NUMBER];
-  }),
-  [490, 428],
+  [7, 999],
+  [14, 998],
+  [28, 996],
+  [56, 992],
+  [112, 984],
 ])('pNumber: x=%d; y=%d', (x, y) => {
   expect(getPNumber(x)).toEqual(y);
 });
@@ -49,12 +48,12 @@ test.each([
       { date: '2020-02-02' }, // Oldest post
     ],
     [
-      { date: '2020-02-02', diffDays: 489, pNumber: 445 }, // Oldest post
+      { date: '2020-02-02', diffDays: 489, pNumber: 416 }, // Oldest post
       { date: '2020-07-28', diffDays: 312, pNumber: 0 },
       { date: '2020-12-07', diffDays: 180, pNumber: 2 },
       { date: '2021-03-15', diffDays: 82, pNumber: 0 },
       { date: '2021-05-28', diffDays: 8, pNumber: 141 },
-      { date: '2021-05-29', diffDays: 7, pNumber: 1000 },
+      { date: '2021-05-29', diffDays: 7, pNumber: 999 },
       { date: '2021-05-30', diffDays: 6, pNumber: 69 },
     ],
   ],

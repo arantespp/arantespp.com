@@ -6,9 +6,15 @@ export const INTERVAL = 7;
 
 export const MAX_P_NUMBER = 1000;
 
+/**
+ * https://www.wolframalpha.com/input/?i=y+%3D+exp%28-x%2F%282**10+*+7%29%29*cos%28%28log2%28x%2F7%29*pi%29%29%5E10+%2C+from++6+%3C+x+%3C+2**10+*+7
+ * @param x difference in days
+ * @returns pNumber
+ */
 export const getPNumber = (x: number) =>
   Math.round(
     MAX_P_NUMBER *
+      Math.exp(-(x / (2 ** 10 * INTERVAL))) *
       Math.cos((Math.log(x / INTERVAL) / Math.log(2)) * Math.PI) ** 10,
   );
 
