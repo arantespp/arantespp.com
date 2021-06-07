@@ -36,7 +36,16 @@ type PostMeta = {
   updateHistory?: string;
   tags: string[];
   rating: number;
+  /**
+   * Backlinks are links of posts that referenced the current post. If Post A
+   * has Post B and Post C as backlinks, means that Post B and Post C
+   * referenced post A.
+   */
   backlinks?: PostWithoutContent[];
+  /**
+   * References used in the text.
+   */
+  references?: PostWithoutContent[];
   image?: {
     url: string;
     alt: string;
@@ -59,7 +68,9 @@ export type Post = PostMeta & {
  */
 export type PostWithoutContent = Omit<Post, 'content'>;
 
-export type Recommendation = PostWithoutContent;
+export type Recommendation = PostWithoutContent & {
+  isReference?: boolean;
+};
 
 const LIMIT = 7;
 
@@ -98,6 +109,7 @@ export const getDrafts = () =>
       rating: 0,
       image: null,
       backlinks: [],
+      references: [],
       keywords: [],
       readingTime: 0,
       ...draft,
@@ -342,7 +354,18 @@ const getPost = (props: GetPartialPostProps): Post | undefined => {
     ].join('\n');
   })();
 
-  return { ...partialPost, content: newContent, backlinks };
+  const references = allPosts.reduce<PostWithoutContent[]>(
+    (acc, { content, ...post }) => {
+      if (partialPost.content.includes(`(${post.href})`)) {
+        return [...acc, post];
+      }
+
+      return acc;
+    },
+    [],
+  );
+
+  return { ...partialPost, content: newContent, backlinks, references };
 };
 
 /**
@@ -411,7 +434,9 @@ export const getAllTags = () =>
     .filter((tag, index, arr) => arr.indexOf(tag) === index)
     .sort((tagA, tagB) => tagA.localeCompare(tagB));
 
-export const getRecommendations = (props: GetPostsProps = {}) =>
+export const getRecommendations = (
+  props: GetPostsProps = {},
+): Recommendation[] =>
   getPosts(props)
     /**
      * Do not return the content.
@@ -434,19 +459,48 @@ export const getPostAndPostsRecommendations = ({
 }) => {
   const post = getPost({ group, slug });
 
-  const { tags, backlinks = [] } = post || {};
+  const { tags, backlinks = [], references = [] } = post || {};
 
-  const recommendations = post
-    ? [...backlinks, ...getRecommendations({ tags, group })]
-        /**
-         * Don't return the post as recommendation.
-         */
-        .filter(({ href }) => href !== post?.href)
-        /**
-         * Remove posts that may come from backlinks and getRecommendation.
-         */
-        .filter(removeDuplicatedPosts)
-    : [];
+  const filterRecommendations = (recommendations: Recommendation[]) =>
+    recommendations
+      /**
+       * Don't return the post as recommendation.
+       */
+      .filter(({ href }) => href !== post?.href)
+      /**
+       * Remove posts that may come from backlinks and getRecommendation.
+       */
+      .filter(removeDuplicatedPosts);
+
+  const referencesAndBacklinksRecommendations = filterRecommendations([
+    ...references.map((reference) => ({ ...reference, isReference: true })),
+    ...backlinks,
+  ]);
+
+  /**
+   * How many recommendations do post need to react LIMIT recommendations?
+   */
+  let targetLimit = LIMIT - referencesAndBacklinksRecommendations.length;
+  /**
+   * If targetLimit is zero or less, return at least one recommendation that
+   * is a reference or a backlink.
+   */
+  targetLimit = targetLimit <= 0 ? 1 : targetLimit;
+
+  const recommendationsThatAreNotReferenceOrBacklink = getRecommendations({
+    tags,
+    group,
+  }).filter(
+    (recommendation) =>
+      !referencesAndBacklinksRecommendations
+        .map(({ href }) => href)
+        .includes(recommendation.href),
+  );
+
+  const recommendations = filterRecommendations([
+    ...referencesAndBacklinksRecommendations,
+    ...recommendationsThatAreNotReferenceOrBacklink.slice(0, targetLimit),
+  ]);
 
   return { post, recommendations };
 };

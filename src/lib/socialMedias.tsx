@@ -55,6 +55,6 @@ export const socialMedias = {
   },
 };
 
-export const socialMediasArr = Object.entries(
-  socialMedias,
-).map(([name, value]) => ({ name, ...value }));
+export const socialMediasArr = Object.entries(socialMedias).map(
+  ([name, value]) => ({ name, ...value }),
+);

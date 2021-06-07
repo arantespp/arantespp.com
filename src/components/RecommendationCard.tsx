@@ -1,5 +1,7 @@
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NextLink from 'next/link';
-import { Flex, Link } from 'theme-ui';
+import { Flex, Link, Text } from 'theme-ui';
 
 import PostResume from './PostResume';
 
@@ -10,7 +12,7 @@ const RecommendationCard = ({
 }: {
   recommendation: Recommendation;
 }) => {
-  const { href, title } = recommendation;
+  const { href, title, isReference } = recommendation;
   return (
     <Flex
       key={title}
@@ -30,6 +32,18 @@ const RecommendationCard = ({
           }}
         >
           {title}
+          {isReference && (
+            <Text
+              sx={{
+                fontSize: 0,
+                marginLeft: 2,
+                verticalAlign: 'middle',
+                color: 'muted',
+              }}
+            >
+              <FontAwesomeIcon icon={faLink} />
+            </Text>
+          )}
         </Link>
       </NextLink>
       <PostResume post={recommendation} />
