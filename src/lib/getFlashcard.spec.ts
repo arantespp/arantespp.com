@@ -33,6 +33,7 @@ test.each([
   [
     "don't return recent posts",
     [
+      { date: '2020-02-02' },
       { date: '2020-07-28' },
       { date: '2020-12-07' },
       { date: '2021-03-15' },
@@ -45,10 +46,9 @@ test.each([
       { date: '2021-06-03' },
       { date: '2021-06-04' },
       { date: '2021-06-05' },
-      { date: '2020-02-02' }, // Oldest post
     ],
     [
-      { date: '2020-02-02', diffDays: 489, pNumber: 416 }, // Oldest post
+      { date: '2020-02-02', diffDays: 489, pNumber: 416 },
       { date: '2020-07-28', diffDays: 312, pNumber: 0 },
       { date: '2020-12-07', diffDays: 180, pNumber: 2 },
       { date: '2021-03-15', diffDays: 82, pNumber: 0 },
@@ -63,19 +63,6 @@ test.each([
 });
 
 describe('testing getFlashcardByProbability', () => {
-  const flashcards = [
-    { date: '2021-02-01', pNumber: 250 },
-    { date: '2021-02-02', pNumber: 250 },
-    { date: '2021-02-03', pNumber: 100 },
-    { date: '2021-02-04', pNumber: 100 },
-    { date: '2021-02-05', pNumber: 100 },
-    { date: '2021-02-06', pNumber: 50 },
-    { date: '2021-02-07', pNumber: 50 },
-    { date: '2021-02-08', pNumber: 50 },
-    { date: '2021-02-09', pNumber: 50 },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ] as any;
-
   test.each([
     [0, '2021-02-01'],
     [0.1, '2021-02-01'],
@@ -87,7 +74,47 @@ describe('testing getFlashcardByProbability', () => {
     [0.501, '2021-02-03'],
     [1, '2021-02-09'],
   ])('random: %d', (random, date) => {
+    const flashcards = [
+      { date: '2021-02-01', pNumber: 250 },
+      { date: '2021-02-02', pNumber: 250 },
+      { date: '2021-02-03', pNumber: 100 },
+      { date: '2021-02-04', pNumber: 100 },
+      { date: '2021-02-05', pNumber: 100 },
+      { date: '2021-02-06', pNumber: 50 },
+      { date: '2021-02-07', pNumber: 50 },
+      { date: '2021-02-08', pNumber: 50 },
+      { date: '2021-02-09', pNumber: 50 },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ] as any;
+
     jest.spyOn(global.Math, 'random').mockReturnValue(random);
     expect(getFlashcardByProbability(flashcards).date).toEqual(date);
   });
+
+  test.each([
+    [0],
+    [0.1],
+    [0.2],
+    [0.3],
+    [0.4],
+    [0.5],
+    [0.6],
+    [0.7],
+    [0.8],
+    [0.9],
+    [1],
+  ])(
+    'when all p-numbers is zero, must return the most recent post',
+    (random) => {
+      const flashcards = [
+        { diffDays: 100, pNumber: 0 },
+        { diffDays: 1, pNumber: 0 }, // Most recent post.
+        { diffDays: 200, pNumber: 0 },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ] as any;
+
+      jest.spyOn(global.Math, 'random').mockReturnValue(random);
+      expect(getFlashcardByProbability(flashcards).diffDays).toEqual(1);
+    },
+  );
 });

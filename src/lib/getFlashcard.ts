@@ -30,8 +30,7 @@ export const getFlashcards = async () => {
         pNumber: getPNumber(diffDays),
       };
     })
-    .filter(({ diffDays }) => diffDays >= INTERVAL - 1)
-    .sort((fa, fb) => fb.diffDays - fa.diffDays);
+    .filter(({ diffDays }) => diffDays >= INTERVAL - 1);
 };
 
 type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
@@ -42,7 +41,11 @@ export const getFlashcardByProbability = (flashcards: Flashcard[]) => {
   const pNumberSum = flashcards.reduce((sum, { pNumber }) => sum + pNumber, 0);
   const random = Math.round(Math.random() * pNumberSum);
 
-  const meta = flashcards.reduce<[number, Flashcard | undefined]>(
+  const sortedFlashcards = flashcards.sort(
+    (fa, fb) => fa.diffDays - fb.diffDays,
+  );
+
+  const meta = sortedFlashcards.reduce<[number, Flashcard | undefined]>(
     ([sum, flashcard], currentFlashcard) => {
       if (flashcard) {
         return [sum, flashcard];
@@ -57,7 +60,7 @@ export const getFlashcardByProbability = (flashcards: Flashcard[]) => {
     [0, undefined],
   );
 
-  return meta[1] || flashcards[0];
+  return meta[1] || sortedFlashcards[0];
 };
 
 export const getFlashcard = async () => {

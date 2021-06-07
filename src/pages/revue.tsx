@@ -1,6 +1,6 @@
 import * as dateFns from 'date-fns';
 import { InferGetStaticPropsType } from 'next';
-import { Box, Themed } from 'theme-ui';
+import { Box, Text, Themed } from 'theme-ui';
 
 import { allPosts, Post } from '../lib/files';
 import { getClosestLastWeekDay } from '../lib/getClosestLastWeekDay';
@@ -18,7 +18,12 @@ const filterPostsSinceLastMonday = ({ date }: Post) => {
     postDate.getTimezoneOffset(),
   );
 
-  return dateFns.isAfter(postDateWithTimezone, getLastMonday());
+  const diffInDays = dateFns.differenceInDays(
+    postDateWithTimezone,
+    getLastMonday(),
+  );
+
+  return diffInDays >= 0 && diffInDays < 6;
 };
 
 export const getStaticProps = async () => {
@@ -26,8 +31,8 @@ export const getStaticProps = async () => {
     .filter(filterPostsSinceLastMonday)
     .sort(
       (postA, postB) =>
-        dateFns.getUnixTime(new Date(postA.date)) -
-        dateFns.getUnixTime(new Date(postB.date)),
+        dateFns.getUnixTime(new Date(postB.date)) -
+        dateFns.getUnixTime(new Date(postA.date)),
     );
 
   return { props: { posts } };
@@ -46,17 +51,17 @@ const Revue = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <HTMLHeaders noIndex />
       <Themed.h1>Revue Weekly Digest Posts</Themed.h1>
       <Themed.p>
-        List of posts that will be used in my next{' '}
+        I&apos;ll use the posts below in my next{' '}
         <Themed.a href="https://www.getrevue.co/profile/arantespp">
           Revue weekly digest
         </Themed.a>
-        , that will be released at{' '}
+        , whose release will be on{' '}
         <strong>{dateFns.format(nextDigestDate, 'PPPPpppp')}</strong>.
       </Themed.p>
       <Box sx={{ marginY: 5 }}>
-        <Themed.em>
+        <Text sx={{ fontSize: 1, color: 'gray', fontStyle: 'italic' }}>
           Posts since {dateFns.format(getLastMonday(), 'PPPP')}:
-        </Themed.em>
+        </Text>
         <RecommendationsList recommendations={postsSinceLastMonday} />
       </Box>
     </>

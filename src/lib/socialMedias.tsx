@@ -9,7 +9,7 @@ import {
   faTelegramPlane,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faChessPawn, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export const socialMedias = {
   Twitter: {
@@ -52,6 +52,10 @@ export const socialMedias = {
   Reddit: {
     href: 'https://www.reddit.com/user/arantespp',
     faIcon: faReddit,
+  },
+  'chess.com': {
+    href: 'https://www.chess.com/member/arantespp',
+    faIcon: faChessPawn,
   },
 };
 

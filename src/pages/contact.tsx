@@ -8,17 +8,19 @@ import { socialMedias, socialMediasArr } from '../lib/socialMedias';
 
 const Contact = () => (
   <>
-    <HTMLHeaders title="Contact" />
+    <HTMLHeaders
+      title="Contact"
+      description='You can find me on almost all social media by the username "arantespp".'
+    />
     <Themed.h1>Contact</Themed.h1>
     <Themed.p>
-      If you&apos;d like to get in touch with me,{' '}
+      If you want to get in touch with me,{' '}
       <Link
         href={socialMedias.Email.href}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Text as="span">email </Text>
-        <FontAwesomeIcon icon={socialMedias.Email.faIcon} />
+        <Text as="span">email</Text>
       </Link>{' '}
       and{' '}
       <Link
@@ -26,16 +28,15 @@ const Contact = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Text as="span">Twitter </Text>
-        <FontAwesomeIcon icon={socialMedias.Twitter.faIcon} />
+        <Text as="span">Twitter</Text>
       </Link>{' '}
       are your best channels because I check them more frequently.
     </Themed.p>
 
     <Themed.p>
-      You can find me at almost all social media by the username
-      <Themed.strong> arantespp</Themed.strong>*. Some of them I just created to
-      get the username and I don&apos;t use very often.
+      You can find me on almost all social media by the username
+      <Themed.strong> arantespp</Themed.strong>*. I don&apos;t use some of them
+      often, and I&apos;ve just created to get the username.
     </Themed.p>
 
     <Flex
@@ -53,6 +54,8 @@ const Contact = () => (
           target="_blank"
           rel="noopener noreferrer"
           sx={{
+            display: 'flex',
+            alignItems: 'center',
             margin: 2,
             '&:hover': {
               color: 'primary',
@@ -63,8 +66,10 @@ const Contact = () => (
           <Text
             as="span"
             sx={{
+              minWidth: '30px',
               fontSize: [5, 3],
               marginX: 2,
+              textAlign: 'center',
             }}
           >
             <FontAwesomeIcon icon={faIcon} />
@@ -84,11 +89,11 @@ const Contact = () => (
     </Flex>
 
     <Text sx={{ fontSize: 1, fontStyle: 'italic', color: 'gray' }}>
-      * I know, it&apos;s very sad, but Instagram is the only social media that
-      I don&apos;t have <Themed.strong>arantespp</Themed.strong> as username.
-      Sometime ago I&apos;ve create the account with that username but I
-      couldn&apos;t remember the password, the email or even if I&apos;ve
-      deleted the account or not.
+      * I know, it&apos;s unfortunate, but Instagram is the only social media
+      that I don&apos;t have <Themed.strong>arantespp</Themed.strong> as
+      username. Some time ago, I had created the account with that username, but
+      I couldn&apos;t remember the password, the email, or even if I&apos;ve
+      deleted it or not.
     </Text>
 
     <Digest />
