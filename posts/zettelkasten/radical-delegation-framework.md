@@ -3,7 +3,7 @@ title: Radical Delegation Framework
 excerpt: This framework helps you assign and do work that must be done.
 date: 2021-06-09
 tags:
-  - management
+  - project management
   - Shreyas Doshi
   - decision mental models
 rating: 2
