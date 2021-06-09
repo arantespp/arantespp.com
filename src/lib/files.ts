@@ -131,6 +131,7 @@ const getDate = (date: string | Date) => {
      * Added formattedDate to don't need to use date-fns in the App.
      */
     formattedDate: dateFns.format(dtDateOnly, 'MMMM dd, yyyy'),
+    format: (format: string) => dateFns.format(dtDateOnly, format),
   };
 };
 
@@ -506,3 +507,44 @@ export const getPostAndPostsRecommendations = ({
 };
 
 export const getDraft = getPartialPost;
+
+export const getJournals = async (page: number) => {
+  try {
+    const limit = 7;
+
+    const filenames = (
+      await fs.promises.readdir(path.join(postsDirectory, 'journal'))
+    )
+      /**
+       * Most recent first.
+       */
+      .reverse()
+      .splice(page * limit, limit);
+
+    const journals = (
+      await Promise.all(
+        filenames.map(async (filename) => {
+          try {
+            const fullPath = path.join(postsDirectory, 'journal', filename);
+            const file = await fs.promises.readFile(fullPath, 'utf8');
+            const { content } = matter(file);
+            const date = getDate(filename.replace('.md', '')).format('PPPP');
+            return { content, date };
+          } catch {
+            return undefined;
+          }
+        }),
+      )
+    ).filter((journal) => !!journal);
+
+    return journals;
+  } catch (er) {
+    return [];
+  }
+};
+
+type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
+
+export type Journal = NonNullable<
+  ThenArg<ReturnType<typeof getJournals>>[number]
+>;
