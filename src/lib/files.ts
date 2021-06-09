@@ -133,7 +133,6 @@ const getDate = (date: string | Date) => {
      * Added formattedDate to don't need to use date-fns in the App.
      */
     formattedDate: dateFns.format(dt, 'MMMM dd, yyyy'),
-    format: (format: string) => dateFns.format(dt, format),
   };
 };
 
