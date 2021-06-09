@@ -117,21 +117,23 @@ export const getDrafts = () =>
       draft: true,
     }));
 
-const getDate = (date: string | Date) => {
+const getDateWithTimezone = (date: string | Date) => {
   /**
    * https://stackoverflow.com/a/52352512/8786986
    */
   const dt = new Date(date);
-  const dtDateOnly = new Date(
-    dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000,
-  );
+  return new Date(dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000);
+};
+
+const getDate = (date: string | Date) => {
+  const dt = getDateWithTimezone(date);
   return {
-    date: dateFns.format(dtDateOnly, 'yyyy-MM-dd'),
+    date: dateFns.format(dt, 'yyyy-MM-dd'),
     /**
      * Added formattedDate to don't need to use date-fns in the App.
      */
-    formattedDate: dateFns.format(dtDateOnly, 'MMMM dd, yyyy'),
-    format: (format: string) => dateFns.format(dtDateOnly, format),
+    formattedDate: dateFns.format(dt, 'MMMM dd, yyyy'),
+    format: (format: string) => dateFns.format(dt, format),
   };
 };
 
@@ -528,7 +530,10 @@ export const getJournals = async (page: number) => {
             const fullPath = path.join(postsDirectory, 'journal', filename);
             const file = await fs.promises.readFile(fullPath, 'utf8');
             const { content } = matter(file);
-            const date = getDate(filename.replace('.md', '')).format('PPPP');
+            const date = dateFns.format(
+              getDateWithTimezone(filename.replace('.md', '')),
+              'PPPP',
+            );
             return { content, date };
           } catch {
             return undefined;
