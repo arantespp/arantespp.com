@@ -5,8 +5,8 @@ date: 2021-04-06
 tags:
   - psychology
   - economics
-  - decision mental model
-  - system mental model
+  - decision mental models
+  - system mental models
 rating: 3
 ---
 

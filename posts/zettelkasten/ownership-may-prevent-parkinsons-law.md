@@ -9,8 +9,6 @@ tags:
   - parkinson's law
 ---
 
-Tweet: <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ownership may prevent Parkinson’s Law.<br><br>What is Parkinson’s Law? It stands that &quot;work expands to fill the time available for its completion.&quot;<br><br>If you have 2 days to do task A, you&#39;ll take 2 days to finish it. If you have 5 days, you&#39;ll take 5 days.<br><br>🧵<a href="https://t.co/4R3dkpxCT7">https://t.co/4R3dkpxCT7</a></p>&mdash; Pedro Arantes 🌹 (@arantespp) <a href="https://twitter.com/arantespp/status/1397518419319197698?ref_src=twsrc%5Etfw">May 26, 2021</a></blockquote>
-
 ## Notes
 
 - If you have $X$ time to complete some tasks and don't have enough motivation, why should you finish them in less time?
@@ -30,6 +28,8 @@ Tweet: <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ownership may pr
   - Invest in customer empathy.
 
 ## References
+
+Tweet: <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ownership may prevent Parkinson’s Law.<br><br>What is Parkinson’s Law? It stands that &quot;work expands to fill the time available for its completion.&quot;<br><br>If you have 2 days to do task A, you&#39;ll take 2 days to finish it. If you have 5 days, you&#39;ll take 5 days.<br><br>🧵<a href="https://t.co/4R3dkpxCT7">https://t.co/4R3dkpxCT7</a></p>&mdash; Pedro Arantes 🌹 (@arantespp) <a href="https://twitter.com/arantespp/status/1397518419319197698?ref_src=twsrc%5Etfw">May 26, 2021</a></blockquote>
 
 - [Atlassian. 3 signs your team doesn’t have an ownership mindset and what to do about it](https://www.atlassian.com/blog/leadership/how-leaders-build-ownership-mindset)
 
