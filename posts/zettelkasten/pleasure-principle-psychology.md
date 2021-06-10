@@ -1,16 +1,21 @@
 ---
 title: Pleasure Principle (Psychology)
-excerpt: It's the instinctive seeking of pleasure and avoiding of pain to satisfy biological and psychological needs.
-date: 2021-04-09
+excerpt: >-
+  It's the instinctive seeking of pleasure and avoiding of pain to satisfy
+  biological and psychological needs.
+date: '2021-04-09T00:00:00.000Z'
 rating: 2
 tags:
   - psychology
 ---
 
+# pleasure-principle-psychology
+
 ## Notes
 
-- It's the instinctive seeking of pleasure and avoiding of pain to satisfy biological and psychological needs.
+* It's the instinctive seeking of pleasure and avoiding of pain to satisfy biological and psychological needs.
 
 ## References
 
-- [Wikipedia. Pleasure principle (psychology)](<https://en.wikipedia.org/wiki/Pleasure_principle_(psychology)>)
+* \[Wikipedia. Pleasure principle \(psychology\)\]\([https://en.wikipedia.org/wiki/Pleasure\_principle\_\(psychology\)](https://en.wikipedia.org/wiki/Pleasure_principle_%28psychology%29)\)
+

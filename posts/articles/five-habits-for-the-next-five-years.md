@@ -1,13 +1,20 @@
 ---
 title: Five habits for the next five years
-excerpt: Habits are the less spent energy strategy that we can use to achieve goals in our life. Habits require more time to complete the objectives, require more consistency, but it lasts forever.
-date: 2021-01-02
+excerpt: >-
+  Habits are the less spent energy strategy that we can use to achieve goals in
+  our life. Habits require more time to complete the objectives, require more
+  consistency, but it lasts forever.
+date: '2021-01-02T00:00:00.000Z'
 tags:
   - habits
 rating: 5
 image:
-  url: https://source.unsplash.com/uejtDqpJ7ig
-  alt: Photo by <a href="https://unsplash.com/@drew_beamer?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Drew Beamer</a> on <a href="https://unsplash.com/s/photos/habits?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+  url: 'https://source.unsplash.com/uejtDqpJ7ig'
+  alt: >-
+    Photo by <a
+    href="https://unsplash.com/@drew_beamer?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Drew
+    Beamer</a> on <a
+    href="https://unsplash.com/s/photos/habits?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
 ---
 
 # Five habits for the next five years
@@ -25,23 +32,23 @@ How can I overcome the motivation problem? The answer I found was: **habits**. H
 I started studying habits by reading [Atomic Habits](https://jamesclear.com/atomic-habits). I can assure you: this book was one of the best books I've read in my life. It changed my life. It's a practical guide on how to create good habits and break bad ones. It explains the feedback loop that involves four steps:
 
 1. make it obvious;
-1. make it attractive;
-1. make it easy;
-1. make it satisfying.
+2. make it attractive;
+3. make it easy;
+4. make it satisfying.
 
 Once we understand this loop and know how to use the steps in our favor, it becomes easier to create good habits and break bad ones.
 
-The next book I want to read is [The 7 Habits of Highly Effective People](https://www.amazon.com/dp/1451639619), and the after is [The Power of Habit](https://www.amazon.com/dp/B007EJSMC8). I'm enjoying studying habits, it's a fascinating subject. However, I'm not only learning. Further, I'm creating some in my life (good ones).
+The next book I want to read is [The 7 Habits of Highly Effective People](https://www.amazon.com/dp/1451639619), and the after is [The Power of Habit](https://www.amazon.com/dp/B007EJSMC8). I'm enjoying studying habits, it's a fascinating subject. However, I'm not only learning. Further, I'm creating some in my life \(good ones\).
 
 ## The five habits
 
 While reading Atomic Habits, I've decided to create five habits in my life:
 
 1. wake up early;
-1. exercise every two or three days;
-1. meditate every day;
-1. read every day;
-1. write every day.
+2. exercise every two or three days;
+3. meditate every day;
+4. read every day;
+5. write every day.
 
 I'm starting slowly. First, I started with exercises. After waking up, meditate, read, and write. I didn't start with these five together because it requires a significant amount of motivation. I prefer starting small, one at a time.
 
@@ -53,4 +60,5 @@ It's been about eight months that I'm on this habit journey. It was not so easy.
 
 I'm having fun on this adventure. In parts,because my life and lifestyle improved so much, I'm not feeling that sensation of starting something and giving up after some days.
 
-If you want to create good habits in your life, I do suggest reading those books and keep in mind one thing: instead of thinking you're doing something (exterior), consider you are a practicer (interior). For instance, instead of thinking you have a training routine (exterior), believe you're an athlete (interior), and the training routines will come because you're an athlete.
+If you want to create good habits in your life, I do suggest reading those books and keep in mind one thing: instead of thinking you're doing something \(exterior\), consider you are a practicer \(interior\). For instance, instead of thinking you have a training routine \(exterior\), believe you're an athlete \(interior\), and the training routines will come because you're an athlete.
+

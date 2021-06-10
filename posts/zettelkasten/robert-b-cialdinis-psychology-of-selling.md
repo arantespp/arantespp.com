@@ -4,4 +4,5 @@ TODO
 
 ## Backlinks
 
-- [Information and Digital Content in Modern Society](./information-and-digital-content-in-modern-society.md)
+* [Information and Digital Content in Modern Society](information-and-digital-content-in-modern-society.md)
+

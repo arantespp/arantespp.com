@@ -1,7 +1,9 @@
 ---
 title: Focus Brings Unconscious Support
-excerpt: If you're focused on something, your unconscious mind supports you in what you're focusing on.
-date: 2021-05-31
+excerpt: >-
+  If you're focused on something, your unconscious mind supports you in what
+  you're focusing on.
+date: '2021-05-31T00:00:00.000Z'
 tags:
   - focus
   - mind
@@ -9,19 +11,16 @@ tags:
 rating: 2
 ---
 
+# focus-brings-unconscious-support
+
 ## Notes
 
-- If you're focused on something, your unconscious mind supports you in what you're focusing on.
-
-  - It creates ideas and thought patterns you wouldn't have otherwise.
-
-- Even your physiology will respond to an image in your head as if it were reality.
-
-- The forward-looking focus has even been a critical element in Olympic-level sports training.
-
-  - Athletes imagine the physical effort, the positive energy, and the successful result to ensure the highest level of unconscious support for their performance.
-
-- Automatic and extraordinary things happen in your mind when you create and focus on a clear picture of what you want.
+* If you're focused on something, your unconscious mind supports you in what you're focusing on.
+  * It creates ideas and thought patterns you wouldn't have otherwise.
+* Even your physiology will respond to an image in your head as if it were reality.
+* The forward-looking focus has even been a critical element in Olympic-level sports training.
+  * Athletes imagine the physical effort, the positive energy, and the successful result to ensure the highest level of unconscious support for their performance.
+* Automatic and extraordinary things happen in your mind when you create and focus on a clear picture of what you want.
 
 ## Quotes
 
@@ -29,4 +28,5 @@ rating: 2
 
 ## References
 
-- [David Allen. Getting Things Done. Chapter 3](/books/getting-things-done#chapter-3-getting-projects-creatively-under-way-the-five-phases-of-project-planning)
+* [David Allen. Getting Things Done. Chapter 3](https://github.com/arantespp/arantespp.com/tree/b6972d031c3b14786c74e4cbe8941b4cc5f36c0f/books/getting-things-done/README.md#chapter-3-getting-projects-creatively-under-way-the-five-phases-of-project-planning)
+

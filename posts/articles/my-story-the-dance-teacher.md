@@ -1,14 +1,24 @@
 ---
 title: My Story - The Dance Teacher
-excerpt: The worse was that I was not being the owner of my life and it was being ruled by others, not by me. So, I asked myself, "How long won't I live my life and I'll let others live it for me?" Trust me, that question turns my life upside down, in the best of sights.
+excerpt: >-
+  The worse was that I was not being the owner of my life and it was being ruled
+  by others, not by me. So, I asked myself, "How long won't I live my life and
+  I'll let others live it for me?" Trust me, that question turns my life upside
+  down, in the best of sights.
 rating: 4
-date: 2021-05-09
+date: '2021-05-09T00:00:00.000Z'
 tags:
   - my-story
 image:
-  url: https://source.unsplash.com/tWezx1tg8v4
-  alt: Photo by <a href="https://unsplash.com/@7seth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Preillumination SeTh</a> on <a href="https://unsplash.com/s/photos/dance-pose?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  url: 'https://source.unsplash.com/tWezx1tg8v4'
+  alt: >-
+    Photo by <a
+    href="https://unsplash.com/@7seth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Preillumination
+    SeTh</a> on <a
+    href="https://unsplash.com/s/photos/dance-pose?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 ---
+
+# my-story-the-dance-teacher
 
 I call this chapter "The Dance Teacher" because I met one that changed my life for good. I like this part of my life because it triggered a chain of life changes in all aspects: love, professional, friendships, and myself.
 
@@ -20,7 +30,7 @@ But one part of my life wasn't good. It wasn't very nice - my love life. I was t
 
 So, let us see how my dance teacher enters the story. As I said, I was determined to sign myself in many extracurricular activities, so I decided to start Forró classes in 2014's May. The first reason was that I enjoy dancing, and the second one was to become more comfortable with women. And there is when the teacher dance appears. Let us call her Miss A.
 
-Forró classes happened on Wednesdays, at 9:30 pm (_I had a nostalgic feeling now_), it works well in my schedule for that semester. Miss A. was unbelievably beautiful (_she still is_), her smile was one of the most beautiful I had ever seen. She was very friendly. I was delighted. As time passed by, we became good friends. We've talked to each other daily, we've gone to some dancing events, theater, only two of us. She loves Temaki, and so do I. When we were closer, we went to restaurants of Japanese food, we enjoyed Temaki, the company of each other, talking and having fun. We had good times.
+Forró classes happened on Wednesdays, at 9:30 pm \(_I had a nostalgic feeling now_\), it works well in my schedule for that semester. Miss A. was unbelievably beautiful \(_she still is_\), her smile was one of the most beautiful I had ever seen. She was very friendly. I was delighted. As time passed by, we became good friends. We've talked to each other daily, we've gone to some dancing events, theater, only two of us. She loves Temaki, and so do I. When we were closer, we went to restaurants of Japanese food, we enjoyed Temaki, the company of each other, talking and having fun. We had good times.
 
 ## Something Happens
 
@@ -33,3 +43,4 @@ I've suffered for some time because I was in love. My heart was broken. But afte
 From the moment I realized that I need to be in charge of my own life, I start to live my life intensely and with joy. Not only my sexual and love life improved, but also my friendships, my professional, intellectual, and spiritual life. My interactions with my family became unbelievably better. I can say that I am no longer afraid to share my feelings and create deep connections with other people. In the following chapters, I'll tell you how I became more vulnerable, more human..., more myself.
 
 By the way, I've never told this story to Miss A. We talk to each other sometimes to know how we're doing. I want to say to her that her presence in my life changes everything inside me, tells her my side of the story, and thank her because our friendship is a huge part of my internal revolution. Maybe I invite her to eat some Temaki again, this time without expectations.
+

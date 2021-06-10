@@ -1,7 +1,9 @@
+# how-do-you-and-others-exchange-energies
+
 We have seven chakras and all of them is correlated with a kind of energy. I'm going to use the chakra energies as an energy reference.
 
-- sexual energy - first chakra
-- self expression energy - five chakra
+* sexual energy - first chakra
+* self expression energy - five chakra
 
 First question is: what kind of energy are you most susceptible? In other words, which energy people can turn on in you?
 
@@ -14,3 +16,4 @@ So the world is full of energy influencers and we're receiving this kind of infl
 The term "bad" is very personal and what is bad for me maybe is not bad for you. I'm going to five an example of a bad influence for me that was the reason I had the idea to write this essay.
 
 I used to talk with a lot of girls with sexual interest and very often we had a superficial talk and after some hours of conversation we've never talked again. I consider this as a bad thing because they influence in me a tremendous sexual energy, that took energy from other area of my life, as a personal project that I was creating,
+

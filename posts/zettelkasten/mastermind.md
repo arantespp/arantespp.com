@@ -1,3 +1,2 @@
----
-title: Mastermind
----
+# mastermind
+
