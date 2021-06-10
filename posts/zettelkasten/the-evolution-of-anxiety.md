@@ -1,9 +1,7 @@
 ---
 title: The Evolution of Anxiety
-excerpt: >-
-  The Delayed Return Environment causes chronic anxiety and stress because our
-  brain was designed to live in an Immediate Return Environment.
-date: '2020-05-22T00:00:00.000Z'
+excerpt: The Delayed Return Environment causes chronic anxiety and stress because our brain was designed to live in an Immediate Return Environment.
+date: 2020-05-22
 tags:
   - anxiety
   - stress
@@ -16,26 +14,24 @@ tags:
 rating: 3
 ---
 
-# the-evolution-of-anxiety
-
 ## Notes
 
-* Currently, humans are living in what researchers call a **Delayed Return Environment**.
-  * We worry about problems that won't be solved immediately by our actions - we work today to get a paycheck in a few weeks, for instance.
-* The Delayed Return Environment causes chronic anxiety and stress because our brain was designed to live in an Immediate Return Environment.
-  * Our brain has roughly the same size as our ancestors of two hundred thousand years ago.
-  * On the other side, society became mostly a Delayed Return Environment about 500 years ago, which is a very small window of time for our brain to evolve.
-* The Immediate Return Environment creates some stress and anxiety. It was necessary to help our ancestors \(and some wild animals\) to survive.
-  * A lion appears -&gt; you feel stressed -&gt; you run away to survive -&gt; the stress is relieved.
-* Nowadays, we still expect the same process, except that the relived part doesn't occur immediately.
-  * We imagine our future -&gt; we need money to live well -&gt; we study to get a good job -&gt; but we **don't** get a job \(and money\) immediately. This causes chronic stress and anxiety because it isn't relieved.
-* Living and Delayed Return Environment means you're surrounded by uncertainty. We can do two things to minimize it:
+- Currently, humans are living in what researchers call a **Delayed Return Environment**.
+  - We worry about problems that won't be solved immediately by our actions - we work today to get a paycheck in a few weeks, for instance.
+- The Delayed Return Environment causes chronic anxiety and stress because our brain was designed to live in an Immediate Return Environment.
+  - Our brain has roughly the same size as our ancestors of two hundred thousand years ago.
+  - On the other side, society became mostly a Delayed Return Environment about 500 years ago, which is a very small window of time for our brain to evolve.
+- The Immediate Return Environment creates some stress and anxiety. It was necessary to help our ancestors (and some wild animals) to survive.
+  - A lion appears -> you feel stressed -> you run away to survive -> the stress is relieved.
+- Nowadays, we still expect the same process, except that the relived part doesn't occur immediately.
+  - We imagine our future -> we need money to live well -> we study to get a good job -> but we **don't** get a job (and money) immediately. This causes chronic stress and anxiety because it isn't relieved.
+- Living and Delayed Return Environment means you're surrounded by uncertainty. We can do two things to minimize it:
+
   1. **Measure something**. When we measure something, we transform the unknown quantity and make it known, and you became more certain of something.
-     * For instance, if you're looking for a job, count how many companies you sent your resume to.
+     - For instance, if you're looking for a job, count how many companies you sent your resume to.
   2. **Shift your worry**. Instead of worrying about a long-term problem, focus on a daily routine that will solve your problem.
-     * Instead of worrying about living longer, focus on doing some exercises today.
+     - Instead of worrying about living longer, focus on doing some exercises today.
 
 ## References
 
-* [James Clear. The Evolution of Anxiety: Why We Worry and What to Do About It](https://jamesclear.com/evolution-of-anxiety)
-
+- [James Clear. The Evolution of Anxiety: Why We Worry and What to Do About It](https://jamesclear.com/evolution-of-anxiety)

@@ -1,7 +1,7 @@
 ---
 title: Procrastination
 excerpt: Procrastination is the action of delaying or postponing something.
-date: '2021-04-09T00:00:00.000Z'
+date: 2021-04-09
 rating: 2
 tags:
   - time-management
@@ -10,18 +10,19 @@ tags:
   - anxiety
 ---
 
-# procrastination
-
 ## Notes
 
-* Procrastination is the action of delaying or postponing something.
-* We may procrastinate because a task might be stressful and we prefer to avoid negative emotions - [Pleasure Principle](https://github.com/arantespp/arantespp.com/tree/b6972d031c3b14786c74e4cbe8941b4cc5f36c0f/zettelkasten/pleasure-principle-psychology/README.md).
-* It's also correlated to [time management](https://github.com/arantespp/arantespp.com/tree/b6972d031c3b14786c74e4cbe8941b4cc5f36c0f/tags/time-management/README.md).
-  * People tend to delay completing a task to make sure it is done "perfectly" - [Perfectionism](https://github.com/arantespp/arantespp.com/tree/b6972d031c3b14786c74e4cbe8941b4cc5f36c0f/zettelkasten/perfectionism-psychology.md).
-  * In a linear culture, people tend to stop doing some task if the time allocated to it has finished.
-* It may cause anxiety. As the deadline of a procrastinated task grows closer, they are more stressed and anxious and may decide to procrastinate more to avoid this stress.
+- Procrastination is the action of delaying or postponing something.
+
+- We may procrastinate because a task might be stressful and we prefer to avoid negative emotions - [Pleasure Principle](/zettelkasten/pleasure-principle-psychology).
+
+- It's also correlated to [time management](/tags/time-management).
+
+  - People tend to delay completing a task to make sure it is done "perfectly" - [Perfectionism](/zettelkasten/perfectionism-psychology.md).
+  - In a linear culture, people tend to stop doing some task if the time allocated to it has finished.
+
+- It may cause anxiety. As the deadline of a procrastinated task grows closer, they are more stressed and anxious and may decide to procrastinate more to avoid this stress.
 
 ## References
 
-* [Wikipedia. Procrastination](https://en.wikipedia.org/wiki/Procrastination)
-
+- [Wikipedia. Procrastination](https://en.wikipedia.org/wiki/Procrastination)

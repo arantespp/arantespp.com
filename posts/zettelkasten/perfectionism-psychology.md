@@ -1,2 +1,0 @@
-# perfectionism-psychology
-
