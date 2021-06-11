@@ -1,5 +1,5 @@
 import { useSWRInfinite } from 'swr';
-import { Box, Button, Flex, Themed } from 'theme-ui';
+import { Box, Button, Flex, Text, Themed } from 'theme-ui';
 
 import { Journal as JournalType } from '../lib/files';
 
@@ -16,27 +16,41 @@ const getKey = (page: number, previousPageData: any) => {
 };
 
 const Journal = () => {
-  const { data, isValidating, size, setSize } = useSWRInfinite<{
+  const { data, size, setSize } = useSWRInfinite<{
     journals: JournalType[];
   }>(getKey, fetcher);
 
-  const markdown = (data?.flatMap(({ journals }) => journals) || []).reduce(
-    (acc, journal) => {
-      return [acc, `### ${journal?.date}`, journal?.content].join('\n');
-    },
-    '',
-  );
+  const showLoadMore = data && data[data?.length - 1].journals.length !== 0;
+
+  const journals = data?.flatMap((d) => d.journals) || [];
+
+  const markdown = journals.reduce((acc, journal) => {
+    return [acc, `### ${journal?.date}`, journal?.content].join('\n');
+  }, '');
 
   return (
     <>
       <HTMLHeaders noIndex />
       <Themed.h1>Journal</Themed.h1>
-      <Box sx={{ marginTop: 6, marginBottom: 5 }}>
-        {isValidating ? <Loading /> : <Markdown noH1 content={markdown} />}
+      <Box sx={{ marginY: 5 }}>
+        {!data ? (
+          <Loading />
+        ) : (
+          <>
+            <Flex sx={{ justifyContent: 'flex-end' }}>
+              <Text sx={{ fontStyle: 'italic', color: 'gray' }}>
+                {journals.length} days.
+              </Text>
+            </Flex>
+            <Markdown noH1 content={markdown} />
+          </>
+        )}
       </Box>
-      <Flex sx={{ justifyContent: 'center' }}>
-        <Button onClick={() => setSize(size + 1)}>Load More</Button>
-      </Flex>
+      {showLoadMore && (
+        <Flex sx={{ justifyContent: 'center' }}>
+          <Button onClick={() => setSize(size + 1)}>Load More</Button>
+        </Flex>
+      )}
     </>
   );
 };
