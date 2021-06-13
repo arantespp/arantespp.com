@@ -46,6 +46,14 @@ module.exports = withBundleAnalyzer({
         permanent: true,
       },
       {
+        source: '/create',
+        destination: '/articles/a-letter-to-my-friend-create',
+        permanent: true,
+      },
+      /**
+       * Temporary.
+       */
+      {
         source: '/getting-things-done',
         destination: '/_drafts/books/getting-things-done',
         permanent: false,

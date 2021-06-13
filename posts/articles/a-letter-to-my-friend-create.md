@@ -12,9 +12,11 @@ image:
 
 It's interesting how things happen to us. This week I posted a story on Instagram about a workout I had finished, and a friend sent a message congratulating me. Then, we started to talk about training and what motivates us. I said that what motivates me was [the five years habits project](/articles/five-habits-for-the-next-five-years). The "interesting" part happened because our conversation became different from our initial talk, only about workouts.
 
-He also read others articles, said that I'm doing great and that he'd read everything I wrote from now on. So, first of all, thank you so much for your support. I do appreciate that. It's fuel for me to continue what I'm doing, that is, writing and hoping that I can impact an immense number of lives. So, because of all this, I'm writing this letter to you.
+He also read others articles, said that I'm doing great and that he'd read everything I wrote from now on. First of all, thank you so much for your support. I do appreciate that. It's fuel for me to continue what I'm doing, that is, writing and hoping that I can impact an immense number of lives. Because of all this, I'm writing this letter to you.
 
-Before starting our letter, I need to create some context. My friend told me that it's very cool what I'm doing with my website. He'd want to do something like this, but he thinks that this isn't easy. He also asked me if I want to impact many people because I don't share my posts very often and that I need to divulge them more. So, given this context, here is my letter for you.
+Before starting our letter, I need to create some context. My friend told me that it's awe-inspiring what I'm doing with my website. He'd want to do something like this, but he thinks that this isn't easy. He also asked me if I want to impact many people because I don't share my posts very often and that I need to divulge more. Given this context, here is my letter for you.
+
+_I've taken some ideas from [How to Live, by Derek Sivers](https://sive.rs/h)._
 
 ## The Letter
 
