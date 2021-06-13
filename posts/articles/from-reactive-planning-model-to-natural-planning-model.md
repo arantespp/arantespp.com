@@ -1,5 +1,5 @@
 ---
-title: From Reactive Planning Model to Natural Planning model
+title: From Reactive Planning Model to Natural Planning Model
 excerpt: Until some point, the project was manageable, but after some feature requests and bug reports, it becomes unfeasible. Almost every bug fix or feature implementation broke other "uncorrelated" parts of the application. That slowed us down a lot because our client and his customers were using the software, and we had to rush to fix the new bugs (yes, we didn't have testing at that time).
 date:
 tags:
@@ -62,4 +62,4 @@ It was a rich path we've been through because we've learned and experienced many
 
 Once you adopt the natural planning in your file, the next thing you must do is answering the question:
 
-> _Which purpose and principles will guide you?_
+> _What purpose and principles will guide you?_

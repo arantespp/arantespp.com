@@ -1,5 +1,5 @@
 ---
-title: Five habits for the next five years
+title: Five Habits for the Next Five Years
 excerpt: Habits are the less spent energy strategy that we can use to achieve goals in our life. Habits require more time to complete the objectives, require more consistency, but it lasts forever.
 date: 2021-01-02
 tags:
@@ -10,7 +10,7 @@ image:
   alt: Photo by <a href="https://unsplash.com/@drew_beamer?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Drew Beamer</a> on <a href="https://unsplash.com/s/photos/habits?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
 ---
 
-# Five habits for the next five years
+# Five Habits for the Next Five Years
 
 2020 was an atypical year for everyone, in particular related to motivation. At the beginning of the pandemics, I tried to achieve some goals, like reading or training more. After a few days, as you can imagine, I gave up on achieving those goals. But these dropouts didn't happen only in the last year. Over the years, I always had a massive list of projects that I started but couldn't finish.
 
@@ -33,7 +33,7 @@ Once we understand this loop and know how to use the steps in our favor, it beco
 
 The next book I want to read is [The 7 Habits of Highly Effective People](https://www.amazon.com/dp/1451639619), and the after is [The Power of Habit](https://www.amazon.com/dp/B007EJSMC8). I'm enjoying studying habits, it's a fascinating subject. However, I'm not only learning. Further, I'm creating some in my life (good ones).
 
-## The five habits
+## The Five Habits
 
 While reading Atomic Habits, I've decided to create five habits in my life:
 
@@ -47,7 +47,7 @@ I'm starting slowly. First, I started with exercises. After waking up, meditate,
 
 I've also decided to practice these habits for the next five years because I want to see what will happen to my life, but I don't want to stop after these years.
 
-## How is it going?
+## How Is It going?
 
 It's been about eight months that I'm on this habit journey. It was not so easy. When I was practicing only one habit, doing exercises, it was easy to keep it up. Once I added one more, the challenge to keep them up increases, and so on. Currently, in January 2021, I manage three: exercises, meditating, and reading every day. Slowly I'm adding the write every day.
 

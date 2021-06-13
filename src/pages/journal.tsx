@@ -37,9 +37,9 @@ const Journal = () => {
           <Loading />
         ) : (
           <>
-            <Flex sx={{ justifyContent: 'flex-end' }}>
+            <Flex sx={{ justifyContent: 'flex-start' }}>
               <Text sx={{ fontStyle: 'italic', color: 'gray' }}>
-                {journals.length} days.
+                Total: {journals.length} days.
               </Text>
             </Flex>
             <Markdown noH1 content={markdown} />
