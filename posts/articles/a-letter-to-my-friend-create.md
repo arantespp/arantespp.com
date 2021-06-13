@@ -1,5 +1,5 @@
 ---
-title: 'A Letter to My Friend: Create'
+title: 'A Letter to My Friend - Create'
 excerpt: I like writing because it's timeless. It's telepathy. Maybe what you write now will reach someone that will need to read it, in another time, whether days or decades from now, in another space across the world. You'll be connecting your mind with theirs.
 date: 2021-06-13
 tags:
