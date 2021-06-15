@@ -16,11 +16,28 @@ const getKey = (page: number, previousPageData: any) => {
 };
 
 const Journal = () => {
-  const { data, size, setSize } = useSWRInfinite<{
+  const { data, isValidating, size, setSize } = useSWRInfinite<{
     journals: JournalType[];
   }>(getKey, fetcher);
 
-  const showLoadMore = data && data[data?.length - 1].journals.length !== 0;
+  const showLoadMore = (() => {
+    if (!data) {
+      return false;
+    }
+
+    if (data[data.length - 1].journals.length === 0) {
+      return false;
+    }
+
+    /**
+     * Last two data has different length.
+     */
+    if (data.length > 1 && data[data.length - 1] !== data[data.length - 2]) {
+      return false;
+    }
+
+    return true;
+  })();
 
   const journals = data?.flatMap((d) => d.journals) || [];
 
@@ -48,7 +65,13 @@ const Journal = () => {
       </Box>
       {showLoadMore && (
         <Flex sx={{ justifyContent: 'center' }}>
-          <Button onClick={() => setSize(size + 1)}>Load More</Button>
+          <Button
+            disabled={isValidating}
+            sx={{ backgroundColor: isValidating ? 'muted' : 'primary' }}
+            onClick={() => setSize(size + 1)}
+          >
+            Load More
+          </Button>
         </Flex>
       )}
     </>
