@@ -480,23 +480,29 @@ export const getPostAndPostsRecommendations = ({
   ]);
 
   /**
-   * How many recommendations do post need to react LIMIT recommendations?
+   * How many recommendations do post need to reach LIMIT recommendations?
    */
   let targetLimit = LIMIT - referencesAndBacklinksRecommendations.length;
   /**
    * If targetLimit is zero or less, return at least one recommendation that
-   * is a reference or a backlink.
+   * is not a reference or a backlink.
    */
   targetLimit = targetLimit <= 0 ? 1 : targetLimit;
 
-  const recommendationsThatAreNotReferenceOrBacklink = getRecommendations({
-    tags,
-    group,
-  }).filter(
-    (recommendation) =>
-      !referencesAndBacklinksRecommendations
-        .map(({ href }) => href)
-        .includes(recommendation.href),
+  /**
+   * `filterRecommendations` is passed to filter posts that could be filtered
+   * ahead.
+   */
+  const recommendationsThatAreNotReferenceOrBacklink = filterRecommendations(
+    getRecommendations({
+      tags,
+      group,
+    }).filter(
+      (recommendation) =>
+        !referencesAndBacklinksRecommendations
+          .map(({ href }) => href)
+          .includes(recommendation.href),
+    ),
   );
 
   const recommendations = filterRecommendations([
