@@ -29,7 +29,7 @@ const POST_MIN_RATING = 0.5;
 
 const MAX_POSTS_BEST_MATCHES = 5;
 
-const sorts = ['Rating', 'Date', 'Title'] as const;
+const sorts = ['Rating', 'Date'] as const;
 
 type Sorts = typeof sorts[number];
 
@@ -56,7 +56,9 @@ const FilterBlock = ({
       <Text as="p" sx={{ fontWeight: 'bold', paddingBottom: 1 }}>
         {title}
       </Text>
-      <Flex sx={{ justifyContent: 'flex-start' }}>{children}</Flex>
+      <Flex sx={{ justifyContent: 'flex-start', flexDirection: 'column' }}>
+        {children}
+      </Flex>
     </Box>
   );
 };

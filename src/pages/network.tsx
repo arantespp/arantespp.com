@@ -154,11 +154,10 @@ const Network = ({
     theme: { fontSizes, sizes },
   } = useThemeUI();
 
-  const [selectedNode, setSelectedNode] =
-    React.useState<{
-      id: string;
-      group: string;
-    }>();
+  const [selectedNode, setSelectedNode] = React.useState<{
+    id: string;
+    group: string;
+  }>();
 
   const [stabilizationIterationsDone, setStabilizationIterationsDone] =
     React.useState(false);
@@ -174,7 +173,8 @@ const Network = ({
         typeof query.node === 'string' &&
         query.node === node.id
       ) {
-        Object.assign(node, { fixed: true, x: 0, y: 0 });
+        // Do something with the node id passed by URL.
+        Object.assign(node);
       }
 
       return node;
