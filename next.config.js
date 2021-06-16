@@ -4,6 +4,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
+const bitLinks = require('./bitLinks');
+
 module.exports = withBundleAnalyzer({
   async redirects() {
     return [
@@ -35,29 +37,7 @@ module.exports = withBundleAnalyzer({
       /**
        * Bit links.
        */
-      {
-        source: '/five-habits',
-        destination: '/articles/five-habits-for-the-next-five-years',
-        permanent: true,
-      },
-      {
-        source: '/no-bs-time',
-        destination: '/books/no-bs-time-management-for-entrepreneurs',
-        permanent: true,
-      },
-      {
-        source: '/create',
-        destination: '/articles/a-letter-to-my-friend-create',
-        permanent: true,
-      },
-      /**
-       * Temporary.
-       */
-      {
-        source: '/getting-things-done',
-        destination: '/_drafts/books/getting-things-done',
-        permanent: false,
-      },
+      ...bitLinks,
     ];
   },
   future: {
