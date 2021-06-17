@@ -105,6 +105,8 @@ Planning dinner out example:
 4. Outcome visioning
 5. Defining purpose and principles
 
+[An example of this case.](/articles/from-reactive-planning-model-to-natural-planning-model)
+
 Let's examine the five phases.
 
 #### Purpose
