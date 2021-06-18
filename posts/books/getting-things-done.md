@@ -163,3 +163,25 @@ Creative thinking doesn't stop here, it just takes another form. Your mind will 
   - Sequences: "First we need to check whether the restaurant is open, then call Andersons, then get dressed."
   - Priorities: "It's critical to find out if the client really would like to go to dinner."
 - Detail to the required degree.
+
+#### Next Actions
+
+The question to ask here is, "What's the next action?" If you're not ready to anwser this question, you have more to flesh out at some prior level in the natural planning sequence.
+
+The final stage of the planning model that decides about the allocation and reallocation of physical resources to get the project moving.
+
+##### The Basics
+
+- _Activating the Moving Parts_: a project is sufficiently planned for implementation when every next action step can be moved on.
+
+- _More to Plan?_: the habit of clarifying the next actions on projects is fundamental to you staying in relaxed control.
+
+- _When the Next Action is Someone Else's..._: if the next acion is not yours, you must clarify whose it is. This is a use of the [Waiting For](http://localhost:3000/_drafts/books/getting-things-done#chapter-2-getting-control-of-your-life-the-five-steps-of-mastering-workflow) action list.
+
+#### Final Questions
+
+_How Much Planning Do You Really Need to Do?_ As much as you need to get the project off your mind.
+
+_Need More Clarity?_ If greater clarity is what you need, shift your thinking up the natural planning scale.
+
+_Need More to Be Happening?_ If more action is what's needed, you need to move down the natural planning model.

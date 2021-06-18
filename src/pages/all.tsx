@@ -1,6 +1,5 @@
 import { pascalCase } from 'change-case';
 import { InferGetStaticPropsType } from 'next';
-import NextLink from 'next/link';
 import * as React from 'react';
 import { findBestMatch } from 'string-similarity';
 import {
@@ -8,7 +7,6 @@ import {
   Checkbox,
   Input,
   Label,
-  Link,
   Radio,
   Themed,
   Text,
@@ -29,7 +27,7 @@ const POST_MIN_RATING = 0.5;
 
 const MAX_POSTS_BEST_MATCHES = 5;
 
-const sorts = ['Rating', 'Date'] as const;
+const sorts = ['Rating', 'Date', 'Title'] as const;
 
 type Sorts = typeof sorts[number];
 
@@ -66,7 +64,7 @@ const FilterBlock = ({
 const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [search, setSearch] = React.useState('');
   const [debouncedSearch] = useDebounce(search, 200);
-  const [sorting, setSorting] = React.useState<Sorts>('Rating');
+  const [sorting, setSorting] = React.useState<Sorts>('Date');
   const [showGroups, setShowGroups] = React.useState([...GROUPS]);
 
   const [filteredPosts, setFilteredPosts] = React.useState(allPosts);
@@ -83,8 +81,8 @@ const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
       const postPropertiesToBeCompared: Array<keyof Post> = [
         'title',
-        'content',
         'tags',
+        'content',
       ];
 
       /**
@@ -157,21 +155,8 @@ const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Themed.h1>All Posts</Themed.h1>
-      <Box sx={{ marginY: 4 }}>
-        <NextLink href="/network" passHref>
-          <Link>
-            Check The Network the see all posts, tags, and their connections.
-          </Link>
-        </NextLink>
-      </Box>
 
-      <Box
-        sx={{
-          '& > div:last-child': {
-            paddingBottom: 5,
-          },
-        }}
-      >
+      <Box sx={{ marginBottom: 5, marginTop: 4 }}>
         <FilterBlock title="Search:">
           <Input
             placeholder="What do you want to read?"
@@ -203,7 +188,7 @@ const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
           ))}
         </FilterBlock>
 
-        <FilterBlock title="Sort Posts By:">
+        <FilterBlock title="Sort Posts By:" hidden>
           {sorts.map((sort) => (
             <Label key={sort} sx={{ marginRight: 3, width: 'auto' }}>
               <Radio

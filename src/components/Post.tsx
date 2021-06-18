@@ -77,7 +77,12 @@ const PostComponent = ({ post }: { post: Post }) => {
         )}
       </Flex>
       <Flex sx={{ justifyContent: 'center', marginTop: 5, marginBottom: 6 }}>
-        <Image sx={{ height: '1.5em', marginLeft: 1 }} src="/rose.png" />
+        <Image
+          role="button"
+          onClick={() => window.scroll({ top: 0, left: 0 })}
+          sx={{ height: '1.5em', marginLeft: 1, cursor: 'pointer' }}
+          src="/rose.png"
+        />
       </Flex>
       <SharePost post={post} />
     </>
