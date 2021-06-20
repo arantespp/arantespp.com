@@ -213,7 +213,7 @@ Make inviolate appointments with yourself as you have your locked-in-stone appoi
 
 #### 8. Minimize Unplanned Activity
 
-This technique is very interesting. An unplanned activity means that it doesn't have a start and end time, so it may never finish. As stated by [Parkinson's Law](/zettelkasten/parkinsons-law):
+This technique is very interesting. An unplanned activity means that it doesn't have a start and end time, so it may never finish. As stated by [Parkinson's Law](/zettelkasten/parkinson-s-law):
 
 > Work expands to fill the time available for its completion.
 

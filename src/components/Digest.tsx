@@ -11,15 +11,7 @@ const Digest = () => (
     }}
   >
     <Heading as="h2" sx={{ textAlign: 'center' }}>
-      <Link
-        href="https://www.getrevue.co/profile/arantespp"
-        sx={{
-          color: 'primary',
-          '&:hover': {
-            color: 'link',
-          },
-        }}
-      >
+      <Link href="https://www.getrevue.co/profile/arantespp">
         Subscribe to my weekly digest
       </Link>
     </Heading>

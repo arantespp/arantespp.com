@@ -25,7 +25,7 @@ rating: 2
 
 - This happens because:
 
-  - We don't account for unexpected events. We may think that the time is linear - the first 90% takes 90% of the time, then the final 10% will take 10% of the time - and because [Parkinson's Law](/zettelkasten/parkinsons-law), we project the whole time to the expected tasks. This leaves us with a little time to unexpected.
+  - We don't account for unexpected events. We may think that the time is linear - the first 90% takes 90% of the time, then the final 10% will take 10% of the time - and because [Parkinson's Law](/zettelkasten/parkinson-s-law), we project the whole time to the expected tasks. This leaves us with a little time to unexpected.
 
   - The first 90% may be the tasks that activate the [flow state](/zettelkasten/flow-state-psychology) and the last 10%, the boring tasks.
 

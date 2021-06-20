@@ -13,9 +13,9 @@ tags:
 
 - If you have $X$ time to complete some tasks and don't have enough motivation, why should you finish them in less time?
 
-  - [Parkinson's Law](/zettelkasten/parkinsons-law) acts in this scenario.
+  - [Parkinson's Law](/zettelkasten/parkinson-s-law) acts in this scenario.
 
-- A sense of ownership may be a driver of motivation and may block the effects of [Parkinson's Law](/zettelkasten/parkinsons-law).
+- A sense of ownership may be a driver of motivation and may block the effects of [Parkinson's Law](/zettelkasten/parkinson-s-law).
 
   - An [Atlassian research shows](https://www.atlassian.com/practices/open/research) that teams who have a clear vision of the bigger picture are more effective.
 
@@ -33,4 +33,4 @@ Tweet: <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ownership may pr
 
 - [Atlassian. 3 signs your team doesn’t have an ownership mindset and what to do about it](https://www.atlassian.com/blog/leadership/how-leaders-build-ownership-mindset)
 
-- [Atlassian. Is Parkinson’s Law sabotaging your productivity?](https://www.atlassian.com/blog/productivity/what-is-parkinsons-law)
+- [Atlassian. Is Parkinson’s Law sabotaging your productivity?](https://www.atlassian.com/blog/productivity/what-is-parkinson-s-law)

@@ -60,10 +60,10 @@ const Footer = () => (
     >
       <span>This website is </span>
       <Link href="https://github.com/arantespp/arantespp.com">
-        open sourced
+        open-sourced
       </Link>
       <span> under </span>
-      <Link href="/license">CC BY 4.0 licence.</Link>
+      <Link href="/license">CC BY 4.0 license.</Link>
     </Text>
   </Flex>
 );
