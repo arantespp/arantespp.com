@@ -35,25 +35,25 @@ const PostsGrid = ({
         width: 0,
         height: 0,
         overflow: 'hidden',
-        textShadow: '5px 5px 5px #000',
+        textShadow:
+          '5px 5px 5px #000, -1px -1px 2px #000, -1px 1px 2px #000, 1px -1px 2px #000',
       }}
     >
       <ThemeProvider
         theme={{
-          colors: { text: 'white' },
+          colors: { text: 'white', primary: 'orange' },
           styles: {
             h1: {
-              color: 'orange',
+              color: 'primary',
               textAlign: 'center',
               fontSize: 65,
               marginTop: 0,
               marginBottom: 3,
             },
             h2: {
-              color: 'orange',
+              color: 'primary',
               fontSize: 60,
               marginTop: 0,
-
               '&:not(:first-child)': {
                 marginTop: 5,
               },

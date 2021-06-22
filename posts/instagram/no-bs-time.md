@@ -19,10 +19,10 @@ Tempo vale mais que dinheiro.
 
 ## Transforme o seu tempo em riqueza, não em dinheiro
 
-Riqueza é o que você cria para gerar dinheiro para você
+Riqueza é o que você cria para gerar dinheiro para você.
 
-- Investimentos
-- Empresa
+- Investir
+- Criar um negócio
 
 ---
 
@@ -62,6 +62,6 @@ Cientistas, psicólogos, neurologistas, cientistas da computação, entre outros
 
 ---
 
-Acesse [arantespp.com/no-bs-time](https://arantespp.com/no-bs-time) para ver o resumo completo (em Inglês) do livro No B.S. Time Management for Entrepreneurs.
+Acesse [arantespp.com/no-bs-time](https://arantespp.com/no-bs-time) para ver o resumo completo (em Inglês) do livro **No B.S. Time Management for Entrepreneurs**.
 
-Foto do background por Kevin Ku no Unsplash.
+Imagem de fundo por Kevin Ku no Unsplash.
