@@ -162,6 +162,9 @@ const partialTheme = {
   buttons: {
     primary: {
       cursor: 'pointer',
+      '&:disabled': {
+        backgroundColor: 'muted',
+      },
     },
   },
   cards: {

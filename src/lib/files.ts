@@ -141,6 +141,31 @@ type GetPartialPostProps = {
   slug: string;
 };
 
+const readMarkdown = async ({
+  folder,
+  filename,
+}: {
+  folder: string;
+  filename: string;
+}) => {
+  const fullPath = path.join(postsDirectory, folder, filename);
+  const fileContents = await fs.promises.readFile(fullPath, 'utf8');
+  const { data, content } = matter(fileContents);
+  const slug = filename.replace('.md', '');
+  return { data, content, folder, filename, slug };
+};
+
+const readFolderMarkdowns = async ({ folder }: { folder: string }) => {
+  const fullFolderPath = path.join(postsDirectory, folder);
+  const filenames = (await fs.promises.readdir(fullFolderPath)).filter((dir) =>
+    dir.endsWith('.md'),
+  );
+  const markdowns = await Promise.all(
+    filenames.map((filename) => readMarkdown({ folder, filename })),
+  );
+  return markdowns;
+};
+
 /**
  * It does not return backlinks.
  */
@@ -519,36 +544,26 @@ export const getJournals = async (page: number) => {
   try {
     const limit = 7;
 
-    const filenames = (
-      await fs.promises.readdir(path.join(postsDirectory, 'journal'))
-    )
+    const markdowns = await readFolderMarkdowns({ folder: 'journal' });
+
+    const journals = markdowns
+      .map(({ content, slug }) => {
+        try {
+          const date = dateFns.format(getDateWithTimezone(slug), 'PPPP');
+          return { content, date };
+        } catch {
+          return undefined;
+        }
+      })
       /**
        * Most recent first.
        */
       .reverse()
-      .splice(page * limit, limit);
-
-    const journals = (
-      await Promise.all(
-        filenames.map(async (filename) => {
-          try {
-            const fullPath = path.join(postsDirectory, 'journal', filename);
-            const file = await fs.promises.readFile(fullPath, 'utf8');
-            const { content } = matter(file);
-            const date = dateFns.format(
-              getDateWithTimezone(filename.replace('.md', '')),
-              'PPPP',
-            );
-            return { content, date };
-          } catch {
-            return undefined;
-          }
-        }),
-      )
-    ).filter((journal) => !!journal);
+      .splice(page * limit, limit)
+      .filter((journal) => !!journal);
 
     return journals;
-  } catch (er) {
+  } catch {
     return [];
   }
 };
@@ -558,3 +573,25 @@ type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
 export type Journal = NonNullable<
   ThenArg<ReturnType<typeof getJournals>>[number]
 >;
+
+export const getInstagramPost = async ({ slug }: { slug: string }) => {
+  const { data, ...rest } = await readMarkdown({
+    folder: 'instagram',
+    filename: `${slug}.md`,
+  });
+  const { title } = data as { title: string };
+  return { title, ...rest };
+};
+
+export type InstagramPost = NonNullable<
+  ThenArg<ReturnType<typeof getInstagramPost>>
+>;
+
+export const getInstagramPosts = async () => {
+  try {
+    const markdowns = await readFolderMarkdowns({ folder: 'instagram' });
+    return markdowns;
+  } catch {
+    return [];
+  }
+};

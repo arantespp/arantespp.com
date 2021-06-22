@@ -73,7 +73,9 @@ const Revue = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
       </Themed.p>
       <Box sx={{ marginY: 5 }}>
         <Text sx={{ fontSize: 1, color: 'gray', fontStyle: 'italic' }}>
-          Posts since {dateFns.format(getLastMonday(), 'PPPP')}:
+          Posts since {dateFns.format(getLastMonday(), 'PPPP')} (including{' '}
+          {dateFns.format(getLastMonday(), 'PPP')} but not{' '}
+          {dateFns.format(nextDigestDate, 'PPP')}):
         </Text>
         <RecommendationsList recommendations={revuePosts} />
       </Box>

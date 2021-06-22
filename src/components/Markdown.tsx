@@ -123,7 +123,9 @@ const Heading = ({
 /**
  * https://github.com/rexxars/react-markdown/tree/c63dccb8185869cfc73c257d098a123ef7a7cd33#node-types
  */
-const components = ({ noH1 = true }: { noH1?: boolean } = {}): Components => ({
+const getComponents = ({
+  noH1 = true,
+}: { noH1?: boolean } = {}): Components => ({
   ...(Themed as any),
   h1: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
     <Heading {...{ children, level, noH1 }} />
@@ -211,10 +213,18 @@ const components = ({ noH1 = true }: { noH1?: boolean } = {}): Components => ({
   ),
 });
 
-const Markdown = ({ content, noH1 }: { content: string; noH1?: boolean }) => {
+const Markdown = ({
+  content,
+  components,
+  noH1,
+}: {
+  content: string;
+  components?: Components;
+  noH1?: boolean;
+}) => {
   return (
     <ReactMarkdown
-      components={components({ noH1 })}
+      components={{ ...getComponents({ noH1 }), ...components }}
       /**
        * https://katex.org/docs/supported.html
        * https://github.com/remarkjs/remark-math
