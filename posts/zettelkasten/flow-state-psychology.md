@@ -6,7 +6,7 @@ tags:
   - focus
   - psychology
   - Mihály Csíkszentmihályi
-rating: 2
+rating: 3
 ---
 
 ## Notes
