@@ -12,4 +12,10 @@ book:
   ASIN: B00K7OWG7O
 ---
 
-TO READ
+## Notes
+
+### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
+
+Cadence enforces small batch size by forcing work products to move forward on a fixed rhythm. For example, if the review is every X time, the batch size is X time worth of work.
+
+It also enforces small batch sizes because it removes coordination overhead, the transaction cost. Everyone knows that the event will occur on some date, so there is no overhead associated with setting up the event. With the lower transaction cost, small batches are economical.
