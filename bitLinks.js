@@ -28,4 +28,9 @@ module.exports = [
     destination: '/_drafts/books/getting-things-done',
     permanent: false,
   },
+  {
+    source: '/product-development-flow',
+    destination: '/_drafts/books/the-principles-of-product-development-flow',
+    permanent: false,
+  },
 ];

@@ -12,9 +12,21 @@ book:
   ASIN: B00K7OWG7O
 ---
 
-## Notes
+## Principles
 
-### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
+### The Economic View
+
+#### E1: The Principle of Quantified Overall Economics: Select actions based on quantified overall economic impact.
+
+You should consider the economic impact of all possible decisions when you have to make a project decision. Choosing between releasing a project soon without many tests or testing more and release later should be an economic, not a philosophical choice.
+
+#### E2. The Principle of Interconnected Variables: We can't just change one thing.
+
+One decision almost always simultaneously affects multiple variables. [Proxy variables](/zettelkasten/proxy-variable) are interconnected because they represent other variables.
+
+### Controlling Flow Under Uncertainty
+
+#### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
 
 Cadence enforces small batch size by forcing work products to move forward on a fixed rhythm. For example, if the review is every X time, the batch size is X time worth of work.
 

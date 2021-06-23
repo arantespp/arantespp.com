@@ -16,11 +16,15 @@ Instead of creating an "about me" page, I've decided to make the [now page](/now
 
 ### [All](/all)
 
-I can find any posts by searching a specific keyword on [all page](/all). This feature comes in handy because sometimes I forget about some topic I've written, but I know that there are some notes about it in some post.
+I can find any posts by searching a specific keyword on [all page](/all). This feature comes in handy because sometimes I forget about some topic I've written, but I know there are some notes about it in some posts.
 
 ### [Contact](/contact)
 
 It's my [contact page](/contact) that I send to other people to share my social media profiles. It's my business card.
+
+### [Drafts](/_drafts)
+
+It contains [unfinished posts](/_drafts). Search engines don't index these posts. Sometimes the post is already finished, but it remains a draft to get a final review after some days.
 
 ### [Network](/network)
 

@@ -52,4 +52,14 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
   },
+  overrides: [
+    {
+      files: ['**/*.js', '**/*.jsx'],
+      rules: {
+        '@typescript-eslint': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/camelcase': 'off',
+      },
+    },
+  ],
 };
