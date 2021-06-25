@@ -1,5 +1,15 @@
 module.exports = [
   {
+    source: '/c',
+    destination: '/contact',
+    permanent: true,
+  },
+  {
+    source: '/j',
+    destination: '/journal',
+    permanent: true,
+  },
+  {
     source: '/five-habits',
     destination: '/articles/five-habits-for-the-next-five-years',
     permanent: true,
