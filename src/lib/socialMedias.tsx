@@ -4,6 +4,7 @@ import {
   faGithub,
   faInstagram,
   faLinkedinIn,
+  faMedium,
   faReddit,
   faStackOverflow,
   faTelegramPlane,
@@ -48,6 +49,10 @@ export const socialMedias = {
   StackOverflow: {
     href: 'https://stackoverflow.com/users/8786986/pedro-arantes',
     faIcon: faStackOverflow,
+  },
+  Medium: {
+    href: 'https://medium.com/@arantespp',
+    faIcon: faMedium,
   },
   Reddit: {
     href: 'https://www.reddit.com/user/arantespp',

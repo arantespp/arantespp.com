@@ -8,6 +8,7 @@ import {
   Flex,
   Grid,
   Image,
+  Link,
   Text,
   Themed,
   ThemeProvider,
@@ -29,30 +30,39 @@ const PostsGrid = ({
 }) => {
   const size = 1080;
 
+  const margin = size * 0.1;
+
+  const h1Size = 65;
+
+  /**
+   * Major Second
+   * https://twitter.com/siddharthkp/status/1262038126794551296/photo/1
+   */
+  const fontRatio = 8 / 9;
+
+  const fontSizes = [...new Array(6)]
+    .map((_, index) => h1Size * fontRatio ** index)
+    .reverse();
+
   return (
     <Box
       sx={{
         width: 0,
         height: 0,
         overflow: 'hidden',
-        textShadow:
-          '5px 5px 5px #000, -1px -1px 2px #000, -1px 1px 2px #000, 1px -1px 2px #000',
       }}
     >
       <ThemeProvider
         theme={{
-          colors: { text: 'white', primary: 'orange' },
+          fontSizes,
           styles: {
             h1: {
               color: 'primary',
               textAlign: 'center',
-              fontSize: 65,
               marginTop: 0,
               marginBottom: 3,
             },
             h2: {
-              color: 'primary',
-              fontSize: 60,
               marginTop: 0,
               '&:not(:first-child)': {
                 marginTop: 5,
@@ -60,14 +70,11 @@ const PostsGrid = ({
             },
             p: {
               color: 'text',
-              fontSize: 50,
+              fontSize: 2,
             },
             ul: {
               color: 'text',
-              fontSize: 50,
-            },
-            a: {
-              color: 'text',
+              fontSize: 2,
             },
           },
         }}
@@ -89,35 +96,30 @@ const PostsGrid = ({
                 position: 'relative',
                 width: size,
                 height: size,
-                backgroundImage:
-                  'url(/images/kevin-ku-aiyBwbrWWlo-unsplash.jpg)',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                backgroundPositionX: `${(index * 100) / (pages.length - 1)}%`,
+                backgroundColor: 'background',
               }}
             >
-              <Text
-                as="a"
+              <Link
+                href="https://arantespp.com/no-bs-time"
                 sx={{
                   position: 'absolute',
-                  top: 60,
-                  right: 60,
+                  top: margin / 2,
+                  right: margin / 2,
                   transform: 'translateY(-50%)',
-                  color: 'white',
-                  fontSize: 30,
-                  textDecoration: 'underline',
+                  fontSize: 0,
                 }}
               >
                 arantespp.com/no-bs-time
-              </Text>
+              </Link>
 
               <Text
                 sx={{
                   position: 'absolute',
-                  bottom: 30,
-                  color: 'white',
-                  fontSize: 30,
-                  right: 60,
+                  bottom: margin / 2,
+                  transform: 'translateY(50%)',
+                  color: 'text',
+                  fontSize: 0,
+                  right: margin / 2,
                 }}
               >
                 {index + 1}/{pages.length}
@@ -127,9 +129,10 @@ const PostsGrid = ({
                 <Flex
                   sx={{
                     position: 'absolute',
-                    bottom: 30,
-                    color: 'white',
-                    fontSize: 40,
+                    bottom: margin / 2,
+                    transform: 'translateY(50%)',
+                    color: 'text',
+                    fontSize: 0,
                     justifyContent: 'center',
                     width: '100%',
                   }}
@@ -141,7 +144,7 @@ const PostsGrid = ({
               <Flex
                 sx={{
                   flexDirection: 'column',
-                  padding: 100,
+                  padding: margin,
                   height: '100%',
                   ...(isLastPage
                     ? {
@@ -257,7 +260,7 @@ const InstagramPost = ({ content, slug, title }: InstagramPostProps) => {
           {images.map((image, index) => {
             const key = index;
             return (
-              <Box key={key}>
+              <Box key={key} sx={{ border: '1px solid', borderColor: 'muted' }}>
                 <Image src={image} sx={{ width: '100%', height: '100%' }} />
               </Box>
             );

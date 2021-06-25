@@ -37,7 +37,7 @@ const colors = {
   gray: '#515151',
   lightGray,
   link: lightGray,
-  background: '#fff',
+  background: '#fcfcfc',
   primary: palette.imperialRed,
   secondary: palette.imperialRed,
   accent: palette.celadonBlue,

@@ -1,8 +1,5 @@
 ---
 title: No B.S. Time Management for Entrepreneurs
-background:
-  url: kevin-ku-aiyBwbrWWlo-unsplash.jpg
-orientation: square
 ---
 
 _Resumo do livro_
@@ -15,7 +12,7 @@ _Resumo do livro_
 
 ## Tempo é o seu ativo mais precioso
 
-Tempo vale mais que dinheiro.
+**Tempo** vale mais que dinheiro.
 
 ## Transforme o seu tempo em riqueza, não em dinheiro
 
@@ -32,7 +29,7 @@ Entender o valor do tempo (dentro) é mais importante que ferramentas de gerenci
 
 ## Encontre o seu Mastermind
 
-Segundo Napoleon Hill, ter um Mastermind ajuda na sua evolução pessoal.
+Segundo Napoleon Hill, ter um **Mastermind** ajuda na sua evolução pessoal, e, consequentemente, na forma como você lida com o tempo.
 
 ---
 
@@ -42,26 +39,24 @@ Aprenda a controlar as atividades durante o seu dia.
 
 ## Remova os "Vampiros do Tempo" da sua vida
 
-Vampiros do Tempo são atividades que suga o seu tempo aos poucos. Evite olhar as redes sociais e o seu celular com muita frequência, por exemplo.
+Vampiros do Tempo são atividades que **sugam** o seu tempo aos poucos. Evite olhar as redes sociais e o seu celular com muita frequência, por exemplo.
 
 ---
 
 ## Demita você mesmo. Substitua você mesmo
 
-Crie atividades das quais você possa se demitir e delegar para outras pessoas.
+Crie atividades das quais você possa _"se demitir"_ e delegue para outras pessoas.
 
 ## Seja pontual
 
-Quando você aprende a valorizar o seu tempo e o tempo dos outros, automaticamente você se torna pontual.
+Quando você aprende a **valorizar** o seu tempo e o tempo dos outros, automaticamente você se torna pontual, e vice-versa.
 
 ---
 
 ## Tome cuidado com as redes sociais
 
-Cientistas, psicólogos, neurologistas, cientistas da computação, entre outros, projetaram as redes sociais para serem viciantes. Eles criaram elementos e tecnologias para capturar a nossa atenção e o nosso tempo.
+Cientistas, psicólogos, neurologistas, cientistas da computação, entre outros, projetaram as redes sociais para serem **viciantes**. Eles criaram elementos e tecnologias para capturar a nossa atenção e o nosso tempo.
 
 ---
 
 Acesse [arantespp.com/no-bs-time](https://arantespp.com/no-bs-time) para ver o resumo completo (em Inglês) do livro **No B.S. Time Management for Entrepreneurs**.
-
-Imagem de fundo por Kevin Ku no Unsplash.
