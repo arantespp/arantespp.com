@@ -185,3 +185,9 @@ _How Much Planning Do You Really Need to Do?_ As much as you need to get the pro
 _Need More Clarity?_ If greater clarity is what you need, shift your thinking up the natural planning scale.
 
 _Need More to Be Happening?_ If more action is what's needed, you need to move down the natural planning model.
+
+### Chapter 4 - Getting Started: Setting Up the Time, Space, and Tools
+
+You need to set up tricks so that your not-so-smart, not-so-conscious part behaves as your smart part want. For instance, if you put something that you need to take to work, you may put it in front of the door, so the next day you'll see and remember, "Oh, I need to take this." Your purpose is that the "door" is going to be the door of your mind, not your house.
+
+The big secret of efficient creative and productive thinking and action is to put the right things in your focus at the right time. You need to pay attention to the details because the whole will be greater than the sum of the parts.

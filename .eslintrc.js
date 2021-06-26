@@ -31,6 +31,11 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    // https://stackoverflow.com/a/55863857/8786986
+    'import/no-extraneous-dependencies': [
+      'error',
+      { devDependencies: ['**/testUtils.ts', '**/*.spec.ts', '**/*.spec.tsx'] },
+    ],
     'import/prefer-default-export': 'off',
     // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/402#issuecomment-368305051
     'jsx-a11y/anchor-is-valid': [

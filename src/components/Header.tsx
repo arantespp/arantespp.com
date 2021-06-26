@@ -6,7 +6,7 @@ import PedroArantes from './PedroArantes';
 
 import { GROUPS } from '../lib/groups';
 
-const navs = [...GROUPS, 'now'];
+const navs = [...GROUPS, 'contact', 'now'];
 
 const Header = () => (
   <Flex

@@ -2,14 +2,13 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import * as React from 'react';
-import { ThemeProvider } from 'theme-ui';
 
 import HTMLHeaders from '../components/HTMLHeaders';
 import Layout from '../components/Layout';
 
 import { socialMedias } from '../lib/socialMedias';
 
-import { theme } from '../theme';
+import Providers from '../providers/Providers';
 
 import '../katex.css';
 
@@ -69,13 +68,13 @@ const DefaultHeaders = () => {
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <ThemeProvider theme={theme}>
+    <Providers>
       <DefaultHeaders />
       <HTMLHeaders title={title} description={description} />
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </ThemeProvider>
+    </Providers>
   );
 };
 

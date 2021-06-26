@@ -32,7 +32,11 @@ const Journal = () => {
     /**
      * Last two data has different length.
      */
-    if (data.length > 1 && data[data.length - 1] !== data[data.length - 2]) {
+    if (
+      data.length > 1 &&
+      data[data.length - 1].journals.length !==
+        data[data.length - 2].journals.length
+    ) {
       return false;
     }
 
