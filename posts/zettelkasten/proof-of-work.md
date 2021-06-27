@@ -1,6 +1,6 @@
 ---
 title: Proof of Work
-excerpt: Is a form of cryptography zero-knowledge proof that one part, the prover, proves to others, the verifies, that some amount of computational resources was used to complete some task.
+excerpt: It is a form of cryptography zero-knowledge proof that one part, the prover, proves to others, the verifies, that they used some amount of computational resources to complete some task.
 date: 2021-03-07
 rating: 2
 tags:
@@ -14,23 +14,23 @@ tags:
 
 ## Notes
 
-- Is a form of cryptography zero-knowledge proof that one part, the prover, proves to others, the verifies, that some amount of computational resources was used to complete some task.
+- It is a form of cryptography zero-knowledge proof that one part, the prover, proves to others, the verifies, that they used some amount of computational resources to complete some task.
 
-- It was invented by [Cynthia Dwork](https://en.wikipedia.org/wiki/Cynthia_Dwork) and [Moni Namor](https://en.wikipedia.org/wiki/Moni_Naor) in 1993 as an effort to deter denial-of-service attacks and other services abuses such as spam.
+- [Cynthia Dwork](https://en.wikipedia.org/wiki/Cynthia_Dwork) and [Moni Namor](https://en.wikipedia.org/wiki/Moni_Naor) invented it in 1993 to deter denial-of-service attacks and other service abuses such as spam.
 
-  - It costs some effort to the attacker to make a request. Thus, it becomes inviable to send a big amount of requests in a short period.
+  - It costs some effort for the attacker to make a request. Thus, it becomes inviable to send a large number of requests in a short period.
 
 - It's asymmetric:
 
   - It must be hard enough to provers finish the work.
-  - It must be easy to verify validate the provers result.
+  - It must be easy to validate the prover's result.
 
-- It was popularized by [Bitcoin](/zettelkasten/bitcoin).
-  - Miners spend some computational resources to append blocks on [blockchain](/zettelkasten/blockchain).
+- [Bitcoin](/zettelkasten/bitcoin) popularized it.
+  - Miners spend some computational resources to append blocks on the [blockchain](/zettelkasten/blockchain).
 
 ## Questions
 
-- It is a cryptography zero-knowledge. May we compare this as the gold miners, in which they need mostly physical force to find gold?
+- It is a cryptography zero-knowledge. May we compare this to the gold miners, who need primarily physical force to find gold?
 
 - What is the difference between [CAPTCHA](/zettelkasten/CAPTCHA) and proof of work?
 

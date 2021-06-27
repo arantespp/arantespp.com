@@ -51,7 +51,7 @@ const Journal = () => {
 
   return (
     <>
-      <HTMLHeaders noIndex />
+      <HTMLHeaders noIndex title="Journal" />
       <Themed.h1>Journal</Themed.h1>
       <Box sx={{ marginY: 5 }}>
         {!data ? (

@@ -35,7 +35,7 @@ const IndexPage = ({
         keywords={keywords}
       />
       {content && (
-        <Box sx={{ marginBottom: 5 }}>
+        <Box sx={{ marginBottom: 6 }}>
           <Markdown content={content} noH1={false} />
         </Box>
       )}

@@ -24,6 +24,16 @@ You should consider the economic impact of all possible decisions when you have 
 
 One decision almost always simultaneously affects multiple variables. [Proxy variables](/zettelkasten/proxy-variable) are interconnected because they represent other variables.
 
+#### E3. The Principle of Quantified Cost of Delay If you only quantify one thing, quantify the cost of delay.
+
+We don't have business trading money for cicly time if we don't know the economic value of cycle time. No single sensitivity is more eye-opening the cost of delay (COD). The economics of flow is dominated by the cost of queues, that need COD to be determined.
+
+#### E4. The Principle of Economic Value-Added: The value added by an activity is the change in the econimic value of the work product.
+
+The value added by an activity is the difference in the price that an economically rational buyer would pay for a work before, and after, the activity performed.
+
+Waste, or non-value-added, is also an economic concept. We must convert waste in life-cycle profit to compare and trade-off different wastes.
+
 ### Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.

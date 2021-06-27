@@ -29,6 +29,7 @@ const NotFound = () => {
         <NextLink href={draftHref}>
           <Link
             sx={{
+              cursor: 'pointer',
               textDecoration: 'underline',
             }}
           >
