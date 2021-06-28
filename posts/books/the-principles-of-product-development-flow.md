@@ -26,13 +26,19 @@ One decision almost always simultaneously affects multiple variables. [Proxy var
 
 #### E3. The Principle of Quantified Cost of Delay If you only quantify one thing, quantify the cost of delay.
 
-We don't have business trading money for cicly time if we don't know the economic value of cycle time. No single sensitivity is more eye-opening the cost of delay (COD). The economics of flow is dominated by the cost of queues, that need COD to be determined.
+We don't have business trading money for cycle time if we don't know the economic value of cycle time. No single sensitivity is more eye-opening than the cost of delay (COD). Cost of queues, determined by COD, dominates the economics of Flow.
 
-#### E4. The Principle of Economic Value-Added: The value added by an activity is the change in the econimic value of the work product.
+#### E4. The Principle of Economic Value-Added: The value added by an activity is the change in the economic value of the work product.
 
-The value added by an activity is the difference in the price that an economically rational buyer would pay for a work before, and after, the activity performed.
+The value added by an activity is the difference in the price that an economically rational buyer would pay for work before and after the action performed.
 
-Waste, or non-value-added, is also an economic concept. We must convert waste in life-cycle profit to compare and trade-off different wastes.
+Waste, or non-value-added, is also an economic concept. We must convert the waste in life-cycle profit to compare and other trade-off wastes.
+
+#### E5. The Inactivity Principle: Watch the work product, not the worker.
+
+Making activities more efficient is much less important than eliminating **inactivity**. Our most significant waste isn't unproductive engineers in product development but work products sitting idle in queues.
+
+Inventory is the most significant waste in manufacturing because it destroys quality, efficiency, and cycle time. When we increase value-added time in a process with variability, we will create queues. The cost of these queues is far greater than any efficiency savings that come from the value-added increase.
 
 ### Controlling Flow Under Uncertainty
 
