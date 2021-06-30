@@ -24,24 +24,26 @@ import PedroArantes from './PedroArantes';
 const PostsGrid = ({
   pages,
   postsRefs,
+  header,
 }: {
   pages: string[];
   postsRefs?: React.MutableRefObject<HTMLDivElement[]>;
+  header?: string;
 }) => {
   const size = 1080;
 
-  const margin = size * 0.1;
+  const margin = size * 0.15;
 
-  const h1Size = 65;
+  const h1Size = 58;
 
   /**
    * Major Second
    * https://twitter.com/siddharthkp/status/1262038126794551296/photo/1
    */
-  const fontRatio = 8 / 9;
+  const fontRatio = 5 / 6;
 
   const fontSizes = [...new Array(6)]
-    .map((_, index) => h1Size * fontRatio ** index)
+    .map((_, index) => Math.round(h1Size * fontRatio ** index))
     .reverse();
 
   return (
@@ -52,38 +54,36 @@ const PostsGrid = ({
         overflow: 'hidden',
       }}
     >
-      <ThemeProvider
-        theme={{
-          fontSizes,
-          styles: {
-            h1: {
-              color: 'primary',
-              textAlign: 'center',
-              marginTop: 0,
-              marginBottom: 3,
-            },
-            h2: {
-              marginTop: 0,
-              '&:not(:first-child)': {
-                marginTop: 5,
-              },
-            },
-            p: {
-              color: 'text',
-              fontSize: 2,
-            },
-            ul: {
-              color: 'text',
-              fontSize: 2,
-            },
-          },
-        }}
-      >
-        {pages.map((page, index) => {
-          const key = [index, size].join('-');
-          const isLastPage = index === pages.length - 1;
+      {pages.map((page, index) => {
+        const key = [index, size].join('-');
+        const isLastPage = index === pages.length - 1;
 
-          return (
+        return (
+          <ThemeProvider
+            theme={{
+              fontSizes,
+              styles: {
+                h1: {
+                  textAlign: 'center',
+                  marginTop: 0,
+                },
+                h2: {
+                  marginTop: 0,
+                  '&:not(:first-child)': {
+                    marginTop: 5,
+                  },
+                },
+                p: {
+                  color: 'text',
+                  fontSize: isLastPage ? 3 : 2,
+                },
+                ul: {
+                  color: 'text',
+                  fontSize: isLastPage ? 3 : 2,
+                },
+              },
+            }}
+          >
             <Box
               key={key}
               ref={(element) => {
@@ -99,18 +99,20 @@ const PostsGrid = ({
                 backgroundColor: 'background',
               }}
             >
-              <Link
-                href="https://arantespp.com/no-bs-time"
-                sx={{
-                  position: 'absolute',
-                  top: margin / 2,
-                  right: margin / 2,
-                  transform: 'translateY(-50%)',
-                  fontSize: 0,
-                }}
-              >
-                arantespp.com/no-bs-time
-              </Link>
+              {header && (
+                <Link
+                  href="https://arantespp.com/no-bs-time"
+                  sx={{
+                    position: 'absolute',
+                    top: margin / 2,
+                    right: margin / 2,
+                    transform: 'translateY(-50%)',
+                    fontSize: 1,
+                  }}
+                >
+                  {header}
+                </Link>
+              )}
 
               <Text
                 sx={{
@@ -118,7 +120,7 @@ const PostsGrid = ({
                   bottom: margin / 2,
                   transform: 'translateY(50%)',
                   color: 'text',
-                  fontSize: 0,
+                  fontSize: 1,
                   right: margin / 2,
                 }}
               >
@@ -132,7 +134,7 @@ const PostsGrid = ({
                     bottom: margin / 2,
                     transform: 'translateY(50%)',
                     color: 'text',
-                    fontSize: 0,
+                    fontSize: 2,
                     justifyContent: 'center',
                     width: '100%',
                   }}
@@ -174,9 +176,9 @@ const PostsGrid = ({
                 />
               </Flex>
             </Box>
-          );
-        })}
-      </ThemeProvider>
+          </ThemeProvider>
+        );
+      })}
     </Box>
   );
 };
@@ -233,7 +235,13 @@ const useImages = ({ slug }: { slug: string }) => {
   return { download, postsRefs, images, loadingImages, downloading };
 };
 
-const InstagramPost = ({ content, slug, title }: InstagramPostProps) => {
+const InstagramPost = ({
+  content,
+  slug,
+  title,
+  header,
+  instagramUrl,
+}: InstagramPostProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [contentInput, setContentInput] = React.useState(content);
 
@@ -247,16 +255,24 @@ const InstagramPost = ({ content, slug, title }: InstagramPostProps) => {
     <>
       <HTMLHeaders title={title} />
 
-      <PostsGrid pages={pages} postsRefs={postsRefs} />
+      <PostsGrid {...{ pages, postsRefs, header }} />
 
       <Themed.h1>{title}</Themed.h1>
 
       <Themed.h2>Instagram Posts</Themed.h2>
 
+      <Link href={instagramUrl}>See the post on Instagram.</Link>
+
+      <Text as="p" sx={{ fontStyle: 'italic', fontSize: 1 }}>
+        Note: you may see that the Instagram post and below are different. This
+        may happen because I used a different design system when I generated the
+        Instagram post.
+      </Text>
+
       {loadingImages ? (
         <Loading />
       ) : (
-        <Grid columns={[1, null, 2]} gap={4}>
+        <Grid columns={[1, null, 1]} gap={4} sx={{ marginTop: 4 }}>
           {images.map((image, index) => {
             const key = index;
             return (

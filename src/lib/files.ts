@@ -579,8 +579,12 @@ export const getInstagramPost = async ({ slug }: { slug: string }) => {
     folder: 'instagram',
     filename: `${slug}.md`,
   });
-  const { title } = data as { title: string };
-  return { title, ...rest };
+  const { title, header, instagramUrl } = data as {
+    title: string;
+    header?: string;
+    instagramUrl?: string;
+  };
+  return { title, header, instagramUrl, ...rest };
 };
 
 export type InstagramPost = NonNullable<

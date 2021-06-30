@@ -1,8 +1,8 @@
 ---
 title: No B.S. Time Management for Entrepreneurs
+header: arantespp.com/no-bs-time
+instagramUrl: https://www.instagram.com/p/CQhae8dF7V4/
 ---
-
-_Resumo do livro_
 
 # No B.S. Time Management for Entrepreneurs
 

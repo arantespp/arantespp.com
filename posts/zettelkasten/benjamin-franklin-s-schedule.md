@@ -21,10 +21,12 @@ tags:
 - Franklin's schedule:
 
   - **5-7 a.m**. Rise, wash, and address Powerful Goodness! Contrive days' business, take the day's resolution, prosecute the present study and breakfast.
+    - _What good shall I do this day?_
   - **8-11 a.m**. Work.
   - **12-1 p.m**. Read or overlook my accounts and dine.
   - **2-5 p.m**. Work.
   - **6-9 p.m**. Put things in their places. Supper. Music or diversion, or conversation. Examination of the day.
+    - _What good have I done today?_
   - **10 p.m.-4 a.m**. Sleep.
 
 ## References

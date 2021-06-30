@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { useSWRInfinite } from 'swr';
 import { Box, Button, Flex, Text, Themed } from 'theme-ui';
 
@@ -49,6 +50,8 @@ const Journal = () => {
     return [acc, `### ${journal?.date}`, journal?.content].join('\n');
   }, '');
 
+  const journalRef = React.useRef<HTMLDivElement>(null);
+
   return (
     <>
       <HTMLHeaders noIndex title="Journal" />
@@ -60,10 +63,25 @@ const Journal = () => {
           <>
             <Flex sx={{ justifyContent: 'flex-start' }}>
               <Text sx={{ fontStyle: 'italic', color: 'gray' }}>
-                Total: {journals.length} days.
+                Total: {journals.length} days (
+                <Text
+                  sx={{ cursor: 'pointer', textDecoration: 'underline' }}
+                  onClick={() => {
+                    if (journalRef.current?.innerText) {
+                      navigator.clipboard.writeText(
+                        journalRef.current?.innerText,
+                      );
+                    }
+                  }}
+                >
+                  copy text to clipboard
+                </Text>
+                ).
               </Text>
             </Flex>
-            <Markdown noH1 content={markdown} />
+            <Box ref={journalRef}>
+              <Markdown noH1 content={markdown} />
+            </Box>
           </>
         )}
       </Box>
