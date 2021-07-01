@@ -148,12 +148,20 @@ const readMarkdown = async ({
   folder: string;
   filename: string;
 }) => {
-  const fullPath = path.join(postsDirectory, folder, filename);
-  const fileContents = await fs.promises.readFile(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-  const slug = filename.replace('.md', '');
-  return { data, content, folder, filename, slug };
+  try {
+    const fullPath = path.join(postsDirectory, folder, filename);
+    const fileContents = await fs.promises.readFile(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+    const slug = filename.replace('.md', '');
+    return { data, content, folder, filename, slug };
+  } catch {
+    return undefined;
+  }
 };
+
+type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
+
+export type Markdown = NonNullable<ThenArg<ReturnType<typeof readMarkdown>>>;
 
 const readFolderMarkdowns = async ({ folder }: { folder: string }) => {
   const fullFolderPath = path.join(postsDirectory, folder);
@@ -540,6 +548,15 @@ export const getPostAndPostsRecommendations = ({
 
 export const getDraft = getPartialPost;
 
+const mapJournal = ({ content, slug }: Markdown) => {
+  try {
+    const date = dateFns.format(getDateWithTimezone(slug), 'PPPP');
+    return { content, date };
+  } catch {
+    return undefined;
+  }
+};
+
 export const getJournals = async (page: number) => {
   try {
     const limit = 7;
@@ -547,14 +564,7 @@ export const getJournals = async (page: number) => {
     const markdowns = await readFolderMarkdowns({ folder: 'journal' });
 
     const journals = markdowns
-      .map(({ content, slug }) => {
-        try {
-          const date = dateFns.format(getDateWithTimezone(slug), 'PPPP');
-          return { content, date };
-        } catch {
-          return undefined;
-        }
-      })
+      .map(mapJournal)
       /**
        * Most recent first.
        */
@@ -568,17 +578,52 @@ export const getJournals = async (page: number) => {
   }
 };
 
-type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
-
 export type Journal = NonNullable<
   ThenArg<ReturnType<typeof getJournals>>[number]
 >;
 
+export const getJournalSummary = async (date: string) => {
+  const dateToSlug = (parsed: Date) => dateFns.format(parsed, 'yyyy-MM-dd');
+
+  const parsedDate = getDateWithTimezone(date);
+
+  const dates = [
+    ['Yesterday', dateToSlug(dateFns.subDays(parsedDate, 1))],
+    ['Last Week', dateToSlug(dateFns.subWeeks(parsedDate, 1))],
+    ['Last Month', dateToSlug(dateFns.subMonths(parsedDate, 1))],
+  ];
+
+  const summary = (
+    await Promise.all(
+      dates.map(async ([key, slug]) => {
+        const journal = await readMarkdown({
+          folder: 'journal',
+          filename: `${slug}.md`,
+        });
+
+        return { key, journal: journal ? mapJournal(journal) : undefined };
+      }),
+    )
+  ).filter(({ journal }) => !!journal);
+
+  return summary;
+};
+
+export type JournalSummary = NonNullable<
+  ThenArg<ReturnType<typeof getJournalSummary>>
+>;
+
 export const getInstagramPost = async ({ slug }: { slug: string }) => {
-  const { data, ...rest } = await readMarkdown({
+  const markdown = await readMarkdown({
     folder: 'instagram',
     filename: `${slug}.md`,
   });
+
+  if (!markdown) {
+    return undefined;
+  }
+
+  const { data, ...rest } = markdown;
   const { title, header, instagramUrl } = data as {
     title: string;
     header?: string;

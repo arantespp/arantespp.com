@@ -1,14 +1,35 @@
 import * as React from 'react';
-import { useSWRInfinite } from 'swr';
-import { Box, Button, Flex, Text, Themed } from 'theme-ui';
+import useSWR, { useSWRInfinite } from 'swr';
+import { Box, Button, Flex, Text } from 'theme-ui';
 
-import { Journal as JournalType } from '../lib/files';
+import { Journal as JournalType, JournalSummary } from '../lib/files';
 
+import Heading from '../components/Heading';
 import HTMLHeaders from '../components/HTMLHeaders';
 import Loading from '../components/Loading';
 import Markdown from '../components/Markdown';
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
+
+const useJournalsSummary = () => {
+  /**
+   * https://stackoverflow.com/a/29774197/8786986
+   */
+  const today = new Date();
+  const offset = today.getTimezoneOffset();
+  const dateWithOffset = new Date(today.getTime() - offset * 60 * 1000);
+  const date = dateWithOffset.toISOString().split('T')[0];
+
+  const { data } = useSWR<{
+    summary: JournalSummary;
+  }>(`/api/journal/summary?date=${date}`, fetcher);
+
+  const summary = data?.summary.reduce((acc, { key, journal }) => {
+    return [acc, `### ${key} - ${journal?.date}`, journal?.content].join('\n');
+  }, '');
+
+  return summary;
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getKey = (page: number, previousPageData: any) => {
@@ -16,7 +37,17 @@ const getKey = (page: number, previousPageData: any) => {
   return `/api/journal?page=${page}`;
 };
 
+const SectionTitle: React.FC = ({ children }) => {
+  return (
+    <Box sx={{ marginTop: 5, marginBottom: 4 }}>
+      <Heading level={2}>{children}</Heading>
+    </Box>
+  );
+};
+
 const Journal = () => {
+  const summary = useJournalsSummary();
+
   const { data, isValidating, size, setSize } = useSWRInfinite<{
     journals: JournalType[];
   }>(getKey, fetcher);
@@ -55,14 +86,25 @@ const Journal = () => {
   return (
     <>
       <HTMLHeaders noIndex title="Journal" />
-      <Themed.h1>Journal</Themed.h1>
-      <Box sx={{ marginY: 5 }}>
+      <Heading level={1}>Journal</Heading>
+
+      <SectionTitle>Summary</SectionTitle>
+
+      {summary && (
+        <Box>
+          <Markdown noH1 content={summary} />
+        </Box>
+      )}
+
+      <SectionTitle>All</SectionTitle>
+
+      <Box>
         {!data ? (
           <Loading />
         ) : (
           <>
             <Flex sx={{ justifyContent: 'flex-start' }}>
-              <Text sx={{ fontStyle: 'italic', color: 'gray' }}>
+              <Text sx={{ fontStyle: 'italic', color: 'gray', fontSize: 2 }}>
                 Total: {journals.length} days (
                 <Text
                   sx={{ cursor: 'pointer', textDecoration: 'underline' }}
