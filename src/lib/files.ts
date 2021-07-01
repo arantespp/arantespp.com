@@ -7,6 +7,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 import readingTime from 'reading-time';
+import Markdown from '../components/Markdown';
 
 import { Group, GROUPS } from './groups';
 
@@ -639,7 +640,7 @@ export type InstagramPost = NonNullable<
 export const getInstagramPosts = async () => {
   try {
     const markdowns = await readFolderMarkdowns({ folder: 'instagram' });
-    return markdowns;
+    return markdowns.filter((markdown): markdown is Markdown => !!markdown);
   } catch {
     return [];
   }

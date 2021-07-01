@@ -3,6 +3,8 @@ import dynamic from 'next/dynamic';
 
 import { getInstagramPosts, getInstagramPost } from '../../lib/files';
 
+import NotFound from '../../components/NotFound';
+
 const InstagramPost = dynamic(() => import('../../components/InstagramPost'));
 
 export const getStaticPaths: GetStaticPaths = async () => ({
@@ -21,6 +23,10 @@ export const getStaticProps = async ({
 const InstagramSlug = (
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) => {
+  if (!props) {
+    return <NotFound />;
+  }
+
   return <InstagramPost {...props} />;
 };
 

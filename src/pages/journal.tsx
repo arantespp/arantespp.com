@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import * as React from 'react';
 import useSWR, { useSWRInfinite } from 'swr';
 import { Box, Button, Flex, Text } from 'theme-ui';
@@ -7,7 +8,8 @@ import { Journal as JournalType, JournalSummary } from '../lib/files';
 import Heading from '../components/Heading';
 import HTMLHeaders from '../components/HTMLHeaders';
 import Loading from '../components/Loading';
-import Markdown from '../components/Markdown';
+
+const Markdown = dynamic(() => import('../components/Markdown'));
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 

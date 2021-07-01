@@ -71,7 +71,7 @@ const HeadingChildrenArray = ({
   /**
    * Solves the problem when there is only "#" without text on .md files.
    */
-  if (children.length === 0) {
+  if (children.length === 0 || !children[0]) {
     return null;
   }
 
