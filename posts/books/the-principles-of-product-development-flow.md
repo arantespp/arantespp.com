@@ -50,6 +50,12 @@ The absence of frameworks will lead workers to make bad decisions because they w
 
 As you try to analyze economics, you uncover those assumptions that significantly impact your answers, which permits you to invest more effort in getting these assumptions correct. Thus, the economic view regeneratively improves your understanding of economics.
 
+#### E8. The Principles of Small Decisions: Influence the many small decisions.
+
+Many companies make big decisions at a higher level but don't have an economic framework to make the many small decisions correctly. These small decisions have an enormous economic impact.
+
+Because of the [Pareto Paradox](/zettelkasten/pareto-paradox), influencing many small decisions has important implications because there are many opportunities there.
+
 ### Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
