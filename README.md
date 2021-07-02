@@ -22,6 +22,10 @@ I can find any posts by searching a specific keyword on [all page](/all). This f
 
 It's my [contact page](/contact) that I send to other people to share my social media profiles. It's my business card.
 
+### [Tags](/tags)
+
+I use [tags](/tags) to create connection among posts. It's an essence of the [Zettelkasten](/zettelkasten) method for creating notes. This way I can easily correlate notes, with articles, or book resumes.
+
 ### [Drafts](/_drafts)
 
 It contains [unfinished posts](/_drafts). Search engines don't index these posts. Sometimes the post is already finished, but it remains a draft to get a final review after some days.

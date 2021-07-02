@@ -56,6 +56,10 @@ Many companies make big decisions at a higher level but don't have an economic f
 
 Because of the [Pareto Paradox](/zettelkasten/pareto-paradox), influencing many small decisions has important implications because there are many opportunities there.
 
+#### E9. The Principle of Continuous Economic Trade-offs: Economic choices must be made continuously.
+
+Few, big, predictable trade-offs at the start of development process don't work in product development as they work in manufacturing. In product development, you continuously receive new information from the market, design process, customers preference, or engineering. Instead, you make many small trade-offs, at random time, throughout your development process. Following the [Principle E1](#e1-the-principle-of-quantified-overall-economics-select-actions-based-on-quantified-overall-economic-impact) is more important than following the original plan.
+
 ### Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
