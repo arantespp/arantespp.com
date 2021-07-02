@@ -26,19 +26,29 @@ One decision almost always simultaneously affects multiple variables. [Proxy var
 
 #### E3. The Principle of Quantified Cost of Delay If you only quantify one thing, quantify the cost of delay.
 
-We don't have business trading money for cycle time if we don't know the economic value of cycle time. No single sensitivity is more eye-opening than the cost of delay (COD). Cost of queues, determined by COD, dominates the economics of Flow.
+You don't have business trading money for cycle time if you don't know the economic value of cycle time. No single sensitivity is more eye-opening than the cost of delay (COD). Cost of queues, determined by COD, dominates the economics of Flow.
 
 #### E4. The Principle of Economic Value-Added: The value added by an activity is the change in the economic value of the work product.
 
 The value added by an activity is the difference in the price that an economically rational buyer would pay for work before and after the action performed.
 
-Waste, or non-value-added, is also an economic concept. We must convert the waste in life-cycle profit to compare and other trade-off wastes.
+Waste, or non-value-added, is also an economic concept. You must convert the waste in life-cycle profit to compare and other trade-off wastes.
 
 #### E5. The Inactivity Principle: Watch the work product, not the worker.
 
-Making activities more efficient is much less important than eliminating **inactivity**. Our most significant waste isn't unproductive engineers in product development but work products sitting idle in queues.
+Making activities more efficient is much less important than eliminating **inactivity**. Your most significant waste isn't unproductive engineers in product development but work products sitting idle in queues.
 
-Inventory is the most significant waste in manufacturing because it destroys quality, efficiency, and cycle time. When we increase value-added time in a process with variability, we will create queues. The cost of these queues is far greater than any efficiency savings that come from the value-added increase.
+Inventory is the most significant waste in manufacturing because it destroys quality, efficiency, and cycle time. When you increase value-added time in a process with variability, you will create queues. The cost of these queues is far greater than any efficiency savings that come from the value-added increase.
+
+#### E6. The U-Curve Principle: Important trade-offs are likely to have U-curve optimizations.
+
+U-curve is the combination of a hyperbolic and a linear function. It has two essential properties. First, optimization never occurs at extreme values. Because of this, it always requires quantification because you must balance two or more competing factors. Second, U-curve optimizations don't require precise answers because U-curves have flat bottoms, then missing the exact optimum costs very little. Thus, you don't need highly accurate information to improve your economic decisions. As a result, the framework becomes more insensitive to noisy assumptions.
+
+#### E7. The Imperfection Principle: Even imperfect answers improve decision-making.
+
+The absence of frameworks will lead workers to make bad decisions because they will use intuition instead of analysis. This intuition produces a 50 to 1 difference in the price people pay for cycle time. With an economic framework, this range down to 2 to 1.
+
+As you try to analyze economics, you uncover those assumptions that significantly impact your answers, which permits you to invest more effort in getting these assumptions correct. Thus, the economic view regeneratively improves your understanding of economics.
 
 ### Controlling Flow Under Uncertainty
 

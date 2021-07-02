@@ -10,11 +10,15 @@ The problem must be painful for a set of users. The best startups are pain kille
 
 - Must have customers that want to pay for that solution. Also called market.
 
+If you want to have outsized potential, you have to either be in a small, but rapidly growing market, or in a large existing that can be resegmented.
+
 ## Business
 
 - Must have a business plan to match resources allocation and the price that your customer would pay.
 
   - Make the business sustainable, including high profits.
+
+How do you make money? What is the key insights you've figured out that other people haven't?
 
 ## Resources
 
@@ -22,6 +26,8 @@ The problem must be painful for a set of users. The best startups are pain kille
   - Capital
   - Human
   - Machines
+
+Do you have a team? Do you have capital? Do you have machines if needed?
 
 ## Solution
 
@@ -61,3 +67,11 @@ MVP is the implementation of first step of the 5 points.
 - Market - Business = Unit Economics
 - Problem - Market - Business = Product/Market Fit
 - Problem - Market - Business - Resources - Solution = Company
+
+## Traction
+
+Do you have an incredible ability to execute?
+
+You're gaining momentum and moving along. Your product or service has started a strong adoption rate which implies a large market, a valid business model, and sustainable growth.
+
+Traction is the Product/Market Fit in movement.

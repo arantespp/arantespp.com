@@ -2,6 +2,8 @@
 
 _Some questions I've been asking myself that I don't know how to answer yet._
 
+- What is "venture backable"?
+
 - Which characteristics must a good company have?
 
 - What are the minimum requirements to build an MVP?
