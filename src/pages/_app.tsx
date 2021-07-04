@@ -3,10 +3,11 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import useKeypress from 'react-use-keypress';
 
 import HTMLHeaders from '../components/HTMLHeaders';
 import Layout from '../components/Layout';
+
+import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 
 import { socialMedias } from '../lib/socialMedias';
 
@@ -78,37 +79,14 @@ const shortcuts = {
 const useShortcuts = () => {
   const { push } = useRouter();
 
-  const [sequence, setSequence] = React.useState('');
+  const handleListener = React.useCallback(
+    (key: string) => {
+      push(shortcuts[key]);
+    },
+    [push],
+  );
 
-  /**
-   * Reset sequence.
-   */
-  React.useEffect(() => {
-    const timeout = setTimeout(() => {
-      setSequence('');
-    }, 2000);
-
-    return () => clearTimeout(timeout);
-  }, [sequence]);
-
-  const shortcutsChars = Array.from(new Set(Object.keys(shortcuts).join('')));
-
-  useKeypress(shortcutsChars, (event) => {
-    /**
-     * Don't set sequence if input is active.
-     */
-    if (document.activeElement?.tagName.toLowerCase() !== 'input') {
-      setSequence((s) => s + event.key);
-    }
-  });
-
-  React.useEffect(() => {
-    Object.entries(shortcuts).forEach(([key, path]) => {
-      if (sequence.includes(key)) {
-        push(path);
-      }
-    });
-  }, [push, sequence]);
+  useKeypressSequenceListener(Object.keys(shortcuts), handleListener);
 };
 
 const App = ({ Component, pageProps }: AppProps) => {

@@ -47,10 +47,10 @@ I'm starting slowly. First, I started with exercises. After waking up, meditate,
 
 I've also decided to practice these habits for the next five years because I want to see what will happen to my life, but I don't want to stop after these years.
 
-## How Is It going?
+## How Is It Going?
 
-It's been about eight months that I'm on this habit journey. It was not so easy. When I was practicing only one habit, doing exercises, it was easy to keep it up. Once I added one more, the challenge to keep them up increases, and so on. Currently, in January 2021, I manage three: exercises, meditating, and reading every day. Slowly I'm adding the write every day.
+It's been about eight months that I'm on this habit journey. It was not so easy. When I was practicing only one habit, doing exercises, it was easy to keep it up. Once I added one more, the challenge to keep them up increases, and so on. Currently, in January 2021, I manage three: exercises, meditating and reading every day. Slowly I'm adding the write every day.
 
-I'm having fun on this adventure. In parts,because my life and lifestyle improved so much, I'm not feeling that sensation of starting something and giving up after some days.
+I'm having fun on this adventure. In parts, because my life and lifestyle improved so much, I'm not feeling that sensation of starting something and giving up after some days.
 
 If you want to create good habits in your life, I do suggest reading those books and keep in mind one thing: instead of thinking you're doing something (exterior), consider you are a practicer (interior). For instance, instead of thinking you have a training routine (exterior), believe you're an athlete (interior), and the training routines will come because you're an athlete.

@@ -1,35 +1,49 @@
-import { pascalCase } from 'change-case';
 import { InferGetStaticPropsType } from 'next';
 import * as React from 'react';
 import { findBestMatch } from 'string-similarity';
-import {
-  Box,
-  Checkbox,
-  Input,
-  Label,
-  Radio,
-  Themed,
-  Text,
-  Flex,
-} from 'theme-ui';
+import { Box, Input, Themed, Text, Flex } from 'theme-ui';
 import { useDebounce } from 'use-debounce';
 
 import RecommendationsList from '../components/RecommendationsList';
 
 import { allPosts as filesAllPosts, Post } from '../lib/files';
-import { Group, GROUPS } from '../lib/groups';
 
-export const getStaticProps = async () => ({
-  props: { allPosts: filesAllPosts },
-});
+const sortByDate = (postA: Post, postB: Post) => {
+  return postB.date.localeCompare(postA.date);
+};
 
-const POST_MIN_RATING = 0.5;
+export const getStaticProps = async () => {
+  const postsSortedByDate = filesAllPosts.sort(sortByDate);
+
+  const postPropertiesToBeCompared: Array<keyof Post> = [
+    'title',
+    'tags',
+    'excerpt',
+    'content',
+  ];
+
+  /**
+   * Create an array of strings with posts title and excerpts to be
+   * compared by string similarity method.
+   */
+  const arrayToCompare = postsSortedByDate.flatMap((post) => {
+    return postPropertiesToBeCompared.map((key) =>
+      String(post[key]).toLocaleLowerCase(),
+    );
+  });
+
+  return {
+    props: {
+      allPosts: postsSortedByDate,
+      arrayToCompare,
+      numberOfComparedProperties: postPropertiesToBeCompared.length,
+    },
+  };
+};
 
 const MAX_POSTS_BEST_MATCHES = 5;
 
-const sorts = ['Rating', 'Date', 'Title'] as const;
-
-type Sorts = typeof sorts[number];
+const POST_MIN_RATING = 0.2;
 
 const FilterBlock = ({
   children,
@@ -61,96 +75,66 @@ const FilterBlock = ({
   );
 };
 
-const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const All = ({
+  allPosts,
+  arrayToCompare,
+  numberOfComparedProperties,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [search, setSearch] = React.useState('');
-  const [debouncedSearch] = useDebounce(search, 200);
-  const [sorting, setSorting] = React.useState<Sorts>('Date');
-  const [showGroups, setShowGroups] = React.useState([...GROUPS]);
+  const [debouncedSearch] = useDebounce(search, 500);
 
   const [filteredPosts, setFilteredPosts] = React.useState(allPosts);
 
   React.useEffect(() => {
-    const postsByGroups = allPosts.filter((post) =>
-      showGroups.includes(post.group),
+    if (!debouncedSearch) {
+      setFilteredPosts(allPosts);
+      return;
+    }
+
+    const { bestMatchIndex, ratings } = findBestMatch(
+      debouncedSearch.toLowerCase(),
+      arrayToCompare,
     );
 
-    const postsBySearch = (() => {
-      if (!debouncedSearch || postsByGroups.length === 0) {
-        return postsByGroups;
-      }
+    /**
+     * `arrayToCompare` has the size of `allPosts` multiplied by
+     * `numberOfComparedProperties`. Suppose that the number of compared
+     * properties is four, then the ratings 0, 1, 2, and 3 refers to first post.
+     */
+    const getPostFromRatingIndex = (index: number) =>
+      Math.floor(index / numberOfComparedProperties);
 
-      const postPropertiesToBeCompared: Array<keyof Post> = [
-        'title',
-        'tags',
-        'content',
-      ];
-
+    const postsPositions = ratings
+      .map(({ rating }, index) => ({
+        rating,
+        postPosition: getPostFromRatingIndex(index),
+      }))
+      .sort((a, b) => b.rating - a.rating)
       /**
-       * Create an array of strings with posts title and excerpts to be
-       * compared by string similarity method.
+       * Take only the best five matches.
        */
-      const arrayCompare = postsByGroups.flatMap((post) =>
-        postPropertiesToBeCompared
-          .map((property) => {
-            if (Array.isArray(post[property])) {
-              return (post[property] as Array<string>).join(' ');
-            }
-
-            return post[property];
-          })
-          .map((property) => String(property)),
-      );
-
-      const { bestMatch, bestMatchIndex, ratings } = findBestMatch(
-        debouncedSearch.toLowerCase(),
-        arrayCompare.map((str) => str.toLowerCase()),
-      );
-
+      .filter((_, index) => index < MAX_POSTS_BEST_MATCHES)
       /**
-       * Take the max rating between title and excerpt.
+       * Take only posts whose rating is greater than POST_MIN_RATING.
        */
-      const mergeRatings = ratings
-        .reduce<number[]>((acc, cur, index) => {
-          const pos = Math.floor(index / postPropertiesToBeCompared.length);
+      .filter(({ rating }) => rating > POST_MIN_RATING)
+      .map(({ postPosition }) => postPosition);
 
-          if (acc[pos]) {
-            acc[pos] = Math.max(acc[pos], cur.rating);
-          } else {
-            acc[pos] = cur.rating;
-          }
+    const postsPositionsWithoutDuplication = Array.from(
+      new Set(postsPositions),
+    );
 
-          return acc;
-        }, [])
-        .map((rating, index) => ({ rating, post: postsByGroups[index] }));
+    if (postsPositionsWithoutDuplication.length === 0) {
+      setFilteredPosts([allPosts[getPostFromRatingIndex(bestMatchIndex)]]);
+      return;
+    }
 
-      const bestMatches = mergeRatings
-        .sort((a, b) => b.rating - a.rating)
-        /**
-         * Take only the best five matches.
-         */
-        .filter((_, index) => index < MAX_POSTS_BEST_MATCHES)
-        /**
-         * Take only posts whose rating is greater than POST_MIN_RATING.
-         */
-        .filter(({ rating }) => rating > POST_MIN_RATING);
+    const bestMatches = postsPositionsWithoutDuplication.map(
+      (postPosition) => allPosts[postPosition],
+    );
 
-      if (bestMatch.rating === 0) {
-        return [];
-      }
-
-      if (bestMatches.length === 0) {
-        return [
-          postsByGroups[
-            Math.floor(bestMatchIndex / postPropertiesToBeCompared.length)
-          ],
-        ];
-      }
-
-      return bestMatches.map(({ post }) => post);
-    })();
-
-    setFilteredPosts(postsBySearch);
-  }, [showGroups, debouncedSearch, allPosts]);
+    setFilteredPosts(bestMatches);
+  }, [debouncedSearch, allPosts, arrayToCompare, numberOfComparedProperties]);
 
   return (
     <>
@@ -164,63 +148,9 @@ const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
             onChange={(e) => setSearch(e.target.value)}
           />
         </FilterBlock>
-
-        <FilterBlock title="Show Groups:" hidden>
-          {GROUPS.map((group) => (
-            <Label key={group}>
-              <Checkbox
-                name="group"
-                value={group}
-                checked={showGroups.includes(group)}
-                onChange={(e) =>
-                  setShowGroups((currentGroups) => {
-                    const value = e.target.value as Group;
-
-                    if (currentGroups.includes(value)) {
-                      return currentGroups.filter((g) => g !== group);
-                    }
-
-                    return [...currentGroups, value];
-                  })
-                }
-              />
-              {pascalCase(group)}
-            </Label>
-          ))}
-        </FilterBlock>
-
-        <FilterBlock title="Sort Posts By:" hidden>
-          {sorts.map((sort) => (
-            <Label key={sort} sx={{ marginRight: 3, width: 'auto' }}>
-              <Radio
-                name="sorting"
-                value={sort}
-                checked={sorting === sort}
-                onChange={(e) => setSorting(e.target.value as Sorts)}
-              />
-              {sort}
-            </Label>
-          ))}
-        </FilterBlock>
       </Box>
 
-      <RecommendationsList
-        recommendations={filteredPosts.sort((postA, postB) => {
-          if (sorting === 'Rating') {
-            return postB.rating - postA.rating;
-          }
-
-          if (sorting === 'Date') {
-            return postB.date.localeCompare(postA.date);
-          }
-
-          if (sorting === 'Title') {
-            return postA.title.localeCompare(postB.title);
-          }
-
-          return 0;
-        })}
-      />
+      <RecommendationsList recommendations={filteredPosts} />
     </>
   );
 };

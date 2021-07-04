@@ -26,7 +26,7 @@ One decision almost always simultaneously affects multiple variables. [Proxy var
 
 #### E3. The Principle of Quantified Cost of Delay If you only quantify one thing, quantify the cost of delay.
 
-You don't have business trading money for cycle time if you don't know the economic value of cycle time. No single sensitivity is more eye-opening than the cost of delay (COD). Cost of queues, determined by COD, dominates the economics of Flow.
+You don't have business trading money for cycle time if you don't know the economic value of cycle time. No single sensitivity is more eye-opening than the cost of delay (COD). The cost of queues, determined by COD, dominates the economics of Flow.
 
 #### E4. The Principle of Economic Value-Added: The value added by an activity is the change in the economic value of the work product.
 
@@ -58,7 +58,9 @@ Because of the [Pareto Paradox](/zettelkasten/pareto-paradox), influencing many 
 
 #### E9. The Principle of Continuous Economic Trade-offs: Economic choices must be made continuously.
 
-Few, big, predictable trade-offs at the start of development process don't work in product development as they work in manufacturing. In product development, you continuously receive new information from the market, design process, customers preference, or engineering. Instead, you make many small trade-offs, at random time, throughout your development process. Following the [Principle E1](#e1-the-principle-of-quantified-overall-economics-select-actions-based-on-quantified-overall-economic-impact) is more important than following the original plan.
+Few, big, predictable trade-offs at the start of the development process don't work in product development as they work in manufacturing. In product development, you continuously receive new information from the market, design process, customers preference, or engineering. Instead, you make many small trade-offs, at random times, throughout your development process. Following [Principle E1](#e1-the-principle-of-quantified-overall-economics-select-actions-based-on-quantified-overall-economic-impact) is more important than following the original plan.
+
+#### E10. The First Perishability Principle: Many economic choices are more valuable when made quickly
 
 ### Controlling Flow Under Uncertainty
 

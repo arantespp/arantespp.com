@@ -13,7 +13,7 @@ image:
   alt: Photo by <a href="https://unsplash.com/@vidarnm?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Vidar Nordli-Mathisen</a> on <a href="https://unsplash.com/s/photos/road?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
 ---
 
-We built an App recently for a researchers team about helping other researchers to keep their projects in day. Let's call this project **ProRes**. There was a problem with this project: we took so much time to finish it, and the quality wasn't the best as we were used to. We were wondering about this project and others we've built at [Triângulos Tecnologia](https://triangulostecnologia.com) and we had some insights about the issues.
+We built an App recently for a researchers team about helping other researchers to keep their projects up to date. Let's call this project **ProRes**. There was a problem with this project: we took so much time to finish it, and the quality wasn't the best as we were used to. We were wondering about this project and others we've built at [Triângulos Tecnologia](https://triangulostecnologia.com) and we had some insights about the issues.
 
 The other projects aren't necessarily easier, they were as difficult as **ProRes**, but they took 4x less time than **ProRes** to be finished. The biggest difference was the order in which we executed the implementation.
 
@@ -21,7 +21,7 @@ In this article, we're going to try to understand better why this big difference
 
 ## Last Mile Problem
 
-Telecommunications is a common field in which the [last mile problem](/zettelkasten/last-mile-problem) appears. It occurs when it has a whole telecommunication infrastructure available except the one that links the final client, the final leg. For instance, suppose we have an optical fiber ring in a city that provides Internet to some buildings, but neighbor buildings don't have access to the ring. This is a last mile problem because the ring is working but some clients can't access it.
+Telecommunications is a common field in which the [last mile problem](/zettelkasten/last-mile-problem) appears. It occurs when it has a whole telecommunication infrastructure available except the one that links the final client, the final leg. For instance, suppose we have an optical fiber ring in a city that provides Internet to some buildings, but neighbor buildings don't have access to the ring. This is the last mile problem because the ring is working but some clients can't access it.
 
 We can see this problem in logistics too. A product may arrive in a capital of a country but might not arrive in neighboring cities because there isn't an easy path to there, for instance, need to cross a river.
 
@@ -29,17 +29,17 @@ _In summary, the last mile problem is the last thing that needs to be done to so
 
 ## Last Mile in a Software Development Context
 
-Almost every App we build, we can see the last mile part in every implemented feature. The first part of a feature is the core. We can call core the most important and the essential functionalities that such feature must-have. After the core is implemented, we have the final adjustments (FA) or the last mile. These adjustments don't change the functionalities, rather improve the user experience of the application. For instance, if we're building a form, the core features are the fields and the submit logic; the FA are some input masks and design.
+Almost every App we build, we can see the last mile part in every implemented feature. The first part of a feature is the core. We can call core the most important and the essential functionalities that such a feature must-have. After the core is implemented, we have the final adjustments (FA) or the last mile. These adjustments don't change the functionalities, rather improve the user experience of the application. For instance, if we're building a form, the core features are the fields and the submit logic; the FA are some input masks and designs.
 
-These final adjustments can have fewer tasks compared with the core, but it is the laborious part, then the time to finish it is almost as the core time implementation. We may explain this using the [flow state](/zettelkasten/flow-state-psychology). Core tasks commonly are more challenging and interesting to be done, a condition to enter the state, whilst the last mile tasks, don't. Then the FA may be the least efficient part of a feature implementation.
+These final adjustments can have fewer tasks compared with the core, but it is the laborious part, then the time to finish it is almost as the core time implementation. We may explain this using the [flow state](/zettelkasten/flow-state-psychology). Core tasks commonly are more challenging and interesting to be done, a condition to enter the state, whilst the last mile tasks, don't. Then the FA may be the least efficient part of feature implementation.
 
-![Core and last mile development time vs number of tasks.](/images/articles/last-mile-in-a-software-project/last-mile-time-vs-tasks.png)
+![Core and last mile development time vs the number of tasks.](/images/articles/last-mile-in-a-software-project/last-mile-time-vs-tasks.png)
 
 ## ProRes Execution
 
 The **ProRes** App had some features. The objective of the project was to validate these features. Then, since the beginning, we started implementing all the core features together. Once we've finished the core features and validate their core functionalities with the stakeholders, we've started building the final adjustments.
 
-![Core features finished. Final adjustments unfinished.](/images/articles/last-mile-in-a-software-project/last-mile-application-prores.png)
+![Core features finished. Final adjustments are unfinished.](/images/articles/last-mile-in-a-software-project/last-mile-application-prores.png)
 
 As we can see in the figure above, we have 4 core features working and the final adjustments to be done. But another big problem arose: **they're dependent on each other**, therefore the energy needed ($E_N$) to finish them wasn't evaluated as a linear sum of the energy of each final refining, rather we have to consider the dependency of all unfinished parts. The definition of energy in a software context might be the time or the cost of the implementation.
 
@@ -49,7 +49,7 @@ $$
 
 The number of factors of $E_N$ is given by the sum of all dependencies subgroups that can be made considering $n$ features, that is, $2^n -1$.
 
-One of the reasons the dependency existence is because you need to switch between features when implementing them. Suppose you're doing the feature 1's FA. At some time, you need a feature 2's FA to continue working on feature 1, so you switch your work to implement it. Working on feature 2, you also need some feature 3's FA... and so on.
+One of the reasons the dependency existence is because you need to switch between features when implementing them. Suppose you're doing feature 1's FA. At some time, you need a feature 2's FA to continue working on feature 1, so you switch your work to implement it. Working on feature 2, you also need some feature 3's FA... and so on.
 
 ### 90-90 Rule
 
@@ -63,9 +63,9 @@ It was our case. 90% of the time was used to implement 90% of the main functiona
 
 While we've implemented all core features first on **ProRes**, on the other Apps we finish a feature (core and final adjustments) before starting another one. In this case, we didn't need to switch between required features because they've already had been implemented.
 
-In these case, we didn't have to worry about the dependency energy because it didn't exist.
+In these cases, we didn't have to worry about the dependency energy because it didn't exist.
 
-![Feature 1 and 2 finished. Working on feature 3.](/images/articles/last-mile-in-a-software-project/last-mile-application-other-apps.png)
+![Features 1 and 2 finished. Working on feature 3.](/images/articles/last-mile-in-a-software-project/last-mile-application-other-apps.png)
 
 ## How to Overcome the Last Mile Problem?
 

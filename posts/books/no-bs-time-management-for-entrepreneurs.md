@@ -17,7 +17,7 @@ book:
 
 ## TL;DR
 
-This was the first book I read about time management. It changed the way I perceive and value my and others' time and I highly recommend it. [Dan](/zettelkasten/dan-s-kennedy) has some unorthodox methods to protect his time, like using fax machines instead of emails, but the most important is understanding the essence to blind your time. The most important lessons that I took from the book are:
+This was the first book I read about time management. It changed how I perceive and value my and others' time, and I highly recommend it. [Dan](/zettelkasten/dan-s-kennedy) has some unorthodox methods to protect his time, like using fax machines instead of emails, but the most important is understanding the essence of blinding your time. The most important lessons that I took from the book are:
 
 1. Time is your most valuable asset.
 
@@ -41,7 +41,7 @@ This was the first book I read about time management. It changed the way I perce
 
 ### Chapter 1 - How to Turn Time into Money
 
-The main idea is evaluating how much your work hour is worth, which he calls the **base earning target** - $BET$. It uses your year base earning target, how many days you work in a year, and your productivity rate. If you earn \$200,000.00 and work 220 days in a year, 8 hours per day and have a productivity rate of 33\%, your $BET$ is calculated by:
+The main idea is evaluating how much your work hour is worth, which he calls the **base earning target** - $BET$. It uses your year base earning target, how many days you work in a year, and your productivity rate. For example, if you earn \$200,000.00 and work 220 days in a year, 8 hours per day and have a productivity rate of 33\%, your $BET$ is calculated by:
 
 $$
 BET = \cfrac{\$200000}{220 \times \underbrace{8 \times 33\%}_{\text{productive hours}}} = \$340.92
@@ -55,7 +55,7 @@ Three ways of how to use these numbers:
 
 2. It puts a meter on other's consumption of your time. Was that call of 20 minutes worth of \$113.54? And that 10 minutes on Facebook or Twitter? It also gives to you an _"investor-think"_ mindset. _"Would I, as a venture, invest \$13,636.80 in that project, activity, person, meetings, etc that will consume 40 hours in total?"_
 
-3. It sets the base cost for hours given to speaking, engagement, consulting assignment, copywriting assignment, and other works.
+3. It sets the base cost for hours given to speaking, engagement, consulting assignments, copywriting assignments, and other works.
 
 You can also estimate how much money you spent by commuting instead of working at home.
 
@@ -69,7 +69,7 @@ From a business perspective, two business life changes that this number may come
 
 ### Chapter 2 - How to Cheat Time
 
-This chapter shows some ways to multiply your time leveraging other people.
+This chapter shows some ways to multiply your time by leveraging other people.
 
 The author says that there are ways to reduce $BET$. _Why is it good to reduce this number?_
 
@@ -81,9 +81,9 @@ There are only three ways to make money:
 
 Three less obvious ways to leverage other people. The more you become adept at these methods, the less direct time and capital investment are required to grow your business.
 
-- **OPM - Other People's Money**: sometimes it's more efficient to use debt or investor's capital to buy growth or expansion.
+- **OPM - Other People's Money**: sometimes, it's more efficient to use debt or investor's capital to buy growth or expansion.
 
-- **OPR - Other's People Resources**: co-opt with other people's resources. Before you create or manage any resource with your time, you should ask yourself who is doing the same work and how you might use their work. SaaS constitutes ORP - you don't need to invest time in building the platform, you can use the existing ones.
+- **OPR - Other's People Resources**: co-opt with other people's resources. Before you create or manage any resource with your time, you should ask yourself who is doing the same work and how you might use their work. SaaS constitutes ORP - you don't need to invest time building the platform. You can use the existing ones.
 
 - **OPC - Other's People Customers**: _"almost without exception, the most expensive, difficult, and time-consuming aspect of a business is acquiring needed new customers, one by one, by your own advertising, marketing, and selling"_. You should find ways to access OPCs, even automating them, to put in your business.
 
@@ -91,11 +91,11 @@ Three less obvious ways to leverage other people. The more you become adept at t
 
 This chapter talks about _Time Vampires_, which are people who take your time and energy all day. Dan defines some _Time Vampires_:
 
-1. **Mr. Have-You-Got-a-Minute**: they're always asking for "have you got a minute?" or "I just need a couple of minutes of your time?", for every random thought and questions that pass to their mind (these requests take away your productivity because of the inefficiency of the [human multitasking](/zettelkasten/human-multitasking)). **Solution**: discipline yourself and your team to organize the questions and communicate everything at once - not one thing at a time.
+1. **Mr. Have-You-Got-a-Minute**: they're always asking for "have you got a minute?" or "I just need a couple of minutes of your time?", for every random thought and question that pass to their mind (these requests take away your productivity because of the inefficiency of the [human multitasking](/zettelkasten/human-multitasking)). **Solution**: discipline yourself and your team to organize the questions and communicate everything at once - not one thing at a time.
 
 1. **Mr. Meeting**: they seem to do nothing but attend meetings. **Solution**: "you need to stop and always ask yourself: do I really need to be in - or hold - this meeting? Is there a more time-efficient way to handle this? A conference call? A memo circulated to each person?"
 
-1. **Mr. Trivia**: they can't or don't want to differentiate what is important or not. They will interrupt you about anything, getting you to set aside your list of priorities in favor of his, which could be of minimal importance. **Solution**: just ask "I'm only dealing with 9s and 10s on a 1 to 10 scale. Everything else MUST wait until tomorrow. Are you convinced that what you want to talk to me about is 9 or 10?"
+1. **Mr. Trivia**: they can't or don't want to differentiate what is important or not. They will interrupt you about anything, getting you to set aside your list of priorities in favor of his, which could be of minimal importance. **Solution**: just ask, "I'm only dealing with 9s and 10s on a 1 to 10 scale. Everything else MUST wait until tomorrow. Are you convinced that what you want to talk to me about is 9 or 10?"
 
 1. **Soap Opera Time**: they turn everything into an emotional crisis. They react to everything emotionally. They'll try to put you in their drama. The problem is they make you give up your time to put them back together emotionally. **Solutions**: 1) cut to the core of their problem and tell them what to do, probably this is not what they want. 2) Take over the conversation by launching into a long, boring, and pointless story. Turn into a vampire yourself 😂
 
@@ -109,17 +109,17 @@ Interruptions destroy productivity, and almost none of them have to do with nece
 
 > "If they can't find you, they can't interrupt you."
 
-Be inaccessible to your coworkers. Working at home is a possible solution. Dan says that when he was inaccessible, their people functioned just as well or better when he was there. They handled 80% of everything on their own, and the other 20%, asked quickly and efficiently.
+Be inaccessible to your coworkers. Working at home is a possible solution. Dan says that when he was inaccessible, their people functioned just as well or better when he was there. They handled 80% of everything independently, and the other 20% asked quickly and efficiently.
 
 If you have to work in an office with the rest of our staff, you must have a **Closed Door Policy**.
 
 #### Don't answer the phone
 
-It's the productivity enemy number one. We have the culture to answer immediately every message, every phone call, but it doesn't have to be like this. Dan proposes a new philosophy: _"you have absolutely no legal, moral, or other responsibility to answer the phone or take a call unless you want to"_. If you're stopping your work on a task with a known priority in favor of something else with unknown priority, then you're turning the control of your day to the unknown.
+It's the productivity enemy number one. We have the culture to answer immediately every message, every phone call, but it doesn't have to be like this. Dan proposes a new philosophy: _"you have absolutely no legal, moral, or other responsibility to answer the phone or take a call unless you want to"_. If you're stopping your work on a task with a known priority in favor of something else with an unknown priority, then you're turning the control of your day to the unknown.
 
 #### Get a grip on email, texts, and faxes
 
-Instant communication creates an aura of immediacy among us. People expect an immediate or at least quick response from you.
+Instant communication creates an aura of immediacy among us. This happens because people expect an immediate or at least a quick response from you.
 
 The easier the mean of communication is, the more the number of junk messages. Which is easier, sending "we make a delicious cake" via texting or email? Or cellphone? Or fax? We can compare this with the [proof-of-work](/zettelkasten/proof-of-work) method, which creates some cost to the sender but no or low cost to the receiver - the sender will only pay the cost if the request is more important than the cost.
 
@@ -131,7 +131,7 @@ Wherever the communicating means you use, you have to set up boundaries of the f
 
 Whenever you have to take an incoming call or meet someone, it's a smart idea to set up an exit time.
 
-> _I have a conference call starting in just 15 minutes, but I wanted to take your call - I hope that will be enough time for our discussion. Do you agree or should we setup another telephone appointment?_
+> _I have a conference call starting in just 15 minutes, but I wanted to take your call - I hope that will be enough time for our discussion. Do you agree, or should we set up another telephone appointment?_
 
 #### Be busy and be obvious about it
 
@@ -139,25 +139,25 @@ If you're sitting at your desk, appearing relaxed, to the others, you're it, eve
 
 ### Chapter 5 - The Number-One Most Powerful Personal Discipline in All the World: And How It Can Make You Successful Beyond Your Wildest Dreams
 
-This chapter is about punctuality. Dan starts the chapter by stating that **everybody** he's met who adheres to this discipline becomes exceptionally successful, and everybody who ignores, fails. Some arguments to be punctual.
+This chapter is about punctuality. Dan starts the chapter by stating that **everybody** he's met who adheres to this discipline becomes exceptionally successful, and everybody who ignores fails. Some arguments to be punctual.
 
-- It gives you the right to expect and demand that others to respect your time. You can't expect others respect your time if you show no respect for theirs.
+- It gives you the right to expect and demand that others respect your time. You can't expect others to respect your time if you show no respect for theirs.
 
-- A person who cannot keep appointments on time or cannot keep scheduled commitments, cannot be trusted in other ways either.
+- A person who cannot keep appointments on time or cannot keep scheduled commitments cannot be trusted in other ways either.
 
-- People judge you by your punctuality. Most successful people make a point of having "instant reject criteria" to save their time in determining who they want to deal with - punctuality is one of these criteria.
+- People judge you by your punctuality. Most successful people point out having "instant reject criteria" to save their time in determining who they want to deal with - punctuality is one of these criteria.
 
-- It's correlated to self-esteem. Someone that doesn't keep scheduled appointments is not only saying that you and your time are unimportant but is also revealing that he/she and his/her time are important either - low self-esteem characteristic.
+- It's correlated to self-esteem. Someone that doesn't keep scheduled appointments is not only saying that you and your time are unimportant but is also revealing that they and their time are important either - low self-esteem characteristic.
 
-- It's correlated to needy egos. They're always late as a means of trying to be and seen important. Their intended message is: _"I can be late because I'm more important than you"_.
+- It's correlated to needy egos. They're always late as a means of trying to be and seen important. Their intended message is: _"I can be late because I'm more important than you."_
 
 ### Chapter 6 - The Magic Power That Makes You Unstoppable
 
-This chapter talks about discipline and habits. As usual, it starts by stating that you may achieve success if you have self-discipline. Beyond what everyone says, Dan talks about how demonstrated self-discipline is **magnetic**. If you demonstrate that you have self-discipline (the same as self-esteem and self-control), your clients will have an unconscious preference on you, to give their money to you.
+This chapter talks about discipline and habits. As usual, it starts by stating that you may achieve success if you have self-discipline. Beyond what everyone says, Dan talks about how demonstrated self-discipline is **magnetic**. For example, if you demonstrate that you have self-discipline (the same as self-esteem and self-control), your clients will unconsciously prefer to give their money to you.
 
-Very successful people are secretly lazy and become exceptionally self-disciplined out of necessity. Because some of them are their boss, they can spend their time as please and because of this, it's very important to be self-disciplined.
+Very successful people are secretly lazy and become exceptionally self-disciplined out of necessity. Because some of them are their boss, they can spend their time as pleasing, and because of this, it's essential to be self-disciplined.
 
-Three steps to consistent successful achievement: **awareness**, **decision** and **action**.
+Three steps to consistent achievement: **awareness**, **decision**, and **action**.
 
 ### Chapter 7 - The Ten Time Management Techniques Really Worth Using
 
@@ -193,7 +193,7 @@ The "magic" here is more in the making and using lists than in a particular tool
 
 #### 5. Fight to Link Everything to Your Goals
 
-A secret to be more productive is to have more reasons to be productive. When you have your goals clearly in your mind, you'll have a good reason to be more productive. A definition of productivity:
+A secret of being more productive is to have more reasons to be productive. When you have your goals clearly in your mind, you'll have a good reason to be more productive. A definition of productivity:
 
 > Productivity is the deliberate, strategic investment of your time, talent, intelligence, energy, resources, and opportunities in a manner calculated to move you measurably closes to meaningful goals.
 
@@ -205,21 +205,21 @@ The simple fact you measure your goals improves productivity. Just asking the qu
 
 #### 6. Tickle the Memory with Tickler Files
 
-This technique reduces clutter and serves as automatic memory. You have 90 file folders, red, blue, and white, all of them numbered 1 thought 30. Red, blue and white represent the current month, next month, and the month after that. If you assume meet a client on tenth next month, you drop his file into the blue file folder numbered 10.
+This technique reduces clutter and serves as automatic memory. You have 90 file folders, red, blue, and white, all of them numbered 1 through 30. Red, blue and white represent the current month, next month, and the month after that. For example, if you assume to meet a client on the tenth next month, you drop his file into the blue file folder numbered 10.
 
 #### 7. Block Your Time
 
-Make inviolate appointments with yourself as you have your locked-in-stone appointments with others. You have to find when your body and mind perform the tasks more effectively and assign that time for you. Also, throw out all norms, "rules", others' opinions and create the best work conditions for yourself that facilitate your best productivity.
+Make inviolate appointments with yourself as you have your locked-in-stone appointments with others. You have to find when your body and mind perform the tasks more effectively and assign that time for you. Also, throw out all norms, "rules," others' opinions, and create the best work conditions for yourself that facilitate your best productivity.
 
 #### 8. Minimize Unplanned Activity
 
-This technique is very interesting. An unplanned activity means that it doesn't have a start and end time, so it may never finish. As stated by [Parkinson's Law](/zettelkasten/parkinson-s-law):
+This technique is fascinating. An unplanned activity means that it doesn't have a start and end time, so it may never finish. As stated by [Parkinson's Law](/zettelkasten/parkinson-s-law):
 
 > Work expands to fill the time available for its completion.
 
-But for you to minimize unplanned activities, you have to put some pressure on yourself. Isn't it bad, it is? Pressure is good, stress, don't. Pressure helps you achieve better results than without it. Your days become more organized. Steve Jobs and Walt Disney were both notorious for placing "impossible" deadlines on projects.
+But for you to minimize unplanned activities, you have to put some pressure on yourself. Isn't it bad, it is? Pressure is good; stress, don't. Pressure helps you achieve better results than without it. As a result, your days become more organized. Steve Jobs and Walt Disney were both notorious for placing "impossible" deadlines on projects.
 
-Without pressure, your tasks, routine, and schedule become chaotic and disorganized. You will be juggling priorities, randomly responding to interruptions, and letting work expand its consumption of time as it sees fit. This scenario causes a lot of pressure and stress.
+Without pressure, your tasks, routine, and schedule become chaotic and disorganized. You will be juggling priorities, randomly responding to interruptions, and letting work expand its time consumption as it sees fit. This scenario causes a lot of pressure and stress.
 
 > There is a false idea that "creative people" work liberated from deadlines and time pressure and need the freedom to wait for inspiration. Not the successful ones. Not the productive ones.
 
@@ -227,7 +227,7 @@ You can also use the value of a project to estimate how much time you allow your
 
 #### 9. Profit from "Odd-Lot" Time
 
-Use your free time waiting in an airport, stuck in traffic, or parked in a reception in a effective way. Whenever you get in this situation, take it to listen to audios, read a book, or any productive purpose, but not the ones that require proper preparation.
+Use your free time waiting in an airport, stuck in traffic, or parked in a reception. Whenever you get in this situation, take it to listen to audio, read a book, or any productive purpose, but not the ones that require proper preparation.
 
 #### 10. Live off Peak
 
@@ -256,34 +256,34 @@ Steps to achieve that:
 
 #### Step One: Honest Self-Analysis and Self-Understanding
 
-The typical entrepreneurs know that they can do anything and everything because, at some point in time, he has to. However, only a few things they do extraordinary well, in a such way they wouldn't hire anybody else to do them.
+The typical entrepreneurs know that they can do anything and everything because, at some point in time, he has to. However, only a few things they do extraordinary well, so they wouldn't hire anybody else to do them.
 
 You should create three lists of things you do:
 
-1. extraordinary well.
-1. well, better than most, but cannot be considered your "specialties".
+1. extraordinary well;
+1. well, better than most, but cannot be considered your "specialties;"
 1. not very well, but do anyway.
 
 #### Step Two: Delegation
 
-["Delegate or Stagnate."](https://www.youtube.com/watch?v=XrrgyQa25DQ). The only way to advance in any business is to keep delegating. You must keep in mind there's more than one way to be right, so when you delegate, you should accept that the other person may complete the task in a different way than yours. Also, that good enough is good enough. Sometimes people won't do tasks as perfectly as you would but will wind up with the same result, and this is good enough.
+["Delegate or Stagnate."](https://www.youtube.com/watch?v=XrrgyQa25DQ). The only way to advance in any business is to keep delegating. You must keep in mind there's more than one way to be right, so when you delegate, you should accept that the other person may complete the task in a different way than yours. Also, that good enough is good enough. Sometimes people won't do tasks as perfectly as you would but will wind up with the same result, which is good enough.
 
 Mastering Delegation:
 
 1. Define what is to be done.
 2. Be certain the delegate understands what is to be done - never assuming you've successfully communicated.
-3. Explain why it is to be done as you prescribing it to be done. Should be room for differences of opinions about the execution and you should encourage it.
+3. Explain why it is to be done as you are prescribing it to be done. Should be room for differences of opinion about the execution, and you should encourage it.
 4. Establish what defines a successful outcome.
 5. Set a deadline for completion or progress report (see [Chapter 8](#chapter-8-decisiveness)).
 6. Follow-up. Act if the person and delegated task don't return to you at the agreed-on date and time.
 
 #### Step Three: Replacing Yourself
 
-Fire yourself from those tasks that aren't your specialty. Generally, marketing is the most difficult task to hire someone. Effectively market and promote the business should be the task that the entrepreneur should focus on.
+Fire yourself from those tasks that aren't your specialty. Generally, marketing is the most difficult task to hire someone. Instead, effectively market and promote the business should be the task that the entrepreneur should focus on.
 
 #### Step Four: Welcoming Your Dispensability
 
-> The ultimate entrepreneurial achievement is complete replacement of self with the business thriving in new hands and your wealth secured or income continuing or even growing.
+> The ultimate entrepreneurial achievement is the complete replacement of self with the business thriving in new hands and your wealth secured or income continuing or even growing.
 
 #### What to Do with the Time You Liberate
 
@@ -291,15 +291,15 @@ Fire yourself from those tasks that aren't your specialty. Generally, marketing 
 
 ### Chapter 10 - The Link Between Productivity and Association
 
-You can't manage time, you manage things that affect your ability to transform time into value. Association is one of them. You control whom you give time to or invest time with. The people around you rarely have a neutral effect.
+You can't manage time. You manage things that affect your ability to transform time into value. Association is one of them. You control whom you give time to or invest time with. The people around you rarely have a neutral effect.
 
-Your ability in transforming time in value is correlated to the condition of your mind, and it is constantly being conditioned by your associations.
+Your ability to transform time in value is correlated to the condition of your mind, and your associations are constantly conditioning it.
 
-Entrepreneur is very susceptible to associations because they have many diverse responsibilities and is often operating under pressure, duress, and urgency. Playing this game weakened by bad associations is extremely difficult. Playing it strengthened and empowered by rich ideas and attitudes seeded into the mind by association can make difficult easy.
+The entrepreneur is very susceptible to associations because they have many diverse responsibilities and often operate under pressure, duress, and urgency. Playing this game weakened by bad associations is extremely difficult. On the other hand, playing it strengthened and empowered by rich ideas and attitudes seeded into the mind by association can make difficulties easy.
 
-Eliminate toxic people and saboteurs from your life, besides taking your time, they weaken the condition of your mind.
+Eliminate toxic people and saboteurs from your life. Besides taking your time, they weaken the condition of your mind.
 
-Deliberately increase the amount of your time with constructive associations, with creative, inspiring, encouraging, can-do, strivers, and achievers people.
+Deliberately increase your time with constructive associations, with creative, inspiring, encouraging, can-do, strivers, and achievers people.
 
 Find your [Master Mind](/zettelkasten/master-mind).
 
@@ -307,17 +307,17 @@ Find your [Master Mind](/zettelkasten/master-mind).
 
 This chapter is about how much is worth paying a higher fee for some service with an expert, who won't consume your time during the job and will deliver it with quality and on time, instead of paying a lower fee but spending your time micromanaging an untrustworthy job. Generally, the former option is the best. Sometimes, you can even have the same or better result if you did it by yourself, but your time is more valuable when you're doing other tasks.
 
-The same rule applies when you need to learn or master some skill. Instead of spending your time to master it alone from zero, sometimes is better to hire an excellent coach to speed up and move up your learning and projects.
+The same rule applies when you need to learn or master some skill. Instead of spending your time to master it alone from zero, sometimes it's better to hire an excellent coach to speed up and move up your learning and projects.
 
 ### Chapter 12 - The Inner Game of Peak Personal Productivity
 
 **Productivity is an inside-out game**. If you don't have your "inner game" or _the will_ to be productive, even with all productivity tools in the world in your hand, you can still be very unproductive.
 
-Dan tells that you can create a state of mind that best facilitates achieving peak productivity by mastering certain [Psycho-Cybernetics](/books/psycho-cybernetics) techniques. One technique requires that you become facile at stopping, storing, and cleaning the problem in your mind to direct 100% of your mental powers to one matter at a time.
+Dan says that you can create a state of mind that best facilitates achieving peak productivity by mastering certain [Psycho-Cybernetics](/books/psycho-cybernetics) techniques. For example, one technique requires that you become facile at stopping, storing, and cleaning the problem in your mind to direct 100% of your mental powers to one matter at a time.
 
-You can also rely on environment design to be more productive ([James Clear also wrote about this](https://jamesclear.com/environment-design-organ-donation)). You can surround yourself with objects that activate good [psychological triggers](/zettelkasten/psychological-trigger), for example, having in your room pictures and artifacts which remind you of wealth. You can also create a space functional for you to perform your job without the need to fetch something every minute.
+You can also rely on environment design to be more productive ([James Clear also wrote about this](https://jamesclear.com/environment-design-organ-donation)). You can surround yourself with objects that activate good [psychological triggers](/zettelkasten/psychological-trigger), such as having in your room pictures and artifacts that remind you of wealth. You can also create a space functional for you to perform your job without the need to fetch something every minute.
 
-It's part of your inner game that you set your price and toughly value your time. Set your rules and don't let anyone break them. Dan, for instance, has a rule of only 20 minutes of phone calls. But don't impose control in a mean-spirited or diva-like manner. You can be polite and yet firm. Present your rules and the benefits to those you work with as well as to yourself.
+It's part of your inner game that you set your price and toughly value your time. Set your rules, and don't let anyone break them. Dan, for instance, has a rule of only 20 minutes of phone calls. But don't impose control in a mean-spirited or diva-like manner. You can be polite and yet firm. Present your rules and the benefits to those you work with as well as to yourself.
 
 ### Chapter 13 - Reasons Why a Year Passes and No Meaningful Progress Is Made
 
@@ -327,27 +327,27 @@ People think they're entitled to something, like free medical care, but the only
 
 Strategies to overcome alibis:
 
-- Identify and write down the three most important and valuable things you can do to foster success in your business. Put them in practice every single day.
+- Identify and write down the three most important and valuable things you can do to foster success in your business. Then, put them in practice every single day.
 
-- Practice the _"Principle of massive action_". Don't just try one solution to a problem, implement 20 all at the same time.
+- Practice the _"Principle of massive action._" Don't just try one solution to a problem, implement 20 all at the same time.
 
 ### Chapter 14 - Taming Tech and Surviving the Social Media Swamp
 
-This chapter explains how social media and technologies in general was designed to be [addictive](/zettelkasten/social-media-addiction) to us. Scientists, behavioral scientists, neurologists, psychologists, computer scientists, and others have invested they knowledge to create elements in technologies to catch our attention and time. Then we become less productive, we cannot keep focus and attention on a single task for much time.
+This chapter explains how social media and technologies, in general, were designed to be [addictive](/zettelkasten/social-media-addiction) to us. Scientists, behavioral scientists, neurologists, psychologists, computer scientists, and others have invested their knowledge to create elements in technologies to catch our attention and time. Then we become less productive, and we cannot keep focus and attention on a single task for much time.
 
-The more you use social medias, less time we have to pay attention in your life. Once this happens, you become more susceptible to others taking decisions in your life for you. If you try to reduce your time losses to social media, the society will pressure and intimidate you.
+The more you use social media, the less time you have to pay attention in your life. Once this happens, you become more susceptible to others making decisions in your life for you. If you try to reduce your time losses to social media, society will pressure and intimidate you.
 
-Rescue yourself of this world in which technologies and social media are normal. Reverse your loss of capabilities, like focus, attention, and good decision making. Take back the control of your time and life.
+Rescue yourself from this world in which technologies and social media are normal. Reverse your loss of capabilities, like focus, attention, and good decision making. Take back control of your time and life.
 
 ### Chapter 15 - How to Turn Time into Wealth
 
 One of the key factors that rich people are rich is because they link time to money and always looking for ways to get more for less.
 
-Money isn't everything, but is important and is a small part, maybe, of "wealth". Dan says that what he likes most of all things he does is receiving and depositing the checks. All wealthy people they met also think this way. Transforming time plus other ingredients in money is richly satisfying.
+Money isn't everything, but is important and is a small part of "wealth". Dan says that what he likes most of all things he does is receiving and depositing the checks. All wealthy people they met also think this way. Transforming time plus other ingredients in money is richly satisfying.
 
 Liking your work, the conditions in which you work, and the people you work for and with almost automatically begets financial wealth. This doesn't mean it all has to be fun. Sometimes you're going to be engaged in un-fun and uninteresting things that need to be done.
 
-**Time itself is an asset class all its own, the more important one.** transform your time into wealth. Decides what "wealth" means to you. Develop a clear, detailed picture of what would look like. Construct a plan and establish targets to get there. Always ask yourself if the things you're doing with your present time are linked to creating the wealth you desire.
+**Time itself is an asset class all its own, the more important one.** Transform your time into wealth. First, decide what "wealth" means to you. Develop a clear, detailed picture of what it would look like. Then, construct a plan and establish targets to get there. Always ask yourself if the things you're doing with your present time are linked to creating the wealth you desire.
 
 ## References
 

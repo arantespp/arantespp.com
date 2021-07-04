@@ -83,8 +83,6 @@ const Journal = () => {
     return [acc, `### ${journal?.date}`, journal?.content].join('\n');
   }, '');
 
-  const journalRef = React.useRef<HTMLDivElement>(null);
-
   return (
     <>
       <HTMLHeaders noIndex title="Journal" />
@@ -107,23 +105,10 @@ const Journal = () => {
           <>
             <Flex sx={{ justifyContent: 'flex-start' }}>
               <Text sx={{ fontStyle: 'italic', color: 'gray', fontSize: 2 }}>
-                Total: {journals.length} days (
-                <Text
-                  sx={{ cursor: 'pointer', textDecoration: 'underline' }}
-                  onClick={() => {
-                    if (journalRef.current?.innerText) {
-                      navigator.clipboard.writeText(
-                        journalRef.current?.innerText,
-                      );
-                    }
-                  }}
-                >
-                  copy text to clipboard
-                </Text>
-                ).
+                Total: {journals.length} days.
               </Text>
             </Flex>
-            <Box ref={journalRef}>
+            <Box>
               <Markdown noH1 content={markdown} />
             </Box>
           </>
@@ -133,7 +118,10 @@ const Journal = () => {
         <Flex sx={{ justifyContent: 'center' }}>
           <Button
             disabled={isValidating}
-            sx={{ backgroundColor: isValidating ? 'muted' : 'primary' }}
+            sx={{
+              backgroundColor: isValidating ? 'muted' : 'primary',
+              marginY: 4,
+            }}
             onClick={() => setSize(size + 1)}
           >
             Load More

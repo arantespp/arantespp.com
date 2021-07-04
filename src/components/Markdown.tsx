@@ -8,6 +8,8 @@ import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 import { Box, Link, Message, Themed } from 'theme-ui';
 
+import { useContentEditable } from '../hooks/useContentEditable';
+
 import Heading from './Heading';
 import Tweet from './Tweet';
 
@@ -117,18 +119,22 @@ const Markdown = ({
   components?: Components;
   noH1?: boolean;
 }) => {
+  const ref = useContentEditable();
+
   return (
-    <ReactMarkdown
-      components={{ ...getComponents({ noH1 }), ...components }}
-      /**
-       * https://katex.org/docs/supported.html
-       * https://github.com/remarkjs/remark-math
-       */
-      remarkPlugins={[remarkMath]}
-      rehypePlugins={[rehypeKatex]}
-    >
-      {content}
-    </ReactMarkdown>
+    <Box ref={ref}>
+      <ReactMarkdown
+        components={{ ...getComponents({ noH1 }), ...components }}
+        /**
+         * https://katex.org/docs/supported.html
+         * https://github.com/remarkjs/remark-math
+         */
+        remarkPlugins={[remarkMath]}
+        rehypePlugins={[rehypeKatex]}
+      >
+        {content}
+      </ReactMarkdown>
+    </Box>
   );
 };
 
