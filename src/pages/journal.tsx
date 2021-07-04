@@ -90,10 +90,12 @@ const Journal = () => {
 
       <SectionTitle>Summary</SectionTitle>
 
-      {summary && (
+      {summary ? (
         <Box>
           <Markdown noH1 content={summary} />
         </Box>
+      ) : (
+        <Loading />
       )}
 
       <SectionTitle>All</SectionTitle>
