@@ -1,4 +1,5 @@
 import NextLink from 'next/link';
+import useKeypress from 'react-use-keypress';
 import useSWR from 'swr';
 import { Box, Button, Card, Flex, Link, Text, Themed } from 'theme-ui';
 
@@ -53,6 +54,11 @@ const Flashcard = () => {
     },
   );
 
+  /**
+   * Retrieve new Flashcard.
+   */
+  useKeypress(['N', 'n'], () => mutate());
+
   return (
     <>
       <HTMLHeaders
@@ -72,7 +78,7 @@ const Flashcard = () => {
       </Box>
       <Flex sx={{ width: '100%', justifyContent: 'center' }}>
         <Button disabled={isValidating} onClick={() => mutate()}>
-          New Flashcard
+          New Flashcard (N)
         </Button>
       </Flex>
     </>

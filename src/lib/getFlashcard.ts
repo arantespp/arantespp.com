@@ -1,6 +1,6 @@
 import * as dateFns from 'date-fns';
 
-import { getPosts } from './files';
+import { getAllPosts } from './files';
 
 export const INTERVAL = 7;
 
@@ -21,7 +21,7 @@ export const getPNumber = (x: number) =>
 export const getFlashcards = async () => {
   const today = new Date();
 
-  return getPosts({ group: 'zettelkasten' })
+  return getAllPosts()
     .map((post) => {
       const diffDays = dateFns.differenceInDays(today, new Date(post.date));
       return {

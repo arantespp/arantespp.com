@@ -362,6 +362,8 @@ export const allPosts = getGroups()
   .reduce((acc, group) => [...acc, getPostsByGroup(group)], [])
   .flat();
 
+export const getAllPosts = () => allPosts;
+
 const getPost = (props: GetPartialPostProps): Post | undefined => {
   const partialPost = getPartialPost(props);
 

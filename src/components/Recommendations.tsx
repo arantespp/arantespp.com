@@ -27,7 +27,10 @@ const Recommendations = ({
       }}
     >
       <Text
+        id="recommendations"
+        as="span"
         sx={{
+          color: 'text',
           fontSize: [4, 5],
           fontWeight: 'bold',
           textAlign: 'center',

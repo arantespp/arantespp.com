@@ -40,7 +40,7 @@ const Header = () => (
       }}
     >
       {navs.map((group) => (
-        <NextLink key={group} href={`/${group}`}>
+        <NextLink key={group} href={`/${group}`} passHref>
           <Link
             sx={{
               fontSize: [2, 2],

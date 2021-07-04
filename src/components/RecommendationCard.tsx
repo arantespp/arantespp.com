@@ -23,12 +23,12 @@ const RecommendationCard = ({
     >
       <NextLink href={href} passHref>
         <Link
-          as="h3"
           sx={{
             fontSize: 3,
             fontWeight: 'bold',
             cursor: 'pointer',
             color: 'text',
+            textDecoration: 'none',
           }}
         >
           {title}

@@ -1,4 +1,4 @@
-import { getPosts } from './files';
+import { getAllPosts } from './files';
 
 import {
   getPNumber,
@@ -7,7 +7,7 @@ import {
 } from './getFlashcard';
 
 jest.mock('./files', () => ({
-  getPosts: jest.fn(),
+  getAllPosts: jest.fn(),
 }));
 
 beforeAll(() => {
@@ -58,7 +58,7 @@ test.each([
     ],
   ],
 ])('getFlashcards test: %#', async (_, allPosts, returnedPosts) => {
-  (getPosts as jest.Mock).mockReturnValue(allPosts);
+  (getAllPosts as jest.Mock).mockReturnValue(allPosts);
   expect(await getFlashcards()).toEqual(returnedPosts);
 });
 

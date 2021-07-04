@@ -156,9 +156,10 @@ const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
     <>
       <Themed.h1>All Posts</Themed.h1>
 
-      <Box sx={{ marginBottom: 5, marginTop: 4 }}>
-        <FilterBlock title="Search:">
+      <Box sx={{ marginBottom: 5, marginTop: 5 }}>
+        <FilterBlock title={`Search among ${allPosts.length} posts:`}>
           <Input
+            autoFocus
             placeholder="What do you want to read?"
             onChange={(e) => setSearch(e.target.value)}
           />
