@@ -6,7 +6,7 @@ export const useContentEditable = () => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   const [editable, setEditable] = React.useState(
-    process.env.NODE_ENV !== 'production',
+    process.env.NODE_ENV === 'development',
   );
 
   const toggleEditable = React.useCallback(() => {

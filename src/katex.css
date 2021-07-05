@@ -1,4 +1,7 @@
 .katex-display > .katex {
+  /* 
+   * Scroll doesn't work because numbered equations.
+   */
   white-space: normal !important;
   margin: 1.5em 0 !important;
 }

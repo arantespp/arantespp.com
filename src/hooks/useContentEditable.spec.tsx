@@ -17,9 +17,9 @@ test('toggle content editable and test focus', () => {
   const box = screen.getByTestId(dataTestId);
 
   /**
-   * Initial value is `true` because we aren't in production environment.
+   * Initial value is `false` because we aren't in development environment.
    */
-  let contentEditable = true;
+  let contentEditable = false;
 
   [...Array(10)].forEach(() => {
     expect(box).toHaveAttribute(
