@@ -1,6 +1,8 @@
 import * as React from 'react';
 import useKeypress from 'react-use-keypress';
 
+export const RESET_SEQUENCE_MS = 3000;
+
 export const useKeypressSequenceListener = (
   sequence: string | string[],
   handler: (s: string) => void,
@@ -13,7 +15,7 @@ export const useKeypressSequenceListener = (
   React.useEffect(() => {
     const timeout = setTimeout(() => {
       setTypedSequence('');
-    }, 3000);
+    }, RESET_SEQUENCE_MS);
 
     return () => clearTimeout(timeout);
   }, [typedSequence]);

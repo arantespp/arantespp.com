@@ -6,7 +6,7 @@ export const useContentEditable = () => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   const [editable, setEditable] = React.useState(
-    process.env.NODE_ENV === 'development',
+    process.env.NODE_ENV !== 'production',
   );
 
   const toggleEditable = React.useCallback(() => {
@@ -23,7 +23,7 @@ export const useContentEditable = () => {
       ref.current?.setAttribute('contentEditable', JSON.stringify(editable));
       setTimeout(() => {
         ref.current?.focus();
-      }, 50);
+      }, 1);
     }
   }, [editable, ref]);
 
