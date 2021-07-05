@@ -18,7 +18,7 @@ book:
 
 #### E1: The Principle of Quantified Overall Economics: Select actions based on quantified overall economic impact.
 
-You should consider the economic impact of all possible decisions when you have to make a project decision. Choosing between releasing a project soon without many tests or testing more and release later should be an economic, not a philosophical choice.
+You should consider the economic impact of all possible decisions when you have to make a project decision. For example, choosing between releasing a project soon without many tests or testing more and release later should be an economic, not a philosophical choice.
 
 #### E2. The Principle of Interconnected Variables: We can't just change one thing.
 
@@ -58,9 +58,23 @@ Because of the [Pareto Paradox](/zettelkasten/pareto-paradox), influencing many 
 
 #### E9. The Principle of Continuous Economic Trade-offs: Economic choices must be made continuously.
 
-Few, big, predictable trade-offs at the start of the development process don't work in product development as they work in manufacturing. In product development, you continuously receive new information from the market, design process, customers preference, or engineering. Instead, you make many small trade-offs, at random times, throughout your development process. Following [Principle E1](#e1-the-principle-of-quantified-overall-economics-select-actions-based-on-quantified-overall-economic-impact) is more important than following the original plan.
+Few, big, predictable trade-offs at the start of the development process don't work in product development as they work in manufacturing. In product development, you continuously receive new information from the market, design process, customers preference, or engineering. Instead, you make many small trade-offs, at random times, throughout your development process. Therefore, following [Principle E1](#e1-the-principle-of-quantified-overall-economics-select-actions-based-on-quantified-overall-economic-impact) is more important than following the original plan.
 
-#### E10. The First Perishability Principle: Many economic choices are more valuable when made quickly
+#### E10. The First Perishability Principle: Many economic choices are more valuable when made quickly.
+
+These continuously and randomly opportunities are quite perishable. Opportunities get smaller with time, and obstacles get larger. The longer you wait to exploit an opportunity, the less economic value is available. Therefore, you must measure and shorten the time it takes to make decisions.
+
+People at the lowest level of the organization are the ones that first detect these opportunities and obstacles. Those levels should be able to make these decisions. You should add a decentralized strategy to your organization.
+
+#### E11. The Subdivision Principle: Inside every bad choice lies a good choice.
+
+Most of your decisions can be divided into components parts that have distinct economics. This means that we can isolate the good and the bad parts. You can decompose the choice into pieces and keep the good parts because your economic framework permits you to evaluate the components based on cost and benefit. Then, using decomposition and recombination, you can keep, discard, or improve those parts.
+
+#### E12. The Principles of Early Harvesting: Create systems to harvest the early cheap opportunities.
+
+Create processes that allow people recognize the cheapest opportunities to buy cycle time that appear early in the development cycle. Actions at the end are more expensive than at the beginning of the development process.
+
+For example, an organization may permit every engineer to buy up to 4 weeks of schedule improvement at a cost no higher than $500 per week. Controlling by time and value reduces any significant risk.
 
 ### Controlling Flow Under Uncertainty
 

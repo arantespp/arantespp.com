@@ -1,6 +1,6 @@
 ---
 title: Decision Mental Models
-excerpt: Decision mental models are models that is used to make a decision.
+excerpt: Decision mental models are models that are used to make a decision.
 date: 2021-04-22
 rating: 2
 tags:
@@ -10,7 +10,7 @@ tags:
 
 ## Notes
 
-- Decision mental models are models that is used to make a decision.
+- Decision mental models are models that are used to make a decision.
 
 - They help you make better decisions.
 

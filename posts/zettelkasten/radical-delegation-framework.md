@@ -43,7 +43,7 @@ rating: 2
 
   - Leaders are overwhelmed.
   - They're unavailable to their team.
-  - Team doesn't get good coaching because the leaders are overwhelmed.
+  - The team doesn't get good coaching because the leaders are overwhelmed.
   - Good folks aren't stretched because the leaders aren't paying attention.
   - Important work doesn't get done.
   - Eventually, people burn out.

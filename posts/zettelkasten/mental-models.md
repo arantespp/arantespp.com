@@ -29,7 +29,7 @@ rating: 4
 
 - The bigger your mental model toolbox, the more likely you're to have the right models to see reality.
 
-  - If you look at the problem in a single way, you've got a blind spot.
+  - If you look at the problem individually, you've got a blind spot.
 
 - For instance, imagine that there is a party. We can see it in these ways:
   - Business: the profit by selling invitations or drinks.

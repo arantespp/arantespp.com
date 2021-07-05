@@ -59,7 +59,7 @@ const PostResume = ({ post }: { post: PostWithoutContent }) => {
             sx={{ color: 'gray', fontStyle: 'italic', fontSize: 1 }}
           >
             {' '}
-            <Link href={updateHistory}>(updates)</Link>
+            <Link href={updateHistory}>(changes)</Link>
           </Text>
         )}
       </Text>

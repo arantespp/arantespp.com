@@ -1,6 +1,6 @@
 ---
 title: System Mental Models
-excerpt: System mental models are models that is used to help you understand how a system works.
+excerpt: System mental models are models that are used to help you understand how a system works.
 date: 2021-04-23
 rating: 2
 tags:
@@ -10,7 +10,7 @@ tags:
 
 ## Notes
 
-- System mental models are models that is used to help you understand how a system works.
+- System mental models are models that are used to help you understand how a system works.
 
 ## Reference
 
