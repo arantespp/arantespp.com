@@ -76,6 +76,33 @@ Create processes that allow people recognize the cheapest opportunities to buy c
 
 For example, an organization may permit every engineer to buy up to 4 weeks of schedule improvement at a cost no higher than $500 per week. Controlling by time and value reduces any significant risk.
 
+#### E13. The First Decision Rule Principle: Use decision rules to decentralize economic control.
+
+You must provide high-quality decision support information to the level of the organization responsible for the small decisions making. You should decentralize authority to this level.
+
+The most important tool for influencing the many small decisions is **economic decision rules**, which accomplish four things:
+
+1. They align all economic choices of the entire project.
+1. They ensure that these choices are optimum at the system level.
+1. They enable you to push control to low levels with limited risks.
+1. They streamline the process of making decisions.
+
+For example, for a Boeing project, the engineers were authorized to increase the unit cost by up $300, by making changes to save a pound of weight. As result, they had the whole team making system-level optimum trade-offs without the need to ask for permission from their superiors.
+
+The superiors control the decision without participating in it. Control without participating is control without decision-making delays.
+
+#### E14. The First Market Principle. Ensure decision makers feel both cost and benefit.
+
+Decision-makers should feel botch the cost and benefit of their decisions. Today, some product developers enjoy benefits while being insulated from costs. The resources will tend to be more utilized than they would, leading to decision delays.
+
+Price should be used to control demand, that is how the economic market works. When prices rise, demand falls. Market work because decision-makers experience both the benefit and the cost of their decisions. Pricing enables such decentralized control.
+
+#### E15. The Principle of Optimum Decision Timing: Every decision has its optimum economic timing.
+
+If the cost, payoff, and risk of your decisions are time-dependent, then each decision will have an optimum economic timing. The timing of economic choices should be based on their economics, not broad philosophical concepts like "front-loading" or "responsible deferral."
+
+You should make each decision at the point where further delay no longer increases de expected economic outcome. Waiting some time has the advantage of the fact that market and technical uncertainty decrease with time.
+
 ### Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.

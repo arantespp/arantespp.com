@@ -15,13 +15,13 @@ rating: 3
 
 - It's an **extended mind** or a **second brain**.
 
-- Few people can hold their focus on a topic for more than a couple of minutes only relying on their mind.
+- Few people can hold their focus on a topic for more than a couple of minutes only relying on their minds.
 
   - You need tools and some objective structure to help. For instance, if we have a pen and paper, then we can stay focused for hours.
 
 - The mind works this way:
 
-  1. It will give you some ideas as you feel you can effectively use.
+  1. It will give you some ideas as you feel you can effectively use them.
   1. If you're not collecting it in a trusted way, it won't give you more.
   1. If you're recording them, even for later evaluation, it'll give you more ideas.
 
