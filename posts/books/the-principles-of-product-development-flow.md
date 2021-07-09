@@ -87,21 +87,33 @@ The most important tool for influencing the many small decisions is **economic d
 1. They enable you to push control to low levels with limited risks.
 1. They streamline the process of making decisions.
 
-For example, for a Boeing project, the engineers were authorized to increase the unit cost by up $300, by making changes to save a pound of weight. As result, they had the whole team making system-level optimum trade-offs without the need to ask for permission from their superiors.
+For example, for a Boeing project, the engineers were authorized to increase the unit cost by up $300 by making changes to save a pound of weight. As a result, they had the whole team making system-level optimum trade-offs without the need to ask for permission from their superiors.
 
 The superiors control the decision without participating in it. Control without participating is control without decision-making delays.
 
 #### E14. The First Market Principle. Ensure decision makers feel both cost and benefit.
 
-Decision-makers should feel botch the cost and benefit of their decisions. Today, some product developers enjoy benefits while being insulated from costs. The resources will tend to be more utilized than they would, leading to decision delays.
+Decision-makers should feel botch the cost and benefit of their decisions. Today, some product developers enjoy benefits while being insulated from costs. As a result, the resources will tend to be more utilized than they would, leading to decision delays.
 
-Price should be used to control demand, that is how the economic market works. When prices rise, demand falls. Market work because decision-makers experience both the benefit and the cost of their decisions. Pricing enables such decentralized control.
+Price should be used to control demand. That is how the economic market works. When prices rise, demand falls. Market work because decision-makers experience both the benefit and the cost of their decisions. Pricing enables such decentralized control.
 
 #### E15. The Principle of Optimum Decision Timing: Every decision has its optimum economic timing.
 
-If the cost, payoff, and risk of your decisions are time-dependent, then each decision will have an optimum economic timing. The timing of economic choices should be based on their economics, not broad philosophical concepts like "front-loading" or "responsible deferral."
+Each decision will have an optimum economic timing if the cost, payoff, and risk of your decisions are time-dependent. Thus, the timing of economic choices should be based on their economics, not broad philosophical concepts like "front-loading" or "responsible deferral."
 
 You should make each decision at the point where further delay no longer increases de expected economic outcome. Waiting some time has the advantage of the fact that market and technical uncertainty decrease with time.
+
+#### E16. The Principle of Marginal Economics. Always compare marginal cost and marginal value.
+
+When evaluating the economic impact of incremental decisions, use [marginal analysis](/zettelkasten/marginal-analysis) instead of comparing total costa with the total value of the system. Whenever marginal value exceeds marginal cost, the action improves economic value. Sometimes, a feature implementation adds some value to the system, but the marginal value is smaller than the marginal cost.
+
+An example is two feature implementations. The first one was 100% completed, and the second, 80%. Most companies would work on the second feature because they assume that achieving planned objectives maximize economic outcomes. However, the correct decision is the feature that has the greatest difference between marginal cost and benefit. This is often the completed feature since it's most likely to have additional unexploited opportunities for improvement.
+
+#### E17. The Sunk Cost Principle. Do not consider money already spent.
+
+Money already spent is a [sunk cost](/zettelkasten/sunk-cost) and should not enter into an economic choice.
+
+#### E18. The Principle of Buying Information: The value of information is its expected economic value.
 
 ### Controlling Flow Under Uncertainty
 
