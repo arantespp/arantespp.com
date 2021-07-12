@@ -591,6 +591,7 @@ export const getJournalSummary = async (date: string) => {
   const parsedDate = getDateWithTimezone(date);
 
   const dates = [
+    ['Today', dateToSlug(parsedDate)],
     ['Yesterday', dateToSlug(dateFns.subDays(parsedDate, 1))],
     ['Last Week', dateToSlug(dateFns.subWeeks(parsedDate, 1))],
     ['Last Month', dateToSlug(dateFns.subMonths(parsedDate, 1))],
