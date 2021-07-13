@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Flex, Spinner } from 'theme-ui';
 
-const Loading = ({ delay = 0 }: { delay?: number }) => {
+const Loading = ({ delay = 100 }: { delay?: number }) => {
   const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
@@ -18,7 +18,7 @@ const Loading = ({ delay = 0 }: { delay?: number }) => {
 
   return (
     <Flex sx={{ width: '100%', justifyContent: 'center' }}>
-      <Spinner />
+      <Spinner aria-busy="true" aria-live="polite" role="status" />
     </Flex>
   );
 };
