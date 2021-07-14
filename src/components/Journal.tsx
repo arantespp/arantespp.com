@@ -6,13 +6,7 @@ import Loading from './Loading';
 
 const Markdown = dynamic(() => import('./Markdown'));
 
-const Journals = ({
-  markdown,
-  title,
-}: {
-  markdown?: string;
-  title: string;
-}) => {
+const Journal = ({ markdown, title }: { markdown?: string; title: string }) => {
   return (
     <>
       <Heading level={1}>{title}</Heading>
@@ -28,4 +22,4 @@ const Journals = ({
   );
 };
 
-export default Journals;
+export default Journal;

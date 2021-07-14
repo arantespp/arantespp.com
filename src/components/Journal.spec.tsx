@@ -2,7 +2,7 @@ import * as faker from 'faker';
 
 import { act, render, screen } from '../testUtils';
 
-import Journals from './Journals';
+import Journal from './Journal';
 
 jest.mock('next/dynamic', () => () => {
   const DynamicComponent = () => null;
@@ -27,7 +27,7 @@ jest.useFakeTimers();
 const title = faker.random.words();
 
 test('should render title and loading', () => {
-  render(<Journals title={title} />);
+  render(<Journal title={title} />);
 
   act(() => {
     jest.runAllTimers();
@@ -51,7 +51,7 @@ test.skip('should render title and markdown', () => {
     ${text}
   `;
 
-  render(<Journals title={title} markdown={markdown} />);
+  render(<Journal title={title} markdown={markdown} />);
 
   act(() => {
     jest.runAllTimers();

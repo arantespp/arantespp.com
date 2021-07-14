@@ -4,7 +4,7 @@ import useSWR from 'swr';
 import { JournalSummary } from '../../lib/files';
 
 import HTMLHeaders from '../../components/HTMLHeaders';
-import Journals from '../../components/Journals';
+import Journal from '../../components/Journal';
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
@@ -28,14 +28,14 @@ const useJournalsSummary = () => {
   return summary;
 };
 
-const Journal = () => {
+const JournalIndex = () => {
   const summary = useJournalsSummary();
   return (
     <>
       <HTMLHeaders noIndex title="Journal" />
-      <Journals markdown={summary} title="Journals" />
+      <Journal markdown={summary} title="Journal" />
     </>
   );
 };
 
-export default Journal;
+export default JournalIndex;

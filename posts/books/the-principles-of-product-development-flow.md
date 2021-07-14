@@ -16,6 +16,10 @@ book:
 
 ### The Economic View
 
+_Why do we want to change the product development process?_ The answer: **to increase profits**.
+
+The economic view of product development allows you to make product development decisions based on economic choices. You don't chase the popular [proxy variable](/zettelkasten/proxy-variable) of the moment. Instead, you transform all proxy variables to the same unit of measure, life-cycle profits, and make multivariable trade-offs to increase profits, which is the core of product development.
+
 #### E1: The Principle of Quantified Overall Economics: Select actions based on quantified overall economic impact.
 
 You should consider the economic impact of all possible decisions when you have to make a project decision. For example, choosing between releasing a project soon without many tests or testing more and release later should be an economic, not a philosophical choice.
@@ -62,13 +66,13 @@ Few, big, predictable trade-offs at the start of the development process don't w
 
 #### E10. The First Perishability Principle: Many economic choices are more valuable when made quickly.
 
-These continuously and randomly opportunities are quite perishable. Opportunities get smaller with time, and obstacles get larger. The longer you wait to exploit an opportunity, the less economic value is available. Therefore, you must measure and shorten the time it takes to make decisions.
+These continuously and randomly opportunities are pretty perishable. Opportunities get smaller with time, and obstacles get larger. The longer you wait to exploit an option, the less economic value is available. Therefore, you must measure and shorten the time it takes to make decisions.
 
 People at the lowest level of the organization are the ones that first detect these opportunities and obstacles. Those levels should be able to make these decisions. You should add a decentralized strategy to your organization.
 
 #### E11. The Subdivision Principle: Inside every bad choice lies a good choice.
 
-Most of your decisions can be divided into components parts that have distinct economics. This means that we can isolate the good and the bad parts. You can decompose the choice into pieces and keep the good parts because your economic framework permits you to evaluate the components based on cost and benefit. Then, using decomposition and recombination, you can keep, discard, or improve those parts.
+Most of your decisions can be divided into components parts that have different economics, which means that we can isolate the good and the bad parts. You can decompose the choice into pieces and keep the good parts because your economic framework permits you to evaluate the components based on cost and benefit. Then, using decomposition and recombination, you can keep, discard, or improve those parts.
 
 #### E12. The Principles of Early Harvesting: Create systems to harvest the early cheap opportunities.
 
@@ -93,7 +97,7 @@ The superiors control the decision without participating in it. Control without 
 
 #### E14. The First Market Principle. Ensure decision makers feel both cost and benefit.
 
-Decision-makers should feel botch the cost and benefit of their decisions. Today, some product developers enjoy benefits while being insulated from costs. As a result, the resources will tend to be more utilized than they would, leading to decision delays.
+Decision-makers should feel both the cost and benefit of their decisions. Today, some product developers enjoy benefits while being insulated from costs. As a result, the resources will tend to be more utilized than they would, leading to decision delays.
 
 Price should be used to control demand. That is how the economic market works. When prices rise, demand falls. Market work because decision-makers experience both the benefit and the cost of their decisions. Pricing enables such decentralized control.
 
@@ -107,13 +111,31 @@ You should make each decision at the point where further delay no longer increas
 
 When evaluating the economic impact of incremental decisions, use [marginal analysis](/zettelkasten/marginal-analysis) instead of comparing total costa with the total value of the system. Whenever marginal value exceeds marginal cost, the action improves economic value. Sometimes, a feature implementation adds some value to the system, but the marginal value is smaller than the marginal cost.
 
-An example is two feature implementations. The first one was 100% completed, and the second, 80%. Most companies would work on the second feature because they assume that achieving planned objectives maximize economic outcomes. However, the correct decision is the feature that has the greatest difference between marginal cost and benefit. This is often the completed feature since it's most likely to have additional unexploited opportunities for improvement.
+An example is two feature implementations. The first one was 100% completed, and the second, 80%. Most companies would work on the second feature because they assume that achieving planned objectives maximize economic outcomes. However, the correct decision is the feature that has the most significant difference between marginal cost and benefit, which is often the completed feature since it's most likely to have additional unexploited opportunities for improvement.
 
 #### E17. The Sunk Cost Principle. Do not consider money already spent.
 
-Money already spent is a [sunk cost](/zettelkasten/sunk-cost) and should not enter into an economic choice.
+Money already spent is a [sunk cost](/zettelkasten/sunk-cost) and should not enter into an economical choice. Instead, you should make a choice based on [marginal economics](#e16-the-principle-of-marginal-economics-always-compare-marginal-cost-and-marginal-value).
 
 #### E18. The Principle of Buying Information: The value of information is its expected economic value.
+
+Information reduces uncertainty. When you reduce uncertainty, you create economic value. You shouldn't pay more than the economic value that it creates.
+
+Investments in product development can create economic value even when they don't lead to successful products because they can make information that has economic value.
+
+#### E19. The Insurance Principle: Don't pay more for insurance than the expected loss.
+
+When you develop backup solutions, you trade development expenses for risk reduction. Parallel development of a backup solution is an insurance policy; you pay money to reduce risk. Whenever the economic benefit of the risk reduction is less than the cost of insurance, it's not a good investment.
+
+Parallel development of multiple backup solutions is called [set-based concurrent engineering](/zettelkasten/set-based-concurrent-engineering). For example, if a single solution has $10$ percent failure rate, $n$ parallel solutions would have $0.1^n$ failure rate. The incremental value added by each additional backup solution decreases geometrically, while the incremental cost added by each additional solution is constant or possibly increasing.
+
+The optimum number of parallel paths occurs when incremental value equals incremental cost (U-curve optimization). Therefore, since this economic optimum can equal one, parallel paths don't always make economic sense.
+
+#### E20. The Newsboy Principle: High probability of failure does not equal bad economics.
+
+#### E21. The Show Me the Money Principle: To influence financial decisions, speak the language of money.
+
+Most corporations give control over financial resources to people who worry about the economics of their choices. To influence those people, you must speak the language of economics, not the language of [proxy variables](/zettelkasten/proxy-variable). When we speak to those who control the money using the language of the money, we can get fast decisions and enthusiastic support.
 
 ### Controlling Flow Under Uncertainty
 

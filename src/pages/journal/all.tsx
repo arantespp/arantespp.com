@@ -5,7 +5,7 @@ import { Button, Flex } from 'theme-ui';
 import { Journal as JournalType } from '../../lib/files';
 
 import HTMLHeaders from '../../components/HTMLHeaders';
-import Journals from '../../components/Journals';
+import Journal from '../../components/Journal';
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
@@ -15,7 +15,7 @@ const getKey = (page: number, previousPageData: any) => {
   return `/api/journal?page=${page}`;
 };
 
-const Journal = () => {
+const JournalAll = () => {
   const { data, isValidating, size, setSize } = useSWRInfinite<{
     journals: JournalType[];
   }>(getKey, fetcher);
@@ -52,7 +52,7 @@ const Journal = () => {
   return (
     <>
       <HTMLHeaders noIndex title="Journal - All" />
-      <Journals markdown={markdown} title="Journals - All" />
+      <Journal markdown={markdown} title="Journal - All" />
       {showLoadMore && (
         <Flex sx={{ justifyContent: 'center' }}>
           <Button
@@ -71,4 +71,4 @@ const Journal = () => {
   );
 };
 
-export default Journal;
+export default JournalAll;
