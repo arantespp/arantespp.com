@@ -22,14 +22,14 @@ tags:
 
   - **company**: what is the product or service;
   - **market**: which are the audience or customers that are likely to care about your product;
-  - **business model**: how the product will be offered to the customers buy it.
+  - **business model**: how the company will offer the products to the customers who will buy them.
 
 - You can find the PMF by:
 
   - changing your customers (market pivot);
   - changing your product.
 
-- Finding the PMF is not a discrete process. It requires many iterations and consistency.
+- Finding the PMF is not a discrete process. Instead, it requires many iterations and consistency.
 
 - _You can always feel when PMF is happening_.
 
@@ -47,7 +47,7 @@ tags:
 
 - How do you find your PMF?
 
-- Is there a universal process that fits to any startup looking for its PMF?
+- Is there a universal process that fits any startup looking for its PMF?
 
 ## References
 

@@ -16,7 +16,7 @@ book:
 
 ### The Economic View
 
-_Why do we want to change the product development process?_ The answer: **to increase profits**.
+_Why do you want to change the product development process?_ The answer: **to increase profits**.
 
 The economic view of product development allows you to make product development decisions based on economic choices. You don't chase the popular [proxy variable](/zettelkasten/proxy-variable) of the moment. Instead, you transform all proxy variables to the same unit of measure, life-cycle profits, and make multivariable trade-offs to increase profits, which is the core of product development.
 
@@ -72,7 +72,7 @@ People at the lowest level of the organization are the ones that first detect th
 
 #### E11. The Subdivision Principle: Inside every bad choice lies a good choice.
 
-Most of your decisions can be divided into components parts that have different economics, which means that we can isolate the good and the bad parts. You can decompose the choice into pieces and keep the good parts because your economic framework permits you to evaluate the components based on cost and benefit. Then, using decomposition and recombination, you can keep, discard, or improve those parts.
+Most of your decisions can be divided into components parts that have different economics, which means that you can isolate the good and the bad parts. You can decompose the choice into pieces and keep the good parts because your economic framework permits you to evaluate the components based on cost and benefit. Then, using decomposition and recombination, you can keep, discard, or improve those parts.
 
 #### E12. The Principles of Early Harvesting: Create systems to harvest the early cheap opportunities.
 
@@ -135,7 +135,7 @@ The optimum number of parallel paths occurs when incremental value equals increm
 
 #### E21. The Show Me the Money Principle: To influence financial decisions, speak the language of money.
 
-Most corporations give control over financial resources to people who worry about the economics of their choices. To influence those people, you must speak the language of economics, not the language of [proxy variables](/zettelkasten/proxy-variable). When we speak to those who control the money using the language of the money, we can get fast decisions and enthusiastic support.
+Most corporations give control over financial resources to people who worry about the economics of their choices. To influence those people, you must speak the language of economics, not the language of [proxy variables](/zettelkasten/proxy-variable). When you speak to those who control the money using the language of the money, you can get fast decisions and enthusiastic support.
 
 ### Controlling Flow Under Uncertainty
 
