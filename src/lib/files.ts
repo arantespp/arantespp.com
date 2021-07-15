@@ -551,9 +551,12 @@ export const getPostAndPostsRecommendations = ({
 
 export const getDraft = getPartialPost;
 
-const mapJournal = ({ content, slug }: Markdown) => {
+const mapJournal = ({ content, folder, slug }: Markdown) => {
   try {
-    const date = dateFns.format(getDateWithTimezone(slug), 'PPPP');
+    const [, year, month] = folder.split(path.sep);
+    const day = slug;
+    const dateString = [year, month, day].join('-');
+    const date = dateFns.format(getDateWithTimezone(dateString), 'PPPP');
     return { content, date };
   } catch {
     return undefined;
@@ -564,7 +567,54 @@ export const getJournals = async (page: number) => {
   try {
     const limit = 7;
 
-    const markdowns = await readFolderMarkdowns({ folder: 'journal' });
+    const years = await fs.promises.readdir(
+      path.join(postsDirectory, 'journal'),
+    );
+
+    const months = (
+      await Promise.all(
+        years.flatMap(async (year) => {
+          try {
+            const monthsArr = await fs.promises.readdir(
+              path.join(postsDirectory, 'journal', year),
+            );
+
+            return monthsArr.map((month) => [year, month]);
+          } catch {
+            return undefined;
+          }
+        }),
+      )
+    )
+      /**
+       * Remove undefined.
+       */
+      .filter((data) => !!data)
+      /**
+       * Transform
+       * `[ [ [ '2021', '06' ], [ '2021', '07' ] ] ]`.
+       * in
+       * `[ [ '2021', '06' ], [ '2021', '07' ] ]`.
+       */
+      .flatMap((data) => data);
+
+    const markdowns = (
+      await Promise.all(
+        (months as string[][]).map(async ([year, month]) => {
+          try {
+            const folder = path.join('journal', year, month);
+            return readFolderMarkdowns({ folder });
+          } catch {
+            return undefined;
+          }
+        }),
+      )
+    )
+      /**
+       * Remove undefined.
+       */
+      .filter((data) => !!data)
+      .flatMap((markdown) => markdown);
 
     const journals = markdowns
       .map(mapJournal)
@@ -586,7 +636,8 @@ export type Journal = NonNullable<
 >;
 
 export const getJournalSummary = async (date: string) => {
-  const dateToSlug = (parsed: Date) => dateFns.format(parsed, 'yyyy-MM-dd');
+  const dateToSlug = (parsed: Date) =>
+    dateFns.format(parsed, 'yyyy-MM-dd').split('-');
 
   const parsedDate = getDateWithTimezone(date);
 
@@ -597,15 +648,15 @@ export const getJournalSummary = async (date: string) => {
     ['Last Month', dateToSlug(dateFns.subMonths(parsedDate, 1))],
     ['Last Semester', dateToSlug(dateFns.subMonths(parsedDate, 6))],
     ['Last Year', dateToSlug(dateFns.subYears(parsedDate, 1))],
-  ];
+  ] as const;
 
   const summary = (
     await Promise.all(
-      dates.map(async ([key, slug]) => {
-        const journal = await readMarkdown({
-          folder: 'journal',
-          filename: `${slug}.md`,
-        });
+      dates.map(async ([key, [year, month, day]]) => {
+        const folder = path.join('journal', year, month);
+        const filename = `${day}.md`;
+
+        const journal = await readMarkdown({ folder, filename });
 
         return { key, journal: journal ? mapJournal(journal) : undefined };
       }),
