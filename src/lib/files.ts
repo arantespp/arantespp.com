@@ -7,7 +7,6 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 import readingTime from 'reading-time';
-import Markdown from '../components/Markdown';
 
 import { Group, GROUPS } from './groups';
 
