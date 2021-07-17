@@ -9,8 +9,8 @@ export const getStaticProps = async () => {
   return { props: { content } };
 };
 
-const Index = ({ content }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <IndexPage content={content} recommendations={[]} />
-);
+const Index = ({ content }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  return <IndexPage content={content} recommendations={[]} />;
+};
 
 export default Index;

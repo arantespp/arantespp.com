@@ -42,7 +42,8 @@ export const useKeypressSequenceListener = (
         handler(s);
       }
     });
-  }, [handler, sequenceArray, typedSequence]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [typedSequence]);
 
   return typedSequence;
 };
