@@ -113,6 +113,7 @@ export const getDrafts = () =>
       backlinks: [],
       references: [],
       keywords: [],
+      bitLinks: [],
       readingTime: 0,
       ...draft,
       href: `/_drafts${draft.href}`,

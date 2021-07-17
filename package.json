@@ -2,13 +2,18 @@
   "name": "arantespp.com",
   "version": "1.0.0",
   "license": "CC-BY-4.0",
+  "author": {
+    "email": "pedro@arantespp.com",
+    "name": "Pedro Arantes",
+    "url": "https://arantespp.com"
+  },
   "scripts": {
     "test": "jest",
     "analyze": "cross-env ANALYZE=true next build",
-    "bit-links": "tsc -p tsconfig.bitLinks.json",
-    "dev": "yarn run bit-links && next dev",
-    "build": "yarn run bit-links && next build",
-    "start": "next start"
+    "bitLinks": "tsc -p tsconfig.bitLinks.json",
+    "dev": "yarn run bitLinks && next dev",
+    "build": "yarn run bitLinks && next build",
+    "start": "yarn run bitLinks && next start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",

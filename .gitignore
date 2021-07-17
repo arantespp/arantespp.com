@@ -30,6 +30,7 @@ yarn-error.log*
 .env.production.local
 
 src/lib/*.js
+*.jsx
 
 /posts/articles/my-story-then*
 

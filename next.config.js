@@ -4,16 +4,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-const bitLinks = require('./bitLinks');
+const redirects = require('./redirects');
 
 module.exports = withBundleAnalyzer({
   async redirects() {
-    return [
-      /**
-       * Bit links.
-       */
-      ...bitLinks,
-    ];
+    return redirects;
   },
   future: {
     webpack5: true,

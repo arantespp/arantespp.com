@@ -3,7 +3,20 @@
  */
 const { getBitLinks } = require('./src/lib/bitLinks.js');
 
-const bitLinks = [
+const oldLinks = [
+  {
+    source: '/books/no-bs-time-management-for-entrepreneurs',
+    destination: '/books/no-b-s-time-management-for-entrepreneurs',
+    permanent: true,
+  },
+  {
+    source: '/instagram/no-bs-time',
+    destination: '/instagram/no-b-s-time',
+    permanent: true,
+  },
+];
+
+const pageLinks = [
   {
     source: '/a',
     destination: '/all',
@@ -24,8 +37,9 @@ const bitLinks = [
     destination: '/network',
     permanent: true,
   },
-  ...getBitLinks(),
 ];
+
+const bitLinks = [...oldLinks, ...pageLinks, ...getBitLinks()];
 
 const hasDuplicatedBitLinks = bitLinks.reduce((acc, cur, index) => {
   if (acc) {
