@@ -7,6 +7,8 @@ tags:
   - productivity
   - time-management
 rating: 5
+bitLinks:
+  - gtd
 book:
   authors:
     - David Allen

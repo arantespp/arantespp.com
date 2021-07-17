@@ -19,7 +19,7 @@ export const socialMedias = {
     username: '@arantespp',
   },
   Email: {
-    href: 'mailto:arantespp@gmail.com',
+    href: 'mailto:pedro@arantespp.com',
     faIcon: faEnvelope,
   },
   Telegram: {

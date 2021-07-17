@@ -1,4 +1,14 @@
-module.exports = [
+/**
+ * Need to compile src/lib/bitLinks.ts before requiring.
+ */
+const { getBitLinks } = require('./src/lib/bitLinks.js');
+
+const bitLinks = [
+  {
+    source: '/a',
+    destination: '/all',
+    permanent: true,
+  },
   {
     source: '/c',
     destination: '/contact',
@@ -10,42 +20,27 @@ module.exports = [
     permanent: true,
   },
   {
-    source: '/five-habits',
-    destination: '/articles/five-habits-for-the-next-five-years',
+    source: '/n',
+    destination: '/network',
     permanent: true,
   },
-  {
-    source: '/no-bs-time',
-    destination: '/books/no-bs-time-management-for-entrepreneurs',
-    permanent: true,
-  },
-  {
-    source: '/create',
-    destination: '/articles/a-letter-to-my-friend-create',
-    permanent: true,
-  },
-  {
-    source: '/planning-models',
-    destination:
-      '/articles/from-reactive-planning-model-to-natural-planning-model',
-    permanent: true,
-  },
-  /**
-   * Temporary.
-   */
-  {
-    source: '/getting-things-done',
-    destination: '/_drafts/books/getting-things-done',
-    permanent: false,
-  },
-  {
-    source: '/gtd',
-    destination: '/_drafts/books/getting-things-done',
-    permanent: false,
-  },
-  {
-    source: '/product-development-flow',
-    destination: '/_drafts/books/the-principles-of-product-development-flow',
-    permanent: false,
-  },
+  ...getBitLinks(),
 ];
+
+const hasDuplicatedBitLinks = bitLinks.reduce((acc, cur, index) => {
+  if (acc) {
+    return acc;
+  }
+
+  if (bitLinks.findIndex((b) => b.source === cur.source) !== index) {
+    return JSON.stringify(cur);
+  }
+
+  return '';
+}, '');
+
+if (hasDuplicatedBitLinks) {
+  throw new Error(`Duplicated bit link: ${hasDuplicatedBitLinks}`);
+}
+
+module.exports = bitLinks;

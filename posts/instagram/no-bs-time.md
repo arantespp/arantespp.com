@@ -6,7 +6,7 @@ instagramUrl: https://www.instagram.com/p/CQhae8dF7V4/
 
 # No B.S. Time Management for Entrepreneurs
 
-![image](https://arantespp.com/images/books/no-bs-time-management-for-entrepreneurs.jpg)
+![image](https://arantespp.com/images/books/no-b-s-time-management-for-entrepreneurs.jpg)
 
 ---
 

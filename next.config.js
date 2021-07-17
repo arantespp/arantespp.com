@@ -10,31 +10,6 @@ module.exports = withBundleAnalyzer({
   async redirects() {
     return [
       /**
-       * Old links.
-       */
-      {
-        source: '/all-posts',
-        destination: '/all',
-        permanent: true,
-      },
-      {
-        source: '/graph',
-        destination: '/network',
-        permanent: true,
-      },
-      {
-        source: '/zettelkasten/hyperbolic-discount',
-        destination: '/zettelkasten/hyperbolic-discounting',
-        permanent: true,
-      },
-      {
-        source:
-          '/zettelkasten/mental-models-the-four-criteria-model-for-choosing-actions-in-the-moment',
-        destination:
-          '/zettelkasten/the-four-criteria-model-for-choosing-actions-in-the-moment',
-        permanent: true,
-      },
-      /**
        * Bit links.
        */
       ...bitLinks,

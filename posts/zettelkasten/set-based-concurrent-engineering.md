@@ -1,6 +1,6 @@
 ---
-title: Set-Based Concurrent Engineering (SBCE)
-excerpt: Set-Based Concurrent Engineering is a product development approach that allows multifunctional teams to ideates, develop, and communicates sets of conceptual solutions in parallel.
+title: Set-Based Concurrent Engineering
+excerpt: Set-Based Concurrent Engineering (SBCE) is a product development approach that allows multifunctional teams to ideates, develop, and communicates sets of conceptual solutions in parallel.
 date: 2021-07-13
 rating: 2
 tags:
@@ -10,7 +10,7 @@ tags:
 
 ## Notes
 
-- Set-Based Concurrent Engineering is a product development approach that allows multifunctional teams to ideates, develop, and communicates sets of conceptual solutions in parallel.
+- Set-Based Concurrent Engineering (SBCE) is a product development approach that allows multifunctional teams to ideates, develop, and communicates sets of conceptual solutions in parallel.
 
 - They gradually narrow these sets by eliminating inferior or infeasible solutions as the team progresses and builds up the understanding, knowledge, and evidence about the solution sets.
 

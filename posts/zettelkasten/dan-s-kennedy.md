@@ -20,13 +20,13 @@ tags:
 
 - One of the very highest paid direct-response copywriters in America.
 
-- Wrote [No B.S. Time Management for Entrepreneurs](/books/no-bs-time-management-for-entrepreneurs) and the [No B.S. books series](https://shop.aer.io/entrepreneurbooks/cl/No_BS__Just_Success/9445).
+- Wrote [No B.S. Time Management for Entrepreneurs](/books/no-b-s-time-management-for-entrepreneurs) and the [No B.S. books series](https://shop.aer.io/entrepreneurbooks/cl/No_BS__Just_Success/9445).
 
 - He loves racehorse and he's a racehorse stable owner.
 
 ## References
 
-- [No B.S. Time Management for Entrepreneurs](/books/no-bs-time-management-for-entrepreneurs)
+- [No B.S. Time Management for Entrepreneurs](/books/no-b-s-time-management-for-entrepreneurs)
 
 - [LinkedIn](https://www.linkedin.com/in/dankennedygkic/)
 

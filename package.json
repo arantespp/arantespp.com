@@ -5,10 +5,10 @@
   "scripts": {
     "test": "jest",
     "analyze": "cross-env ANALYZE=true next build",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "prepare": "husky install"
+    "bit-links": "tsc -p tsconfig.bitLinks.json",
+    "dev": "yarn run bit-links && next dev",
+    "build": "yarn run bit-links && next build",
+    "start": "next start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",

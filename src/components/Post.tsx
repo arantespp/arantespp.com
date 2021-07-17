@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { Box, Flex, Image, Link, Themed } from 'theme-ui';
 
+import { useContentEditable } from '../hooks/useContentEditable';
+
 import type { Post } from '../lib/files';
 
 import BookHeader from './BookHeader';
@@ -13,6 +15,8 @@ import PostResume from './PostResume';
 import SharePost from './SharePost';
 
 const PostComponent = ({ post }: { post: Post }) => {
+  const ref = useContentEditable();
+
   const { image, title, book, editLink, href, tags, excerpt, group } = post;
 
   const imageUrl = (() => {
@@ -40,16 +44,18 @@ const PostComponent = ({ post }: { post: Post }) => {
         keywords={tags}
         image={{ url: imageUrl }}
       />
-      <Themed.h1>{title}</Themed.h1>
-      <Box
-        sx={{
-          marginBottom: [4],
-          borderWidth: 1,
-          borderColor: 'muted',
-          borderBottomStyle: 'solid',
-        }}
-      >
-        <PostResume post={post} />
+      <Box ref={ref}>
+        <Themed.h1>{title}</Themed.h1>
+        <Box
+          sx={{
+            marginBottom: [4],
+            borderWidth: 1,
+            borderColor: 'muted',
+            borderBottomStyle: 'solid',
+          }}
+        >
+          <PostResume post={post} />
+        </Box>
       </Box>
       <Box sx={{ marginBottom: [5] }}>
         {!!image && (

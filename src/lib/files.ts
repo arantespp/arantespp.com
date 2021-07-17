@@ -55,6 +55,7 @@ type PostMeta = {
   editLink?: string;
   keywords: string[];
   readingTime: number;
+  bitLinks: string[];
 };
 
 export type Post = PostMeta & {
@@ -175,6 +176,12 @@ const readFolderMarkdowns = async ({ folder }: { folder: string }) => {
   return markdowns;
 };
 
+const problems: {
+  slug: Array<{ title: string; slug: string; paramCaseTitle: string }>;
+} = { slug: [] };
+
+export const getProblems = () => problems;
+
 /**
  * It does not return backlinks.
  */
@@ -194,7 +201,13 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       image,
       draft,
       book,
+      bitLinks = [],
     } = data as PostMeta;
+
+    if (title && slug !== paramCase(title)) {
+      problems.slug?.push({ title, slug, paramCaseTitle: paramCase(title) });
+      return undefined;
+    }
 
     const getTags = (customTags: string[] = []) =>
       [...tags, ...customTags]
@@ -261,6 +274,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       url: `${DOMAIN}${href}`,
       keywords: [group, ...tags],
       readingTime: Math.round(readingTime(content).minutes),
+      bitLinks,
     };
 
     if (!href || !group || !slug) {

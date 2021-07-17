@@ -1,5 +1,5 @@
 ---
-title: Product/Market Fit (PMF)
+title: Product/Market Fit
 excerpt: Product/market fit means being in a good market with a product that can satisfy that market.
 date: 2021-04-02
 rating: 3

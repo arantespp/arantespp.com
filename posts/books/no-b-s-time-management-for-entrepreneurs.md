@@ -7,6 +7,9 @@ tags:
   - time-management
   - habits
 rating: 5
+bitLinks:
+  - no-bs-time
+  - nobstime
 book:
   authors:
     - Dan S. Kennedy

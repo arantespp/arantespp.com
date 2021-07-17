@@ -5,6 +5,9 @@ excerpt: 'The Principles of Product Development Flow will forever change the way
 tags:
   - product-development
 # rating: 5
+bitLinks:
+  - product-development-flow
+  - flow
 book:
   authors:
     - Donald G. Reinertsen
