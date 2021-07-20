@@ -42,8 +42,12 @@ const getComponents = ({
   h6: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
     <Heading {...{ children, level, noH1 }} />
   ),
-  link: ({ children, href }: { children: React.ReactNode; href: string }) => {
-    const link = <Link href={href}>{children}</Link>;
+  a: ({ children, href }: { children: React.ReactNode; href: string }) => {
+    const link = (
+      <Link href={href} target="_blank" rel="noopener noreferrer">
+        {children}
+      </Link>
+    );
 
     if (href.startsWith('/')) {
       return (

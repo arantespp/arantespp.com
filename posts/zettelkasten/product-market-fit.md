@@ -1,6 +1,6 @@
 ---
 title: Product/Market Fit
-excerpt: Product/market fit means being in a good market with a product that can satisfy that market.
+excerpt: Product/market fit (PMF) means being in a good market with a product that can satisfy that market.
 date: 2021-04-02
 rating: 3
 tags:
@@ -8,17 +8,18 @@ tags:
   - market
   - business
   - Marc Andreesen
+  - Andy Rachleff
 ---
 
 ## Notes
 
 - It was coined by Marc Andreesen in the post [Part 4: The only thing that matters](https://pmarchive.com/guide_to_startups_part4.html).
 
-  - _"Product/market fit means being in a good market with a product that can satisfy that market."_
+  - _"Product/market fit (PMF) means being in a good market with a product that can satisfy that market."_
 
 - Every company must find its PMF before scaling or sniffing around for venture money.
 
-- The value hypothesis, or PMF, is an assumption that brings together:
+- Andy Rachleff says that the value hypothesis, or PMF, is an assumption that brings together:
 
   - **company**: what is the product or service;
   - **market**: which are the audience or customers that are likely to care about your product;
