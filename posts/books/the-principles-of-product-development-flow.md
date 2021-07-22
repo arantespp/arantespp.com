@@ -53,7 +53,7 @@ U-curve is the combination of a hyperbolic and a linear function. It has two ess
 
 #### E7. The Imperfection Principle: Even imperfect answers improve decision-making.
 
-The absence of frameworks will lead workers to make bad decisions because they will use intuition instead of analysis. This intuition produces a 50 to 1 difference in the price people pay for cycle time. With an economic framework, this range down to 2 to 1.
+The absence of frameworks will lead workers to make bad decisions because they will use intuition instead of analysis. This intuition produces a 50 to 1 difference in the price people pay for cycle time. With an economic framework, this range is down to 2 to 1.
 
 As you try to analyze economics, you uncover those assumptions that significantly impact your answers, which permits you to invest more effort in getting these assumptions correct. Thus, the economic view regeneratively improves your understanding of economics.
 
@@ -130,11 +130,13 @@ Investments in product development can create economic value even when they don'
 
 When you develop backup solutions, you trade development expenses for risk reduction. Parallel development of a backup solution is an insurance policy; you pay money to reduce risk. Whenever the economic benefit of the risk reduction is less than the cost of insurance, it's not a good investment.
 
-Parallel development of multiple backup solutions is called [set-based concurrent engineering](/zettelkasten/set-based-concurrent-engineering). For example, if a single solution has $10$ percent failure rate, $n$ parallel solutions would have $0.1^n$ failure rate. The incremental value added by each additional backup solution decreases geometrically, while the incremental cost added by each additional solution is constant or possibly increasing.
+Parallel development of multiple backup solutions is called [set-based concurrent engineering](/zettelkasten/set-based-concurrent-engineering). For example, if a single solution has $10$ percent failure rate, $n$ parallel solutions would have $0.1^n$ failure rate. Thus, the incremental value added by each additional backup solution decreases geometrically, while the incremental cost added by each additional solution is constant or possibly increasing.
 
 The optimum number of parallel paths occurs when incremental value equals incremental cost (U-curve optimization). Therefore, since this economic optimum can equal one, parallel paths don't always make economic sense.
 
 #### E20. The Newsboy Principle: High probability of failure does not equal bad economics.
+
+Uncertain opportunities have large payoff asymmetries, making them the best source of new ideas. Before acquiring sufficient information to make a good economical choice, filtering bad opportunities would eliminate uncertain and poorly understood opportunities. However, it also removes best asymmetries and opportunities. **Thus, opening the filter to pass these [asymmetric opportunities](/zettelkasten/asymmetric-opportunity) actually increases economic value.**
 
 #### E21. The Show Me the Money Principle: To influence financial decisions, speak the language of money.
 
