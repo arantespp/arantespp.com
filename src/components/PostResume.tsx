@@ -46,11 +46,10 @@ const PostResume = ({ post }: { post: PostWithoutContent }) => {
       </Flex>
       <Text sx={{ fontSize: 1 }}>
         <NextLink href={`/${group}`} passHref>
-          <Link sx={{ fontSize: 2, paddingRight: 1 }}>
-            {pascalCase(group)},
-          </Link>
+          <Link sx={{ fontSize: 2 }}>{pascalCase(group)},</Link>
         </NextLink>
         <Text as="span" sx={{ color: 'gray' }}>
+          {' '}
           {formattedDate}
         </Text>
         {isPostPage && updatedAfterCreated && (

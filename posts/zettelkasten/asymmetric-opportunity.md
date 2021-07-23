@@ -5,6 +5,7 @@ date: 2021-07-22
 rating: 3
 tags:
   - cryptocurrencies
+  - learning in public
 ---
 
 ## Notes
@@ -15,6 +16,7 @@ tags:
 
   - **The stock market** because it has unlimited upside potential.
   - **Creating content** because they are scalable products. People can consume them infinitely without any extra effort from you.
+  - **Learning in public** because can create good opportunities for you, besides the knowledge that you gain.
 
 - Cryptocurrencies are asymmetric opportunities.
 
