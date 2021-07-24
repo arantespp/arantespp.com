@@ -25,16 +25,16 @@ rating: 4
 
 - Without mental models, you rely on your current emotions or instincts.
 
-- They're imperfect but useful.
+- They're imperfect but helpful.
 
-- The bigger your mental model toolbox, the more likely you're to have the right models to see reality.
+- The bigger your mental model toolbox, the more likely you're to have the suitable models to see reality.
 
   - If you look at the problem individually, you've got a blind spot.
 
 - For instance, imagine that there is a party. We can see it in these ways:
   - Business: the profit by selling invitations or drinks.
   - Psychology: the music and the mood it creates on the participants.
-  - Anthropology: the human interactions.
+  - Anthropology: the human interactions with the party and others.
 
 ## References
 

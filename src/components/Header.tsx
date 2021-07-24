@@ -4,9 +4,20 @@ import { Flex, Link } from 'theme-ui';
 
 import PedroArantes from './PedroArantes';
 
-import { GROUPS } from '../lib/groups';
-
-const navs = [...GROUPS, 'contact', 'now'];
+const navs = [
+  {
+    label: 'Articles',
+    href: '/articles',
+  },
+  {
+    label: 'Contact',
+    href: '/contact',
+  },
+  {
+    label: 'Now',
+    href: '/now',
+  },
+];
 
 const Header = () => (
   <Flex
@@ -39,8 +50,8 @@ const Header = () => (
         justifyContent: 'center',
       }}
     >
-      {navs.map((group) => (
-        <NextLink key={group} href={`/${group}`} passHref>
+      {navs.map(({ href, label }) => (
+        <NextLink key={href} href={href} passHref>
           <Link
             sx={{
               fontSize: [2, 2],
@@ -54,7 +65,7 @@ const Header = () => (
               },
             }}
           >
-            {pascalCase(group)}
+            {pascalCase(label)}
           </Link>
         </NextLink>
       ))}

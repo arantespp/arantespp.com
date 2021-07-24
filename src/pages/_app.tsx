@@ -74,6 +74,9 @@ const shortcuts = {
   nr: '/revue',
   nj: '/journal',
   nf: '/flashcard',
+  nd: '/_drafts',
+  np: '/problems',
+  nt: '/tags',
 };
 
 const useShortcuts = () => {

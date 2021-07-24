@@ -182,6 +182,22 @@ const problems: {
 
 export const getProblems = () => problems;
 
+const automaticTags = (tags: string[]) => {
+  /**
+   * Add tag "mental-models" to posts that contain "system-mental-models" or "decision-mental-models".
+   */
+  if (
+    tags.includes('system-mental-models') ||
+    tags.includes('decision-mental-models')
+  ) {
+    if (!tags.includes('mental-models')) {
+      return [...tags, 'mental-models'];
+    }
+  }
+
+  return tags;
+};
+
 /**
  * It does not return backlinks.
  */
@@ -253,7 +269,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
     /**
      * Book authors become tags.
      */
-    const allTags = getTags(book?.authors || []);
+    const allTags = automaticTags(getTags(book?.authors || []));
 
     const post = {
       title,
