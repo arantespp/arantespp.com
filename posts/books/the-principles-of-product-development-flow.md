@@ -17,7 +17,7 @@ book:
 
 ## Principles
 
-### The Economic View
+### 2 - The Economic View
 
 _Why do you want to change the product development process?_ The answer: **to increase profits**.
 
@@ -141,6 +141,14 @@ Uncertain opportunities have large payoff asymmetries, making them the best sour
 #### E21. The Show Me the Money Principle: To influence financial decisions, speak the language of money.
 
 Most corporations give control over financial resources to people who worry about the economics of their choices. To influence those people, you must speak the language of economics, not the language of [proxy variables](/zettelkasten/proxy-variable). When you speak to those who control the money using the language of the money, you can get fast decisions and enthusiastic support.
+
+### 3 - Managing Queues
+
+Queues matter because they're economically important.
+
+#### Q1. The Principle of Invisible Inventory: Product development inventory is physically and financially invisible.
+
+Inventory in product development isn't physical objects but information, then it's virtually invisible, both physically and financially. Product development inventory's effects: increased cycle time, delayed feedback, constantly shifting priorities, and status reporting.
 
 ### Controlling Flow Under Uncertainty
 

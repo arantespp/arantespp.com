@@ -19,6 +19,8 @@ tags:
 
 - Every company must find its PMF before scaling or sniffing around for venture money.
 
+  - PMF is the absolute prerequisite to sustainable growth.
+
 - Andy Rachleff says that the value hypothesis, or PMF, is an assumption that brings together:
 
   - **company**: what is the product or service;
