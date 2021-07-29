@@ -37,6 +37,11 @@ const pageLinks = [
     destination: '/network',
     permanent: true,
   },
+  {
+    source: '/miro',
+    destination: 'https://miro.com/app/board/o9J_l4_vcY8=/',
+    permanent: true,
+  },
 ];
 
 const bitLinks = [...oldLinks, ...pageLinks, ...getBitLinks()];

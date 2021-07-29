@@ -150,6 +150,8 @@ Queues matter because they're economically important.
 
 Inventory in product development isn't physical objects but information, then it's virtually invisible, both physically and financially. Product development inventory's effects: increased cycle time, delayed feedback, constantly shifting priorities, and status reporting.
 
+#### Q2. The Principle of Queueing Waste: Queues are the root cause of the majority of economic waste in product development.
+
 ### Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.

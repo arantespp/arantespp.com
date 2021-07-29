@@ -108,7 +108,7 @@ const getComponents = ({
     return <Themed.ul {...props} />;
   },
   img: ({ src, alt }: any) => (
-    <Box sx={{ marginY: 5 }}>
+    <Box sx={{ marginY: 4 }}>
       <CustomImage {...{ src, alt }} />
     </Box>
   ),

@@ -9,7 +9,7 @@ bitLinks:
   - create
 image:
   url: https://source.unsplash.com/M9jrKDXOQoU
-  alt: Photo by <a href="https://unsplash.com/@harlimarten?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Harli  Marten</a> on <a href="https://unsplash.com/s/photos/friendship?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  alt: Photo by <a href="https://unsplash.com/@harlimarten?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Harli Marten</a> on <a href="https://unsplash.com/s/photos/friendship?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 ---
 
 It's interesting how things happen to us. This week I posted a story on Instagram about a workout I had finished, and a friend sent a message congratulating me. Then, we started to talk about training and what motivates us. I said that what motivates me was [the five years habits project](/articles/five-habits-for-the-next-five-years). The "interesting" part happened because our conversation became different from our initial talk, only about workouts.
