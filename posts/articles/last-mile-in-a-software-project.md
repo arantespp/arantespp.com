@@ -7,6 +7,8 @@ tags:
   - last-mile
   - project-management
   - 90-90-rule
+bitLinks:
+  - last-mile
 rating: 5
 image:
   url: https://source.unsplash.com/Kuu5mmxkwW4

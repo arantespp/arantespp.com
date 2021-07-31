@@ -140,7 +140,7 @@ Uncertain opportunities have large payoff asymmetries, making them the best sour
 
 #### E21. The Show Me the Money Principle: To influence financial decisions, speak the language of money.
 
-Most corporations give control over financial resources to people who worry about the economics of their choices. To influence those people, you must speak the language of economics, not the language of [proxy variables](/zettelkasten/proxy-variable). When you speak to those who control the money using the language of the money, you can get fast decisions and enthusiastic support.
+Most corporations give control over financial resources to people who worry about the economics of their choices. To influence those people, you must speak the language of economics, not the language of [proxy variables](/zettelkasten/proxy-variable). When you talk to those who control the money using the language of the money, you can get fast decisions and enthusiastic support.
 
 ### 3 - Managing Queues
 
@@ -151,6 +151,19 @@ Queues matter because they're economically important.
 Inventory in product development isn't physical objects but information, then it's virtually invisible, both physically and financially. Product development inventory's effects: increased cycle time, delayed feedback, constantly shifting priorities, and status reporting.
 
 #### Q2. The Principle of Queueing Waste: Queues are the root cause of the majority of economic waste in product development.
+
+Product development queues do much more damage than manufacturing queues for two reasons.
+
+1. Product development queues tend to be much bigger than manufacturing queues. No natural predators are keeping them under control because these [queues are invisible](#q1-the-principle-of-invisible-inventory-product-development-inventory-is-physically-and-financially-invisible). Then companies don't measure, don't manage, and don't realize that queues are a problem.
+2. Queues create many forms of economic waste.
+   - **Longer Cycle Time.** It takes longer to reach the front of an extensive line than a small one. Usually, Delay costs rise linearly with queue size.
+   - **Increased Risk.** Queues increase the transit time through the product development pipeline. When transit time goes up, you're more vulnerable to changes in customer preference, preemption by competitors, and shifts in the underlying technology.
+   - **More Variability.** High levels of utilization tend to amplify variability.
+   - **More Overhead.** The more projects you have in process, the more you have to track and report status to your managers. Even worse, your team asks for more progress reports per project because queues lead to long transit times.
+   - **Lower Quality.** Queues reduce quality by delaying feedback from downstream processes. If a programmer makes a flawed assumption and must wait for 30 days to get this feedback, she'll embed the bad assumption into 30 days' worth of code. Following a wrong path typically increases exponentially, not linearly.
+   - **Less Motivation.** Queues undermine motivation and initiative. When the next process has a long time, you feel there is little value in hurrying to finish your work. [Parkinson's Law](/zettelkasten/parkinson-s-law) explains this behavior.
+
+Queues off the [critical path](/zettelkasten/critical-path) also costs to the project. Only one of these six wastes arises from the cost of delay, the other five wastes are still present even when the queues is off the [critical path](/zettelkasten/critical-path).
 
 ### Controlling Flow Under Uncertainty
 

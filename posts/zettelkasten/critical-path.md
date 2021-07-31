@@ -1,7 +1,7 @@
 ---
 title: Critical Path
 excerpt: The critical path is the most extended sequence of activities in a project plan. The project is only completed on time only if you meet these activities.
-date: 2021-06-02
+date: 2021-07-28
 rating: 2
 tags:
   - product-development

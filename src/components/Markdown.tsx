@@ -43,21 +43,19 @@ const getComponents = ({
     <Heading {...{ children, level, noH1 }} />
   ),
   a: ({ children, href }: { children: React.ReactNode; href: string }) => {
-    const link = (
-      <Link href={href} target="_blank" rel="noopener noreferrer">
-        {children}
-      </Link>
-    );
-
-    if (href.startsWith('/')) {
+    if (href.startsWith('/') || href.startsWith('#')) {
       return (
         <NextLink href={href} passHref>
-          {link}
+          <Link>{children}</Link>
         </NextLink>
       );
     }
 
-    return link;
+    return (
+      <Link href={href} target="_blank" rel="noopener noreferrer">
+        {children}
+      </Link>
+    );
   },
   blockquote: ({ children }) => {
     return (
