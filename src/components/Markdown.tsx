@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import dynamic from 'next/dynamic';
-import NextLink from 'next/link';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Components } from 'react-markdown/src/ast-to-react';
 import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
-import { Box, Link, Message, Themed } from 'theme-ui';
+import { Box, Message, Themed } from 'theme-ui';
 
 import { useContentEditable } from '../hooks/useContentEditable';
 
 import Heading from './Heading';
+import Link from './Link';
 import Tweet from './Tweet';
 
 import 'katex/dist/katex.min.css';
@@ -43,21 +43,7 @@ const getComponents = ({
   h6: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
     <Heading {...{ children, level, noH1 }} />
   ),
-  a: ({ children, href }: { children: React.ReactNode; href: string }) => {
-    if (href.startsWith('/') || href.startsWith('#')) {
-      return (
-        <NextLink href={href} passHref>
-          <Link>{children}</Link>
-        </NextLink>
-      );
-    }
-
-    return (
-      <Link href={href} target="_blank" rel="noopener noreferrer">
-        {children}
-      </Link>
-    );
-  },
+  a: Link,
   blockquote: ({ children }) => {
     return (
       <Box sx={{ marginY: 4 }}>

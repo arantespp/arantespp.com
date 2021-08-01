@@ -38,9 +38,9 @@ It contains [unfinished posts](/_drafts). Search engines don't index these posts
 
 The main idea of [Zettelkasten](/zettelkasten) is connecting the notes through references and tags. To see the connections between my posts, I've created the [Network](/network). With this feature, I can check my cluster of notes, how they're connected, how they grow over time. I can also discover paths between any topics.
 
-### [Revue](/revue)
+### [Digest](/digest)
 
-I post every week a digest, using [Revue](https://www.getrevue.co/profile/arantespp), of the posts I created in the past seven days. This feature shows the posts I should add to my digest. If you're curious about it, you can check it on the [Revue page](/revue).
+I post every week a digest, using [Revue](https://www.getrevue.co/profile/arantespp), of the posts I created in the past seven days. This feature shows the posts I should add to my digest. If you're curious about it, you can check it on the [digest page](/digest).
 
 ### [Questions](/questions)
 

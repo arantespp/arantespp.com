@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Flex, Link, Themed, Text } from 'theme-ui';
 
-import Digest from '../components/Digest';
 import HTMLHeaders from '../components/HTMLHeaders';
 
 import { socialMedias, socialMediasArr } from '../lib/socialMedias';
@@ -95,8 +94,6 @@ const Contact = () => (
       I couldn&apos;t remember the password, the email, or even if I&apos;ve
       deleted it or not.
     </Text>
-
-    <Digest />
   </>
 );
 

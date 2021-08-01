@@ -1,11 +1,13 @@
 import * as dateFns from 'date-fns';
 import { InferGetStaticPropsType } from 'next';
-import { Box, Text, Themed } from 'theme-ui';
+import { Box, Themed } from 'theme-ui';
 
 import { allPosts, Post } from '../lib/files';
 import { getClosestLastWeekDay } from '../lib/getClosestLastWeekDay';
+import { getNextNewsletterDate } from '../lib/getNextNewsletterDate';
 
 import HTMLHeaders from '../components/HTMLHeaders';
+import Link from '../components/Link';
 import RecommendationsList from '../components/RecommendationsList';
 
 const getLastMonday = () => getClosestLastWeekDay('Mon');
@@ -15,13 +17,13 @@ const getLastMonday = () => getClosestLastWeekDay('Mon');
  *  and filter only week posts (week = `true`) inside the component.
  *
  *  - If week is `true`, then it will return only posts of the
- *    week, that is, from the last Monday until the following Sunday (Revue).
+ *    week, that is, from the last Monday until the following Sunday.
  *  - If week is `false`, it'll return all posts since last Monday, even
  *    if some were written in subsequent Monday.
  *
- * @returns posts that will be used on Revue Weekly Digest.
+ * @returns posts that will be used on my Weekly Digest.
  */
-const filterRevuePosts =
+const filterDigestPosts =
   ({ week }: { week: boolean }) =>
   ({ date }: Post) => {
     const postDate = new Date(date);
@@ -41,7 +43,7 @@ const filterRevuePosts =
 
 export const getStaticProps = async () => {
   const posts = allPosts
-    .filter(filterRevuePosts({ week: false }))
+    .filter(filterDigestPosts({ week: false }))
     .sort(
       (postA, postB) =>
         dateFns.getUnixTime(new Date(postB.date)) -
@@ -51,36 +53,27 @@ export const getStaticProps = async () => {
   return { props: { posts } };
 };
 
-const Revue = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const revuePosts = posts.filter(filterRevuePosts({ week: true }));
-
-  const nextDigestDate = dateFns.set(
-    dateFns.add(getLastMonday(), { days: 7 }),
-    { hours: 22, minutes: -getLastMonday().getTimezoneOffset(), seconds: 0 },
-  );
+const Digest = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const digestPosts = posts.filter(filterDigestPosts({ week: true }));
 
   return (
     <>
       <HTMLHeaders noIndex />
-      <Themed.h1>Revue Weekly Digest Posts</Themed.h1>
+      <Themed.h1>Weekly Digest Posts</Themed.h1>
       <Themed.p>
         I&apos;ll use the posts below in my next{' '}
-        <Themed.a href="https://www.getrevue.co/profile/arantespp">
-          Revue weekly digest
-        </Themed.a>
-        , whose release will be on{' '}
-        <strong>{dateFns.format(nextDigestDate, 'PPPPpppp')}</strong>.
+        <Link href="#newsletter">newsletter</Link>, whose release will be on{' '}
+        <Themed.strong>
+          {getNextNewsletterDate({ format: 'PPPPpppp' })}
+        </Themed.strong>
+        . These posts date from {dateFns.format(getLastMonday(), 'PPP')}{' '}
+        (including) to {getNextNewsletterDate({ format: 'PPP' })} (excluding).
       </Themed.p>
       <Box sx={{ marginY: 5 }}>
-        <Text sx={{ fontSize: 1, color: 'gray', fontStyle: 'italic' }}>
-          Posts since {dateFns.format(getLastMonday(), 'PPPP')} (including{' '}
-          {dateFns.format(getLastMonday(), 'PPP')} but not{' '}
-          {dateFns.format(nextDigestDate, 'PPP')}):
-        </Text>
-        <RecommendationsList recommendations={revuePosts} />
+        <RecommendationsList recommendations={digestPosts} />
       </Box>
     </>
   );
 };
 
-export default Revue;
+export default Digest;

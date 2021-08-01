@@ -71,7 +71,6 @@ const DefaultHeaders = () => {
 
 const shortcuts = {
   na: '/all',
-  nr: '/revue',
   nj: '/journal',
   nf: '/flashcard',
   nd: '/_drafts',

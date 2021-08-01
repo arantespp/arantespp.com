@@ -1,10 +1,7 @@
-import NextLink from 'next/link';
-import { Link } from 'theme-ui';
+import Link from './Link';
 
 const Tag = ({ tag }: { tag: string }) => (
-  <NextLink href={`/tags/${tag}`} passHref>
-    <Link variant="tag">#{tag}</Link>
-  </NextLink>
+  <Link href={`/tags/${tag}`}>#{tag}</Link>
 );
 
 export default Tag;

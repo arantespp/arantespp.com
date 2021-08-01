@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router';
-import { Container } from 'theme-ui';
+import { Box, Container } from 'theme-ui';
 
 import Footer from './Footer';
 import Header from './Header';
+import Newsletter from './Newsletter';
 
 const Layout: React.FC = ({ children }) => {
   const { pathname } = useRouter();
@@ -23,6 +24,9 @@ const Layout: React.FC = ({ children }) => {
         }}
       >
         {children}
+        <Box sx={{ marginY: 6 }}>
+          <Newsletter />
+        </Box>
       </Container>
       <Footer />
     </>
