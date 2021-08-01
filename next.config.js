@@ -10,7 +10,4 @@ module.exports = withBundleAnalyzer({
   async redirects() {
     return redirects;
   },
-  future: {
-    webpack5: true,
-  },
 });

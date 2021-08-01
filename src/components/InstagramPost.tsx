@@ -161,7 +161,7 @@ const PostsGrid = ({
                   content={page}
                   noH1={false}
                   components={{
-                    img: (props) => (
+                    img: ({ ref, ...props }) => (
                       <Flex
                         sx={{
                           justifyContent: 'center',
