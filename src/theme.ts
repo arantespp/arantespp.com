@@ -153,6 +153,22 @@ const partialTheme = {
       fontStyle: 'italic',
       marginY: 4,
     },
+    table: {
+      width: 'auto',
+      marginX: 'auto',
+      marginY: 5,
+      textAlign: 'center',
+      strong: {
+        color: 'text',
+      },
+    },
+    th: {
+      textAlign: 'center',
+    },
+    td: {
+      borderBottomColor: 'muted',
+      textAlign: 'center',
+    },
   },
   text: {
     highlighted: {

@@ -1,10 +1,15 @@
 import { Flex, Image, Text, BaseStyles } from 'theme-ui';
 
 const CustomImage = ({ src, alt }: { src: string; alt: string }) => {
+  const newAlt = alt.replace(
+    /<a /g,
+    '<a target="_blank" rel="noopener noreferrer" ',
+  );
+
   /**
    * https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/
    */
-  const altWithoutTags = alt.replace(/(<([^>]+)>)/gi, '');
+  const altWithoutTags = newAlt.replace(/(<([^>]+)>)/gi, '');
 
   return (
     <Flex
@@ -36,7 +41,7 @@ const CustomImage = ({ src, alt }: { src: string; alt: string }) => {
             fontStyle: 'italic',
             textAlign: 'center',
           }}
-          dangerouslySetInnerHTML={{ __html: alt }}
+          dangerouslySetInnerHTML={{ __html: newAlt }}
         />
       </BaseStyles>
     </Flex>

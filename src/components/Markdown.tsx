@@ -5,6 +5,7 @@ import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Components } from 'react-markdown/src/ast-to-react';
 import rehypeKatex from 'rehype-katex';
+import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import { Box, Link, Message, Themed } from 'theme-ui';
 
@@ -131,7 +132,7 @@ const Markdown = ({
          * https://katex.org/docs/supported.html
          * https://github.com/remarkjs/remark-math
          */
-        remarkPlugins={[remarkMath]}
+        remarkPlugins={[remarkMath, remarkGfm]}
         rehypePlugins={[rehypeKatex]}
       >
         {content}
