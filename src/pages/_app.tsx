@@ -13,8 +13,6 @@ import { socialMedias } from '../lib/socialMedias';
 
 import Providers from '../providers/Providers';
 
-import '../katex.css';
-
 const title = "Pedro Arantes' Digital Garden";
 
 const description =

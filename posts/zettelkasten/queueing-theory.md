@@ -9,6 +9,7 @@ tags:
   - product-development
   - kendal notation
   - David Kendall
+  - queues
 rating: 3
 ---
 
@@ -25,7 +26,7 @@ rating: 3
   - **Queue**: the waiting work.
   - **Server**: the resource performing the work, whose time to complete the work may be unpredictable.
   - **Arrival Process**: the pattern with which work arrives, which is usually unpredictable.
-  - **Service Process**: the process in which the server accomplishes the work.
+  - [**Service Process**](/zettelkasten/queue-service-process): the process in which the server accomplishes the work.
   - **Queueing discipline**: how queue handles the waiting work.
 
 - Kendall notation: $M/M/1/\infty$ queue.

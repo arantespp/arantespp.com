@@ -58,6 +58,20 @@ const message = {
   borderColor: 'muted',
 };
 
+const katex = {
+  '.katex .mord.text': { fontSize: 2, fontFamily: 'body' },
+  '.katex-display > .katex': {
+    /*
+     * Scroll doesn't work because numbered equations.
+     */
+    whiteSpace: 'normal !important',
+    marginY: 4,
+  },
+  '.katex-display .base': {
+    marginBottom: 3,
+  },
+};
+
 const partialTheme = {
   borderWidths: [0, 1, 4],
   colors,
@@ -98,6 +112,7 @@ const partialTheme = {
           background: '#ddd',
         },
       },
+      ...katex,
     },
     h1: {
       marginY: 4,
