@@ -19,7 +19,7 @@ export const getStaticProps = async () => {
     'title',
     'tags',
     'excerpt',
-    'content',
+    // 'content',
   ];
 
   /**

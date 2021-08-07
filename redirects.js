@@ -14,6 +14,11 @@ const oldLinks = [
     destination: '/instagram/no-b-s-time',
     permanent: true,
   },
+  {
+    source: '/revue',
+    destination: '/digest',
+    permanent: true,
+  },
 ];
 
 const pageLinks = [
