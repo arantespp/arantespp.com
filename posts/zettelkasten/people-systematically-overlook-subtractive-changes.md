@@ -6,7 +6,6 @@ rating: 3
 tags:
   - psychology
   - mental models
-  - system mental models
   - Gabrielle S. Adams
   - Benjamin A. Converse
   - Andrew H. Hales

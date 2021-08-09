@@ -31,12 +31,15 @@ const palette = {
  */
 const lightGray = '#6f6f6f';
 
+const lightLightGray = '#ddd';
+
 const colors = {
   ...palette,
   text: '#2a2a2a',
   gray: '#515151',
   lightGray,
   link: lightGray,
+  lightLightGray,
   background: '#fcfcfc',
   primary: palette.imperialRed,
   secondary: palette.imperialRed,
@@ -144,6 +147,7 @@ const partialTheme = {
     },
     a: {
       color: 'link',
+      textDecorationColor: 'lightLightGray',
       '&:hover': {
         color: 'primary',
       },

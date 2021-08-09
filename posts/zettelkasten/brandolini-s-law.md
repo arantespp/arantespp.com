@@ -8,8 +8,8 @@ tags:
   - Mark Twain
   - Brandolini's law
   - Alberto Brandolini
-  - system-mental-models
   - fake news
+  - mental-models
 ---
 
 ## Notes

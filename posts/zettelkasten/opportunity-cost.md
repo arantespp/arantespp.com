@@ -7,7 +7,7 @@ tags:
   - economics
   - microeconomics
   - investment
-  - decision mental models
+  - mental models
 ---
 
 ## Notes

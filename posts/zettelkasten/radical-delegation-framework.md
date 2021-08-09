@@ -5,7 +5,7 @@ date: 2021-06-09
 tags:
   - project management
   - Shreyas Doshi
-  - decision mental models
+  - mental models
 rating: 2
 ---
 

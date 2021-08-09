@@ -5,7 +5,7 @@ date: 2021-06-05
 tags:
   - learning
   - long-term memory
-  - Hermann Ebbinghaus,
+  - Hermann Ebbinghaus
 rating: 3
 ---
 

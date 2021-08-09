@@ -9,7 +9,7 @@ tags:
   - 80/20 rule
   - lay of the vital few
   - economics
-  - system-mental-models
+  - mental-models
   - computer science
 ---
 

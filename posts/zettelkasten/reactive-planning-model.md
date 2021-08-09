@@ -3,7 +3,7 @@ title: Reactive Planning Model
 excerpt: When a team starts a project without planning ahead, it's possible that the reactive planning model ensues.
 date: 2021-06-06
 tags:
-  - system-mental-models
+  - mental-models
   - getting things done
   - planning
   - brainstorming

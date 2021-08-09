@@ -5,7 +5,6 @@ date: 2021-04-22
 rating: 2
 tags:
   - mental models
-  - decision mental models
 ---
 
 ## Notes

@@ -5,7 +5,6 @@ date: 2021-04-23
 rating: 2
 tags:
   - mental models
-  - system mental models
 ---
 
 ## Notes

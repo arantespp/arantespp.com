@@ -5,7 +5,7 @@ date: 2021-06-22
 tags:
   - Goodhart's Law
   - Charles Goodhart
-  - system-mental-models
+  - mental-models
 rating: 3
 ---
 

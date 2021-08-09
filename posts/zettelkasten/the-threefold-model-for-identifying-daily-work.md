@@ -5,7 +5,6 @@ date: 2021-04-24
 rating: 2
 tags:
   - mental models
-  - system mental models
   - getting things done
   - productivity
 ---

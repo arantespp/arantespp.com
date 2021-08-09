@@ -3,8 +3,8 @@ title: Natural Planning Model
 excerpt: It's the more effective way to think about projects and situations because it makes thinks happen sooner, better, and more successfully.
 date: 2021-06-07
 tags:
-  - system-mental-models
-  - decision-mental-models
+  - mental-models
+  - mental-models
   - getting things done
   - planning
   - brainstorming
