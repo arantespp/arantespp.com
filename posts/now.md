@@ -8,6 +8,8 @@ Hello there 👋
 
 I like to say that "I'm an entrepreneur that uses some code to solve problems." The "entrepreneur" part is because I'm [Triângulos Tecnologia](https://triangulostecnologia.com) co-founder. The "uses some code" part is because I'm a frontend/serverless developer, typically based in [São Carlos, SP, Brazil](https://www.google.com.br/maps/place/S%C3%A3o+Carlos,+State+of+S%C3%A3o+Paulo/@-22.0184565,-47.9311626,13z/data=!3m1!4b1!4m5!3m4!1s0x94b87726bb9dd181:0xd9d7d71505999bc!8m2!3d-22.0087082!4d-47.8909263).
 
+_[Do you want to contact me?](/contact)_
+
 ## Now
 
 I hold a degree (2011 - 2015) and an MSc (2016 - 2017) in Electrical and Computer Engineering from [EESC - USP](https://eesc.usp.br/). My graduation and master's main field was electromagnetism, a subject that is very, very interesting for me. But, in 2017, I decided to work with web development. It's easier to build stuff because you need only a computer with an Internet connection. Currently, I'm serverless, focused on [AWS](https://aws.amazon.com), and [React](https://reactjs.org) frontend developer at [Triângulos Tecnologia](https://triangulostecnologia.com), a tech company founded by two other friends from university and me.

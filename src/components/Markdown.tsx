@@ -4,6 +4,7 @@ import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Components } from 'react-markdown/src/ast-to-react';
 import rehypeKatex from 'rehype-katex';
+import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import { Box, Message, Themed } from 'theme-ui';
@@ -119,7 +120,7 @@ const Markdown = ({
          * https://github.com/remarkjs/remark-math
          */
         remarkPlugins={[remarkMath, remarkGfm]}
-        rehypePlugins={[rehypeKatex]}
+        rehypePlugins={[rehypeRaw as any, rehypeKatex]}
       >
         {content}
       </ReactMarkdown>

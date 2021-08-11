@@ -204,6 +204,9 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       bitLinks = [],
     } = data as PostMeta;
 
+    /**
+     * Title and filename doesn't match.
+     */
     if (title && slug !== paramCase(title)) {
       problems.slug?.push({ title, slug, paramCaseTitle: paramCase(title) });
       return undefined;

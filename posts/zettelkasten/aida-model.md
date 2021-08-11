@@ -8,7 +8,7 @@ tags:
   - digital marketing
   - selling
   - E. St. Elmo Lewis
-  - emotion
+  - emotions
 ---
 
 ## Notes

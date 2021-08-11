@@ -9,10 +9,13 @@ bitLinks:
   - full-engagement
 book:
   authors:
-  	- Tony Schwartz
-    - James E. Loehr
+    - 'Tony Schwartz'
+    - 'James E. Loehr'
   link: https://www.amazon.com.br/Power-Full-Engagement-Managing-Performance-ebook/dp/B000FC0SWS/
   ASIN: B000FC0SWS
+  haha:
+    a: asdasd
+    b: sdfsdf
 ---
 
 ## TL;DR
@@ -30,6 +33,11 @@ Everything we do, we need energy. Without the right quantity, quality, focus and
 > Performance, health and happiness are grounded in the skillful management of energy.
 
 The number of hours in a day is fixed, but the quantity and the quality of energy during our days isn't. Our energy not only allow us to perform better, but also affects everyone around us. What would happen if you bring more positive energy and passion to your family, friends, and coworkers? How would it affect their relationships with one another? The skillful management of energy, individually and organizationally, makes possible some that we call **full engagement.**
+
+|          | Negative                                             | Positive                                              |
+| -------- | ---------------------------------------------------- | ----------------------------------------------------- |
+| **High** | Angry <br> Fearful, Anxious, Defensive, Resentful    | Invigorated, Confident, Challenged, Joyful, Connected |
+| **Low**  | Depressed, Exhausted, Burned Out, Hopeless, Defeated | Relaxed, Mellow, Peaceful, Tranquil, Serene           |
 
 |               | Strength                                                              | Endurance                                                                                                    | Flexibility                                                                                                               | Resilience                                                                            |
 | ------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |

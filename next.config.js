@@ -4,10 +4,28 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
+/**
+ * Some day, I need to remove this line and check if rehype-raw works without
+ * next-transpile-modules.
+ */
+const withTM = require('next-transpile-modules')([
+  'rehype-raw',
+  'hast-util-raw',
+  'unist-util-position',
+  'property-information',
+  'web-namespaces',
+  'hast-util-to-parse5',
+  'hast-to-hyperscript',
+  'zwitch',
+  'html-void-elements',
+]);
+
 const redirects = require('./redirects');
 
-module.exports = withBundleAnalyzer({
-  async redirects() {
-    return redirects;
-  },
-});
+module.exports = withBundleAnalyzer(
+  withTM({
+    async redirects() {
+      return redirects;
+    },
+  }),
+);

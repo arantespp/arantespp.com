@@ -150,6 +150,7 @@ const partialTheme = {
       textDecorationColor: 'lightLightGray',
       '&:hover': {
         color: 'primary',
+        textDecoration: 'none',
       },
     },
     strong: {
