@@ -63,11 +63,9 @@ const Digest = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Themed.p>
         I&apos;ll use the posts below in my next{' '}
         <Link href="#newsletter">newsletter</Link>, whose release will be on{' '}
-        <Themed.strong>
-          {getNextNewsletterDate({ format: 'PPPPpppp' })}
-        </Themed.strong>
-        . These posts date from {dateFns.format(getLastMonday(), 'PPP')}{' '}
-        (including) to {getNextNewsletterDate({ format: 'PPP' })} (excluding).
+        {getNextNewsletterDate({ format: 'PPPPpppp' })}. These posts date from{' '}
+        {dateFns.format(getLastMonday(), 'PPP')} (including) to{' '}
+        {getNextNewsletterDate({ format: 'PPP' })} (excluding).
       </Themed.p>
       <Box sx={{ marginY: 5 }}>
         <RecommendationsList recommendations={digestPosts} />

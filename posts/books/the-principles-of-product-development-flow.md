@@ -165,6 +165,18 @@ Product development queues do much more damage than manufacturing queues for two
 
 Queues off the [critical path](/zettelkasten/critical-path) also costs to the project. Only one of these six wastes arises from the cost of delay, the other five wastes are still present even when the queues is off the [critical path](/zettelkasten/critical-path).
 
+#### Q3. The Principle of Queueing Capacity Utilization: Capacity utilization increases queues exponentially.
+
+[Queue capacity utilization](/zettelkasten/queue-capacity-utilization) is the single most important factor that affects queue size. As you approach 100% of the queue capacity, queues become exponentially large. Knowing capacity utilization allow you to predict:
+
+- the percent of time arriving work will find the resource busy;
+- the average number of items in the queue;
+- the average number of items in the system;
+- the percent of overall cycle time is queue time;
+- the ratio of cycle time to value-added time.
+
+This property is useful from a practical perspective, but it's often very difficult to direcly measure capacity utilization in product development processes. It's is difficult because it is the ratio of **demand** and **capacity**, that are individually hard do estimate.
+
 ### Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.

@@ -194,12 +194,6 @@ const Network = ({
     [],
   );
 
-  React.useEffect(() => {
-    if (network) {
-      // network.moveTo({ scale: 60 / nodes.length });
-    }
-  }, [network, nodes.length]);
-
   /**
    * Select fixed node.
    */
