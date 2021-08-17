@@ -6,26 +6,24 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 /**
  * Some day, I need to remove this line and check if rehype-raw works without
- * next-transpile-modules.
+ * next-transpile-modules. I removed it because it breaks the Twitter embed.
  */
-const withTM = require('next-transpile-modules')([
-  'rehype-raw',
-  'hast-util-raw',
-  'unist-util-position',
-  'property-information',
-  'web-namespaces',
-  'hast-util-to-parse5',
-  'hast-to-hyperscript',
-  'zwitch',
-  'html-void-elements',
-]);
+// const withTM = require('next-transpile-modules')([
+//   'rehype-raw',
+//   'hast-util-raw',
+//   'unist-util-position',
+//   'property-information',
+//   'web-namespaces',
+//   'hast-util-to-parse5',
+//   'hast-to-hyperscript',
+//   'zwitch',
+//   'html-void-elements',
+// ]);
 
 const redirects = require('./redirects');
 
-module.exports = withBundleAnalyzer(
-  withTM({
-    async redirects() {
-      return redirects;
-    },
-  }),
-);
+module.exports = withBundleAnalyzer({
+  async redirects() {
+    return redirects;
+  },
+});
