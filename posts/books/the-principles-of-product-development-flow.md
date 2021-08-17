@@ -154,20 +154,20 @@ Inventory in product development isn't physical objects but information, then it
 
 Product development queues do much more damage than manufacturing queues for two reasons.
 
-1. Product development queues tend to be much bigger than manufacturing queues. No natural predators are keeping them under control because these [queues are invisible](#q1-the-principle-of-invisible-inventory-product-development-inventory-is-physically-and-financially-invisible). Then companies don't measure, don't manage, and don't realize that queues are a problem.
+1. Product development queues tend to be much bigger than manufacturing queues. No natural predators are keeping them under control because these [queues are invisible](#q1-the-principle-of-invisible-inventory-product-development-inventory-is-physically-and-financially-invisible). Then companies don't measure, manage, and realize that queues are a problem.
 2. Queues create many forms of economic waste.
    - **Longer Cycle Time.** It takes longer to reach the front of an extensive line than a small one. Usually, Delay costs rise linearly with queue size.
    - **Increased Risk.** Queues increase the transit time through the product development pipeline. When transit time goes up, you're more vulnerable to changes in customer preference, preemption by competitors, and shifts in the underlying technology.
    - **More Variability.** High levels of utilization tend to amplify variability.
    - **More Overhead.** The more projects you have in process, the more you have to track and report status to your managers. Even worse, your team asks for more progress reports per project because queues lead to long transit times.
-   - **Lower Quality.** Queues reduce quality by delaying feedback from downstream processes. If a programmer makes a flawed assumption and must wait for 30 days to get this feedback, she'll embed the bad assumption into 30 days' worth of code. Following a wrong path typically increases exponentially, not linearly.
+   - **Lower Quality.** Queues reduce quality by delaying feedback from downstream processes. If a programmer makes a flawed assumption and must wait for 30 days to get this feedback, she'll embed the flawed assumption into 30 days' worth of code. Thus, following a wrong path typically increases exponentially, not linearly.
    - **Less Motivation.** Queues undermine motivation and initiative. When the next process has a long time, you feel there is little value in hurrying to finish your work. [Parkinson's Law](/zettelkasten/parkinson-s-law) explains this behavior.
 
-Queues off the [critical path](/zettelkasten/critical-path) also costs to the project. Only one of these six wastes arises from the cost of delay, the other five wastes are still present even when the queues is off the [critical path](/zettelkasten/critical-path).
+Queues off the [critical path](/zettelkasten/critical-path) also create costs to the project because only one of these six wastes arises from the cost of delay. The other five wastes are still present even when the queues are off the [critical path](/zettelkasten/critical-path).
 
 #### Q3. The Principle of Queueing Capacity Utilization: Capacity utilization increases queues exponentially.
 
-[Queue capacity utilization](/zettelkasten/queue-capacity-utilization) is the single most important factor that affects queue size. As you approach 100% of the queue capacity, queues become exponentially large. Knowing capacity utilization allow you to predict:
+[Queue capacity utilization](/zettelkasten/queue-capacity-utilization) is the most critical factor that affects queue size. As you approach 100% of the queue capacity, queues become exponentially large. Knowing capacity utilization allow you to predict:
 
 - the percent of time arriving work will find the resource busy;
 - the average number of items in the queue;
@@ -175,7 +175,35 @@ Queues off the [critical path](/zettelkasten/critical-path) also costs to the pr
 - the percent of overall cycle time is queue time;
 - the ratio of cycle time to value-added time.
 
-This property is useful from a practical perspective, but it's often very difficult to direcly measure capacity utilization in product development processes. It's is difficult because it is the ratio of **demand** and **capacity**, that are individually hard do estimate.
+This property is useful from a practical perspective, but it's often tough to directly measure capacity utilization ($\rho$) in product development processes. It's is difficult because it is the ratio of **demand** and **capacity**, that are individually hard to estimate.
+
+#### Q4. The Principle of High-Queues States: Most of the damage done by a queue is caused by high-queues states.
+
+The probability of finding a queue in a specific quantitative state (low or high-queue state) is a function of capacity utilization. Low-queue states are more probable than high-queue states, but they're more important because they delay more jobs. As a result, they have a strong influence on cycle time.
+
+The $\text{State Probability}$ of an $M/M/1/\infty$ queue to have $n$ jobs in the system is:
+
+$$
+\text{State Probability} = \frac{1-\rho}{\rho^n}
+$$
+
+### 4 - Exploiting Variability
+
+#### V1. The Principle of Beneficial Variability: Variability can create economic value.
+
+Which choice is the best economic choice? Which choice has the minimum uncertainty in its outcome?
+
+| Choice | Stakes   | Payoff    | Probability | EMV     |
+| ------ | -------- | --------- | ----------- | ------- |
+| A      | \$15,000 | \$100,000 | 50%         | $35,000 |
+| B      | \$15,000 | \$20,000  | 90%         | $3,000  |
+| C      | \$15,000 | \$16,000  | 100%        | $1,000  |
+
+_EMV = Expected Monetary Value_
+
+Choice A is the best economic choice and the most uncertain. Choice C has zero uncertainty, yet it isn't the best economic choice.
+
+The economics of each discrete choice depends on two factors: the probability and the payoff function. We can't make good economic choices if we only pay attention to probabilities. So you need to pay attention to both probability and payoff functions.
 
 ### Controlling Flow Under Uncertainty
 

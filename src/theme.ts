@@ -174,9 +174,14 @@ const partialTheme = {
       marginY: 4,
     },
     table: {
+      /**
+       * https://blog.cykerway.com/posts/2018/07/20/css-trick-centering-an-overflowed-table.html
+       */
+      overflowX: 'auto',
+      display: 'inline-block',
+      maxWidth: '100%',
       width: 'auto',
       marginX: 'auto',
-      marginY: 5,
       textAlign: 'center',
       strong: {
         color: 'text',

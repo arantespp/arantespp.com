@@ -4,10 +4,9 @@ import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Components } from 'react-markdown/src/ast-to-react';
 import rehypeKatex from 'rehype-katex';
-import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
-import { Box, Message, Themed } from 'theme-ui';
+import { Box, Flex, Message, Themed } from 'theme-ui';
 
 import { useContentEditable } from '../hooks/useContentEditable';
 
@@ -98,6 +97,13 @@ const getComponents = ({
       <CustomImage {...{ src, alt }} />
     </Box>
   ),
+  table: ({ children }) => {
+    return (
+      <Flex sx={{ justifyContent: 'center', overflowX: 'auto', marginY: 4 }}>
+        <Themed.table>{children}</Themed.table>
+      </Flex>
+    );
+  },
 });
 
 const Markdown = ({
@@ -120,7 +126,7 @@ const Markdown = ({
          * https://github.com/remarkjs/remark-math
          */
         remarkPlugins={[remarkMath, remarkGfm]}
-        rehypePlugins={[rehypeRaw as any, rehypeKatex]}
+        rehypePlugins={[rehypeKatex]}
       >
         {content}
       </ReactMarkdown>

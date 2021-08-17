@@ -71,9 +71,11 @@ const shortcuts = {
   na: '/all',
   nj: '/journal',
   nf: '/flashcard',
-  nd: '/_drafts',
+  nd: '/digest',
+  ndr: '/_drafts',
   np: '/problems',
   nt: '/tags',
+  nq: '/questions',
 };
 
 const useShortcuts = () => {
