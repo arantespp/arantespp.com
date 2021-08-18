@@ -4,7 +4,7 @@ excerpt: Psychological triggers are the stimulus that creates a reaction in a br
 date: 2020-06-29
 tags:
   - brain
-  - psychological-trigger
+  - psychological-triggers
   - psychology
 rating: 2
 ---
