@@ -19,6 +19,7 @@ const TagsIndex = ({
   <>
     <HTMLHeaders keywords={tags} title="Tags" />
     <Themed.h1>Tags</Themed.h1>
+    <Themed.p>Total of {tags.length} tags.</Themed.p>
     <Flex sx={{ flexWrap: 'wrap' }}>
       {tags.map((tag) => (
         <Box sx={{ marginRight: 4, marginBottom: 3 }} key={tag}>

@@ -12,7 +12,7 @@ const fetcher = (url: string) => fetch(url).then((r) => r.json());
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getKey = (page: number, previousPageData: any) => {
   if (previousPageData && !previousPageData.journals.length) return null; // reached the end
-  return `/api/journal?page=${page}`;
+  return `/api/journals?page=${page}`;
 };
 
 const JournalAll = () => {

@@ -81,10 +81,10 @@ const partialTheme = {
   fonts: {
     monospace: "'Overpass Mono', monospace",
   },
-  fontSizes: [13, 16, 18, 24, 32, 48, 64, 96],
+  fontSizes: [14, 16, 18, 22, 28, 44],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes: {
-    container: '44em',
+    container: '48em',
   },
   radii: [0, '4px'],
   shadows: ['none', `10px 10px 10px -10px #aaa`],

@@ -10,6 +10,7 @@ import Layout from '../components/Layout';
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 
 import { socialMedias } from '../lib/socialMedias';
+import { shortcuts } from '../lib/shortcuts';
 
 import Providers from '../providers/Providers';
 
@@ -65,17 +66,6 @@ const DefaultHeaders = () => {
       />
     </Head>
   );
-};
-
-const shortcuts = {
-  na: '/all',
-  nj: '/journal',
-  nf: '/flashcard',
-  nd: '/digest',
-  ndr: '/_drafts',
-  np: '/problems',
-  nt: '/tags',
-  nq: '/questions',
 };
 
 const useShortcuts = () => {

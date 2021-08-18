@@ -10,7 +10,7 @@ import readingTime from 'reading-time';
 
 import { Group, GROUPS } from './groups';
 
-const postsDirectory = path.join(process.cwd(), 'posts');
+export const postsDirectory = path.join(process.cwd(), 'posts');
 
 const DOMAIN = 'https://arantespp.com';
 
@@ -182,6 +182,24 @@ const problems: {
 
 export const getProblems = () => problems;
 
+export const getTags = (tags: string[] = []) =>
+  [...tags]
+    /**
+     * Remove invalid tags.
+     */
+    .filter((tag) => !!tag)
+    /**
+     * https://stackoverflow.com/a/37511463/8786986
+     */
+    .map((tag) => tag.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+    .map((tag) => paramCase(tag))
+    /**
+     * Remove duplicated tags.
+     * https://stackoverflow.com/a/56757215/8786986
+     */
+    .filter((tag, index, array) => array.indexOf(tag) === index)
+    .sort((tagA, tagB) => tagA.localeCompare(tagB));
+
 /**
  * It does not return backlinks.
  */
@@ -212,24 +230,6 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       return undefined;
     }
 
-    const getTags = (customTags: string[] = []) =>
-      [...tags, ...customTags]
-        /**
-         * Remove invalid tags.
-         */
-        .filter((tag) => !!tag)
-        /**
-         * https://stackoverflow.com/a/37511463/8786986
-         */
-        .map((tag) => tag.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-        .map((tag) => paramCase(tag))
-        /**
-         * Remove duplicated tags.
-         * https://stackoverflow.com/a/56757215/8786986
-         */
-        .filter((tag, index, array) => array.indexOf(tag) === index)
-        .sort((tagA, tagB) => tagA.localeCompare(tagB));
-
     const { mtime } = fs.statSync(fullPath);
     const { formattedDate: updatedAt } = getDate(mtime);
 
@@ -256,7 +256,7 @@ const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
     /**
      * Book authors become tags.
      */
-    const allTags = getTags(book?.authors || []);
+    const allTags = getTags([...tags, ...(book?.authors || [])]);
 
     const post = {
       title,
@@ -652,30 +652,41 @@ export type Journal = NonNullable<
   ThenArg<ReturnType<typeof getJournals>>[number]
 >;
 
-export const getJournalSummary = async (date: string) => {
-  const dateToSlug = (parsed: Date) =>
-    dateFns.format(parsed, 'yyyy-MM-dd').split('-');
+const journalDateToSlug = (parsed: Date) =>
+  dateFns.format(parsed, 'yyyy-MM-dd').split('-');
 
+export const getJournal = async (date: string | Date) => {
+  const [year, month, day] = (() => {
+    if (typeof date === 'string') {
+      return date.split('-');
+    }
+
+    const parsedDate = getDateWithTimezone(date);
+    return journalDateToSlug(parsedDate);
+  })();
+
+  const folder = path.join('journal', year, month);
+  const filename = `${day}.md`;
+  const journal = await readMarkdown({ folder, filename });
+  return journal ? mapJournal(journal) : undefined;
+};
+
+export const getJournalsSummary = async (date: string) => {
   const parsedDate = getDateWithTimezone(date);
 
   const dates = [
-    ['Today', dateToSlug(parsedDate)],
-    ['Yesterday', dateToSlug(dateFns.subDays(parsedDate, 1))],
-    ['Last Week', dateToSlug(dateFns.subWeeks(parsedDate, 1))],
-    ['Last Month', dateToSlug(dateFns.subMonths(parsedDate, 1))],
-    ['Last Semester', dateToSlug(dateFns.subMonths(parsedDate, 6))],
-    ['Last Year', dateToSlug(dateFns.subYears(parsedDate, 1))],
+    ['Today', parsedDate],
+    ['Yesterday', dateFns.subDays(parsedDate, 1)],
+    ['Last Week', dateFns.subWeeks(parsedDate, 1)],
+    ['Last Month', dateFns.subMonths(parsedDate, 1)],
+    ['Last Semester', dateFns.subMonths(parsedDate, 6)],
+    ['Last Year', dateFns.subYears(parsedDate, 1)],
   ] as const;
 
   const summary = (
     await Promise.all(
-      dates.map(async ([key, [year, month, day]]) => {
-        const folder = path.join('journal', year, month);
-        const filename = `${day}.md`;
-
-        const journal = await readMarkdown({ folder, filename });
-
-        return { key, journal: journal ? mapJournal(journal) : undefined };
+      dates.map(async ([key, dt]) => {
+        return { key, journal: await getJournal(dt) };
       }),
     )
   ).filter(({ journal }) => !!journal);
@@ -683,8 +694,26 @@ export const getJournalSummary = async (date: string) => {
   return summary;
 };
 
-export type JournalSummary = NonNullable<
-  ThenArg<ReturnType<typeof getJournalSummary>>
+export const saveJournal = async ({
+  date,
+  content,
+}: {
+  date: string;
+  content: string;
+}) => {
+  const [year, month, day] = date.split('-');
+  const filePath = path.join(
+    postsDirectory,
+    'journal',
+    year,
+    month,
+    `${day}.md`,
+  );
+  await fs.promises.writeFile(filePath, content);
+};
+
+export type JournalsSummary = NonNullable<
+  ThenArg<ReturnType<typeof getJournalsSummary>>
 >;
 
 export const getInstagramPost = async ({ slug }: { slug: string }) => {

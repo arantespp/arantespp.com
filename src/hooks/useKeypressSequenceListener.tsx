@@ -31,7 +31,11 @@ export const useKeypressSequenceListener = (
     /**
      * Don't set sequence if input is active.
      */
-    if (document.activeElement?.tagName.toLowerCase() !== 'input') {
+    if (
+      !['input', 'textarea'].includes(
+        document.activeElement?.tagName.toLowerCase() || '',
+      )
+    ) {
       setTypedSequence((s) => s + event.key);
     }
   });

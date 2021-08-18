@@ -1,8 +1,8 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
-import NextLink from 'next/link';
-import { Flex, Link, Themed } from 'theme-ui';
+import { Flex, Themed } from 'theme-ui';
 
 import HTMLHeaders from '../../components/HTMLHeaders';
+import Link from '../../components/Link';
 import NetworkLink from '../../components/NetworkLink';
 import RecommendationsList from '../../components/RecommendationsList';
 import Tag from '../../components/Tag';
@@ -39,12 +39,12 @@ const TagsIndex = ({
       <Themed.h1>{title}</Themed.h1>
       <Themed.p>
         {posts.length} posts related to the tag <Tag tag={tag} /> are shown
-        below.
+        below.{' '}
+        <Link href="/tags">
+          Click here if you want to see all tags instead.
+        </Link>
       </Themed.p>
       <Flex sx={{ flexDirection: 'column', marginY: 3 }}>
-        <NextLink href="/tags" passHref>
-          <Link>See all tags</Link>
-        </NextLink>
         <NetworkLink nodeId={tag} />
       </Flex>
       <RecommendationsList recommendations={posts} />
