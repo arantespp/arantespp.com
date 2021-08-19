@@ -4,7 +4,7 @@ excerpt: The purpose of a startup incubator is to help entrepreneurs grow their 
 date: 2021-03-09
 tags:
   - startup incubator
-  - startup
+  - startups
   - entrepreneurship
   - Y Combinator
   - 500 startups

@@ -4,7 +4,7 @@ excerpt: Product/market fit (PMF) means being in a good market with a product th
 date: 2021-04-02
 rating: 3
 tags:
-  - startup
+  - startups
   - market
   - business
   - Marc Andreesen

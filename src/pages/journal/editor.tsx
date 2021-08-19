@@ -1,10 +1,12 @@
+import * as dateFns from 'date-fns';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 import useSWR from 'swr';
-import { Themed } from 'theme-ui';
+import { Input, Themed } from 'theme-ui';
 
 import Editor from '../../components/Editor';
 import HTMLHeaders from '../../components/HTMLHeaders';
+import Link from '../../components/Link';
 
 import { Journal } from '../../lib/files';
 import { getToday } from '../../lib/getToday';
@@ -60,19 +62,65 @@ const useContent = () => {
 
   const [content, setContent] = React.useState(contentFromApi);
 
+  useAutoSave(content);
+
   React.useEffect(() => {
     if (contentFromApi) {
       setContent(contentFromApi);
     }
   }, [contentFromApi]);
 
-  useAutoSave(content);
+  return { content, setContent, date };
+};
 
-  return { content, setContent, date: data?.journal?.date };
+const useDateInput = (date: string) => {
+  const { pathname, push } = useRouter();
+
+  const [dateInput, setDateInput] = React.useState(date);
+
+  /**
+   * If press "T" or "t", navigate to today date.
+   */
+  React.useEffect(() => {
+    const today = getToday();
+
+    if (/t|T/.test(dateInput) && dateInput !== today) {
+      setDateInput(today);
+    }
+  }, [dateInput]);
+
+  React.useEffect(() => {
+    /**
+     * Do not push if the date is the same as the current date.
+     */
+    if (dateInput === date) {
+      return;
+    }
+
+    /**
+     * Do not push if date don't match the API format.
+     */
+    if (!dateFns.isMatch(dateInput, 'yyyy-MM-dd')) {
+      return;
+    }
+
+    /**
+     * Do not push if the date is invalid.
+     */
+    if (!dateFns.isValid(dateFns.parseISO(dateInput))) {
+      return;
+    }
+
+    push({ pathname, query: { date: dateInput } });
+  }, [date, dateInput, pathname, push]);
+
+  return { dateInput, setDateInput };
 };
 
 const JournalEditor = () => {
   const { date, content, setContent } = useContent();
+
+  const { dateInput, setDateInput } = useDateInput(date);
 
   const title = 'Journal Editor';
 
@@ -80,13 +128,21 @@ const JournalEditor = () => {
     <>
       <HTMLHeaders noIndex title={title} />
       <Themed.h1>{title}</Themed.h1>
-      <Themed.h2>{date}</Themed.h2>
+      <Input
+        value={dateInput}
+        onChange={(e) => {
+          setDateInput(e.target.value);
+        }}
+      />
       <Editor
         value={content}
         onChange={(e) => {
           setContent(e.target.value);
         }}
+        sx={{ marginY: 3 }}
+        autoFocus
       />
+      <Link href="/journal">Go to Summary</Link>
     </>
   );
 };

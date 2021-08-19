@@ -4,7 +4,7 @@ excerpt: It's fixed-term and cohort-based programs that include mentorship and e
 date: 2021-03-14
 tags:
   - startup-accelerator
-  - startup
+  - startups
   - entrepreneurship
 rating: 1
 ---

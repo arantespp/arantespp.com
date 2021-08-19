@@ -4,7 +4,8 @@ excerpt: It's type of financing that invertors provides to startup companies and
 date: 2021-03-14
 tags:
   - venture capital
-  - startup
+  - startups
+  - business
   - entrepreneurship
 rating: 1
 ---

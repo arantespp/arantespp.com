@@ -5,7 +5,7 @@ date: 2021-03-08
 tags:
   - startup studio
   - venture building
-  - startup
+  - startups
   - entrepreneurship
   - venture capital
   - Pioneer Square Labs

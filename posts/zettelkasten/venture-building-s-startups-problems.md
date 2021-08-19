@@ -4,7 +4,7 @@ excerpt: Startups created in Venture Buildings (VB) may have some problems.
 date: 2021-03-14
 tags:
   - venture building
-  - startup
+  - startups
 rating: 1
 ---
 

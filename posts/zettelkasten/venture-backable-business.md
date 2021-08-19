@@ -4,7 +4,7 @@ excerpt: A venture backable business is a company whose business model has the p
 date: 2021-07-14
 tags:
   - business
-  - startup
+  - startups
   - venture-capital
 rating: 3
 ---

@@ -17,7 +17,17 @@ const useJournalsSummary = () => {
   }>(`/api/journal/summary?date=${today}`, fetcher);
 
   const summary = data?.summary.reduce((acc, { key, journal }) => {
-    return [acc, `### ${key} (${journal?.date})`, journal?.content].join('\n');
+    /**
+     * Go to editor if isn't in production environment.
+     */
+    const header = (() => {
+      if (process.env.NODE_ENV === 'production') {
+        return `### ${key} (${journal?.date})`;
+      }
+
+      return `### [${key} (${journal?.date})](/journal/editor?date=${journal?.formattedDate})`;
+    })();
+    return [acc, header, journal?.content].join('\n');
   }, '');
 
   return summary;

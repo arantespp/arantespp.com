@@ -120,6 +120,7 @@ const partialTheme = {
     h1: {
       marginY: 4,
       wordBreak,
+      textAlign: ['center', null, 'left'],
     },
     h2: {
       marginY: 4,

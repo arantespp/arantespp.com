@@ -7,7 +7,7 @@ const Editor = (props: TextareaProps) => {
       rows={20}
       onKeyDown={(e) => {
         if (e.key === 'Tab' && !e.shiftKey) {
-          document.execCommand('insertText', false, '\t');
+          document.execCommand('insertText', false, '  ');
           e.preventDefault();
         }
       }}

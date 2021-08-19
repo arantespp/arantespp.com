@@ -574,7 +574,7 @@ const mapJournal = ({ content, folder, slug }: Markdown) => {
     const day = slug;
     const dateString = [year, month, day].join('-');
     const date = dateFns.format(getDateWithTimezone(dateString), 'PPPP');
-    return { content, date };
+    return { content, date, formattedDate: dateString };
   } catch {
     return undefined;
   }

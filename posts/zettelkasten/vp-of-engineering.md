@@ -6,7 +6,7 @@ rating: 1
 tags:
   - engineering
   - software-engineering
-  - startup
+  - startups
 ---
 
 ## Notes
