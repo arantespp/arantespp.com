@@ -15,8 +15,6 @@ const Tweet = ({ children }: { children: React.ReactNode[] }) => {
 
   const [, , html] = tweetIdentifier.exec(children.join('')) || [];
 
-  console.log({ html });
-
   return (
     <>
       <Head>
