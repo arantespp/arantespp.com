@@ -28,7 +28,7 @@ test('toggle content editable and test focus', () => {
     );
 
     act(() => {
-      userEvent.keyboard('te');
+      userEvent.keyboard('ce');
     });
 
     contentEditable = !contentEditable;

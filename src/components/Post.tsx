@@ -1,23 +1,34 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
 import { Box, Flex, Image, Link, Themed } from 'theme-ui';
 
 import { useContentEditable } from '../hooks/useContentEditable';
+import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 
 import type { Post } from '../lib/files';
 
 import BookHeader from './BookHeader';
 import CustomImage from './CustomImage';
 import HTMLHeaders from './HTMLHeaders';
-import Markdown from './Markdown';
 import NetworkLink from './NetworkLink';
 import PostResume from './PostResume';
 import SharePost from './SharePost';
 
+const Markdown = dynamic(() => import('./Markdown'));
+
 const PostComponent = ({ post }: { post: Post }) => {
   const ref = useContentEditable();
 
-  const { image, title, book, editLink, href, tags, excerpt, group } = post;
+  const { image, title, book, editLink, href, tags, excerpt, group, slug } =
+    post;
+
+  const router = useRouter();
+
+  useKeypressSequenceListener('te', () => {
+    router.push({ pathname: `/editor`, query: { group, slug } });
+  });
 
   const imageUrl = (() => {
     if (group === 'zettelkasten') {

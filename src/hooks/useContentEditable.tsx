@@ -14,9 +14,9 @@ export const useContentEditable = () => {
   }, []);
 
   /**
-   * Toggle editable (te) when "te" sequence is pressed.
+   * Toggle editable when "ce" sequence is pressed.
    */
-  useKeypressSequenceListener('te', toggleEditable);
+  useKeypressSequenceListener('ce', toggleEditable);
 
   React.useEffect(() => {
     if (ref) {

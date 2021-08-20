@@ -203,7 +203,7 @@ export const getTags = (tags: string[] = []) =>
 /**
  * It does not return backlinks.
  */
-const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
+export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
   try {
     const fullPath = path.join(postsDirectory, group || '', `${slug}.md`);
     const href = path.join('/', group || '', slug);

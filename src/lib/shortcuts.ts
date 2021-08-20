@@ -5,8 +5,10 @@ export const shortcuts = {
   nf: '/flashcard',
   nd: '/digest',
   ndr: '/_drafts',
-  np: '/problems',
+  npr: '/problems',
   nt: '/tags',
   nq: '/questions',
-  nn: '/note',
+  nn: '/editor', // new note
+  ne: '/editor', // navigate editor
+  np: '/editor', // new post
 };
