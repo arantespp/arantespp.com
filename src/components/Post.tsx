@@ -1,8 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import { Box, Flex, Image, Link, Themed } from 'theme-ui';
+import { Box, Flex, Image, Themed } from 'theme-ui';
 
 import { useContentEditable } from '../hooks/useContentEditable';
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
@@ -21,8 +19,7 @@ const Markdown = dynamic(() => import('./Markdown'));
 const PostComponent = ({ post }: { post: Post }) => {
   const ref = useContentEditable();
 
-  const { image, title, book, editLink, href, tags, excerpt, group, slug } =
-    post;
+  const { image, title, book, href, tags, excerpt, group, slug } = post;
 
   const router = useRouter();
 
@@ -86,12 +83,6 @@ const PostComponent = ({ post }: { post: Post }) => {
         }}
       >
         <NetworkLink nodeId={href} />
-        {editLink && false && (
-          <Link sx={{ color: 'gray', fontStyle: 'italic' }} href={editLink}>
-            <span>Recommend an edition for this post </span>
-            <FontAwesomeIcon icon={faPen} />
-          </Link>
-        )}
       </Flex>
       <Flex sx={{ justifyContent: 'center', marginTop: 5, marginBottom: 6 }}>
         <Image

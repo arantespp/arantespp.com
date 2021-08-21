@@ -16,7 +16,7 @@ const Layout: React.FC = ({ children }) => {
         sx={{
           maxWidth: ['/network'].includes(pathname) ? '100%' : undefined,
           marginTop: [4, 4, 5],
-          marginBottom: [6],
+          marginBottom: [5],
           /**
            * To text doesn't touch the screen border.
            */
@@ -24,7 +24,7 @@ const Layout: React.FC = ({ children }) => {
         }}
       >
         {children}
-        <Box sx={{ marginY: 6 }}>
+        <Box sx={{ marginTop: 6 }}>
           <Newsletter />
         </Box>
       </Container>

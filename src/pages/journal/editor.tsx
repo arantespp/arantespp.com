@@ -65,9 +65,7 @@ const useContent = () => {
   useAutoSave(content);
 
   React.useEffect(() => {
-    if (contentFromApi) {
-      setContent(contentFromApi);
-    }
+    setContent(contentFromApi);
   }, [contentFromApi]);
 
   return { content, setContent, date };

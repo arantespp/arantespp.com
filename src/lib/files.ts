@@ -92,8 +92,11 @@ const drafts: Array<
   }
 > = [];
 
-export const getDrafts = () =>
+export const getDrafts = (filter: { group?: Group } = {}) =>
   drafts
+    /**
+     * Remove duplicates.
+     */
     .filter(
       ({ group, slug }, index) =>
         index ===
@@ -101,6 +104,9 @@ export const getDrafts = () =>
           (draft) => draft.group === group && draft.slug === slug,
         ),
     )
+    .filter(({ group }) => {
+      return filter.group ? filter.group === group : true;
+    })
     .map((draft) => ({
       title: 'DRAFT TITLE',
       excerpt: 'DRAFT EXCERPT',
@@ -334,7 +340,7 @@ export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
   }
 };
 
-const getPostsByGroup = (group: Group) => {
+export const getPostsByGroup = (group: Group) => {
   try {
     return (
       fs
