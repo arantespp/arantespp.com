@@ -1,5 +1,6 @@
 export const shortcuts = {
   ej: '/journal/editor',
+  jj: '/journal/editor',
   na: '/all',
   nb: '/books',
   nj: '/journal',
