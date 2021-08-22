@@ -2,6 +2,8 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { Box, Flex, Image, Themed } from 'theme-ui';
 
+import { editPost } from '../../shortcuts';
+
 import { useContentEditable } from '../hooks/useContentEditable';
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 
@@ -23,7 +25,7 @@ const PostComponent = ({ post }: { post: Post }) => {
 
   const router = useRouter();
 
-  useKeypressSequenceListener('te', () => {
+  useKeypressSequenceListener(editPost, () => {
     router.push({ pathname: `/editor`, query: { group, slug } });
   });
 

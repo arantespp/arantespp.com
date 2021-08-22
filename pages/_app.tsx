@@ -10,9 +10,10 @@ import Layout from '../src/components/Layout';
 import { useKeypressSequenceListener } from '../src/hooks/useKeypressSequenceListener';
 
 import { socialMedias } from '../src/lib/socialMedias';
-import { shortcuts } from '../src/lib/shortcuts';
 
 import Providers from '../src/providers/Providers';
+
+import { navigation } from '../shortcuts';
 
 const title = "Pedro Arantes' Digital Garden";
 
@@ -73,12 +74,12 @@ const useShortcuts = () => {
 
   const handleListener = React.useCallback(
     (key: string) => {
-      push(shortcuts[key]);
+      push(navigation[key]);
     },
     [push],
   );
 
-  useKeypressSequenceListener(Object.keys(shortcuts), handleListener);
+  useKeypressSequenceListener(Object.keys(navigation), handleListener);
 };
 
 const App = ({ Component, pageProps }: AppProps) => {

@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { contentEditable } from '../../shortcuts';
+
 import { useKeypressSequenceListener } from './useKeypressSequenceListener';
 
 export const useContentEditable = () => {
@@ -16,7 +18,7 @@ export const useContentEditable = () => {
   /**
    * Toggle editable when "ce" sequence is pressed.
    */
-  useKeypressSequenceListener('ce', toggleEditable);
+  useKeypressSequenceListener(contentEditable, toggleEditable);
 
   React.useEffect(() => {
     if (ref) {
