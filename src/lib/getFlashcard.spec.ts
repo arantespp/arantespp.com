@@ -20,11 +20,11 @@ afterAll(() => {
 });
 
 test.each([
-  [7, 999],
-  [14, 998],
-  [28, 996],
-  [56, 992],
-  [112, 984],
+  [7, 969],
+  [14, 939],
+  [28, 882],
+  [56, 779],
+  [112, 607],
 ])('pNumber: x=%d; y=%d', (x, y) => {
   expect(getPNumber(x)).toEqual(y);
 });
@@ -48,13 +48,13 @@ test.each([
       { date: '2021-06-05' },
     ],
     [
-      { date: '2020-02-02', diffDays: 489, pNumber: 416 },
+      { date: '2020-02-02', diffDays: 489, pNumber: 50 },
       { date: '2020-07-28', diffDays: 312, pNumber: 0 },
-      { date: '2020-12-07', diffDays: 180, pNumber: 2 },
+      { date: '2020-12-07', diffDays: 180, pNumber: 1 },
       { date: '2021-03-15', diffDays: 82, pNumber: 0 },
-      { date: '2021-05-28', diffDays: 8, pNumber: 141 },
-      { date: '2021-05-29', diffDays: 7, pNumber: 999 },
-      { date: '2021-05-30', diffDays: 6, pNumber: 69 },
+      { date: '2021-05-28', diffDays: 8, pNumber: 137 },
+      { date: '2021-05-29', diffDays: 7, pNumber: 969 },
+      { date: '2021-05-30', diffDays: 6, pNumber: 67 },
     ],
   ],
 ])('getFlashcards test: %#', async (_, allPosts, returnedPosts) => {
