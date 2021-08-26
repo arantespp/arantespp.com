@@ -87,6 +87,38 @@ const useDateInput = (date: string) => {
     }
   }, [dateInput]);
 
+  /**
+   * h/H: subtract 1 day.
+   * j/J: subtract 1 month.
+   * k/K: add 1 month.
+   * l/L: add 1 day.
+   */
+  // React.useEffect(() => {
+  //   const add = (() => {
+  //     if (/h|H/.test(dateInput)) {
+  //       return { days: -1 };
+  //     }
+
+  //     if (/j|J/.test(dateInput)) {
+  //       return { months: -1 };
+  //     }
+
+  //     if (/k|K/.test(dateInput)) {
+  //       return { months: 1 };
+  //     }
+
+  //     if (/l|L/.test(dateInput)) {
+  //       return { days: 1 };
+  //     }
+
+  //     return {};
+  //   })();
+
+  //   // setDateInput(
+  //   //   dateFns.format(dateFns.add(dateFns.parseISO(date), add), 'yyyy-MM-dd'),
+  //   // );
+  // }, [date, dateInput]);
+
   React.useEffect(() => {
     /**
      * Do not push if the date is the same as the current date.
