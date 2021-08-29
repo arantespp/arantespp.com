@@ -20,13 +20,19 @@ draft: true
 
 ## TL;DR
 
+- Getting Thigs Done (GTD) method helps you control all your work.
+- Your brain has a limited [working memory](/zettelkasten/working-memory). Trying to remember everything leads to an inability to concentrate fully on the work at hand because your brain will still try to remember problems and tasks that you've stored in it.
+- These unfinished problems and tasks are called [open loops](/zettelkasten/ideas-in-open-loop). Your brain will constantly remind you about them because they're open, unfinished. They steal your energy and focus.
+- GTD helps you elimited those open loops and gives you a sense of control over your work, which gives to you a relaxed control and flexibility to handle changing circumstances. It consists in a specific and powerful five-stage workflow: [capture](#1-capture), [clarify](#2-clarify), [organize](#3-organize), [reflect](#4-reflect), and [engage](#5-engage).
+- To implement the GTD system, you need the right workplace, tools, and filling system where you always feel comfortable working.
+
 ## Notes
 
 ### Chapter 1 - A New Practice for a New Reality
 
 You can access an infinite amount of data through the Internet and receive many inputs from the world. This scenario's transformed your work and life boundaries because every new information increases the limits of your commitments and your lives.
 
-The amount of new information creates [**open loops**](/zettelkasten/ideas-in-open-loop), or "incomplete tasks" in your minds. An open loop is an action that you decided to execute, but you didn't define the actions and outputs desired. If you have a huge amount of open loops, they'll appear from time to time and steal your energy (because your [short-term memory](/zettelkasten/short-term-memory) is very limited). Putting these incomplete tasks in a management tool, like a "to-do" list, won't help because they're unplanned and will be pulling on our attention.
+The amount of new information creates [**open loops**](/zettelkasten/ideas-in-open-loop), or "incomplete tasks" in your mind. An open loop is an action that you decided to execute, but you didn't define the actions and outputs desired. If you have a huge amount of open loops, they'll appear from time to time and steal your energy (because your [short-term memory](/zettelkasten/short-term-memory) is very limited). Putting these incomplete tasks in a management tool, like a "to-do" list, won't help because they're unplanned and will be pulling on our attention.
 
 To manage the open loops, you must follow 3 steps:
 
@@ -46,7 +52,9 @@ The difference between following these steps and just putting a task on a "to-do
 
 #### 1. Capture
 
-Every open loop or task you decided to do must be captured in the systems you trust. You must empty them regularly.
+Every open loop or task you decided to do must be captured in the systems you trust. This covers a huge range of items like business idea you had in your lunch break, buying a friend a birthday present, and a desire to travel to Spain.
+
+Don't worry about about how important or sensible the items are, your goal is to remove the open loops from your head.
 
 #### 2. Clarify
 
@@ -64,6 +72,8 @@ You need to organize the actions you need to take based on the items you've capt
     1.  **Do it** at the moment the action is defined if if will take less than two minutes.
     2.  **Delegate it** if the task will take longer than two minutes and if you're not the right person to do it.
     3.  **Defer it** if the task will take longer than two minutes and if you're the right person to do it.
+
+Clarify also means periodically emptying your items. If you don't do this, they'll just end up bloated dump of unorganized items, and your brain will rapidly begin to distrust them.
 
 #### 3. Organize
 

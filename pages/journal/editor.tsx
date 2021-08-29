@@ -71,6 +71,8 @@ const useContent = () => {
   return { content, setContent, date };
 };
 
+const isValidDate = (date: string) => dateFns.isValid(dateFns.parseISO(date));
+
 const useDateInput = (date: string) => {
   const { pathname, push } = useRouter();
 
@@ -93,31 +95,41 @@ const useDateInput = (date: string) => {
    * k/K: add 1 month.
    * l/L: add 1 day.
    */
-  // React.useEffect(() => {
-  //   const add = (() => {
-  //     if (/h|H/.test(dateInput)) {
-  //       return { days: -1 };
-  //     }
+  React.useEffect(() => {
+    const add = (() => {
+      if (/h|H/.test(dateInput)) {
+        return { months: -1 };
+      }
 
-  //     if (/j|J/.test(dateInput)) {
-  //       return { months: -1 };
-  //     }
+      if (/j|J/.test(dateInput)) {
+        return { days: -1 };
+      }
 
-  //     if (/k|K/.test(dateInput)) {
-  //       return { months: 1 };
-  //     }
+      if (/k|K/.test(dateInput)) {
+        return { days: 1 };
+      }
 
-  //     if (/l|L/.test(dateInput)) {
-  //       return { days: 1 };
-  //     }
+      if (/l|L/.test(dateInput)) {
+        return { months: 1 };
+      }
 
-  //     return {};
-  //   })();
+      return {};
+    })();
 
-  //   // setDateInput(
-  //   //   dateFns.format(dateFns.add(dateFns.parseISO(date), add), 'yyyy-MM-dd'),
-  //   // );
-  // }, [date, dateInput]);
+    /**
+     * Replace everything except numbers and "-".
+     */
+    const dateReplace = dateInput.replace(/[^\d-]/g, '');
+
+    if (isValidDate(dateReplace)) {
+      setDateInput(
+        dateFns.format(
+          dateFns.add(dateFns.parseISO(dateReplace), add),
+          'yyyy-MM-dd',
+        ),
+      );
+    }
+  }, [dateInput]);
 
   React.useEffect(() => {
     /**
@@ -137,7 +149,7 @@ const useDateInput = (date: string) => {
     /**
      * Do not push if the date is invalid.
      */
-    if (!dateFns.isValid(dateFns.parseISO(dateInput))) {
+    if (!isValidDate(dateInput)) {
       return;
     }
 

@@ -16,6 +16,7 @@ export const navigation = {
 };
 
 export const editPost = [
+  'ee',
   'ep', // Edit post
   'te', // Toggle editor
 ];
