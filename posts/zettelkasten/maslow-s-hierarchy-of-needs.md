@@ -1,12 +1,12 @@
 ---
 title: Maslow's Hierarchy of Needs
-excerpt: It's a motivational theory in psychology comprising a five-tier model of human needs.
-date: 2021-08-11
+date: '2021-08-29'
+excerpt: It's a motivational theory in psychology comprising stages of human needs.
 rating: 3
 tags:
-  - psychology
-  - Abraham Maslow
+  - abraham-maslow
   - motivation
+  - psychology
 ---
 
 ## Notes

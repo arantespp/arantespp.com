@@ -13,7 +13,7 @@ export const savePost = async ({ content, ...meta }: PostForm) => {
   const { rating, excerpt, group } = meta;
   const title = titleCase(meta.title);
   const date = dateFns.format(new Date(), 'yyyy-MM-dd');
-  const tags = getTags(meta.tags.split(';'));
+  const tags = getTags(meta.tags?.split(';'));
 
   const md = matter.stringify(content, {
     title: titleCase(title),
