@@ -316,14 +316,6 @@ export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       true,
     );
 
-    /**
-     * Highlight excerpt, even if it is a draft.
-     */
-    post.content = (post.content || '').replace(
-      post.excerpt,
-      `*${post.excerpt}*`,
-    );
-
     if (!doesPostHaveAllRequiredProperties) {
       post.draft = true;
     }

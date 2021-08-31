@@ -7,12 +7,13 @@ import { titleCase } from 'title-case';
 
 import type { PostForm } from '../components/PostEditor';
 
-import { getTags, postsDirectory } from './files';
+import { getTags, postsDirectory, getPartialPost } from './files';
+import { Group } from './groups';
 
 export const savePost = async ({ content, ...meta }: PostForm) => {
   const { rating, excerpt, group } = meta;
   const title = titleCase(meta.title);
-  const date = dateFns.format(new Date(), 'yyyy-MM-dd');
+  const date = meta.date || dateFns.format(new Date(), 'yyyy-MM-dd');
   const tags = getTags(meta.tags?.split(';'));
 
   const md = matter.stringify(content, {
@@ -23,11 +24,11 @@ export const savePost = async ({ content, ...meta }: PostForm) => {
     tags,
   });
 
-  const fileName = paramCase(title);
-  const href = `/${group}/${fileName}`;
+  const slug = paramCase(title);
+  const href = `/${group}/${slug}`;
   const filePath = path.join(postsDirectory, `${href}.md`);
 
   await fs.promises.writeFile(filePath, md);
 
-  return { href };
+  return getPartialPost({ group: group as Group, slug });
 };

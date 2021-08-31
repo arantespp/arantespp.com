@@ -22,11 +22,11 @@ const Editor = (props: TextareaProps) => {
   return (
     <Box
       sx={{
-        width: `${editorWidthInVw}vw`,
+        width: [null, null, null, `${editorWidthInVw}vw`],
         position: 'relative',
-        left: '50%',
-        right: '50%',
-        marginX: `-${editorWidthInVw / 2}vw`,
+        left: [null, null, null, '50%'],
+        right: [null, null, null, '50%'],
+        marginX: [null, null, null, `-${editorWidthInVw / 2}vw`],
       }}
     >
       <Textarea

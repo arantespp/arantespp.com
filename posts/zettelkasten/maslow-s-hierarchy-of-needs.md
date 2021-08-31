@@ -1,6 +1,6 @@
 ---
 title: Maslow's Hierarchy of Needs
-date: '2021-08-29'
+date: '2021-08-11'
 excerpt: It's a motivational theory in psychology comprising stages of human needs.
 rating: 3
 tags:

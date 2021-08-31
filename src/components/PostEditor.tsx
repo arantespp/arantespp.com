@@ -9,6 +9,7 @@ import type { Post } from '../lib/files';
 import { GROUPS } from '../lib/groups';
 
 import Editor from './Editor';
+import Link from './Link';
 
 const schema = yup.object({
   group: yup
@@ -17,6 +18,7 @@ const schema = yup.object({
     .required(),
   title: yup.string().required(),
   excerpt: yup.string(),
+  date: yup.string(),
   rating: yup.number().positive().integer().required(),
   tags: yup.string(),
   content: yup.string().required(),
@@ -31,50 +33,83 @@ const putPost = async (note: PostForm) => {
   });
 };
 
-const PostEditor = ({
-  post,
-  onSave,
-}: {
-  post?: Post;
-  onSave: (response: any) => void;
-}) => {
+const PostEditor = ({ post }: { post?: Post }) => {
+  const defaultValues = React.useMemo(
+    () => ({ rating: 3, group: '', content: '', tags: '', excerpt: '' }),
+    [],
+  );
+
   const {
     control,
-    formState: { errors },
+    formState: { errors, isDirty, isValid },
     handleSubmit,
     register,
     reset,
   } = useForm<PostForm>({
-    defaultValues: { rating: 3, group: '' },
+    defaultValues,
+    mode: 'onChange',
     resolver: yupResolver(schema),
   });
 
+  /**
+   * Update post because the first props are not yet available
+   */
   React.useEffect(() => {
-    if (post) {
-      const { title, excerpt, rating, tags, content, group } = post;
-      reset(
-        { title, excerpt, rating, tags: tags.join('; '), content, group },
-        { keepDefaultValues: false },
-      );
-    }
-  }, [post, reset]);
+    reset(post ? { ...post, tags: post.tags.join('; ') } : defaultValues, {
+      keepDefaultValues: false,
+      keepDirty: false,
+    });
+  }, [defaultValues, post, reset]);
+
+  // const postAlreadyExists = !!(post && post.href);
 
   const [error, setError] = React.useState('');
 
-  const onSubmit = async (data: PostForm) => {
-    try {
-      setError('');
-      const response = await putPost({ ...data });
-      const json = await response.json();
-      if (response.status === 200) {
-        onSave(json);
-      } else {
+  const onSubmit = React.useCallback(
+    async (data: PostForm) => {
+      try {
+        setError('');
+
+        reset(data, {
+          keepDefaultValues: false,
+          keepDirty: false,
+        });
+
+        const response = await putPost({ ...data });
+        const json = await response.json();
+
+        if (response.status === 200) {
+          return true;
+        }
+
         throw json;
+      } catch (err) {
+        setError(err.message);
+        return false;
       }
-    } catch (err) {
-      setError(err.message);
+    },
+    [reset],
+  );
+
+  /**
+   * Auto-save post.
+   */
+  React.useEffect(() => {
+    if (isValid && isDirty) {
+      const timeout = setTimeout(() => {
+        handleSubmit(onSubmit)();
+      }, 1000);
+
+      return () => clearTimeout(timeout);
     }
-  };
+
+    /**
+     * Only to prevent the warning.
+     */
+    return () => null;
+  }, [handleSubmit, isDirty, isValid, onSubmit]);
+
+  const isButtonDisabled = !isDirty || !isValid;
 
   return (
     <Flex
@@ -95,7 +130,10 @@ const PostEditor = ({
       <ErrorMessage errors={errors} name="excerpt" />
 
       <Label>Groups</Label>
-      <Select defaultValue="" {...register('group')}>
+      <Select
+        {...register('group')}
+        sx={{ pointerEvents: post?.group ? 'none' : 'auto' }}
+      >
         {GROUPS.map((group) => (
           <option key={group} value={group}>
             {group}
@@ -124,8 +162,12 @@ const PostEditor = ({
 
       {error && <Themed.p>{error}</Themed.p>}
 
+      {post?.href && <Link href={post.href}>See post: {post.title}</Link>}
+
       <Flex sx={{ justifyContent: 'center', marginTop: 4 }}>
-        <Button type="submit">Save</Button>
+        <Button type="submit" disabled={isButtonDisabled}>
+          {isButtonDisabled ? 'Saved' : 'Save'}
+        </Button>
       </Flex>
     </Flex>
   );

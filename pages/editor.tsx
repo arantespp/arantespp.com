@@ -18,7 +18,6 @@ const usePostData = () => {
 };
 
 const Editor = () => {
-  const { push } = useRouter();
   const { post } = usePostData();
 
   return (
@@ -26,12 +25,7 @@ const Editor = () => {
       <Head>
         <HTMLHeaders noIndex />
       </Head>
-      <PostEditor
-        post={post}
-        onSave={({ href }) => {
-          push(href);
-        }}
-      />
+      <PostEditor post={post} />
     </>
   );
 };
