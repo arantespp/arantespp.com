@@ -13,9 +13,6 @@ book:
     - 'James E. Loehr'
   link: https://www.amazon.com.br/Power-Full-Engagement-Managing-Performance-ebook/dp/B000FC0SWS/
   ASIN: B000FC0SWS
-  haha:
-    a: asdasd
-    b: sdfsdf
 ---
 
 ## TL;DR

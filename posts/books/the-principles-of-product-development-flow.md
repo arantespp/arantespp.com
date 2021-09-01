@@ -8,7 +8,15 @@ tags:
   - product-development
 draft: true
 bitLinks:
+  - product-development-flow
   - flow
+book:
+  authors:
+    - Donald G. Reinertsen
+  link: >-
+    https://www.amazon.com/Principles-Product-Development-Flow-Generation-ebook/dp/B00K7OWG7O
+  ASIN: B00K7OWG7O
+  image: /images/books/the-principles-of-product-development-flow.jpg
 ---
 
 ## Principles

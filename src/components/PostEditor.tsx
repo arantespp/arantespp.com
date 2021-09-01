@@ -24,6 +24,11 @@ const schema = yup.object({
   content: yup.string().required(),
   draft: yup.boolean(),
   bitLinks: yup.array().of(yup.string().required()),
+  book: yup.object({
+    authors: yup.array().of(yup.string().required()),
+    link: yup.string(),
+    ASIN: yup.string(),
+  }),
 });
 
 export type PostForm = yup.Asserts<typeof schema>;
