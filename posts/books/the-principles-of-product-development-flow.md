@@ -1,19 +1,14 @@
 ---
 title: The Principles of Product Development Flow
 date: '2021-08-31'
-excerpt: >-
-  The Principles of Product Development Flow will forever change the way you
-  think about product development. Reinertsen starts with the ideas of lean
-  manufacturing but goes far beyond them, drawing upon ideas from
-  telecommunications networks, transportation systems, computer operating
-  systems and military doctrine. He combines a lucid explanation of the science
-  behind flow with a rich set of practical approaches. This is another landmark
-  book by one of the foremost experts on product development.
+excerpt: ''
 rating: 6
-draft: true
 tags:
   - donald-g-reinertsen
   - product-development
+draft: true
+bitLinks:
+  - flow
 ---
 
 ## Principles

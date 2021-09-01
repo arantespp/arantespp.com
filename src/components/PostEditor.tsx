@@ -22,14 +22,16 @@ const schema = yup.object({
   rating: yup.number().positive().integer().required(),
   tags: yup.string(),
   content: yup.string().required(),
+  draft: yup.boolean(),
+  bitLinks: yup.array().of(yup.string().required()),
 });
 
 export type PostForm = yup.Asserts<typeof schema>;
 
-const putPost = async (note: PostForm) => {
+const putPost = async (post: PostForm) => {
   return fetch(`/api/post`, {
     method: 'PUT',
-    body: JSON.stringify(note),
+    body: JSON.stringify(post),
   });
 };
 
@@ -60,8 +62,6 @@ const PostEditor = ({ post }: { post?: Post }) => {
       keepDirty: false,
     });
   }, [defaultValues, post, reset]);
-
-  // const postAlreadyExists = !!(post && post.href);
 
   const [error, setError] = React.useState('');
 
