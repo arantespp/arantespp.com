@@ -5,6 +5,7 @@ import useSWR from 'swr';
 import { Input, Themed } from 'theme-ui';
 
 import Editor from '../../src/components/Editor';
+import ErrorMessage from '../../src/components/ErrorMessage';
 import HTMLHeaders from '../../src/components/HTMLHeaders';
 import Link from '../../src/components/Link';
 
@@ -33,20 +34,29 @@ const AUTO_SAVE_DELAY = 1000;
 const useAutoSave = (content: string) => {
   const date = useDate();
 
+  const [error, setError] = React.useState('');
+
   React.useEffect(() => {
-    const timeout = setTimeout(() => {
+    const timeout = setTimeout(async () => {
       if (!content || !date) {
         return;
       }
 
-      fetch('/api/journal', {
+      const response = await fetch('/api/journal', {
         method: 'PUT',
         body: JSON.stringify({ date, content }),
       });
+      const json = await response.json();
+
+      if (response.status !== 200) {
+        setError(`Error: ${json.error}`);
+      }
     }, AUTO_SAVE_DELAY);
 
     return () => clearTimeout(timeout);
   }, [content, date]);
+
+  return { error };
 };
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
@@ -62,13 +72,13 @@ const useContent = () => {
 
   const [content, setContent] = React.useState(contentFromApi);
 
-  useAutoSave(content);
+  const { error } = useAutoSave(content);
 
   React.useEffect(() => {
     setContent(contentFromApi);
   }, [contentFromApi]);
 
-  return { content, setContent, date };
+  return { content, setContent, date, error };
 };
 
 const isValidDate = (date: string) => dateFns.isValid(dateFns.parseISO(date));
@@ -168,7 +178,7 @@ const useDateInput = (date: string) => {
 };
 
 const JournalEditor = () => {
-  const { date, content, setContent } = useContent();
+  const { date, content, setContent, error } = useContent();
 
   const { dateInput, setDateInput } = useDateInput(date);
 
@@ -184,6 +194,7 @@ const JournalEditor = () => {
           setDateInput(e.target.value);
         }}
       />
+      <ErrorMessage error={error} />
       <Editor
         value={content}
         onChange={(e) => {

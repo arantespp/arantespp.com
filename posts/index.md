@@ -30,9 +30,9 @@ I use [tags](/tags) to create connections among posts. It's the essence of the [
 
 Every post has its [recommendations](#recommendations): posts that are backlinks or have the same tags as the current post. The algorithm sorts the recommendations by rating, which I give to every post written.
 
-### [Drafts](/_drafts)
+### [Drafts](/drafts)
 
-It contains [unfinished posts](/_drafts). Search engines don't index these posts. Sometimes the post is already finished, but it remains a draft to get a final review after some days.
+It contains [unfinished posts](/drafts). Search engines don't index these posts. Sometimes the post is already finished, but it remains a draft to get a final review after some days.
 
 ### [Network](/network)
 

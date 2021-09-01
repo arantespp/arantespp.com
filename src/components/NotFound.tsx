@@ -5,7 +5,7 @@ import { Flex, Link, Text } from 'theme-ui';
 const NotFound = () => {
   const { asPath } = useRouter();
 
-  const draftHref = asPath.startsWith('/_draft') ? asPath : `/_drafts${asPath}`;
+  const draftHref = asPath.startsWith('/drafts') ? asPath : `/drafts${asPath}`;
 
   return (
     <Flex sx={{ margin: 3, flexDirection: 'column' }}>

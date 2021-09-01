@@ -121,7 +121,7 @@ export const getDrafts = (filter: { group?: Group } = {}) =>
       bitLinks: [],
       readingTime: 0,
       ...draft,
-      href: `/_drafts${draft.href}`,
+      href: `/drafts${draft.href}`,
       draft: true,
     }));
 
@@ -700,13 +700,15 @@ export const saveJournal = async ({
   content: string;
 }) => {
   const [year, month, day] = date.split('-');
-  const filePath = path.join(
-    postsDirectory,
-    'journal',
-    year,
-    month,
-    `${day}.md`,
-  );
+
+  const directory = path.join(postsDirectory, 'journal', year, month);
+
+  if (!fs.existsSync(directory)) {
+    await fs.promises.mkdir(directory, { recursive: true });
+  }
+
+  const filePath = path.join(directory, `${day}.md`);
+
   await fs.promises.writeFile(filePath, content);
 };
 

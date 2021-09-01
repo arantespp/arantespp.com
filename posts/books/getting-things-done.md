@@ -188,7 +188,7 @@ The final stage of the planning model that decides about the allocation and real
 
 - _More to Plan?_: the habit of clarifying the next actions on projects is fundamental to you staying in relaxed control.
 
-- _When the Next Action is Someone Else's..._: if the next acion is not yours, you must clarify whose it is. This is a use of the [Waiting For](http://localhost:3000/_drafts/books/getting-things-done#chapter-2-getting-control-of-your-life-the-five-steps-of-mastering-workflow) action list.
+- _When the Next Action is Someone Else's..._: if the next acion is not yours, you must clarify whose it is. This is a use of the [Waiting For](/books/getting-things-done#chapter-2-getting-control-of-your-life-the-five-steps-of-mastering-workflow) action list.
 
 #### Final Questions
 

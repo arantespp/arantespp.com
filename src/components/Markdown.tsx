@@ -12,6 +12,7 @@ import { useContentEditable } from '../hooks/useContentEditable';
 
 import Heading from './Heading';
 import Link from './Link';
+import Tag from './Tag';
 import Tweet from './Tweet';
 
 import 'katex/dist/katex.min.css';
@@ -43,7 +44,14 @@ const getComponents = ({
   h6: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
     <Heading {...{ children, level, noH1 }} />
   ),
-  a: Link,
+  a: ({ children, href }) => {
+    if (href && href.startsWith('/tags/')) {
+      const [, , tag] = href.split('/');
+      return <Tag tag={tag} />;
+    }
+
+    return <Link href={href}>{children}</Link>;
+  },
   blockquote: ({ children }) => {
     return (
       <Box sx={{ marginY: 4 }}>

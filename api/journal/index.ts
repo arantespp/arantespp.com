@@ -14,8 +14,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       return;
     }
 
-    await saveJournal(JSON.parse(req.body));
-    res.status(200).end();
+    try {
+      await saveJournal(JSON.parse(req.body));
+      res.status(200).end();
+    } catch (error) {
+      res.status(500).send({ error: error.message });
+    }
   }
 };
 
