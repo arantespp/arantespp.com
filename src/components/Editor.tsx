@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Box, Textarea, TextareaProps } from 'theme-ui';
+import { Textarea, TextareaProps } from 'theme-ui';
+
+import FullWidth from './FullWidth';
 
 const Editor = (props: TextareaProps) => {
-  const editorWidthInVw = 80;
   const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
 
   const { value } = props;
@@ -20,15 +21,7 @@ const Editor = (props: TextareaProps) => {
   }, [value]);
 
   return (
-    <Box
-      sx={{
-        width: [null, null, null, `${editorWidthInVw}vw`],
-        position: 'relative',
-        left: [null, null, null, '50%'],
-        right: [null, null, null, '50%'],
-        marginX: [null, null, null, `-${editorWidthInVw / 2}vw`],
-      }}
-    >
+    <FullWidth>
       <Textarea
         ref={textAreaRef}
         placeholder="Write something..."
@@ -40,8 +33,10 @@ const Editor = (props: TextareaProps) => {
           }
         }}
         {...props}
+        // eslint-disable-next-line react/destructuring-assignment
+        sx={{ maxWidth: 1500, ...props.sx }}
       />
-    </Box>
+    </FullWidth>
   );
 };
 

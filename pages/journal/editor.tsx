@@ -113,8 +113,16 @@ const useDateInput = (date: string) => {
         return { months: 1 };
       }
 
-      return {};
+      return undefined;
     })();
+
+    /**
+     * If code goes to `dateReplace` with `add`, it will replace `dateInput`
+     * that could have been set by today shortcut.
+     */
+    if (!add) {
+      return;
+    }
 
     /**
      * Replace everything except numbers and "-".

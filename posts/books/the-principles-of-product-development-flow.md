@@ -1,18 +1,19 @@
 ---
 title: The Principles of Product Development Flow
-excerpt: 'The Principles of Product Development Flow will forever change the way you think about product development. Reinertsen starts with the ideas of lean manufacturing but goes far beyond them, drawing upon ideas from telecommunications networks, transportation systems, computer operating systems and military doctrine. He combines a lucid explanation of the science behind flow with a rich set of practical approaches. This is another landmark book by one of the foremost experts on product development.'
-# date: 2021-01-02
+date: '2021-08-31'
+excerpt: >-
+  The Principles of Product Development Flow will forever change the way you
+  think about product development. Reinertsen starts with the ideas of lean
+  manufacturing but goes far beyond them, drawing upon ideas from
+  telecommunications networks, transportation systems, computer operating
+  systems and military doctrine. He combines a lucid explanation of the science
+  behind flow with a rich set of practical approaches. This is another landmark
+  book by one of the foremost experts on product development.
+rating: 6
+draft: true
 tags:
+  - donald-g-reinertsen
   - product-development
-# rating: 5
-bitLinks:
-  - product-development-flow
-  - flow
-book:
-  authors:
-    - Donald G. Reinertsen
-  link: https://www.amazon.com/Principles-Product-Development-Flow-Generation-ebook/dp/B00K7OWG7O
-  ASIN: B00K7OWG7O
 ---
 
 ## Principles
@@ -175,11 +176,11 @@ Queues off the [critical path](/zettelkasten/critical-path) also create costs to
 - the percent of overall cycle time is queue time;
 - the ratio of cycle time to value-added time.
 
-This property is useful from a practical perspective, but it's often tough to directly measure capacity utilization ($\rho$) in product development processes. It's is difficult because it is the ratio of **demand** and **capacity**, that are individually hard to estimate.
+This property is helpful from a practical perspective, but it's often tough to directly measure capacity utilization ($\rho$) in product development processes. Moreover, it's problematic because the ratio of **demand** and **capacity** are individually hard to estimate.
 
 #### Q4. The Principle of High-Queues States: Most of the damage done by a queue is caused by high-queues states.
 
-The probability of finding a queue in a specific quantitative state (low or high-queue state) is a function of capacity utilization. Low-queue states are more probable than high-queue states, but they're more important because they delay more jobs. As a result, they have a strong influence on cycle time.
+The probability of finding a queue in a specific quantitative state (low or high-queue state) is a function of capacity utilization. Low-queue states are more probable than high-queue states, but high-queue states are more important because they delay more jobs. As a result, they strongly influence cycle time and can cause more economic damage to the project.
 
 The $\text{State Probability}$ of an $M/M/1/\infty$ queue to have $n$ jobs in the system is:
 
@@ -187,11 +188,23 @@ $$
 \text{State Probability} = \frac{1-\rho}{\rho^n}
 $$
 
+#### Q5. The Principle of Queueing Variability: Variability increases queues linearly.
+
+Variability causes much less damage than capacity utilization on queues. The Allen-Cuneen approximation for the queue length is given by:
+
+$$
+L_q = \frac{\rho^2}{1-\rho}\frac{C^2_\text{arrival} + C^2_\text{service}}{2}
+$$
+
+The equation shows that queues are proportional to the average squares of the coefficient of variation for arrivals and service processes. You compute the coefficient as the ratio between standard deviation and the mean of a probability distribution. Since the square of the standard deviation is the variance, **this means that queues vary linearly with variance**.
+
+If you were able to make the processing time of a queue equals every time ($C^2_\text{service} = 0$), this would only cut the average queue size in half because of the randomness of arrival times. **So, be very cautious if you think you can solve the problem of queues by reducing variability.**
+
 ### 4 - Exploiting Variability
 
 #### V1. The Principle of Beneficial Variability: Variability can create economic value.
 
-Which choice is the best economic choice? Which choice has the minimum uncertainty in its outcome?
+Which choice is the best economic choice? Which option has the minimum uncertainty in its outcome?
 
 | Choice | Stakes   | Payoff    | Probability | EMV     |
 | ------ | -------- | --------- | ----------- | ------- |

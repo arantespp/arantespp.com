@@ -4,9 +4,11 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { Box, Flex, Spinner, Text, useThemeUI } from 'theme-ui';
 
+import FullWidth from '../src/components/FullWidth';
 import HTMLHeaders from '../src/components/HTMLHeaders';
 import RecommendationCard from '../src/components/RecommendationCard';
 import Tag from '../src/components/Tag';
+
 import { getAllTags, getPosts } from '../src/lib/files';
 
 import { theme } from '../src/theme';
@@ -277,66 +279,68 @@ const Network = ({
         description="All posts and tags and their connections."
         image={{ url: 'https://arantespp.com/images/network.png' }}
       />
-      <Box
-        sx={{
-          backgroundColor: 'white',
-          width: '98%',
-          height: '95vh',
-          marginX: 'auto',
-          position: 'relative',
-          borderColor: 'black',
-          borderStyle: 'solid',
-          borderWidth: 1,
-        }}
-      >
-        {selectedNode && (
-          <Box
-            sx={{
-              position: 'absolute',
-              backgroundColor: 'white',
-              zIndex: 2,
-              maxWidth: (sizes as any)?.container,
-              borderWidth: 1,
-              borderStyle: 'solid',
-              borderColor: 'primary',
-              margin: 2,
-              padding: 2,
-            }}
-          >
-            {selectedNode.group === 'post' && (
-              <RecommendationCard
-                recommendation={
-                  allPosts.find((post) => post.href === selectedNode.id)!
-                }
-              />
-            )}
-            {selectedNode.group === 'tag' && <Tag tag={selectedNode.id} />}
-          </Box>
-        )}
-        {!stabilizationIterationsDone && (
-          <Flex
-            sx={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <Spinner />
-          </Flex>
-        )}
-        <GraphVis
-          graph={{ nodes, edges }}
-          options={options}
-          events={events}
-          getNetwork={(graphNetwork) => {
-            if (!network) {
-              setNetwork(graphNetwork);
-            }
+      <FullWidth>
+        <Box
+          sx={{
+            backgroundColor: 'white',
+            width: '98%',
+            height: '95vh',
+            marginX: 'auto',
+            position: 'relative',
+            borderColor: 'black',
+            borderStyle: 'solid',
+            borderWidth: 1,
           }}
-        />
-      </Box>
+        >
+          {selectedNode && (
+            <Box
+              sx={{
+                position: 'absolute',
+                backgroundColor: 'white',
+                zIndex: 2,
+                maxWidth: (sizes as any)?.container,
+                borderWidth: 1,
+                borderStyle: 'solid',
+                borderColor: 'primary',
+                margin: 2,
+                padding: 2,
+              }}
+            >
+              {selectedNode.group === 'post' && (
+                <RecommendationCard
+                  recommendation={
+                    allPosts.find((post) => post.href === selectedNode.id)!
+                  }
+                />
+              )}
+              {selectedNode.group === 'tag' && <Tag tag={selectedNode.id} />}
+            </Box>
+          )}
+          {!stabilizationIterationsDone && (
+            <Flex
+              sx={{
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <Spinner />
+            </Flex>
+          )}
+          <GraphVis
+            graph={{ nodes, edges }}
+            options={options}
+            events={events}
+            getNetwork={(graphNetwork) => {
+              if (!network) {
+                setNetwork(graphNetwork);
+              }
+            }}
+          />
+        </Box>
+      </FullWidth>
       <Flex
         sx={{
           width: '100%',

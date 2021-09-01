@@ -165,9 +165,7 @@ const PostEditor = ({ post }: { post?: Post }) => {
       {post?.href && <Link href={post.href}>See post: {post.title}</Link>}
 
       <Flex sx={{ justifyContent: 'center', marginTop: 4 }}>
-        <Button type="submit" disabled={isButtonDisabled}>
-          {isButtonDisabled ? 'Saved' : 'Save'}
-        </Button>
+        <Button type="submit">{isButtonDisabled ? 'Saved' : 'Save'}</Button>
       </Flex>
     </Flex>
   );

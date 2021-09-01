@@ -1,10 +1,12 @@
 ---
 title: Pareto Paradox
-excerpt: Pareto Paradox states that there are usually more opportunities in the undermanaged 80% than the overmanaged 20%.
-date: 2021-07-02
+date: '2021-07-02'
+excerpt: >-
+  Pareto Paradox states that there are usually more opportunities in the
+  undermanaged 80% than the overmanaged 20%.
 rating: 3
 tags:
-  - Pareto Principle
+  - pareto-principle
   - project-management
 ---
 
