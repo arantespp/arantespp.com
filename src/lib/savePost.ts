@@ -7,7 +7,7 @@ import { titleCase } from 'title-case';
 
 import type { PostForm } from '../components/PostEditor';
 
-import { getTags, postsDirectory, getPartialPost } from './files';
+import { getTags, postsDirectory, getPartialPost, Post, Book } from './files';
 import { Group } from './groups';
 
 export const savePost = async ({ content, ...meta }: PostForm) => {
@@ -16,16 +16,31 @@ export const savePost = async ({ content, ...meta }: PostForm) => {
   const date = meta.date || dateFns.format(new Date(), 'yyyy-MM-dd');
   const tags = getTags(meta.tags?.split(';'));
 
-  const md = matter.stringify(content, {
+  const mdMeta: Partial<Post> = {
     title: titleCase(title),
     date,
     excerpt,
     rating,
     tags,
-    draft,
     bitLinks,
-    book,
+    draft,
+  };
+
+  /**
+   * Remove undefined values from the meta object, else we get the error:
+   * "unacceptable kind of an object to dump [object Undefined]"
+   */
+  Object.entries(mdMeta).forEach(([key, value]) => {
+    if (value === undefined) {
+      delete mdMeta[key];
+    }
   });
+
+  if ((group as Group) === 'books') {
+    mdMeta.book = book as Book;
+  }
+
+  const md = matter.stringify(content, mdMeta);
 
   const slug = paramCase(title);
   const href = `/${group}/${slug}`;

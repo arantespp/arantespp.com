@@ -2,7 +2,7 @@ import * as dateFns from 'date-fns';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 import useSWR from 'swr';
-import { Input, Themed } from 'theme-ui';
+import { Box, Input, Themed } from 'theme-ui';
 
 import Editor from '../../src/components/Editor';
 import ErrorMessage from '../../src/components/ErrorMessage';
@@ -195,14 +195,15 @@ const JournalEditor = () => {
         }}
       />
       <ErrorMessage error={error} />
-      <Editor
-        value={content}
-        onChange={(e) => {
-          setContent(e.target.value);
-        }}
-        sx={{ marginY: 3 }}
-        autoFocus
-      />
+      <Box sx={{ marginY: 3 }}>
+        <Editor
+          value={content}
+          onChange={(e) => {
+            setContent(e.target.value);
+          }}
+          autoFocus
+        />
+      </Box>
       <Link href="/journal">Go to Summary</Link>
     </>
   );

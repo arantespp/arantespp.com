@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useSWRInfinite } from 'swr';
+import useSWRInfinite from 'swr/infinite';
 import { Button, Flex } from 'theme-ui';
 
 import { Journal as JournalType } from '../../src/lib/files';

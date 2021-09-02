@@ -1,12 +1,15 @@
 ---
 title: Key-Value Database
-excerpt: Key-value database, or key-value store, is a data storage paradigm that allows you to store opaque data collection with an associated key.
-date: 2021-07-06
+date: '2021-07-06'
+excerpt: >-
+  Key-value database, or key-value store, is a data storage paradigm that allows
+  you to store opaque data collection with an associated key.
 rating: 2
 tags:
   - database
   - key-value-database
   - nosql
+bitLinks: []
 ---
 
 ## Notes

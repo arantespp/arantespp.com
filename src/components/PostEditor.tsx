@@ -24,11 +24,13 @@ const schema = yup.object({
   content: yup.string().required(),
   draft: yup.boolean(),
   bitLinks: yup.array().of(yup.string().required()),
-  book: yup.object({
-    authors: yup.array().of(yup.string().required()),
-    link: yup.string(),
-    ASIN: yup.string(),
-  }),
+  book: yup
+    .object({
+      authors: yup.array().of(yup.string().required()),
+      link: yup.string(),
+      ASIN: yup.string(),
+    })
+    .nullable(),
 });
 
 export type PostForm = yup.Asserts<typeof schema>;
@@ -42,7 +44,13 @@ const putPost = async (post: PostForm) => {
 
 const PostEditor = ({ post }: { post?: Post }) => {
   const defaultValues = React.useMemo(
-    () => ({ rating: 3, group: '', content: '', tags: '', excerpt: '' }),
+    (): Partial<PostForm> => ({
+      rating: 3,
+      group: '',
+      content: '',
+      tags: '',
+      excerpt: '',
+    }),
     [],
   );
 

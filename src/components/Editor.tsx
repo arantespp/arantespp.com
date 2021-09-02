@@ -34,7 +34,7 @@ const Editor = (props: TextareaProps) => {
         }}
         {...props}
         // eslint-disable-next-line react/destructuring-assignment
-        sx={{ maxWidth: 1500, ...props.sx }}
+        sx={{ maxWidth: 1500 }}
       />
     </FullWidth>
   );

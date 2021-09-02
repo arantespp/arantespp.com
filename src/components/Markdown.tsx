@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import dynamic from 'next/dynamic';
 import * as React from 'react';
-import ReactMarkdown from 'react-markdown';
-import { Components } from 'react-markdown/src/ast-to-react';
+import ReactMarkdown, { Components } from 'react-markdown';
 import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
