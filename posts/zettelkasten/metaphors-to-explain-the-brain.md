@@ -1,18 +1,19 @@
 ---
 title: Metaphors to Explain the Brain
-excerpt: We don't know how our brains work, so we use metaphors to understand it.
-date: 2020-05-23
+date: '2020-05-23'
+excerpt: "We don't know how our brains work, so we use metaphors to understand it."
+rating: 2
 tags:
   - brain
-  - memory
-  - hydraulic-engineering
-  - humours
-  - telegraph
-  - computer
-  - thomas-hobbes
+  - computing
   - hermann-von-helmholtz
+  - humours
+  - hydraulic-engineering
   - information-processing-metaphor
-rating: 2
+  - memory
+  - telegraph
+  - thomas-hobbes
+bitLinks: []
 ---
 
 ## Notes

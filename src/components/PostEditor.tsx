@@ -45,8 +45,8 @@ const putPost = async (post: PostForm) => {
 const PostEditor = ({ post }: { post?: Post }) => {
   const defaultValues = React.useMemo(
     (): Partial<PostForm> => ({
-      rating: 3,
-      group: '',
+      rating: 2,
+      group: 'zettelkasten',
       content: '',
       tags: '',
       excerpt: '',
@@ -78,6 +78,11 @@ const PostEditor = ({ post }: { post?: Post }) => {
 
   const [error, setError] = React.useState('');
 
+  /**
+   * Used to display href and post title in the bottom of the form.
+   */
+  const [currentPost, setCurrentPost] = React.useState<Post | undefined>(post);
+
   const onSubmit = React.useCallback(
     async (data: PostForm) => {
       try {
@@ -92,6 +97,7 @@ const PostEditor = ({ post }: { post?: Post }) => {
         const json = await response.json();
 
         if (response.status === 200) {
+          setCurrentPost(json);
           return true;
         }
 
@@ -175,7 +181,9 @@ const PostEditor = ({ post }: { post?: Post }) => {
 
       {error && <Themed.p>{error}</Themed.p>}
 
-      {post?.href && <Link href={post.href}>See post: {post.title}</Link>}
+      {currentPost?.href && (
+        <Link href={currentPost.href}>See post: {currentPost.title}</Link>
+      )}
 
       <Flex sx={{ justifyContent: 'center', marginTop: 4 }}>
         <Button type="submit">{isButtonDisabled ? 'Saved' : 'Save'}</Button>

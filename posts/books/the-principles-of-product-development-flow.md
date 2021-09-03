@@ -31,63 +31,63 @@ The economic view of product development allows you to make product development 
 
 You should consider the economic impact of all possible decisions when you have to make a project decision. For example, choosing between releasing a project soon without many tests or testing more and release later should be an economic, not a philosophical choice.
 
-#### E2. The Principle of Interconnected Variables: We can't just change one thing.
+#### E2: The Principle of Interconnected Variables: We can't just change one thing.
 
 One decision almost always simultaneously affects multiple variables. [Proxy variables](/zettelkasten/proxy-variable) are interconnected because they represent other variables.
 
-#### E3. The Principle of Quantified Cost of Delay If you only quantify one thing, quantify the cost of delay.
+#### E3: The Principle of Quantified Cost of Delay If you only quantify one thing, quantify the cost of delay.
 
 You don't have business trading money for cycle time if you don't know the economic value of cycle time. No single sensitivity is more eye-opening than the cost of delay (COD). The cost of queues, determined by COD, dominates the economics of Flow.
 
-#### E4. The Principle of Economic Value-Added: The value added by an activity is the change in the economic value of the work product.
+#### E4: The Principle of Economic Value-Added: The value added by an activity is the change in the economic value of the work product.
 
 The value added by an activity is the difference in the price that an economically rational buyer would pay for work before and after the action performed.
 
 Waste, or non-value-added, is also an economic concept. You must convert the waste in life-cycle profit to compare and other trade-off wastes.
 
-#### E5. The Inactivity Principle: Watch the work product, not the worker.
+#### E5: The Inactivity Principle: Watch the work product, not the worker.
 
 Making activities more efficient is much less important than eliminating **inactivity**. Your most significant waste isn't unproductive engineers in product development but work products sitting idle in queues.
 
 Inventory is the most significant waste in manufacturing because it destroys quality, efficiency, and cycle time. When you increase value-added time in a process with variability, you will create queues. The cost of these queues is far greater than any efficiency savings that come from the value-added increase.
 
-#### E6. The U-Curve Principle: Important trade-offs are likely to have U-curve optimizations.
+#### E6: The U-Curve Principle: Important trade-offs are likely to have U-curve optimizations.
 
 U-curve is the combination of a hyperbolic and a linear function. It has two essential properties. First, optimization never occurs at extreme values. Because of this, it always requires quantification because you must balance two or more competing factors. Second, U-curve optimizations don't require precise answers because U-curves have flat bottoms, then missing the exact optimum costs very little. Thus, you don't need highly accurate information to improve your economic decisions. As a result, the framework becomes more insensitive to noisy assumptions.
 
-#### E7. The Imperfection Principle: Even imperfect answers improve decision-making.
+#### E7: The Imperfection Principle: Even imperfect answers improve decision-making.
 
 The absence of frameworks will lead workers to make bad decisions because they will use intuition instead of analysis. This intuition produces a 50 to 1 difference in the price people pay for cycle time. With an economic framework, this range is down to 2 to 1.
 
 As you try to analyze economics, you uncover those assumptions that significantly impact your answers, which permits you to invest more effort in getting these assumptions correct. Thus, the economic view regeneratively improves your understanding of economics.
 
-#### E8. The Principles of Small Decisions: Influence the many small decisions.
+#### E8: The Principles of Small Decisions: Influence the many small decisions.
 
 Many companies make big decisions at a higher level but don't have an economic framework to make the many small decisions correctly. These small decisions have an enormous economic impact.
 
 Because of the [Pareto Paradox](/zettelkasten/pareto-paradox), influencing many small decisions has important implications because there are many opportunities there.
 
-#### E9. The Principle of Continuous Economic Trade-offs: Economic choices must be made continuously.
+#### E9: The Principle of Continuous Economic Trade-offs: Economic choices must be made continuously.
 
 Few, big, predictable trade-offs at the start of the development process don't work in product development as they work in manufacturing. In product development, you continuously receive new information from the market, design process, customers preference, or engineering. Instead, you make many small trade-offs, at random times, throughout your development process. Therefore, following [Principle E1](#e1-the-principle-of-quantified-overall-economics-select-actions-based-on-quantified-overall-economic-impact) is more important than following the original plan.
 
-#### E10. The First Perishability Principle: Many economic choices are more valuable when made quickly.
+#### E10: The First Perishability Principle: Many economic choices are more valuable when made quickly.
 
 These continuously and randomly opportunities are pretty perishable. Opportunities get smaller with time, and obstacles get larger. The longer you wait to exploit an option, the less economic value is available. Therefore, you must measure and shorten the time it takes to make decisions.
 
 People at the lowest level of the organization are the ones that first detect these opportunities and obstacles. Those levels should be able to make these decisions. You should add a decentralized strategy to your organization.
 
-#### E11. The Subdivision Principle: Inside every bad choice lies a good choice.
+#### E11: The Subdivision Principle: Inside every bad choice lies a good choice.
 
 Most of your decisions can be divided into components parts that have different economics, which means that you can isolate the good and the bad parts. You can decompose the choice into pieces and keep the good parts because your economic framework permits you to evaluate the components based on cost and benefit. Then, using decomposition and recombination, you can keep, discard, or improve those parts.
 
-#### E12. The Principles of Early Harvesting: Create systems to harvest the early cheap opportunities.
+#### E12: The Principles of Early Harvesting: Create systems to harvest the early cheap opportunities.
 
 Create processes that allow people recognize the cheapest opportunities to buy cycle time that appear early in the development cycle. Actions at the end are more expensive than at the beginning of the development process.
 
 For example, an organization may permit every engineer to buy up to 4 weeks of schedule improvement at a cost no higher than $500 per week. Controlling by time and value reduces any significant risk.
 
-#### E13. The First Decision Rule Principle: Use decision rules to decentralize economic control.
+#### E13: The First Decision Rule Principle: Use decision rules to decentralize economic control.
 
 You must provide high-quality decision support information to the level of the organization responsible for the small decisions making. You should decentralize authority to this level.
 
@@ -102,35 +102,35 @@ For example, for a Boeing project, the engineers were authorized to increase the
 
 The superiors control the decision without participating in it. Control without participating is control without decision-making delays.
 
-#### E14. The First Market Principle. Ensure decision makers feel both cost and benefit.
+#### E14: The First Market Principle. Ensure decision makers feel both cost and benefit.
 
 Decision-makers should feel both the cost and benefit of their decisions. Today, some product developers enjoy benefits while being insulated from costs. As a result, the resources will tend to be more utilized than they would, leading to decision delays.
 
 Price should be used to control demand. That is how the economic market works. When prices rise, demand falls. Market work because decision-makers experience both the benefit and the cost of their decisions. Pricing enables such decentralized control.
 
-#### E15. The Principle of Optimum Decision Timing: Every decision has its optimum economic timing.
+#### E15: The Principle of Optimum Decision Timing: Every decision has its optimum economic timing.
 
 Each decision will have an optimum economic timing if the cost, payoff, and risk of your decisions are time-dependent. Thus, the timing of economic choices should be based on their economics, not broad philosophical concepts like "front-loading" or "responsible deferral."
 
 You should make each decision at the point where further delay no longer increases de expected economic outcome. Waiting some time has the advantage of the fact that market and technical uncertainty decrease with time.
 
-#### E16. The Principle of Marginal Economics. Always compare marginal cost and marginal value.
+#### E16: The Principle of Marginal Economics. Always compare marginal cost and marginal value.
 
 When evaluating the economic impact of incremental decisions, use [marginal analysis](/zettelkasten/marginal-analysis) instead of comparing total costa with the total value of the system. Whenever marginal value exceeds marginal cost, the action improves economic value. Sometimes, a feature implementation adds some value to the system, but the marginal value is smaller than the marginal cost.
 
 An example is two feature implementations. The first one was 100% completed, and the second, 80%. Most companies would work on the second feature because they assume that achieving planned objectives maximize economic outcomes. However, the correct decision is the feature that has the most significant difference between marginal cost and benefit, which is often the completed feature since it's most likely to have additional unexploited opportunities for improvement.
 
-#### E17. The Sunk Cost Principle. Do not consider money already spent.
+#### E17: The Sunk Cost Principle. Do not consider money already spent.
 
 Money already spent is a [sunk cost](/zettelkasten/sunk-cost) and should not enter into an economical choice. Instead, you should make a choice based on [marginal economics](#e16-the-principle-of-marginal-economics-always-compare-marginal-cost-and-marginal-value).
 
-#### E18. The Principle of Buying Information: The value of information is its expected economic value.
+#### E18: The Principle of Buying Information: The value of information is its expected economic value.
 
 Information reduces uncertainty. When you reduce uncertainty, you create economic value. You shouldn't pay more than the economic value that it creates.
 
 Investments in product development can create economic value even when they don't lead to successful products because they can make information that has economic value.
 
-#### E19. The Insurance Principle: Don't pay more for insurance than the expected loss.
+#### E19: The Insurance Principle: Don't pay more for insurance than the expected loss.
 
 When you develop backup solutions, you trade development expenses for risk reduction. Parallel development of a backup solution is an insurance policy; you pay money to reduce risk. Whenever the economic benefit of the risk reduction is less than the cost of insurance, it's not a good investment.
 
@@ -138,11 +138,11 @@ Parallel development of multiple backup solutions is called [set-based concurren
 
 The optimum number of parallel paths occurs when incremental value equals incremental cost (U-curve optimization). Therefore, since this economic optimum can equal one, parallel paths don't always make economic sense.
 
-#### E20. The Newsboy Principle: High probability of failure does not equal bad economics.
+#### E20: The Newsboy Principle: High probability of failure does not equal bad economics.
 
 Uncertain opportunities have large payoff asymmetries, making them the best source of new ideas. Before acquiring sufficient information to make a good economical choice, filtering bad opportunities would eliminate uncertain and poorly understood opportunities. However, it also removes best asymmetries and opportunities. **Thus, opening the filter to pass these [asymmetric opportunities](/zettelkasten/asymmetric-opportunity) actually increases economic value.**
 
-#### E21. The Show Me the Money Principle: To influence financial decisions, speak the language of money.
+#### E21: The Show Me the Money Principle: To influence financial decisions, speak the language of money.
 
 Most corporations give control over financial resources to people who worry about the economics of their choices. To influence those people, you must speak the language of economics, not the language of [proxy variables](/zettelkasten/proxy-variable). When you talk to those who control the money using the language of the money, you can get fast decisions and enthusiastic support.
 
@@ -150,11 +150,15 @@ Most corporations give control over financial resources to people who worry abou
 
 Queues matter because they're economically important.
 
-#### Q1. The Principle of Invisible Inventory: Product development inventory is physically and financially invisible.
+- [Q1](#) to [Q2](#) - Why Queues Matter?
+- [Q3](#) to [Q8](#) - The Behavior of Queues
+- [Q9](#) to [Q](#) - The Economics of Queues
+
+#### Q1: The Principle of Invisible Inventory: Product development inventory is physically and financially invisible.
 
 Inventory in product development isn't physical objects but information, then it's virtually invisible, both physically and financially. Product development inventory's effects: increased cycle time, delayed feedback, constantly shifting priorities, and status reporting.
 
-#### Q2. The Principle of Queueing Waste: Queues are the root cause of the majority of economic waste in product development.
+#### Q2: The Principle of Queueing Waste: Queues are the root cause of the majority of economic waste in product development.
 
 Product development queues do much more damage than manufacturing queues for two reasons.
 
@@ -169,7 +173,7 @@ Product development queues do much more damage than manufacturing queues for two
 
 Queues off the [critical path](/zettelkasten/critical-path) also create costs to the project because only one of these six wastes arises from the cost of delay. The other five wastes are still present even when the queues are off the [critical path](/zettelkasten/critical-path).
 
-#### Q3. The Principle of Queueing Capacity Utilization: Capacity utilization increases queues exponentially.
+#### Q3: The Principle of Queueing Capacity Utilization: Capacity utilization increases queues exponentially.
 
 [Queue capacity utilization](/zettelkasten/queue-capacity-utilization) is the most critical factor that affects queue size. As you approach 100% of the queue capacity, queues become exponentially large. Knowing capacity utilization allow you to predict:
 
@@ -181,7 +185,7 @@ Queues off the [critical path](/zettelkasten/critical-path) also create costs to
 
 This property is helpful from a practical perspective, but it's often tough to directly measure capacity utilization ($\rho$) in product development processes. Moreover, it's problematic because the ratio of **demand** and **capacity** are individually hard to estimate.
 
-#### Q4. The Principle of High-Queues States: Most of the damage done by a queue is caused by high-queues states.
+#### Q4: The Principle of High-Queues States: Most of the damage done by a queue is caused by high-queues states.
 
 The probability of finding a queue in a specific quantitative state (low or high-queue state) is a function of capacity utilization. Low-queue states are more probable than high-queue states, but high-queue states are more important because they delay more jobs. As a result, they strongly influence cycle time and can cause more economic damage to the project.
 
@@ -191,7 +195,7 @@ $$
 \text{State Probability} = \frac{1-\rho}{\rho^n}
 $$
 
-#### Q5. The Principle of Queueing Variability: Variability increases queues linearly.
+#### Q5: The Principle of Queueing Variability: Variability increases queues linearly.
 
 Variability causes much less damage than capacity utilization on queues. The Allen-Cuneen approximation for the queue length is given by:
 
@@ -203,9 +207,17 @@ The equation shows that queues are proportional to the average squares of the co
 
 If you were able to make the processing time of a queue equals every time ($C^2_\text{service} = 0$), this would only cut the average queue size in half because of the randomness of arrival times. **So, be very cautious if you think you can solve the problem of queues by reducing variability.**
 
+#### Q6: The Principle of Variability Amplification: Operating at high levels of capacity utilization increases variability.
+
+For a M/M/1 queue
+
+$$
+\frac{dW}{d\rho} = \frac{1}{(1-\rho)^2}T_\text{service}
+$$
+
 ### 4 - Exploiting Variability
 
-#### V1. The Principle of Beneficial Variability: Variability can create economic value.
+#### V1: The Principle of Beneficial Variability: Variability can create economic value.
 
 Which choice is the best economic choice? Which option has the minimum uncertainty in its outcome?
 
