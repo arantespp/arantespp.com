@@ -7,6 +7,8 @@ import FullWidth from './FullWidth';
 
 const MAX_HEIGHT = 800;
 
+const MAX_WIDTH = 1000;
+
 const TextAreaContainer = ({
   children,
   isFullScreen,
@@ -25,17 +27,11 @@ const TextAreaContainer = ({
           height: '100%',
           backgroundColor: 'white',
           padding: 4,
+          display: 'flex',
+          justifyContent: 'center',
         }}
       >
-        <Box
-          sx={{
-            position: 'relative',
-            width: '100%',
-            height: '100%',
-          }}
-        >
-          {children}
-        </Box>
+        {children}
       </Box>
     );
   }
@@ -78,34 +74,43 @@ const Editor = (props: TextareaProps) => {
 
   return (
     <TextAreaContainer isFullScreen={isFullScreen}>
-      <Textarea
-        ref={textAreaRef}
-        placeholder="Write something..."
-        rows={10}
-        onKeyDown={(e) => {
-          if (e.key === 'Tab' && !e.shiftKey) {
-            document.execCommand('insertText', false, '  ');
-            e.preventDefault();
-          }
-        }}
-        {...props}
-      />
-      <Text
-        onClick={() => {
-          setIsFullScreen(!isFullScreen);
-        }}
+      <Box
         sx={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          marginTop: 1,
-          marginRight: hasScrollbar ? 3 : 1,
-          cursor: 'pointer',
-          display: 'inline-flex',
+          position: 'relative',
+          width: '100%',
+          height: '100%',
+          maxWidth: MAX_WIDTH,
         }}
       >
-        <FontAwesomeIcon icon={isFullScreen ? faCompress : faExpand} />
-      </Text>
+        <Textarea
+          ref={textAreaRef}
+          placeholder="Write something..."
+          rows={10}
+          onKeyDown={(e) => {
+            if (e.key === 'Tab' && !e.shiftKey) {
+              document.execCommand('insertText', false, '  ');
+              e.preventDefault();
+            }
+          }}
+          {...props}
+        />
+        <Text
+          onClick={() => {
+            setIsFullScreen(!isFullScreen);
+          }}
+          sx={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            marginTop: 1,
+            marginRight: hasScrollbar ? 3 : 1,
+            cursor: 'pointer',
+            display: 'inline-flex',
+          }}
+        >
+          <FontAwesomeIcon icon={isFullScreen ? faCompress : faExpand} />
+        </Text>
+      </Box>
     </TextAreaContainer>
   );
 };
