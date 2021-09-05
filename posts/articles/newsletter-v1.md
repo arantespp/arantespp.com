@@ -1,10 +1,8 @@
 ---
-title: My Newsletter V1
+title: Newsletter V1
 date: '2021-09-05'
 excerpt: >
-  'The first goal is to improve my learning habit. It'd be amazing when I
-  cultivate the habit of studying a topic per week, close it, share with other
-  people, and start to read a new different topic.'
+  'The first goal is to improve my learning habit. It'd be amazing when I cultivate the habit of studying a topic per week, close it, share with other people, and start to read a new different topic. I hope I receive many feedbacks because it can improve the issues I investigate, and on top of that, I can meet amazing people.'
 rating: 4
 tags:
   - learning
