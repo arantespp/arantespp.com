@@ -2,9 +2,9 @@ import * as dateFns from 'date-fns';
 
 import { getClosestLastWeekDay } from './getClosestLastWeekDay';
 
-const WEEK_DAY = 'Mon';
+const WEEK_DAY = 'Tue';
 
-const HOURS_IN_BRAZILIAN = 14;
+const HOURS_IN_BRAZILIAN = 10;
 
 const getLastMonday = () => getClosestLastWeekDay(WEEK_DAY);
 

@@ -1,6 +1,7 @@
 import { act, render, screen, userEvent } from '../testUtils';
 
 import { useContentEditable } from './useContentEditable';
+import { RESET_SEQUENCE_MS } from './useKeypressSequenceListener';
 
 const dataTestId = 'dataTestId';
 
@@ -29,6 +30,7 @@ test('toggle content editable and test focus', () => {
 
     act(() => {
       userEvent.keyboard('ce');
+      jest.advanceTimersByTime(RESET_SEQUENCE_MS * 2);
     });
 
     contentEditable = !contentEditable;

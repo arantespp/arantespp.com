@@ -10,15 +10,13 @@ const Newsletter = () => (
   <Box>
     <Heading level={2}>Newsletter</Heading>
     <Themed.p>
-      Every {getNextNewsletterDate({ format: 'EEEE' })}, I publish a newsletter
-      with <Link href="/digest">the posts I created in the last week</Link>. If
-      you want to follow my latest posts about <Tag tag="startup" />,{' '}
-      <Tag tag="mental-models" />, <Tag tag="cryptocurrencies" />, and more,
-      please, subscribe to my newsletter or check my{' '}
+      Every {getNextNewsletterDate({ format: 'EEEE' })}, I publish my most
+      recent readings and thoughts. If you want to follow topics about{' '}
+      <Tag tag="startups" />, <Tag tag="mental-models" />,{' '}
+      <Tag tag="cryptocurrencies" />, and more, please,{' '}
       <Link href="https://www.getrevue.co/profile/arantespp">
-        Revue&apos;s profile
+        subscribe to my newsletter.
       </Link>
-      .
     </Themed.p>
     <Flex
       sx={{

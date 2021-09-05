@@ -76,8 +76,6 @@ const Editor = (props: TextareaProps) => {
     (textAreaRef?.current?.scrollHeight || 0) >
     (textAreaRef.current?.clientHeight || 1);
 
-  console.log(hasScrollbar);
-
   return (
     <TextAreaContainer isFullScreen={isFullScreen}>
       <Textarea

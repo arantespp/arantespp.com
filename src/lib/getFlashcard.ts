@@ -24,10 +24,20 @@ export const getFlashcards = async () => {
   return getAllPosts()
     .map((post) => {
       const diffDays = dateFns.differenceInDays(today, new Date(post.date));
+
+      const diffWeeks = (() => {
+        const weeks = Math.floor(diffDays / 7);
+        const days = diffDays % 7;
+        const i18nWeeks = weeks === 1 ? 'week' : 'weeks';
+        const i18nDays = days === 1 ? 'day' : 'days';
+        return { weeks, i18nWeeks, days, i18nDays };
+      })();
+
       return {
         ...post,
         diffDays,
         pNumber: getPNumber(diffDays),
+        diffWeeks,
       };
     })
     .filter(({ diffDays }) => diffDays >= INTERVAL - 1);

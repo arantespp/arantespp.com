@@ -214,7 +214,7 @@ const partialTheme = {
       borderRadius: 1,
       width: '100%',
       padding: [3, 4],
-      marginY: 3,
+      marginY: 1,
       alignItems: 'center',
       borderWidth: 1,
       borderStyle: 'solid',

@@ -59,7 +59,10 @@ test.each([
   ],
 ])('getFlashcards test: %#', async (_, allPosts, returnedPosts) => {
   (getAllPosts as jest.Mock).mockReturnValue(allPosts);
-  expect(await getFlashcards()).toEqual(returnedPosts);
+  const flashcards = (await getFlashcards()).map(
+    ({ date, diffDays, pNumber }) => ({ date, diffDays, pNumber }),
+  );
+  expect(flashcards).toEqual(returnedPosts);
 });
 
 describe('testing getFlashcardByProbability', () => {

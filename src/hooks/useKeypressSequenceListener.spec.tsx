@@ -3,6 +3,7 @@ import { act, renderHook, userEvent } from '../testUtils';
 import {
   useKeypressSequenceListener,
   RESET_SEQUENCE_MS,
+  WAIT_BEFORE_ACTION_MS,
 } from './useKeypressSequenceListener';
 
 jest.useFakeTimers();
@@ -18,17 +19,11 @@ test('should call handler and reset sequence', () => {
 
   userEvent.keyboard(sequence);
 
-  expect(result.current).toEqual(sequence);
-
-  /**
-   *  Does not reset sequence yet.
-   */
   act(() => {
-    jest.advanceTimersByTime(RESET_SEQUENCE_MS * 0.99);
+    jest.advanceTimersByTime(WAIT_BEFORE_ACTION_MS * 2);
   });
 
   expect(result.current).toEqual(sequence);
-  expect(handler).toHaveBeenCalledWith(sequence);
 
   /**
    * Reset sequence.
@@ -40,19 +35,36 @@ test('should call handler and reset sequence', () => {
   expect(result.current).toEqual('');
 });
 
-test('should call handler at every valid sequence', () => {
+test('should call handler with the latest sequence value', () => {
   const handler = jest.fn();
 
-  const sequence = ['na', 'nb', 'nc'];
+  const sequence = ['na', 'nb', 'nc', 'nd', 'ne'];
 
   renderHook(() => useKeypressSequenceListener(sequence, handler));
 
   sequence.forEach((s) => {
     userEvent.keyboard(s);
-    expect(handler).toHaveBeenCalledWith(s);
-    handler.mockReset();
   });
 
-  userEvent.keyboard('111');
-  expect(handler).not.toHaveBeenCalled();
+  act(() => {
+    jest.advanceTimersByTime(WAIT_BEFORE_ACTION_MS * 2);
+  });
+
+  expect(handler).toHaveBeenCalledWith(sequence[sequence.length - 1]);
+});
+
+test('should call handler with the latest sequence value with different sizes', () => {
+  const handler = jest.fn();
+
+  const sequence = ['nn', 'ne', 'nne'];
+
+  renderHook(() => useKeypressSequenceListener(sequence, handler));
+
+  userEvent.keyboard('nne');
+
+  act(() => {
+    jest.advanceTimersByTime(WAIT_BEFORE_ACTION_MS * 2);
+  });
+
+  expect(handler).toHaveBeenCalledWith('ne');
 });
