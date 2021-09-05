@@ -17,7 +17,7 @@ export const navigation = {
   nn: '/editor', // New note
   ne: '/editor', // Navigate editor
   np: '/editor', // New post
-  nne: '/newsletter',
+  nl: '/newsletter',
 };
 
 export const editPost = [

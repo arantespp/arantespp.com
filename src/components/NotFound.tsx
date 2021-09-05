@@ -7,6 +7,8 @@ const NotFound = () => {
 
   const draftHref = asPath.startsWith('/drafts') ? asPath : `/drafts${asPath}`;
 
+  const showDraftMessage = !asPath.startsWith('/drafts');
+
   return (
     <Flex sx={{ margin: 3, flexDirection: 'column' }}>
       <Flex
@@ -23,20 +25,22 @@ const NotFound = () => {
           Ops, page not found 😢
         </Text>
       </Flex>
-      <Text sx={{ textAlign: 'center' }}>
-        That page does&apos;t exist. But, maybe it is unfinished post and it is
-        still a{' '}
-        <NextLink href={draftHref}>
-          <Link
-            sx={{
-              cursor: 'pointer',
-              textDecoration: 'underline',
-            }}
-          >
-            draft.
-          </Link>
-        </NextLink>
-      </Text>
+      {showDraftMessage && (
+        <Text sx={{ textAlign: 'center' }}>
+          That page does&apos;t exist. But, maybe it is unfinished post and it
+          is still a{' '}
+          <NextLink href={draftHref}>
+            <Link
+              sx={{
+                cursor: 'pointer',
+                textDecoration: 'underline',
+              }}
+            >
+              draft.
+            </Link>
+          </NextLink>
+        </Text>
+      )}
     </Flex>
   );
 };

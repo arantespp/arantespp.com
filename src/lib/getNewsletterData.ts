@@ -2,7 +2,7 @@ import * as dateFns from 'date-fns';
 import { URL } from 'url';
 
 import { getFlashcard } from './getFlashcard';
-import { getNextNewsletterDate } from './getNextNewsletterDate';
+import { getClosestLastWeekDay } from './getClosestLastWeekDay';
 
 import { socialMedias } from './socialMedias';
 
@@ -11,18 +11,13 @@ const generateTwitterSearchUrl = () => {
 
   const format = 'yyyy-MM-dd';
 
-  const until = getNextNewsletterDate({ format });
+  const lastSunday = getClosestLastWeekDay('Sun');
 
-  const since = dateFns.format(
-    dateFns.subDays(dateFns.parseISO(until), 7),
-    format,
-  );
+  const since = dateFns.format(lastSunday, format);
 
   const searchObject = {
     from: socialMedias.Twitter.username,
-    lang: 'en',
     since,
-    until,
     '-filter': 'replies',
   };
 

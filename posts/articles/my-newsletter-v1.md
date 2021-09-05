@@ -7,7 +7,7 @@ tags:
   - newsletter
   - writing
   - learning
-  - capital social
+  - social media
 rating: 4
 draft: true
 image:
@@ -31,10 +31,14 @@ The newsletter template format has three parts: Reading, Twitter, and Spacing Ef
 
 I plan to send the news every Tuesday, at 10:00 -3 GMT (I need to find out the best time) because it's one of the [best times to send an email](https://blog.hubspot.com/marketing/best-time-to-send-email). Also, I'll prepare the content every morning on Sunday, which we can see as a reading closing. After finish this first stage, I'll choose another topic to read in the following week. So my habit staking of the Sunday morning is closing the current subject and choosing a new one to study.
 
+## Revue
+
+I use, and I'll continue to use [Revue](https://www.getrevue.co/) to create and deliver my newsletter. I like it because I can automate many process steps using its API and browser extensions to add items to the issues. Another benefit is that Revue has integration with many social media platforms, sending my newsletter to my subscribers and my followers on [Twitter, Linked In, and Facebook](/contact). Even posts on Medium it publishes for me. Revue also facilitates the creation of a paid subscription with the [Members feature](https://www.getrevue.co/profile/arantespp/members). Unfortunately, it's infeasible to monetize my newsletter right now because I have some steps to do to create value for my subscribers, but it's on my plans to do it.
+
 ## What Do I Want to Achieve?
 
 The first goal is to improve my learning habit. It'd be amazing when I cultivate the habit of studying a topic per week, close it, share with other people, and start to read a new different topic.
 
-I also want to use this to tweet more. I have an "excuse" to tweet for every thought I have while reading and making notes. Tweeting is part of my plan to be comfortable exposing my ideas on social media.
+I also want to use this process to tweet more. I have an "excuse" to tweet for every thought I have while reading and making notes. Tweeting is part of my plan to be comfortable exposing my ideas on social media.
 
 Do I want to be famous? Well, I'd enjoy it if I have many subscribers or followers on Twitter, but it's not my main goal. Nevertheless, I'll try hard to achieve this because it'll be a metric of how impactful I'll be with the world.
