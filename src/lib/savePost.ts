@@ -11,19 +11,17 @@ import { getTags, postsDirectory, getPartialPost, Post, Book } from './files';
 import { Group } from './groups';
 
 export const savePost = async ({ content, ...meta }: PostForm) => {
-  const { rating, excerpt, group, draft, bitLinks, book } = meta;
+  const { group, book } = meta;
+
   const title = titleCase(meta.title);
   const date = meta.date || dateFns.format(new Date(), 'yyyy-MM-dd');
   const tags = getTags(meta.tags?.split(';'));
 
   const mdMeta: Partial<Post> = {
-    title: titleCase(title),
+    ...(meta as Partial<Post>),
+    title,
     date,
-    excerpt,
-    rating,
     tags,
-    bitLinks,
-    draft,
   };
 
   /**

@@ -155,7 +155,7 @@ const partialTheme = {
       },
     },
     strong: {
-      color: 'primary',
+      color: 'text',
     },
     ol: {
       ml: 4,

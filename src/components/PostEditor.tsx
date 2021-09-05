@@ -31,6 +31,12 @@ const schema = yup.object({
       ASIN: yup.string(),
     })
     .nullable(),
+  image: yup
+    .object({
+      url: yup.string().required(),
+      alt: yup.string().required(),
+    })
+    .nullable(),
 });
 
 export type PostForm = yup.Asserts<typeof schema>;
