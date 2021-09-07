@@ -9,7 +9,8 @@ tags:
   - newsletter
   - social-media
   - writing
-bitLinks: []
+bitLinks:
+  - newsletter-v1
 image:
   url: https://source.unsplash.com/cckf4TsHAuw
   alt: Photo by <a href="https://unsplash.com/@andrewtneel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew Neel</a> on <a href="https://unsplash.com/s/photos/newsletter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
