@@ -4,7 +4,7 @@ const dayOfWeekMap = {
   Mon: 1,
   Tue: 2,
   Wed: 3,
-  Thur: 4,
+  Thu: 4,
   Fri: 5,
   Sat: 6,
   Sun: 7,
@@ -19,6 +19,7 @@ export const getClosestLastWeekDay = (
   dayOfWeek: DayOfWeek,
   fromDate = new Date(),
 ) => {
-  const offsetDays = dayOfWeekMap[dayOfWeek] - dateFns.getISODay(fromDate);
-  return dateFns.addDays(fromDate, offsetDays || -7);
+  const offsetDays = dateFns.getISODay(fromDate) - dayOfWeekMap[dayOfWeek];
+  const subtractDays = offsetDays <= 0 ? offsetDays + 7 : offsetDays;
+  return dateFns.subDays(fromDate, subtractDays);
 };

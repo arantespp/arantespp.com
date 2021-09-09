@@ -11,13 +11,14 @@ const Newsletter = () => (
     <Heading level={2}>Newsletter</Heading>
     <Themed.p>
       Every {getNextNewsletterDate({ format: 'EEEE' })}, I publish my most
-      recent readings and thoughts. If you want to follow topics about{' '}
-      <Tag tag="startups" />, <Tag tag="mental-models" />,{' '}
-      <Tag tag="cryptocurrencies" />, and more, please,{' '}
+      recent readings and thoughts. Subscribe to my newsletter if you want to
+      follow topics about <Tag tag="startups" />, <Tag tag="mental-models" />,{' '}
+      <Tag tag="cryptocurrencies" />, and more. You can also check{' '}
       <Link href="https://www.getrevue.co/profile/arantespp">
-        subscribe to my newsletter.
+        my past issues on Revue.
       </Link>
     </Themed.p>
+
     <Flex
       sx={{
         flexDirection: 'column',
@@ -67,7 +68,7 @@ const Newsletter = () => (
               Subscribe
             </Button>
           </Flex>
-          <Text sx={{ fontSize: 1, color: 'gray' }}>
+          <Text as="p" sx={{ fontSize: 1, color: 'gray', textAlign: 'center' }}>
             By subscribing, you agree with Revue’s{' '}
             <Link href="https://www.getrevue.co/terms">Terms</Link> and{' '}
             <Link href="https://www.getrevue.co/privacy">Privacy Policy</Link>
