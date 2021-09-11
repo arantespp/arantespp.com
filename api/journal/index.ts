@@ -2,6 +2,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { getJournal, saveJournal } from '../../src/lib/files';
 
+import { hofs } from '../hofs';
+
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     const journal = await getJournal(req.query.date as string);
@@ -9,18 +11,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   if (req.method === 'PUT') {
-    if (process.env.NODE_ENV !== 'development') {
-      res.status(403).send('Only works on development environment.');
-      return;
-    }
-
     try {
       await saveJournal(JSON.parse(req.body));
-      res.status(200).end();
+      res.status(200).json({});
     } catch (error) {
       res.status(500).send({ error: error.message });
     }
   }
 };
 
-export default handler;
+export default hofs(handler);

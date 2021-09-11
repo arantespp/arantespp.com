@@ -38,6 +38,8 @@ const useAutoSave = (content: string) => {
 
   React.useEffect(() => {
     const timeout = setTimeout(async () => {
+      setError('');
+
       if (!content || !date) {
         return;
       }
@@ -46,6 +48,7 @@ const useAutoSave = (content: string) => {
         method: 'PUT',
         body: JSON.stringify({ date, content }),
       });
+
       const json = await response.json();
 
       if (response.status !== 200) {

@@ -6868,7 +6868,7 @@ minizlib@^2.0.0, minizlib@^2.1.1:
     minipass "^3.0.0"
     yallist "^4.0.0"
 
-mkdirp@^1.0.3, mkdirp@^1.0.4:
+mkdirp@^1.0.3, mkdirp@^1.0.4, mkdirp@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
@@ -7031,6 +7031,13 @@ node-int64@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
   integrity sha1-h6kGXNs1XTGC2PlM4RGIuCXGijs=
+
+node-json-db@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/node-json-db/-/node-json-db-1.3.0.tgz#68e04fd06c954f5fd501df172dae92c6d3038903"
+  integrity sha512-3IK9KuqfKdK12zFKtzmnD6Y5J9qL0TY0gnnZ5XKpzdhCP019zOxPxGCaH6cmIqiho2ymFgcTMKQeJvYkbBFraQ==
+  dependencies:
+    mkdirp "~1.0.4"
 
 node-libs-browser@^2.2.1:
   version "2.2.1"
