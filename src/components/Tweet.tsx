@@ -1,35 +1,44 @@
-import Head from 'next/head';
 import * as React from 'react';
 import { Flex } from 'theme-ui';
 
-const tweetIdentifier = /^!\[(twitter|tweet)\]\((.*?)\)$/;
-
-const isTweet = (children: React.ReactNode) => {
-  return Array.isArray(children) && tweetIdentifier.test(children.join(''));
+const getTweetStatus = (href: string) => {
+  const { pathname } = new URL(href);
+  const [, , , status] = pathname.split('/');
+  return status;
 };
 
-const Tweet = ({ children }: { children: React.ReactNode[] }) => {
-  if (!isTweet(children)) {
+const isTweet = (href: string) => {
+  return href.startsWith('https://twitter.com/') && getTweetStatus(href);
+};
+
+const Tweet = ({ href }: { href: string }) => {
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const status = getTweetStatus(href);
+
+    const createTweet = (window as any)?.twttr?.widgets?.createTweet;
+
+    if (status && ref.current && createTweet) {
+      /**
+       * Tweet already loaded.
+       */
+      if (!ref.current.innerHTML) {
+        createTweet(status, ref.current);
+      }
+    }
+  }, [href]);
+
+  if (!isTweet(href)) {
     return null;
   }
 
-  const [, , html] = tweetIdentifier.exec(children.join('')) || [];
-
   return (
-    <>
-      <Head>
-        <script
-          async
-          src="https://platform.twitter.com/widgets.js"
-          charSet="utf-8"
-        />
-      </Head>
-      <Flex
-        data-testid="embed-tweet"
-        sx={{ justifyContent: 'center', marginBottom: 3 }}
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-    </>
+    <Flex
+      data-testid="embed-tweet"
+      ref={ref}
+      sx={{ justifyContent: 'center', marginBottom: 3 }}
+    />
   );
 };
 

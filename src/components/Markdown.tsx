@@ -49,6 +49,10 @@ const getComponents = ({
       return <Tag tag={tag} />;
     }
 
+    if (href && Tweet.isTweet(href)) {
+      return <Tweet href={href} />;
+    }
+
     return <Link href={href}>{children}</Link>;
   },
   blockquote: ({ children }) => {
@@ -76,18 +80,19 @@ const getComponents = ({
    * https://github.com/remarkjs/react-markdown/issues/93#issuecomment-399497496
    */
   p: ({ children }) => {
-    if (Tweet.isTweet(children)) {
-      return <Tweet>{children}</Tweet>;
-    }
-
     if (
       children &&
       children[0] &&
       children.length === 1 &&
-      (children[0] as any).props &&
-      (children[0] as any).props.src
+      (children[0] as any).props
     ) {
-      return children;
+      /**
+       * For example:
+       * - src: ???
+       * - href: Twitter URL.
+       */
+      const { src, href } = (children[0] as any).props;
+      if (src || href) return children;
     }
 
     return <Themed.p>{children}</Themed.p>;

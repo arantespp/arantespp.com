@@ -13,7 +13,6 @@ tags:
   - memory
   - telegraph
   - thomas-hobbes
-bitLinks: []
 ---
 
 ## Notes

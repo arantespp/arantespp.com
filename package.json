@@ -11,10 +11,10 @@
     "update": "npx ncu -u",
     "test": "jest",
     "analyze": "cross-env ANALYZE=true next build",
-    "bit-links": "tsc -p tsconfig.bitLinks.json",
-    "dev": "yarn run bit-links && next dev",
-    "build": "yarn run bit-links && next build",
-    "start": "yarn run bit-links && next start"
+    "links": "tsc -p tsconfig.links.json",
+    "dev": "yarn run links && next dev",
+    "build": "yarn run links && next build",
+    "start": "yarn run links && next start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

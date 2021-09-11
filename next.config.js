@@ -20,10 +20,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 //   'html-void-elements',
 // ]);
 
-const redirects = require('./redirects');
+const { getRewrites, getRedirects } = require('./src/lib/links');
 
 module.exports = withBundleAnalyzer({
+  async rewrites() {
+    return getRewrites();
+  },
   async redirects() {
-    return redirects;
+    return getRedirects();
   },
 });

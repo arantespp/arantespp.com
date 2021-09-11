@@ -5,8 +5,7 @@ excerpt: We live in digital time. Our pace is rushed, rapid-fire, and relentless
 tags:
   - energy
 # rating: 5
-bitLinks:
-  - full-engagement
+bitLink: full-engagement
 book:
   authors:
     - 'Tony Schwartz'

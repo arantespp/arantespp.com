@@ -39,7 +39,10 @@ const TextAreaContainer = ({
   return <FullWidth>{children}</FullWidth>;
 };
 
-const Editor = (props: TextareaProps) => {
+const Editor = ({
+  isValid,
+  ...props
+}: TextareaProps & { isValid?: boolean }) => {
   const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
 
   const [isFullScreen, setIsFullScreen] = React.useState(false);
@@ -93,6 +96,9 @@ const Editor = (props: TextareaProps) => {
             }
           }}
           {...props}
+          sx={
+            isValid ? {} : { borderColor: 'primary', outlineColor: 'primary' }
+          }
         />
         <Text
           onClick={() => {

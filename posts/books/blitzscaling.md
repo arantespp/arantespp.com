@@ -1,7 +1,5 @@
 ---
 title: Blitzscaling
-bitLinks:
-  - blitzscaling
 book:
   authors:
     - Reid Hoffman

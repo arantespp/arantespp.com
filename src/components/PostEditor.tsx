@@ -23,20 +23,22 @@ const schema = yup.object({
   tags: yup.string(),
   content: yup.string().required(),
   draft: yup.boolean(),
-  bitLinks: yup.array().of(yup.string().required()),
+  bitLink: yup.string(),
   book: yup
     .object({
       authors: yup.array().of(yup.string().required()),
       link: yup.string(),
       ASIN: yup.string(),
     })
-    .nullable(),
+    .notRequired()
+    .default(null),
   image: yup
     .object({
       url: yup.string().required(),
       alt: yup.string().required(),
     })
-    .nullable(),
+    .notRequired()
+    .default(null),
 });
 
 export type PostForm = yup.Asserts<typeof schema>;
@@ -180,7 +182,7 @@ const PostEditor = ({ post }: { post?: Post }) => {
         control={control}
         name="content"
         render={({ field: { value, onChange } }) => (
-          <Editor {...{ value, onChange }} />
+          <Editor {...{ value, onChange, isValid }} />
         )}
       />
       <ErrorMessage errors={errors} name="content" />

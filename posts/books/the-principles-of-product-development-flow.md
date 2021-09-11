@@ -6,9 +6,7 @@ rating: 6
 tags:
   - donald-g-reinertsen
   - product-development
-bitLinks:
-  - product-development-flow
-  - flow
+bitLink: flow
 draft: true
 book:
   authors:

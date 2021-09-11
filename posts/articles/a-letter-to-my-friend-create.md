@@ -9,8 +9,7 @@ excerpt: >-
 tags:
   - writing
 rating: 5
-bitLinks:
-  - create
+bitLink: create
 image:
   url: https://source.unsplash.com/M9jrKDXOQoU
   alt: Photo by <a href="https://unsplash.com/@harlimarten?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Harli Marten</a> on <a href="https://unsplash.com/s/photos/friendship?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

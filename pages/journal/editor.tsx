@@ -197,6 +197,7 @@ const JournalEditor = () => {
       <ErrorMessage error={error} />
       <Box sx={{ marginY: 3 }}>
         <Editor
+          isValid={!!content}
           value={content}
           onChange={(e) => {
             setContent(e.target.value);

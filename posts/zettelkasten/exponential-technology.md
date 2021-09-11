@@ -8,7 +8,6 @@ rating: 2
 tags:
   - moore-s-law
   - solar-power-generation
-bitLinks: []
 ---
 
 ## Notes

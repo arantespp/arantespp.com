@@ -46,15 +46,19 @@ type PostMeta = {
    * References used in the text.
    */
   references?: PostWithoutContent[];
+  /**
+   * image and book should have the `null` type because `getStaticProps` do not
+   * accept undefined values.
+   */
   image?: {
     url: string;
     alt: string;
-  } | null;
-  book?: Book | null;
+  };
+  book?: Book;
   editLink?: string;
   keywords: string[];
   readingTime: number;
-  bitLinks: string[];
+  bitLink?: string;
 };
 
 export type Post = PostMeta & {
@@ -114,11 +118,9 @@ export const getDrafts = (filter: { group?: Group } = {}) =>
       formattedDate: 'DRAFT FORMATTED DATE',
       tags: [],
       rating: 0,
-      image: null,
       backlinks: [],
       references: [],
       keywords: [],
-      bitLinks: [],
       readingTime: 0,
       ...draft,
       href: `/drafts${draft.href}`,
@@ -225,7 +227,7 @@ export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       image,
       draft,
       book,
-      bitLinks = [],
+      bitLink,
     } = data as PostMeta;
 
     /**
@@ -283,7 +285,7 @@ export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       url: `${DOMAIN}${href}`,
       keywords: [group, ...tags],
       readingTime: Math.round(readingTime(content).minutes),
-      bitLinks,
+      bitLink,
     };
 
     if (!href || !group || !slug) {
