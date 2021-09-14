@@ -29,7 +29,7 @@ export const useKeypressSequenceListener = (
 
   const chars = Array.from(new Set(sequenceArray.join('')));
 
-  useKeypress(chars, (event) => {
+  useKeypress(chars, (event: KeyboardEvent) => {
     /**
      * Don't set sequence if input is active.
      */
@@ -38,7 +38,14 @@ export const useKeypressSequenceListener = (
         document.activeElement?.tagName.toLowerCase() || '',
       )
     ) {
-      setTypedSequence((s) => s + event.key);
+      /**
+       * Without this line, commands as `ctrl+c` will be ignored.
+       */
+      if (event.ctrlKey || event.altKey || event.shiftKey) {
+        return;
+      }
+
+      setTypedSequence((prev) => prev + event.key);
     }
   });
 
