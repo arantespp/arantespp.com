@@ -1,5 +1,3 @@
-// import * as path from 'path';
-
 import { getDrafts, getAllPosts } from './files';
 import { groupAbbreviation, GROUPS } from './groups';
 
@@ -99,7 +97,7 @@ export const getRedirects = async () => {
       return [];
     });
 
-  const drafts = getDrafts()
+  const draftsBitLinks = getDrafts()
     .filter((post) => post.bitLink)
     .map((post) => ({
       source: `/${post.bitLink}`,
@@ -107,37 +105,25 @@ export const getRedirects = async () => {
       permanent: false,
     }));
 
-  return [...groupRedirects, ...bitLinks, ...drafts, ...pageLinks, ...oldLinks];
+  /**
+   * If a post is a draft, you cant access it via group abbreviation.
+   * If you do this, you'll be redirected to Not Found page, that shows a
+   * link to the draft post. This link add `/drafts` to the URL, but new URL,
+   * `/drafts/b/some-book` does not exist. This redirect redirect URL to the
+   * correct one, `/drafts/books/some-book`.
+   */
+  const draftsAbbreviation = GROUPS.map((group) => ({
+    destination: `/drafts/${group}/:path*`,
+    source: `/drafts/${groupAbbreviation[group]}/:path*`,
+    permanent: false,
+  }));
+
+  return [
+    ...groupRedirects,
+    ...bitLinks,
+    ...draftsBitLinks,
+    ...draftsAbbreviation,
+    ...pageLinks,
+    ...oldLinks,
+  ];
 };
-
-// export const getNextJsLinksConfig = () => {
-//   const postsRedirects = getAllPosts().map((post) => {
-//     if (post.bitLink) {
-//       return {
-//         permanent: true,
-//         destination: post.bitLink,
-//         source: post.href,
-//       };
-//     }
-
-//     return {
-//       permanent: true,
-//       destination: path.join(linkAbbreviation[post.group], post.slug),
-//       source: post.href,
-//     };
-//   });
-
-//   return {
-//     async rewrites() {
-//       return [...postsRedirects];
-//     },
-//   };
-
-// return [...getDrafts(), ...getAllPosts()].flatMap((post) =>
-//   (post.bitLinks || []).map((bitLink) => ({
-//     source: `/${bitLink}`,
-//     destination: post.href,
-//     permanent: !post.draft,
-//   })),
-// );
-// };

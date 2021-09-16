@@ -31,6 +31,7 @@ const schema = yup.object({
       ASIN: yup.string(),
     })
     .notRequired()
+    .nullable()
     .default(null),
   image: yup
     .object({
@@ -38,6 +39,7 @@ const schema = yup.object({
       alt: yup.string().required(),
     })
     .notRequired()
+    .nullable()
     .default(null),
 });
 
@@ -136,8 +138,6 @@ const PostEditor = ({ post }: { post?: Post }) => {
     return () => null;
   }, [handleSubmit, isDirty, isValid, onSubmit]);
 
-  const isButtonDisabled = !isDirty || !isValid;
-
   return (
     <Flex
       as="form"
@@ -182,7 +182,7 @@ const PostEditor = ({ post }: { post?: Post }) => {
         control={control}
         name="content"
         render={({ field: { value, onChange } }) => (
-          <Editor {...{ value, onChange, isValid }} />
+          <Editor {...{ value, onChange, isValid: !errors.content }} />
         )}
       />
       <ErrorMessage errors={errors} name="content" />
@@ -194,7 +194,7 @@ const PostEditor = ({ post }: { post?: Post }) => {
       )}
 
       <Flex sx={{ justifyContent: 'center', marginTop: 4 }}>
-        <Button type="submit">{isButtonDisabled ? 'Saved' : 'Save'}</Button>
+        <Button type="submit">Save</Button>
       </Flex>
     </Flex>
   );
