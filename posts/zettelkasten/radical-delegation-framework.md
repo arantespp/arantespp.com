@@ -54,4 +54,4 @@ rating: 2
 
 ## References
 
-![tweet](<blockquote class="twitter-tweet"><p lang="en" dir="ltr">As a leader, how can you<br>- Make a major, singular impact<br>- Truly empower team members<br>- Grow them with “stretch tasks”<br>- Create flow for self &amp; others<br>- Avoid burnout<br><br>Answer: Radical Delegation<br><br>(note: not for everyone, but game-changing for leaders &amp; teams who are ready for it) <a href="https://t.co/C0F1ULOo2N">pic.twitter.com/C0F1ULOo2N</a></p>&mdash; Shreyas Doshi (@shreyas) <a href="https://twitter.com/shreyas/status/1401598910792011776?ref_src=twsrc%5Etfw">June 6, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>)
+- [Shreyas Doshi. Radical Delegation](https://twitter.com/shreyas/status/1401598910792011776)

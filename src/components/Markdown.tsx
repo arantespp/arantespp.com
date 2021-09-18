@@ -50,7 +50,15 @@ const getComponents = ({
     }
 
     if (href && Tweet.isTweet(href)) {
-      return <Tweet href={href} />;
+      /**
+       * This case means that the link is a reference for another text. For
+       * example, [Some text](https://twitter...) is a link whose text is "Some
+       * Text" linked to the tweet. In this case, we don't want to render the
+       * tweet card. Also, `children[0]` === "Some Text".
+       */
+      if (children[0] === href) {
+        return <Tweet href={href} />;
+      }
     }
 
     return <Link href={href}>{children}</Link>;
