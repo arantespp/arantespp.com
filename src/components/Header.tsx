@@ -1,7 +1,8 @@
 import { pascalCase } from 'change-case';
-import NextLink from 'next/link';
-import { Flex, Link } from 'theme-ui';
 
+import { Flex } from 'theme-ui';
+
+import Link from './Link';
 import PedroArantes from './PedroArantes';
 
 const navs = [
@@ -35,7 +36,7 @@ const Header = () => {
         borderBottomStyle: 'solid',
       }}
     >
-      <NextLink href="/" passHref>
+      <Link href="/">
         <PedroArantes
           sx={{
             fontSize: [4, 4],
@@ -43,7 +44,7 @@ const Header = () => {
             cursor: 'pointer',
           }}
         />
-      </NextLink>
+      </Link>
       <Flex
         sx={{
           display: 'flex',
@@ -53,23 +54,23 @@ const Header = () => {
         }}
       >
         {navs.map(({ href, label }) => (
-          <NextLink key={href} href={href} passHref>
-            <Link
-              sx={{
-                fontSize: [2, 3],
-                textAlign: 'center',
-                textDecoration: 'none',
-                marginX: [2, null, 3],
-                cursor: 'pointer',
-                color: 'primary',
-                '&:hover': {
-                  color: 'text',
-                },
-              }}
-            >
-              {pascalCase(label)}
-            </Link>
-          </NextLink>
+          <Link
+            key={href}
+            href={href}
+            sx={{
+              fontSize: [2, 3],
+              textAlign: 'center',
+              textDecoration: 'none',
+              marginX: [2, null, 3],
+              cursor: 'pointer',
+              color: 'primary',
+              '&:hover': {
+                color: 'text',
+              },
+            }}
+          >
+            {pascalCase(label)}
+          </Link>
         ))}
       </Flex>
     </Flex>
