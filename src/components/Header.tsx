@@ -1,5 +1,5 @@
 import { pascalCase } from 'change-case';
-
+import NextLink from 'next/link';
 import { Flex } from 'theme-ui';
 
 import Link from './Link';
@@ -36,7 +36,7 @@ const Header = () => {
         borderBottomStyle: 'solid',
       }}
     >
-      <Link href="/">
+      <NextLink href="/">
         <PedroArantes
           sx={{
             fontSize: [4, 4],
@@ -44,7 +44,7 @@ const Header = () => {
             cursor: 'pointer',
           }}
         />
-      </Link>
+      </NextLink>
       <Flex
         sx={{
           display: 'flex',
