@@ -1,8 +1,18 @@
 import { ErrorMessage } from '@hookform/error-message';
 import { yupResolver } from '@hookform/resolvers/yup';
+import * as dateFns from 'date-fns';
 import * as React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Button, Flex, Input, Label, Select, Textarea, Themed } from 'theme-ui';
+import {
+  Button,
+  Flex,
+  Input,
+  Label,
+  Select,
+  Text,
+  Textarea,
+  Themed,
+} from 'theme-ui';
 import * as yup from 'yup';
 
 import type { Post } from '../lib/files';
@@ -52,6 +62,18 @@ const putPost = async (post: PostForm) => {
   });
 };
 
+const useLastAutoSaveTime = () => {
+  const [currentTime, setCurrentTime] = React.useState(new Date());
+
+  const updateLastAutoSaveTime = React.useCallback(() => {
+    setCurrentTime(new Date());
+  }, []);
+
+  const lastAutoSaveTime = dateFns.format(currentTime, 'HH:mm:ss');
+
+  return { updateLastAutoSaveTime, lastAutoSaveTime };
+};
+
 const PostEditor = ({ post }: { post?: Post }) => {
   const defaultValues = React.useMemo(
     (): Partial<PostForm> => ({
@@ -93,6 +115,8 @@ const PostEditor = ({ post }: { post?: Post }) => {
    */
   const [currentPost, setCurrentPost] = React.useState<Post | undefined>(post);
 
+  const { updateLastAutoSaveTime, lastAutoSaveTime } = useLastAutoSaveTime();
+
   const onSubmit = React.useCallback(
     async (data: PostForm) => {
       try {
@@ -108,6 +132,7 @@ const PostEditor = ({ post }: { post?: Post }) => {
 
         if (response.status === 200) {
           setCurrentPost(json);
+          updateLastAutoSaveTime();
           return true;
         }
 
@@ -117,7 +142,7 @@ const PostEditor = ({ post }: { post?: Post }) => {
         return false;
       }
     },
-    [reset],
+    [reset, updateLastAutoSaveTime],
   );
 
   /**
@@ -190,7 +215,11 @@ const PostEditor = ({ post }: { post?: Post }) => {
       {error && <Themed.p>{error}</Themed.p>}
 
       {currentPost?.href && (
-        <Link href={currentPost.href}>See post: {currentPost.title}</Link>
+        <Link href={currentPost.href}>
+          <Text sx={{ fontStyle: 'italic' }}>
+            See post: {currentPost.title} (updated at {lastAutoSaveTime})
+          </Text>
+        </Link>
       )}
 
       <Flex sx={{ justifyContent: 'center', marginTop: 4 }}>
