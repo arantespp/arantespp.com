@@ -1,17 +1,43 @@
 ---
-title: Newsletter V1
-date: '2021-09-05'
-excerpt: >
-  'The first goal is to improve my learning habit. It'd be amazing when I cultivate the habit of studying a topic per week, close it, share with other people, and start to read a new different topic. I hope I receive many feedbacks because it can improve the issues I investigate, and on top of that, I can meet amazing people.'
-rating: 4
+image:
+  url: 'https://source.unsplash.com/cckf4TsHAuw'
+  alt: >-
+    Photo by <a
+    href="https://unsplash.com/@andrewtneel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew
+    Neel</a> on <a
+    href="https://unsplash.com/s/photos/newsletter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+book: null
 tags:
   - learning
   - newsletter
   - social-media
   - writing
-image:
-  url: https://source.unsplash.com/cckf4TsHAuw
-  alt: Photo by <a href="https://unsplash.com/@andrewtneel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew Neel</a> on <a href="https://unsplash.com/s/photos/newsletter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+rating: 4
+date: '2021-09-05'
+excerpt: >
+  'The first goal is to improve my learning habit. It'd be amazing when I
+  cultivate the habit of studying a topic per week, close it, share with other
+  people, and start to read a new different topic. I hope I receive many
+  feedbacks because it can improve the issues I investigate, and on top of that,
+  I can meet amazing people.'
+title: Newsletter V1
+group: articles
+formattedDate: 'September 05, 2021'
+updatedAt: 'September 21, 2021'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/articles/newsletter-v1.md
+href: /articles/newsletter-v1
+slug: newsletter-v1
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/articles/newsletter-v1.md
+url: 'https://arantespp.com/articles/newsletter-v1'
+keywords:
+  - articles
+  - learning
+  - newsletter
+  - social-media
+  - writing
+readingTime: 4
 ---
 
 Last night, I had some ideas while taking a shower about improving my learning process and [my newsletter](https://www.getrevue.co/profile/arantespp) format. My thoughts were about picking a text every Sunday and study it during the week, creating [Zettelkasten notes](/zettelkasten), and a final article discussing my ideas about the content. So my first question was how could I leverage this process using this blog. Maybe creating a /reading page in which I insert the article and the notes? Push notification to remember to choose a text?
@@ -36,7 +62,7 @@ I use, and I'll continue to use [Revue](https://www.getrevue.co/) to create and 
 
 ## Content
 
-I won't follow a particular topic in the next months. My personal goal is to create a knowledge base of many subjects because I'm focusing on width instead of depth and specializations. I read from biology, [hormones](/zettelkasten/hormones), for example, to articles about [startups](/tags/startups). I'm going to share my range of studies through the newsletter.
+I won't follow a particular topic in the following months. My personal goal is to create a broader knowledge base of as many subjects as I can. I read from biology, [hormones](/zettelkasten/hormones), for example, to articles about [startups](/tags/startups). I'm going to share my range of studies through the newsletter.
 
 ## What Do I Want to Achieve?
 
@@ -44,4 +70,4 @@ The first goal is to improve my learning habit. It'd be amazing when I cultivate
 
 I also want to use this process to tweet more. I have an "excuse" to tweet for every thought I have while reading and making notes. Tweeting is part of my plan to be comfortable exposing my ideas on social media.
 
-Do I want to be famous? Well, I'd enjoy it if I have many subscribers or followers on Twitter, but it's not my main goal. Nevertheless, I'll try hard to achieve this because it'll be a metric of how impactful I'll be with the world.
+Do I want to be famous? Well, I'd enjoy it if I had many subscribers or followers on Twitter, but it's not my main goal. Nevertheless, I'll try hard to achieve this because it'll be a metric of how impactful I'll be with the world.

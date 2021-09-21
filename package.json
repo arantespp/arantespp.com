@@ -12,9 +12,9 @@
     "test": "jest",
     "analyze": "cross-env ANALYZE=true next build",
     "links": "tsc -p tsconfig.links.json",
-    "dev": "yarn run links && next dev",
+    "dev": "yarn run links && next dev -p 3311",
     "build": "yarn run links && next build",
-    "start": "yarn run links && next start"
+    "start": "yarn run links && next start -p 3311"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
