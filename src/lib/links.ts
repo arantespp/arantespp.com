@@ -70,32 +70,30 @@ const pageLinks = [
 ];
 
 export const getRedirects = async () => {
-  // const groupRedirects = GROUPS.map((group) => ({
-  //   source: `/${group}/:slug`,
-  //   destination: `/${groupAbbreviation[group]}/:slug`,
-  //   permanent: true,
-  // }));
+  const postsRedirects = getAllPosts().flatMap((post) => {
+    if (post.bitLink) {
+      return [
+        {
+          source: `/${post.group}/${post.slug}`,
+          destination: `/${post.bitLink}`,
+          permanent: true,
+        },
+        {
+          source: `/${groupAbbreviation[post.group]}/${post.slug}`,
+          destination: `/${post.bitLink}`,
+          permanent: true,
+        },
+      ];
+    }
 
-  // const bitLinks = getAllPosts()
-  //   .filter((post) => post.bitLink)
-  //   .flatMap((post) => {
-  //     if (post.bitLink) {
-  //       return [
-  //         {
-  //           source: `/${post.group}/${post.slug}`,
-  //           destination: `/${post.bitLink}`,
-  //           permanent: true,
-  //         },
-  //         {
-  //           source: `/${groupAbbreviation[post.group]}/${post.slug}`,
-  //           destination: `/${post.bitLink}`,
-  //           permanent: true,
-  //         },
-  //       ];
-  //     }
-
-  //     return [];
-  //   });
+    return [
+      {
+        source: `/${post.group}/${post.slug}`,
+        destination: `/${groupAbbreviation[post.group]}/${post.slug}`,
+        permanent: true,
+      },
+    ];
+  });
 
   const draftsBitLinks = getDrafts()
     .filter((post) => post.bitLink)
@@ -119,8 +117,7 @@ export const getRedirects = async () => {
   }));
 
   return [
-    // ...groupRedirects,
-    // ...bitLinks,
+    ...postsRedirects,
     ...draftsBitLinks,
     ...draftsAbbreviation,
     ...pageLinks,
