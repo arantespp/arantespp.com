@@ -1,4 +1,4 @@
-import { getRewrites, getRedirects } from './links';
+import { getRewrites } from './links';
 
 test('getRewrites', async () => {
   const rewrites = await getRewrites();
@@ -33,9 +33,9 @@ test('getRewrites', async () => {
   );
 });
 
-test('getRedirects', async () => {
-  const redirects = await getRedirects();
+// test('getRedirects', async () => {
+//   const redirects = await getRedirects();
 
-  console.log(redirects);
-  expect(redirects).toEqual(32);
-});
+//   console.log(redirects);
+//   expect(redirects).toEqual(32);
+// });
