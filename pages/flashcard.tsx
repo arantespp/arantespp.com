@@ -1,4 +1,3 @@
-import useKeypress from 'react-use-keypress';
 import useSWR from 'swr';
 import { Box, Button, Flex, Text, Themed } from 'theme-ui';
 
@@ -23,11 +22,6 @@ const FlashcardPage = () => {
     },
   );
 
-  /**
-   * Retrieve new Flashcard.
-   */
-  useKeypress(['N', 'n'], () => mutate());
-
   return (
     <>
       <HTMLHeaders
@@ -46,7 +40,11 @@ const FlashcardPage = () => {
         )}
       </Box>
       <Flex sx={{ width: '100%', justifyContent: 'center' }}>
-        <Button disabled={isValidating} onClick={() => mutate()}>
+        <Button
+          disabled={isValidating}
+          onClick={() => mutate()}
+          sx={{ display: 'none' }}
+        >
           New Flashcard (N)
         </Button>
       </Flex>
