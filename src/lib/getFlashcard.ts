@@ -1,6 +1,6 @@
 import * as dateFns from 'date-fns';
 
-import { getAllPosts } from './files';
+import { getAllPosts, Group } from './files';
 
 export const INTERVAL = 7;
 
@@ -21,7 +21,10 @@ export const getPNumber = (x: number) =>
 export const getFlashcards = async () => {
   const today = new Date();
 
+  const excludedGroups: Group[] = ['articles'];
+
   return getAllPosts()
+    .filter((post) => !excludedGroups.includes(post.group))
     .map((post) => {
       const diffDays = dateFns.differenceInDays(today, new Date(post.date));
 
