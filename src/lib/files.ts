@@ -8,7 +8,7 @@ import matter from 'gray-matter';
 import path from 'path';
 import readingTime from 'reading-time';
 
-import { Group, GROUPS } from './groups';
+import { Group, GROUPS, groupAbbreviation } from './groups';
 
 export const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -389,7 +389,13 @@ const getPost = (props: GetPartialPostProps): Post | undefined => {
   }
 
   const backlinks = allPosts
-    .filter(({ content }) => content.includes(`(${partialPost.href})`))
+    .filter(
+      ({ content }) =>
+        content.includes(`(/${partialPost.group}/${partialPost.slug})`) ||
+        content.includes(
+          `(/${groupAbbreviation[partialPost.group]}/${partialPost.slug})`,
+        ),
+    )
     .map(({ content, ...post }) => post);
 
   const newContent = (() => {
