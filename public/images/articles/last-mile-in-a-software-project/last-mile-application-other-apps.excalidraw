@@ -85,8 +85,8 @@
     },
     {
       "type": "text",
-      "version": 61,
-      "versionNonce": 1341928126,
+      "version": 62,
+      "versionNonce": 1524937301,
       "isDeleted": false,
       "id": "UEKVhFAxv3hSURgI0WI4m",
       "fillStyle": "hachure",
@@ -97,7 +97,7 @@
       "angle": 0,
       "x": 708.0000000000002,
       "y": 122.00000000000011,
-      "strokeColor": "#000000",
+      "strokeColor": "#e63946",
       "backgroundColor": "transparent",
       "width": 124,
       "height": 35,
@@ -220,8 +220,8 @@
     },
     {
       "type": "text",
-      "version": 332,
-      "versionNonce": 1663295522,
+      "version": 333,
+      "versionNonce": 951454075,
       "isDeleted": false,
       "id": "OQWiANtuCLgG_80SBv4XI",
       "fillStyle": "hachure",
@@ -232,7 +232,7 @@
       "angle": 0,
       "x": 1071.272727272728,
       "y": 125.3376623376625,
-      "strokeColor": "#000000",
+      "strokeColor": "#e63946",
       "backgroundColor": "transparent",
       "width": 140,
       "height": 35,
@@ -355,8 +355,8 @@
     },
     {
       "type": "text",
-      "version": 188,
-      "versionNonce": 966994686,
+      "version": 189,
+      "versionNonce": 1554358197,
       "isDeleted": false,
       "id": "0ce7l_etUOGjbOhzL7O7B",
       "fillStyle": "hachure",
@@ -367,7 +367,7 @@
       "angle": 0,
       "x": 1432.2792207792209,
       "y": 126.68831168831196,
-      "strokeColor": "#000000",
+      "strokeColor": "#e63946",
       "backgroundColor": "transparent",
       "width": 139,
       "height": 35,
@@ -494,8 +494,8 @@
     },
     {
       "type": "text",
-      "version": 326,
-      "versionNonce": 95914978,
+      "version": 327,
+      "versionNonce": 1640833563,
       "isDeleted": false,
       "id": "inMVQ_oMyYdZK6A-MQwOT",
       "fillStyle": "hachure",
@@ -506,7 +506,7 @@
       "angle": 0,
       "x": 1778.7662337662352,
       "y": 129.02597402597405,
-      "strokeColor": "#000000",
+      "strokeColor": "#e63946",
       "backgroundColor": "transparent",
       "width": 135,
       "height": 35,
@@ -582,6 +582,9 @@
         "focus": 0.049700671936788475,
         "gap": 1
       },
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
       "points": [
         [
           0,
@@ -591,10 +594,7 @@
           95.10472424690693,
           -1.2860164414020687
         ]
-      ],
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
+      ]
     },
     {
       "type": "arrow",
@@ -628,6 +628,9 @@
         "focus": 0.026262571850062564,
         "gap": 2.0454545454554136
       },
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
       "points": [
         [
           0,
@@ -637,10 +640,7 @@
           70.25974025974028,
           0.2939872497199758
         ]
-      ],
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
+      ]
     },
     {
       "type": "text",
@@ -722,6 +722,9 @@
         "focus": 0.3332723448819187,
         "gap": 3.6422879623653444
       },
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
       "points": [
         [
           0,
@@ -735,10 +738,7 @@
           804.0000000000002,
           76.9063773506868
         ]
-      ],
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
+      ]
     },
     {
       "type": "arrow",
@@ -764,6 +764,9 @@
       "boundElementIds": [],
       "startBinding": null,
       "endBinding": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
       "points": [
         [
           0,
@@ -773,10 +776,7 @@
           -11,
           322.99999999999994
         ]
-      ],
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
+      ]
     },
     {
       "type": "arrow",
@@ -810,6 +810,9 @@
         "focus": -0.5584538244907634,
         "gap": 5.682709793447202
       },
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
       "points": [
         [
           0,
@@ -827,10 +830,7 @@
           797.9595781689184,
           12
         ]
-      ],
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
+      ]
     }
   ],
   "appState": {

@@ -34,3 +34,4 @@ src/lib/*.js
 
 /posts/articles/my-story-then*
 
+.env*

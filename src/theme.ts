@@ -40,7 +40,7 @@ const colors = {
   lightGray,
   link: lightGray,
   lightLightGray,
-  background: '#fcfcfc',
+  background: '#fff',
   primary: palette.imperialRed,
   secondary: palette.imperialRed,
   accent: palette.celadonBlue,
@@ -81,7 +81,7 @@ const partialTheme = {
   fonts: {
     monospace: "'Overpass Mono', monospace",
   },
-  fontSizes: [14, 16, 18, 22, 28, 44],
+  fontSizes: [14, 16, 18, 22, 28, 36],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes: {
     container: '48em',
