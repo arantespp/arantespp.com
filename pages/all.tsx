@@ -87,7 +87,7 @@ const All = ({
 
   React.useEffect(() => {
     if (!debouncedSearch) {
-      setFilteredPosts([]);
+      setFilteredPosts(allPosts);
       return;
     }
 
