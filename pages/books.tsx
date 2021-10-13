@@ -1,16 +1,43 @@
 import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 
-import { getPostsByGroup, getDrafts } from '../src/lib/files';
+import { getPostsByGroup, getDrafts, Post } from '../src/lib/files';
 
 import CustomImage from '../src/components/CustomImage';
 import Heading from '../src/components/Heading';
 import HTMLHeaders from '../src/components/HTMLHeaders';
 import RecommendationsList from '../src/components/RecommendationsList';
 
+const sortBooksMostRecentFirst = (a: Post, b: Post) => {
+  const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+  if (dateRegex.test(a.date) && dateRegex.test(b.date)) {
+    if (a.date < b.date) {
+      return 1;
+    }
+
+    if (a.date > b.date) {
+      return -1;
+    }
+  }
+
+  /**
+   * If the dates are not in the format YYYY-MM-DD, because it is a draft.
+   */
+  if (!dateRegex.test(a.date)) {
+    return 2;
+  }
+
+  if (!dateRegex.test(b.date)) {
+    return -2;
+  }
+
+  return 0;
+};
+
 export const getStaticProps = async () => {
-  const books = getPostsByGroup('books');
-  const drafts = getDrafts({ group: 'books' });
+  const books = getPostsByGroup('books').sort(sortBooksMostRecentFirst);
+  const drafts = getDrafts({ group: 'books' }).sort(sortBooksMostRecentFirst);
   return { props: { books, drafts } };
 };
 

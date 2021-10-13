@@ -1,5 +1,5 @@
 ---
-title: Network Effect
+title: Network Effects
 date: '2021-08-19'
 excerpt: >-
   Network effects occur when a network's value increases for users as more

@@ -24,11 +24,11 @@ import PedroArantes from './PedroArantes';
 const PostsGrid = ({
   pages,
   postsRefs,
-  header,
+  url,
 }: {
   pages: string[];
   postsRefs?: React.MutableRefObject<HTMLDivElement[]>;
-  header?: string;
+  url?: string;
 }) => {
   const size = 1080;
 
@@ -60,6 +60,7 @@ const PostsGrid = ({
 
         return (
           <ThemeProvider
+            key={key}
             theme={{
               fontSizes,
               styles: {
@@ -69,6 +70,7 @@ const PostsGrid = ({
                 },
                 h2: {
                   marginTop: 0,
+                  paddingBottom: 3,
                   '&:not(:first-child)': {
                     marginTop: 5,
                   },
@@ -81,11 +83,20 @@ const PostsGrid = ({
                   color: 'text',
                   fontSize: isLastPage ? 3 : 2,
                 },
+                li: {
+                  color: 'text',
+                  fontSize: isLastPage ? 3 : 2,
+                },
+                strong: {
+                  color: 'primary',
+                },
+                a: {
+                  textDecorationLine: 'none',
+                },
               },
             }}
           >
             <Box
-              key={key}
               ref={(element) => {
                 if (postsRefs && element) {
                   // eslint-disable-next-line no-param-reassign
@@ -99,9 +110,9 @@ const PostsGrid = ({
                 backgroundColor: 'background',
               }}
             >
-              {header && (
+              {url && (
                 <Link
-                  href="https://arantespp.com/no-bs-time"
+                  href={url}
                   sx={{
                     position: 'absolute',
                     top: margin / 2,
@@ -110,7 +121,7 @@ const PostsGrid = ({
                     fontSize: 1,
                   }}
                 >
-                  {header}
+                  {url}
                 </Link>
               )}
 
@@ -200,6 +211,10 @@ const useImages = ({ slug }: { slug: string }) => {
       for (const [index, element] of Array.from(postsRefs.current.entries())) {
         // eslint-disable-next-line no-await-in-loop
         const canvas = await html2canvas(element, {
+          /**
+           * https://stackoverflow.com/a/64436175/8786986
+           */
+          scale: 5,
           useCORS: true,
           scrollX: -window.scrollX,
           scrollY: -window.scrollY,
@@ -239,7 +254,7 @@ const InstagramPost = ({
   content,
   slug,
   title,
-  header,
+  url,
   instagramUrl,
 }: InstagramPostProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -255,7 +270,7 @@ const InstagramPost = ({
     <>
       <HTMLHeaders title={title} />
 
-      <PostsGrid {...{ pages, postsRefs, header }} />
+      <PostsGrid {...{ pages, postsRefs, url }} />
 
       <Themed.h1>{title}</Themed.h1>
 

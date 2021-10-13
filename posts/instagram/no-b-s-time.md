@@ -1,6 +1,6 @@
 ---
 title: No B.S. Time Management for Entrepreneurs
-header: arantespp.com/no-bs-time
+url: arantespp.com/no-bs-time
 instagramUrl: https://www.instagram.com/p/CQhae8dF7V4/
 ---
 
