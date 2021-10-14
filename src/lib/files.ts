@@ -63,7 +63,7 @@ type PostMeta = {
 
 export type Post = PostMeta & {
   href: string;
-  as: string;
+  as?: string;
   group: Group;
   slug: string;
   content: string;
