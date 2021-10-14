@@ -1,7 +1,7 @@
 ---
 title: Zero to One
 url: arantespp.com/zero-to-one
-instagramUrl: https://www.instagram.com/p/CQhae8dF7V4/
+instagramUrl: https://www.instagram.com/p/CU8u3Nyj1L0/
 ---
 
 # Zero to One
