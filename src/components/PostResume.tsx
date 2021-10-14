@@ -17,6 +17,7 @@ const PostResume = ({ post }: { post: PostWithoutContent }) => {
     updatedAt,
     tags,
     href,
+    as,
     updateHistory,
     readingTime,
   } = post;
@@ -32,7 +33,7 @@ const PostResume = ({ post }: { post: PostWithoutContent }) => {
         paddingBottom: 2,
       }}
     >
-      <NextLink href={href} passHref>
+      <NextLink href={href} passHref as={as}>
         <Message variant="excerpt" sx={{ cursor: 'pointer' }}>
           {excerpt}
         </Message>

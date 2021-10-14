@@ -63,6 +63,7 @@ type PostMeta = {
 
 export type Post = PostMeta & {
   href: string;
+  as: string;
   group: Group;
   slug: string;
   content: string;
@@ -266,6 +267,14 @@ export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
      */
     const allTags = getTags([...tags, ...(book?.authors || [])]);
 
+    const as = (() => {
+      if (bitLink) {
+        return `/${bitLink}`;
+      }
+
+      return `/${groupAbbreviation[group]}/${slug}`;
+    })();
+
     const post = {
       title,
       excerpt,
@@ -273,6 +282,7 @@ export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       updatedAt,
       updateHistory: `${GITHUB_PROJECT}/commits/main/posts${href}.md`,
       href,
+      as,
       group,
       slug,
       content,
