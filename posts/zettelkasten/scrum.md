@@ -1,12 +1,33 @@
 ---
-title: Scrum
-excerpt: Is describes a set of meetings/events/ceremonies, tools/artifacts and roles to help teams structure and manage their work.
-date: 2021-02-25
+image: null
+book: null
 tags:
+  - agile
+  - agile-framework
+  - scrum
+rating: 2
+date: '2021-02-25'
+excerpt: >-
+  Is describes a set of meetings/events/ceremonies, tools/artifacts and roles to
+  help teams structure and manage their work.
+title: Scrum
+group: zettelkasten
+formattedDate: 'February 25, 2021'
+updatedAt: 'June 10, 2021'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/scrum.md
+href: /zettelkasten/scrum
+as: /z/scrum
+slug: scrum
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/scrum.md
+url: 'https://arantespp.com/zettelkasten/scrum'
+keywords:
+  - zettelkasten
   - agile
   - agile framework
   - scrum
-rating: 2
+readingTime: 3
 ---
 
 ## Notes
@@ -15,7 +36,7 @@ rating: 2
 
 - It helps teams and organizations generate the highest possible value for the project.
 
-- Is describes a set of meetings/events/ceremonies, tools/artifacts and roles to help teams structure, and manage their work.
+- Is describes a set of meetings/events/ceremonies, tools/artifacts, and roles to help teams structure and manage their work.
 
 - Scrum Team:
 
@@ -33,20 +54,20 @@ rating: 2
       - Is individual.
     - Scrum Master (SM):
       - A team guide.
-      - Knows the Scrum very well and coaches the whole team on the Scrum process.
+      - Knows Scrum very well and coaches the whole team on the Scrum process.
       - Looks for ways to fine-tune the team Scrum process.
-      - Is a facilitator, as he/she schedules the needed resources (human and logistical) for the events/ceremonies.
+      - Is a facilitator, as they schedule the needed resources (human and logistical) for the events/ceremonies.
       - Helps the team optimize their communication, transparency, and delivery flow.
     - Developers.
 
-- Tools, or artifacts:
+- Tools or artifacts:
 
   - Product backlog:
     - The main list of work that needs to get done.
     - Maintained by the PO.
     - It's used as sprints input.
     - It's the "To Do" list.
-    - It's constantly revisited, re-prioritized, and maintained by the PO as the product priorities and the market changes.
+    - It's constantly revisited, re-prioritized, and maintained by the PO as the product priorities and the market change.
   - Sprint Backlog:
     - Items selected from the product backlog to be executed on the current sprint.
     - The "Doing" list.
@@ -55,13 +76,13 @@ rating: 2
     - The "Done" list.
     - Must add value to the project.
 
-- Ceremonies, or events:
+- Ceremonies or events:
 
   1. Organize the backlog:
      - PO's responsibility.
-     - Prioritize items as he/she knows more about the business, the market, and the stakeholders' priorities.
+     - Prioritize items as they know more about the business, the market, and the stakeholders' priorities.
   2. Sprint planning:
-     - The work to be performed during the current sprint.
+     - The work is to be performed during the current sprint.
      - Is planned by the entire team.
      - SM leads this event.
      - At the end of this meeting, every team member needs to be clear about the sprint goals, what can be delivered and how the increment can be delivered.
@@ -90,7 +111,7 @@ rating: 2
 
   6. Sprint retrospective:
      - The team comes together to document and discuss what worked and what didn't work in the current sprint.
-       - The team can focus on what went well and what needs to be improved for the next time.
+       - The team can focus on what went well and what needs to be improved next time.
 
 ## Questions
 
@@ -98,7 +119,7 @@ rating: 2
 
 - Besides software development, which does other fields use Scrum?
 
-- What the Product Owner do? And the Scrum Master?
+- What does the Product Owner do? And the Scrum Master?
 
 - Scrum framework defines some tools, ceremonies, and roles. List them.
 

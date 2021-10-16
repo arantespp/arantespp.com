@@ -74,7 +74,13 @@ const useLastAutoSaveTime = () => {
   return { updateLastAutoSaveTime, lastAutoSaveTime };
 };
 
-const PostEditor = ({ post }: { post?: Post }) => {
+const PostEditor = ({
+  post,
+  onCheckIfPostExists,
+}: {
+  post?: Post;
+  onCheckIfPostExists?: (args: { group: string; title: string }) => void;
+}) => {
   const defaultValues = React.useMemo(
     (): Partial<PostForm> => ({
       rating: 2,
@@ -92,11 +98,22 @@ const PostEditor = ({ post }: { post?: Post }) => {
     handleSubmit,
     register,
     reset,
+    watch,
   } = useForm<PostForm>({
     defaultValues,
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
+
+  const title = watch('title');
+
+  const group = watch('group');
+
+  React.useEffect(() => {
+    if (group && title) {
+      onCheckIfPostExists?.({ group, title });
+    }
+  }, [group, onCheckIfPostExists, title]);
 
   /**
    * Update post because the first props are not yet available
@@ -186,9 +203,9 @@ const PostEditor = ({ post }: { post?: Post }) => {
         {...register('group')}
         sx={{ pointerEvents: post?.group ? 'none' : 'auto' }}
       >
-        {GROUPS.map((group) => (
-          <option key={group} value={group}>
-            {group}
+        {GROUPS.map((groupOption) => (
+          <option key={groupOption} value={groupOption}>
+            {groupOption}
           </option>
         ))}
       </Select>

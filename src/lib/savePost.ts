@@ -1,4 +1,3 @@
-import { paramCase } from 'change-case';
 import * as dateFns from 'date-fns';
 import * as fs from 'fs';
 import matter from 'gray-matter';
@@ -9,6 +8,7 @@ import type { PostForm } from '../components/PostEditor';
 
 import { getTags, postsDirectory, getPartialPost, Post, Book } from './files';
 import { Group } from './groups';
+import { postTitleToSlug } from './postTitleToSlug';
 
 export const savePost = async ({ content, ...meta }: PostForm) => {
   const { group, book } = meta;
@@ -40,7 +40,7 @@ export const savePost = async ({ content, ...meta }: PostForm) => {
 
   const md = matter.stringify(content, mdMeta);
 
-  const slug = paramCase(title);
+  const slug = postTitleToSlug(title);
   const href = `/${group}/${slug}`;
   const filePath = path.join(postsDirectory, `${href}.md`);
 
