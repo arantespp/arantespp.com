@@ -81,7 +81,7 @@ const partialTheme = {
   fonts: {
     monospace: "'Overpass Mono', monospace",
   },
-  fontSizes: [14, 16, 18, 22, 28, 36],
+  fontSizes: [14, 16, 18, 22, 28, 32, 36],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes: {
     container: '48em',
@@ -118,19 +118,23 @@ const partialTheme = {
       ...katex,
     },
     h1: {
+      fontSize: 6,
       marginY: 4,
       wordBreak,
       textAlign: ['center', null, 'left'],
     },
     h2: {
+      fontSize: 5,
       marginY: 4,
       wordBreak,
     },
     h3: {
+      fontSize: 4,
       marginY: 4,
       wordBreak,
     },
     h4: {
+      fontSize: 3,
       marginY: 4,
       wordBreak,
     },

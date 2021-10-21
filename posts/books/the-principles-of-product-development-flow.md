@@ -1,13 +1,5 @@
 ---
-title: The Principles of Product Development Flow
-date: '2021-08-31'
-excerpt: ''
-rating: 6
-tags:
-  - donald-g-reinertsen
-  - product-development
-bitLink: flow
-draft: true
+image: null
 book:
   authors:
     - Donald G. Reinertsen
@@ -15,6 +7,31 @@ book:
     https://www.amazon.com/Principles-Product-Development-Flow-Generation-ebook/dp/B00K7OWG7O
   ASIN: B00K7OWG7O
   image: /images/books/the-principles-of-product-development-flow.jpg
+bitLink: flow
+draft: true
+tags:
+  - donald-g-reinertsen
+  - product-development
+rating: 6
+date: '2021-08-31'
+excerpt: ''
+title: The Principles of Product Development Flow
+group: books
+formattedDate: 'August 31, 2021'
+updatedAt: 'October 20, 2021'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
+href: /books/the-principles-of-product-development-flow
+as: /flow
+slug: the-principles-of-product-development-flow
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/books/the-principles-of-product-development-flow.md
+url: 'https://arantespp.com/books/the-principles-of-product-development-flow'
+keywords:
+  - books
+  - donald-g-reinertsen
+  - product-development
+readingTime: 15
 ---
 
 ## Principles
@@ -203,15 +220,19 @@ $$
 
 The equation shows that queues are proportional to the average squares of the coefficient of variation for arrivals and service processes. You compute the coefficient as the ratio between standard deviation and the mean of a probability distribution. Since the square of the standard deviation is the variance, **this means that queues vary linearly with variance**.
 
-If you were able to make the processing time of a queue equals every time ($C^2_\text{service} = 0$), this would only cut the average queue size in half because of the randomness of arrival times. **So, be very cautious if you think you can solve the problem of queues by reducing variability.**
+If you were able to make the processing time of a queue equal every time ($C^2_\text{service} = 0$), this would only cut the average queue size in half because of the randomness of arrival times. **So, be very cautious if you think you can solve the problem of queues by reducing variability.**
 
 #### Q6: The Principle of Variability Amplification: Operating at high levels of capacity utilization increases variability.
 
-For a M/M/1 queue
+For an $M/M/1/\infty$ queue, the equation below shows how the operation transforms charges in loading into queue size. Thus, as we move up to higher capacity utilization, random changes in loading will have a more significant effect on cycle times because queue size and cycle time are correlated ([Principle Q3](#q3-the-principle-of-queueing-capacity-utilization-capacity-utilization-increases-queues-exponentially)).
 
 $$
 \frac{dW}{d\rho} = \frac{1}{(1-\rho)^2}T_\text{service}
 $$
+
+For example, a change in loading at 95 percent utilization produces a cycle time impact that is 25 times higher than the exact change in loading at 75 percent utilization.
+
+#### Q7. The Principle of Queueing Structure: Serve pooled demand with reliable high-capacity servers.
 
 ### 4 - Exploiting Variability
 
