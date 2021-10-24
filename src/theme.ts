@@ -171,9 +171,9 @@ const partialTheme = {
       fontFamily: 'monospace',
       fontSize: 1,
       overflowX: 'auto',
-      backgroundColor: 'prussianBlue',
       color: 'white',
     },
+    code: {},
     blockquote: {
       fontStyle: 'italic',
       marginY: 4,

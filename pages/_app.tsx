@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { AppProps } from 'next/app';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import * as React from 'react';
 
 import HTMLHeaders from '../src/components/HTMLHeaders';
-import Layout from '../src/components/Layout';
 
 import { useKeypressSequenceListener } from '../src/hooks/useKeypressSequenceListener';
 
@@ -15,6 +15,8 @@ import { socialMedias } from '../src/lib/socialMedias';
 import Providers from '../src/providers/Providers';
 
 import { navigation } from '../shortcuts';
+
+const Layout = dynamic(() => import('../src/components/Layout'));
 
 const title = "Pedro Arantes' Digital Garden";
 

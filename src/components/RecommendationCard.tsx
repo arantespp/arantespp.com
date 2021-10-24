@@ -30,6 +30,7 @@ const RecommendationCard = ({
   recommendation: Recommendation;
 }) => {
   const { href, title, isReference, draft, as } = recommendation;
+
   return (
     <Flex
       key={title}
@@ -38,7 +39,7 @@ const RecommendationCard = ({
         flexDirection: 'column',
       }}
     >
-      <NextLink href={href} passHref as={as}>
+      <NextLink href={as || href}>
         <Link
           sx={{
             fontSize: 3,
