@@ -65,10 +65,12 @@ const PostsGrid = ({
               fontSizes,
               styles: {
                 h1: {
+                  fontSize: 5,
                   textAlign: 'center',
                   marginTop: 0,
                 },
                 h2: {
+                  fontSize: 4,
                   marginTop: 0,
                   paddingBottom: 3,
                   '&:not(:first-child)': {
@@ -306,7 +308,7 @@ const InstagramPost = ({
       </Flex>
 
       <Themed.h2>Markdown</Themed.h2>
-      <Themed.pre>
+      <Themed.pre style={{ overflowX: 'hidden' }}>
         <Text sx={{ whiteSpace: 'pre-wrap' }}>{contentInput}</Text>
       </Themed.pre>
     </>

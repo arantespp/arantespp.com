@@ -172,8 +172,8 @@ const partialTheme = {
       fontSize: 1,
       overflowX: 'auto',
       color: 'white',
+      backgroundColor: palette.prussianBlue,
     },
-    code: {},
     blockquote: {
       fontStyle: 'italic',
       marginY: 4,
