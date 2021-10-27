@@ -18,7 +18,7 @@ excerpt: ''
 title: The Principles of Product Development Flow
 group: books
 formattedDate: 'August 31, 2021'
-updatedAt: 'October 20, 2021'
+updatedAt: 'October 27, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /books/the-principles-of-product-development-flow
@@ -31,7 +31,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 15
+readingTime: 16
 ---
 
 ## Principles
@@ -44,7 +44,7 @@ The economic view of product development allows you to make product development 
 
 #### E1: The Principle of Quantified Overall Economics: Select actions based on quantified overall economic impact.
 
-You should consider the economic impact of all possible decisions when you have to make a project decision. For example, choosing between releasing a project soon without many tests or testing more and release later should be an economic, not a philosophical choice.
+You should consider the economic impact of all possible decisions when you have to make a project decision. For example, choosing between releasing a project soon without many tests or testing more and releasing later should be an economic, not a philosophical choice.
 
 #### E2: The Principle of Interconnected Variables: We can't just change one thing.
 
@@ -66,7 +66,7 @@ Making activities more efficient is much less important than eliminating **inact
 
 Inventory is the most significant waste in manufacturing because it destroys quality, efficiency, and cycle time. When you increase value-added time in a process with variability, you will create queues. The cost of these queues is far greater than any efficiency savings that come from the value-added increase.
 
-#### E6: The U-Curve Principle: Important trade-offs are likely to have U-curve optimizations.
+#### E6: The U-curve Principle: Important trade-offs are likely to have U-curve optimizations.
 
 U-curve is the combination of a hyperbolic and a linear function. It has two essential properties. First, optimization never occurs at extreme values. Because of this, it always requires quantification because you must balance two or more competing factors. Second, U-curve optimizations don't require precise answers because U-curves have flat bottoms, then missing the exact optimum costs very little. Thus, you don't need highly accurate information to improve your economic decisions. As a result, the framework becomes more insensitive to noisy assumptions.
 
@@ -117,7 +117,7 @@ For example, for a Boeing project, the engineers were authorized to increase the
 
 The superiors control the decision without participating in it. Control without participating is control without decision-making delays.
 
-#### E14: The First Market Principle. Ensure decision makers feel both cost and benefit.
+#### E14: The First Market Principle. Ensure decision-makers feel both cost and benefit.
 
 Decision-makers should feel both the cost and benefit of their decisions. Today, some product developers enjoy benefits while being insulated from costs. As a result, the resources will tend to be more utilized than they would, leading to decision delays.
 
@@ -233,6 +233,22 @@ $$
 For example, a change in loading at 95 percent utilization produces a cycle time impact that is 25 times higher than the exact change in loading at 75 percent utilization.
 
 #### Q7. The Principle of Queueing Structure: Serve pooled demand with reliable high-capacity servers.
+
+Exists many process structures in a queue. For example, you can have a single demand stream with a single server in an $M/M/1$ queue, or with $n$ servers in an $M/M/n$ queue. You can have single or multiple servers with a single shared queue, or you can have individual queues for each server. The performance of these structures differs.
+
+![Queueing System Structure.](/images/books/the-principles-of-product-development-flow/queueing-system-structure.png)
+
+- One queue per server: a single bad job can block everything behind it in the queue.
+- Single-queue multiple-server: smaller delay and the variance in processing times is lower.
+- Single-queue single high-capacity server: the processing time will be faster. In a light-loaded queue, a high-capacity server accomplishes tasks faster than many low-capacity servers because the service time is the majority of cycle time. However, it's also less robust because a failure will stop all flow, and a bad job can block the entire flow.
+
+#### Q8. The Principle of Linked Queues: Adjacent queues see arrival or service variability depending on loading.
+
+The departure process for a queue becomes the arrival process for the next one if they're linked. Depending on the size of the queue at a process, its output pattern will either look more like its arrival pattern or its service pattern.
+
+In a process with a chain of linked queues, one of them is the bottleneck. In a scenario like this, you need to reduce the variability from the bottleneck to permit smoother flow on it, which leads to a higher throughput.
+
+It's important to go beyond the popular but simplistic idea that the bottleneck's capacity controls system flow. In other words, flow through a bottleneck is affected strongly by the process that precedes it. The upstream process determines the variation in the arrival rate at the bottleneck. **Managing the process upstream of the bottleneck is a valuable tool for improving flow at the bottleneck.**
 
 ### 4 - Exploiting Variability
 

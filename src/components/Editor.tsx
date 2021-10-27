@@ -96,9 +96,13 @@ const Editor = ({
             }
           }}
           {...props}
-          sx={
-            isValid ? {} : { borderColor: 'primary', outlineColor: 'primary' }
-          }
+          value={value}
+          sx={{
+            overflowClipMargin: 5,
+            ...(isValid
+              ? {}
+              : { borderColor: 'primary', outlineColor: 'primary' }),
+          }}
         />
         <Text
           onClick={() => {

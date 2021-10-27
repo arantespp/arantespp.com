@@ -71,14 +71,14 @@ const TweetScheduler = () => {
       <Flex
         sx={{
           position: 'fixed',
-          bottom: 20,
-          right: 20,
+          bottom: 15,
+          right: 15,
           borderRadius: '100%',
           borderWidth: 1,
           borderStyle: 'solid',
           borderColor: twitterColor,
-          width: 60,
-          height: 60,
+          width: 50,
+          height: 50,
           justifyContent: 'center',
           alignItems: 'center',
           cursor: 'pointer',
