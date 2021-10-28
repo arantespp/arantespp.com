@@ -20,8 +20,10 @@ const getScheduledDate = (): string => {
    * Random hour between 6h and 11h.
    */
   const randomHour = Math.round(Math.random() * (11 - 6) + 6);
+  const randomMinute = Math.round(Math.random() * 60);
   const scheduledDate = dateFns.addBusinessDays(today, addRandomDays);
   scheduledDate.setHours(randomHour);
+  scheduledDate.setMinutes(randomMinute);
   return dateFns.formatISO(scheduledDate);
 };
 
