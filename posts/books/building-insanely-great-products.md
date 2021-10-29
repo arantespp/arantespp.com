@@ -67,3 +67,6 @@ Observe your customers and prospective customers and try to find answers to thes
 - What's standing in your way?
 
 Then you can translate those "do's" into wants and need and create real solutions that people will buy, not just a technology that may or may not solve a problem.
+
+If you are B2C, use [Maslow's Hierarchy of Needs
+](/z/maslow-s-hierarchy-of-needs); if you're B2B, use Porter's Value Chain to start figuring out what your customer does.

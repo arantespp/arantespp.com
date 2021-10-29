@@ -1,9 +1,29 @@
 ---
-title: Cognitive Bias
-excerpt: A cognitive bias is a systematic pattern deviation of the norm or rationality in judgment because the individual constructed reality.
-date: 2021-08-01
-rating: 3
+image: null
+book: null
 tags:
+  - cognitive-bias
+  - heuristic
+  - psychology
+rating: 3
+date: '2021-08-01'
+excerpt: >-
+  A cognitive bias is a systematic pattern deviation of the norm or rationality
+  in judgment because the individual constructed reality.
+title: Cognitive Bias
+group: zettelkasten
+formattedDate: 'August 01, 2021'
+updatedAt: 'August 01, 2021'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/cognitive-bias.md
+href: /zettelkasten/cognitive-bias
+as: /z/cognitive-bias
+slug: cognitive-bias
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/cognitive-bias.md
+url: 'https://arantespp.com/zettelkasten/cognitive-bias'
+keywords:
+  - zettelkasten
   - psychology
   - heuristic
 ---
