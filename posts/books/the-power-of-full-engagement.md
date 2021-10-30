@@ -29,7 +29,7 @@ excerpt: >-
 title: The Power of Full Engagement
 group: books
 formattedDate: 'October 26, 2021'
-updatedAt: 'October 26, 2021'
+updatedAt: 'October 30, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-power-of-full-engagement.md
 href: /books/the-power-of-full-engagement
@@ -43,7 +43,7 @@ keywords:
   - energy
   - james-e-loehr
   - tony-schwartz
-readingTime: 3
+readingTime: 4
 ---
 
 ## TL;DR
@@ -83,3 +83,9 @@ The number of hours in a day is fixed, but the quantity and the quality of energ
 We deceive ourselves by assuming that our views represent the truth. Just because something feels natural to you doesn't make it so. We create stories and explanations of facts that happen to us. When your explanations beliefs take the form of personal or permanent ("It's my fault..." or "it's always going to be like this..."), you give up and become paralyzed. When the explanations take the opposite form, you become **energized**.
 
 You are open to a complete picture when you can step back and develop the capacity for self-observation and remove the personality of your self-explanations. By broadening our perspectives, you become the audience for your problems rather than identifying with the problem itself. For example, you transform "I'm overwhelmed by my anxiety" to "My anxiety is trying to overwhelm me." The last gives you the power to make choices and take action.
+
+#### "I Could Be Wrong"
+
+If you can't see the world through any lens but your own, then you may have a sense of powerlessness or a feeling of threat to your self-esteem. Facing the truth requires an ongoing openness to the possibility that you may not be seeing yourself, or others, accurately. Confidence unmediated by humility becomes grandiosity, egomania, and even fanaticism. Learn to demonstrate a balanced blend of two seemingly paradoxical qualities: fierce resolve and humility.
+
+Why were the most successful leaders also so consistently self-effacing, modest, and eager to share credit? First, their humility gives others room to flourish because they know that the success of any company depends on giving people a sense of ownership and a feeling of being valued and valuable. Second, they're also open to opinions contrary to their own and the possibility that their visions weren't always right. Finally, they were confident enough to be wrong without feeling diminished as a result. When you aren't investing energy in protecting your turf, you have the potential to see more of the truth and continue to learn and grow.
