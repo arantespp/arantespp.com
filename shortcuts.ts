@@ -30,3 +30,5 @@ export const contentEditable = [
   'ce', // Content editable
   'tce', // Toggle content editable
 ];
+
+export const openTwitterScheduler = ['tt'];

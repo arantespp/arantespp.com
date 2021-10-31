@@ -1,7 +1,12 @@
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as dateFns from 'date-fns';
 import * as React from 'react';
 import { Button, Flex, Text, Textarea } from 'theme-ui';
+
+import { openTwitterScheduler } from '../../shortcuts';
+
+import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 
 const twitterColor = '#1da1f2';
 
@@ -14,16 +19,35 @@ const postTweet = async (tweet: string) =>
 const TweetScheduler = () => {
   const [displaySchedule, setDisplaySchedule] = React.useState(false);
 
+  useKeypressSequenceListener(openTwitterScheduler, () =>
+    setDisplaySchedule((d) => !d),
+  );
+
   const [tweet, setTweet] = React.useState('');
 
   const [isScheduling, setIsScheduling] = React.useState(false);
 
+  const [response, setResponse] = React.useState<{
+    scheduledAt: string;
+    text: string;
+  }>();
+
+  /**
+   * Reset response when scheduler closes.
+   */
+  React.useEffect(() => {
+    if (!displaySchedule) {
+      setResponse(undefined);
+    }
+  }, [displaySchedule]);
+
   const scheduleTweet = async () => {
     try {
       setIsScheduling(true);
-      await postTweet(tweet);
+      setResponse(undefined);
+      const r = await postTweet(tweet);
       setTweet('');
-      setDisplaySchedule(false);
+      setResponse(r);
     } catch (error) {
       console.error(error);
     } finally {
@@ -50,6 +74,10 @@ const TweetScheduler = () => {
             maxWidth: 600,
             flexDirection: 'column',
             padding: 3,
+            borderWidth: 1,
+            borderColor: 'muted',
+            borderStyle: 'solid',
+            borderRadius: 1,
           }}
         >
           <Textarea
@@ -59,6 +87,14 @@ const TweetScheduler = () => {
             sx={{ resize: 'none' }}
           />
           <Text sx={{ textAlign: 'right' }}>{charactersCount}/280</Text>
+          {response && (
+            <Flex sx={{ margin: 3, flexDirection: 'column' }}>
+              <Text sx={{ fontStyle: 'italic' }}>{response.text}</Text>
+              <Text sx={{ fontWeight: 'bold' }}>
+                {dateFns.format(new Date(response.scheduledAt), 'PPpp')}
+              </Text>
+            </Flex>
+          )}
           <Button
             sx={{ backgroundColor: twitterColor }}
             disabled={disableButton}

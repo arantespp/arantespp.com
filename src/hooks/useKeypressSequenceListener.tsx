@@ -3,7 +3,7 @@ import useKeypress from 'react-use-keypress';
 
 export const RESET_SEQUENCE_MS = 4000;
 
-export const WAIT_BEFORE_ACTION_MS = 1000;
+export const WAIT_BEFORE_ACTION_MS = 500;
 
 export const useKeypressSequenceListener = (
   sequence: string | string[],
