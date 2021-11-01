@@ -89,9 +89,11 @@ const TweetScheduler = () => {
           <Text sx={{ textAlign: 'right' }}>{charactersCount}/280</Text>
           {response && (
             <Flex sx={{ margin: 3, flexDirection: 'column' }}>
-              <Text sx={{ fontStyle: 'italic' }}>{response.text}</Text>
+              <Text sx={{ fontStyle: 'italic', whiteSpace: 'pre-line' }}>
+                {response.text}
+              </Text>
               <Text sx={{ fontWeight: 'bold' }}>
-                {dateFns.format(new Date(response.scheduledAt), 'PPpp')}
+                {dateFns.format(new Date(response.scheduledAt), 'PP (EEEE) pp')}
               </Text>
             </Flex>
           )}

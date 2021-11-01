@@ -10,7 +10,7 @@ excerpt: ''
 title: Building Insanely Great Products
 group: books
 formattedDate: 'October 28, 2021'
-updatedAt: 'October 29, 2021'
+updatedAt: 'November 01, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/building-insanely-great-products.md
 href: /books/building-insanely-great-products
@@ -21,7 +21,7 @@ editLink: >-
 url: 'https://arantespp.com/books/building-insanely-great-products'
 keywords:
   - books
-readingTime: 2
+readingTime: 5
 ---
 
 ## Chapter Two: Research And Development Expenditures Worldwide
@@ -38,12 +38,12 @@ A strategy or a plan for our product for a specific market or markets is the **p
 - Decision Making: DACI or RACI Chart
 - Schedule with responsibilities
 - [Discover "Do"](#discover-do)
-- Innovation
-- Problem Scenarios Use Cases and Outcomes
-- Opportunity and Risks
-- Prioritization
-- Value Propositions
-- Personas
+- [Innovation](#innovation)
+- [Problem Scenarios, Use Cases, and Outcomes](#problem-scenarios-use-cases-and-outcomes)
+- [Opportunity and Risks](#opportunity-and-risks)
+- [Prioritization](#prioritization)
+- [Value Propositions](#value-propositions)
+- [Personas](#personas)
 - Technology Insights
 - Market Size, Segments, and Target Market
 - Total Available Market
@@ -68,5 +68,66 @@ Observe your customers and prospective customers and try to find answers to thes
 
 Then you can translate those "do's" into wants and need and create real solutions that people will buy, not just a technology that may or may not solve a problem.
 
-If you are B2C, use [Maslow's Hierarchy of Needs
-](/z/maslow-s-hierarchy-of-needs); if you're B2B, use Porter's Value Chain to start figuring out what your customer does.
+If you are B2C, use [Maslow's Hierarchy of Needs](/z/maslow-s-hierarchy-of-needs); if you're B2B, use Porter's Value Chain to start figuring out what your customer does.
+
+#### Innovation
+
+Which innovation tools should one use? Which ones work?
+
+- [Design Thinking](/z/design-thinking)
+- User Experience (UX) and the User Interface (UI)
+- [Agile](/z/agile)
+- Documentation
+- Support
+
+#### Problem Scenarios, Use Cases, and Outcomes
+
+Problem Scenarios, Use Cases, and Outcomes are tools in helping define what a product is going to do. You can generate them after surveys with potential customers.
+
+- **Problem Scenarios** are detailed descriptions of a customer problem. It's a story and perhaps followed by requirements of what the customers need.
+- **Use cases** are descriptions of how the customers will use the product, like a list of actions of event steps.
+- **Outcomes** are what customers expect to get out of the product.
+
+These tools rest on the foundation of finding out what the customer wants to "do." They help the team move from the "problem" space to the "solution" space (engineering). _It's like algebra linear in that you use a transformation matrix to move from a domain to another._
+
+#### Opportunity and Risks
+
+Each product has a set of circumstances that makes it possible to succeed if well thought out. Usually, each product has a market window such that if it arrives too soon or too late, it might fail in the marketplace. As part of the opportunity planning, one must identify the circumstances that enable the product to succeed. As part of the risk planning, one should recognize the potential risks and what actions can reduce these risks.
+
+#### Prioritization
+
+TODO: Importance vs Satisfaction Framework
+
+#### Value Propositions
+
+_A value proposition is when the perceived cost is less than the perceived value._
+
+The value proposition is the company's brand, its promise. The product's branch must be in alignment with the company's. The values are in the business outcomes and the collections of "do's," which will vary by persona, and each might have a different use scenario.
+
+To create a value proposition, you need:
+
+- Name of the product: Which products or services the company offers?
+- Value: What does the market value most?
+- Market description: For which market is the company creating the value proposition?
+- List of benefits: What are the benefits the market will derive from the product or service?
+- List of alternatives and differentiation: What alternatives options does the market have for product or service?
+- Proof of value: What evidences are there to substantiate your value proposition?
+
+#### Personas
+
+Personas bring to life the target consumer and help you understand your customers. There are three personas for a business-to-business (B2B) market: User, Influencer, and Buyer.
+
+- The User is the person who will use the product. They care about the ease of use and whether the product will enable them to get their job done.
+- The Influencer is the expert on that type of solution, and the Buyer might consult them. The Influencer may not care about the ease of use as the User.
+- The Buyer is the one with the money and will care about the price, support, service, and sales terms.
+
+The [value proposition](#value-proposition) could be different for each type of persona. Likewise, each persona will have distinct goals, so planning for building an insanely great product needs to take those differences into account.
+
+For the business-to-consumer (B2C) market, the three personas might be one person.
+
+Questions you need to answer to write the personas for the development, marketing, sales, and support teams:
+
+- What do people do?
+- How do they do it?
+- Why do they do it?
+- Who do they do it with?

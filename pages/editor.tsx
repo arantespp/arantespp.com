@@ -12,7 +12,7 @@ import PostEditor from '../src/components/PostEditor';
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 const Editor = () => {
-  const { query } = useRouter();
+  const { query, isReady } = useRouter();
 
   const [{ group, slug }, setGroupAndSlug] = React.useState<{
     group?: string;
@@ -21,6 +21,15 @@ const Editor = () => {
     group: query.group as string | undefined,
     slug: query.slug as string | undefined,
   });
+
+  React.useEffect(() => {
+    if (isReady) {
+      setGroupAndSlug({
+        group: query.group as string | undefined,
+        slug: query.slug as string | undefined,
+      });
+    }
+  }, [isReady, query.group, query.slug]);
 
   const key = group && slug ? `/api/post?group=${group}&slug=${slug}` : null;
 

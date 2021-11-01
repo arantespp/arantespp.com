@@ -1,6 +1,8 @@
 import * as dateFns from 'date-fns';
 import TwitterAdsAPI from 'twitter-ads';
 
+import { getRandomInt } from './getRandomInt';
+
 const twitter = new TwitterAdsAPI({
   consumer_key: process.env.TWITTER_API_KEY,
   consumer_secret: process.env.TWITTER_API_KEY_SECRET,
@@ -10,20 +12,42 @@ const twitter = new TwitterAdsAPI({
   api_version: '10',
 });
 
-const getScheduledDate = (): string => {
+export const MIN_DIFF_IN_DAYS = 2;
+
+export const getScheduledDate = (): string => {
   const today = new Date();
+
   /**
-   * Random days between 1 and 14.
+   * Add a random number of weeks.
    */
-  const addRandomDays = Math.round(Math.random() * (14 - 1) + 1);
+  const addRandomWeeks = getRandomInt({ min: 0, max: 5 });
+  let scheduledDate = dateFns.addWeeks(today, addRandomWeeks);
+
   /**
-   * Random hour between 6h and 11h.
+   * Set random weed day.
    */
-  const randomHour = Math.round(Math.random() * (11 - 6) + 6);
-  const randomMinute = Math.round(Math.random() * 60);
-  const scheduledDate = dateFns.addBusinessDays(today, addRandomDays);
-  scheduledDate.setHours(randomHour);
-  scheduledDate.setMinutes(randomMinute);
+  const setRandomWeekDay = getRandomInt({ min: 1, max: 5 });
+  scheduledDate = dateFns.setDay(scheduledDate, setRandomWeekDay);
+
+  /**
+   * Set random hour.
+   */
+  const setRandomHour = getRandomInt({ min: 6, max: 10 });
+  scheduledDate = dateFns.setHours(scheduledDate, setRandomHour);
+
+  /**
+   * Set random minute.
+   */
+  const setRandomMinute = getRandomInt({ min: 0, max: 59 });
+  scheduledDate = dateFns.setMinutes(scheduledDate, setRandomMinute);
+
+  /**
+   * At least three days after the creation date.
+   */
+  if (dateFns.differenceInDays(scheduledDate, today) <= MIN_DIFF_IN_DAYS) {
+    scheduledDate = new Date(getScheduledDate());
+  }
+
   return dateFns.formatISO(scheduledDate);
 };
 

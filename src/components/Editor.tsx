@@ -50,6 +50,18 @@ const Editor = ({
   const { value } = props;
 
   React.useEffect(() => {
+    if (textAreaRef.current) {
+      const { scrollHeight, scrollTop, clientHeight } = textAreaRef.current;
+
+      const isAlmostOnBottom = clientHeight + scrollTop > 0.95 * scrollHeight;
+
+      if (isAlmostOnBottom) {
+        textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight;
+      }
+    }
+  }, [value]);
+
+  React.useEffect(() => {
     if (textAreaRef?.current) {
       /**
        * https://stackoverflow.com/a/25621277/8786986
