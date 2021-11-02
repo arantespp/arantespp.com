@@ -4,13 +4,13 @@ book: null
 bitLink: bigp
 draft: true
 tags: []
-rating: 3
+rating: 5
 date: '2021-10-28'
 excerpt: ''
 title: Building Insanely Great Products
 group: books
 formattedDate: 'October 28, 2021'
-updatedAt: 'November 01, 2021'
+updatedAt: 'November 02, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/building-insanely-great-products.md
 href: /books/building-insanely-great-products
@@ -21,7 +21,7 @@ editLink: >-
 url: 'https://arantespp.com/books/building-insanely-great-products'
 keywords:
   - books
-readingTime: 5
+readingTime: 6
 ---
 
 ## Chapter Two: Research And Development Expenditures Worldwide
@@ -44,12 +44,30 @@ A strategy or a plan for our product for a specific market or markets is the **p
 - [Prioritization](#prioritization)
 - [Value Propositions](#value-propositions)
 - [Personas](#personas)
+- Market/Competitive Research and Analysis
+- Market Status and Adoption
 - Technology Insights
+- Product Positioning
 - Market Size, Segments, and Target Market
 - Total Available Market
+- Plan
+- Product Market Vision, Opportunity, and Description
 - Competitive Environment
+  - Strengths, Weakness, Opportunities, and Threats (SWOT)
+- Product Features, Advantages, Benefits, and Problems Solved
 - Pricing Strategy
+- Market Penetration Strategy
+- Channels, Partners, and Affiliates
+- Training for Sales, Marketing, Distribution, Channels, Partners, Affiliates, Operations, Support, and Service
+- Cost and Pricing Strategy and Business Model
+- Basic Data Analytics
+- Sales Forecasting
+- Budgeting, Expense Control, and Return-On-Investment
 - Metrics
+- Intellectual Property
+- Product Road Map
+- Product Portfolio
+- Budget and Return on Investment
 
 #### Discover "Do"
 
@@ -131,3 +149,23 @@ Questions you need to answer to write the personas for the development, marketin
 - How do they do it?
 - Why do they do it?
 - Who do they do it with?
+
+#### Market/Competitive Research and Analysis
+
+The four primary market research methods for a product are observation, interviews, surveys, and analytics. Secondary market research is information from studies done by other organizations. Secondary research may or not be accurate for your product, but they're cheap.
+
+##### Observation
+
+Select candidates that you plan to observe based upon your target criteria. If you plan to go after people who are likely to have a healthier life, pick those who regularly go to the gym.
+
+##### Interviews
+
+Your interview questions should focus on the what, how, when, where, who, blocking questions, importance, and satisfaction level with their current solution. It would help if you also asked for demographic, firmographic, and ethnographic information so you can organize and classify. Be careful not to mix questions for buyers, users and influencers.
+
+##### Surveys
+
+Survey with a representative sample of your target market segments. Then, use the responses and results from the interviews to refine your questions.
+
+##### Analytics
+
+Use analytics to discover and communicate meaningful patterns in data. Additionally, you can research keywords used in web searches to identify people's words to find solutions to their problems.
