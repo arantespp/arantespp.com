@@ -12,8 +12,6 @@ const twitter = new TwitterAdsAPI({
   api_version: '10',
 });
 
-export const MIN_DIFF_IN_DAYS = 2;
-
 export const getScheduledDate = (): string => {
   const today = new Date();
 
@@ -32,7 +30,7 @@ export const getScheduledDate = (): string => {
   /**
    * Set random hour.
    */
-  const setRandomHour = getRandomInt({ min: 6, max: 10 });
+  const setRandomHour = getRandomInt({ min: 6, max: 17 });
   scheduledDate = dateFns.setHours(scheduledDate, setRandomHour);
 
   /**
@@ -40,13 +38,6 @@ export const getScheduledDate = (): string => {
    */
   const setRandomMinute = getRandomInt({ min: 0, max: 59 });
   scheduledDate = dateFns.setMinutes(scheduledDate, setRandomMinute);
-
-  /**
-   * At least three days after the creation date.
-   */
-  if (dateFns.differenceInDays(scheduledDate, today) <= MIN_DIFF_IN_DAYS) {
-    scheduledDate = new Date(getScheduledDate());
-  }
 
   return dateFns.formatISO(scheduledDate);
 };
@@ -58,6 +49,7 @@ export const scheduleTweet = async ({ tweet }: { tweet: string }) => {
     scheduled_at: scheduledAt,
     as_user_id: process.env.TWITTER_USER_ID,
     text: tweet,
+    nullcast: false,
   } as any);
 
   const { request, data } = await new Promise((resolve, reject) => {

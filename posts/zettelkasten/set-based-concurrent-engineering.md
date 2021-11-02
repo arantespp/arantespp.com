@@ -1,18 +1,39 @@
 ---
-title: Set-Based Concurrent Engineering
-excerpt: Set-Based Concurrent Engineering (SBCE) is a product development approach that allows multifunctional teams to ideates, develop, and communicates sets of conceptual solutions in parallel.
-date: 2021-07-13
-rating: 2
+image: null
+book: null
 tags:
   - product-development
   - toyota
+rating: 2
+date: '2021-07-13'
+excerpt: >-
+  Set-Based Concurrent Engineering (SBCE) is a product development approach that
+  allows multifunctional teams to ideate, develop, and communicates sets of
+  conceptual solutions in parallel.
+title: Set-Based Concurrent Engineering
+group: zettelkasten
+formattedDate: 'July 13, 2021'
+updatedAt: 'July 17, 2021'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/set-based-concurrent-engineering.md
+href: /zettelkasten/set-based-concurrent-engineering
+as: /z/set-based-concurrent-engineering
+slug: set-based-concurrent-engineering
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/set-based-concurrent-engineering.md
+url: 'https://arantespp.com/zettelkasten/set-based-concurrent-engineering'
+keywords:
+  - zettelkasten
+  - product-development
+  - toyota
+readingTime: 1
 ---
 
 ## Notes
 
-- Set-Based Concurrent Engineering (SBCE) is a product development approach that allows multifunctional teams to ideates, develop, and communicates sets of conceptual solutions in parallel.
+- Set-Based Concurrent Engineering (SBCE) is a product development approach that allows multifunctional teams to ideate, develop, and communicates sets of conceptual solutions in parallel.
 
-- They gradually narrow these sets by eliminating inferior or infeasible solutions as the team progresses and builds up the understanding, knowledge, and evidence about the solution sets.
+- They gradually narrow these sets by eliminating inferior or infeasible solutions as the team progresses and build up the understanding, knowledge, and evidence about the solution sets.
 
 - Critical decisions are purposely delayed until the last possible moment to gather more information before making the decision.
 
@@ -23,7 +44,7 @@ tags:
     - Communicate sets of possibilities.
   - **Principle 2: Integrate by Intersection**
     - Look for intersections of feasible sets.
-    - Impose minimum constraint.
+    - Impose minimum constraints.
     - Seek conceptual robustness.
   - **Principle 3: Establish Feasibility Before Commitment**
     - Narrow sets gradually while increasing details.
