@@ -20,7 +20,7 @@ export const getScheduledDate = (): string => {
   /**
    * Add a random number of weeks.
    */
-  const addRandomWeeks = getRandomInt({ min: 0, max: 5 });
+  const addRandomWeeks = getRandomInt({ min: 1, max: 5 });
   let scheduledDate = dateFns.addWeeks(today, addRandomWeeks);
 
   /**
