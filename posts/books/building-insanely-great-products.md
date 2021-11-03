@@ -10,7 +10,7 @@ excerpt: ''
 title: Building Insanely Great Products
 group: books
 formattedDate: 'October 28, 2021'
-updatedAt: 'November 02, 2021'
+updatedAt: 'November 03, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/building-insanely-great-products.md
 href: /books/building-insanely-great-products
@@ -45,7 +45,7 @@ A strategy or a plan for our product for a specific market or markets is the **p
 - [Value Propositions](#value-propositions)
 - [Personas](#personas)
 - [Market/Competitive Research and Analysis](#market-competitive-research-and-analysis)
-- Market Status and Adoption
+- [Market Status and Adoption](#market-status-and-adoption)
 - Technology Insights
 - Product Positioning
 - Market Size, Segments, and Target Market
@@ -160,7 +160,7 @@ Select candidates that you plan to observe based upon your target criteria. If y
 
 ##### Interviews
 
-Your interview questions should focus on the what, how, when, where, who, blocking questions, importance, and satisfaction level with their current solution. It would help if you also asked for demographic, firmographic, and ethnographic information so you can organize and classify. Be careful not to mix questions for buyers, users and influencers.
+Your interview questions should focus on the what, how, when, where, who, blocking questions, importance, and satisfaction level with their current solution. It would help if you also asked for demographic, firmographic, and ethnographic information so you can organize and classify. Be careful not to mix questions for buyers, users, and influencers.
 
 ##### Surveys
 
@@ -169,3 +169,7 @@ Survey with a representative sample of your target market segments. Then, use th
 ##### Analytics
 
 Use analytics to discover and communicate meaningful patterns in data. Additionally, you can research keywords used in web searches to identify people's words to find solutions to their problems.
+
+#### Market Status and Adoption
+
+There are [five categories of innovation adopters](/z/diffusion-of-innovations-adopter-categories): innovators, early adopters, early majority, late majority, and laggards. Decide early on which segment you plan to target and over the lifecycle of your product.
