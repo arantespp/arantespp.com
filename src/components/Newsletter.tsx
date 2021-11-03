@@ -10,10 +10,10 @@ const Newsletter = () => (
   <Box>
     <Heading level={2}>Newsletter</Heading>
     <Themed.p>
-      Every {getNextNewsletterDate({ format: 'EEEE' })}, I publish my most
-      recent readings and thoughts. Subscribe to my newsletter if you want to
-      follow topics about <Tag tag="startups" />, <Tag tag="mental-models" />,{' '}
-      <Tag tag="cryptocurrencies" />, and more. You can also check{' '}
+      On {getNextNewsletterDate({ format: 'EEEE' })} (not weekly), I publish my
+      most recent readings and thoughts. Subscribe to my newsletter if you want
+      to follow topics about <Tag tag="startups" />, <Tag tag="mental-models" />
+      , <Tag tag="cryptocurrencies" />, and more. You can also check{' '}
       <Link href="https://www.getrevue.co/profile/arantespp">
         my past issues on Revue.
       </Link>

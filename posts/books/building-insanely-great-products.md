@@ -44,7 +44,7 @@ A strategy or a plan for our product for a specific market or markets is the **p
 - [Prioritization](#prioritization)
 - [Value Propositions](#value-propositions)
 - [Personas](#personas)
-- Market/Competitive Research and Analysis
+- [Market/Competitive Research and Analysis](#market-competitive-research-and-analysis)
 - Market Status and Adoption
 - Technology Insights
 - Product Positioning
