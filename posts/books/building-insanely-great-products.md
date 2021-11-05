@@ -10,7 +10,7 @@ excerpt: ''
 title: Building Insanely Great Products
 group: books
 formattedDate: 'October 28, 2021'
-updatedAt: 'November 03, 2021'
+updatedAt: 'November 05, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/building-insanely-great-products.md
 href: /books/building-insanely-great-products
@@ -21,7 +21,7 @@ editLink: >-
 url: 'https://arantespp.com/books/building-insanely-great-products'
 keywords:
   - books
-readingTime: 6
+readingTime: 7
 ---
 
 ## Chapter Two: Research And Development Expenditures Worldwide
@@ -173,3 +173,7 @@ Use analytics to discover and communicate meaningful patterns in data. Additiona
 #### Market Status and Adoption
 
 There are [five categories of innovation adopters](/z/diffusion-of-innovations-adopter-categories): innovators, early adopters, early majority, late majority, and laggards. Decide early on which segment you plan to target and over the lifecycle of your product.
+
+#### Technology Insights
+
+Technology is only relevant if it disrupts by delivering dramatic improvements in desired outcomes, such as making them faster, cheaper, or better. The disruption is only profitable if the market wants dramatic improvements. If the market expects it, you can decide upon your market entry point and introduce your product at the appropriate window of opportunity. Next, you use your technology to defend against competition.
