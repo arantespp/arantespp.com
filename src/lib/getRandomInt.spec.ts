@@ -1,5 +1,9 @@
 import { getRandomInt } from './getRandomInt';
 
+beforeEach(() => {
+  jest.restoreAllMocks();
+});
+
 test.each([
   [0, 1],
   [0.1, 1],
@@ -12,7 +16,7 @@ test.each([
   [0.8, 5],
   [0.9, 5],
   [0.999, 5],
-])('getRandomInt between 1 and 5 %#', (mathRandom, response) => {
-  Math.random = jest.fn(() => mathRandom);
+])('getRandomInt between 1 and 5 #%#', (mathRandom, response) => {
+  jest.spyOn(Math, 'random').mockReturnValue(mathRandom);
   expect(getRandomInt({ min: 1, max: 5 })).toEqual(response);
 });

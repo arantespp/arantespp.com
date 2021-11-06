@@ -10,7 +10,7 @@ excerpt: ''
 title: Building Insanely Great Products
 group: books
 formattedDate: 'October 28, 2021'
-updatedAt: 'November 05, 2021'
+updatedAt: 'November 06, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/building-insanely-great-products.md
 href: /books/building-insanely-great-products
@@ -21,7 +21,7 @@ editLink: >-
 url: 'https://arantespp.com/books/building-insanely-great-products'
 keywords:
   - books
-readingTime: 7
+readingTime: 9
 ---
 
 ## Chapter Two: Research And Development Expenditures Worldwide
@@ -46,8 +46,9 @@ A strategy or a plan for our product for a specific market or markets is the **p
 - [Personas](#personas)
 - [Market/Competitive Research and Analysis](#market-competitive-research-and-analysis)
 - [Market Status and Adoption](#market-status-and-adoption)
-- Technology Insights
-- Product Positioning
+- [Technology Insights](#technology-insights)
+- [Competitive Research](#competitive-research)
+- [Product Positioning](#product-positioning)
 - Market Size, Segments, and Target Market
 - Total Available Market
 - Plan
@@ -103,7 +104,7 @@ Which innovation tools should one use? Which ones work?
 Problem Scenarios, Use Cases, and Outcomes are tools in helping define what a product is going to do. You can generate them after surveys with potential customers.
 
 - **Problem Scenarios** are detailed descriptions of a customer problem. It's a story and perhaps followed by requirements of what the customers need.
-- **Use cases** are descriptions of how the customers will use the product, like a list of actions of event steps.
+- **Use cases** describe how the customers will use the product, like a list of actions of event steps.
 - **Outcomes** are what customers expect to get out of the product.
 
 These tools rest on the foundation of finding out what the customer wants to "do." They help the team move from the "problem" space to the "solution" space (engineering). _It's like algebra linear in that you use a transformation matrix to move from a domain to another._
@@ -177,3 +178,42 @@ There are [five categories of innovation adopters](/z/diffusion-of-innovations-a
 #### Technology Insights
 
 Technology is only relevant if it disrupts by delivering dramatic improvements in desired outcomes, such as making them faster, cheaper, or better. The disruption is only profitable if the market wants dramatic improvements. If the market expects it, you can decide upon your market entry point and introduce your product at the appropriate window of opportunity. Next, you use your technology to defend against competition.
+
+#### Competitive Research
+
+When you do your market environment analysis, you must look at both the product vs. product and the company vs. company. Unfortunately, many forgot to do the company vs. company comparison. For example, suppose you're planning on entering a new market and don't do a competitive analysis. In that case, you may find out later that your competitor has some monopoly on the distribution channel.
+
+You can do competitive analysis as part of the planning process and around the projected launch time. First, you forecast where you think your competitors' products and companies will be at your product's expected launch time. Secondly, make the comparison again then to check if your competitors have a new version, changed their price, run a promotion, adds distribution, for a new partnership, and so on. These changes alter the environment at launch time, and you need to take those changes into account.
+
+Do the products' research regarding what problems they solve, not just the features they have.
+
+##### Company vs. Company Comparison
+
+When you do your company vs. company competitive comparison and analysis, do it in SPICES.
+
+1. What is their Strategy?
+1. What are their Process?
+1. What Information do they have?
+1. Who are their Customers, and are they satisfied?
+1. How good and how well trained are their Employees?
+1. What Systems and tools are they using?
+
+#### Product Positioning
+
+Product positioning is one of the most important things that you can do for your product. It consists in positioning your product against the competitors, thus clearly establishing the different positions each product takes. It's the unique and lasting position you'd like to develop in the customer's mind.
+
+Product positioning precedes product branding, which is the "promise" of the product based on positioning. Branding is the look, feel, and experience of the product, all combined into one.
+
+Product positioning placed and in agreement throughout your organization enables consistency across all communications during the product launch and the sustaining marketing. Consistency in all channels is key to product success. On the other hand, if you don't have consistency, the prospective customer will get confused, and perhaps they won't buy your product.
+
+The first step in positioning is to create a radar chart, as depicted below. To do so, you'll have to decide on what to use for the axes, which should be what are most valuable to your customers. Finally, you should create the plot based on your actual research about what customers "do."
+
+![Positioning Radar Chart](/images/excalidraw/product-positioning.png)
+
+You can also define the position using position statements. You can find more about the theory on [Positioning: The Battle for Your Mind](https://www.amazon.com.br/dp/B006B7LQ90/) by Al Ries and Jack Trout. For instance, a positioning statement should contain:
+
+- Targeted persona;
+- Product/company name;
+- Characterization or category of use;
+- Benefits;
+- Differentiator.
