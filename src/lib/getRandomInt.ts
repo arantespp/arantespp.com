@@ -10,3 +10,33 @@ export const getRandomInt = (args: { min: number; max: number }) => {
   const max = Math.floor(args.max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+
+export const getWeightedRandomInt = (weights: number[]) => {
+  const sum = weights.reduce((acc, cur) => acc + cur, 0);
+  const random = Math.random() * sum;
+
+  const match = weights.reduce(
+    (acc, cur, index) => {
+      /**
+       * Index already chosen.
+       */
+      if (acc.index !== undefined) {
+        return acc;
+      }
+
+      const newSum = acc.sum + cur;
+
+      if (newSum >= random) {
+        return { sum: newSum, index };
+      }
+
+      return { sum: newSum, index: undefined };
+    },
+    { sum: 0, index: undefined },
+  );
+
+  /**
+   * If no index was found, return the first index.
+   */
+  return match.index || 0;
+};

@@ -1,6 +1,7 @@
 import * as dateFns from 'date-fns';
 
 import { getAllPosts, Group } from './files';
+import { getWeightedRandomInt } from './getRandomInt';
 
 export const INTERVAL = 7;
 
@@ -51,29 +52,13 @@ type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
 export type Flashcard = ThenArg<ReturnType<typeof getFlashcards>>[number];
 
 export const getFlashcardByProbability = (flashcards: Flashcard[]) => {
-  const pNumberSum = flashcards.reduce((sum, { pNumber }) => sum + pNumber, 0);
-  const random = Math.round(Math.random() * pNumberSum);
-
   const sortedFlashcards = flashcards.sort(
     (fa, fb) => fa.diffDays - fb.diffDays,
   );
 
-  const meta = sortedFlashcards.reduce<[number, Flashcard | undefined]>(
-    ([sum, flashcard], currentFlashcard) => {
-      if (flashcard) {
-        return [sum, flashcard];
-      }
+  const weights = sortedFlashcards.map(({ pNumber }) => pNumber);
 
-      if (sum + currentFlashcard.pNumber >= random) {
-        return [0, currentFlashcard];
-      }
-
-      return [sum + currentFlashcard.pNumber, undefined];
-    },
-    [0, undefined],
-  );
-
-  return meta[1] || sortedFlashcards[0];
+  return sortedFlashcards[getWeightedRandomInt(weights)];
 };
 
 export const getFlashcard = async () => {

@@ -1,7 +1,7 @@
 import * as dateFns from 'date-fns';
 import TwitterAdsAPI from 'twitter-ads';
 
-import { getRandomInt } from './getRandomInt';
+import { getRandomInt, getWeightedRandomInt } from './getRandomInt';
 
 const twitter = new TwitterAdsAPI({
   consumer_key: process.env.TWITTER_API_KEY,
@@ -11,6 +11,18 @@ const twitter = new TwitterAdsAPI({
   sandbox: false,
   api_version: '10',
 });
+
+const getRandomWeekday = () => {
+  /**
+   * With these weights, we get a probability of 10% to get a weekend.
+   * The probabilities are [5%, 18%, 18%, 18%, 18%, 18%, 5%].
+   */
+  const weights = [0.28, 1, 1, 1, 1, 1, 0.28];
+
+  const randomWeek = getWeightedRandomInt(weights);
+
+  return randomWeek;
+};
 
 export const getScheduledDate = (): string => {
   const today = new Date();
@@ -24,7 +36,7 @@ export const getScheduledDate = (): string => {
   /**
    * Set random weed day.
    */
-  const setRandomWeekDay = getRandomInt({ min: 1, max: 5 });
+  const setRandomWeekDay = getRandomWeekday();
   scheduledDate = dateFns.setDay(scheduledDate, setRandomWeekDay);
 
   /**
