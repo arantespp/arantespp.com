@@ -16,6 +16,18 @@ const postTweet = async (tweet: string) =>
     body: JSON.stringify({ tweet }),
   }).then((res) => res.json());
 
+const tweetCharCount = (tweet: string) => {
+  /**
+   * https://help.twitter.com/en/using-twitter/how-to-tweet-a-link
+   * "A URL of any length will be altered to 23 characters"
+   */
+  const tmpUrl = 'x'.repeat(23);
+
+  const tweetUrlReplace = tweet.replace(/(http[s]?:\/\/[\S]*)/g, tmpUrl);
+
+  return tweetUrlReplace.length;
+};
+
 const TweetScheduler = () => {
   const [displaySchedule, setDisplaySchedule] = React.useState(false);
 
@@ -55,7 +67,7 @@ const TweetScheduler = () => {
     }
   };
 
-  const charactersCount = tweet.length;
+  const charactersCount = tweetCharCount(tweet);
 
   const disableButton =
     charactersCount === 0 || charactersCount > 280 || isScheduling;

@@ -18,7 +18,7 @@ excerpt: ''
 title: The Principles of Product Development Flow
 group: books
 formattedDate: 'August 31, 2021'
-updatedAt: 'October 27, 2021'
+updatedAt: 'November 08, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /books/the-principles-of-product-development-flow
@@ -31,7 +31,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 16
+readingTime: 17
 ---
 
 ## Principles
@@ -165,9 +165,11 @@ Most corporations give control over financial resources to people who worry abou
 
 Queues matter because they're economically important.
 
-- [Q1](#) to [Q2](#) - Why Queues Matter?
-- [Q3](#) to [Q8](#) - The Behavior of Queues
-- [Q9](#) to [Q](#) - The Economics of Queues
+**[Q1](#) to [Q2](#) - Why Queues Matter?**
+
+**[Q3](#) to [Q8](#) - The Behavior of Queues**
+
+**[Q9](#) to [Q10](#) - The Economics of Queues**. Optimizing queues brings a problem because the higher you utilize capacity, the more you pay for queues, but the less you pay for excess capacity. How to make quantitative trade-offs between them? How can you use queueing discipline to reduce the economic cost without reducing the queue size?
 
 #### Q1: The Principle of Invisible Inventory: Product development inventory is physically and financially invisible.
 
@@ -179,7 +181,7 @@ Product development queues do much more damage than manufacturing queues for two
 
 1. Product development queues tend to be much bigger than manufacturing queues. No natural predators are keeping them under control because these [queues are invisible](#q1-the-principle-of-invisible-inventory-product-development-inventory-is-physically-and-financially-invisible). Then companies don't measure, manage, and realize that queues are a problem.
 2. Queues create many forms of economic waste.
-   - **Longer Cycle Time.** It takes longer to reach the front of an extensive line than a small one. Usually, Delay costs rise linearly with queue size.
+   - **Longer Cycle Time.** It takes longer to reach the front of an extensive line than a small one. Usually, delay costs rise linearly with queue size.
    - **Increased Risk.** Queues increase the transit time through the product development pipeline. When transit time goes up, you're more vulnerable to changes in customer preference, preemption by competitors, and shifts in the underlying technology.
    - **More Variability.** High levels of utilization tend to amplify variability.
    - **More Overhead.** The more projects you have in process, the more you have to track and report status to your managers. Even worse, your team asks for more progress reports per project because queues lead to long transit times.
@@ -249,6 +251,24 @@ The departure process for a queue becomes the arrival process for the next one i
 In a process with a chain of linked queues, one of them is the bottleneck. In a scenario like this, you need to reduce the variability from the bottleneck to permit smoother flow on it, which leads to a higher throughput.
 
 It's important to go beyond the popular but simplistic idea that the bottleneck's capacity controls system flow. In other words, flow through a bottleneck is affected strongly by the process that precedes it. The upstream process determines the variation in the arrival rate at the bottleneck. **Managing the process upstream of the bottleneck is a valuable tool for improving flow at the bottleneck.**
+
+#### Q9. The Principle of Queue Size Optimization. Optimum queue size is an economic trade-off.
+
+The trade-off is between delay cost and capacity margin. When delay cost is high, you prevent delays by having excess capacity. When capacity is expensive, you can afford less margin.
+
+The total cost $C_T$ of a $M/M/1/\infty$ queue can be expressed by
+
+$$
+C_T = C_C\mu+C_D\frac{\lambda}{\mu - \lambda},
+$$
+
+where $C_C$ is the cost of capacity, $C_D$, cost of delay, $\mu$, average capacity, and $\lambda$, average arrival rate. Total cost $C_T$ is a U-curve, whose minimal value happens with the optimal capacity $\mu_0$.
+
+$$
+\mu_0 = \lambda + \sqrt{\frac{C_D\lambda}{C_C}}.
+$$
+
+Optimal capacity for a process must be higher when the cost of delay increases because queues become more expensive. When the cost of capacity rises, then optimal capacity decrease.
 
 ### 4 - Exploiting Variability
 

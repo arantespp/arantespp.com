@@ -4,6 +4,7 @@ import { getScheduledDate } from './scheduleTweet';
 jest.mock('twitter-ads');
 
 beforeAll(() => {
+  jest.restoreAllMocks();
   jest.useFakeTimers('modern');
 });
 
@@ -25,14 +26,14 @@ test.each<[Date, number, number, number, number, string]>([
     setRandomMinute,
     startsWith,
   ) => {
-    (getRandomIntModule.getRandomInt as jest.Mock) = jest
-      .fn()
+    jest
+      .spyOn(getRandomIntModule, 'getRandomInt')
       .mockReturnValueOnce(addRandomWeek)
       .mockReturnValueOnce(setRandomHour)
       .mockReturnValueOnce(setRandomMinute);
 
-    (getRandomIntModule.getWeightedRandomInt as jest.Mock) = jest
-      .fn()
+    jest
+      .spyOn(getRandomIntModule, 'getWeightedRandomInt')
       .mockReturnValueOnce(setRandomDay);
 
     jest.setSystemTime(currentDate);
