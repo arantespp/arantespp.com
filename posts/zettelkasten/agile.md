@@ -12,7 +12,7 @@ excerpt: ''
 title: Agile
 group: zettelkasten
 formattedDate: 'January 25, 2021'
-updatedAt: 'November 07, 2021'
+updatedAt: 'November 08, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/agile.md
 href: /zettelkasten/agile
