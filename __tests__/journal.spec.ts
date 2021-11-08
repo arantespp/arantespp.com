@@ -2,6 +2,8 @@ import * as dateFns from 'date-fns';
 import * as fs from 'fs';
 import * as path from 'path';
 
+jest.setTimeout(30000);
+
 const dateStartJournal = new Date(2021, 5, 8);
 
 const doesJournalExist = async ({
