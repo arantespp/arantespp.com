@@ -5,6 +5,7 @@ import * as React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import {
   Button,
+  Checkbox,
   Flex,
   Input,
   Label,
@@ -83,13 +84,14 @@ const PostEditor = ({
 }) => {
   const defaultValues = React.useMemo(
     (): Partial<PostForm> => ({
+      title: post?.title,
       rating: 2,
       group: 'zettelkasten',
       content: '',
       tags: '',
       excerpt: '',
     }),
-    [],
+    [post?.title],
   );
 
   const {
@@ -218,6 +220,11 @@ const PostEditor = ({
       <Label>Tags</Label>
       <Textarea rows={3} {...register('tags')} />
       <ErrorMessage errors={errors} name="tags" />
+
+      <Label>
+        <Checkbox defaultChecked {...register('draft')} />
+        Draft?
+      </Label>
 
       <Label>Content</Label>
       <Controller

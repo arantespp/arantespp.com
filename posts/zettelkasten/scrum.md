@@ -1,6 +1,7 @@
 ---
 image: null
 book: null
+draft: true
 tags:
   - agile
   - agile-framework
@@ -13,7 +14,7 @@ excerpt: >-
 title: Scrum
 group: zettelkasten
 formattedDate: 'February 25, 2021'
-updatedAt: 'June 10, 2021'
+updatedAt: 'November 07, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/scrum.md
 href: /zettelkasten/scrum
@@ -25,7 +26,7 @@ url: 'https://arantespp.com/zettelkasten/scrum'
 keywords:
   - zettelkasten
   - agile
-  - agile framework
+  - agile-framework
   - scrum
 readingTime: 3
 ---
@@ -52,12 +53,7 @@ readingTime: 3
       - Give the team clear guidance on which features to deliver next.
       - Decide when to ship the product.
       - Is individual.
-    - Scrum Master (SM):
-      - A team guide.
-      - Knows Scrum very well and coaches the whole team on the Scrum process.
-      - Looks for ways to fine-tune the team Scrum process.
-      - Is a facilitator, as they schedule the needed resources (human and logistical) for the events/ceremonies.
-      - Helps the team optimize their communication, transparency, and delivery flow.
+    - [Scrum Master (SM)](/z/scrum-master):
     - Developers.
 
 - Tools or artifacts:
