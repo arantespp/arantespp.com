@@ -1,5 +1,7 @@
+import * as dateFns from 'date-fns';
+
 import * as getRandomIntModule from './getRandomInt';
-import { getScheduledDate } from './scheduleTweet';
+import { getScheduledDate, WEEKEND_PROPORTION } from './scheduleTweet';
 
 jest.mock('twitter-ads');
 
@@ -12,34 +14,78 @@ afterAll(() => {
   jest.useRealTimers();
 });
 
-test.each<[Date, number, number, number, number, string]>([
-  [new Date(2021, 9, 31, 8), 2, 3, 7, 50, '2021-11-17'],
-  [new Date(2021, 9, 31, 8), 2, 2, 7, 50, '2021-11-16'],
-  [new Date(2021, 9, 31, 8), 0, 4, 7, 50, '2021-11-04'],
-])(
-  'getScheduledDate %#',
-  (
-    currentDate,
-    addRandomWeek,
-    setRandomDay,
-    setRandomHour,
-    setRandomMinute,
-    startsWith,
-  ) => {
-    jest
-      .spyOn(getRandomIntModule, 'getRandomInt')
-      .mockReturnValueOnce(addRandomWeek)
-      .mockReturnValueOnce(setRandomHour)
-      .mockReturnValueOnce(setRandomMinute);
+// test('test proportion', () => {
+//   const p = {};
 
-    jest
-      .spyOn(getRandomIntModule, 'getWeightedRandomInt')
-      .mockReturnValueOnce(setRandomDay);
+//   for (let i = 0; i < 10000; i++) {
+//     const d = dateFns.format(new Date(getScheduledDate()), 'yyyy-MM-dd EEEE');
 
-    jest.setSystemTime(currentDate);
+//     if (p[d]) {
+//       p[d]++;
+//     } else {
+//       p[d] = 1;
+//     }
+//   }
 
-    const result = getScheduledDate();
+//   const sorted = Object.keys(p)
+//     .sort()
+//     .reduce((acc, key) => {
+//       acc[key] = p[key];
+//       return acc;
+//     }, {});
 
-    expect(result.startsWith(startsWith)).toBeTruthy();
-  },
-);
+//   console.log(sorted);
+
+//   expect(1).toBe(1);
+// });
+
+test('getScheduledDate', () => {
+  jest.setSystemTime(new Date(2021, 10, 10, 8));
+
+  jest.spyOn(getRandomIntModule, 'getWeightedRandomInt').mockReturnValue(7);
+
+  const scheduledDate = getScheduledDate();
+
+  const isSameDay = dateFns.isSameDay(
+    new Date(scheduledDate),
+    new Date(2021, 10, 18, 8),
+  );
+
+  expect(isSameDay).toBeTruthy();
+  /**
+   * 2020-10-10 is Wednesday, so the weight array should must starts with:
+   * [1, 1, 0.28, 0.28, 1, ...]
+   */
+  expect(getRandomIntModule.getWeightedRandomInt).toHaveBeenCalledWith([
+    1,
+    1,
+    WEEKEND_PROPORTION,
+    WEEKEND_PROPORTION,
+    1,
+    1,
+    1,
+    1,
+    1,
+    WEEKEND_PROPORTION,
+    WEEKEND_PROPORTION,
+    1,
+    1,
+    1,
+    1,
+    1,
+    WEEKEND_PROPORTION,
+    WEEKEND_PROPORTION,
+    1,
+    1,
+    1,
+    1,
+    1,
+    WEEKEND_PROPORTION,
+    WEEKEND_PROPORTION,
+    1,
+    1,
+    1,
+    1,
+    1,
+  ]);
+});

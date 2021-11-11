@@ -18,7 +18,7 @@ excerpt: ''
 title: The Principles of Product Development Flow
 group: books
 formattedDate: 'August 31, 2021'
-updatedAt: 'November 08, 2021'
+updatedAt: 'November 09, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /books/the-principles-of-product-development-flow
@@ -31,7 +31,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 17
+readingTime: 18
 ---
 
 ## Principles
@@ -269,6 +269,16 @@ $$
 $$
 
 Optimal capacity for a process must be higher when the cost of delay increases because queues become more expensive. When the cost of capacity rises, then optimal capacity decrease.
+
+#### Q10. The Principle of Queueing Discipline: Queue cost is affected by the sequence in which we handle the jobs in the queue.
+
+Your goal is to reduce the economic cost of queues, not simply reduce queues' size. The sequence of the items and the length of the delay influences the cost. Therefore, changing the sequence of the jobs in the queue can significantly reduce its cost.
+
+You can create value with a thoughtful queueing discipline. For example, if two jobs take the same time, it's better to first service the one with the highest delay cost. Likewise, if two jobs have the exact cost of delay, it's better to process the shortest job first.
+
+You can ask three questions to improve the economics of a queue. First, is there a difference in the cost of delay of different jobs in the queue? Second, is there a difference in the time a job will block a resource? Third, is the average length of the queue large?
+
+The third question is important because the payoff from queueing discipline is highest when queue sizes are large. In such circumstances, moving a high cost-of-delay to the head of the line leads to a cycle time reduction and considerable economic benefits.
 
 ### 4 - Exploiting Variability
 

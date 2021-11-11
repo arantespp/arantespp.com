@@ -12,32 +12,42 @@ const twitter = new TwitterAdsAPI({
   api_version: '10',
 });
 
-const getRandomWeekday = () => {
-  /**
-   * With these weights, we get a probability of 10% to get a weekend.
-   * The probabilities are [5%, 18%, 18%, 18%, 18%, 18%, 5%].
-   */
-  const weights = [0.28, 1, 1, 1, 1, 1, 0.28];
+/**
+ * It'll schedule tweets for the next `SCHEDULE_RANGE` days.
+ */
+export const SCHEDULE_RANGE = 30;
 
-  const randomWeek = getWeightedRandomInt(weights);
-
-  return randomWeek;
-};
+export const WEEKEND_PROPORTION = 0.28;
 
 export const getScheduledDate = (): string => {
   const today = new Date();
 
   /**
-   * Add a random number of weeks.
+   * We'll schedule tweets from tomorrow.
    */
-  const addRandomWeeks = getRandomInt({ min: 1, max: 5 });
-  let scheduledDate = dateFns.addWeeks(today, addRandomWeeks);
+  let scheduledDate = dateFns.addDays(today, 1);
 
   /**
-   * Set random weed day.
+   * With these weights, we get a probability of 10% to get a weekend.
+   * The probabilities are [5%, 18%, 18%, 18%, 18%, 18%, 5%].
    */
-  const setRandomWeekDay = getRandomWeekday();
-  scheduledDate = dateFns.setDay(scheduledDate, setRandomWeekDay);
+  const weights = [...new Array(SCHEDULE_RANGE)].map((_, i) => {
+    const currentDate = dateFns.addDays(scheduledDate, i);
+    const day = dateFns.getDay(currentDate);
+
+    if (day === 0 || day === 6) {
+      return WEEKEND_PROPORTION;
+    }
+
+    return 1;
+  });
+
+  const randomAddDay = getWeightedRandomInt(weights);
+
+  /**
+   * We'll add a random day to the scheduled date.
+   */
+  scheduledDate = dateFns.addDays(scheduledDate, randomAddDay);
 
   /**
    * Set random hour.

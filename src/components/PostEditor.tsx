@@ -84,14 +84,13 @@ const PostEditor = ({
 }) => {
   const defaultValues = React.useMemo(
     (): Partial<PostForm> => ({
-      title: post?.title,
       rating: 2,
       group: 'zettelkasten',
       content: '',
       tags: '',
       excerpt: '',
     }),
-    [post?.title],
+    [],
   );
 
   const {
@@ -121,11 +120,16 @@ const PostEditor = ({
    * Update post because the first props are not yet available
    */
   React.useEffect(() => {
-    reset(post ? { ...post, tags: post.tags.join('; ') } : defaultValues, {
-      keepDefaultValues: false,
-      keepDirty: false,
-    });
-  }, [defaultValues, post, reset]);
+    reset(
+      post
+        ? { ...post, tags: post.tags.join('; ') }
+        : { ...defaultValues, title: watch('title') },
+      {
+        keepDefaultValues: false,
+        keepDirty: false,
+      },
+    );
+  }, [defaultValues, post, reset, watch]);
 
   const [error, setError] = React.useState('');
 
@@ -222,7 +226,7 @@ const PostEditor = ({
       <ErrorMessage errors={errors} name="tags" />
 
       <Label>
-        <Checkbox defaultChecked {...register('draft')} />
+        <Checkbox {...register('draft')} />
         Draft?
       </Label>
 

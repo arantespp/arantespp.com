@@ -13,7 +13,7 @@ import { postTitleToSlug } from './postTitleToSlug';
 export const savePost = async ({ content, ...meta }: PostForm) => {
   const { group, book } = meta;
 
-  const title = titleCase(meta.title);
+  const title = titleCase(meta.title.trim());
   const date = meta.date || dateFns.format(new Date(), 'yyyy-MM-dd');
   const tags = getTags(meta.tags?.split(';'));
 

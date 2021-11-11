@@ -49,17 +49,20 @@ const Editor = ({
 
   const { value } = props;
 
-  React.useEffect(() => {
-    if (textAreaRef.current) {
-      const { scrollHeight, scrollTop, clientHeight } = textAreaRef.current;
+  /**
+   * Commented because every post edition the cursor kept in the top.
+   */
+  // React.useEffect(() => {
+  //   if (textAreaRef.current) {
+  //     const { scrollHeight, scrollTop, clientHeight } = textAreaRef.current;
 
-      const isAlmostOnBottom = clientHeight + scrollTop > 0.95 * scrollHeight;
+  //     const isAlmostOnBottom = clientHeight + scrollTop > 0.95 * scrollHeight;
 
-      if (isAlmostOnBottom) {
-        textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight;
-      }
-    }
-  }, [value]);
+  //     if (isAlmostOnBottom) {
+  //       textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight;
+  //     }
+  //   }
+  // }, [value]);
 
   React.useEffect(() => {
     if (textAreaRef?.current) {

@@ -1,7 +1,7 @@
 ---
 image: null
 book: null
-draft: true
+draft: false
 tags:
   - agile
   - agile-framework
@@ -14,7 +14,7 @@ excerpt: >-
 title: Scrum
 group: zettelkasten
 formattedDate: 'February 25, 2021'
-updatedAt: 'November 07, 2021'
+updatedAt: 'November 10, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/scrum.md
 href: /zettelkasten/scrum
