@@ -89,6 +89,7 @@ const PostEditor = ({
       content: '',
       tags: '',
       excerpt: '',
+      draft: false,
     }),
     [],
   );
