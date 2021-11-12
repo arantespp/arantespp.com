@@ -1,7 +1,12 @@
 import * as dateFns from 'date-fns';
 
 import * as getRandomIntModule from './getRandomInt';
-import { getScheduledDate, WEEKEND_PROPORTION } from './scheduleTweet';
+import {
+  getScheduledDate,
+  shouldSkipDay,
+  WEEKEND_PROPORTION,
+  SKIP_DAYS,
+} from './scheduleTweet';
 
 jest.mock('twitter-ads');
 
@@ -87,5 +92,34 @@ test('getScheduledDate', () => {
     1,
     1,
     1,
+    WEEKEND_PROPORTION,
+    WEEKEND_PROPORTION,
+    1,
+    1,
+    1,
+    1,
+    1,
+    WEEKEND_PROPORTION,
+    WEEKEND_PROPORTION,
+    1,
+    1,
+    1,
+    1,
+    1,
+    WEEKEND_PROPORTION,
+    WEEKEND_PROPORTION,
+    1,
+    1,
+    1,
+    1,
   ]);
 });
+
+test.each(SKIP_DAYS.map((skipDay) => [skipDay]))(
+  'shouldSkipDay: %s',
+  (skipDay) => {
+    const [month, day] = skipDay.split('-').map(Number);
+    const date = new Date(2021, month - 1, day, 8);
+    expect(shouldSkipDay(date)).toBeTruthy();
+  },
+);

@@ -15,9 +15,16 @@ const twitter = new TwitterAdsAPI({
 /**
  * It'll schedule tweets for the next `SCHEDULE_RANGE` days.
  */
-export const SCHEDULE_RANGE = 30;
+export const SCHEDULE_RANGE = 50;
 
 export const WEEKEND_PROPORTION = 0.28;
+
+export const SKIP_DAYS = ['12-25', '12-31', '01-01'];
+
+export const shouldSkipDay = (date: Date) => {
+  const day = dateFns.format(date, 'MM-dd');
+  return SKIP_DAYS.includes(day);
+};
 
 export const getScheduledDate = (): string => {
   const today = new Date();
@@ -60,6 +67,10 @@ export const getScheduledDate = (): string => {
    */
   const setRandomMinute = getRandomInt({ min: 0, max: 59 });
   scheduledDate = dateFns.setMinutes(scheduledDate, setRandomMinute);
+
+  if (shouldSkipDay(scheduledDate)) {
+    return getScheduledDate();
+  }
 
   return dateFns.formatISO(scheduledDate);
 };
