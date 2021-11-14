@@ -112,13 +112,27 @@ const Heading = ({
   children,
   noH1 = false,
   level,
+  as,
 }: {
   children: React.ReactNode | React.ReactNode[];
-  level: number;
+  level?: number;
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   noH1?: boolean;
 }) => {
+  const resolvedLevel = (() => {
+    if (level) {
+      return level;
+    }
+
+    if (as) {
+      return Number(as.replace('h', ''));
+    }
+
+    return 1;
+  })();
+
   return (
-    <HeadingChildrenArray {...{ level, noH1 }}>
+    <HeadingChildrenArray {...{ level: resolvedLevel, noH1 }}>
       {Array.isArray(children) ? children : [children]}
     </HeadingChildrenArray>
   );

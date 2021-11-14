@@ -21,7 +21,7 @@ const Layout = dynamic(() => import('../src/components/Layout'));
 const title = "Pedro Arantes' Digital Garden";
 
 const description =
-  "I'v created this website to make notes about the subjects I'm learning.";
+  'I use this website to leverage my leaning process and to share some thoughts and insights about multidisciplinary subjects.';
 
 /**
  * Twitter meta tags:
