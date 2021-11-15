@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import { Box, Flex, Image, Themed } from 'theme-ui';
+import { Box, Flex, Themed } from 'theme-ui';
 
 import { editPost } from '../../shortcuts';
 
@@ -13,6 +13,7 @@ import BookHeader from './BookHeader';
 import CustomImage from './CustomImage';
 import HTMLHeaders from './HTMLHeaders';
 import NetworkLink from './NetworkLink';
+import { PostFooter } from './PostFooter';
 import PostResume from './PostResume';
 import SharePost from './SharePost';
 
@@ -86,14 +87,7 @@ const PostComponent = ({ post }: { post: Post }) => {
       >
         <NetworkLink nodeId={href} />
       </Flex>
-      <Flex sx={{ justifyContent: 'center', marginTop: 5, marginBottom: 6 }}>
-        <Image
-          role="button"
-          onClick={() => window.scroll({ top: 0, left: 0 })}
-          sx={{ height: '1.5em', marginLeft: 1, cursor: 'pointer' }}
-          src="/rose.png"
-        />
-      </Flex>
+      <PostFooter />
       <SharePost post={post} />
     </>
   );

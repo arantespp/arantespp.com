@@ -3,8 +3,8 @@ import { Themed } from 'theme-ui';
 
 import { getRecommendations } from '../src/lib/files';
 
-import Heading from '../src/components/Heading';
 import Link from '../src/components/Link';
+import { PostFooter } from '../src/components/PostFooter';
 import Recommendations from '../src/components/Recommendations';
 
 export const getStaticProps = async () => {
@@ -17,17 +17,17 @@ const Index = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <Heading as="h1">Welcome to my Digital Garden</Heading>
+      <Themed.h1>Welcome to my Digital Garden</Themed.h1>
       <Themed.p>
-        Hello, my name is Pedro. I`&apos;m an enthusiastic learner, optimistic,
+        Hello, my name is Pedro. I&apos;m an enthusiastic learner, optimistic,
         and entrepreneur, always trying to find ways to add more value to the
         world. I started this blog to improve my learning processes implementing
-        the
-        <Link href="/zettelkasten">Zettelkasten</Link> and to create and improve
-        my writing skills. As the project grew, I made some functionalities to
-        leverage some activities that I had to do repetitively. For example, I
-        created the <Link href="/flashcard">Flashcard</Link> functionality to
-        help me apply the spacing learning effect.
+        the <Link href="/zettelkasten">Zettelkasten</Link> and to create and
+        improve my writing skills. As the project grew, I made some
+        functionalities to leverage some activities that I had to do
+        repetitively. For example, I created the{' '}
+        <Link href="/flashcard">Flashcard</Link> functionality to help me apply
+        the spacing learning effect.
       </Themed.p>
       <Themed.p>
         I genuinely believe in the power of sharing and spreading knowledge.
@@ -39,10 +39,11 @@ const Index = ({
         doing this blog are endless.
       </Themed.p>
       <Themed.p>
-        I`&apos;ve also open-sourced all posts and codebase of this website
-        under the <Link href="/license">CC BY 4.0 license</Link> on{' '}
+        I&apos;ve also open-sourced all posts and codebase of this website under
+        the <Link href="/license">CC BY 4.0 license</Link> on{' '}
         <Link href="https://github.com/arantespp/arantespp.com">GitHub</Link>.
       </Themed.p>
+      <PostFooter />
       <Recommendations recommendations={recommendations} />
     </>
   );
