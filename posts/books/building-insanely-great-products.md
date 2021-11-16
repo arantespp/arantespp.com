@@ -10,7 +10,7 @@ excerpt: ''
 title: Building Insanely Great Products
 group: books
 formattedDate: 'October 28, 2021'
-updatedAt: 'November 06, 2021'
+updatedAt: 'November 16, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/building-insanely-great-products.md
 href: /books/building-insanely-great-products
@@ -192,7 +192,7 @@ Do the products' research regarding what problems they solve, not just the featu
 When you do your company vs. company competitive comparison and analysis, do it in SPICES.
 
 1. What is their Strategy?
-1. What are their Process?
+1. What is their Process?
 1. What Information do they have?
 1. Who are their Customers, and are they satisfied?
 1. How good and how well trained are their Employees?
@@ -217,3 +217,9 @@ You can also define the position using position statements. You can find more ab
 - Characterization or category of use;
 - Benefits;
 - Differentiator.
+
+#### Market Segment, Target Market and Size
+
+A market segment is an addressable market that has common needs and characteristics that you can monetize with your product. It can be quite dynamic and changing, but by using big data, you may be able to reach and track it.
+
+TODO

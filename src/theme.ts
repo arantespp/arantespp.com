@@ -119,7 +119,7 @@ const partialTheme = {
     },
     h1: {
       fontSize: 6,
-      marginY: 4,
+      marginY: 5,
       wordBreak,
       textAlign: ['center', null, 'left'],
     },

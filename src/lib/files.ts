@@ -691,15 +691,15 @@ export const getJournalsSummary = async (date: string) => {
   const parsedDate = getDateWithTimezone(date);
 
   const dates = [
-    ['Today', parsedDate],
-    ['Yesterday', dateFns.subDays(parsedDate, 1)],
-    ['Last Week', dateFns.subWeeks(parsedDate, 1)],
-    ['Last Month', dateFns.subMonths(parsedDate, 1)],
-    ['Last Semester', dateFns.subMonths(parsedDate, 6)],
-    ['Last Year', dateFns.subYears(parsedDate, 1)],
-    ['Last Two Years', dateFns.subYears(parsedDate, 2)],
-    ['Last Five Years', dateFns.subYears(parsedDate, 5)],
     ['Last Ten Years', dateFns.subYears(parsedDate, 10)],
+    ['Last Five Years', dateFns.subYears(parsedDate, 5)],
+    ['Last Two Years', dateFns.subYears(parsedDate, 2)],
+    ['Last Year', dateFns.subYears(parsedDate, 1)],
+    ['Last Semester', dateFns.subMonths(parsedDate, 6)],
+    ['Last Month', dateFns.subMonths(parsedDate, 1)],
+    ['Last Week', dateFns.subWeeks(parsedDate, 1)],
+    ['Yesterday', dateFns.subDays(parsedDate, 1)],
+    ['Today', parsedDate],
   ] as const;
 
   const summary = (
