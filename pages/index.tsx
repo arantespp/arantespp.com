@@ -38,9 +38,9 @@ const Index = ({
         and improving my value and status. The opportunities that may arise
         doing this blog are endless.
       </Themed.p>
-      <Themed.p>
-        I&apos;ve also open-sourced all posts and codebase of this website under
-        the <Link href="/license">CC BY 4.0 license</Link> on{' '}
+      <Themed.p style={{ fontStyle: 'italic' }}>
+        I&apos;ve also open-sourced this website under the{' '}
+        <Link href="/license">CC BY 4.0 license</Link> on{' '}
         <Link href="https://github.com/arantespp/arantespp.com">GitHub</Link>.
       </Themed.p>
       <PostFooter />

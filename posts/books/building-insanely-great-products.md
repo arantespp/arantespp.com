@@ -10,7 +10,7 @@ excerpt: ''
 title: Building Insanely Great Products
 group: books
 formattedDate: 'October 28, 2021'
-updatedAt: 'November 16, 2021'
+updatedAt: 'November 17, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/building-insanely-great-products.md
 href: /books/building-insanely-great-products
@@ -21,7 +21,7 @@ editLink: >-
 url: 'https://arantespp.com/books/building-insanely-great-products'
 keywords:
   - books
-readingTime: 9
+readingTime: 10
 ---
 
 ## Chapter Two: Research And Development Expenditures Worldwide
@@ -37,7 +37,10 @@ A strategy or a plan for our product for a specific market or markets is the **p
 - Values, Vision/Mission Statement
 - Decision Making: DACI or RACI Chart
 - Schedule with responsibilities
-- [Discover "Do"](#discover-do)
+
+**Discover**
+
+- ["Do"](#do)
 - [Innovation](#innovation)
 - [Problem Scenarios, Use Cases, and Outcomes](#problem-scenarios-use-cases-and-outcomes)
 - [Opportunity and Risks](#opportunity-and-risks)
@@ -49,8 +52,11 @@ A strategy or a plan for our product for a specific market or markets is the **p
 - [Technology Insights](#technology-insights)
 - [Competitive Research](#competitive-research)
 - [Product Positioning](#product-positioning)
-- Market Size, Segments, and Target Market
-- Total Available Market
+- [Market Size, Segments, and Target Market](#market-segment-target-market-and-size)
+- [Total Available Market](#total-available-market)
+
+**Plan**
+
 - Plan
 - Product Market Vision, Opportunity, and Description
 - Competitive Environment
@@ -70,7 +76,7 @@ A strategy or a plan for our product for a specific market or markets is the **p
 - Product Portfolio
 - Budget and Return on Investment
 
-#### Discover "Do"
+#### "Do"
 
 Start with the observation of behavior in the search for a problem to solve. Any other way, including technology, will not necessarily help build insanely great products. Instead, you need to find 15 unmet needs that your product will fulfill, and [brainstorming](/z/brainstorming) isn't the way to do it.
 
@@ -220,6 +226,19 @@ You can also define the position using position statements. You can find more ab
 
 #### Market Segment, Target Market and Size
 
-A market segment is an addressable market that has common needs and characteristics that you can monetize with your product. It can be quite dynamic and changing, but by using big data, you may be able to reach and track it.
+A market segment is an addressable market with common needs and characteristics that you can monetize with your product. It can be quite dynamic and changing, but by using big data, you may be able to reach and track it.
 
 TODO
+
+#### Total Available Market
+
+The total available or addressable market (TAM) is a subject of the market segments, which means a market or segment that you can reach through your marketing and distribution channels. If you can't reach a part of a market because of governmental laws, for example, you should not consider that part in your TAM.
+
+In the example of the figure below, we have:
+
+- Overall semiconductor market of \$125 billion.
+- In a market segment under that, it is semiconductor equipment, which is $28 billion.
+- Within the equipment market, there are specific kinds of equipment, which is $12.7 billion.
+- Then, within that market segment, it is the masking market, which is $2 billion.
+
+![The total available market of the masking market.](/images/excalidraw/total-available-market.png)
