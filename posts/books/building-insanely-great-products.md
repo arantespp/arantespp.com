@@ -10,7 +10,7 @@ excerpt: ''
 title: Building Insanely Great Products
 group: books
 formattedDate: 'October 28, 2021'
-updatedAt: 'November 17, 2021'
+updatedAt: 'November 26, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/building-insanely-great-products.md
 href: /books/building-insanely-great-products
@@ -26,7 +26,16 @@ readingTime: 10
 
 ## Chapter Two: Research And Development Expenditures Worldwide
 
-SPICES
+Product failures tend to fail into six general areas, also the six keys to product success (SPICES):
+
+- [Strategy](#strategy)
+- [Process](#process)
+- [Information](#information)
+- [Customers](#customers)
+- [Employees](#employess)
+- [Systems and Tools](#systems-and-tools)
+
+Product success is based on building a successful company, which understands customers, innovation, a market strategy for the product, and implementation. Implementation is the hard part because it involves marketing, sales, service, support, and operations.
 
 ### Strategy
 

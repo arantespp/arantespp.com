@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { hofs } from './hofs';
 
-import { scheduleTweet } from '../src/lib/scheduleTweet';
+import { scheduleTweet } from '../lib/scheduleTweet';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {

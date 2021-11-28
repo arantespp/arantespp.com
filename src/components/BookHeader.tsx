@@ -1,4 +1,4 @@
-import type { Book } from '../lib/files';
+import type { Book } from '../../lib/files';
 
 import CustomImage from './CustomImage';
 

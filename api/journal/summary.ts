@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { getJournalsSummary } from '../../src/lib/files';
+import { getJournalsSummary } from '../../lib/files';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const summary = await getJournalsSummary(req.query.date as string);

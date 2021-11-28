@@ -10,7 +10,7 @@ import { Flex, Link, Text } from 'theme-ui';
 
 import PostResume from './PostResume';
 
-import type { Recommendation } from '../lib/files';
+import type { Recommendation } from '../../lib/files';
 
 const IconText = ({ icon }: { icon: IconDefinition }) => (
   <Text

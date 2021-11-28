@@ -1,6 +1,6 @@
 import { Card, Flex, Text } from 'theme-ui';
 
-import { Flashcard as FlashcardType } from '../lib/getFlashcard';
+import { Flashcard as FlashcardType } from '../../lib/getFlashcard';
 
 import Link from './Link';
 import RecommendationCard from './RecommendationCard';

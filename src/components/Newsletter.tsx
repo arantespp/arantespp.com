@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Input, Text, Themed } from 'theme-ui';
 
-import { getNextNewsletterDate } from '../lib/getNextNewsletterDate';
+import { getNextNewsletterDate } from '../../lib/getNextNewsletterDate';
 
 import Heading from './Heading';
 import Link from './Link';

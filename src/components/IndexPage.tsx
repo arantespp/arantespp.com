@@ -2,7 +2,7 @@ import { pascalCase } from 'change-case';
 import dynamic from 'next/dynamic';
 import { Box } from 'theme-ui';
 
-import { Recommendation, Group } from '../lib/files';
+import { Recommendation, Group } from '../../lib/files';
 
 import HTMLHeaders from './HTMLHeaders';
 

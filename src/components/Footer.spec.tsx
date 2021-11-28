@@ -1,6 +1,6 @@
 import { render, screen } from '../testUtils';
 
-import { socialMediasArr } from '../lib/socialMedias';
+import { socialMediasArr } from '../../lib/socialMedias';
 
 import Footer from './Footer';
 

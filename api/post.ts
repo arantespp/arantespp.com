@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { getPartialPost, getDraft } from '../src/lib/files';
-import { savePost } from '../src/lib/savePost';
+import { getPartialPost, getDraft } from '../lib/files';
+import { savePost } from '../lib/savePost';
 
 import { hofs } from './hofs';
 

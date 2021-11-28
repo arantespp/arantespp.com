@@ -16,8 +16,8 @@ import {
 } from 'theme-ui';
 import * as yup from 'yup';
 
-import type { Post } from '../lib/files';
-import { GROUPS } from '../lib/groups';
+import type { Post } from '../../lib/files';
+import { GROUPS } from '../../lib/groups';
 
 import Editor from './Editor';
 import Link from './Link';

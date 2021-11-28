@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { Box, Flex, Link, Message, Text } from 'theme-ui';
 
-import type { PostWithoutContent } from '../lib/files';
+import type { PostWithoutContent } from '../../lib/files';
 
 import Tag from './Tag';
 

@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { getNewsletterData } from '../../src/lib/newsletter';
+import { getNewsletterData } from '../../lib/newsletter';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {

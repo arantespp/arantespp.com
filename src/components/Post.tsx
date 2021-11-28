@@ -7,7 +7,7 @@ import { editPost } from '../../shortcuts';
 import { useContentEditable } from '../hooks/useContentEditable';
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 
-import type { Post } from '../lib/files';
+import type { Post } from '../../lib/files';
 
 import BookHeader from './BookHeader';
 import CustomImage from './CustomImage';

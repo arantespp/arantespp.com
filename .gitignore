@@ -29,7 +29,7 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-src/lib/*.js
+lib/*.js
 *.jsx
 
 /posts/articles/my-story-then*

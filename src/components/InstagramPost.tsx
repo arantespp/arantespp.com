@@ -14,7 +14,7 @@ import {
   ThemeProvider,
 } from 'theme-ui';
 
-import type { InstagramPost as InstagramPostProps } from '../lib/files';
+import type { InstagramPost as InstagramPostProps } from '../../lib/files';
 
 import HTMLHeaders from './HTMLHeaders';
 import Loading from './Loading';

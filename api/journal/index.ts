@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { getJournal, saveJournal } from '../../src/lib/files';
+import { getJournal, saveJournal } from '../../lib/files';
 
 import { hofs } from '../hofs';
 

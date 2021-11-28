@@ -3,7 +3,7 @@ import { Flex, Link, Text } from 'theme-ui';
 
 import RecommendationsList from './RecommendationsList';
 
-import type { Recommendation } from '../lib/files';
+import type { Recommendation } from '../../lib/files';
 
 const Recommendations = ({
   recommendations,

@@ -4,7 +4,7 @@ import { Flex, Link, Text } from 'theme-ui';
 
 import PedroArantes from './PedroArantes';
 
-import { socialMediasArr } from '../lib/socialMedias';
+import { socialMediasArr } from '../../lib/socialMedias';
 
 const SHOW_LOGO = false;
 

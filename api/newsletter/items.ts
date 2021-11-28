@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { saveNewsletterItems } from '../../src/lib/newsletter';
+import { saveNewsletterItems } from '../../lib/newsletter';
 
 import { hofs } from '../hofs';
 

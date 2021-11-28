@@ -1,6 +1,6 @@
 import { Box } from 'theme-ui';
 
-import type { Recommendation } from '../lib/files';
+import type { Recommendation } from '../../lib/files';
 
 import RecommendationCard from './RecommendationCard';
 
