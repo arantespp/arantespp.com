@@ -18,7 +18,7 @@ excerpt: ''
 title: The Principles of Product Development Flow
 group: books
 formattedDate: 'August 31, 2021'
-updatedAt: 'November 09, 2021'
+updatedAt: 'December 01, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /books/the-principles-of-product-development-flow
@@ -31,7 +31,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 18
+readingTime: 19
 ---
 
 ## Principles
@@ -279,6 +279,16 @@ You can create value with a thoughtful queueing discipline. For example, if two 
 You can ask three questions to improve the economics of a queue. First, is there a difference in the cost of delay of different jobs in the queue? Second, is there a difference in the time a job will block a resource? Third, is the average length of the queue large?
 
 The third question is important because the payoff from queueing discipline is highest when queue sizes are large. In such circumstances, moving a high cost-of-delay to the head of the line leads to a cycle time reduction and considerable economic benefits.
+
+#### Q11: The Cumulative Flow Principle: Use CFDs to monitor queues.
+
+[Cumulative flow diagram (CFD) notes](/z/cumulative-flow-diagram-cfd).
+
+The CFD visually presents a great deal of information about your queue. Unfortunately, many companies only track queue size as a function of time, which provides less information. Using CDF, you can see if excess arrivals or insufficient departures caused a change in the queue size. You can also observe the time dependency of demand and capacity.
+
+Changes in the slope of the arrival and departure lines inform trends in demand and capacity. Batch size problems are also visible on a CFD because they appear as jagged lines.
+
+![Cumulative Flow Diagram (CDF)](/images/originals/cumulative-flow-diagram.png)
 
 ### 4 - Exploiting Variability
 

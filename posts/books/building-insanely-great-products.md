@@ -223,7 +223,7 @@ Product positioning placed and in agreement throughout your organization enables
 
 The first step in positioning is to create a radar chart, as depicted below. To do so, you'll have to decide on what to use for the axes, which should be what are most valuable to your customers. Finally, you should create the plot based on your actual research about what customers "do."
 
-![Positioning Radar Chart](/images/excalidraw/product-positioning.png)
+![Positioning Radar Chart](/images/originals/product-positioning.png)
 
 You can also define the position using position statements. You can find more about the theory on [Positioning: The Battle for Your Mind](https://www.amazon.com.br/dp/B006B7LQ90/) by Al Ries and Jack Trout. For instance, a positioning statement should contain:
 
@@ -250,4 +250,4 @@ In the example of the figure below, we have:
 - Within the equipment market, there are specific kinds of equipment, which is $12.7 billion.
 - Then, within that market segment, it is the masking market, which is $2 billion.
 
-![The total available market of the masking market.](/images/excalidraw/total-available-market.png)
+![The total available market of the masking market.](/images/originals/total-available-market.png)
