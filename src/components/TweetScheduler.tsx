@@ -90,13 +90,14 @@ const TweetScheduler = () => {
       {displaySchedule && (
         <Flex
           sx={{
-            bottom: [75, 60],
+            top: [0, 'auto'],
+            bottom: ['auto', 60],
             right: [0, 60],
-            height: '200',
+            height: ['100%', 'auto'],
             position: 'fixed',
             backgroundColor: 'white',
             width: '100%',
-            maxWidth: 600,
+            maxWidth: 500,
             flexDirection: 'column',
             padding: 3,
             borderWidth: 1,
@@ -106,7 +107,7 @@ const TweetScheduler = () => {
           }}
         >
           <Textarea
-            rows={10}
+            rows={11}
             onChange={(e) => setTweet(e.target.value)}
             value={tweet}
             sx={{ resize: 'none' }}
