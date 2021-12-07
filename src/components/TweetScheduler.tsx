@@ -90,8 +90,8 @@ const TweetScheduler = () => {
       {displaySchedule && (
         <Flex
           sx={{
-            bottom: 60,
-            right: 60,
+            bottom: [75, 60],
+            right: [0, 60],
             height: '200',
             position: 'fixed',
             backgroundColor: 'white',
