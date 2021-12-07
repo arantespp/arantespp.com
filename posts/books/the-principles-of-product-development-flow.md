@@ -18,7 +18,7 @@ excerpt: ''
 title: The Principles of Product Development Flow
 group: books
 formattedDate: 'August 31, 2021'
-updatedAt: 'December 01, 2021'
+updatedAt: 'December 06, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /books/the-principles-of-product-development-flow
@@ -289,6 +289,10 @@ The CFD visually presents a great deal of information about your queue. Unfortun
 Changes in the slope of the arrival and departure lines inform trends in demand and capacity. Batch size problems are also visible on a CFD because they appear as jagged lines.
 
 ![Cumulative Flow Diagram (CDF)](/images/originals/cumulative-flow-diagram.png)
+
+#### Q12. Little's Formula: Wait Time = Queue Size/Processing Rate
+
+[Little's Formula notes](/z/little-s-formula).
 
 ### 4 - Exploiting Variability
 

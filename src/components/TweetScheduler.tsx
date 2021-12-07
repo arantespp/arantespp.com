@@ -5,16 +5,26 @@ import * as React from 'react';
 import { Button, Flex, Text, Textarea } from 'theme-ui';
 
 import { openTwitterScheduler } from '../../shortcuts';
+import { useApiKey } from '../hooks/useApiKey';
 
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 
 const twitterColor = '#1da1f2';
 
-const postTweet = async (tweet: string) =>
-  fetch('/api/tweet', {
-    method: 'POST',
-    body: JSON.stringify({ tweet }),
-  }).then((res) => res.json());
+const usePostTweet = () => {
+  const { apiKey } = useApiKey();
+
+  const postTweet = async (tweet: string) =>
+    fetch('/api/tweet', {
+      method: 'POST',
+      headers: {
+        'x-api-key': apiKey,
+      },
+      body: JSON.stringify({ tweet }),
+    }).then((res) => res.json());
+
+  return { postTweet };
+};
 
 const tweetCharCount = (tweet: string) => {
   /**
@@ -29,6 +39,8 @@ const tweetCharCount = (tweet: string) => {
 };
 
 const TweetScheduler = () => {
+  const { postTweet } = usePostTweet();
+
   const [displaySchedule, setDisplaySchedule] = React.useState(false);
 
   useKeypressSequenceListener(openTwitterScheduler, () =>
@@ -40,8 +52,9 @@ const TweetScheduler = () => {
   const [isScheduling, setIsScheduling] = React.useState(false);
 
   const [response, setResponse] = React.useState<{
-    scheduledAt: string;
-    text: string;
+    scheduledAt?: string;
+    text?: string;
+    error?: string;
   }>();
 
   /**
@@ -102,11 +115,16 @@ const TweetScheduler = () => {
           {response && (
             <Flex sx={{ margin: 3, flexDirection: 'column' }}>
               <Text sx={{ fontStyle: 'italic', whiteSpace: 'pre-line' }}>
-                {response.text}
+                {response.text || response.error}
               </Text>
-              <Text sx={{ fontWeight: 'bold' }}>
-                {dateFns.format(new Date(response.scheduledAt), 'PP (EEEE) pp')}
-              </Text>
+              {response.scheduledAt && (
+                <Text sx={{ fontWeight: 'bold' }}>
+                  {dateFns.format(
+                    new Date(response.scheduledAt),
+                    'PP (EEEE) pp',
+                  )}
+                </Text>
+              )}
             </Flex>
           )}
           <Button

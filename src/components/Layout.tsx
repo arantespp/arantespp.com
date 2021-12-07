@@ -1,15 +1,17 @@
 import dynamic from 'next/dynamic';
 import { Box, Container } from 'theme-ui';
 
+import { useApiKey } from '../hooks/useApiKey';
+
 import Footer from './Footer';
 import Header from './Header';
 import Newsletter from './Newsletter';
 
 const TweetScheduler = dynamic(() => import('./TweetScheduler'));
 
-const isDevelopment = process.env.NODE_ENV === 'development';
-
 const Layout: React.FC = ({ children }) => {
+  const { apiKey } = useApiKey();
+
   return (
     <>
       <Header />
@@ -30,7 +32,7 @@ const Layout: React.FC = ({ children }) => {
         </Box>
       </Container>
       <Footer />
-      {isDevelopment && <TweetScheduler />}
+      {apiKey && <TweetScheduler />}
     </>
   );
 };

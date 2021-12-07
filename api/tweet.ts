@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { hofs } from './hofs';
+import { requireApiKey } from './hofs/requireApiKey';
 
 import { scheduleTweet } from '../lib/scheduleTweet';
 
@@ -14,4 +14,4 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   res.status(403).end();
 };
 
-export default hofs(handler);
+export default requireApiKey(handler);
