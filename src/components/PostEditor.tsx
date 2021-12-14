@@ -244,7 +244,7 @@ const PostEditor = ({
       {error && <Themed.p>{error}</Themed.p>}
 
       {currentPost?.href && (
-        <Link href={currentPost.href}>
+        <Link href={currentPost.href} target="_blank" rel="noopener noreferrer">
           <Text sx={{ fontStyle: 'italic' }}>
             See post: {currentPost.title} (updated at {lastAutoSaveTime})
           </Text>

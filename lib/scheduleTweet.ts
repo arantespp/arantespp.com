@@ -19,7 +19,7 @@ export const SCHEDULE_RANGE = 50;
 
 export const WEEKEND_PROPORTION = 0.28;
 
-export const SKIP_DAYS = ['12-25', '12-31', '01-01'];
+export const SKIP_DAYS = ['12-24', '12-25', '12-26', '12-30', '12-31', '01-01'];
 
 export const shouldSkipDay = (date: Date) => {
   const day = dateFns.format(date, 'MM-dd');

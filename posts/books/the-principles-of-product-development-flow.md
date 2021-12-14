@@ -18,7 +18,7 @@ excerpt: ''
 title: The Principles of Product Development Flow
 group: books
 formattedDate: 'August 31, 2021'
-updatedAt: 'December 06, 2021'
+updatedAt: 'December 09, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /books/the-principles-of-product-development-flow
@@ -293,6 +293,10 @@ Changes in the slope of the arrival and departure lines inform trends in demand 
 #### Q12. Little's Formula: Wait Time = Queue Size/Processing Rate
 
 [Little's Formula notes](/z/little-s-formula).
+
+You can apply Little's Formula to either the queue or to the system as a whole. Applying it to the system as a whole is useful if you have trouble distinguishing which items are in the queue and which ones are in service.
+
+For example, if your development process has 50 projects in process and completes an average of 10 projects per year, it'll take an average of 5 years to complete a project.
 
 ### 4 - Exploiting Variability
 
