@@ -48,11 +48,6 @@ const pageLinks = [
     permanent: true,
   },
   {
-    source: '/j',
-    destination: '/journal',
-    permanent: true,
-  },
-  {
     source: '/n',
     destination: '/network',
     permanent: true,
