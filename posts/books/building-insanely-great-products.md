@@ -10,7 +10,7 @@ excerpt: ''
 title: Building Insanely Great Products
 group: books
 formattedDate: 'October 28, 2021'
-updatedAt: 'November 26, 2021'
+updatedAt: 'December 15, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/building-insanely-great-products.md
 href: /books/building-insanely-great-products
@@ -21,7 +21,7 @@ editLink: >-
 url: 'https://arantespp.com/books/building-insanely-great-products'
 keywords:
   - books
-readingTime: 10
+readingTime: 11
 ---
 
 ## Chapter Two: Research And Development Expenditures Worldwide
@@ -251,3 +251,31 @@ In the example of the figure below, we have:
 - Then, within that market segment, it is the masking market, which is $2 billion.
 
 ![The total available market of the masking market.](/images/originals/total-available-market.png)
+
+### Process
+
+You need a repeatable, mature and optimized product lifecycle framework with a process. Without such a framework, you'll enhance your chances of failure and may develop a culture of blame within your organization. A product lifecycle framework will enhance the chances of success, reduce duplication of effort, and nearly eliminate rushing a product to market before you're ready.
+
+The author mentions The Spice Catalyst product lifecycle framework, which focus on all stages
+
+Questions to assess your process:
+
+1. What is your role?
+2. Who owns the overall responsibility for the product's success?
+3. What is your process for gathering and prioritizing requirements and feature requests?
+4. What deliverables do they own or greatly contribute to?
+5. What is working best?
+6. What is missing?
+7. What are your biggest challenges?
+8. Where are the biggest bottlenecks? What slows you down most?
+9. What changes would you make?
+10. Are there things that you have done or seen other companies that worked better?
+11. What tools and software do you use today?
+    a. What is good about them?
+    b. What could be improved?
+12. Specifically, what information about your customers and your products is available to your product managers and product marketing that helps them do their job?
+    a. What additional information do they need?
+13. How do you go about assessing the competency of your product managers and product marketing managers?
+14. In your words, what is the vision of your company?
+15. What are the values of the company?
+16. Please, describe the company's culture.
