@@ -19,10 +19,10 @@ afterAll(() => {
   jest.useRealTimers();
 });
 
-// test('test proportion', () => {
+// test.only('test proportion', () => {
 //   const p = {};
 
-//   for (let i = 0; i < 10000; i++) {
+//   for (let i = 0; i < 100000; i++) {
 //     const d = dateFns.format(new Date(getScheduledDate()), 'yyyy-MM-dd EEEE');
 
 //     if (p[d]) {
@@ -53,23 +53,14 @@ test('getScheduledDate', () => {
 
   const isSameDay = dateFns.isSameDay(
     new Date(scheduledDate),
-    new Date(2021, 10, 18, 8),
+    new Date(2021, 11, 15, 8),
   );
 
   expect(isSameDay).toBeTruthy();
-  /**
-   * 2020-10-10 is Wednesday, so the weight array should must starts with:
-   * [1, 1, 0.28, 0.28, 1, ...]
-   */
+
   expect(getRandomIntModule.getWeightedRandomInt).toHaveBeenCalledWith([
     1,
     1,
-    WEEKEND_PROPORTION,
-    WEEKEND_PROPORTION,
-    1,
-    1,
-    1,
-    1,
     1,
     WEEKEND_PROPORTION,
     WEEKEND_PROPORTION,
@@ -110,6 +101,18 @@ test('getScheduledDate', () => {
     WEEKEND_PROPORTION,
     1,
     1,
+    1,
+    1,
+    1,
+    WEEKEND_PROPORTION,
+    WEEKEND_PROPORTION,
+    1,
+    1,
+    1,
+    1,
+    1,
+    WEEKEND_PROPORTION,
+    WEEKEND_PROPORTION,
     1,
     1,
   ]);

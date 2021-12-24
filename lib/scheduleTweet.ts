@@ -12,10 +12,18 @@ const twitter = new TwitterAdsAPI({
   api_version: '10',
 });
 
+const ONE_WEEK = 7;
+
 /**
  * It'll schedule tweets for the next `SCHEDULE_RANGE` days.
  */
-export const SCHEDULE_RANGE = 50;
+export const SCHEDULE_RANGE = 8 * ONE_WEEK;
+
+/**
+ * Schedule a tweet from `SCHEDULE_FROM` days from now. The goal is to give
+ * a space to forget about the content of the tweet before reading it again.
+ */
+export const SCHEDULE_FROM = 4 * ONE_WEEK;
 
 export const WEEKEND_PROPORTION = 0.28;
 
@@ -32,7 +40,7 @@ export const getScheduledDate = (): string => {
   /**
    * We'll schedule tweets from tomorrow.
    */
-  let scheduledDate = dateFns.addDays(today, 1);
+  let scheduledDate = dateFns.addDays(today, SCHEDULE_FROM);
 
   /**
    * With these weights, we get a probability of 10% to get a weekend.
