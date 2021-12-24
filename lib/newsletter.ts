@@ -6,10 +6,21 @@ import { getFlashcard } from './getFlashcard';
 import { getClosestLastWeekDay } from './getClosestLastWeekDay';
 import { socialMedias } from './socialMedias';
 
-const getLastSunday = () => {
-  const format = 'yyyy-MM-dd';
+const format = 'yyyy-MM-dd';
+
+const SUBTRACT_MONTHS = 3;
+
+const getDateRange = () => {
   const lastSunday = getClosestLastWeekDay('Sun');
-  return dateFns.format(lastSunday, format);
+
+  const since = dateFns.subMonths(lastSunday, SUBTRACT_MONTHS);
+
+  const until = dateFns.addWeeks(since, 1);
+
+  return {
+    since: dateFns.format(since, format),
+    until: dateFns.format(until, format),
+  };
 };
 
 const generateTwitterSearchUrl = () => {
@@ -17,7 +28,7 @@ const generateTwitterSearchUrl = () => {
 
   const searchObject = {
     from: socialMedias.Twitter.username,
-    since: getLastSunday(),
+    ...getDateRange(),
     '-filter': 'replies',
   };
 
@@ -45,9 +56,7 @@ type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
 export type NewsletterData = ThenArg<ReturnType<typeof getNewsletterData>>;
 
 export const saveNewsletterItems = async (items: any) => {
-  const lastSunday = getLastSunday();
+  db.push(`/newsletter/TODO`, { items }, false);
 
-  db.push(`/newsletter/${lastSunday}`, { items }, false);
-
-  return 'ads';
+  return 'TODO';
 };
