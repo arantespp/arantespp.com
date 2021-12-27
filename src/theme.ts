@@ -46,6 +46,8 @@ const colors = {
   accent: palette.celadonBlue,
   highlight: palette.honeydew,
   muted: '#aaa',
+  error: palette.imperialRed,
+  twitter: '#1da1f2',
 };
 
 const wordBreak = 'break-word';
@@ -113,6 +115,12 @@ const partialTheme = {
       '*': {
         '&::selection': {
           background: '#ddd',
+        },
+      },
+      button: {
+        '&:disabled': {
+          backgroundColor: 'muted',
+          cursor: 'not-allowed',
         },
       },
       ...katex,
@@ -206,12 +214,7 @@ const partialTheme = {
     },
   },
   buttons: {
-    primary: {
-      cursor: 'pointer',
-      '&:disabled': {
-        backgroundColor: 'muted',
-      },
-    },
+    primary: {},
   },
   cards: {
     flashcard: {

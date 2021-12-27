@@ -17,7 +17,7 @@ const ONE_WEEK = 7;
 /**
  * It'll schedule tweets for the next `SCHEDULE_RANGE` days.
  */
-export const SCHEDULE_RANGE = 8 * ONE_WEEK;
+export const SCHEDULE_RANGE = 12 * ONE_WEEK;
 
 /**
  * Schedule a tweet from `SCHEDULE_FROM` days from now. The goal is to give
