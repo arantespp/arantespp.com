@@ -18,10 +18,10 @@ import { navigation } from '../../shortcuts';
 
 const Layout = dynamic(() => import('../components/Layout'));
 
-const title = "Pedro Arantes' Digital Garden";
+const title = 'Pedro Arantes';
 
 const description =
-  'I use this website to leverage my leaning process and to share some thoughts and insights about multidisciplinary subjects.';
+  "Hello, my name is Pedro. I'm an enthusiastic learner, optimistic, and entrepreneur, always trying to find ways to add more value to the world. I started this blog to improve my learning processes implementing the Zettelkasten and to create and improve my writing skills.";
 
 /**
  * Twitter meta tags:

@@ -48,6 +48,18 @@ const colors = {
   muted: '#aaa',
   error: palette.imperialRed,
   twitter: '#1da1f2',
+  modes: {
+    dark: {
+      text: '#eee',
+      background: '#1c1c1c',
+      link: '#ccc',
+      gray: '#ccc',
+      /**
+       * https://webaim.org/resources/contrastchecker/?fcolor=F39BA2&bcolor=1C1C1C
+       */
+      primary: '#F39BA2',
+    },
+  },
 };
 
 const wordBreak = 'break-word';
@@ -77,9 +89,17 @@ const katex = {
   },
 };
 
+/**
+ * https://theme-ui.com/theming/#configuration-flags
+ */
+const config = {
+  initialColorModeName: 'dark',
+};
+
 const partialTheme = {
-  borderWidths: [0, 1, 4],
+  config,
   colors,
+  borderWidths: [0, 1, 4],
   fonts: {
     monospace: "'Overpass Mono', monospace",
   },
@@ -160,7 +180,6 @@ const partialTheme = {
     },
     a: {
       color: 'link',
-      textDecorationColor: 'lightLightGray',
       '&:hover': {
         color: 'primary',
         textDecoration: 'none',
