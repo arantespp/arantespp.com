@@ -94,6 +94,7 @@ const katex = {
  */
 const config = {
   initialColorModeName: 'light',
+  useColorSchemeMediaQuery: true,
 };
 
 const partialTheme = {
