@@ -93,7 +93,7 @@ const katex = {
  * https://theme-ui.com/theming/#configuration-flags
  */
 const config = {
-  initialColorModeName: 'dark',
+  initialColorModeName: 'light',
 };
 
 const partialTheme = {
