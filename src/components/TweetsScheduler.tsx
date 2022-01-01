@@ -1,18 +1,22 @@
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ErrorMessage } from '@hookform/error-message';
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as dateFns from 'date-fns';
 import * as React from 'react';
-import { Box, Button, Flex, Input, Label, Text, Textarea } from 'theme-ui';
+import { Controller, useForm, useFieldArray } from 'react-hook-form';
+import { Button, Flex, Input, Label, Text, Textarea } from 'theme-ui';
 import * as xslx from 'xlsx';
+import * as yup from 'yup';
 
 import { openTwitterScheduler } from '../../shortcuts';
 import { useApiKey } from '../hooks/useApiKey';
 
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 
-const MAX_TWEET_CHARS = 280;
+export const TWEET_MAX_CHARS = 280;
 
-const tweetCharCount = ({ tweet }: { tweet: string }) => {
+const tweetCharCount = (tweet: string) => {
   /**
    * https://help.twitter.com/en/using-twitter/how-to-tweet-a-link
    * "A URL of any length will be altered to 23 characters"
@@ -20,13 +24,6 @@ const tweetCharCount = ({ tweet }: { tweet: string }) => {
   const tmpUrl = 'x'.repeat(23);
   const tweetUrlReplace = tweet.replace(/(http[s]?:\/\/[\S]*)/g, tmpUrl);
   return tweetUrlReplace.length;
-};
-
-const canScheduleTweets = ({ tweets }: { tweets: string[] }) => {
-  return !tweets.some((tweet) => {
-    const charactersCount = tweetCharCount({ tweet });
-    return charactersCount > MAX_TWEET_CHARS || charactersCount === 0;
-  });
 };
 
 export type PostTweetResponse =
@@ -54,71 +51,34 @@ const usePostTweet = () => {
   return { postTweet };
 };
 
-const useTweetsScheduler = ({ tweets }: { tweets: string[] }) => {
-  const { postTweet } = usePostTweet();
-
-  const [isScheduling, setIsScheduling] = React.useState(false);
-
-  const [responses, setResponses] = React.useState<PostTweetResponse[]>();
-
-  const [error, setError] = React.useState<Error>();
-
-  const [canSchedule, setCanSchedule] = React.useState(true);
-
-  React.useEffect(() => {
-    setCanSchedule(canScheduleTweets({ tweets }));
-  }, [tweets]);
-
-  const scheduleTweets = React.useCallback(async () => {
-    if (!canSchedule) {
-      return;
-    }
-
-    try {
-      setError(undefined);
-      setResponses(undefined);
-      setIsScheduling(true);
-      const r = await Promise.all(
-        tweets.map((tweet) =>
-          postTweet({ tweet }).catch((err) => ({ error: err })),
-        ),
-      );
-      setResponses(r);
-    } catch (err) {
-      setError(err);
-    } finally {
-      setIsScheduling(false);
-    }
-  }, [canSchedule, postTweet, tweets]);
-
-  return { scheduleTweets, isScheduling, responses, error, canSchedule };
-};
-
 export const TweetEditor = ({
-  tweet,
-  setTweet,
+  value,
+  onChange,
+  maxChars = TWEET_MAX_CHARS,
 }: {
-  tweet: string;
-  setTweet: (t: string) => void;
+  value: string;
+  onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
+  maxChars?: number;
 }) => {
-  const charactersCount = tweetCharCount({ tweet });
+  const charactersCount = tweetCharCount(value);
 
-  const canSchedule = canScheduleTweets({ tweets: [tweet] });
+  const reachedMaxChars = charactersCount > maxChars;
 
   return (
-    <Box>
+    <Flex sx={{ flexDirection: 'column' }}>
       <Textarea
-        rows={11}
-        onChange={(e) => {
-          setTweet(e.target.value);
-        }}
-        value={tweet}
-        sx={{ resize: 'none', borderColor: canSchedule ? 'auto' : 'error' }}
+        rows={7}
+        onChange={onChange}
+        value={value}
+        sx={{ borderColor: reachedMaxChars ? 'error' : 'auto' }}
+        aria-label="tweetEditor"
       />
-      <Text sx={{ textAlign: 'right', color: canSchedule ? 'text' : 'error' }}>
-        {charactersCount}/{MAX_TWEET_CHARS}
+      <Text
+        sx={{ textAlign: 'right', color: reachedMaxChars ? 'error' : 'text' }}
+      >
+        {charactersCount}/{maxChars}
       </Text>
-    </Box>
+    </Flex>
   );
 };
 
@@ -145,7 +105,7 @@ const ScheduleButton = ({
   children,
 }: {
   disabled?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
 }) => {
   return (
@@ -222,70 +182,209 @@ const useReadXlsx = ({
   return { inputXlsxRef };
 };
 
-export const TweetsScheduler = () => {
-  const [suffix, setSuffix] = React.useState('');
-
-  const [tweets, setTweets] = React.useState<string[]>([]);
-
-  const { inputXlsxRef } = useReadXlsx({ setTweets });
-
-  const addSuffix = () => {
-    const newTweets = tweets.map((tweet) => `${tweet}\n\n${suffix}`);
-    setTweets(newTweets);
-    setSuffix('');
-  };
-
-  const { scheduleTweets, error, isScheduling, canSchedule, responses } =
-    useTweetsScheduler({
-      tweets,
-    });
-
-  const disabled = !!error || isScheduling || !canSchedule;
-
-  if (responses) {
-    return (
-      <>
-        {responses.map((response, index) => {
-          const key = `${index}`;
-          return <PostTweetResponse key={key} response={response} />;
-        })}
-      </>
-    );
+const getFinalTweet = ({
+  tweet,
+  suffix,
+}: {
+  tweet: string;
+  suffix?: string;
+}) => {
+  if (!suffix) {
+    return tweet;
   }
 
+  return `${tweet}\n\n${suffix}`;
+};
+
+const getTweetMaxCharsLeft = ({ suffix }: { suffix?: string }) => {
+  return TWEET_MAX_CHARS - tweetCharCount(getFinalTweet({ tweet: '', suffix }));
+};
+
+const schema = yup
+  .object({
+    suffix: yup.string(),
+    tweets: yup
+      .array()
+      .of(
+        yup.object({
+          value: yup
+            .string()
+            .default('')
+            .min(1, 'Tweet must be at least 1 characters')
+            .test({
+              name: 'reachedMaxChars',
+              exclusive: false,
+              params: {},
+              message: 'Tweet reacher max characters, counting with suffix',
+              test(value, context) {
+                /**
+                 * https://github.com/jquense/yup/issues/398#issuecomment-916693907
+                 */
+                const [, parent2] = (context as any)?.from;
+                const { suffix } = parent2?.value;
+                return (
+                  tweetCharCount(getFinalTweet({ tweet: value, suffix })) <=
+                  TWEET_MAX_CHARS
+                );
+              },
+            })
+            .required(),
+        }),
+      )
+      .min(1, 'You must provide at least one tweet')
+      .required(),
+  })
+  .required();
+
+type TweetsSchedulerFormValues = yup.Asserts<typeof schema>;
+
+export const TweetsScheduler = () => {
+  const { postTweet } = usePostTweet();
+
+  const {
+    control,
+    formState: { errors, isSubmitting },
+    handleSubmit,
+    register,
+    setError,
+    setValue,
+    watch,
+  } = useForm<TweetsSchedulerFormValues>({
+    defaultValues: {
+      tweets: [],
+      suffix: '',
+    },
+    resolver: yupResolver(schema),
+  });
+
+  const { fields, prepend, remove, insert } = useFieldArray({
+    control,
+    name: 'tweets',
+  });
+
+  const { inputXlsxRef } = useReadXlsx({
+    setTweets: (tweets: string[]) => {
+      setValue(
+        'tweets',
+        tweets.map((tweet) => ({ value: tweet })),
+      );
+    },
+  });
+
+  const [responses, setResponses] = React.useState<PostTweetResponse[]>([]);
+
+  const tweetMaxChars = getTweetMaxCharsLeft({ suffix: watch('suffix') });
+
+  const onSubmit = async (values: TweetsSchedulerFormValues) => {
+    try {
+      await Promise.all(
+        values.tweets.map(async (tweet, index) => {
+          const finalTweet = getFinalTweet({
+            tweet: tweet.value,
+            suffix: values.suffix,
+          });
+
+          const response = await postTweet({ tweet: finalTweet });
+
+          if ('error' in response) {
+            setError(`tweets.${index}.value`, {
+              type: 'manual',
+              message: response.error,
+            });
+          } else {
+            setResponses((r) => [...r, response]);
+            remove(index);
+          }
+        }),
+      );
+    } catch (err) {
+      setError('tweets', { type: 'manual', message: err.message });
+    }
+  };
+
+  const disabled = isSubmitting;
+
   return (
-    <>
+    <Flex
+      as="form"
+      sx={{ flexDirection: 'column' }}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <Flex sx={{ flexDirection: 'column', marginY: 4 }}>
         <Label>Read from xlsx</Label>
         <Input type="file" ref={inputXlsxRef} />
-        <Label>Suffix</Label>
-        <Input value={suffix} onChange={(e) => setSuffix(e.target.value)} />
-        <Button disabled={!suffix} onClick={() => addSuffix()}>
-          Add Suffix
-        </Button>
+        <Label htmlFor="suffix">Suffix</Label>
+        <Input id="suffix" {...register('suffix')} />
       </Flex>
 
-      {tweets.map((tweet, index) => {
-        /**
-         * `key` cannot be `tweet` otherwise the component will re-render
-         * every time the `tweet` changes.
-         */
-        const key = index.toString();
+      <Button
+        type="button"
+        aria-label="prependTweetButton"
+        onClick={() => prepend({ value: '' })}
+      >
+        Add Tweet
+      </Button>
 
-        const setTweet = (newTweet: string) => {
-          setTweets((currentTweets) => {
-            const newTweets = [...currentTweets];
-            newTweets[index] = newTweet;
-            return newTweets;
-          });
-        };
+      {fields.map((field, index) => {
+        const name = `tweets.${index}.value` as const;
 
-        return <TweetEditor key={key} {...{ tweet, setTweet }} />;
+        return (
+          <Flex key={field.id} sx={{ flexDirection: 'column' }}>
+            <Text>Tweet #{index + 1}</Text>
+            <Controller
+              control={control}
+              name={name}
+              render={({ field: { onChange, value } }) => {
+                return (
+                  <TweetEditor
+                    value={value}
+                    onChange={onChange}
+                    maxChars={tweetMaxChars}
+                  />
+                );
+              }}
+            />
+            <ErrorMessage errors={errors} name={name} />
+            <Flex>
+              <Button
+                type="button"
+                onClick={() => insert(index + 1, { value: '' })}
+              >
+                Add
+              </Button>
+              <Button
+                type="button"
+                onDoubleClick={() => remove(index)}
+                sx={{ backgroundColor: 'accent' }}
+              >
+                Remove (double click)
+              </Button>
+            </Flex>
+          </Flex>
+        );
       })}
-      <ScheduleButton disabled={disabled} onClick={scheduleTweets}>
-        Schedule Tweets
-      </ScheduleButton>
-    </>
+      <ErrorMessage errors={errors} name="tweets" />
+
+      {responses.map((response) => {
+        /**
+         * Error is show on Tweet editor.
+         */
+        if ('error' in response) {
+          return null;
+        }
+
+        return <PostTweetResponse key={response.tweet} response={response} />;
+      })}
+
+      <Button
+        aria-label="submitButton"
+        type="submit"
+        sx={{ backgroundColor: 'twitter' }}
+        disabled={disabled}
+      >
+        Schedule
+      </Button>
+    </Flex>
   );
 };
 
@@ -327,7 +426,7 @@ export const TweetScheduler = () => {
     }
   };
 
-  const disableButton = !canScheduleTweets({ tweets: [tweet] }) || isScheduling;
+  const disableButton = isScheduling;
 
   return (
     <>
