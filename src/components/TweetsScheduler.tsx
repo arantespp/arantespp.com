@@ -1,5 +1,3 @@
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ErrorMessage } from '@hookform/error-message';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as dateFns from 'date-fns';
@@ -9,10 +7,7 @@ import { Button, Flex, Input, Label, Text, Textarea } from 'theme-ui';
 import * as xslx from 'xlsx';
 import * as yup from 'yup';
 
-import { openTwitterScheduler } from '../../shortcuts';
 import { useApiKey } from '../hooks/useApiKey';
-
-import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 
 export const TWEET_MAX_CHARS = 280;
 
@@ -95,28 +90,6 @@ const PostTweetResponse = ({ response }: { response: PostTweetResponse }) => {
       <Text sx={{ fontStyle: 'italic', whiteSpace: 'pre-line' }}>
         {response.tweet}
       </Text>
-    </Flex>
-  );
-};
-
-const ScheduleButton = ({
-  disabled,
-  onClick,
-  children,
-}: {
-  disabled?: boolean;
-  onClick?: () => void;
-  children: React.ReactNode;
-}) => {
-  return (
-    <Flex sx={{ width: '100%', justifyContent: 'center' }}>
-      <Button
-        sx={{ backgroundColor: 'twitter' }}
-        disabled={disabled}
-        onClick={onClick}
-      >
-        {children}
-      </Button>
     </Flex>
   );
 };
@@ -238,7 +211,7 @@ const schema = yup
 
 type TweetsSchedulerFormValues = yup.Asserts<typeof schema>;
 
-export const TweetsScheduler = () => {
+export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
   const { postTweet } = usePostTweet();
 
   const {
@@ -251,7 +224,7 @@ export const TweetsScheduler = () => {
     watch,
   } = useForm<TweetsSchedulerFormValues>({
     defaultValues: {
-      tweets: [],
+      tweets: singleTweet ? [{ value: '' }] : [],
       suffix: '',
     },
     resolver: yupResolver(schema),
@@ -310,20 +283,24 @@ export const TweetsScheduler = () => {
       sx={{ flexDirection: 'column' }}
       onSubmit={handleSubmit(onSubmit)}
     >
-      <Flex sx={{ flexDirection: 'column', marginY: 4 }}>
-        <Label>Read from xlsx</Label>
-        <Input type="file" ref={inputXlsxRef} />
-        <Label htmlFor="suffix">Suffix</Label>
-        <Input id="suffix" {...register('suffix')} />
-      </Flex>
+      {!singleTweet && (
+        <>
+          <Flex sx={{ flexDirection: 'column', marginY: 4 }}>
+            <Label>Read from xlsx</Label>
+            <Input type="file" ref={inputXlsxRef} />
+            <Label htmlFor="suffix">Suffix</Label>
+            <Input id="suffix" {...register('suffix')} />
+          </Flex>
 
-      <Button
-        type="button"
-        aria-label="prependTweetButton"
-        onClick={() => prepend({ value: '' })}
-      >
-        Add Tweet
-      </Button>
+          <Button
+            type="button"
+            aria-label="prependTweetButton"
+            onClick={() => prepend({ value: '' })}
+          >
+            Add Tweet
+          </Button>
+        </>
+      )}
 
       {fields.map((field, index) => {
         const name = `tweets.${index}.value` as const;
@@ -345,25 +322,27 @@ export const TweetsScheduler = () => {
               }}
             />
             <ErrorMessage errors={errors} name={name} />
-            <Flex>
-              <Button
-                type="button"
-                onClick={() => insert(index + 1, { value: '' })}
-              >
-                Add
-              </Button>
-              <Button
-                type="button"
-                onDoubleClick={() => remove(index)}
-                sx={{ backgroundColor: 'accent' }}
-              >
-                Remove (double click)
-              </Button>
-            </Flex>
+            {!singleTweet && (
+              <Flex>
+                <Button
+                  type="button"
+                  onClick={() => insert(index + 1, { value: '' })}
+                >
+                  Add
+                </Button>
+                <Button
+                  type="button"
+                  onDoubleClick={() => remove(index)}
+                  sx={{ backgroundColor: 'accent' }}
+                >
+                  Remove (double click)
+                </Button>
+              </Flex>
+            )}
           </Flex>
         );
       })}
-      <ErrorMessage errors={errors} name="tweets" />
+      {!singleTweet && <ErrorMessage errors={errors} name="tweets" />}
 
       {responses.map((response) => {
         /**
@@ -385,108 +364,5 @@ export const TweetsScheduler = () => {
         Schedule
       </Button>
     </Flex>
-  );
-};
-
-export const TweetScheduler = () => {
-  const { postTweet } = usePostTweet();
-
-  const [displaySchedule, setDisplaySchedule] = React.useState(false);
-
-  useKeypressSequenceListener(openTwitterScheduler, () =>
-    setDisplaySchedule((d) => !d),
-  );
-
-  const [tweet, setTweet] = React.useState('');
-
-  const [isScheduling, setIsScheduling] = React.useState(false);
-
-  const [response, setResponse] = React.useState<PostTweetResponse>();
-
-  /**
-   * Reset response when scheduler closes.
-   */
-  React.useEffect(() => {
-    if (!displaySchedule) {
-      setResponse(undefined);
-    }
-  }, [displaySchedule]);
-
-  const scheduleTweet = async () => {
-    try {
-      setIsScheduling(true);
-      setResponse(undefined);
-      const r = await postTweet({ tweet });
-      setTweet('');
-      setResponse(r);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsScheduling(false);
-    }
-  };
-
-  const disableButton = isScheduling;
-
-  return (
-    <>
-      {displaySchedule && (
-        <Flex
-          sx={{
-            top: [0, 'auto'],
-            bottom: ['auto', 60],
-            right: [0, 60],
-            height: ['100%', 'auto'],
-            position: 'fixed',
-            backgroundColor: 'white',
-            width: '100%',
-            maxWidth: 500,
-            flexDirection: 'column',
-            padding: 3,
-            borderWidth: 1,
-            borderColor: 'muted',
-            borderStyle: 'solid',
-            borderRadius: 1,
-          }}
-        >
-          <TweetEditor tweet={tweet} setTweet={setTweet} />
-          {response && <PostTweetResponse response={response} />}
-          <ScheduleButton
-            disabled={disableButton}
-            onClick={() => scheduleTweet()}
-          >
-            Schedule
-          </ScheduleButton>
-        </Flex>
-      )}
-      <Flex
-        sx={{
-          position: 'fixed',
-          bottom: 15,
-          right: 15,
-          borderRadius: '100%',
-          borderWidth: 1,
-          borderStyle: 'solid',
-          borderColor: 'twitter',
-          width: 50,
-          height: 50,
-          justifyContent: 'center',
-          alignItems: 'center',
-          cursor: 'pointer',
-          backgroundColor: 'twitter',
-        }}
-        onClick={() => setDisplaySchedule(!displaySchedule)}
-      >
-        <Text
-          sx={{
-            color: 'white',
-            fontSize: 5,
-            display: 'inline-flex',
-          }}
-        >
-          <FontAwesomeIcon icon={faTwitter} />
-        </Text>
-      </Flex>
-    </>
   );
 };
