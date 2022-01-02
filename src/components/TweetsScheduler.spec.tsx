@@ -87,6 +87,17 @@ test('should limit with suffix', async () => {
   const scheduleButton = screen.getByRole('button', { name: 'submitButton' });
 
   userEvent.clear(tweetInput);
+  userEvent.type(tweetInput, 'b'.repeat(273));
+
+  await act(async () => {
+    userEvent.click(scheduleButton);
+  });
+
+  expect(
+    screen.getByText('Tweet reacher max characters, counting with suffix'),
+  ).toBeInTheDocument();
+
+  userEvent.clear(tweetInput);
   userEvent.type(tweetInput, 'a'.repeat(272));
 
   await act(async () => {
@@ -96,15 +107,4 @@ test('should limit with suffix', async () => {
   expect(
     screen.queryByText('Tweet reacher max characters, counting with suffix'),
   ).toBeNull();
-
-  userEvent.clear(tweetInput);
-  userEvent.type(tweetInput, 'a'.repeat(273));
-
-  await act(async () => {
-    userEvent.click(scheduleButton);
-  });
-
-  expect(
-    screen.getByText('Tweet reacher max characters, counting with suffix'),
-  ).toBeInTheDocument();
 });
