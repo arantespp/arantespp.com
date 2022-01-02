@@ -53,6 +53,7 @@
     "typography-theme-fairy-gates": "^0.16.19",
     "use-debounce": "^7.0.0",
     "vis-network": "^9.1.0",
+    "waait": "^1.0.5",
     "xlsx": "^0.17.4",
     "yup": "^0.32.11"
   },

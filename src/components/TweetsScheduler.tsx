@@ -4,6 +4,7 @@ import * as dateFns from 'date-fns';
 import * as React from 'react';
 import { Controller, useForm, useFieldArray } from 'react-hook-form';
 import { Button, Flex, Input, Label, Text, Textarea } from 'theme-ui';
+import wait from 'waait';
 import * as xslx from 'xlsx';
 import * as yup from 'yup';
 
@@ -46,27 +47,51 @@ const usePostTweet = () => {
   return { postTweet };
 };
 
+const charReplacer = (tweet: string) =>
+  tweet.replaceAll('’', "'").replaceAll('“', '"').replaceAll('”', '"');
+
 export const TweetEditor = ({
   value,
   onChange,
   maxChars = TWEET_MAX_CHARS,
+  disabled,
 }: {
   value: string;
   onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
   maxChars?: number;
+  disabled?: boolean;
 }) => {
+  const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+
   const charactersCount = tweetCharCount(value);
 
   const reachedMaxChars = charactersCount > maxChars;
 
+  React.useEffect(() => {
+    if (textareaRef.current) {
+      /**
+       * https://stackoverflow.com/a/46012210/8786986
+       */
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLTextAreaElement.prototype,
+        'value',
+      )?.set;
+      nativeInputValueSetter?.call(textareaRef.current, charReplacer(value));
+      const event = new Event('input', { bubbles: true });
+      textareaRef.current.dispatchEvent(event);
+    }
+  }, [value]);
+
   return (
     <Flex sx={{ flexDirection: 'column' }}>
       <Textarea
+        ref={textareaRef}
         rows={7}
         onChange={onChange}
         value={value}
         sx={{ borderColor: reachedMaxChars ? 'error' : 'auto' }}
         aria-label="tweetEditor"
+        disabled={disabled}
       />
       <Text
         sx={{ textAlign: 'right', color: reachedMaxChars ? 'error' : 'text' }}
@@ -250,26 +275,45 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
 
   const onSubmit = async (values: TweetsSchedulerFormValues) => {
     try {
-      await Promise.all(
-        values.tweets.map(async (tweet, index) => {
-          const finalTweet = getFinalTweet({
-            tweet: tweet.value,
-            suffix: values.suffix,
-          });
-
-          const response = await postTweet({ tweet: finalTweet });
-
-          if ('error' in response) {
-            setError(`tweets.${index}.value`, {
-              type: 'manual',
-              message: response.error,
+      const toBeRemoved = (
+        await Promise.all(
+          values.tweets.map(async (tweet, index) => {
+            const finalTweet = getFinalTweet({
+              tweet: tweet.value,
+              suffix: values.suffix,
             });
-          } else {
-            setResponses((r) => [...r, response]);
-            remove(index);
-          }
-        }),
-      );
+
+            /**
+             * Avoid Twitter API rate limit.
+             * "Service unavailable due to request timeout; please try the request again later"
+             */
+            await wait(index * 500);
+
+            try {
+              const response = await postTweet({ tweet: finalTweet });
+
+              if ('error' in response) {
+                setError(`tweets.${index}.value`, {
+                  type: 'manual',
+                  message: response.error,
+                });
+              } else {
+                setResponses((r) => [...r, response]);
+                return index;
+              }
+            } catch (error) {
+              setError(`tweets.${index}.value`, {
+                type: 'manual',
+                message: error.message,
+              });
+            }
+
+            return undefined;
+          }),
+        )
+      ).filter((index): index is number => typeof index === 'number');
+
+      remove(toBeRemoved);
     } catch (err) {
       setError('tweets', { type: 'manual', message: err.message });
     }
@@ -317,6 +361,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
                     value={value}
                     onChange={onChange}
                     maxChars={tweetMaxChars}
+                    disabled={disabled}
                   />
                 );
               }}

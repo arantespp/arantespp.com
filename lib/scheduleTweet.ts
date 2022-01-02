@@ -94,6 +94,7 @@ export const scheduleTweet = async ({ tweet }: { tweet: string }) => {
     as_user_id: process.env.TWITTER_USER_ID,
     text: tweet,
     nullcast: false,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } as any);
 
   const { request, data } = await new Promise((resolve, reject) => {

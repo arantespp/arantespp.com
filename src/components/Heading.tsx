@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 import { Link, Themed } from 'theme-ui';
+import { titleCase } from 'title-case';
 import url from 'url';
 
 const componentsByLevel = [
@@ -49,7 +50,13 @@ const HeadingLink = ({
               },
             }}
           >
-            {children}
+            {React.Children.map(children, (child) => {
+              if (typeof child === 'string') {
+                return titleCase(child);
+              }
+
+              return child;
+            })}
           </Link>
         </NextLink>
       )}
