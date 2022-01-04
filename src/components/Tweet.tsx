@@ -20,7 +20,7 @@ const Tweet = ({ href }: { href: string }) => {
   const status = getTweetStatus(href);
 
   return (
-    <Box data-testid="embed-tweet">
+    <Box data-testid="embed-tweet" sx={{ marginY: 4 }}>
       <TweetWidget tweetId={status} options={{ align: 'center' }} />
     </Box>
   );

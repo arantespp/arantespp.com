@@ -9,7 +9,7 @@ excerpt: ''
 title: 'Great, Good, Okay, and Bad Product Managers'
 group: articles
 formattedDate: 'December 23, 2021'
-updatedAt: 'December 23, 2021'
+updatedAt: 'January 04, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/articles/great-good-okay-and-bad-product-managers.md
 href: /articles/great-good-okay-and-bad-product-managers
@@ -64,3 +64,14 @@ How much do PMs know the domain of their products?
 - **Okay**: Okay PMs do basic research about the domain in their product operates.
 - **Good**: _"Good PMs extensively research the domain in which their product operates."_
 - **Great**: _"Great PMs become the worldwide experts in that domain. When new to a domain, great PMs bootstrap this process by seeking the counsel of existing worldwide experts."_
+
+### 4/ User Research
+
+How do PMs use market research to develop their products?
+
+- **Bad**: Bad PMs don't do market research at all.
+- **Okay**: Okay PMs do acceptable user research and use it to focus more on shipping new features than fixing UI issues.
+- **Good**: _"Good PMs are proactive about doing user research to identify & fix UI issues in their product."_
+- **Great**: _"Great PMs have a broader view of the value of user research. Great PMs are diligent about using a variety of user research methods to inform what product to build in the first place."_
+
+### 5/

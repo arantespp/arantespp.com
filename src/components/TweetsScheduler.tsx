@@ -48,7 +48,11 @@ const usePostTweet = () => {
 };
 
 const charReplacer = (tweet = '') => {
-  return tweet.replace(/’/g, "'").replace(/“/g, '"').replace(/”/g, '"');
+  return tweet
+    .replace(/’/g, "'")
+    .replace(/“/g, '"')
+    .replace(/”/g, '"')
+    .replace(/—/g, ' - ');
 };
 
 export const TweetEditor = ({
