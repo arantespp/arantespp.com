@@ -16,7 +16,7 @@ excerpt: ''
 title: Five Habits for the Next Five Years - First Year
 group: articles
 formattedDate: 'January 01, 2022'
-updatedAt: 'January 01, 2022'
+updatedAt: 'January 02, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/articles/five-habits-for-the-next-five-years-first-year.md
 href: /articles/five-habits-for-the-next-five-years-first-year
@@ -34,7 +34,7 @@ One year ago, January 02, 2021, I started my most audacious project, which was c
 
 Now, I want to relate how the first year was, the achievements, and the difficulties. I must confess that it wasn't easy and that I still don't master the habits very well, but I'm proud of myself for the whole evolution and the new concepts and paradigms that I acquired during this year.
 
-It's important to remember that we were living in the Covid-19 pandemic crisis and, in which we couldn't see relatives or hang out with friends. So our most unselfish decision at that moment was staying at home to prevent the spread of the virus. So that's what I did. This context made the project more challenging, but it also strengthened the consistency skills.
+It's important to remember that we were living in the Covid-19 pandemic crisis and, in which we couldn't see relatives or hang out with friends. So our most unselfish decision at that moment was staying at home to prevent the spread of the virus. So that's what I did. This context made the project more challenging, but it also strengthened my consistency skills.
 
 ## The Habits
 
@@ -82,4 +82,4 @@ Very important, but it was also a habit I couldn't do every day.
 
 ## What Do I expect from the second year?
 
-Whilst the first year was to create consistency, the second year will be to align these habits to long-term values and goals.
+Whilst the first year was to create consistency, the second year will be to align these habits to long-term values and goals. After reading [The 7 Habits of Highly Effective People]().

@@ -1,12 +1,34 @@
 ---
-title: Ownership May Prevent Parkinson's Law
-excerpt: If you have X time to complete some tasks and don't have enough motivation, why should you finish them in less time?
-date: 2021-05-26
-rating: 3
+image: null
+book: null
+draft: false
 tags:
-  - ownership
   - efficiency
-  - parkinson's law
+  - ownership
+  - parkinson-s-law
+rating: 3
+date: '2021-05-26'
+excerpt: >-
+  If you have X time to complete some tasks and don't have enough motivation,
+  why should you finish them in less time?
+title: Ownership May Prevent Parkinson's Law
+group: zettelkasten
+formattedDate: 'May 26, 2021'
+updatedAt: 'January 04, 2022'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/ownership-may-prevent-parkinson-s-law.md
+href: /zettelkasten/ownership-may-prevent-parkinson-s-law
+as: /z/ownership-may-prevent-parkinson-s-law
+slug: ownership-may-prevent-parkinson-s-law
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/ownership-may-prevent-parkinson-s-law.md
+url: 'https://arantespp.com/zettelkasten/ownership-may-prevent-parkinson-s-law'
+keywords:
+  - zettelkasten
+  - efficiency
+  - ownership
+  - parkinson-s-law
+readingTime: 1
 ---
 
 ## Notes
@@ -27,10 +49,12 @@ tags:
   - Share information openly.
   - Invest in customer empathy.
 
+## Twitter
+
+https://twitter.com/arantespp/status/1397518419319197698
+
 ## References
 
-Tweet: <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ownership may prevent Parkinson’s Law.<br><br>What is Parkinson’s Law? It stands that &quot;work expands to fill the time available for its completion.&quot;<br><br>If you have 2 days to do task A, you&#39;ll take 2 days to finish it. If you have 5 days, you&#39;ll take 5 days.<br><br>🧵<a href="https://t.co/4R3dkpxCT7">https://t.co/4R3dkpxCT7</a></p>&mdash; Pedro Arantes 🌹 (@arantespp) <a href="https://twitter.com/arantespp/status/1397518419319197698?ref_src=twsrc%5Etfw">May 26, 2021</a></blockquote>
+- [Atlassian. 3 signs your team doesn't have an ownership mindset and what to do about it](https://www.atlassian.com/blog/leadership/how-leaders-build-ownership-mindset)
 
-- [Atlassian. 3 signs your team doesn’t have an ownership mindset and what to do about it](https://www.atlassian.com/blog/leadership/how-leaders-build-ownership-mindset)
-
-- [Atlassian. Is Parkinson’s Law sabotaging your productivity?](https://www.atlassian.com/blog/productivity/what-is-parkinson-s-law)
+- [Atlassian. Is Parkinson's Law sabotaging your productivity?](https://www.atlassian.com/blog/productivity/what-is-parkinson-s-law)

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Flex } from 'theme-ui';
+import { Tweet as TweetWidget } from 'react-twitter-widgets';
+import { Box } from 'theme-ui';
 
 const getTweetStatus = (href: string) => {
   const { pathname } = new URL(href);
@@ -12,33 +13,16 @@ const isTweet = (href: string) => {
 };
 
 const Tweet = ({ href }: { href: string }) => {
-  const ref = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    const status = getTweetStatus(href);
-
-    const createTweet = (window as any)?.twttr?.widgets?.createTweet;
-
-    if (status && ref.current && createTweet) {
-      /**
-       * Tweet already loaded.
-       */
-      if (!ref.current.innerHTML) {
-        createTweet(status, ref.current);
-      }
-    }
-  }, [href]);
-
   if (!isTweet(href)) {
     return null;
   }
 
+  const status = getTweetStatus(href);
+
   return (
-    <Flex
-      data-testid="embed-tweet"
-      ref={ref}
-      sx={{ justifyContent: 'center', marginBottom: 3 }}
-    />
+    <Box data-testid="embed-tweet">
+      <TweetWidget tweetId={status} options={{ align: 'center' }} />
+    </Box>
   );
 };
 

@@ -3,9 +3,6 @@ import { render, screen } from '../testUtils';
 import Tweet from './Tweet';
 
 test('should render tweet', () => {
-  const createTweet = jest.fn();
-  (window as any).twttr = { widgets: { createTweet } };
-
   const status = '1435945345175932931';
 
   const { rerender } = render(
@@ -13,14 +10,10 @@ test('should render tweet', () => {
   );
 
   expect(screen.getByTestId('embed-tweet')).toBeInTheDocument();
-  expect(createTweet).toHaveBeenCalledWith(status, expect.anything());
 
   rerender(<Tweet href={`https://twitter.com/arantespp/status/${status}`} />);
 
-  /**
-   * Do not call createTweet again on re-render.
-   */
-  expect(createTweet).toHaveBeenCalledTimes(1);
+  expect(screen.getByTestId('embed-tweet')).toBeInTheDocument();
 });
 
 test.each([

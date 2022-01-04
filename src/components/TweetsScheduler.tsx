@@ -68,27 +68,15 @@ export const TweetEditor = ({
 
   const reachedMaxChars = charactersCount > maxChars;
 
-  React.useEffect(() => {
-    if (textareaRef.current) {
-      /**
-       * https://stackoverflow.com/a/46012210/8786986
-       */
-      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-        window.HTMLTextAreaElement.prototype,
-        'value',
-      )?.set;
-      nativeInputValueSetter?.call(textareaRef.current, charReplacer(value));
-      const event = new Event('input', { bubbles: true });
-      textareaRef.current.dispatchEvent(event);
-    }
-  }, [value]);
-
   return (
     <Flex sx={{ flexDirection: 'column' }}>
       <Textarea
         ref={textareaRef}
         rows={7}
-        onChange={onChange}
+        onChange={(e) => {
+          e.target.value = charReplacer(e.target.value);
+          onChange(e);
+        }}
         value={value}
         sx={{ borderColor: reachedMaxChars ? 'error' : 'auto' }}
         aria-label="tweetEditor"
