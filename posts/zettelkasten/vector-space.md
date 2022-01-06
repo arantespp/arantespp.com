@@ -1,16 +1,37 @@
 ---
-title: Vector Space
-excerpt: A vector space, or linear space, is a set of objects called vectors. It's possible scale by numbers, called scalars, and add these vectors together.
-date: 2021-06-27
+image: null
+book: null
+draft: false
 tags:
+  - linear-algebra
+  - math
+rating: 3
+date: '2021-06-27'
+excerpt: >-
+  A vector space, or linear space, is a set of vectors. It's possible to scale
+  by numbers, called scalars, and add these vectors together.
+title: Vector Space
+group: zettelkasten
+formattedDate: 'June 27, 2021'
+updatedAt: 'June 27, 2021'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/vector-space.md
+href: /zettelkasten/vector-space
+as: /z/vector-space
+slug: vector-space
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/vector-space.md
+url: 'https://arantespp.com/zettelkasten/vector-space'
+keywords:
+  - zettelkasten
   - linear algebra
   - mathematics
-rating: 3
+readingTime: 1
 ---
 
 ## Notes
 
-- A vector space, or linear space, is a set of objects called vectors. It's possible scale by numbers, called scalars, and add these vectors together.
+- A vector space, or linear space, is a set of vectors. It's possible to scale by numbers, called scalars, and add these vectors together.
 
 - The operations of vector addition or scalar multiplication in a vector space $X$ must safisty the following axions:
   - Additive axions. For every $\vec{x}$, $\vec{y}$, and $\vec{z}$ in $X$, we have:

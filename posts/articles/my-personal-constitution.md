@@ -7,11 +7,16 @@ image:
     Pellegrini</a> on <a
     href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 book: null
+bitLink: mpc
 draft: true
-tags: []
+tags:
+  - principles
 rating: 7
 date: '2021-12-27'
-excerpt: ''
+excerpt: >-
+  This document is my constitution in which I define my principles, values,
+  long-term goals, and roles to guide my life. It's also an endless composition
+  that I'll maintain in constant improvements.
 title: My Personal Constitution
 group: articles
 formattedDate: 'December 27, 2021'
@@ -19,7 +24,7 @@ updatedAt: 'December 28, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/articles/my-personal-constitution.md
 href: /articles/my-personal-constitution
-as: /a/my-personal-constitution
+as: /mpc
 slug: my-personal-constitution
 editLink: >-
   https://github.com/arantespp/arantespp.com/edit/main/posts/articles/my-personal-constitution.md
@@ -27,7 +32,6 @@ url: 'https://arantespp.com/articles/my-personal-constitution'
 keywords:
   - articles
 readingTime: 2
-bitLink: mpc
 ---
 
 Ok, this is my most challenging text. I've been delayed in starting to write it because I'll need to have a lot of self-awareness.
@@ -41,6 +45,14 @@ What is the difference between principles and values?
 ### Integrity
 
 I "walk my talk." Every word I say I do, I'm honest to them and apply to every aspect of my life.
+
+### Win-Win Mentality
+
+I always go to win-win decisions.
+
+### Abundance Mentality
+
+There is wealth for everyone in this world.
 
 ## Values
 
@@ -74,6 +86,16 @@ Low positive has an essential role in this goal. If I can master it, I can use i
 
 ### Create a Strong Network
 
+I want to help as many people as possible with the win-win mentality and light value.
+
 ### Master in a Field
 
 I chose entrepreneurship as my profession because it is about building something from scratch and impacting the world.
+
+## Roles
+
+My most important roles.
+
+### Family Member
+
+I want to listen and support my relatives whenever they need me.

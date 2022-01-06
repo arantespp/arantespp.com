@@ -1,8 +1,35 @@
 ---
-title: Queueing Theory
-excerpt: It can provide essential insights to product developers because there're similar problems of unpredictable work arrival time and unpredictable task durations.
-date: 2021-07-24
+image: null
+book: null
+draft: false
 tags:
+  - agner-krarup-erlang
+  - david-kendall
+  - kendal-notation
+  - math
+  - product-development
+  - queues
+  - statistics
+rating: 3
+date: '2021-07-24'
+excerpt: >-
+  It can provide essential insights to product developers because there're
+  similar problems of unpredictable work arrival time and unpredictable task
+  durations.
+title: Queueing Theory
+group: zettelkasten
+formattedDate: 'July 24, 2021'
+updatedAt: 'August 04, 2021'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/queueing-theory.md
+href: /zettelkasten/queueing-theory
+as: /z/queueing-theory
+slug: queueing-theory
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/queueing-theory.md
+url: 'https://arantespp.com/zettelkasten/queueing-theory'
+keywords:
+  - zettelkasten
   - mathematics
   - Statistics
   - Agner Krarup Erlang
@@ -10,7 +37,7 @@ tags:
   - kendal notation
   - David Kendall
   - queues
-rating: 3
+readingTime: 1
 ---
 
 ## Notes
