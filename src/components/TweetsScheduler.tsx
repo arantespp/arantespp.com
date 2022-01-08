@@ -138,11 +138,13 @@ const useReadXlsx = ({
         });
 
         const tweets = highlights.map((highlight) => {
-          return highlight[0]
-            .replaceAll('â\x80\x99', "'")
-            .replaceAll('â\x80\x94', ' - ')
-            .replaceAll('â\x80\x9C', '"')
-            .replaceAll('â\x80\x9D', '"');
+          return charReplacer(
+            highlight[0]
+              .replaceAll('â\x80\x99', "'")
+              .replaceAll('â\x80\x94', ' - ')
+              .replaceAll('â\x80\x9C', '"')
+              .replaceAll('â\x80\x9D', '"'),
+          );
         });
 
         setTweets(tweets);
@@ -280,7 +282,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
              * Avoid Twitter API rate limit.
              * "Service unavailable due to request timeout; please try the request again later"
              */
-            await wait(index * 500);
+            await wait(index * 2500);
 
             try {
               const response = await postTweet({ tweet: finalTweet });
