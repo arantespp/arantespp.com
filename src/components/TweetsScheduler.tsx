@@ -101,7 +101,7 @@ const PostTweetResponse = ({ response }: { response: PostTweetResponse }) => {
   }
 
   return (
-    <Flex sx={{ marginY: 4, flexDirection: 'column' }}>
+    <Flex sx={{ marginBottom: 4, flexDirection: 'column' }}>
       <Text sx={{ fontWeight: 'bold' }}>
         {dateFns.format(new Date(response.scheduledAt), 'PP (EEEE) pp')}
       </Text>
@@ -236,7 +236,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
 
   const {
     control,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitted },
     handleSubmit,
     register,
     setError,
@@ -282,7 +282,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
              * Avoid Twitter API rate limit.
              * "Service unavailable due to request timeout; please try the request again later"
              */
-            await wait(index * 2500);
+            await wait(index * 2000);
 
             try {
               const response = await postTweet({ tweet: finalTweet });
@@ -314,7 +314,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
     }
   };
 
-  const disabled = isSubmitting;
+  const disabled = isSubmitting || isSubmitted;
 
   return (
     <Flex
@@ -398,7 +398,10 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
       <Button
         aria-label="submitButton"
         type="submit"
-        sx={{ backgroundColor: 'twitter' }}
+        sx={{
+          backgroundColor: disabled ? 'muted' : 'twitter',
+          cursor: 'pointer',
+        }}
         disabled={disabled}
       >
         Schedule

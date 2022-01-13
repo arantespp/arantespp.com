@@ -26,7 +26,7 @@ export const TweetScheduler = () => {
             right: [0, 60],
             height: ['100%', 'auto'],
             position: 'fixed',
-            backgroundColor: 'white',
+            backgroundColor: 'background',
             width: '100%',
             maxWidth: 500,
             flexDirection: 'column',
@@ -34,7 +34,7 @@ export const TweetScheduler = () => {
             borderWidth: 1,
             borderColor: 'muted',
             borderStyle: 'solid',
-            borderRadius: 1,
+            borderRadius: 4,
           }}
         >
           <TweetsScheduler singleTweet />

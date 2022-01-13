@@ -95,6 +95,7 @@ const katex = {
 const config = {
   initialColorModeName: 'light',
   useColorSchemeMediaQuery: true,
+  useLocalStorage: false,
 };
 
 const partialTheme = {
@@ -133,11 +134,6 @@ const partialTheme = {
   },
   styles: {
     root: {
-      '*': {
-        '&::selection': {
-          background: '#ddd',
-        },
-      },
       button: {
         '&:disabled': {
           backgroundColor: 'muted',
