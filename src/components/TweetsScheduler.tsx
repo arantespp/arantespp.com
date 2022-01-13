@@ -236,7 +236,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
 
   const {
     control,
-    formState: { errors, isSubmitting, isSubmitted },
+    formState: { errors, isSubmitting },
     handleSubmit,
     register,
     setError,
@@ -314,7 +314,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
     }
   };
 
-  const disabled = isSubmitting || isSubmitted;
+  const disabled = isSubmitting;
 
   return (
     <Flex
