@@ -2,6 +2,10 @@ import { act, render, screen, userEvent } from '../testUtils';
 
 import { TWEET_MAX_CHARS, TweetsScheduler } from './TweetsScheduler';
 
+beforeEach(() => {
+  global.localStorage.clear();
+});
+
 test('should prepend tweets editors', () => {
   render(<TweetsScheduler />);
 
