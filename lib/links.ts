@@ -62,6 +62,11 @@ const pageLinks = [
     destination: 'https://miro.com/app/board/o9J_l4_vcY8=/',
     permanent: true,
   },
+  {
+    source: '/ts',
+    destination: '/tweets-scheduler',
+    permanent: true,
+  },
 ];
 
 export const getRedirects = async () => {

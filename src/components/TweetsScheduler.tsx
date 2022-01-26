@@ -231,14 +231,43 @@ const schema = yup
 
 type TweetsSchedulerFormValues = yup.Asserts<typeof schema>;
 
+/**
+ * Save form to load tweets to finish the work later.
+ */
+const useSaveForm = ({
+  formValues,
+  reset,
+  isDirty,
+}: {
+  formValues: TweetsSchedulerFormValues;
+  reset: any;
+  isDirty: boolean;
+}) => {
+  const key = 'arantespp.com/tweets-scheduler';
+
+  React.useEffect(() => {
+    const data = localStorage.getItem(key);
+    if (data) {
+      reset(JSON.parse(data));
+    }
+  }, [reset]);
+
+  React.useEffect(() => {
+    if (isDirty) {
+      localStorage.setItem(key, JSON.stringify(formValues));
+    }
+  }, [formValues, isDirty]);
+};
+
 export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
   const { postTweet } = usePostTweet();
 
   const {
     control,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isDirty },
     handleSubmit,
     register,
+    reset,
     setError,
     setValue,
     watch,
@@ -254,6 +283,8 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
     control,
     name: 'tweets',
   });
+
+  useSaveForm({ formValues: watch(), reset, isDirty });
 
   const { inputXlsxRef } = useReadXlsx({
     setTweets: (tweets: string[]) => {
