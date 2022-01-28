@@ -68,6 +68,13 @@ export const TweetEditor = ({
 
   const reachedMaxChars = charactersCount > maxChars;
 
+  const copyClipboard = async () => {
+    const text = await navigator.clipboard.readText();
+    if (text && textareaRef.current) {
+      textareaRef.current.value = text;
+    }
+  };
+
   return (
     <Flex sx={{ flexDirection: 'column' }}>
       <Textarea
@@ -81,6 +88,7 @@ export const TweetEditor = ({
         sx={{ borderColor: reachedMaxChars ? 'error' : 'auto' }}
         aria-label="tweetEditor"
         disabled={disabled}
+        onDoubleClick={copyClipboard}
       />
       <Text
         sx={{ textAlign: 'right', color: reachedMaxChars ? 'error' : 'text' }}
