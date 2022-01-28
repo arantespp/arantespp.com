@@ -1,13 +1,8 @@
 ---
 title: No B.S. Time Management for Entrepreneurs
+image: https://arantespp.com/images/books/no-b-s-time-management-for-entrepreneurs.jpg
 url: arantespp.com/no-bs-time
 instagramUrl: https://www.instagram.com/p/CQhae8dF7V4/
----
-
-# No B.S. Time Management for Entrepreneurs
-
-![image](https://arantespp.com/images/books/no-b-s-time-management-for-entrepreneurs.jpg)
-
 ---
 
 ## Tempo é o seu ativo mais precioso
@@ -56,7 +51,3 @@ Quando você aprende a **valorizar** o seu tempo e o tempo dos outros, automatic
 ## Tome cuidado com as redes sociais
 
 Cientistas, psicólogos, neurologistas, cientistas da computação, entre outros, projetaram as redes sociais para serem **viciantes**. Eles criaram elementos e tecnologias para capturar a nossa atenção e o nosso tempo.
-
----
-
-Acesse [arantespp.com/no-bs-time](https://arantespp.com/no-bs-time) para ver o resumo completo (em Inglês) do livro **No B.S. Time Management for Entrepreneurs**.

@@ -48,11 +48,7 @@ const usePostTweet = () => {
 };
 
 const charReplacer = (tweet = '') => {
-  return tweet
-    .replace(/’/g, "'")
-    .replace(/“/g, '"')
-    .replace(/”/g, '"')
-    .replace(/—/g, ' - ');
+  return tweet.replace(/’/g, "'").replace(/“/g, '"').replace(/”/g, '"');
 };
 
 export const TweetEditor = ({
@@ -137,15 +133,31 @@ const useReadXlsx = ({
           header: 1,
         });
 
-        const tweets = highlights.map((highlight) => {
-          return charReplacer(
-            highlight[0]
-              .replaceAll('â\x80\x99', "'")
-              .replaceAll('â\x80\x94', ' - ')
-              .replaceAll('â\x80\x9C', '"')
-              .replaceAll('â\x80\x9D', '"'),
-          );
-        });
+        const tweets = highlights
+          .filter((highlight) => {
+            if (!Array.isArray(highlight)) {
+              return false;
+            }
+
+            if (!highlight[0]) {
+              return false;
+            }
+
+            if (typeof highlight[0] !== 'string') {
+              return false;
+            }
+
+            return true;
+          })
+          .map((highlight) => {
+            return charReplacer(
+              highlight[0]
+                .replaceAll('â\x80\x94', '—')
+                .replaceAll('â\x80\x99', "'")
+                .replaceAll('â\x80\x9C', '"')
+                .replaceAll('â\x80\x9D', '"'),
+            );
+          });
 
         setTweets(tweets);
 
@@ -238,25 +250,47 @@ const useSaveForm = ({
   formValues,
   reset,
   isDirty,
+  singleTweet,
 }: {
   formValues: TweetsSchedulerFormValues;
   reset: any;
   isDirty: boolean;
+  singleTweet?: boolean;
 }) => {
   const key = 'arantespp.com/tweets-scheduler';
 
   React.useEffect(() => {
-    const data = localStorage.getItem(key);
-    if (data) {
-      reset(JSON.parse(data));
+    if (singleTweet) {
+      return;
     }
-  }, [reset]);
+
+    const data = localStorage.getItem(key);
+
+    if (data) {
+      const parsedData = JSON.parse(data);
+
+      if (parsedData.tweets.length > 0) {
+        reset(parsedData);
+      }
+    }
+  }, [reset, singleTweet]);
 
   React.useEffect(() => {
+    if (singleTweet) {
+      return;
+    }
+
     if (isDirty) {
       localStorage.setItem(key, JSON.stringify(formValues));
     }
-  }, [formValues, isDirty]);
+  }, [formValues, isDirty, singleTweet]);
+
+  const clear = React.useCallback(() => {
+    localStorage.removeItem(key);
+    reset();
+  }, [reset]);
+
+  return { clear };
 };
 
 export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
@@ -269,7 +303,6 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
     register,
     reset,
     setError,
-    setValue,
     watch,
   } = useForm<TweetsSchedulerFormValues>({
     defaultValues: {
@@ -279,19 +312,21 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
     resolver: yupResolver(schema),
   });
 
-  const { fields, prepend, remove, insert } = useFieldArray({
+  const { fields, append, prepend, remove, insert } = useFieldArray({
     control,
     name: 'tweets',
   });
 
-  useSaveForm({ formValues: watch(), reset, isDirty });
+  const { clear } = useSaveForm({
+    formValues: watch(),
+    reset,
+    isDirty,
+    singleTweet,
+  });
 
   const { inputXlsxRef } = useReadXlsx({
     setTweets: (tweets: string[]) => {
-      setValue(
-        'tweets',
-        tweets.map((tweet) => ({ value: tweet })),
-      );
+      append(tweets.map((tweet) => ({ value: tweet })));
     },
   });
 
@@ -355,6 +390,9 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
     >
       {!singleTweet && (
         <>
+          <Button onDoubleClick={() => clear()} type="button">
+            Clear Storage
+          </Button>
           <Flex sx={{ flexDirection: 'column', marginY: 4 }}>
             <Label>Read from xlsx</Label>
             <Input type="file" ref={inputXlsxRef} />

@@ -258,6 +258,7 @@ const InstagramPost = ({
   title,
   url,
   instagramUrl,
+  image,
 }: InstagramPostProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [contentInput, setContentInput] = React.useState(content);
@@ -266,7 +267,18 @@ const InstagramPost = ({
     { slug },
   );
 
-  const pages = contentInput.split('\n---\n').map((page) => page.trim());
+  const firstPost = `# ${title}\n\n![image](${image})`;
+
+  const lastPost = `Acesse [${url}](https://${url}) para ver o resumo completo (em Inglês) do livro **${title}**.`;
+
+  const pages = [
+    firstPost,
+    ...contentInput
+      .split('\n---\n')
+      .map((page) => page.trim())
+      .slice(0, 8),
+    lastPost,
+  ];
 
   return (
     <>
@@ -290,11 +302,11 @@ const InstagramPost = ({
         <Loading />
       ) : (
         <Grid columns={[1, null, 1]} gap={4} sx={{ marginTop: 4 }}>
-          {images.map((image, index) => {
+          {images.map((post, index) => {
             const key = index;
             return (
               <Box key={key} sx={{ border: '1px solid', borderColor: 'muted' }}>
-                <Image src={image} sx={{ width: '100%', height: '100%' }} />
+                <Image src={post} sx={{ width: '100%', height: '100%' }} />
               </Box>
             );
           })}

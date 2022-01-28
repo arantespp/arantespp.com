@@ -595,12 +595,13 @@ export const getInstagramPost = async ({ slug }: { slug: string }) => {
   }
 
   const { data, ...rest } = markdown;
-  const { title, url, instagramUrl } = data as {
+  const { title, url, instagramUrl, image } = data as {
     title: string;
+    image: string;
     url?: string;
     instagramUrl?: string;
   };
-  return { title, url, instagramUrl, ...rest };
+  return { title, url, instagramUrl, image, ...rest };
 };
 
 export type InstagramPost = NonNullable<
