@@ -1,13 +1,8 @@
 ---
 title: Zero to One
+image: /images/books/zero-to-one.jpg
 url: arantespp.com/zero-to-one
 instagramUrl: https://www.instagram.com/p/CU8u3Nyj1L0/
----
-
-# Zero to One
-
-![image](https://arantespp.com/images/books/zero-to-one.jpg)
-
 ---
 
 ## A diferença entre o presente o futuro é o progresso criado
@@ -76,8 +71,3 @@ Para vender de maneira **efetiva**, você precisa de uma boa distribuição de v
 ## Visão
 
 Por mais sofisticadas que sejam as estratégias de gestão de uma empresa, ela deve ter uma **visão** para seguir. É o papel dos fundadores dar visão e originalidade à empresa.
-
----
-
-Acesse [arantespp.com/zero-to-one](https://arantespp.com/no-bs-time) para ver o resumo (em Inglês) do livro  
-**Zero to One**.
