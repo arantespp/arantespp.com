@@ -20,7 +20,7 @@ excerpt: >-
 title: My Personal Constitution
 group: articles
 formattedDate: 'December 27, 2021'
-updatedAt: 'December 28, 2021'
+updatedAt: 'February 02, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/articles/my-personal-constitution.md
 href: /articles/my-personal-constitution
@@ -31,7 +31,8 @@ editLink: >-
 url: 'https://arantespp.com/articles/my-personal-constitution'
 keywords:
   - articles
-readingTime: 2
+  - principles
+readingTime: 4
 ---
 
 Ok, this is my most challenging text. I've been delayed in starting to write it because I'll need to have a lot of self-awareness.
@@ -42,17 +43,35 @@ What is the difference between principles and values?
 
 ## Principles
 
+Principles are like physics law or rules that govern our lives. Wherever actions we choose to do, consequences will happen accordingly with some principles. For example, the consequences of being upright or not with our words will take place accordingly with the [integrity](###integrity) principle, whether we like it or not.
+
+Unlike [values](##values), we can't choose which principles will work for us. We can choose the ones that we identify most, that is the list of principles below. They're the ones I identify most with and are a guideline to my conduct on daily basis. They're also the core of my principle-centered paradigm, whose idea I took from the book [The 7 Habits of Highly Effective People](/t7hhep).
+
 ### Integrity
 
 I "walk my talk." Every word I say I do, I'm honest to them and apply to every aspect of my life.
 
-### Win-Win Mentality
+### Authenticity
+
+Basically, it means that I'll be the true version of myself in every circumstance. The opposite happens when we don't have strong self-esteem and security and the people around us influence our behaviors, whether we want it or not. For example, [vulnerability](###vulnerability) is a principle that makes me express my emotions openly. Suppose I'm not secure with myself and I'm with a group that mocks people who express their emotions. If the group influences me, I won't be vulnerable, then I won't be authentic.
+
+### Win-Win Relationships
 
 I always go to win-win decisions.
 
-### Abundance Mentality
+### Abundance
 
 There is wealth for everyone in this world.
+
+### Serendipity
+
+### Vulnerability
+
+### Compounding
+
+I believe that small frequent actions are more effective than big infrequent actions. Also, small actions in the long-run compounds. I first saw this principle in the book [The Psychology of Money](/tpom), which argues that the best strategy for investing is using the time in your favor and letting the small investments compound. Humans don't have the perception of compounding because exponential thinking isn't so intuitive as linear thinking.
+
+I use this principle in all parts of my life, not just for money. I use it for working out, in which a few exercises every day will bring more results than an intense and irregular workout.
 
 ## Values
 
@@ -60,7 +79,7 @@ My three greatest values are power, light, and humor.
 
 ### Power
 
-Power is the most important value for me. I mean by power as the person of total and contagious energy. [Sam Altman defined](https://blog.samaltman.com/how-to-be-successful) this kind of power as a "force of nature" person. It means that the person has a powerful character, high energy, unstoppable, and is unforgettable.
+Power is the most important value for me. I mean by power as the person of total and contagious energy. [Sam Altman defined](https://blog.samaltman.com/how-to-be-successful) this kind of power as a "force of nature" person. It means that the person has a powerful character, high energy, is unstoppable, and is unforgettable.
 
 ### Light
 
