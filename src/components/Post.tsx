@@ -70,7 +70,7 @@ const PostComponent = ({ post }: { post: Post }) => {
       </Box>
       <Box sx={{ marginBottom: [5] }}>
         {!!image && (
-          <CustomImage alt={image.alt} src={`${image.url}/1024×576`} />
+          <CustomImage alt={image.alt} src={`${image.url}/1024x576`} />
         )}
         {!!book && <BookHeader book={book} />}
       </Box>

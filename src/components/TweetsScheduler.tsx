@@ -53,12 +53,12 @@ const charReplacer = (tweet = '') => {
 
 export const TweetEditor = ({
   value,
-  onChange,
   maxChars = TWEET_MAX_CHARS,
   disabled,
+  setValue,
 }: {
   value: string;
-  onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
+  setValue: (v: string) => void;
   maxChars?: number;
   disabled?: boolean;
 }) => {
@@ -71,9 +71,21 @@ export const TweetEditor = ({
   const copyClipboard = async () => {
     const text = await navigator.clipboard.readText();
     if (text && textareaRef.current) {
-      textareaRef.current.value = text;
+      /**
+       * Don't update text if text already exists.
+       */
+      if (!textareaRef.current.value) {
+        setValue(text);
+      }
     }
   };
+
+  React.useEffect(() => {
+    if (value) {
+      setValue(charReplacer(value));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
 
   return (
     <Flex sx={{ flexDirection: 'column' }}>
@@ -81,8 +93,7 @@ export const TweetEditor = ({
         ref={textareaRef}
         rows={7}
         onChange={(e) => {
-          e.target.value = charReplacer(e.target.value);
-          onChange(e);
+          setValue(e.target.value);
         }}
         value={value}
         sx={{ borderColor: reachedMaxChars ? 'error' : 'auto' }}
@@ -311,6 +322,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
     register,
     reset,
     setError,
+    setValue,
     watch,
   } = useForm<TweetsSchedulerFormValues>({
     defaultValues: {
@@ -427,11 +439,11 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
             <Controller
               control={control}
               name={name}
-              render={({ field: { onChange, value } }) => {
+              render={({ field: { value } }) => {
                 return (
                   <TweetEditor
                     value={value}
-                    onChange={onChange}
+                    setValue={(v) => setValue(name, v)}
                     maxChars={tweetMaxChars}
                     disabled={disabled}
                   />
