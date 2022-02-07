@@ -49,7 +49,7 @@ test('getScheduledDate', () => {
 
   jest.spyOn(getRandomIntModule, 'getWeightedRandomInt').mockReturnValue(7);
 
-  const scheduledDate = getScheduledDate();
+  const scheduledDate = getScheduledDate({ numberOfTweets: 0 });
 
   const isSameDay = dateFns.isSameDay(
     new Date(scheduledDate),
