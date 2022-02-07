@@ -80,7 +80,7 @@ test('should limit with suffix', async () => {
   const tweetInput = screen.getByRole('textbox', { name: 'tweetEditor' });
 
   userEvent.type(screen.getByLabelText('Suffix'), 'suffix');
-  userEvent.type(tweetInput, 'tweet');
+  userEvent.type(tweetInput, 'tweet', { delay: 10 });
 
   /**
    * "5" because "tweet" has 5 characters.
