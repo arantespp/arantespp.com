@@ -88,7 +88,7 @@ export const TweetEditor = ({
 
   React.useEffect(() => {
     if (value) {
-      setValue(charReplacer(value).trim());
+      setValue(charReplacer(value));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
