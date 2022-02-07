@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import * as dateFns from 'date-fns';
 import TwitterAdsAPI from 'twitter-ads';
 
@@ -17,13 +18,13 @@ const ONE_WEEK = 7;
 /**
  * It'll schedule tweets for the next `SCHEDULE_RANGE` days.
  */
-export const SCHEDULE_RANGE = 12 * ONE_WEEK;
+export const SCHEDULE_RANGE = 12 * ONE_WEEK; // Three months.
 
 /**
  * Schedule a tweet from `SCHEDULE_FROM` days from now. The goal is to give
  * a space to forget about the content of the tweet before reading it again.
  */
-export const SCHEDULE_FROM = 4 * ONE_WEEK;
+export const SCHEDULE_FROM = 4 * ONE_WEEK; // One month.
 
 export const WEEKEND_PROPORTION = 0.28;
 
@@ -34,7 +35,11 @@ export const shouldSkipDay = (date: Date) => {
   return SKIP_DAYS.includes(day);
 };
 
-export const getScheduledDate = (): string => {
+export const getScheduledDate = ({
+  numberOfTweets = 0,
+}: {
+  numberOfTweets?: number;
+}): string => {
   const today = new Date();
 
   /**
@@ -45,17 +50,37 @@ export const getScheduledDate = (): string => {
   /**
    * With these weights, we get a probability of 10% to get a weekend.
    * The probabilities are [5%, 18%, 18%, 18%, 18%, 18%, 5%].
+   *
+   * The number of schedules tweets per day given the amount of tweets (n) is:
+   * - weekday: 1,26 * n
+   * - weekend: 0,35 * n
+   *
+   * | n | weekday | weekend |
+   * |---|---------|---------|
+   * | 1 | 1,26    | 0,35    |
+   * | 2 | 2,52    | 0,70    |
+   * | 3 | 3,78    | 1,05    |
+   * | 4 | 5,04    | 1,40    |
+   * | 5 | 6,30    | 1,75    |
+   * | 6 | 7,56    | 2,10    |
+   * | 7 | 8,82    | 2,45    |
+   * | 8 | 10,08   | 2,80    |
+   * | 9 | 11,34   | 3,15    |
+   * | 10| 12,60   | 3,50    |
+   * -------
    */
-  const weights = [...new Array(SCHEDULE_RANGE)].map((_, i) => {
-    const currentDate = dateFns.addDays(scheduledDate, i);
-    const day = dateFns.getDay(currentDate);
+  const weights = [...new Array(SCHEDULE_RANGE + numberOfTweets)].map(
+    (_, i) => {
+      const currentDate = dateFns.addDays(scheduledDate, i);
+      const day = dateFns.getDay(currentDate);
 
-    if (day === 0 || day === 6) {
-      return WEEKEND_PROPORTION;
-    }
+      if (day === 0 || day === 6) {
+        return WEEKEND_PROPORTION;
+      }
 
-    return 1;
-  });
+      return 1;
+    },
+  );
 
   const randomAddDay = getWeightedRandomInt(weights);
 
@@ -80,14 +105,20 @@ export const getScheduledDate = (): string => {
   scheduledDate = dateFns.setMinutes(scheduledDate, setRandomMinute);
 
   if (shouldSkipDay(scheduledDate)) {
-    return getScheduledDate();
+    return getScheduledDate({ numberOfTweets });
   }
 
   return dateFns.formatISO(scheduledDate);
 };
 
-export const scheduleTweet = async ({ tweet }: { tweet: string }) => {
-  const scheduledAt = getScheduledDate();
+export const scheduleTweet = async ({
+  tweet,
+  numberOfTweets,
+}: {
+  tweet: string;
+  numberOfTweets?: number;
+}) => {
+  const scheduledAt = getScheduledDate({ numberOfTweets });
 
   const params = new URLSearchParams({
     scheduled_at: scheduledAt,
@@ -97,7 +128,15 @@ export const scheduleTweet = async ({ tweet }: { tweet: string }) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } as any);
 
-  const { request, data } = await new Promise((resolve, reject) => {
+  type Body = {
+    request: any;
+    data: {
+      text: string;
+      scheduled_at: string;
+    };
+  };
+
+  const { request, data } = await new Promise<Body>((resolve, reject) => {
     twitter.post(
       `accounts/:account_id/scheduled_tweets?${params.toString()}`,
       {

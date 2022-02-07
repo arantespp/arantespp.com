@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { getPartialPost, getDraft } from '../lib/files';
 import { savePost } from '../lib/savePost';
 
-import { hofs } from './hofs';
+import { productionBlocker } from './hofs/productionBlocker';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
@@ -25,4 +25,4 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   res.status(403).end();
 };
 
-export default hofs(handler);
+export default productionBlocker(handler);

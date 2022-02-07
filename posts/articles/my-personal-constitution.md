@@ -91,6 +91,10 @@ This value makes me play only non-zero-sum games. Every person I meet, I always 
 
 Humor is my third most important value. A person that has a high degree of humor is a person that can control their emotions so well and has their spiritual body significantly evolved. They're the kind of people who can keep calm and spread it to others in a chaotic environment.
 
+### Freedom
+
+Freedom of time. Freedom to do whatever I want to do, who I want to be, where I want to be.
+
 ## Goals
 
 Some goals I want to achieve in the long term.

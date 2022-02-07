@@ -33,13 +33,19 @@ const usePostTweet = () => {
   const { apiKey } = useApiKey();
 
   const postTweet = React.useCallback(
-    async ({ tweet }: { tweet: string }): Promise<PostTweetResponse> =>
+    async ({
+      tweet,
+      numberOfTweets,
+    }: {
+      tweet: string;
+      numberOfTweets: number;
+    }): Promise<PostTweetResponse> =>
       fetch('/api/tweet', {
         method: 'POST',
         headers: {
           'x-api-key': apiKey,
         },
-        body: JSON.stringify({ tweet }),
+        body: JSON.stringify({ tweet, numberOfTweets }),
       }).then((res) => res.json()),
     [apiKey],
   );
@@ -82,7 +88,7 @@ export const TweetEditor = ({
 
   React.useEffect(() => {
     if (value) {
-      setValue(charReplacer(value));
+      setValue(charReplacer(value).trim());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
@@ -102,7 +108,11 @@ export const TweetEditor = ({
         onDoubleClick={copyClipboard}
       />
       <Text
-        sx={{ textAlign: 'right', color: reachedMaxChars ? 'error' : 'text' }}
+        sx={{
+          textAlign: 'right',
+          color: reachedMaxChars ? 'error' : 'text',
+          fontSize: 1,
+        }}
       >
         {charactersCount}/{maxChars}
       </Text>
@@ -337,7 +347,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
     name: 'tweets',
   });
 
-  const { clear } = useSaveForm({
+  useSaveForm({
     formValues: watch(),
     reset,
     isDirty,
@@ -371,7 +381,10 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
             await wait(index * 2000);
 
             try {
-              const response = await postTweet({ tweet: finalTweet });
+              const response = await postTweet({
+                tweet: finalTweet,
+                numberOfTweets: values.tweets.length,
+              });
 
               if ('error' in response) {
                 setError(`tweets.${index}.value`, {
@@ -410,9 +423,6 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
     >
       {!singleTweet && (
         <>
-          <Button onDoubleClick={() => clear()} type="button">
-            Clear Storage
-          </Button>
           <Flex sx={{ flexDirection: 'column', marginY: 4 }}>
             <Label>Read from xlsx</Label>
             <Input type="file" ref={inputXlsxRef} />
@@ -434,7 +444,10 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
         const name = `tweets.${index}.value` as const;
 
         return (
-          <Flex key={field.id} sx={{ flexDirection: 'column' }}>
+          <Flex
+            key={field.id}
+            sx={{ flexDirection: 'column', marginY: singleTweet ? 0 : 4 }}
+          >
             <Text>Tweet #{index + 1}</Text>
             <Controller
               control={control}
@@ -452,7 +465,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
             />
             <ErrorMessage errors={errors} name={name} />
             {!singleTweet && (
-              <Flex>
+              <Flex sx={{ gap: 3 }}>
                 <Button
                   type="button"
                   onClick={() => insert(index + 1, { value: '' })}
@@ -464,7 +477,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
                   onDoubleClick={() => remove(index)}
                   sx={{ backgroundColor: 'accent' }}
                 >
-                  Remove (double click)
+                  Remove #{index + 1} (double click)
                 </Button>
               </Flex>
             )}
