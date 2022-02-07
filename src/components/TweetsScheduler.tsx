@@ -54,7 +54,7 @@ const usePostTweet = () => {
 };
 
 const charReplacer = (tweet = '') => {
-  return tweet.replace(/’/g, "'").replace(/“/g, '"').replace(/”/g, '"');
+  return tweet.replace(/’/g, "'").replace(/“/g, '"').replace(/”/g, '"').trim();
 };
 
 export const TweetEditor = ({
@@ -81,17 +81,10 @@ export const TweetEditor = ({
        * Don't update text if text already exists.
        */
       if (!textareaRef.current.value) {
-        setValue(text);
+        setValue(charReplacer(text));
       }
     }
   };
-
-  React.useEffect(() => {
-    if (value) {
-      setValue(charReplacer(value));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value]);
 
   return (
     <Flex sx={{ flexDirection: 'column' }}>
@@ -99,7 +92,7 @@ export const TweetEditor = ({
         ref={textareaRef}
         rows={7}
         onChange={(e) => {
-          setValue(e.target.value);
+          setValue(charReplacer(e.target.value));
         }}
         value={value}
         sx={{ borderColor: reachedMaxChars ? 'error' : 'auto' }}
