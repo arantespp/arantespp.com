@@ -2,8 +2,14 @@ import { ErrorMessage } from '@hookform/error-message';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as dateFns from 'date-fns';
 import * as React from 'react';
-import { Controller, useForm, useFieldArray } from 'react-hook-form';
-import { Button, Flex, Input, Label, Text, Textarea } from 'theme-ui';
+import {
+  Control,
+  Controller,
+  useForm,
+  useFieldArray,
+  useWatch,
+} from 'react-hook-form';
+import { Button, Checkbox, Flex, Input, Label, Text, Textarea } from 'theme-ui';
 import wait from 'waait';
 import * as xslx from 'xlsx';
 import * as yup from 'yup';
@@ -54,7 +60,7 @@ const usePostTweet = () => {
 };
 
 const charReplacer = (tweet = '') => {
-  return tweet.replace(/’/g, "'").replace(/“/g, '"').replace(/”/g, '"').trim();
+  return tweet.replace(/’/g, "'").replace(/“/g, '"').replace(/”/g, '"');
 };
 
 export const TweetEditor = ({
@@ -62,9 +68,11 @@ export const TweetEditor = ({
   maxChars = TWEET_MAX_CHARS,
   disabled,
   setValue,
+  onBlur,
 }: {
   value: string;
   setValue: (v: string) => void;
+  onBlur?: React.FocusEventHandler<HTMLTextAreaElement> | undefined;
   maxChars?: number;
   disabled?: boolean;
 }) => {
@@ -94,6 +102,7 @@ export const TweetEditor = ({
         onChange={(e) => {
           setValue(charReplacer(e.target.value));
         }}
+        onBlur={onBlur}
         value={value}
         sx={{ borderColor: reachedMaxChars ? 'error' : 'auto' }}
         aria-label="tweetEditor"
@@ -234,6 +243,7 @@ const schema = yup
       .array()
       .of(
         yup.object({
+          checked: yup.boolean().notRequired(),
           value: yup
             .string()
             .default('')
@@ -269,12 +279,12 @@ type TweetsSchedulerFormValues = yup.Asserts<typeof schema>;
  * Save form to load tweets to finish the work later.
  */
 const useSaveForm = ({
-  formValues,
+  control,
   reset,
   isDirty,
   singleTweet,
 }: {
-  formValues: TweetsSchedulerFormValues;
+  control: Control<any>;
   reset: any;
   isDirty: boolean;
   singleTweet?: boolean;
@@ -296,6 +306,8 @@ const useSaveForm = ({
       }
     }
   }, [reset, singleTweet]);
+
+  const formValues = useWatch({ control });
 
   React.useEffect(() => {
     if (singleTweet) {
@@ -329,7 +341,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
     watch,
   } = useForm<TweetsSchedulerFormValues>({
     defaultValues: {
-      tweets: singleTweet ? [{ value: '' }] : [],
+      tweets: singleTweet ? [{ value: '', checked: false }] : [],
       suffix: '',
     },
     resolver: yupResolver(schema),
@@ -341,7 +353,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
   });
 
   useSaveForm({
-    formValues: watch(),
+    control,
     reset,
     isDirty,
     singleTweet,
@@ -408,6 +420,12 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
 
   const disabled = isSubmitting;
 
+  const tweets = watch('tweets');
+
+  const numberOfCheckedTweets = tweets.filter((tweet) => tweet.checked).length;
+
+  const numberOfTweets = tweets.length;
+
   return (
     <Flex
       as="form"
@@ -445,10 +463,14 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
             <Controller
               control={control}
               name={name}
-              render={({ field: { value } }) => {
+              render={({ field: { value, onBlur } }) => {
                 return (
                   <TweetEditor
                     value={value}
+                    onBlur={() => {
+                      setValue(`tweets.${index}.checked`, true);
+                      onBlur();
+                    }}
                     setValue={(v) => setValue(name, v)}
                     maxChars={tweetMaxChars}
                     disabled={disabled}
@@ -458,7 +480,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
             />
             <ErrorMessage errors={errors} name={name} />
             {!singleTweet && (
-              <Flex sx={{ gap: 3 }}>
+              <Flex sx={{ gap: 3, alignItems: 'center' }}>
                 <Button
                   type="button"
                   onClick={() => insert(index + 1, { value: '' })}
@@ -472,6 +494,21 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
                 >
                   Remove #{index + 1} (double click)
                 </Button>
+                <Controller
+                  control={control}
+                  name={`tweets.${index}.checked`}
+                  render={({ field: { onChange, onBlur, value } }) => {
+                    return (
+                      <Label sx={{ width: 10 }}>
+                        <Checkbox
+                          onBlur={onBlur}
+                          onChange={onChange}
+                          checked={value}
+                        />
+                      </Label>
+                    );
+                  }}
+                />
               </Flex>
             )}
           </Flex>
@@ -489,6 +526,21 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
 
         return <PostTweetResponse key={response.tweet} response={response} />;
       })}
+
+      <Flex
+        sx={{
+          position: 'sticky',
+          bottom: 3,
+          justifyContent: 'center',
+          width: '100%',
+        }}
+      >
+        <Text
+          sx={{ fontSize: 4, backgroundColor: 'white', fontWeight: 'bold' }}
+        >
+          Checks: {numberOfCheckedTweets}/{numberOfTweets}
+        </Text>
+      </Flex>
 
       <Button
         aria-label="submitButton"
