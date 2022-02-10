@@ -18,7 +18,7 @@ excerpt: ''
 title: The Principles of Product Development Flow
 group: books
 formattedDate: 'August 31, 2021'
-updatedAt: 'December 09, 2021'
+updatedAt: 'February 10, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /books/the-principles-of-product-development-flow
@@ -31,7 +31,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 19
+readingTime: 20
 ---
 
 ## Principles
@@ -220,6 +220,8 @@ $$
 L_q = \frac{\rho^2}{1-\rho}\frac{C^2_\text{arrival} + C^2_\text{service}}{2}
 $$
 
+![Queue Size vs Percent Capacity Utilization](/images/originals/queue-size-vs-percent-capacity-utilization.png)
+
 The equation shows that queues are proportional to the average squares of the coefficient of variation for arrivals and service processes. You compute the coefficient as the ratio between standard deviation and the mean of a probability distribution. Since the square of the standard deviation is the variance, **this means that queues vary linearly with variance**.
 
 If you were able to make the processing time of a queue equal every time ($C^2_\text{service} = 0$), this would only cut the average queue size in half because of the randomness of arrival times. **So, be very cautious if you think you can solve the problem of queues by reducing variability.**
@@ -290,13 +292,31 @@ Changes in the slope of the arrival and departure lines inform trends in demand 
 
 ![Cumulative Flow Diagram (CDF)](/images/originals/cumulative-flow-diagram.png)
 
-#### Q12. Little's Formula: Wait Time = Queue Size/Processing Rate
+#### Q12: Little's Formula: Wait Time = Queue Size/Processing Rate
 
 [Little's Formula notes](/z/little-s-formula).
+
+This formula applies to virtually all queues disciplines, arrival rates, and departure processes.
+
+$$
+W_Q = \frac{L_Q}{\lambda} \quad \text{or} \quad W_S = \frac{L_S}{\lambda}
+$$
+
+Where $W_Q$ is the queue time for an average job, $L_Q$ number of jobs in a queue, $\lambda$ average processing rate, $W_S$ is the system time for an average job, $L_S$ number of jobs in the system.
 
 You can apply Little's Formula to either the queue or to the system as a whole. Applying it to the system as a whole is useful if you have trouble distinguishing which items are in the queue and which ones are in service.
 
 For example, if your development process has 50 projects in process and completes an average of 10 projects per year, it'll take an average of 5 years to complete a project.
+
+#### Q13: The First Queue Size Control Principle: Don't control capacity utilization, control queue size.
+
+Queues' capacity utilization is almost useless as a metric for real-time control because you can't estimate either demand or capacity to sufficient accuracy, as discussed in [Principle Q3](#q3-the-principle-of-queueing-capacity-utilization-capacity-utilization-increases-queues-exponentially).
+
+Choose queue size as the control variable, instead of capacity utilization.
+
+Small changes in capacity utilization will translate to large changes in queue size and cycle time because of the steep slope of the queueing curve (exponential). This means that a relatively wide control band of queue size will force the system into a very tight range of capacity utilization. **Controlling queue size directly controls cycle time.**
+
+![Steep slope of the queuing curve](/images/originals/queue-size-vs-percent-capacity-utilization-slope.png)
 
 ### 4 - Exploiting Variability
 

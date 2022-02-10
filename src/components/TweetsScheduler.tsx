@@ -527,20 +527,22 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
         return <PostTweetResponse key={response.tweet} response={response} />;
       })}
 
-      <Flex
-        sx={{
-          position: 'sticky',
-          bottom: 3,
-          justifyContent: 'center',
-          width: '100%',
-        }}
-      >
-        <Text
-          sx={{ fontSize: 4, backgroundColor: 'white', fontWeight: 'bold' }}
+      {!singleTweet && (
+        <Flex
+          sx={{
+            position: 'sticky',
+            bottom: 3,
+            justifyContent: 'center',
+            width: '100%',
+          }}
         >
-          Checks: {numberOfCheckedTweets}/{numberOfTweets}
-        </Text>
-      </Flex>
+          <Text
+            sx={{ fontSize: 4, backgroundColor: 'white', fontWeight: 'bold' }}
+          >
+            Checks: {numberOfCheckedTweets}/{numberOfTweets}
+          </Text>
+        </Flex>
+      )}
 
       <Button
         aria-label="submitButton"
