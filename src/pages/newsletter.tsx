@@ -1,5 +1,5 @@
 import * as React from 'react';
-import useSWR from 'swr';
+import { useQuery } from 'react-query';
 import { Button, Flex, Input, Themed } from 'theme-ui';
 
 import Flashcard from '../components/Flashcard';
@@ -9,8 +9,6 @@ import Loading from '../components/Loading';
 
 import type { NewsletterData } from '../../lib/newsletter';
 
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
-
 const saveNewsletterItems = async (item: any) => {
   return fetch('/api/newsletter/items', {
     method: 'PUT',
@@ -19,7 +17,9 @@ const saveNewsletterItems = async (item: any) => {
 };
 
 const Newsletter = () => {
-  const { data } = useSWR<NewsletterData>(`/api/newsletter`, fetcher);
+  const { data } = useQuery<NewsletterData>(`/api/newsletter`, async () =>
+    fetch(`/api/newsletter`).then((r) => r.json()),
+  );
 
   const readingInputRef = React.useRef<HTMLInputElement>(null);
 

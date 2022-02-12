@@ -67,6 +67,11 @@ const pageLinks = [
     destination: '/tweets-scheduler',
     permanent: true,
   },
+  {
+    source: '/tsa',
+    destination: '/tweets-scheduler/all',
+    permanent: true,
+  },
 ];
 
 export const getRedirects = async () => {

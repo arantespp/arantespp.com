@@ -1,15 +1,13 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import useSWR from 'swr';
+import { useQuery } from 'react-query';
 
 import type { Post } from '../../lib/files';
 import { postTitleToSlug } from '../../lib/postTitleToSlug';
 
 import HTMLHeaders from '../components/HTMLHeaders';
 import PostEditor from '../components/PostEditor';
-
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 const Editor = () => {
   const { query, isReady } = useRouter();
@@ -31,9 +29,14 @@ const Editor = () => {
     }
   }, [isReady, query.group, query.slug]);
 
-  const key = group && slug ? `/api/post?group=${group}&slug=${slug}` : null;
-
-  const { data: post } = useSWR<Post>(key, fetcher);
+  const { data: post } = useQuery<Post>(
+    ['editor', { group, slug }],
+    async () => {
+      const url = `/api/post?group=${group}&slug=${slug}`;
+      return fetch(url).then((r) => r.json());
+    },
+    { enabled: !!(group && slug) },
+  );
 
   const onCheckIfPostExists = React.useCallback(
     (args: { group: string; title: string }) => {

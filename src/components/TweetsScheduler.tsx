@@ -1,6 +1,5 @@
 import { ErrorMessage } from '@hookform/error-message';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as dateFns from 'date-fns';
 import * as React from 'react';
 import {
   Control,
@@ -16,6 +15,11 @@ import * as yup from 'yup';
 
 import { useApiKey } from '../hooks/useApiKey';
 
+import {
+  ScheduledTweetCard,
+  ScheduledTweetCardProps,
+} from './ScheduledTweetCard';
+
 export const TWEET_MAX_CHARS = 280;
 
 const tweetCharCount = (tweet: string) => {
@@ -28,12 +32,7 @@ const tweetCharCount = (tweet: string) => {
   return tweetUrlReplace.length;
 };
 
-export type PostTweetResponse =
-  | {
-      tweet: string;
-      scheduledAt: string;
-    }
-  | { error: string };
+export type PostTweetResponse = ScheduledTweetCardProps | { error: string };
 
 const usePostTweet = () => {
   const { apiKey } = useApiKey();
@@ -127,16 +126,7 @@ const PostTweetResponse = ({ response }: { response: PostTweetResponse }) => {
     return <Text sx={{ colo: 'error' }}>{response.error}</Text>;
   }
 
-  return (
-    <Flex sx={{ marginBottom: 4, flexDirection: 'column' }}>
-      <Text sx={{ fontWeight: 'bold' }}>
-        {dateFns.format(new Date(response.scheduledAt), 'PP (EEEE) pp')}
-      </Text>
-      <Text sx={{ fontStyle: 'italic', whiteSpace: 'pre-line' }}>
-        {response.tweet}
-      </Text>
-    </Flex>
-  );
+  return <ScheduledTweetCard {...response} />;
 };
 
 const useReadXlsx = ({
@@ -332,7 +322,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
 
   const {
     control,
-    formState: { errors, isSubmitting, isDirty },
+    formState: { errors, isSubmitting, isDirty, isSubmitted },
     handleSubmit,
     register,
     reset,
@@ -524,7 +514,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
           return null;
         }
 
-        return <PostTweetResponse key={response.tweet} response={response} />;
+        return <PostTweetResponse key={response.id} response={response} />;
       })}
 
       {!singleTweet && (
@@ -544,17 +534,35 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
         </Flex>
       )}
 
-      <Button
-        aria-label="submitButton"
-        type="submit"
-        sx={{
-          backgroundColor: disabled ? 'muted' : 'twitter',
-          cursor: 'pointer',
-        }}
-        disabled={disabled}
-      >
-        Schedule
-      </Button>
+      {!isSubmitted && (
+        <Button
+          aria-label="submitButton"
+          type="submit"
+          sx={{
+            backgroundColor: disabled ? 'muted' : 'twitter',
+            cursor: 'pointer',
+          }}
+          disabled={disabled}
+        >
+          Schedule
+        </Button>
+      )}
+
+      {isSubmitted && (
+        <Button
+          type="button"
+          onClick={() => {
+            reset();
+            setResponses([]);
+          }}
+          sx={{
+            backgroundColor: disabled ? 'muted' : 'twitter',
+            cursor: 'pointer',
+          }}
+        >
+          Schedule Again
+        </Button>
+      )}
     </Flex>
   );
 };

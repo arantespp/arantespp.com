@@ -1,4 +1,4 @@
-import useSWR from 'swr';
+import { useQuery } from 'react-query';
 import { Box, Button, Flex, Text, Themed } from 'theme-ui';
 
 import { Flashcard as FlashcardType } from '../../lib/getFlashcard';
@@ -7,20 +7,17 @@ import Flashcard from '../components/Flashcard';
 import HTMLHeaders from '../components/HTMLHeaders';
 import Loading from '../components/Loading';
 
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
-
 const description =
   'Without opening the note, how would you explain it to a 12 years old child?';
 
 const FlashcardPage = () => {
-  const { data, isValidating, mutate } = useSWR<{ flashcard: FlashcardType }>(
+  const { data, status, refetch } = useQuery<{ flashcard: FlashcardType }>(
     '/api/flashcard',
-    fetcher,
-    {
-      revalidateOnFocus: false,
-      revalidateOnReconnect: false,
-    },
+    () => fetch('/api/flashcard').then((r) => r.json()),
+    {},
   );
+
+  const disabled = status === 'loading';
 
   return (
     <>
@@ -41,8 +38,8 @@ const FlashcardPage = () => {
       </Box>
       <Flex sx={{ width: '100%', justifyContent: 'center' }}>
         <Button
-          disabled={isValidating}
-          onClick={() => mutate()}
+          disabled={disabled}
+          onClick={() => refetch()}
           sx={{ display: 'none' }}
         >
           New Flashcard (N)

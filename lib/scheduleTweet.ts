@@ -111,6 +111,14 @@ export const getScheduledDate = ({
   return dateFns.formatISO(scheduledDate);
 };
 
+const formatTweetResponse = (tweetResponse: any) => {
+  return {
+    ...tweetResponse,
+    scheduledAt: tweetResponse?.scheduled_at,
+    completedAt: tweetResponse?.completed_at,
+  };
+};
+
 export const scheduleTweet = async ({
   tweet,
   numberOfTweets,
@@ -153,5 +161,57 @@ export const scheduleTweet = async ({
     );
   });
 
-  return { request, data };
+  return { request, data: formatTweetResponse(data) };
+};
+
+export const deleteScheduledTweet = async ({
+  scheduledTweetId,
+}: {
+  scheduledTweetId: string;
+}) => {
+  const { request, data } = await new Promise<any>((resolve, reject) => {
+    twitter.delete(
+      `accounts/:account_id/scheduled_tweets/:scheduled_tweet_id`,
+      {
+        account_id: process.env.TWITTER_ACCOUNT_ID,
+        scheduled_tweet_id: scheduledTweetId,
+      },
+      (error, resp, body) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+
+        resolve(body);
+      },
+    );
+  });
+
+  return { request, data: formatTweetResponse(data) };
+};
+
+export const getAllScheduledTweets = async () => {
+  const params = new URLSearchParams({
+    count: 200,
+    user_id: process.env.TWITTER_USER_ID,
+  } as any);
+
+  const { request, data } = await new Promise<any>((resolve, reject) => {
+    twitter.get(
+      `accounts/:account_id/scheduled_tweets?${params.toString()}`,
+      {
+        account_id: process.env.TWITTER_ACCOUNT_ID,
+      },
+      (error, resp, body) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+
+        resolve(body);
+      },
+    );
+  });
+
+  return { request, data: data.map((d) => formatTweetResponse(d)) };
 };
