@@ -24,7 +24,7 @@ test('should prepend tweets editors', () => {
   });
 });
 
-test.skip('should raise character limits message error', async () => {
+test('should raise character limits message error', async () => {
   render(<TweetsScheduler />);
 
   const numberOfTweets = 2;
@@ -66,7 +66,7 @@ test.skip('should raise character limits message error', async () => {
   ).toHaveLength(numberOfTweets);
 });
 
-test.skip('should limit with suffix', async () => {
+test('should limit with suffix', async () => {
   render(<TweetsScheduler />);
 
   const prependButton = screen.getByRole('button', {

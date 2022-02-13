@@ -233,7 +233,7 @@ const schema = yup
       .array()
       .of(
         yup.object({
-          checked: yup.boolean().notRequired(),
+          checked: yup.boolean().notRequired().default(false),
           value: yup
             .string()
             .default('')
@@ -322,7 +322,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
 
   const {
     control,
-    formState: { errors, isSubmitting, isDirty, isSubmitted },
+    formState: { errors, isSubmitting, isDirty, isSubmitSuccessful },
     handleSubmit,
     register,
     reset,
@@ -330,6 +330,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
     setValue,
     watch,
   } = useForm<TweetsSchedulerFormValues>({
+    mode: 'onBlur',
     defaultValues: {
       tweets: singleTweet ? [{ value: '', checked: false }] : [],
       suffix: '',
@@ -468,7 +469,11 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
                 );
               }}
             />
-            <ErrorMessage errors={errors} name={name} />
+            <ErrorMessage
+              errors={errors}
+              name={name}
+              as={<Text sx={{ color: 'error', fontStyle: 'italic' }} />}
+            />
             {!singleTweet && (
               <Flex sx={{ gap: 3, alignItems: 'center' }}>
                 <Button
@@ -485,6 +490,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
                   Remove #{index + 1} (double click)
                 </Button>
                 <Controller
+                  defaultValue={false}
                   control={control}
                   name={`tweets.${index}.checked`}
                   render={({ field: { onChange, onBlur, value } }) => {
@@ -534,7 +540,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
         </Flex>
       )}
 
-      {!isSubmitted && (
+      {!isSubmitSuccessful && (
         <Button
           aria-label="submitButton"
           type="submit"
@@ -548,7 +554,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
         </Button>
       )}
 
-      {isSubmitted && (
+      {isSubmitSuccessful && (
         <Button
           type="button"
           onClick={() => {

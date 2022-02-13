@@ -56,6 +56,8 @@ const PostsGrid = ({
     >
       {pages.map((page, index) => {
         const key = [index, size].join('-');
+
+        const isFirstPage = index === 0;
         const isLastPage = index === pages.length - 1;
 
         return (
@@ -71,6 +73,14 @@ const PostsGrid = ({
                 },
                 h2: {
                   fontSize: 4,
+                  marginTop: 0,
+                  paddingBottom: 3,
+                  '&:not(:first-child)': {
+                    marginTop: 5,
+                  },
+                },
+                h3: {
+                  fontSize: 3,
                   marginTop: 0,
                   paddingBottom: 3,
                   '&:not(:first-child)': {
@@ -127,18 +137,20 @@ const PostsGrid = ({
                 </Link>
               )}
 
-              <Text
-                sx={{
-                  position: 'absolute',
-                  bottom: margin / 2,
-                  transform: 'translateY(50%)',
-                  color: 'text',
-                  fontSize: 1,
-                  right: margin / 2,
-                }}
-              >
-                {index + 1}/{pages.length}
-              </Text>
+              {!isFirstPage && (
+                <Text
+                  sx={{
+                    position: 'absolute',
+                    bottom: margin / 2,
+                    transform: 'translateY(50%)',
+                    color: 'text',
+                    fontSize: 1,
+                    right: margin / 2,
+                  }}
+                >
+                  {index + 1}/{pages.length}
+                </Text>
+              )}
 
               {isLastPage && (
                 <Flex
@@ -182,7 +194,13 @@ const PostsGrid = ({
                           width: '100%',
                         }}
                       >
-                        <Image {...props} />
+                        <Image
+                          {...props}
+                          sx={{
+                            border: '1px solid black',
+                            borderColor: 'muted',
+                          }}
+                        />
                       </Flex>
                     ),
                   }}
@@ -252,6 +270,30 @@ const useImages = ({ slug }: { slug: string }) => {
   return { download, postsRefs, images, loadingImages, downloading };
 };
 
+const getInstagramDescription = (content: string) => {
+  /**
+   * Minus five for margin.
+   */
+  const MAX_CHARACTERS = 2200 - 5;
+
+  const hashtags = `\n\n${[
+    '#livros',
+    '#resumos',
+    '#leitura',
+    '#leituradodia',
+    '#ler',
+  ].join(' ')}`;
+
+  return `${content
+    .replace(/---/g, '')
+    .replace(/\*\*/g, '')
+    .replace(/\n+/g, '\n\n')
+    .substring(0, MAX_CHARACTERS - 5 - hashtags.length)
+    .split('\n\n')
+    .filter((_, index, arr) => index !== arr.length - 1)
+    .join('\n\n')}\n\n...${hashtags}`.trim();
+};
+
 const InstagramPost = ({
   content,
   slug,
@@ -279,6 +321,10 @@ const InstagramPost = ({
       .slice(0, 8),
     lastPost,
   ];
+
+  const instagramDescription = getInstagramDescription(
+    `# ${title}\n\n${contentInput}`,
+  );
 
   return (
     <>
@@ -320,8 +366,11 @@ const InstagramPost = ({
       </Flex>
 
       <Themed.h2>Markdown</Themed.h2>
-      <Themed.pre style={{ overflowX: 'hidden' }}>
-        <Text sx={{ whiteSpace: 'pre-wrap' }}>{contentInput}</Text>
+      <Themed.pre
+        style={{ overflowX: 'hidden', cursor: 'pointer' }}
+        onClick={() => navigator.clipboard.writeText(instagramDescription)}
+      >
+        <Text sx={{ whiteSpace: 'pre-wrap' }}>{instagramDescription}</Text>
       </Themed.pre>
     </>
   );
