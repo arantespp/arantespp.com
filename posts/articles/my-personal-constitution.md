@@ -20,7 +20,7 @@ excerpt: >-
 title: My Personal Constitution
 group: articles
 formattedDate: 'December 27, 2021'
-updatedAt: 'February 13, 2022'
+updatedAt: 'February 15, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/articles/my-personal-constitution.md
 href: /articles/my-personal-constitution
@@ -43,7 +43,9 @@ What is the difference between principles and values?
 
 ## Principles
 
-Principles are like physics laws or rules that govern our lives. Wherever actions we choose to do, consequences will happen accordingly with some principles. For example, the consequences of being upright or not with our words will take place accordingly with the [integrity](###integrity) principle, whether we like it or not.
+Principles
+
+Principles are fundamental truths, like physics laws or rules that govern our lives. They're foundations for behaviors and guide us in making choices in life. Wherever actions we choose to do consequences will happen accordingly with some principles. For example, the consequences of being upright or not with our words will take place accordingly with the [integrity](###integrity) principle, whether we like it or not.
 
 Unlike [values](##values), we can't choose which principles will work for us. Instead, we can select the ones we identify most, which is the list of principles below. They're the ones I identify most with and are a guideline to my conduct on daily basis. They're also the core of my principle-centered paradigm, whose idea I took from the book [The 7 Habits of Highly Effective People](/t7hhep).
 
