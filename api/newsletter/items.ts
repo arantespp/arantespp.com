@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { saveNewsletterItems } from '../../lib/newsletter';
 
-import { hofs } from '../hofs';
+import { productionBlocker } from '../hofs/productionBlocker';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'PUT') {
@@ -18,4 +18,4 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   res.status(403).end();
 };
 
-export default hofs(handler);
+export default productionBlocker(handler);

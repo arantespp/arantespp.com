@@ -1,6 +1,9 @@
 export const navigation = {
+  ej: '/journal/editor',
+  jj: '/journal/editor',
   na: '/all',
   nb: '/books',
+  nj: '/journal',
   nf: '/flashcard',
   ndi: '/digest',
   nd: '/drafts',

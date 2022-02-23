@@ -9,6 +9,7 @@ import path from 'path';
 import readingTime from 'reading-time';
 
 import { Group, GROUPS, groupAbbreviation } from './groups';
+import { getDateWithTimezone } from './getDateWithTimezone';
 
 export const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -127,14 +128,6 @@ export const getDrafts = (filter: { group?: Group } = {}) =>
       href: `/drafts${draft.href}`,
       draft: true,
     }));
-
-const getDateWithTimezone = (date: string | Date) => {
-  /**
-   * https://stackoverflow.com/a/52352512/8786986
-   */
-  const dt = new Date(date);
-  return new Date(dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000);
-};
 
 const getDate = (date: string | Date) => {
   const dt = getDateWithTimezone(date);

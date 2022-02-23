@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 /**
- * Methods that are not GET can't be used in production.
+ * Only GET method can be used in production. Other methods are blocked because
+ * they commit data to repository.
  */
 export const productionBlocker = (
   handler: (req: NextApiRequest, res: NextApiResponse) => void,

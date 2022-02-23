@@ -113,6 +113,11 @@ const Editor = ({
           {...props}
           value={value}
           sx={{
+            '&:disabled': {
+              color: 'muted',
+              borderColor: 'muted',
+              cursor: 'not-allowed',
+            },
             overflowClipMargin: 5,
             ...(isValid
               ? {}

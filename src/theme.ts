@@ -223,6 +223,12 @@ const partialTheme = {
       borderBottomColor: 'muted',
       textAlign: 'center',
     },
+    hr: {
+      color: 'muted',
+      width: '30%',
+      marginX: 'auto',
+      marginY: 4,
+    },
   },
   text: {
     highlighted: {
