@@ -55,6 +55,7 @@
     "twitter-ads": "^0.2.1",
     "typography-theme-fairy-gates": "^0.16.19",
     "use-debounce": "^7.0.0",
+    "vis-data": "^7.1.2",
     "vis-network": "^9.1.0",
     "waait": "^1.0.5",
     "xlsx": "^0.17.4",
