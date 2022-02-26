@@ -13,7 +13,7 @@ excerpt: >-
 title: Circle of Competence
 group: zettelkasten
 formattedDate: 'February 25, 2022'
-updatedAt: 'February 25, 2022'
+updatedAt: 'February 26, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/circle-of-competence.md
 href: /zettelkasten/circle-of-competence
