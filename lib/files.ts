@@ -588,7 +588,12 @@ export const getInstagramPost = async ({ slug }: { slug: string }) => {
   }
 
   const { data, ...rest } = markdown;
-  const { title, url, instagramUrl, image } = data as {
+  const {
+    title,
+    url,
+    instagramUrl = null,
+    image,
+  } = data as {
     title: string;
     image: string;
     url?: string;

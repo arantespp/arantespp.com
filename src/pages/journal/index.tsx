@@ -23,16 +23,16 @@ const useJournalsSummary = () => {
         },
       }).then((r): Promise<{ summary: JournalsSummary }> => r.json());
     },
-    { enabled: !!today },
+    { enabled: Boolean(today && apiKey) },
   );
 
-  const summary = data?.summary.reduce((acc, { key, journal }) => {
+  const summary = data?.summary?.reduce((acc, { key, journal }) => {
     const header = `### [${key} (${journal?.date})](/journal/editor?date=${journal?.date})`;
 
     return [acc, header, journal?.content].join('\n');
   }, '');
 
-  return summary;
+  return summary || '';
 };
 
 const JournalIndex = () => {

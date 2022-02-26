@@ -52,7 +52,9 @@ const HeadingLink = ({
           >
             {React.Children.map(children, (child) => {
               if (typeof child === 'string') {
-                return titleCase(child);
+                return titleCase(child)
+                  .replace(/-Lo/g, '-lo')
+                  .replace(/-La/g, '-la');
               }
 
               return child;
