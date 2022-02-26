@@ -95,7 +95,7 @@ test('should limit with suffix', async () => {
   userEvent.type(tweetInput, 'b'.repeat(273));
 
   await act(async () => {
-    userEvent.click(scheduleButton);
+    tweetInput.blur();
   });
 
   expect(
