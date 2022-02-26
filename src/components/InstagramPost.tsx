@@ -336,7 +336,9 @@ const InstagramPost = ({
 
       <Themed.h2>Instagram Posts</Themed.h2>
 
-      <Link href={instagramUrl}>See the post on Instagram.</Link>
+      {instagramUrl && (
+        <Link href={instagramUrl}>See the post on Instagram.</Link>
+      )}
 
       <Text as="p" sx={{ fontStyle: 'italic', fontSize: 1 }}>
         Note: you may see that the Instagram post and below are different. This
