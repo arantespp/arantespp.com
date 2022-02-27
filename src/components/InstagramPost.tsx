@@ -186,7 +186,7 @@ const PostsGrid = ({
                   content={page}
                   noH1={false}
                   components={{
-                    img: ({ ref, ...props }) => (
+                    img: ({ ...props }) => (
                       <Flex
                         sx={{
                           justifyContent: 'center',
@@ -302,7 +302,6 @@ const InstagramPost = ({
   instagramUrl,
   image,
 }: InstagramPostProps) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [contentInput, setContentInput] = React.useState(content);
 
   const { postsRefs, download, images, loadingImages, downloading } = useImages(

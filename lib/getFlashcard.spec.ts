@@ -87,7 +87,6 @@ describe('testing getFlashcardByProbability', () => {
       { date: '2021-02-07', pNumber: 50 },
       { date: '2021-02-08', pNumber: 50 },
       { date: '2021-02-09', pNumber: 50 },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ] as any;
 
     jest.spyOn(global.Math, 'random').mockReturnValue(random);
@@ -113,7 +112,6 @@ describe('testing getFlashcardByProbability', () => {
         { diffDays: 100, pNumber: 0 },
         { diffDays: 1, pNumber: 0 }, // Most recent post.
         { diffDays: 200, pNumber: 0 },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ] as any;
 
       jest.spyOn(global.Math, 'random').mockReturnValue(random);

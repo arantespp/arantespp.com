@@ -133,7 +133,6 @@ export const scheduleTweet = async ({
     as_user_id: process.env.TWITTER_USER_ID,
     text: tweet,
     nullcast: false,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } as any);
 
   type Body = {

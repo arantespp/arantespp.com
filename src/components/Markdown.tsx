@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import dynamic from 'next/dynamic';
 import * as React from 'react';
 import ReactMarkdown, { Components } from 'react-markdown';
