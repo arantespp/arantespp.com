@@ -236,10 +236,10 @@ const useImages = ({ slug }: { slug: string }) => {
            */
           scale: 5,
           useCORS: true,
-          scrollX: -window.scrollX,
-          scrollY: -window.scrollY,
-          windowWidth: document.documentElement.offsetWidth,
-          windowHeight: document.documentElement.offsetHeight,
+          // scrollX: -window.scrollX,
+          // scrollY: -window.scrollY,
+          // windowWidth: document.documentElement.offsetWidth,
+          // windowHeight: document.documentElement.offsetHeight,
         });
 
         const imageBase64 = canvas.toDataURL();

@@ -252,10 +252,23 @@ const Network = ({
       },
     },
     physics: {
+      enabled: true,
       stabilization: {
-        iterations: 200,
+        enabled: true,
+        iterations: 500,
+        fit: true,
       },
-      solver: 'barnesHut',
+      solver: 'forceAtlas2Based',
+      forceAtlas2Based: {
+        theta: 0.5,
+        gravitationalConstant: -50,
+        centralGravity: 0.01,
+        springConstant: 0.08,
+        springLength: 100,
+        damping: 0.5,
+        avoidOverlap: 0,
+      },
+      adaptiveTimestep: true,
     },
   };
 
@@ -266,7 +279,7 @@ const Network = ({
     deselectNode: () => {
       setSelectedNode(undefined);
     },
-    stabilizationIterationsDone: () => {
+    stabilized: () => {
       setStabilizationIterationsDone(true);
     },
   };
@@ -301,7 +314,7 @@ const Network = ({
                 maxWidth: (sizes as any)?.container,
                 borderWidth: 1,
                 borderStyle: 'solid',
-                borderColor: 'primary',
+                borderColor: 'black',
                 margin: 2,
                 padding: 2,
               }}
