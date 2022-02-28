@@ -4,7 +4,6 @@ import { TWEET_MAX_CHARS, TweetsScheduler } from './TweetsScheduler';
 
 beforeEach(() => {
   global.localStorage.clear();
-  jest.setTimeout(20000);
 });
 
 test('should prepend tweets editors', () => {
