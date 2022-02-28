@@ -4,7 +4,6 @@ module.exports = {
       displayName: 'dom',
       testEnvironment: 'jsdom',
       testMatch: ['/**/*.spec.tsx'],
-      testTimeout: 20000,
     },
     {
       displayName: 'node',

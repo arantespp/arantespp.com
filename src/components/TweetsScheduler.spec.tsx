@@ -3,6 +3,7 @@ import { act, render, screen, userEvent } from '../testUtils';
 import { TWEET_MAX_CHARS, TweetsScheduler } from './TweetsScheduler';
 
 beforeEach(() => {
+  jest.setTimeout(20 * 1000);
   global.localStorage.clear();
 });
 
