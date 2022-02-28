@@ -91,7 +91,7 @@ test('should limit with suffix', async () => {
   const scheduleButton = screen.getByRole('button', { name: 'submitButton' });
 
   userEvent.clear(tweetInput);
-  userEvent.type(tweetInput, 'b'.repeat(273));
+  await userEvent.type(tweetInput, 'a'.repeat(273), { delay: 1 });
 
   await act(async () => {
     tweetInput.blur();
