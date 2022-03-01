@@ -70,8 +70,12 @@ Torná-lo **desinteressante** é reestruturar a sua atitude mental—ressalte os
 
 Torná-lo **difícil** é aumentar a resistência na hora de executar a ação—aumentar o número de passos entre você e o mau hábito. Por exemplo, deixar os doces no canto mais difícil da cozinha ou não comprar. Se você quiser comer, você terá muito trabalho.
 
-Torná-lo **insatisfatório** é fazer que ele fique doloroso, caso você o faça.
+Torná-lo **insatisfatório** é fazer que ele fique doloroso, caso você o faça. Por exemplo, sempre que você comer um doce mais de 3 vezes ao dia, você tem que pagar R$ 5,00. para um amigo.
 
 ---
 
-9
+## Ambiente e motivação
+
+Motivação é supervalorizada. Em muitos casos, o ambiente é o que importa mais no controle dos hábitos. Motivação não é infinita e geralmente acaba depois de um certo tempo.
+
+Um ambiente projetado para ajudar a remover ou criar um hábito ajuda muito porque você não precisa gastar energia e força de vontade. O ambiente influencia fortemente os nossos comportamentos porque ele envia sinais sobre como vamos nos comportar.

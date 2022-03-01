@@ -225,7 +225,7 @@ const partialTheme = {
     },
     hr: {
       color: 'muted',
-      width: '30%',
+      width: '20%',
       marginX: 'auto',
       marginY: 4,
     },
@@ -253,5 +253,4 @@ const partialTheme = {
   },
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const theme = merge(typography, partialTheme as any);
