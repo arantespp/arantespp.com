@@ -3,7 +3,6 @@ import { act, render, screen, userEvent } from '../testUtils';
 import { TWEET_MAX_CHARS, TweetsScheduler } from './TweetsScheduler';
 
 beforeEach(() => {
-  jest.setTimeout(20 * 1000);
   global.localStorage.clear();
 });
 
@@ -67,49 +66,53 @@ test('should raise character limits message error', async () => {
   ).toHaveLength(numberOfTweets);
 });
 
-test('should limit with suffix', async () => {
-  render(<TweetsScheduler />);
+test(
+  'should limit with suffix',
+  async () => {
+    render(<TweetsScheduler />);
 
-  const prependButton = screen.getByRole('button', {
-    name: 'prependTweetButton',
-  });
+    const prependButton = screen.getByRole('button', {
+      name: 'prependTweetButton',
+    });
 
-  act(() => {
-    userEvent.click(prependButton);
-  });
+    act(() => {
+      userEvent.click(prependButton);
+    });
 
-  const tweetInput = screen.getByRole('textbox', { name: 'tweetEditor' });
+    const tweetInput = screen.getByRole('textbox', { name: 'tweetEditor' });
 
-  userEvent.type(screen.getByLabelText('Suffix'), 'suffix');
-  userEvent.type(tweetInput, 'tweet');
+    userEvent.type(screen.getByLabelText('Suffix'), 'suffix');
+    userEvent.type(tweetInput, 'tweet');
 
-  /**
-   * "5" because "tweet" has 5 characters.
-   * "272" because discounts the "suffix" length plus "\n\n".
-   */
-  expect(screen.getByText('5/272')).toBeInTheDocument();
+    /**
+     * "5" because "tweet" has 5 characters.
+     * "272" because discounts the "suffix" length plus "\n\n".
+     */
+    expect(screen.getByText('5/272')).toBeInTheDocument();
 
-  const scheduleButton = screen.getByRole('button', { name: 'submitButton' });
+    const scheduleButton = screen.getByRole('button', { name: 'submitButton' });
 
-  userEvent.clear(tweetInput);
-  await userEvent.type(tweetInput, 'a'.repeat(273), { delay: 1 });
+    userEvent.clear(tweetInput);
+    await userEvent.type(tweetInput, 'a'.repeat(273), { delay: 1 });
 
-  await act(async () => {
-    tweetInput.blur();
-  });
+    await act(async () => {
+      tweetInput.blur();
+    });
 
-  expect(
-    screen.getByText('Tweet reacher max characters, counting with suffix'),
-  ).toBeInTheDocument();
+    expect(
+      screen.getByText('Tweet reacher max characters, counting with suffix'),
+    ).toBeInTheDocument();
 
-  userEvent.clear(tweetInput);
-  userEvent.type(tweetInput, 'a'.repeat(272));
+    userEvent.clear(tweetInput);
+    userEvent.type(tweetInput, 'a'.repeat(272));
 
-  await act(async () => {
-    userEvent.click(scheduleButton);
-  });
+    await act(async () => {
+      userEvent.click(scheduleButton);
+    });
 
-  expect(
-    screen.queryByText('Tweet reacher max characters, counting with suffix'),
-  ).toBeNull();
-});
+    expect(
+      screen.queryByText('Tweet reacher max characters, counting with suffix'),
+    ).toBeNull();
+  },
+  20 * 1000,
+);
