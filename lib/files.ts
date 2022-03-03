@@ -596,7 +596,7 @@ export const getInstagramPost = async ({ slug }: { slug: string }) => {
   } = data as {
     title: string;
     image: string;
-    url?: string;
+    url: string;
     instagramUrl?: string;
   };
   return { title, url, instagramUrl, image, ...rest };

@@ -82,7 +82,7 @@ const PostsGrid = ({
                 h3: {
                   fontSize: 3,
                   marginTop: 0,
-                  paddingBottom: 3,
+                  paddingBottom: 2,
                   '&:not(:first-child)': {
                     marginTop: 5,
                   },
@@ -190,8 +190,7 @@ const PostsGrid = ({
                       <Flex
                         sx={{
                           justifyContent: 'center',
-                          height: '100%',
-                          width: '100%',
+                          height: size - 2 * margin,
                         }}
                       >
                         <Image
@@ -199,6 +198,7 @@ const PostsGrid = ({
                           sx={{
                             border: '1px solid black',
                             borderColor: 'muted',
+                            height: '100%',
                           }}
                         />
                       </Flex>
@@ -270,28 +270,40 @@ const useImages = ({ slug }: { slug: string }) => {
   return { download, postsRefs, images, loadingImages, downloading };
 };
 
-const getInstagramDescription = (content: string) => {
-  /**
-   * Minus five for margin.
-   */
-  const MAX_CHARACTERS = 2200 - 5;
-
-  const hashtags = `\n\n${[
+const getInstagramDescription = ({
+  content,
+  title,
+  url,
+}: {
+  content: string;
+  title: string;
+  url: string;
+}) => {
+  const hashtags = `${[
     '#livros',
+    '#livro',
     '#resumos',
     '#leitura',
     '#leituradodia',
     '#ler',
+    '#dicadelivros',
+    '#instabooks',
+    '#livroseleitura',
   ].join(' ')}`;
 
-  return `${content
-    .replace(/---/g, '')
-    .replace(/\*\*/g, '')
-    .replace(/\n+/g, '\n\n')
-    .substring(0, MAX_CHARACTERS - 5 - hashtags.length)
-    .split('\n\n')
-    .filter((_, index, arr) => index !== arr.length - 1)
-    .join('\n\n')}\n\n...${hashtags}`.trim();
+  const firstPage = content.split('---')[0];
+
+  return [
+    `# ${title}`,
+    firstPage
+      .trim()
+      .replace(/---/g, '')
+      .replace(/\*\*/g, '')
+      .replace(/\n+/g, '\n\n'),
+    '\n... [texto completo no post]',
+    `\nAcesse ${url} para ver o resumo completo (em Inglês) do livro ${title}.\n\n`,
+    hashtags,
+  ].join('\n\n');
 };
 
 const InstagramPost = ({
@@ -308,7 +320,7 @@ const InstagramPost = ({
     { slug },
   );
 
-  const firstPost = `# ${title}\n\n![image](${image})`;
+  const firstPost = `![image](${image})`;
 
   const lastPost = `Acesse [${url}](https://${url}) para ver o resumo completo (em Inglês) do livro **${title}**.`;
 
@@ -321,9 +333,11 @@ const InstagramPost = ({
     lastPost,
   ];
 
-  const instagramDescription = getInstagramDescription(
-    `# ${title}\n\n${contentInput}`,
-  );
+  const instagramDescription = getInstagramDescription({
+    title,
+    url,
+    content: contentInput,
+  });
 
   return (
     <>

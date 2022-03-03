@@ -28,6 +28,8 @@ const HeadingLink = ({
   id?: string;
   href: string;
 }) => {
+  const { route } = useRouter();
+
   const ResolvedComponent = componentsByLevel[level - 1];
 
   /**
@@ -40,7 +42,7 @@ const HeadingLink = ({
       {level === 1 ? (
         children
       ) : (
-        <NextLink href={href}>
+        <NextLink href={href} passHref>
           <Link
             sx={{
               cursor: 'pointer',
@@ -52,9 +54,11 @@ const HeadingLink = ({
           >
             {React.Children.map(children, (child) => {
               if (typeof child === 'string') {
-                return titleCase(child)
-                  .replace(/-Lo/g, '-lo')
-                  .replace(/-La/g, '-la');
+                if (route === '/instagram/[slug]') {
+                  return child;
+                }
+
+                return titleCase(child);
               }
 
               return child;
