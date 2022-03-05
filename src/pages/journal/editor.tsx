@@ -231,7 +231,10 @@ const JournalEditor = () => {
         />
       </Box>
       <Flex sx={{ justifyContent: 'space-between' }}>
-        <Link href="/journal">Go to Summary</Link>
+        <Flex sx={{ gap: 4 }}>
+          <Link href="/journal/all">All</Link>
+          <Link href="/journal">Summary</Link>
+        </Flex>
         <Text sx={{ color: isSaving ? 'muted' : 'text' }}>Saved</Text>
       </Flex>
     </>

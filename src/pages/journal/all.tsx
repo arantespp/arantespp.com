@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useInfiniteQuery } from 'react-query';
-import { Button, Flex } from 'theme-ui';
+import { Button, Flex, Text } from 'theme-ui';
 
 import { Journal as JournalType } from '../../../lib/journal';
 
@@ -37,7 +37,7 @@ const JournalAll = () => {
   const markdown = journals.reduce((acc, journal) => {
     return [
       acc,
-      `### [${journal?.date}](/journal/editor?date=${journal?.date})`,
+      `### [${journal?.formattedDate}](/journal/editor?date=${journal?.date})`,
       journal?.content,
     ].join('\n');
   }, '');
@@ -45,7 +45,10 @@ const JournalAll = () => {
   return (
     <>
       <HTMLHeaders noIndex title="Journal - All" />
-      <Journal markdown={markdown} title="Journal - All" />
+      <Journal
+        markdown={markdown}
+        title={`Journal - All (${journals.length})`}
+      />
       {hasNextPage && (
         <Flex sx={{ justifyContent: 'center' }}>
           <Button
