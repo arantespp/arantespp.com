@@ -17,11 +17,6 @@ const PedroArantes: React.ForwardRefRenderFunction<any, TextProps> = (
       }}
     >
       Pedro Arantes
-      {/**
-       * Use Image instead emoji because not every browser render the
-       * rose in the same way.
-       * */}
-      <Image sx={{ height: '1em', marginLeft: 1 }} src="/rose.png" alt="rose" />
     </Text>
   );
 };
