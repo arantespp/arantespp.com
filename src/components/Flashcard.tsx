@@ -19,11 +19,12 @@ const Flashcard = ({ flashcard }: { flashcard: FlashcardType }) => {
           <Link>{flashcard.title}</Link>
         </Link>
         <Text sx={{ fontWeight: 'bold' }}> </Text>
-        <Text>has a difference from today equals to </Text>
+        <Text>is </Text>
         <Text sx={{ fontWeight: 'bold' }}>{flashcard.diffWeeks.weeks} </Text>
         <Text>{flashcard.diffWeeks.i18nWeeks} and </Text>
         <Text sx={{ fontWeight: 'bold' }}>{flashcard.diffWeeks.days} </Text>
-        <Text>{flashcard.diffWeeks.i18nDays}.</Text>
+        <Text>{flashcard.diffWeeks.i18nDays}</Text>
+        <Text> old.</Text>
       </Text>
     </>
   );

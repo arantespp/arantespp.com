@@ -10,11 +10,19 @@ import Loading from '../components/Loading';
 const description =
   'Without opening the note, how would you explain it to a 12 years old child?';
 
+const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
+
 const FlashcardPage = () => {
   const { data, status, refetch } = useQuery<{ flashcard: FlashcardType }>(
     '/api/flashcard',
     () => fetch('/api/flashcard').then((r) => r.json()),
-    {},
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      retry: false,
+      staleTime: twentyFourHoursInMs,
+    },
   );
 
   const disabled = status === 'loading';
