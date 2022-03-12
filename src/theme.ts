@@ -135,6 +135,7 @@ const partialTheme = {
   styles: {
     root: {
       button: {
+        cursor: 'pointer',
         '&:disabled': {
           backgroundColor: 'muted',
           cursor: 'not-allowed',

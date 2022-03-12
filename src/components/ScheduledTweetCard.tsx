@@ -4,22 +4,32 @@ import { Button, Flex, Text } from 'theme-ui';
 
 import { useApiKey } from '../hooks/useApiKey';
 
-export type ScheduledTweetCardProps = {
+import { TweetEditor } from './TweetEditor';
+
+export type ScheduledTweetProps = {
   text: string;
   scheduledAt: string;
   completedAt: string | null;
   id: string;
+  idStr: string;
+};
+
+export type ScheduledTweetCardProps = {
+  tweet: ScheduledTweetProps;
+  onUpdated?: (tweet: ScheduledTweetProps) => void;
 };
 
 export const ScheduledTweetCard = ({
-  id,
-  scheduledAt,
-  text,
-  completedAt,
+  tweet: { idStr: id, scheduledAt, text, completedAt },
+  onUpdated,
 }: ScheduledTweetCardProps) => {
   const { apiKey } = useApiKey();
 
-  const [isDeleting, setIsDeleting] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  const [isOnUpdatingMode, setIsOnUpdatingMode] = React.useState(false);
+
+  const [updateTweetText, setUpdateTweetText] = React.useState(text);
 
   const [isOnDeleteConfirmation, setIsOnDeleteConfirmation] =
     React.useState(false);
@@ -28,10 +38,10 @@ export const ScheduledTweetCard = ({
 
   const deleteScheduledTweet = async () => {
     try {
-      setIsDeleting(true);
+      setIsLoading(true);
 
       await fetch('/api/tweet', {
-        method: 'POST',
+        method: 'DELETE',
         headers: {
           'x-api-key': apiKey,
         },
@@ -40,16 +50,40 @@ export const ScheduledTweetCard = ({
 
       setIsTweetDeleted(true);
     } finally {
-      setIsDeleting(false);
+      setIsLoading(false);
     }
   };
 
-  const renderFirstDeleteButton = !isOnDeleteConfirmation && !isTweetDeleted;
+  const updateTweet = async () => {
+    try {
+      setIsLoading(true);
+
+      const data = await fetch('/api/tweet', {
+        method: 'PUT',
+        headers: {
+          'x-api-key': apiKey,
+        },
+        body: JSON.stringify({
+          scheduledTweetId: id,
+          text: updateTweetText,
+        }),
+      }).then((res) => res.json());
+
+      onUpdated?.(data);
+
+      setIsOnUpdatingMode(false);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const renderUpdateAndDeleteButtons =
+    !isOnUpdatingMode && !isOnDeleteConfirmation && !isTweetDeleted;
 
   const renderDeleteConfirmationButtons =
     isOnDeleteConfirmation && !isTweetDeleted;
 
-  const disabled = isDeleting || isTweetDeleted;
+  const disabled = isLoading || isTweetDeleted;
 
   const firstLineText = (() => {
     const date = dateFns.format(new Date(scheduledAt), 'PP (EEEE) pp');
@@ -80,34 +114,74 @@ export const ScheduledTweetCard = ({
       >
         {firstLineText}
       </Text>
+
       {isTweetDeleted && (
         <Text sx={{ fontWeight: 'bold' }}>This tweet was deleted!</Text>
       )}
-      <Text sx={{ fontStyle: 'italic', whiteSpace: 'pre-line', marginY: 3 }}>
-        {text}
-      </Text>
-      {renderFirstDeleteButton && (
-        <Button
-          sx={{ cursor: 'pointer' }}
-          onDoubleClick={() => setIsOnDeleteConfirmation(true)}
-          disabled={disabled}
-        >
-          Delete (double click)
-        </Button>
+
+      {!isOnUpdatingMode && (
+        <Text sx={{ fontStyle: 'italic', whiteSpace: 'pre-line', marginY: 3 }}>
+          {text}
+        </Text>
       )}
-      {renderDeleteConfirmationButtons && (
-        <Flex sx={{ justifyContent: 'center', gap: 3, width: '100%' }}>
-          <Button onClick={deleteScheduledTweet} disabled={disabled}>
-            Yes
-          </Button>
-          <Button
-            onClick={() => setIsOnDeleteConfirmation(false)}
-            disabled={disabled}
-          >
-            No
-          </Button>
-        </Flex>
+
+      {isOnUpdatingMode && (
+        <TweetEditor value={updateTweetText} setValue={setUpdateTweetText} />
       )}
+
+      <Flex sx={{ gap: 3, alignSelf: 'center' }}>
+        {renderUpdateAndDeleteButtons && (
+          <>
+            <Button
+              sx={{ backgroundColor: 'accent' }}
+              onClick={() => setIsOnUpdatingMode(true)}
+              disabled={disabled}
+            >
+              Update
+            </Button>
+            <Button
+              onDoubleClick={() => setIsOnDeleteConfirmation(true)}
+              disabled={disabled}
+            >
+              Delete (double click)
+            </Button>
+          </>
+        )}
+        {isOnUpdatingMode && (
+          <>
+            <Button
+              sx={{ backgroundColor: 'accent' }}
+              disabled={disabled}
+              onClick={updateTweet}
+            >
+              Update
+            </Button>
+            <Button
+              sx={{ backgroundColor: 'accent' }}
+              disabled={disabled}
+              onClick={() => {
+                setIsOnUpdatingMode(false);
+                setUpdateTweetText(text);
+              }}
+            >
+              Cancel
+            </Button>
+          </>
+        )}
+        {renderDeleteConfirmationButtons && (
+          <>
+            <Button onClick={deleteScheduledTweet} disabled={disabled}>
+              Yes
+            </Button>
+            <Button
+              onClick={() => setIsOnDeleteConfirmation(false)}
+              disabled={disabled}
+            >
+              No
+            </Button>
+          </>
+        )}
+      </Flex>
     </Flex>
   );
 };

@@ -116,6 +116,15 @@ const formatTweetResponse = (tweetResponse: any) => {
     ...tweetResponse,
     scheduledAt: tweetResponse?.scheduled_at,
     completedAt: tweetResponse?.completed_at,
+    idStr: tweetResponse?.id_str,
+  };
+};
+
+type Body = {
+  request: any;
+  data: {
+    text: string;
+    scheduled_at: string;
   };
 };
 
@@ -135,19 +144,44 @@ export const scheduleTweet = async ({
     nullcast: false,
   } as any);
 
-  type Body = {
-    request: any;
-    data: {
-      text: string;
-      scheduled_at: string;
-    };
-  };
-
   const { request, data } = await new Promise<Body>((resolve, reject) => {
     twitter.post(
       `accounts/:account_id/scheduled_tweets?${params.toString()}`,
       {
         account_id: process.env.TWITTER_ACCOUNT_ID,
+      },
+      (error, resp, body) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+
+        resolve(body);
+      },
+    );
+  });
+
+  return { request, data: formatTweetResponse(data) };
+};
+
+export const updateTweet = async ({
+  scheduledTweetId,
+  text,
+}: {
+  scheduledTweetId: string;
+  text: string;
+}): Promise<any> => {
+  const params = new URLSearchParams({
+    text,
+    nullcast: false,
+  } as any);
+
+  const { request, data } = await new Promise<Body>((resolve, reject) => {
+    twitter.put(
+      `accounts/:account_id/scheduled_tweets/:scheduled_tweet_id?${params.toString()}`,
+      {
+        account_id: process.env.TWITTER_ACCOUNT_ID,
+        scheduled_tweet_id: scheduledTweetId,
       },
       (error, resp, body) => {
         if (error) {
