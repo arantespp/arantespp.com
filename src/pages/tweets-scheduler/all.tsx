@@ -1,5 +1,5 @@
-import { useQuery, useQueryClient } from 'react-query';
-import { Flex, Themed } from 'theme-ui';
+import { useInfiniteQuery, useQueryClient } from 'react-query';
+import { Button, Flex, Themed } from 'theme-ui';
 
 import { useApiKey } from '../../hooks/useApiKey';
 
@@ -16,20 +16,32 @@ const TweetsSchedulerAll = () => {
 
   const queryClient = useQueryClient();
 
-  const { data = [], status } = useQuery<ScheduledTweetProps[]>(
+  const { data, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery<{
+    tweets: ScheduledTweetProps[];
+    nextCursor?: string;
+  }>(
     queryKey,
-    () =>
-      fetch('/api/tweets', {
+    ({ pageParam }) =>
+      fetch(`/api/tweets?cursor=${pageParam ? pageParam : ''}`, {
         headers: {
           'x-api-key': apiKey,
         },
       })
         .then((res) => res.json())
-        .then((tweet) => tweet.filter(({ completedAt }) => !completedAt)),
-    { enabled: !!apiKey, refetchIntervalInBackground: false },
+        .then(({ tweets, nextCursor }) => {
+          return {
+            tweets: tweets.filter(({ completedAt }) => !completedAt),
+            nextCursor,
+          };
+        }),
+    {
+      enabled: !!apiKey,
+      refetchIntervalInBackground: false,
+      getNextPageParam: (lastPage) => lastPage.nextCursor,
+    },
   );
 
-  const isLoading = status === 'loading';
+  const tweets = data?.pages.flatMap((page) => page.tweets) || [];
 
   const onUpdated = (data: any) => {
     const allTweets = queryClient.getQueryData<any[]>(queryKey) || [];
@@ -43,16 +55,19 @@ const TweetsSchedulerAll = () => {
 
   return (
     <>
-      <Themed.h1>All Scheduled Tweets</Themed.h1>
-      {isLoading && <Loading />}
+      <Themed.h1>All Scheduled Tweets ({tweets.length})</Themed.h1>
       <Flex sx={{ flexDirection: 'column' }}>
-        {data.map((tweet) => (
+        {tweets.map((tweet) => (
           <ScheduledTweetCard
             key={tweet.id}
             tweet={tweet}
             onUpdated={onUpdated}
           />
         ))}
+        {isFetching && <Loading />}
+        <Button onClick={() => fetchNextPage()} disabled={!hasNextPage}>
+          Load More
+        </Button>
       </Flex>
     </>
   );

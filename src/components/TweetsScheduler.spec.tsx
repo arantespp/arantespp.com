@@ -1,6 +1,7 @@
 import { act, render, screen, userEvent } from '../testUtils';
 
-import { TWEET_MAX_CHARS, TweetsScheduler } from './TweetsScheduler';
+import { TWEET_MAX_CHARS } from './TweetEditor';
+import { TweetsScheduler } from './TweetsScheduler';
 
 jest.setTimeout(60 * 1000);
 

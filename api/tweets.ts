@@ -6,8 +6,11 @@ import { getAllScheduledTweets } from '../lib/scheduleTweet';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
-    const { data } = await getAllScheduledTweets();
-    res.status(200).json(data);
+    const { data, nextCursor } = await getAllScheduledTweets({
+      cursor: req.query?.cursor as string | undefined,
+    });
+    res.status(200).json({ tweets: data, nextCursor });
+    return;
   }
 
   res.status(403).end();

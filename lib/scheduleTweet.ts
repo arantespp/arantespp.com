@@ -223,13 +223,27 @@ export const deleteScheduledTweet = async ({
   return { request, data: formatTweetResponse(data) };
 };
 
-export const getAllScheduledTweets = async () => {
+export const getAllScheduledTweets = async ({
+  cursor,
+}: {
+  cursor?: string;
+}) => {
+  console.log({ cursor });
+
   const params = new URLSearchParams({
     count: 200,
     user_id: process.env.TWITTER_USER_ID,
   } as any);
 
-  const { request, data } = await new Promise<any>((resolve, reject) => {
+  if (cursor) {
+    params.set('cursor', cursor);
+  }
+
+  const {
+    request,
+    data,
+    next_cursor: nextCursor,
+  } = await new Promise<any>((resolve, reject) => {
     twitter.get(
       `accounts/:account_id/scheduled_tweets?${params.toString()}`,
       {
@@ -246,5 +260,5 @@ export const getAllScheduledTweets = async () => {
     );
   });
 
-  return { request, data: data.map((d) => formatTweetResponse(d)) };
+  return { nextCursor, request, data: data.map((d) => formatTweetResponse(d)) };
 };

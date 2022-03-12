@@ -15,11 +15,7 @@ import * as yup from 'yup';
 
 import { useApiKey } from '../hooks/useApiKey';
 
-import {
-  ScheduledTweetCard,
-  ScheduledTweetCardProps,
-  ScheduledTweetProps,
-} from './ScheduledTweetCard';
+import { ScheduledTweetCard, ScheduledTweetProps } from './ScheduledTweetCard';
 import {
   charReplacer,
   tweetCharCount,
@@ -290,7 +286,10 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
 
   const { inputXlsxRef } = useReadXlsx({
     setTweets: (tweets: string[]) => {
-      append(tweets.map((tweet) => ({ value: tweet })));
+      setValue(
+        'tweets',
+        tweets.map((tweet) => ({ value: tweet, checked: false })),
+      );
     },
   });
 
