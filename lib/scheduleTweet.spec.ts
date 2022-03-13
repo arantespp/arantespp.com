@@ -51,6 +51,9 @@ test('getScheduledDate', () => {
 
   const scheduledDate = getScheduledDate({ numberOfTweets: 0 });
 
+  /**
+   * One week delay plus 7 mocked days.
+   */
   const isSameDay = dateFns.isSameDay(
     new Date(scheduledDate),
     new Date(2021, 10, 24, 8),
