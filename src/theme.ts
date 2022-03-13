@@ -252,6 +252,11 @@ const partialTheme = {
       boxShadow: 1,
     },
   },
+  forms: {
+    textarea: {
+      fontSize: 1,
+    },
+  },
 };
 
 export const theme = merge(typography, partialTheme as any);

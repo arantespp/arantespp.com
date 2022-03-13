@@ -1,18 +1,39 @@
 ---
-title: A Letter to My Friend - Create
+image:
+  url: 'https://source.unsplash.com/M9jrKDXOQoU'
+  alt: >-
+    Photo by <a
+    href="https://unsplash.com/@harlimarten?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Harli
+    Marten</a> on <a
+    href="https://unsplash.com/s/photos/friendship?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+book: null
+bitLink: create
+draft: false
+tags:
+  - writing
+rating: 5
 date: '2021-06-13'
 excerpt: >-
   I like writing because it's timeless. It's telepathy. Maybe what you write now
   will reach someone that will need to read it, in another time, whether days or
   decades from now, in another space across the world. You'll be connecting your
   mind with theirs.
-tags:
+title: A Letter to My Friend - Create
+group: articles
+formattedDate: 'June 13, 2021'
+updatedAt: 'September 10, 2021'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/articles/a-letter-to-my-friend-create.md
+href: /articles/a-letter-to-my-friend-create
+as: /create
+slug: a-letter-to-my-friend-create
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/articles/a-letter-to-my-friend-create.md
+url: 'https://arantespp.com/articles/a-letter-to-my-friend-create'
+keywords:
+  - articles
   - writing
-rating: 5
-bitLink: create
-image:
-  url: https://source.unsplash.com/M9jrKDXOQoU
-  alt: Photo by <a href="https://unsplash.com/@harlimarten?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Harli Marten</a> on <a href="https://unsplash.com/s/photos/friendship?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+readingTime: 4
 ---
 
 It's interesting how things happen to us. This week I posted a story on Instagram about a workout I had finished, and a friend sent a message congratulating me. Then, we started to talk about training and what motivates us. I told him that what motivates me was [the five years habits project](/articles/five-habits-for-the-next-five-years). The "interesting" part happened because our conversation became different from our initial talk, only about workouts.

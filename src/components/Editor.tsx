@@ -25,7 +25,7 @@ const TextAreaContainer = ({
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'white',
+          backgroundColor: 'background',
           padding: 4,
           display: 'flex',
           justifyContent: 'center',
@@ -78,10 +78,6 @@ const Editor = ({
 
       if (MAX_HEIGHT < textAreaRef.current.scrollHeight) {
         textAreaRef.current.style.height = `${MAX_HEIGHT}px`;
-      } else {
-        textAreaRef.current.style.height = `${
-          textAreaRef?.current?.scrollHeight + 100
-        }px`;
       }
     }
   }, [value, isFullScreen]);

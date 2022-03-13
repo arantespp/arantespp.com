@@ -24,7 +24,7 @@ export const SCHEDULE_RANGE = 12 * ONE_WEEK; // Three months.
  * Schedule a tweet from `SCHEDULE_FROM` days from now. The goal is to give
  * a space to forget about the content of the tweet before reading it again.
  */
-export const SCHEDULE_FROM = 4 * ONE_WEEK; // One month.
+export const SCHEDULE_FROM = 1 * ONE_WEEK;
 
 export const WEEKEND_PROPORTION = 0.28;
 
