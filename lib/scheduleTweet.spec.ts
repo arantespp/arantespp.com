@@ -53,7 +53,7 @@ test('getScheduledDate', () => {
 
   const isSameDay = dateFns.isSameDay(
     new Date(scheduledDate),
-    new Date(2021, 11, 15, 8),
+    new Date(2021, 10, 17, 8),
   );
 
   expect(isSameDay).toBeTruthy();
