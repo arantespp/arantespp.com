@@ -211,14 +211,14 @@ const Network = ({
     }
   }, [network, query.node, selectNode]);
 
-  /**
-   * Set stabilization after some time even if graph isn't stabilized.
-   */
-  React.useEffect(() => {
-    setTimeout(() => {
-      setStabilizationIterationsDone(true);
-    }, 3 * 1000);
-  });
+  // /**
+  //  * Set stabilization after some time even if graph isn't stabilized.
+  //  */
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     setStabilizationIterationsDone(true);
+  //   }, 3 * 1000);
+  // });
 
   const options = {
     autoResize: true,
@@ -279,7 +279,7 @@ const Network = ({
     deselectNode: () => {
       setSelectedNode(undefined);
     },
-    stabilized: () => {
+    stabilizationIterationsDone: () => {
       setStabilizationIterationsDone(true);
     },
   };

@@ -228,6 +228,7 @@ const JournalEditor = () => {
             setContent(e.target.value);
           }}
           autoFocus
+          rows={20}
         />
       </Box>
       <Flex sx={{ justifyContent: 'space-between' }}>

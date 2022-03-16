@@ -6,6 +6,7 @@ import { getToday } from '../../../lib/getToday';
 
 import HTMLHeaders from '../../components/HTMLHeaders';
 import Journal from '../../components/Journal';
+import Link from '../../components/Link';
 
 import { useApiKey } from '../../hooks/useApiKey';
 
@@ -42,6 +43,7 @@ const JournalIndex = () => {
     <>
       <HTMLHeaders noIndex title="Journal" />
       <Journal markdown={summary} title="Journal" />
+      <Link href="/journal/all">All</Link>
     </>
   );
 };
