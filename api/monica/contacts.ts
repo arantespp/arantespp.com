@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import { requireApiKey } from '../../lib/hofs/requireApiKey';
