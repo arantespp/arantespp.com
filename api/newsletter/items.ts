@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { saveNewsletterItems } from '../../lib/newsletter';
 
-import { productionBlocker } from '../hofs/productionBlocker';
+import { productionBlocker } from '../../lib/hofs/productionBlocker';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'PUT') {

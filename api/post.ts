@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { getPartialPost, getDraft } from '../lib/files';
 import { savePost } from '../lib/savePost';
 
-import { productionBlocker } from './hofs/productionBlocker';
+import { productionBlocker } from '../lib/hofs/productionBlocker';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {

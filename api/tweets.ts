@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { requireApiKey } from './hofs/requireApiKey';
+import { requireApiKey } from '../lib/hofs/requireApiKey';
 
 import { getAllScheduledTweets } from '../lib/scheduleTweet';
 
