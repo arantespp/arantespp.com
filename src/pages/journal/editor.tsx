@@ -1,12 +1,14 @@
 import * as dateFns from 'date-fns';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import * as React from 'react';
 import { useQuery } from 'react-query';
+
 import { Box, Flex, Input, Themed, Text } from 'theme-ui';
 
 import Editor from '../../components/Editor';
 import ErrorMessage from '../../components/ErrorMessage';
 import HTMLHeaders from '../../components/HTMLHeaders';
+import { JournalSearchName } from '../../components/JournalSearchName';
 import Link from '../../components/Link';
 
 import { Journal } from '../../../lib/journal';
@@ -72,6 +74,39 @@ const useAutoSave = (content: string) => {
     return () => clearTimeout(timeout);
   }, [apiKey, content, date]);
 
+  /**
+   * Warn User for Unsaved Form before Route Change
+   * https://stackoverflow.com/a/69855350/8786986
+   */
+  React.useEffect(() => {
+    const confirmationMessage = 'Saving changes...';
+
+    const beforeUnloadHandler = (e: BeforeUnloadEvent) => {
+      (e || window.event).returnValue = confirmationMessage;
+      return confirmationMessage;
+    };
+
+    const beforeRouteHandler = (url: string) => {
+      if (Router.pathname !== url && !confirm(confirmationMessage)) {
+        Router.events.emit('routeChangeError');
+        throw `Route change to "${url}" was aborted (this error can be safely ignored). See https://github.com/zeit/next.js/issues/2476.`;
+      }
+    };
+
+    if (isSaving) {
+      window.addEventListener('beforeunload', beforeUnloadHandler);
+      Router.events.on('routeChangeStart', beforeRouteHandler);
+    } else {
+      window.removeEventListener('beforeunload', beforeUnloadHandler);
+      Router.events.off('routeChangeStart', beforeRouteHandler);
+    }
+
+    return () => {
+      window.removeEventListener('beforeunload', beforeUnloadHandler);
+      Router.events.off('routeChangeStart', beforeRouteHandler);
+    };
+  }, [isSaving]);
+
   return { error, isSaving };
 };
 
@@ -98,8 +133,12 @@ const useContent = () => {
   const { error, isSaving } = useAutoSave(content);
 
   React.useEffect(() => {
+    if (!contentFromApi || !date) {
+      return setContent('');
+    }
+
     setContent(contentFromApi);
-  }, [contentFromApi]);
+  }, [date, contentFromApi]);
 
   return { content, setContent, date, error, isSaving, isLoadingContent };
 };
@@ -206,6 +245,8 @@ const JournalEditor = () => {
 
   const { dateInput, setDateInput } = useDateInput(date);
 
+  const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
+
   const title = 'Journal Editor';
 
   return (
@@ -221,6 +262,7 @@ const JournalEditor = () => {
       <ErrorMessage error={error} />
       <Box sx={{ marginY: 3 }}>
         <Editor
+          ref={textAreaRef}
           disabled={isLoadingContent}
           isValid={!!content}
           value={content}
@@ -238,6 +280,7 @@ const JournalEditor = () => {
         </Flex>
         <Text sx={{ color: isSaving ? 'muted' : 'text' }}>Saved</Text>
       </Flex>
+      <JournalSearchName textAreaRef={textAreaRef} />
     </>
   );
 };

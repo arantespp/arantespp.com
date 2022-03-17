@@ -54,6 +54,7 @@
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
     "string-similarity": "^4.0.4",
+    "textarea-caret": "^3.1.0",
     "theme-ui": "^0.13.1",
     "title-case": "^3.0.3",
     "twitter-ads": "^0.2.1",
