@@ -280,7 +280,7 @@ const JournalEditor = () => {
         </Flex>
         <Text sx={{ color: isSaving ? 'muted' : 'text' }}>Saved</Text>
       </Flex>
-      <JournalSearchName textAreaRef={textAreaRef} />
+      <JournalSearchName {...{ date, setContent, textAreaRef }} />
     </>
   );
 };

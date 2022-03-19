@@ -8,7 +8,7 @@ import { useApiKey } from '../hooks/useApiKey';
 
 type Contact = { firstName: string; completeName: string; url: string };
 
-const useSearchMonicaContacts = () => {
+const useMonicaContacts = () => {
   const { apiKey } = useApiKey();
 
   const searchMonicaContacts = async ({ query }: { query: string }) => {
@@ -17,25 +17,43 @@ const useSearchMonicaContacts = () => {
         'x-api-key': apiKey,
       },
     });
+
     const data: {
       contacts: Contact[];
     } = await response.json();
+
     return data;
   };
 
-  return { searchMonicaContacts };
+  const updateContactActivity = React.useCallback(
+    async (args: { content: string; date: string; contact: Contact }) =>
+      fetch(`/api/monica/contacts`, {
+        method: 'POST',
+        headers: {
+          'x-api-key': apiKey,
+        },
+        body: JSON.stringify(args),
+      }),
+    [apiKey],
+  );
+
+  return { searchMonicaContacts, updateContactActivity };
 };
 
 export const JournalSearchName = ({
+  date,
+  setContent,
   textAreaRef,
 }: {
+  date: string;
+  setContent: React.Dispatch<React.SetStateAction<string>>;
   textAreaRef: React.RefObject<HTMLTextAreaElement>;
 }) => {
   const searchContainerRef = React.useRef<HTMLDivElement>(null);
 
   const [query, setQuery] = React.useState('');
 
-  const { searchMonicaContacts } = useSearchMonicaContacts();
+  const { searchMonicaContacts, updateContactActivity } = useMonicaContacts();
 
   const { data } = useQuery(
     ['monica-contact', query],
@@ -44,7 +62,20 @@ export const JournalSearchName = ({
     { enabled: !!query },
   );
 
-  const contacts = data?.contacts || [];
+  const contacts = React.useMemo(() => data?.contacts || [], [data]);
+
+  const showContacts = contacts.length > 0;
+
+  const [hoveredContactIndex, setHoveredContactIndex] = React.useState(0);
+
+  /**
+   * Reset hoveredContactIndex when the search container disappears.
+   */
+  React.useEffect(() => {
+    if (!showContacts) {
+      setHoveredContactIndex(0);
+    }
+  }, [showContacts]);
 
   const [position, setPosition] = React.useState<
     | Partial<{
@@ -55,10 +86,81 @@ export const JournalSearchName = ({
     | undefined
   >(undefined);
 
+  const replaceName = React.useCallback(
+    (contact: Contact) => {
+      if (!textAreaRef.current) {
+        return;
+      }
+
+      const content = textAreaRef.current?.value.replace(
+        query,
+        `[${contact.firstName}](${contact.url})`,
+      );
+
+      /**
+       * Do not need to wait for the content to be updated, so `await` isn't
+       * necessary.
+       */
+      updateContactActivity({ date, content, contact });
+
+      setContent(content);
+
+      setQuery('');
+
+      textAreaRef.current?.focus();
+    },
+    [textAreaRef, query, setContent, updateContactActivity, date],
+  );
+
   React.useEffect(() => {
     if (!textAreaRef.current) {
       return;
     }
+
+    /**
+     * Use keys to navigate through the contacts and enter to select.
+     */
+    textAreaRef.current.onkeydown = (e) => {
+      if (!showContacts) {
+        return;
+      }
+
+      console.log('AAAAAAAA');
+
+      if (['ArrowDown', 'ArrowUp', 'Enter'].includes(e.key)) {
+        console.log('BBBBBBBBB');
+        e.preventDefault();
+      }
+
+      console.log('CCCCCCCCCC');
+
+      if (e.key === 'Enter') {
+        replaceName(contacts[hoveredContactIndex]);
+        return;
+      }
+
+      let move = 0;
+
+      if (e.key === 'ArrowDown') {
+        move = 1;
+      }
+
+      if (e.key === 'ArrowUp') {
+        move = -1;
+      }
+
+      setHoveredContactIndex((i) => {
+        if (i === contacts.length - 1 && move === 1) {
+          return 0;
+        }
+
+        if (i === 0 && move === -1) {
+          return contacts.length - 1;
+        }
+
+        return i + move;
+      });
+    };
 
     textAreaRef.current.oninput = (e) => {
       const textarea = e.target as HTMLTextAreaElement;
@@ -88,7 +190,7 @@ export const JournalSearchName = ({
           return;
         }
 
-        if (wq.length < 3) {
+        if (wq.length < 2) {
           return;
         }
 
@@ -133,24 +235,9 @@ export const JournalSearchName = ({
 
       setPosition({ top, left, right });
     };
-  }, [textAreaRef]);
+  }, [contacts, hoveredContactIndex, replaceName, showContacts, textAreaRef]);
 
-  const replaceName = (contact: Contact) => {
-    if (!textAreaRef.current) {
-      return;
-    }
-
-    textAreaRef.current.value = textAreaRef.current?.value.replace(
-      query,
-      `[${contact.firstName}](${contact.url})`,
-    );
-
-    setQuery('');
-
-    textAreaRef.current?.focus();
-  };
-
-  if (contacts.length === 0) {
+  if (!showContacts) {
     return null;
   }
 
@@ -168,12 +255,18 @@ export const JournalSearchName = ({
         ...position,
       }}
     >
-      {contacts.map((contact) => (
+      {contacts.map((contact, index) => (
         <Text
           key={contact.url}
-          sx={{ ':hover': { fontWeight: 'bold' } }}
+          sx={{
+            fontWeight: hoveredContactIndex === index ? 'bold' : 'normal',
+            whiteSpace: 'nowrap',
+          }}
           onClick={() => {
             replaceName(contact);
+          }}
+          onMouseEnter={() => {
+            setHoveredContactIndex(index);
           }}
         >
           {contact.completeName}
