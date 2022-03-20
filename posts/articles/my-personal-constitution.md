@@ -20,7 +20,7 @@ excerpt: >-
 title: My Personal Constitution
 group: articles
 formattedDate: 'December 27, 2021'
-updatedAt: 'February 15, 2022'
+updatedAt: 'March 20, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/articles/my-personal-constitution.md
 href: /articles/my-personal-constitution
@@ -32,7 +32,7 @@ url: 'https://arantespp.com/articles/my-personal-constitution'
 keywords:
   - articles
   - principles
-readingTime: 5
+readingTime: 6
 ---
 
 Ok, this is my most challenging text. I've been delayed in starting to write it because I'll need to have a lot of self-awareness.
@@ -63,7 +63,11 @@ I always go to win-win decisions.
 
 ### Abundance
 
-There is wealth for everyone in this world.
+Abundance mindset and [win-win relationships](#win-win-relationships) are strongly correlated to each other (maybe they're the same thing). With this mindset, we can act as there are wealth and opportunities for everyone in the world. If I win, others can win too, and I can help them achieve their victories. Acting like this also helps create a [serendipity](#serendipity) field for us, which is another principle I have.
+
+The opposite is to have a scarcity mindset. People who have a scarcity mindset will always see the world with a fixed number of opportunities, resources, relationships, friendships, fame, attention, etc. As a result, they always want to be better than the next person, and they'll always see others as competitors, not collaborators.
+
+Having an abundance mindset and seeing others as collaborators increase our changes to create more positive [asymmetric opportunities](/z/asymmetric-opportunity). In addition, it creates synergy in our relationships.
 
 ### Serendipity
 
@@ -81,7 +85,7 @@ My three most outstanding values are power, light, and humor.
 
 ### Power
 
-Power is the most important value for me. I mean by power as the person of total and contagious energy. [Sam Altman defined](https://blog.samaltman.com/how-to-be-successful) this kind of power as a "force of nature" person. It means that the person has a powerful character, high energy, is unstoppable, and unforgettable.
+Power is the most important value for me. I mean by power as the person of total and contagious energy. [Sam Altman defined](https://blog.samaltman.com/how-to-be-successful) this kind of power as a "force of nature" person. It means that the person has a powerful character, high energy, is unstoppable, and is unforgettable.
 
 ### Light
 
