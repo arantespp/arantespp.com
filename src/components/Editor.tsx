@@ -3,12 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import { Box, Text, Textarea, TextareaProps } from 'theme-ui';
 
-import FullWidth from './FullWidth';
-
-const MAX_HEIGHT = 800;
-
-const MAX_WIDTH = 1000;
-
 const TextAreaContainer = ({
   children,
   isFullScreen,
@@ -36,7 +30,7 @@ const TextAreaContainer = ({
     );
   }
 
-  return <FullWidth>{children}</FullWidth>;
+  return <>{children}</>;
 };
 
 const useCombinedRefs = (
@@ -71,42 +65,15 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
 
     const { value } = props;
 
-    /**
-     * Commented because every post edition the cursor kept in the top.
-     */
-    // React.useEffect(() => {
-    //   if (textAreaRef.current) {
-    //     const { scrollHeight, scrollTop, clientHeight } = textAreaRef.current;
-
-    //     const isAlmostOnBottom = clientHeight + scrollTop > 0.95 * scrollHeight;
-
-    //     if (isAlmostOnBottom) {
-    //       textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight;
-    //     }
-    //   }
-    // }, [value]);
-
     React.useEffect(() => {
       if (textAreaRef?.current) {
-        /**
-         * https://stackoverflow.com/a/25621277/8786986
-         */
         textAreaRef.current.style.height = 'auto';
 
-        if (isFullScreen) {
-          textAreaRef.current.style.height = '100%';
-          return;
-        }
-
-        if (MAX_HEIGHT < textAreaRef.current.scrollHeight) {
-          textAreaRef.current.style.height = `${MAX_HEIGHT}px`;
-        }
+        textAreaRef.current.style.height = `${
+          textAreaRef.current.scrollHeight + 50
+        }px`;
       }
-    }, [value, isFullScreen, textAreaRef]);
-
-    const hasScrollbar =
-      (textAreaRef?.current?.scrollHeight || 0) >
-      (textAreaRef.current?.clientHeight || 1);
+    }, [textAreaRef, value]);
 
     return (
       <TextAreaContainer isFullScreen={isFullScreen}>
@@ -115,13 +82,11 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
             position: 'relative',
             width: '100%',
             height: '100%',
-            maxWidth: MAX_WIDTH,
           }}
         >
           <Textarea
             ref={textAreaRef}
             placeholder="Write something..."
-            rows={10}
             onKeyDown={(e) => {
               if (e.key === 'Tab' && !e.shiftKey) {
                 document.execCommand('insertText', false, '  ');
@@ -136,6 +101,8 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
                 borderColor: 'muted',
                 cursor: 'not-allowed',
               },
+              minHeight: '250px',
+              overflowY: 'hidden',
               overflowClipMargin: 5,
               ...(isValid
                 ? {}
@@ -151,7 +118,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
               top: 0,
               right: 0,
               marginTop: 1,
-              marginRight: hasScrollbar ? 3 : 1,
+              marginRight: 1,
               cursor: 'pointer',
               display: 'inline-flex',
             }}

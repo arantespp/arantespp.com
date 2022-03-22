@@ -125,14 +125,9 @@ export const JournalSearchName = ({
         return;
       }
 
-      console.log('AAAAAAAA');
-
       if (['ArrowDown', 'ArrowUp', 'Enter'].includes(e.key)) {
-        console.log('BBBBBBBBB');
         e.preventDefault();
       }
-
-      console.log('CCCCCCCCCC');
 
       if (e.key === 'Enter') {
         replaceName(contacts[hoveredContactIndex]);

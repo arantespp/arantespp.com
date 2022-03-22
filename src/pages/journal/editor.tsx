@@ -16,10 +16,27 @@ import { getToday } from '../../../lib/getToday';
 
 import { useApiKey } from '../../hooks/useApiKey';
 
-const useDate = () => {
-  const { asPath, push, query } = useRouter();
+const useNextQueryParams = (): { [key: string]: string } => {
+  const router = useRouter();
 
-  const date = (query.date as string | undefined) || getToday();
+  const value = React.useMemo(() => {
+    // @see https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+    const queryParamsStr = router.asPath.split('?').slice(1).join('');
+    const urlSearchParams = new URLSearchParams(queryParamsStr);
+    // the first key might be in the shape "/assets?foobar", we must change to "foobar"
+    const params = Object.fromEntries(urlSearchParams.entries());
+    return params;
+  }, [router.asPath]);
+
+  return value;
+};
+
+const useDate = () => {
+  const { asPath, push } = useRouter();
+
+  const query = useNextQueryParams();
+
+  const date = query.date || getToday();
 
   /**
    * Add `date` to the URL if it's not already there. It's easier to edit date if needed.
@@ -270,7 +287,6 @@ const JournalEditor = () => {
             setContent(e.target.value);
           }}
           autoFocus
-          rows={20}
         />
       </Box>
       <Flex sx={{ justifyContent: 'space-between' }}>
