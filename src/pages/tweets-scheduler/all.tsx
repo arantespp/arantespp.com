@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { useInfiniteQuery, useQueryClient } from 'react-query';
 import { Button, Flex, Themed } from 'theme-ui';
 
@@ -41,17 +42,36 @@ const TweetsSchedulerAll = () => {
     },
   );
 
-  const tweets = data?.pages.flatMap((page) => page.tweets) || [];
+  const tweets = data?.pages?.flatMap((page) => page.tweets) || [];
 
-  const onUpdated = (data: any) => {
-    const allTweets = queryClient.getQueryData<any[]>(queryKey) || [];
+  const onUpdated = React.useCallback(
+    (updatedTweet: any) => {
+      const allTweets = queryClient.getQueryData<{
+        pageParams: any[];
+        pages: { nextCursor: string; tweets: ScheduledTweetProps[] }[];
+      }>(queryKey) || { pageParams: [], pages: [] };
 
-    const allTweetsUpdated = allTweets.map((tweet) => {
-      return tweet.id === data.id ? data : tweet;
-    });
+      const newPages = allTweets.pages.map((page) => {
+        const newPage = {
+          ...page,
+          tweets: page.tweets.map((tweet) => {
+            if (tweet.id === updatedTweet.id) {
+              return updatedTweet;
+            }
 
-    queryClient.setQueryData(queryKey, allTweetsUpdated);
-  };
+            return tweet;
+          }),
+        };
+
+        return newPage;
+      });
+
+      const updatedAllTweets = { ...allTweets, pages: newPages };
+
+      queryClient.setQueryData(queryKey, updatedAllTweets);
+    },
+    [queryClient],
+  );
 
   return (
     <>

@@ -228,8 +228,6 @@ export const getAllScheduledTweets = async ({
 }: {
   cursor?: string;
 }) => {
-  console.log({ cursor });
-
   const params = new URLSearchParams({
     count: 200,
     user_id: process.env.TWITTER_USER_ID,
