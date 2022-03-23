@@ -294,7 +294,15 @@ const JournalEditor = () => {
           <Link href="/journal/all">All</Link>
           <Link href="/journal">Summary</Link>
         </Flex>
-        <Text sx={{ color: isSaving ? 'muted' : 'text' }}>Saved</Text>
+        <Text
+          sx={
+            isSaving || isLoadingContent
+              ? { color: 'muted', fontStyle: 'italic' }
+              : { color: 'text' }
+          }
+        >
+          Saved
+        </Text>
       </Flex>
       <JournalSearchName {...{ date, setContent, textAreaRef }} />
     </>

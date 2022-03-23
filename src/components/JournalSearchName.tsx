@@ -170,7 +170,9 @@ export const JournalSearchName = ({
         endPos = textarea.value.length;
       }
 
-      const result = /\S+$/.exec(textarea.value.slice(0, endPos));
+      const slicedString = textarea.value.slice(0, textarea.selectionEnd);
+
+      const result = /\S+$/.exec(slicedString);
 
       const wordQuery = (() => {
         let wq = result ? result[0] : undefined;
