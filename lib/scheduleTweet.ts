@@ -26,7 +26,86 @@ export const SCHEDULE_RANGE = 12 * ONE_WEEK; // Three months.
  */
 export const SCHEDULE_FROM = 1 * ONE_WEEK;
 
-export const WEEKEND_PROPORTION = 0.28;
+/**
+ * The probability to schedule a tweet on weekends.
+ *
+ * For example:
+ *
+ * 1. If we had chosen WEEKEND_PROBABILITY = 0.1, then we would have
+ * the probabilities [5%, 18%, 18%, 18%, 18%, 18%, 5%].
+ *
+ * 2. If we had chosen WEEKEND_PROBABILITY = 0.05, then we would have
+ * the probabilities [2,5%, 19%, 19%, 19%, 19%, 19%, 2,5%].
+ *
+ * The number of schedules tweets per day given the amount of tweets (n) is:
+ * - weekday: SINGLE_WEEKDAY_PROBABILITY * 7 * n
+ * - weekend: SINGLE_WEEKEND_PROBABILITY * 7 * n
+ *
+ * If we had chosen example 1., we would have:
+ *
+ * - weekday: 1,26 * n
+ * - weekend: 0,35 * n
+ *
+ * | n | weekday | weekend |
+ * |---|---------|---------|
+ * | 1 | 1.26    | 0.35    |
+ * | 2 | 2.52    | 0.70    |
+ * | 3 | 3.78    | 1.05    |
+ * | 4 | 5.04    | 1.40    |
+ * | 5 | 6.30    | 1.75    |
+ * | 6 | 7.56    | 2.10    |
+ * | 7 | 8.82    | 2.45    |
+ * | 8 | 10.08   | 2.80    |
+ * | 9 | 11.34   | 3.15    |
+ * | 10| 12.60   | 3.50    |
+ * -------
+ *
+ * If we had chosen example 2., we would have:
+ *
+ * - weekday: 1,33 * n
+ * - weekend: 0,175 * n
+ *
+ * | n | weekday | weekend |
+ * |---|---------|---------|
+ * | 1 | 1.33    | 0.175   |
+ * | 2 | 2.66    | 0.35    |
+ * | 3 | 3.99    | 0.525   |
+ * | 4 | 5.32    | 0.70    |
+ * | 5 | 6.65    | 0.875   |
+ * | 6 | 7.98    | 1.05    |
+ * | 7 | 9.31    | 1.225   |
+ * | 8 | 10.64   | 1.4     |
+ * | 9 | 11.97   | 1.575   |
+ * | 10| 13.30   | 1.75    |
+ * -------
+ */
+const WEEKEND_PROBABILITY = 0.05;
+
+/**
+ * This value means that, to achieve the `WEEKEND_PROBABILITY` goal, we need to
+ * have the proportion of tweets on weekdays and weekends equals to:
+ * 1:WEEKEND_PROPORTION.
+ *
+ * The number of schedules tweets per day given the amount of tweets (n) is:
+ * - weekday: 1,26 * n
+ * - weekend: 0,35 * n
+ *
+ * | n | weekday | weekend |
+ * |---|---------|---------|
+ * | 1 | 1,26    | 0,35    |
+ * | 2 | 2,52    | 0,70    |
+ * | 3 | 3,78    | 1,05    |
+ * | 4 | 5,04    | 1,40    |
+ * | 5 | 6,30    | 1,75    |
+ * | 6 | 7,56    | 2,10    |
+ * | 7 | 8,82    | 2,45    |
+ * | 8 | 10,08   | 2,80    |
+ * | 9 | 11,34   | 3,15    |
+ * | 10| 12,60   | 3,50    |
+ * -------
+ */
+export const WEEKEND_PROPORTION =
+  (5 * WEEKEND_PROBABILITY) / (1 - WEEKEND_PROBABILITY) / 2;
 
 export const SKIP_DAYS = ['12-24', '12-25', '12-26', '12-30', '12-31', '01-01'];
 
@@ -47,28 +126,6 @@ export const getScheduledDate = ({
    */
   let scheduledDate = dateFns.addDays(today, SCHEDULE_FROM);
 
-  /**
-   * With these weights, we get a probability of 10% to get a weekend.
-   * The probabilities are [5%, 18%, 18%, 18%, 18%, 18%, 5%].
-   *
-   * The number of schedules tweets per day given the amount of tweets (n) is:
-   * - weekday: 1,26 * n
-   * - weekend: 0,35 * n
-   *
-   * | n | weekday | weekend |
-   * |---|---------|---------|
-   * | 1 | 1,26    | 0,35    |
-   * | 2 | 2,52    | 0,70    |
-   * | 3 | 3,78    | 1,05    |
-   * | 4 | 5,04    | 1,40    |
-   * | 5 | 6,30    | 1,75    |
-   * | 6 | 7,56    | 2,10    |
-   * | 7 | 8,82    | 2,45    |
-   * | 8 | 10,08   | 2,80    |
-   * | 9 | 11,34   | 3,15    |
-   * | 10| 12,60   | 3,50    |
-   * -------
-   */
   const weights = [...new Array(SCHEDULE_RANGE + numberOfTweets)].map(
     (_, i) => {
       const currentDate = dateFns.addDays(scheduledDate, i);

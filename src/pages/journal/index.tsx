@@ -43,7 +43,7 @@ const JournalIndex = () => {
     <>
       <HTMLHeaders noIndex title="Journal" />
       <Journal markdown={summary} title="Journal" />
-      <Link href="/journal/all">All</Link>
+      {summary && <Link href="/journal/all">All</Link>}
     </>
   );
 };

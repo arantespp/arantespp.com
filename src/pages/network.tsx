@@ -87,7 +87,10 @@ export const getStaticProps = async () => {
     })),
   );
 
-  const edges = [...backlinksEdges, ...tagsEdges];
+  const edges = [...backlinksEdges, ...tagsEdges].map((edge) => ({
+    ...edge,
+    id: `${edge.from}-${edge.to}`,
+  }));
 
   const mostConnectedNodeId = Object.entries<number>(
     edges.reduce((acc, edge) => {
