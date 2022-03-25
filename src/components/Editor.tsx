@@ -67,11 +67,19 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
 
     React.useEffect(() => {
       if (textAreaRef?.current) {
+        /**
+         * https://stackoverflow.com/a/18262927/8786986
+         */
+        const scrollLeft = window.pageXOffset || textAreaRef.current.scrollLeft;
+        const scrollTop = window.pageYOffset || textAreaRef.current.scrollTop;
+
         textAreaRef.current.style.height = 'auto';
 
         textAreaRef.current.style.height = `${
           textAreaRef.current.scrollHeight + 50
         }px`;
+
+        window.scrollTo(scrollLeft, scrollTop);
       }
     }, [textAreaRef, value]);
 
