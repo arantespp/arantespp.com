@@ -3,32 +3,61 @@ image: null
 book:
   authors:
     - Napoleon Hill
-  link: >-
-    https://www.amazon.com.br/Think-Grow-Rich-Napoleon-Hill/dp/8568014062/
+  link: 'https://www.amazon.com.br/Think-Grow-Rich-Napoleon-Hill/dp/8568014062/'
   ASIN: B0153TBCC2
   image: /images/books/think-and-grow-rich.jpg
+bitLink: think-and-grow-rich
 draft: true
-tags: []
+tags:
+  - napoleon-hill
 rating: 2
 date: '2022-03-09'
 excerpt: ''
 title: Think and Grow Rich
 group: books
 formattedDate: 'March 09, 2022'
-updatedAt: 'March 09, 2022'
+updatedAt: 'March 26, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/think-and-grow-rich.md
 href: /books/think-and-grow-rich
-as: /b/think-and-grow-rich
+as: /think-and-grow-rich
 slug: think-and-grow-rich
 editLink: >-
   https://github.com/arantespp/arantespp.com/edit/main/posts/books/think-and-grow-rich.md
 url: 'https://arantespp.com/books/think-and-grow-rich'
 keywords:
   - books
-readingTime: 3
-bitLink: think-and-grow-rich
+  - napoleon-hill
+readingTime: 4
 ---
+
+## TL;DR
+
+Napoleon Hill says that there is a secret that makes everyone who uses it rich. Everyone, if prepared, will discover the secret through the book, in a specific chapter, example, or idea.
+
+## Chapter 1 - Introduction
+
+In this chapter, Napoleon talks about thoughts and desires. When someone desires a thing so deeply and has the determination to keep going, she is sure to win. But, before success, he is sure to meet with temporary defeat or failure, in which the majority quit—the easiest way. More than five hundred successful men told their most tremendous success came just one step beyond the point where defeat had overtaken them.
+
+### Illustrating the secret
+
+When Ford decided to produce his famous V-8 motor, he chose to build an engine with the entire eight cylinders cast in one block. However, the engineers responsible for designing it said that it was impossible.
+
+"Produce it anyway," Ford said. "Go ahead and stay on the job until you succeed no matter how much time is required."
+
+The engineers went ahead. Six months went by, another six months passed, and nothing happened. At the end of the year, Ford checked with his engineers, and they informed him they couldn't find a solution.
+
+"Go ahead," said Ford, "I want it, and I'll have it."
+
+They went ahead, and then they discovered the V-8 motor. So the Ford **determination** had won once more.
+
+Napoleon says that this story contains the sum and substance of the secret of the Ford millions. Could you deduce it?
+
+### We have the power to control our thoughts
+
+We're the masters of our Fate, the Captains of our souls because we have the power to control our thoughts. Our brains become magnetized with the dominating thoughts in our minds. These magnets attract to us the forces, the people, the circumstances of life which resonate with the nature of our dominating thoughts.
+
+Wherever we want for us, we have to magnetize our minds with an intense **desire** for what we want.
 
 ## Chapter 11 - The Mystery of Sex Transmutation
 
