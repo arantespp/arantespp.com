@@ -4,7 +4,7 @@ const FullWidth = ({ children }) => {
   /**
    * 96 to avoid overflow X.
    */
-  const editorWidthInVw = 95;
+  const editorWidthInVw = 96;
 
   return (
     <Flex

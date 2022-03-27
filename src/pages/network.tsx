@@ -2,8 +2,9 @@ import * as React from 'react';
 import { InferGetStaticPropsType } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import { Box, Flex, Spinner, Text, useThemeUI } from 'theme-ui';
+import { Box, Button, Flex, Text } from 'theme-ui';
 
+// import { nodeColors } from '../components/NetworkGraph';
 import FullWidth from '../components/FullWidth';
 import HTMLHeaders from '../components/HTMLHeaders';
 import RecommendationCard from '../components/RecommendationCard';
@@ -11,62 +12,37 @@ import Tag from '../components/Tag';
 
 import { getAllTags, getPosts } from '../../lib/files';
 
-import { theme } from '../theme';
-
-const GraphVis = dynamic<any>(() => import('react-graph-vis'), { ssr: false });
+const NetworkGraph = dynamic(() => import('../components/NetworkGraph'), {
+  ssr: false,
+});
 
 export const getStaticProps = async () => {
   const allPosts = getPosts({ all: true });
   const allTags = getAllTags();
 
-  const nodeColors = {
-    post: theme.colors?.prussianBlue,
-    tag: theme.colors?.honeydew,
-    selectedNode: theme.colors?.imperialRed,
-    border: theme.colors?.prussianBlue,
-  };
-
   const postsNodes = allPosts.map(({ href, title }) => ({
     id: href,
     group: 'post',
-    label: title,
-    value: 2,
-    color: nodeColors.post,
+    name: title,
+    val: 20,
   }));
 
   const tagsNodes = allTags.map((tag) => ({
     id: tag,
     group: 'tag',
-    label: tag,
-    value: 1,
-    color: nodeColors.tag,
+    name: `#${tag}`,
+    val: 1,
   }));
 
   const nodes = [...postsNodes, ...tagsNodes].map((node) => ({
     ...node,
-    /**
-     * https://visjs.github.io/vis-network/docs/network/nodes.html
-     */
-    color: {
-      border: nodeColors.border,
-      background: node.color,
-      highlight: {
-        background: nodeColors.selectedNode,
-        border: nodeColors.border,
-      },
-      hover: {
-        background: node.color,
-        border: nodeColors.selectedNode,
-      },
-    },
   }));
 
-  const backlinksEdges = allPosts
+  const backlinksLinks = allPosts
     .flatMap(({ backlinks, href }) =>
       (backlinks || []).map((backlink) => ({
-        from: backlink.href,
-        to: href,
-        value: 1,
+        target: backlink.href,
+        source: href,
       })),
     )
     /**
@@ -74,62 +50,29 @@ export const getStaticProps = async () => {
      */
     .filter((edge, _, edges) => {
       const duplicatedEdge = edges.find(
-        (e) => e.from === edge.to && e.to === edge.from && edge.from > edge.to,
+        (e) =>
+          e.target === edge.source &&
+          e.source === edge.target &&
+          edge.target > edge.source,
       );
+
       return !duplicatedEdge;
     });
 
-  const tagsEdges = allPosts.flatMap(({ href, tags }) =>
+  const tagsLinks = allPosts.flatMap(({ href, tags }) =>
     tags.map((tag) => ({
-      from: href,
-      to: tag,
+      target: href,
+      source: tag,
       value: 1,
     })),
   );
 
-  const edges = [...backlinksEdges, ...tagsEdges].map((edge) => ({
-    ...edge,
-    id: `${edge.from}-${edge.to}`,
+  const links = [...backlinksLinks, ...tagsLinks].map((link) => ({
+    ...link,
   }));
 
-  const mostConnectedNodeId = Object.entries<number>(
-    edges.reduce((acc, edge) => {
-      if (!acc[edge.from]) {
-        acc[edge.from] = 1;
-      } else {
-        acc[edge.from] += 1;
-      }
-
-      if (!acc[edge.to]) {
-        acc[edge.to] = 1;
-      } else {
-        acc[edge.to] += 1;
-      }
-
-      return acc;
-    }, {}),
-  ).reduce(
-    (acc, [nodeId, value]) => {
-      if (acc.value < value) {
-        return { nodeId, value };
-      }
-      return acc;
-    },
-    { nodeId: '', value: 0 },
-  ).nodeId;
-
-  const mostConnectedNode = nodes.find(
-    (node) => node.id === mostConnectedNodeId,
-  );
-
-  if (mostConnectedNode) {
-    /**
-     * Do something in the future.
-     */
-  }
-
   return {
-    props: { allPosts, nodes, edges, nodeColors, mostConnectedNodeId },
+    props: { allPosts, nodes, links },
   };
 };
 
@@ -151,141 +94,22 @@ const Legend = ({ color, label }: { color: string; label: string }) => (
 
 const Network = ({
   allPosts,
-  nodes: propsNodes,
-  edges,
-  nodeColors,
+  nodes,
+  links,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const {
-    theme: { fontSizes, sizes },
-  } = useThemeUI();
+  const [selectedNodeId, setSelectedNodeId] = React.useState('');
 
-  const [selectedNode, setSelectedNode] = React.useState<{
-    id: string;
-    group: string;
-  }>();
+  const selectedNode = React.useMemo(() => {
+    return nodes.find((n) => n.id === selectedNodeId);
+  }, [nodes, selectedNodeId]);
 
-  const [stabilizationIterationsDone, setStabilizationIterationsDone] =
-    React.useState(false);
+  const router = useRouter();
 
-  const [network, setNetwork] = React.useState<any>();
-
-  const { query } = useRouter();
-
-  const nodes = (() =>
-    propsNodes.map((node) => {
-      if (
-        query.node &&
-        typeof query.node === 'string' &&
-        query.node === node.id
-      ) {
-        // Do something with the node id passed by URL.
-        Object.assign(node);
-      }
-
-      return node;
-    }))();
-
-  const selectNode = React.useCallback(
-    (id: string) => {
-      const node = nodes.find((n) => n.id === id);
-      setSelectedNode(node);
-    },
-    /**
-     * Cannot add nodes as dependency because it will recreates this method
-     * every time and it'll affect the useEffect that handles the selected
-     * node by query params.
-     */
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  );
-
-  /**
-   * Select fixed node.
-   */
   React.useEffect(() => {
-    if (network && query.node) {
-      selectNode(query.node as string);
-
-      try {
-        network.selectNodes([query.node]);
-      } catch (err) {
-        network.selectNodes([]);
-      }
+    if (router.query.node && typeof router.query.node === 'string') {
+      setSelectedNodeId(router.query.node);
     }
-  }, [network, query.node, selectNode]);
-
-  // /**
-  //  * Set stabilization after some time even if graph isn't stabilized.
-  //  */
-  // React.useEffect(() => {
-  //   setTimeout(() => {
-  //     setStabilizationIterationsDone(true);
-  //   }, 3 * 1000);
-  // });
-
-  const options = {
-    autoResize: true,
-    clickToUse: true,
-    edges: {
-      arrows: {
-        to: {
-          enabled: false,
-        },
-        from: {
-          enabled: false,
-        },
-      },
-      scaling: {
-        min: 1,
-        max: 1,
-      },
-      smooth: true,
-    },
-    interaction: {
-      hover: true,
-    },
-    layout: { improvedLayout: false, randomSeed: nodes.length },
-    nodes: {
-      shape: 'dot',
-      scaling: {
-        label: {
-          min: fontSizes?.[2],
-          max: fontSizes?.[3],
-        },
-      },
-    },
-    physics: {
-      enabled: true,
-      stabilization: {
-        enabled: true,
-        iterations: 500,
-        fit: true,
-      },
-      solver: 'forceAtlas2Based',
-      forceAtlas2Based: {
-        theta: 0.5,
-        gravitationalConstant: -50,
-        centralGravity: 0.01,
-        springConstant: 0.08,
-        springLength: 100,
-        damping: 0.5,
-        avoidOverlap: 0,
-      },
-      adaptiveTimestep: true,
-    },
-  };
-
-  const events = {
-    selectNode: (event: any) => {
-      selectNode(event.nodes[0]);
-    },
-    deselectNode: () => {
-      setSelectedNode(undefined);
-    },
-    stabilizationIterationsDone: () => {
-      setStabilizationIterationsDone(true);
-    },
-  };
+  }, [router.query.node]);
 
   return (
     <>
@@ -296,82 +120,32 @@ const Network = ({
         image={{ url: 'https://arantespp.com/images/network.png' }}
       />
       <FullWidth>
+        <NetworkGraph
+          {...{
+            selectedNodeId,
+            setSelectedNodeId,
+            graphData: { nodes, links },
+          }}
+        />
+      </FullWidth>
+
+      {selectedNode && (
         <Box
           sx={{
-            backgroundColor: 'white',
-            width: '98%',
-            height: '95vh',
-            marginX: 'auto',
-            position: 'relative',
-            borderColor: 'black',
-            borderStyle: 'solid',
-            borderWidth: 1,
+            marginTop: 4,
           }}
         >
-          {selectedNode && (
-            <Box
-              sx={{
-                position: 'absolute',
-                backgroundColor: 'white',
-                zIndex: 2,
-                maxWidth: (sizes as any)?.container,
-                borderWidth: 1,
-                borderStyle: 'solid',
-                borderColor: 'black',
-                margin: 2,
-                padding: 2,
-              }}
-            >
-              {selectedNode.group === 'post' && (
-                <RecommendationCard
-                  recommendation={
-                    allPosts.find((post) => post.href === selectedNode.id)!
-                  }
-                />
-              )}
-              {selectedNode.group === 'tag' && <Tag tag={selectedNode.id} />}
-            </Box>
-          )}
-          {!stabilizationIterationsDone && (
-            <Flex
-              sx={{
-                position: 'absolute',
-                width: '100%',
-                height: '100%',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <Spinner />
-            </Flex>
-          )}
-          <GraphVis
-            graph={{ nodes, edges }}
-            options={options}
-            events={events}
-            getNetwork={(graphNetwork) => {
-              if (!network) {
-                setNetwork(graphNetwork);
+          {selectedNode.group === 'post' && (
+            <RecommendationCard
+              recommendation={
+                allPosts.find((post) => post.href === selectedNode.id)!
               }
-            }}
-          />
+            />
+          )}
+
+          {selectedNode.group === 'tag' && <Tag tag={selectedNode.id} />}
         </Box>
-      </FullWidth>
-      <Flex
-        sx={{
-          width: '100%',
-          justifyContent: 'center',
-          marginY: 3,
-          flexWrap: 'wrap',
-        }}
-      >
-        <Legend color={nodeColors.post as string} label="Post" />
-        <Legend color={nodeColors.tag as string} label="Tag" />
-        <Legend
-          color={nodeColors.selectedNode as string}
-          label="Selected Node"
-        />
-      </Flex>
+      )}
     </>
   );
 };
