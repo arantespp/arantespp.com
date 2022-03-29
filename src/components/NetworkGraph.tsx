@@ -1,8 +1,8 @@
-import dynamic from 'next/dynamic';
 import * as React from 'react';
 import ForceGraph3D, { ForceGraphMethods } from 'react-force-graph-3d';
 import SpriteText from 'three-spritetext';
 import { Button, Flex } from 'theme-ui';
+import { useResponsiveValue } from '@theme-ui/match-media';
 
 import { theme } from '../theme';
 
@@ -28,14 +28,16 @@ const NetworkGraph = ({
     width: 0,
   });
 
+  const widthPercentage = useResponsiveValue([0.96, 0.9]);
+
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
       setDimensions({
         height: 0.7 * window.innerHeight,
-        width: 0.9 * window.innerWidth,
+        width: widthPercentage * window.innerWidth,
       });
     }
-  }, []);
+  }, [widthPercentage]);
 
   if (height === 0 || width === 0) {
     return null;
