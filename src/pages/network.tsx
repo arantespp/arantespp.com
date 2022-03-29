@@ -122,6 +122,7 @@ const Network = ({
       <FullWidth>
         <NetworkGraph
           {...{
+            allPosts,
             selectedNodeId,
             setSelectedNodeId,
             graphData: { nodes, links },

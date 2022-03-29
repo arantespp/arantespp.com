@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Box } from 'theme-ui';
 
 import type { Recommendation } from '../../lib/files';
@@ -18,4 +19,4 @@ const RecommendationsList = ({
   </>
 );
 
-export default RecommendationsList;
+export default React.memo(RecommendationsList);

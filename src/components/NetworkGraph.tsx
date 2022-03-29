@@ -1,8 +1,10 @@
 import * as React from 'react';
 import ForceGraph3D, { ForceGraphMethods } from 'react-force-graph-3d';
 import SpriteText from 'three-spritetext';
-import { Button, Flex } from 'theme-ui';
+import { Box, Button, Input, Flex } from 'theme-ui';
 import { useResponsiveValue } from '@theme-ui/match-media';
+
+import { PostWithoutContent } from '../../lib/files';
 
 import { theme } from '../theme';
 
@@ -12,14 +14,63 @@ const nodeColors: { [key: string]: string } = {
   selectedNode: theme.colors?.imperialRed as string,
 };
 
+const SearchInput = ({
+  setSelectedNodeId,
+  allPosts,
+}: {
+  setSelectedNodeId: (id: string) => void;
+  allPosts: PostWithoutContent[];
+}) => {
+  const [inputValue, setInputValue] = React.useState('');
+
+  React.useEffect(() => {
+    const result = allPosts.find((r) => r.title === inputValue);
+    if (result) {
+      setSelectedNodeId(result.href);
+    }
+  }, [allPosts, inputValue, setSelectedNodeId]);
+
+  return (
+    <>
+      <Input
+        sx={{
+          position: 'absolute',
+          top: 2,
+          width: 500,
+          maxWidth: '96%',
+          left: 0,
+          right: 0,
+          margin: 'auto',
+          backgroundColor: 'background',
+        }}
+        list="results"
+        placeholder="What do you want to search?"
+        value={inputValue}
+        onChange={(e) => {
+          setInputValue(e.target.value);
+        }}
+      />
+      {inputValue.length > 1 && (
+        <Box as="datalist" id="results">
+          {allPosts.map((result) => (
+            <option key={result.href}>{result.title}</option>
+          ))}
+        </Box>
+      )}
+    </>
+  );
+};
+
 const NetworkGraph = ({
   graphData,
   setSelectedNodeId,
   selectedNodeId,
+  allPosts,
 }: {
   graphData: { nodes: any; links: any };
   selectedNodeId?: string;
   setSelectedNodeId: (id: string) => void;
+  allPosts: PostWithoutContent[];
 }) => {
   const forceGraphRef = React.useRef<ForceGraphMethods>();
 
@@ -65,7 +116,9 @@ const NetworkGraph = ({
           sprite.textHeight = 4;
           return sprite;
         }}
-        onNodeClick={(node: any) => setSelectedNodeId(node.id)}
+        onNodeClick={(node: any) => {
+          setSelectedNodeId(node.id);
+        }}
         nodeColor={(node: any) => {
           if (selectedNodeId === node.id) {
             return nodeColors.selectedNode;
@@ -78,6 +131,7 @@ const NetworkGraph = ({
           return nodeColors.tag;
         }}
       />
+      <SearchInput setSelectedNodeId={setSelectedNodeId} allPosts={allPosts} />
       <Button
         sx={{
           position: 'absolute',

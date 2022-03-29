@@ -1,49 +1,20 @@
 import { InferGetStaticPropsType } from 'next';
 import * as React from 'react';
-import { findBestMatch } from 'string-similarity';
 import { Box, Input, Themed, Text, Flex } from 'theme-ui';
-import { useDebounce } from 'use-debounce';
+
+import { getAllPosts } from '../../lib/files';
 
 import RecommendationsList from '../components/RecommendationsList';
 
-import { allPosts as filesAllPosts, Post } from '../../lib/files';
-
-const sortByDate = (postA: Post, postB: Post) => {
-  return postB.date.localeCompare(postA.date);
-};
+import { useSearchPosts } from '../hooks/useSearchPosts';
 
 export const getStaticProps = async () => {
-  const postsSortedByDate = filesAllPosts.sort(sortByDate);
-
-  const postPropertiesToBeCompared: Array<keyof Post> = [
-    'title',
-    'tags',
-    'excerpt',
-    // 'content',
-  ];
-
-  /**
-   * Create an array of strings with posts title and excerpts to be
-   * compared by string similarity method.
-   */
-  const arrayToCompare = postsSortedByDate.flatMap((post) => {
-    return postPropertiesToBeCompared.map((key) =>
-      String(post[key]).toLocaleLowerCase(),
-    );
-  });
-
   return {
     props: {
-      allPosts: postsSortedByDate,
-      arrayToCompare,
-      numberOfComparedProperties: postPropertiesToBeCompared.length,
+      allPosts: getAllPosts(),
     },
   };
 };
-
-const MAX_POSTS_BEST_MATCHES = 5;
-
-const POST_MIN_RATING = 0.2;
 
 const FilterBlock = ({
   children,
@@ -75,66 +46,8 @@ const FilterBlock = ({
   );
 };
 
-const All = ({
-  allPosts,
-  arrayToCompare,
-  numberOfComparedProperties,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const [search, setSearch] = React.useState('');
-  const [debouncedSearch] = useDebounce(search, 500);
-
-  const [filteredPosts, setFilteredPosts] = React.useState(allPosts);
-
-  React.useEffect(() => {
-    if (!debouncedSearch) {
-      setFilteredPosts(allPosts);
-      return;
-    }
-
-    const { bestMatchIndex, ratings } = findBestMatch(
-      debouncedSearch.toLowerCase(),
-      arrayToCompare,
-    );
-
-    /**
-     * `arrayToCompare` has the size of `allPosts` multiplied by
-     * `numberOfComparedProperties`. Suppose that the number of compared
-     * properties is four, then the ratings 0, 1, 2, and 3 refers to first post.
-     */
-    const getPostFromRatingIndex = (index: number) =>
-      Math.floor(index / numberOfComparedProperties);
-
-    const postsPositions = ratings
-      .map(({ rating }, index) => ({
-        rating,
-        postPosition: getPostFromRatingIndex(index),
-      }))
-      .sort((a, b) => b.rating - a.rating)
-      /**
-       * Take only the best five matches.
-       */
-      .filter((_, index) => index < MAX_POSTS_BEST_MATCHES)
-      /**
-       * Take only posts whose rating is greater than POST_MIN_RATING.
-       */
-      .filter(({ rating }) => rating > POST_MIN_RATING)
-      .map(({ postPosition }) => postPosition);
-
-    const postsPositionsWithoutDuplication = Array.from(
-      new Set(postsPositions),
-    );
-
-    if (postsPositionsWithoutDuplication.length === 0) {
-      setFilteredPosts([allPosts[getPostFromRatingIndex(bestMatchIndex)]]);
-      return;
-    }
-
-    const bestMatches = postsPositionsWithoutDuplication.map(
-      (postPosition) => allPosts[postPosition],
-    );
-
-    setFilteredPosts(bestMatches);
-  }, [debouncedSearch, allPosts, arrayToCompare, numberOfComparedProperties]);
+const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { setSearch, results } = useSearchPosts({ allPosts });
 
   return (
     <>
@@ -150,7 +63,7 @@ const All = ({
         </FilterBlock>
       </Box>
 
-      <RecommendationsList recommendations={filteredPosts} />
+      <RecommendationsList recommendations={results} />
     </>
   );
 };
