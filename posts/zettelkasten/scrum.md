@@ -14,7 +14,7 @@ excerpt: >-
 title: Scrum
 group: zettelkasten
 formattedDate: 'February 25, 2021'
-updatedAt: 'November 10, 2021'
+updatedAt: 'November 11, 2021'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/scrum.md
 href: /zettelkasten/scrum
@@ -37,7 +37,7 @@ readingTime: 3
 
 - It helps teams and organizations generate the highest possible value for the project.
 
-- Is describes a set of meetings/events/ceremonies, tools/artifacts, and roles to help teams structure and manage their work.
+- It describes a set of meetings/events/ceremonies, tools/artifacts, and roles to help teams structure and manage their work.
 
 - Scrum Team:
 
@@ -45,15 +45,8 @@ readingTime: 3
   - There are no sub-teams or hierarchies.
   - Every member must be focused on one objective at a time.
   - Roles:
-    - Product Owner (PO):
-      - Isn't always the product manager.
-      - Ensure the developer team delivers the most value to the business on each sprint.
-      - A person that represents the business and stakeholders.
-      - Create and manage the product backlog.
-      - Give the team clear guidance on which features to deliver next.
-      - Decide when to ship the product.
-      - Is individual.
-    - [Scrum Master (SM)](/z/scrum-master):
+    - [Product Owner (PO)](/z/product-owner).
+    - [Scrum Master (SM)](/z/scrum-master).
     - Developers.
 
 - Tools or artifacts:
@@ -81,7 +74,7 @@ readingTime: 3
      - The work is to be performed during the current sprint.
      - Is planned by the entire team.
      - SM leads this event.
-     - At the end of this meeting, every team member needs to be clear about the sprint goals, what can be delivered and how the increment can be delivered.
+     - At the end of this meeting, every team member needs to be clear about the sprint goals, what can be delivered and how the team can deliver the increment.
   3. Sprint:
 
      - The period that the Scrum team works to finish the increments.
@@ -93,7 +86,7 @@ readingTime: 3
 
      - Daily super-short meetings that happen at the same time and place.
      - The goal is for everyone on the team to be on the same page, aligned with the sprint goal.
-     - Each member of the team answer these questions:
+     - Each member of the team answers these questions:
        - What did I do yesterday?
        - What do I plan to do today?
        - Are there any obstacles?
@@ -103,7 +96,7 @@ readingTime: 3
      - Happens at the end of the sprint.
      - The team gets together to present or inspect the increment.
      - The PO decides to release or not the increment.
-     - The PO reworks the product backlog that will be used to feed the next sprint.
+     - The PO reworks the product backlog that the team will use to feed the next sprint.
 
   6. Sprint retrospective:
      - The team comes together to document and discuss what worked and what didn't work in the current sprint.
@@ -111,13 +104,13 @@ readingTime: 3
 
 ## Questions
 
-- How do you define Scrum with few words?
+- How do you define Scrum with a few words?
 
-- Besides software development, which does other fields use Scrum?
+- Besides software development, which do other fields use Scrum?
 
 - What does the Product Owner do? And the Scrum Master?
 
-- Scrum framework defines some tools, ceremonies, and roles. List them.
+- The scrum framework defines some tools, ceremonies, and roles. List them.
 
 - Does Scrum work with a team working remotely?
 
