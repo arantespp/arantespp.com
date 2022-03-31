@@ -18,7 +18,7 @@ excerpt: ''
 title: The Principles of Product Development Flow
 group: books
 formattedDate: 'August 31, 2021'
-updatedAt: 'February 10, 2022'
+updatedAt: 'March 31, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /books/the-principles-of-product-development-flow
@@ -310,13 +310,17 @@ For example, if your development process has 50 projects in process and complete
 
 #### Q13: The First Queue Size Control Principle: Don't control capacity utilization, control queue size.
 
-Queues' capacity utilization is almost useless as a metric for real-time control because you can't estimate either demand or capacity to sufficient accuracy, as discussed in [Principle Q3](#q3-the-principle-of-queueing-capacity-utilization-capacity-utilization-increases-queues-exponentially).
+Queues' capacity utilization is almost useless as a metric for real-time control because you can't estimate either demand or capacity with sufficient accuracy, as discussed in [Principle Q3](#q3-the-principle-of-queueing-capacity-utilization-capacity-utilization-increases-queues-exponentially).
 
 Choose queue size as the control variable, instead of capacity utilization.
 
 Small changes in capacity utilization will translate to large changes in queue size and cycle time because of the steep slope of the queueing curve (exponential). This means that a relatively wide control band of queue size will force the system into a very tight range of capacity utilization. **Controlling queue size directly controls cycle time.**
 
 ![Steep slope of the queuing curve](/images/originals/queue-size-vs-percent-capacity-utilization-slope.png)
+
+#### Q14: The Second Queue Size Control Principle: Don't control cycle time, control queue size.
+
+???
 
 ### 4 - Exploiting Variability
 
