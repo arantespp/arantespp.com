@@ -420,7 +420,13 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
               as={<Text sx={{ color: 'error', fontStyle: 'italic' }} />}
             />
             {!singleTweet && (
-              <Flex sx={{ gap: 3, alignItems: 'center' }}>
+              <Flex
+                sx={{
+                  gap: 3,
+                  alignItems: 'center',
+                  flexDirection: ['column', 'row'],
+                }}
+              >
                 <Button
                   type="button"
                   onClick={() => insert(index + 1, { value: '' })}
