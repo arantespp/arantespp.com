@@ -1,6 +1,6 @@
 # What I'm Doing Now
 
-I'm an entrepreneur, engineer, architect, scientist, programmer, product developer, writer, sales guy, athlete, and dancer. Maybe I forgot a few.
+I'm an entrepreneur, engineer, architect, scientist, programmer, product developer, writer, sales guy, athlete, and dancer.
 
 I build businesses and products that solve problems for real people.
 
