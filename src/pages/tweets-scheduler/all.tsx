@@ -77,8 +77,9 @@ const TweetsSchedulerAll = () => {
     <>
       <Themed.h1>All Scheduled Tweets ({tweets.length})</Themed.h1>
       <Flex sx={{ flexDirection: 'column' }}>
-        {tweets.map((tweet) => (
+        {tweets.map((tweet, index) => (
           <ScheduledTweetCard
+            cardNumber={index + 1}
             key={tweet.id}
             tweet={tweet}
             onUpdated={onUpdated}

@@ -17,11 +17,13 @@ export type ScheduledTweetProps = {
 export type ScheduledTweetCardProps = {
   tweet: ScheduledTweetProps;
   onUpdated?: (tweet: ScheduledTweetProps) => void;
+  cardNumber?: number;
 };
 
 export const ScheduledTweetCard = ({
   tweet: { idStr: id, scheduledAt, text, completedAt },
   onUpdated,
+  cardNumber,
 }: ScheduledTweetCardProps) => {
   const { apiKey } = useApiKey();
 
@@ -90,6 +92,10 @@ export const ScheduledTweetCard = ({
 
     if (completedAt) {
       return `[SENT] - ${date}`;
+    }
+
+    if (cardNumber) {
+      return `#${cardNumber} ${date}`;
     }
 
     return date;

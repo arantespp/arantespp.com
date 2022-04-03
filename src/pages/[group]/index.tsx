@@ -10,7 +10,7 @@ import {
 import IndexPage from '../../components/IndexPage';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const groups = [...getGroups(), 'now', 'me'].filter(
+  const groups = [...getGroups(), 'now', 'me', 'readings'].filter(
     /**
      * These groups page has its own file.
      */

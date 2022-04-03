@@ -1,8 +1,10 @@
-# Blogs
+# Readings
 
-_List of blog posts that I read but didn't have time to make notes yet._
+_List of readings that didn't have time to make notes yet._
 
 ---
+
+- **Here are 9 science-backed tips to easily maximize your focus.** Joey Justice. Focus. https://twitter.com/heyjoeyjustice/status/1509512599276298244
 
 **Capitalism rewards rare and valuable.** Inverted Passion. Paras Chopra. Business mental models. Value creation. https://invertedpassion.com/capitalism-rewards-rare-and-valuable/
 
