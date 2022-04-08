@@ -1,11 +1,34 @@
 ---
-title: Critical Path
-excerpt: The critical path is the most extended sequence of activities in a project plan. The project is only completed on time only if you meet these activities.
-date: 2021-07-28
-rating: 2
+image: null
+book: null
+draft: false
 tags:
   - product-development
   - product-management
+  - queues
+rating: 3
+date: '2021-07-28'
+excerpt: >-
+  The critical path is the most extended sequence of activities in a project
+  plan. The project is only completed on time only if you meet these activities.
+title: Critical Path
+group: zettelkasten
+formattedDate: 'July 28, 2021'
+updatedAt: 'April 08, 2022'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/critical-path.md
+href: /zettelkasten/critical-path
+as: /z/critical-path
+slug: critical-path
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/critical-path.md
+url: 'https://arantespp.com/zettelkasten/critical-path'
+keywords:
+  - zettelkasten
+  - product-development
+  - product-management
+  - queue
+readingTime: 1
 ---
 
 ## Notes
