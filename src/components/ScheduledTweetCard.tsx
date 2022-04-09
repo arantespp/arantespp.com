@@ -141,13 +141,13 @@ export const ScheduledTweetCard = ({
         {renderUpdateAndDeleteButtons && (
           <>
             <Button
-              sx={{ backgroundColor: 'accent' }}
               onClick={() => setIsOnUpdatingMode(true)}
               disabled={disabled}
             >
               Update
             </Button>
             <Button
+              sx={{ backgroundColor: 'accent' }}
               onDoubleClick={() => setIsOnDeleteConfirmation(true)}
               disabled={disabled}
             >
@@ -157,15 +157,11 @@ export const ScheduledTweetCard = ({
         )}
         {isOnUpdatingMode && (
           <>
-            <Button
-              sx={{ backgroundColor: 'accent' }}
-              disabled={disabled}
-              onClick={updateTweet}
-            >
+            <Button disabled={disabled} onClick={updateTweet}>
               Update
             </Button>
             <Button
-              sx={{ backgroundColor: 'accent' }}
+              sx={{ backgroundColor: 'secondary' }}
               disabled={disabled}
               onClick={() => {
                 setIsOnUpdatingMode(false);
@@ -178,10 +174,15 @@ export const ScheduledTweetCard = ({
         )}
         {renderDeleteConfirmationButtons && (
           <>
-            <Button onClick={deleteScheduledTweet} disabled={disabled}>
+            <Button
+              sx={{ backgroundColor: 'accent' }}
+              onClick={deleteScheduledTweet}
+              disabled={disabled}
+            >
               Yes
             </Button>
             <Button
+              sx={{ backgroundColor: 'secondary' }}
               onClick={() => setIsOnDeleteConfirmation(false)}
               disabled={disabled}
             >

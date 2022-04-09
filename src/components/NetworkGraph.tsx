@@ -9,9 +9,9 @@ import { PostWithoutContent } from '../../lib/files';
 import { theme } from '../theme';
 
 const nodeColors: { [key: string]: string } = {
-  post: theme.colors?.celadonBlue as string,
-  tag: theme.colors?.honeydew as string,
-  selectedNode: theme.colors?.imperialRed as string,
+  post: theme.colors?.secondary as string,
+  tag: theme.colors?.primary as string,
+  selectedNode: theme.colors?.accent as string,
 };
 
 const SearchInput = ({

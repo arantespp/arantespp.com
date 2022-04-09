@@ -16,15 +16,26 @@ const typography = toTheme({
 });
 
 /**
- * https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
+ * https://www.canva.com/colors/color-wheel/
  */
 const palette = {
-  imperialRed: '#e63946',
-  honeydew: '#f1faee',
-  powderBlue: '#a8dadc',
-  celadonBlue: '#457b9d',
-  prussianBlue: '#1d3557',
   twitterBlue: '#1da1f2',
+  /**
+   * Orange
+   */
+  primary: '#E66E24',
+  /**
+   * Blue
+   */
+  complementary: '#249CE6',
+  /**
+   * Yellow
+   */
+  analogous1: '#E6CF24',
+  /**
+   * Red
+   */
+  analogous2: '#E6243B',
 };
 
 /**
@@ -42,23 +53,23 @@ const colors = {
   link: lightGray,
   lightLightGray,
   background: '#fff',
-  primary: palette.imperialRed,
-  secondary: palette.imperialRed,
-  accent: palette.twitterBlue,
-  highlight: palette.honeydew,
   muted: '#aaa',
-  error: palette.imperialRed,
+  primary: palette.primary,
+  secondary: palette.complementary,
+  accent: palette.analogous2,
+  highlight: palette.analogous1,
+  error: palette.analogous2,
   twitter: palette.twitterBlue,
   modes: {
     dark: {
       text: '#eee',
-      background: '#1c1c1c',
-      link: '#ccc',
-      gray: '#ccc',
       /**
+       * Contrast with primary = 5.07
        * https://webaim.org/resources/contrastchecker/?fcolor=F39BA2&bcolor=1C1C1C
        */
-      primary: '#F39BA2',
+      background: '#212121',
+      link: '#ccc',
+      gray: '#ccc',
     },
   },
 };
@@ -94,8 +105,8 @@ const katex = {
  * https://theme-ui.com/theming/#configuration-flags
  */
 const config = {
-  initialColorModeName: 'light',
-  useColorSchemeMediaQuery: true,
+  initialColorModeName: 'default',
+  useColorSchemeMediaQuery: 'system',
   useLocalStorage: false,
 };
 
@@ -197,8 +208,8 @@ const partialTheme = {
       fontFamily: 'monospace',
       fontSize: 1,
       overflowX: 'auto',
-      color: 'white',
-      backgroundColor: palette.prussianBlue,
+      color: 'text',
+      backgroundColor: 'lightLightGray',
     },
     blockquote: {
       fontStyle: 'italic',
