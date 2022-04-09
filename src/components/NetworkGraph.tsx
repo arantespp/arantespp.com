@@ -108,7 +108,7 @@ const NetworkGraph = ({
         width={width}
         graphData={graphData}
         nodeOpacity={0.9}
-        nodeResolution={16}
+        nodeResolution={32}
         nodeThreeObjectExtend={true}
         nodeThreeObject={(node) => {
           const sprite = new SpriteText(node.name);
@@ -130,6 +130,7 @@ const NetworkGraph = ({
 
           return nodeColors.tag;
         }}
+        linkWidth={2}
       />
       <SearchInput setSelectedNodeId={setSelectedNodeId} allPosts={allPosts} />
       <Button
