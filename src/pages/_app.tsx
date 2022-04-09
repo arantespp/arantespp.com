@@ -21,7 +21,7 @@ const Layout = dynamic(() => import('../components/Layout'));
 const title = 'Pedro Arantes';
 
 const description =
-  "Hello, my name is Pedro. I'm an enthusiastic learner, optimistic, and entrepreneur, always trying to find ways to add more value to the world. I started this blog to improve my learning processes implementing the Zettelkasten and to create and improve my writing skills.";
+  "Hello, my name is Pedro. I'm an entrepreneur, engineer, architect, programmer, product developer, writer, sales guy, athlete, and dancer. Welcome to my blog.";
 
 /**
  * Twitter meta tags:
