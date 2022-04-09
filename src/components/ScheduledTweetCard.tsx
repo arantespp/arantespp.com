@@ -135,7 +135,9 @@ export const ScheduledTweetCard = ({
         <TweetEditor value={updateTweetText} setValue={setUpdateTweetText} />
       )}
 
-      <Flex sx={{ gap: 3, alignSelf: 'center' }}>
+      <Flex
+        sx={{ gap: 3, alignSelf: 'center', flexDirection: ['column', 'row'] }}
+      >
         {renderUpdateAndDeleteButtons && (
           <>
             <Button

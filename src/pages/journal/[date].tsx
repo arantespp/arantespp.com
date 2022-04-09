@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useQuery } from 'react-query';
+import { Flex } from 'theme-ui';
 
 import HTMLHeaders from '../../components/HTMLHeaders';
 import Journal from '../../components/Journal';
@@ -33,7 +34,10 @@ const JournalPage = () => {
     <>
       <HTMLHeaders noIndex title={title} />
       <Journal markdown={content} title={title} />
-      <Link href="/journal">Summary</Link>
+      <Flex sx={{ gap: 3 }}>
+        <Link href={`/journal/editor?date=${date}`}>Edit</Link>
+        <Link href="/journal">Summary</Link>
+      </Flex>
     </>
   );
 };

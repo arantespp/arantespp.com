@@ -1,19 +1,47 @@
 ---
-title: No B.S. Time Management for Entrepreneurs
-excerpt: "This book is expressively for entrepreneurs and business owners who wear many hats—those who can't resist piling more responsibility onto his own shoulders, who has more great ideas that time and resources to take advantage of them, who runs (not walks) through each day. Your time is incredibly valuable to you, and you are constantly 'running out of it.'"
-date: 2021-04-04
-tags:
-  - productivity
-  - time-management
-  - habits
-rating: 5
-bitLink: nobstime
+image: null
 book:
   authors:
     - Dan S. Kennedy
-  link: https://www.amazon.com/B-S-Time-Management-Entrepreneurs-Productivity/dp/1599186152
+  link: >-
+    https://www.amazon.com/B-S-Time-Management-Entrepreneurs-Productivity/dp/1599186152
   ASIN: B0753F6GFV
   ISBN: 978-1-61308-376-5
+  image: /images/books/no-b-s-time-management-for-entrepreneurs.jpg
+bitLink: nobstime
+draft: false
+tags:
+  - dan-s-kennedy
+  - habits
+  - productivity
+  - time
+  - time-management
+rating: 5
+date: '2021-04-04'
+excerpt: >-
+  This book is expressively for entrepreneurs and business owners who wear many
+  hats—those who can't resist piling more responsibility onto his own shoulders,
+  who has more great ideas that time and resources to take advantage of them,
+  who runs (not walks) through each day. Your time is incredibly valuable to
+  you, and you are constantly 'running out of it.'
+title: No B.S. Time Management for Entrepreneurs
+group: books
+formattedDate: 'April 04, 2021'
+updatedAt: 'September 10, 2021'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/books/no-b-s-time-management-for-entrepreneurs.md
+href: /books/no-b-s-time-management-for-entrepreneurs
+as: /nobstime
+slug: no-b-s-time-management-for-entrepreneurs
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/books/no-b-s-time-management-for-entrepreneurs.md
+url: 'https://arantespp.com/books/no-b-s-time-management-for-entrepreneurs'
+keywords:
+  - books
+  - productivity
+  - time-management
+  - habits
+readingTime: 21
 ---
 
 ## TL;DR

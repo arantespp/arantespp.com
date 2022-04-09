@@ -24,6 +24,7 @@ const palette = {
   powderBlue: '#a8dadc',
   celadonBlue: '#457b9d',
   prussianBlue: '#1d3557',
+  twitterBlue: '#1da1f2',
 };
 
 /**
@@ -43,11 +44,11 @@ const colors = {
   background: '#fff',
   primary: palette.imperialRed,
   secondary: palette.imperialRed,
-  accent: palette.celadonBlue,
+  accent: palette.twitterBlue,
   highlight: palette.honeydew,
   muted: '#aaa',
   error: palette.imperialRed,
-  twitter: '#1da1f2',
+  twitter: palette.twitterBlue,
   modes: {
     dark: {
       text: '#eee',

@@ -270,6 +270,16 @@ const JournalEditor = () => {
     <>
       <HTMLHeaders noIndex title={title} />
       <Themed.h1>{title}</Themed.h1>
+      <Box sx={{ marginY: 2 }}>
+        <Link href={`/journal/${date}`}>
+          <Text>
+            {dateFns.format(
+              dateFns.parse(date, 'yyyy-MM-dd', new Date()),
+              'PPPP',
+            )}
+          </Text>
+        </Link>
+      </Box>
       <Input
         value={dateInput}
         onChange={(e) => {
@@ -277,7 +287,7 @@ const JournalEditor = () => {
         }}
       />
       <ErrorMessage error={error} />
-      <Box sx={{ marginY: 3 }}>
+      <Box sx={{ marginY: 4 }}>
         <Editor
           ref={textAreaRef}
           disabled={isLoadingContent}
@@ -290,7 +300,7 @@ const JournalEditor = () => {
         />
       </Box>
       <Flex sx={{ justifyContent: 'space-between' }}>
-        <Flex sx={{ gap: 4 }}>
+        <Flex sx={{ gap: 3 }}>
           <Link href="/journal/all">All</Link>
           <Link href="/journal">Summary</Link>
         </Flex>
