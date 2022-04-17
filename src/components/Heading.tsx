@@ -47,6 +47,7 @@ const HeadingLink = ({
             sx={{
               cursor: 'pointer',
               color: 'inherit',
+              textDecoration: 'none',
               '&:hover': {
                 textDecoration: 'underline',
               },

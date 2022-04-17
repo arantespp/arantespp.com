@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Image, Text, TextProps } from 'theme-ui';
+import { Text, TextProps } from 'theme-ui';
 
 const PedroArantes: React.ForwardRefRenderFunction<any, TextProps> = (
   props,
@@ -13,6 +13,7 @@ const PedroArantes: React.ForwardRefRenderFunction<any, TextProps> = (
         display: 'flex',
         alignItems: 'center',
         whiteSpace: 'nowrap',
+        fontFamily: 'heading',
         ...props.sx,
       }}
     >

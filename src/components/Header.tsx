@@ -33,11 +33,10 @@ const Header = () => {
     fontSize: [2, 3],
     textAlign: 'center',
     textDecoration: 'none',
-    marginX: [2, null, 3],
     cursor: 'pointer',
-    color: 'primary',
+    color: 'text',
     '&:hover': {
-      color: 'text',
+      color: 'primary',
     },
   };
 
@@ -72,7 +71,8 @@ const Header = () => {
           flexDirection: ['row', null, 'row'],
           flexWrap: 'wrap',
           justifyContent: 'center',
-          alignItems: 'center',
+          alignItems: ['center', 'flex-start'],
+          gap: [3, 3, 4],
         }}
       >
         {navs.map(({ href, label }) => (
@@ -81,7 +81,11 @@ const Header = () => {
           </Link>
         ))}
         <Link
-          sx={{ ...navSx, color: 'twitter' }}
+          sx={{
+            ...navSx,
+            color: 'twitter',
+            fontSize: [3, 4],
+          }}
           target="_blank"
           rel="noopener noreferrer"
           href={socialMedias.Twitter.href}

@@ -117,7 +117,7 @@ const partialTheme = {
   fonts: {
     monospace: "'Overpass Mono', monospace",
   },
-  fontSizes: [14, 16, 18, 22, 28, 32, 36],
+  fontSizes: [14, 16, 18, 22, 24, 28, 32],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes: {
     container: '48em',
