@@ -121,6 +121,10 @@ const PostEditor = ({
    * Update post because the first props are not yet available
    */
   React.useEffect(() => {
+    if (post && !post.draft) {
+      post.draft = false;
+    }
+
     reset(
       post
         ? { ...post, tags: post.tags.join('; ') }

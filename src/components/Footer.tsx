@@ -17,8 +17,6 @@ const Footer = () => (
       alignItems: 'center',
       justifyContent: 'center',
       padding: [3, 3],
-
-      // backgroundColor: 'secondary',
     }}
   >
     {SHOW_LOGO && (
