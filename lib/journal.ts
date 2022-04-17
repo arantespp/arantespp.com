@@ -218,13 +218,3 @@ type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
 export type JournalsSummary = NonNullable<
   ThenArg<ReturnType<typeof getJournalsSummary>>
 >;
-
-// Levantei 6h15 e comecei e voltei a ler Principles, a parte que falava de ser mente aberta. Em uma das passagens, o livro fala de você usar a dor mental como um sinal de que você não está sendo mente aberta. Quando alguém fala algo oposto da sua visão, você pode sentir uma dor porque o seu ego foi atacado. Quando isso ocorre, pode ser porque você está errado e a outra pessoa está certa. A vantagem de meditar é conseguir perceber estas dores ou quando o seu eu baixo nível (emoções) toma conta. Eu lembro que aconteceu isso comigo quando o Ennio falou do botão do Siflor.
-
-// No dia que ele falou que eu deixei passar o botão, eu senti o ego ferido, mas eu consegui perceber isso na hora. No fundo eu estava errado.
-
-// **A pior combinação de uma pessoa é quando ela é mente fechada e tem muitos pontos cegos.**
-
-// ---
-
-// Tive um insight do que são os 4 corpos na minha meditação hoje. Físico é o corpo. Emocional é a parte primitiva do cérebro. Mental é o neocortex. Espiritual é talvez alguma parte do cérebro junto com a Inteligência Universal.
