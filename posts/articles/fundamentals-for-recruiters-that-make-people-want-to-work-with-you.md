@@ -38,6 +38,7 @@ keywords:
   - startups
   - vision
 readingTime: 3
+bitLink: fundamentals-for-recruiters
 ---
 
 A recruiting interview is two sides marketing themselves and examining if they have a match to work together. The interviewer analyzes if the candidates have the required technical skills or their attributes fit the company culture. On the other side, the candidates also wonder if the company has good qualities and how it'll help them achieve their personal and professional goals.
