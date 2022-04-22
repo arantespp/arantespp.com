@@ -10,7 +10,7 @@ tags:
   - recruiting
   - startups
   - vision
-rating: 3
+rating: 4
 date: '2022-04-18'
 excerpt: >-
   Anyone joining your company is joining because of how you make them feel and

@@ -294,7 +294,7 @@ Changes in the slope of the arrival and departure lines inform trends in demand 
 
 #### Q12: Little's Formula: Wait Time = Queue Size/Processing Rate
 
-[Little's Formula notes](/z/little-s-formula).
+[Little's Law notes](/z/little-s-law).
 
 This formula applies to virtually all queues disciplines, arrival rates, and departure processes.
 
