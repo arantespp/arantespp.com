@@ -8,19 +8,21 @@ tags:
   - startups
 rating: 3
 date: '2022-04-09'
-excerpt: Burn rate is the rate at which a startup spends money in its bank account.
-title: Burn Rate
+excerpt: >-
+  The startup burn rate is the rate at which a startup spends money in its bank
+  account.
+title: Startup Burn Rate
 group: zettelkasten
 formattedDate: 'April 09, 2022'
-updatedAt: 'April 09, 2022'
+updatedAt: 'April 22, 2022'
 updateHistory: >-
-  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/burn-rate.md
-href: /zettelkasten/burn-rate
-as: /z/burn-rate
-slug: burn-rate
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/startup-burn-rate.md
+href: /zettelkasten/startup-burn-rate
+as: /z/startup-burn-rate
+slug: startup-burn-rate
 editLink: >-
-  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/burn-rate.md
-url: 'https://arantespp.com/zettelkasten/burn-rate'
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/startup-burn-rate.md
+url: 'https://arantespp.com/zettelkasten/startup-burn-rate'
 keywords:
   - zettelkasten
   - metrics
@@ -30,7 +32,7 @@ keywords:
 
 ## Notes
 
-- Burn rate is the rate at which a [startup](/z/startup) spends money in its bank account.
+- The startup burn rate at which a [startup](/z/startup) spends money in its bank account.
 
 - It's calculated by startup total expenses minus income.
 
