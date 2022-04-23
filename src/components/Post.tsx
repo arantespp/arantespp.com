@@ -22,7 +22,7 @@ const Markdown = dynamic(() => import('./Markdown'));
 const PostComponent = ({ post }: { post: Post }) => {
   const ref = useContentEditable();
 
-  const { image, title, book, href, tags, excerpt, group, slug } = post;
+  const { image, title, book, href, tags, excerpt, group, slug, as } = post;
 
   const router = useRouter();
 
@@ -51,7 +51,7 @@ const PostComponent = ({ post }: { post: Post }) => {
       <HTMLHeaders
         title={title}
         description={excerpt}
-        url={href}
+        url={as}
         keywords={tags}
         image={{ url: imageUrl }}
       />

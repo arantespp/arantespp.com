@@ -36,7 +36,6 @@ const Newsletter = () => (
           id="revue-form"
           name="revue-form"
           target="_blank"
-          style={{ width: '100%' }}
         >
           <Flex
             sx={{

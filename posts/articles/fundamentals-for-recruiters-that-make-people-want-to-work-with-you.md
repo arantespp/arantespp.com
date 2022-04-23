@@ -49,7 +49,7 @@ A recruiting interview is two sides marketing themselves and examining if they h
 
 Taking the software development market as an example, the hiring companies dispute globally for the best talents. So, if you want to stand out among other companies, what do you need to do to hire the best? What are the fundamentals for companies to sell themselves and attract the best talents?
 
-I'll share a list of the most important fundamentals that interviewers and companies should have to thrive in their recruiting efforts.
+The list below is the most important fundamentals that interviewers and companies should have to thrive in their recruiting efforts. The list doesn't include salary because we assume that the company will pay a fair market rate for the candidates' skills. If the company doesn't do that and the hires feel under-leveled or under-paid, dissatisfaction will set in, and you'll lose their trust. Once this happens, it's hard to turn around the relationship.
 
 ## Mission and Vision
 
@@ -63,9 +63,15 @@ Culture defines how the company handles good and bad situations and treats indiv
 
 Badges of credibility are important to attract the best talents because the badges help establish trust. So if you have a good credible investor, an excellent team with great backgrounds and achievements, competition prizes, or whatever is good for you, don't be afraid to show them your credentials if they help you bring the talent. But, of course, take care to show them but not appear arrogant.
 
+## Branding
+
+Branding, in this case, represents the company name, logo, colors, website domain, usernames on social media, and any other attributes that provide sensorial appeal to people. If the applicants feel the beauty of your branding, positive emotions arise in them, which increases their willingness to be part of that "beautiful" branding.
+
 ## Product
 
 Use your product to your advantage if you already have it. If the candidate becomes excited about your product, you've created a reason for a candidate to join your team. Of course, this only works if you believe in the product and can express your passion during the conversation.
+
+Recruiters with deep business, domain, and product knowledge can sell and engage better with candidates.
 
 ## Recruiting Playbook
 
