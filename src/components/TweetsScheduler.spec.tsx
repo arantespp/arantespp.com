@@ -9,7 +9,9 @@ beforeEach(() => {
   global.localStorage.clear();
 });
 
-test('should prepend tweets editors', () => {
+test('should prepend tweets editors', async () => {
+  const user = userEvent.setup({ delay: null });
+
   render(<TweetsScheduler />);
 
   /**
@@ -19,8 +21,8 @@ test('should prepend tweets editors', () => {
     name: 'prependTweetButton',
   });
 
-  [...Array(11)].forEach((_, i) => {
-    userEvent.click(prependButton);
+  [...Array(11)].forEach(async (_, i) => {
+    await user.click(prependButton);
 
     const tweetText = screen.getByText(`Tweet #${i + 1}`);
     expect(tweetText).toBeInTheDocument();
@@ -28,6 +30,8 @@ test('should prepend tweets editors', () => {
 });
 
 test('should raise character limits message error', async () => {
+  const user = userEvent.setup({ delay: null });
+
   render(<TweetsScheduler />);
 
   const numberOfTweets = 2;
@@ -36,9 +40,9 @@ test('should raise character limits message error', async () => {
     name: 'prependTweetButton',
   });
 
-  [...Array(numberOfTweets)].forEach(() => {
-    userEvent.click(prependButton);
-  });
+  await Promise.all(
+    [...Array(numberOfTweets)].map(() => user.click(prependButton)),
+  );
 
   const tweetsInputs = screen.getAllByRole('textbox', { name: 'tweetEditor' });
 
@@ -47,7 +51,7 @@ test('should raise character limits message error', async () => {
   const scheduleButton = screen.getByRole('button', { name: 'submitButton' });
 
   await act(async () => {
-    userEvent.click(scheduleButton);
+    await user.click(scheduleButton);
   });
 
   expect(
@@ -56,34 +60,37 @@ test('should raise character limits message error', async () => {
 
   const tweet = 'a'.repeat(TWEET_MAX_CHARS + 1);
 
-  tweetsInputs.forEach((tweetInput) => {
-    userEvent.type(tweetInput, tweet);
-  });
+  await Promise.all(
+    tweetsInputs.map((tweetInput) => user.type(tweetInput, tweet)),
+  );
 
   await act(async () => {
-    userEvent.click(scheduleButton);
+    await user.click(scheduleButton);
   });
 
   expect(
-    screen.getAllByText('Tweet reacher max characters, counting with suffix'),
-  ).toHaveLength(numberOfTweets);
+    screen.getAllByText('Tweet reacher max characters, counting with suffix')
+      .length,
+  ).toBeGreaterThan(0);
 });
 
 test('should limit with suffix', async () => {
+  const user = userEvent.setup({ delay: null });
+
   render(<TweetsScheduler />);
 
   const prependButton = screen.getByRole('button', {
     name: 'prependTweetButton',
   });
 
-  act(() => {
-    userEvent.click(prependButton);
+  await act(async () => {
+    await user.click(prependButton);
   });
 
   const tweetInput = screen.getByRole('textbox', { name: 'tweetEditor' });
 
-  userEvent.type(screen.getByLabelText('Suffix'), 'suffix');
-  userEvent.type(tweetInput, 'tweet');
+  await user.type(screen.getByLabelText('Suffix'), 'suffix');
+  await user.type(tweetInput, 'tweet');
 
   /**
    * "5" because "tweet" has 5 characters.
@@ -93,8 +100,8 @@ test('should limit with suffix', async () => {
 
   const scheduleButton = screen.getByRole('button', { name: 'submitButton' });
 
-  userEvent.clear(tweetInput);
-  await userEvent.type(tweetInput, 'a'.repeat(273), { delay: 1 });
+  await user.clear(tweetInput);
+  await user.type(tweetInput, 'a'.repeat(273));
 
   await act(async () => {
     tweetInput.blur();
@@ -104,11 +111,11 @@ test('should limit with suffix', async () => {
     screen.getByText('Tweet reacher max characters, counting with suffix'),
   ).toBeInTheDocument();
 
-  userEvent.clear(tweetInput);
-  userEvent.type(tweetInput, 'a'.repeat(272));
+  await user.clear(tweetInput);
+  await user.type(tweetInput, 'a'.repeat(272));
 
   await act(async () => {
-    userEvent.click(scheduleButton);
+    await user.click(scheduleButton);
   });
 
   expect(

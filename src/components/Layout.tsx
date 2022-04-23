@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import * as React from 'react';
 import { Box, Container } from 'theme-ui';
 
 import { useApiKey } from '../hooks/useApiKey';
@@ -9,7 +10,7 @@ import Newsletter from './Newsletter';
 
 const TweetScheduler = dynamic(() => import('./TweetScheduler'));
 
-const Layout: React.FC = ({ children }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   const { apiKey } = useApiKey();
 
   return (

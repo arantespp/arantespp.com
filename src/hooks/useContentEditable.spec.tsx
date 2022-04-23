@@ -10,31 +10,38 @@ const Box = () => {
   return <div data-testid={dataTestId} ref={ref} />;
 };
 
-jest.useFakeTimers();
+test('toggle content editable and test focus', async () => {
+  const user = userEvent.setup({ delay: null });
 
-test('toggle content editable and test focus', () => {
   render(<Box />);
 
   const box = screen.getByTestId(dataTestId);
 
-  /**
-   * Initial value is `false` because we aren't in development environment.
-   */
-  let contentEditable = false;
+  expect(box).toHaveAttribute('contenteditable', JSON.stringify(false));
 
-  [...Array(10)].forEach(() => {
-    expect(box).toHaveAttribute(
-      'contenteditable',
-      JSON.stringify(contentEditable),
-    );
+  await user.keyboard('ce');
 
-    act(() => {
-      userEvent.keyboard('ce');
-      jest.advanceTimersByTime(RESET_SEQUENCE_MS * 2);
-    });
-
-    contentEditable = !contentEditable;
+  act(() => {
+    jest.advanceTimersByTime(RESET_SEQUENCE_MS * 2);
   });
+
+  expect(box).toHaveAttribute('contenteditable', JSON.stringify(true));
+
+  await user.keyboard('ce');
+
+  act(() => {
+    jest.advanceTimersByTime(RESET_SEQUENCE_MS * 2);
+  });
+
+  expect(box).toHaveAttribute('contenteditable', JSON.stringify(false));
+
+  await user.keyboard('ce');
+
+  act(() => {
+    jest.advanceTimersByTime(RESET_SEQUENCE_MS * 2);
+  });
+
+  expect(box).toHaveAttribute('contenteditable', JSON.stringify(true));
 
   act(() => {
     jest.advanceTimersByTime(1000);

@@ -1,2 +1,14 @@
+# *
 User-agent: *
-Disallow: /drafts/
+Disallow: /api-key
+Disallow: /drafts
+Disallow: /editor
+Disallow: /journal
+Disallow: /problems
+Disallow: /tweets-scheduler
+
+# Host
+Host: https://arantespp.com
+
+# Sitemaps
+Sitemap: https://arantespp.com/sitemap.xml
