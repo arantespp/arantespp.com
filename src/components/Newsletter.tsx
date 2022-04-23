@@ -2,13 +2,16 @@ import { Box, Button, Flex, Input, Text, Themed } from 'theme-ui';
 
 import { getNextNewsletterDate } from '../../lib/getNextNewsletterDate';
 
-import Heading from './Heading';
 import Link from './Link';
 import Tag from './Tag';
 
 const Newsletter = () => (
   <Box>
-    <Heading level={2}>Newsletter</Heading>
+    <Box sx={{ marginY: 3 }}>
+      <Text sx={{ fontSize: 5, fontFamily: 'heading', fontWeight: 'heading' }}>
+        Newsletter
+      </Text>
+    </Box>
     <Themed.p>
       On {getNextNewsletterDate({ format: 'EEEE' })} (not weekly), I publish my
       most recent readings and thoughts. Subscribe to my newsletter if you want

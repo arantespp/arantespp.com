@@ -32,3 +32,5 @@ export const PostFooter = () => {
     </Flex>
   );
 };
+
+export default PostFooter;

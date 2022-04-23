@@ -1,11 +1,12 @@
 import { InferGetStaticPropsType } from 'next';
+import dynamic from 'next/dynamic';
 import { Themed } from 'theme-ui';
 
 import { getRecommendations } from '../../lib/files';
 
-import Link from '../components/Link';
-import { PostFooter } from '../components/PostFooter';
-import Recommendations from '../components/Recommendations';
+const Link = dynamic(() => import('../components/Link'));
+const Recommendations = dynamic(() => import('../components/Recommendations'));
+const PostFooter = dynamic(() => import('../components/PostFooter'));
 
 export const getStaticProps = async () => {
   const recommendations = getRecommendations({ all: true });

@@ -5,7 +5,7 @@
   "author": {
     "email": "pedro@arantespp.com",
     "name": "Pedro Arantes",
-    "url": "https://arantespp.com"
+    "url": "https://arantespp.com/contact"
   },
   "scripts": {
     "update": "npx ncu",
