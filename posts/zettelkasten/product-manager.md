@@ -15,13 +15,12 @@ tags:
 rating: 2
 date: '2022-03-30'
 excerpt: >-
-  The product manager (PM) discovers what customers need, studies the market and
-  tendencies, prioritize what to build next, and rallies the team around a
-  product roadmap.
+  The PM discovers what customers need, studies the market and tendencies,
+  prioritize what to build next, and rallies the team around a product roadmap.
 title: Product Manager
 group: zettelkasten
 formattedDate: 'March 30, 2022'
-updatedAt: 'March 30, 2022'
+updatedAt: 'April 24, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/product-manager.md
 href: /zettelkasten/product-manager
@@ -48,7 +47,7 @@ readingTime: 1
 
 - The product manager (PM) discovers what customers need, studies the market and tendencies, prioritize what to build next, and rallies the team around a product roadmap.
 
-- They are highly strategic, have a grand vision of the product and long-term focus.
+- They are highly strategic and have a grand vision of the product and long-term focus.
 
 - It's an abstract role because the product development field is abstract.
 
@@ -60,7 +59,7 @@ readingTime: 1
   - keep the team aware of the product status;
   - define the right metrics for the product.
 
-- PMs have a closer relationship with other departments: engineering, marketing, design, finances.
+- PMs have a closer relationship with other departments: engineering, marketing, design, and finances.
 
 ## References
 

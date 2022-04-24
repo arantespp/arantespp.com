@@ -44,7 +44,7 @@ const PostComponent = ({ post }: { post: Post }) => {
 
   const imageUrl = (() => {
     if (group === 'zettelkasten') {
-      return '/images/david-travis-5bYxXawHOQg-unsplash.jpg';
+      return '/images/nonauthor/david-travis-5bYxXawHOQg-unsplash.webp';
     }
 
     if (image) {
@@ -84,9 +84,7 @@ const PostComponent = ({ post }: { post: Post }) => {
         </Box>
       </Box>
       <Box sx={{ marginBottom: [5] }}>
-        {!!image && (
-          <CustomImage alt={image.alt} src={`${image.url}/1024x576`} />
-        )}
+        {!!image && <CustomImage alt={image.alt} src={image.url} />}
         {!!book && <BookHeader book={book} />}
       </Box>
       <Markdown content={post.content} />

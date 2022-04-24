@@ -59,7 +59,7 @@ const DefaultHeaders = () => {
       <meta
         key="og:image"
         property="og:image"
-        content="https://arantespp.com/me.jpg"
+        content="https://arantespp.com/me.webp"
       />
       <meta key="description" name="description" content={description} />
       <meta key="og:title" property="og:title" content={title} />

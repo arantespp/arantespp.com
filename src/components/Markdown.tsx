@@ -18,7 +18,7 @@ import 'katex/dist/katex.min.css';
 const CustomImage = dynamic(() => import('./CustomImage'));
 
 /**
- * https://github.com/rexxars/react-markdown/tree/c63dccb8185869cfc73c257d098a123ef7a7cd33#node-types
+ * https://github.com/remarkjs/react-markdown/tree/main#appendix-b-components
  */
 const getComponents = ({
   noH1 = true,
@@ -103,13 +103,6 @@ const getComponents = ({
     }
 
     return <Themed.p>{children}</Themed.p>;
-  },
-  listItem: Themed.li,
-  list: ({ ordered, ...props }: any) => {
-    if (ordered) {
-      return <Themed.ol {...props} />;
-    }
-    return <Themed.ul {...props} />;
   },
   img: ({ src, alt }: any) => (
     <Box sx={{ marginY: 4 }}>

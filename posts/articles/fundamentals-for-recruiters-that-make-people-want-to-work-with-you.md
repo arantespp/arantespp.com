@@ -1,6 +1,6 @@
 ---
 image:
-  url: 'https://source.unsplash.com/n95VMLxqM2I'
+  url: /images/nonauthor/cytonn-photography-n95VMLxqM2I-unsplash.webp
   alt: >-
     Photo by <a
     href="https://unsplash.com/@cytonn_photography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cytonn
@@ -25,7 +25,7 @@ excerpt: >-
 title: Fundamentals for Recruiters that Make People Want to Work with You
 group: articles
 formattedDate: 'April 18, 2022'
-updatedAt: 'April 23, 2022'
+updatedAt: 'April 24, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/articles/fundamentals-for-recruiters-that-make-people-want-to-work-with-you.md
 href: /articles/fundamentals-for-recruiters-that-make-people-want-to-work-with-you
@@ -37,8 +37,10 @@ url: >-
   https://arantespp.com/articles/fundamentals-for-recruiters-that-make-people-want-to-work-with-you
 keywords:
   - articles
+  - branding
   - energy
   - mission
+  - product
   - recruiting
   - startups
   - vision
@@ -53,7 +55,7 @@ The list below is the most important fundamentals that interviewers and companie
 
 ## Mission and Vision
 
-Mission and vision are the most powerful recruiting fundamentals. If you have a strong mission and vision, you have enough power to pull people to you. It's your job to paint a picture of your company's journey to the candidates. If they identify and want to be part of the journey, they'll want to work with you, even if the challenges are difficult.
+[Mission and vision](/what-are-mission-vision-and-values) are the most powerful recruiting fundamentals. If you have a strong mission and vision, you have enough power to pull people to you. It's your job to paint a picture of your company's journey to the candidates. If they identify and want to be part of the journey, they'll want to work with you, even if the challenges are difficult.
 
 ## Culture
 

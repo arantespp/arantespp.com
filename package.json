@@ -16,7 +16,8 @@
     "build": "yarn run links && next build",
     "postbuild": "next-sitemap",
     "start": "yarn run links && next start -p 3311",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cwebp": "./scripts/cwebp.sh"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.76.0",

@@ -240,7 +240,7 @@ For example, a change in loading at 95 percent utilization produces a cycle time
 
 Exists many process structures in a queue. For example, you can have a single demand stream with a single server in an $M/M/1$ queue, or with $n$ servers in an $M/M/n$ queue. You can have single or multiple servers with a single shared queue, or you can have individual queues for each server. The performance of these structures differs.
 
-![Queueing System Structure.](/images/books/the-principles-of-product-development-flow/queueing-system-structure.png)
+![Queueing System Structure.](/images/books/originals/queueing-system-structure.png)
 
 - One queue per server: a single bad job can block everything behind it in the queue.
 - Single-queue multiple-server: smaller delay and the variance in processing times is lower.

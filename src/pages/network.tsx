@@ -117,7 +117,7 @@ const Network = ({
         title="Network"
         url="/network"
         description="All posts and tags and their connections."
-        image={{ url: 'https://arantespp.com/images/network.png' }}
+        image={{ url: 'https://arantespp.com/images/network.webp' }}
       />
       <FullWidth>
         <NetworkGraph

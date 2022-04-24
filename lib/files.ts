@@ -414,13 +414,16 @@ const getPost = (props: GetPartialPostProps): Post | undefined => {
     return [
       partialPost.content,
       '## Backlinks',
-      ...backlinks.map(({ href, title }) => `- [${title}](${href})`),
+      ...backlinks.map(({ as, title }) => `- [${title}](${as})`),
     ].join('\n');
   })();
 
   const references = allPosts.reduce<PostWithoutContent[]>(
     (acc, { content, ...post }) => {
-      if (partialPost.content.includes(`(${post.href})`)) {
+      if (
+        partialPost.content.includes(`(${post.href})`) ||
+        partialPost.content.includes(`(${post.as})`)
+      ) {
         return [...acc, post];
       }
 
