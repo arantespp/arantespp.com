@@ -37,3 +37,4 @@ lib/*.js
 .env*
 
 *.tsbuildinfo
+.vscode/

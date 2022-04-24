@@ -10,22 +10,22 @@ book: null
 bitLink: fundamentals-for-recruiters
 draft: false
 tags:
+  - branding
   - energy
   - mission
+  - product
   - recruiting
   - startups
   - vision
 rating: 4
 date: '2022-04-18'
 excerpt: >-
-  Anyone joining your company is joining because of how you make them feel and
-  how passionate and trustworthy you are. The vital point here is your
-  authenticity and personality. Authentic leaders attract authentic people,
-  which is an enormous advantage to keep strengthing the company's culture.
+  Authentic leaders attract authentic people, which is an enormous advantage to
+  keep strengthening the company's culture.
 title: Fundamentals for Recruiters that Make People Want to Work with You
 group: articles
 formattedDate: 'April 18, 2022'
-updatedAt: 'April 22, 2022'
+updatedAt: 'April 23, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/articles/fundamentals-for-recruiters-that-make-people-want-to-work-with-you.md
 href: /articles/fundamentals-for-recruiters-that-make-people-want-to-work-with-you
@@ -42,7 +42,7 @@ keywords:
   - recruiting
   - startups
   - vision
-readingTime: 3
+readingTime: 4
 ---
 
 A recruiting interview is two sides marketing themselves and examining if they have a match to work together. The interviewer analyzes if the candidates have the required technical skills or if their attributes fit the company culture. On the other side, the candidates also wonder if the company has good qualities and how it'll help them achieve their personal and professional goals.
@@ -79,7 +79,7 @@ A good interview process tells the candidates how you take care of them—it als
 
 ## You
 
-The last fundamental: you. Anyone joining your company is joining because of how you make them feel and how passionate and trustworthy you are. The vital point here is your authenticity and personality. Authentic leaders attract authentic people, which is an enormous advantage to keep strengthing the company's culture. The real you can polarize people, which is good: it helps filter for those who work well alongside you.
+The last fundamental: you. Anyone joining your company is joining because of how you make them feel and how passionate and trustworthy you are. The important point here is your authenticity and personality. Authentic leaders attract authentic people, which is an enormous advantage to keep strengthening the company's culture. The real you can polarize people, which is good: it helps filter for those who work well alongside you.
 
 Also, share your story. The way you share your account, the hardships you've been through, your wins and losses, and your passions can leave a more profound impression on the candidates. The more relatable you are with them, the more they'll feel a personal connection with you.
 

@@ -22,7 +22,19 @@ const Markdown = dynamic(() => import('./Markdown'));
 const PostComponent = ({ post }: { post: Post }) => {
   const ref = useContentEditable();
 
-  const { image, title, book, href, tags, excerpt, group, slug, as } = post;
+  const {
+    image,
+    title,
+    book,
+    href,
+    tags,
+    excerpt,
+    group,
+    slug,
+    as,
+    updatedAt,
+    date: createdAt,
+  } = post;
 
   const router = useRouter();
 
@@ -54,6 +66,9 @@ const PostComponent = ({ post }: { post: Post }) => {
         url={as}
         keywords={tags}
         image={{ url: imageUrl }}
+        createdAt={createdAt}
+        updatedAt={updatedAt}
+        structuredData
       />
       <Box ref={ref}>
         <Themed.h1>{title}</Themed.h1>

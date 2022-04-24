@@ -1,30 +1,13 @@
 import { pascalCase } from 'change-case';
-import NextLink from 'next/link';
-import { useRouter } from 'next/router';
-import { Box, Flex, Link, Message, Text } from 'theme-ui';
+import { Box, Flex, Message, Text } from 'theme-ui';
 
 import type { PostWithoutContent } from '../../lib/files';
 
+import Link from './Link';
 import Tag from './Tag';
 
 const PostResume = ({ post }: { post: PostWithoutContent }) => {
-  const { asPath } = useRouter();
-
-  const {
-    excerpt,
-    group,
-    formattedDate,
-    updatedAt,
-    tags,
-    href,
-    as,
-    updateHistory,
-    readingTime,
-  } = post;
-
-  const isPostPage = asPath === href;
-
-  const updatedAfterCreated = formattedDate !== updatedAt;
+  const { excerpt, group, formattedDate, tags, href, readingTime } = post;
 
   return (
     <Box
@@ -33,11 +16,11 @@ const PostResume = ({ post }: { post: PostWithoutContent }) => {
         paddingBottom: 2,
       }}
     >
-      <NextLink href={href} passHref as={as}>
+      <Link href={href} sx={{ textDecoration: 'none' }}>
         <Message variant="excerpt" sx={{ cursor: 'pointer' }}>
           {excerpt}
         </Message>
-      </NextLink>
+      </Link>
       <Flex sx={{ flexWrap: 'wrap', marginY: 1 }}>
         {tags.map((tag) => (
           <Box key={tag} sx={{ paddingRight: 3 }}>
@@ -45,23 +28,12 @@ const PostResume = ({ post }: { post: PostWithoutContent }) => {
           </Box>
         ))}
       </Flex>
-      <Text sx={{ fontSize: 1 }}>
-        <NextLink href={`/${group}`} passHref>
-          <Link sx={{ fontSize: 2 }}>{pascalCase(group)},</Link>
-        </NextLink>
-        <Text as="span" sx={{ color: 'gray' }}>
-          {' '}
-          {formattedDate}
-        </Text>
-        {isPostPage && updatedAfterCreated && (
-          <Text
-            as="span"
-            sx={{ color: 'gray', fontStyle: 'italic', fontSize: 1 }}
-          >
-            {' '}
-            <Link href={updateHistory}>(changes)</Link>
-          </Text>
-        )}
+      <Link href={`/${group}`}>
+        <Text sx={{ fontSize: 2 }}>{pascalCase(group)},</Text>
+      </Link>
+      <Text as="span" sx={{ color: 'gray', fontSize: 1 }}>
+        {' '}
+        {formattedDate}
       </Text>
       {readingTime > 1 && (
         <Box>

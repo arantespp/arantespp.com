@@ -28,7 +28,10 @@ const schema = yup.object({
     .oneOf([...GROUPS])
     .required(),
   title: yup.string().required(),
-  excerpt: yup.string(),
+  /**
+   * https://moz.com/learn/seo/meta-description
+   */
+  excerpt: yup.string().min(50).max(160),
   date: yup.string(),
   rating: yup.number().positive().integer().required(),
   tags: yup.string(),
