@@ -9,7 +9,7 @@ import { socialMedias } from '../../lib/socialMedias';
 import Link from './Link';
 import PedroArantes from './PedroArantes';
 
-const SHOW_TOGGLE_MODE = true;
+const SHOW_TOGGLE_MODE = false;
 
 const navs = [
   {

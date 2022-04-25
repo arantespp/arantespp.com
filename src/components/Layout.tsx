@@ -4,8 +4,12 @@ import { Box, Container } from 'theme-ui';
 
 import { useApiKey } from '../hooks/useApiKey';
 
+/**
+ * Don't dynamic import Header because of cumulative shift layout.
+ */
+import Header from './Header';
+
 const Footer = dynamic(() => import('./Footer'));
-const Header = dynamic(() => import('./Header'));
 const Newsletter = dynamic(() => import('./Newsletter'));
 const TweetScheduler = dynamic(() => import('./TweetScheduler'));
 

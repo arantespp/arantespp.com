@@ -15,10 +15,10 @@ const Newsletter = () => (
     <Themed.p>
       On {getNextNewsletterDate({ format: 'EEEE' })} (not weekly), I publish my
       most recent readings and thoughts. Subscribe to my newsletter if you want
-      to follow topics about <Tag tag="startups" />,{' '}
+      to follow posts about <Tag tag="startups" />,{' '}
       <Tag tag="product-development" />
-      , <Tag tag="mental-models" />, and <Link href="/tags">more</Link>. You can
-      also check{' '}
+      , <Tag tag="mental-models" />, and <Link href="/tags">more topics</Link>.
+      You can also check{' '}
       <Link href="https://www.getrevue.co/profile/arantespp">
         my past issues on Revue.
       </Link>
