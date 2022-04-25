@@ -11,11 +11,12 @@ import { useContentEditable } from '../hooks/useContentEditable';
 import Heading from './Heading';
 import Link from './Link';
 import Tag from './Tag';
-import Tweet from './Tweet';
+import { isTweet } from './Tweet';
 
 import 'katex/dist/katex.min.css';
 
 const CustomImage = dynamic(() => import('./CustomImage'));
+const Tweet = dynamic(() => import('./Tweet'));
 
 /**
  * https://github.com/remarkjs/react-markdown/tree/main#appendix-b-components
@@ -48,7 +49,7 @@ const getComponents = ({
       return <Tag tag={tag} />;
     }
 
-    if (href && Tweet.isTweet(href)) {
+    if (href && isTweet(href)) {
       /**
        * This case means that the link is a reference for another text. For
        * example, [Some text](https://twitter...) is a link whose text is "Some

@@ -8,7 +8,7 @@ const getTweetStatus = (href: string) => {
   return status;
 };
 
-const isTweet = (href: string) => {
+export const isTweet = (href: string) => {
   return href.startsWith('https://twitter.com/') && getTweetStatus(href);
 };
 

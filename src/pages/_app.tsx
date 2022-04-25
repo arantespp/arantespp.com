@@ -81,11 +81,6 @@ const Scripts = () => {
         src="https://www.googletagmanager.com/gtag/js?id=UA-149485554-1"
       />
       <Script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charSet="utf-8"
-      />
-      <Script
         id="gtag"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
