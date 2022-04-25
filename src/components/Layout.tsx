@@ -4,10 +4,9 @@ import { Box, Container } from 'theme-ui';
 
 import { useApiKey } from '../hooks/useApiKey';
 
-import Footer from './Footer';
-import Header from './Header';
-import Newsletter from './Newsletter';
-
+const Footer = dynamic(() => import('./Footer'));
+const Header = dynamic(() => import('./Header'));
+const Newsletter = dynamic(() => import('./Newsletter'));
 const TweetScheduler = dynamic(() => import('./TweetScheduler'));
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
