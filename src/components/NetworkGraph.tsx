@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ForceGraph3D, { ForceGraphMethods } from 'react-force-graph-3d';
 import SpriteText from 'three-spritetext';
-import { Box, Button, Input, Flex } from 'theme-ui';
+import { Box, Button, Input, Flex, useThemeUI } from 'theme-ui';
 import { useResponsiveValue } from '@theme-ui/match-media';
 
 import { PostWithoutContent } from '../../lib/files';
@@ -72,6 +72,8 @@ const NetworkGraph = ({
   setSelectedNodeId: (id: string) => void;
   allPosts: PostWithoutContent[];
 }) => {
+  const { theme } = useThemeUI();
+
   const forceGraphRef = React.useRef<ForceGraphMethods>();
 
   const [{ height, width }, setDimensions] = React.useState({
@@ -103,6 +105,7 @@ const NetworkGraph = ({
       }}
     >
       <ForceGraph3D
+        backgroundColor={theme?.rawColors?.modes?.dark?.background as string}
         ref={forceGraphRef}
         height={height}
         width={width}

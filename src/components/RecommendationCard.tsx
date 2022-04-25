@@ -4,9 +4,9 @@ import {
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Flex, Text } from 'theme-ui';
 
-import NextLink from 'next/link';
-import { Flex, Link, Text } from 'theme-ui';
+import Link from './Link';
 
 import PostResume from './PostResume';
 
@@ -47,23 +47,23 @@ const RecommendationCard = ({
         flexDirection: 'column',
       }}
     >
-      <NextLink href={hrefLink}>
-        <Link
-          sx={{
-            fontSize: 3,
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            color: 'text',
-            textDecoration: 'none',
-            display: 'inline-flex',
-            alignItems: 'center',
-          }}
-        >
-          {title}
-          {isReference && <IconText icon={faLink} />}
-          {draft && <IconText icon={faPen} />}
-        </Link>
-      </NextLink>
+      <Link
+        href={hrefLink}
+        sx={{
+          fontSize: 3,
+          fontWeight: 'bold',
+          cursor: 'pointer',
+          color: 'text',
+          textDecoration: 'none',
+          display: 'inline-flex',
+          alignItems: 'center',
+        }}
+      >
+        {title}
+        {isReference && <IconText icon={faLink} />}
+        {draft && <IconText icon={faPen} />}
+      </Link>
+
       <PostResume post={recommendation} />
     </Flex>
   );

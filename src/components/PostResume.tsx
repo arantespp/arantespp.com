@@ -37,7 +37,7 @@ const PostResume = ({ post }: { post: PostWithoutContent }) => {
       </Text>
       {readingTime > 1 && (
         <Box>
-          <Text sx={{ color: 'muted', fontSize: 1 }}>
+          <Text sx={{ color: 'lightGray', fontSize: 1 }}>
             Reading time: {readingTime} minutes
           </Text>
         </Box>

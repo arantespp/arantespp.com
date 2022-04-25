@@ -21,21 +21,12 @@ const typography = toTheme({
 const palette = {
   twitterBlue: '#1da1f2',
   /**
-   * Orange
-   */
-  primary: '#E66E24',
-  /**
-   * Blue
-   */
-  complementary: '#249CE6',
-  /**
-   * Yellow
-   */
-  analogous1: '#E6CF24',
-  /**
    * Red
    */
-  analogous2: '#E6243B',
+  primary: '#B60000',
+  complementary: '#00B6B6',
+  analogous1: '#B65B00',
+  analogous2: '#B6005B',
 };
 
 /**
@@ -58,16 +49,17 @@ const colors = {
   secondary: palette.complementary,
   accent: palette.analogous2,
   highlight: palette.analogous1,
-  error: palette.analogous2,
+  error: palette.primary,
   twitter: palette.twitterBlue,
   modes: {
     dark: {
       text: '#eee',
-      /**
-       * Contrast with primary = 5.07
-       * https://webaim.org/resources/contrastchecker/?fcolor=F39BA2&bcolor=1C1C1C
-       */
       background: '#212121',
+      primary: '#ED975E',
+      secondary: '#5EB4ED',
+      accent: '#ED5E6D',
+      highlight: '#EDDF5E',
+      error: '#ED5E6D',
       link: '#ccc',
       gray: '#ccc',
     },
