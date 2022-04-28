@@ -2,7 +2,7 @@ import { pascalCase } from 'change-case';
 import dynamic from 'next/dynamic';
 import { Box } from 'theme-ui';
 
-import { Recommendation, Group } from '../../lib/files';
+import { Recommendation } from '../../lib/files';
 
 import HTMLHeaders from './HTMLHeaders';
 
@@ -11,25 +11,25 @@ const Recommendations = dynamic(() => import('./Recommendations'));
 
 const IndexPage = ({
   content,
-  group,
+  title,
   recommendations,
   excerpt,
   image,
 }: {
   content: string;
-  group?: Group;
+  title?: string;
   recommendations: Recommendation[];
   image?: { url: string };
   excerpt?: string;
 }) => {
   const keywords = [
-    group || '',
+    title || '',
     ...recommendations.flatMap(({ tags }) => tags),
   ];
   return (
     <>
       <HTMLHeaders
-        title={group ? pascalCase(group) : undefined}
+        title={title ? pascalCase(title) : undefined}
         description={excerpt}
         image={image}
         keywords={keywords}

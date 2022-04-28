@@ -22,7 +22,7 @@ export const getPNumber = (x: number) =>
 export const getFlashcards = async () => {
   const today = new Date();
 
-  const excludedGroups: Group[] = ['articles'];
+  const excludedGroups: Group[] = ['blog'];
 
   return getAllPosts()
     .filter((post) => !excludedGroups.includes(post.group))

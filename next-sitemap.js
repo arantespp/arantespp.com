@@ -1,8 +1,6 @@
-const { getRewrites } = require('./lib/links');
-const { groupAbbreviation, GROUPS } = require('./lib/groups');
-
 const exclude = [
   '/api-key',
+  '/digest',
   '/drafts',
   '/editor',
   '/journal',
@@ -18,26 +16,6 @@ module.exports = {
   exclude: exclude.flatMap((e) => [e, `${e}/*`]),
   transform: async (config, path) => {
     let loc = path;
-
-    /**
-     * Replace rewrites (bit links).
-     */
-    const rewrites = await getRewrites();
-
-    loc = rewrites.reduce((loc, { source, destination }) => {
-      if (loc.includes(destination)) {
-        return loc.replace(destination, source);
-      }
-
-      return loc;
-    }, loc);
-
-    /**
-     * Replace group abbreviation.
-     */
-    loc = GROUPS.reduce((loc, group) => {
-      return loc.replace(`/${group}/`, `/${groupAbbreviation[group]}/`);
-    }, loc);
 
     const priority = (() => {
       if (path === '/') {

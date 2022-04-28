@@ -31,7 +31,6 @@ const PostComponent = ({ post }: { post: Post }) => {
     excerpt,
     group,
     slug,
-    as,
     updatedAt,
     date: createdAt,
   } = post;
@@ -43,7 +42,7 @@ const PostComponent = ({ post }: { post: Post }) => {
   });
 
   const imageUrl = (() => {
-    if (group === 'zettelkasten') {
+    if (group === 'zettel') {
       return '/images/nonauthor/david-travis-5bYxXawHOQg-unsplash.webp';
     }
 
@@ -63,7 +62,7 @@ const PostComponent = ({ post }: { post: Post }) => {
       <HTMLHeaders
         title={title}
         description={excerpt}
-        url={as}
+        url={href}
         keywords={tags}
         image={{ url: imageUrl }}
         createdAt={createdAt}

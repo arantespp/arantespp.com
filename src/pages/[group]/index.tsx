@@ -1,47 +1,37 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 
-import {
-  getGroups,
-  getFile,
-  getRecommendations,
-  Group,
-} from '../../../lib/files';
+import { getFile, getRecommendations, Group } from '../../../lib/files';
 
 import IndexPage from '../../components/IndexPage';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const groups = [...getGroups(), 'now', 'me'].filter(
-    /**
-     * These groups page has its own file.
-     */
-    (group) => !['books'].includes(group),
-  );
+  const files = ['blog', 'zettelkasten', 'now', 'me'];
+
   return {
-    paths: groups.map((group) => ({ params: { group } })),
+    paths: files.map((file) => ({ params: { group: file } })),
     fallback: false,
   };
 };
 
 export const getStaticProps = async ({
-  params: { group },
+  params: { group: file },
 }: {
-  params: { group: Group };
+  params: { group: string };
 }) => {
-  const { data = {}, content = '' } =
-    getFile(`${group}/index.md`) || getFile(`${group}.md`) || {};
-  const recommendations = getRecommendations({ group });
+  const { data = {}, content = '' } = getFile(`${file}.md`) || {};
+  const recommendations = getRecommendations({ all: true });
   const { image = null, excerpt = null } = data;
-  return { props: { content, recommendations, group, excerpt, image } };
+  return { props: { content, recommendations, title: file, excerpt, image } };
 };
 
 const GroupIndex = ({
   content,
-  group,
+  title,
   recommendations,
   excerpt,
   image,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return <IndexPage {...{ content, recommendations, group, excerpt, image }} />;
+  return <IndexPage {...{ content, recommendations, title, excerpt, image }} />;
 };
 
 export default GroupIndex;

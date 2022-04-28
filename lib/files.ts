@@ -8,7 +8,7 @@ import matter from 'gray-matter';
 import path from 'path';
 import readingTime from 'reading-time';
 
-import { Group, GROUPS, groupAbbreviation } from './groups';
+import { Group, GROUPS } from './groups';
 import { getDateWithTimezone } from './getDateWithTimezone';
 
 export const postsDirectory = path.join(process.cwd(), 'posts');
@@ -64,7 +64,6 @@ type PostMeta = {
 
 export type Post = PostMeta & {
   href: string;
-  as?: string;
   group: Group;
   slug: string;
   content: string;
@@ -260,14 +259,6 @@ export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
      */
     const allTags = getTags([...tags, ...(book?.authors || [])]);
 
-    const as = (() => {
-      if (bitLink) {
-        return `/${bitLink}`;
-      }
-
-      return `/${groupAbbreviation[group]}/${slug}`;
-    })();
-
     const post = {
       title,
       excerpt,
@@ -275,7 +266,6 @@ export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       updatedAt,
       updateHistory: `${GITHUB_PROJECT}/commits/main/posts${href}.md`,
       href,
-      as,
       group,
       slug,
       content,
@@ -392,13 +382,7 @@ const getPost = (props: GetPartialPostProps): Post | undefined => {
   }
 
   const backlinks = allPosts
-    .filter(
-      ({ content }) =>
-        content.includes(`(/${partialPost.group}/${partialPost.slug})`) ||
-        content.includes(
-          `(/${groupAbbreviation[partialPost.group]}/${partialPost.slug})`,
-        ),
-    )
+    .filter(({ content }) => content.includes(`(${partialPost.href})`))
     .map(({ content, ...post }) => post);
 
   const newContent = (() => {
@@ -414,16 +398,13 @@ const getPost = (props: GetPartialPostProps): Post | undefined => {
     return [
       partialPost.content,
       '## Backlinks',
-      ...backlinks.map(({ as, title }) => `- [${title}](${as})`),
+      ...backlinks.map(({ href, title }) => `- [${title}](${href})`),
     ].join('\n');
   })();
 
   const references = allPosts.reduce<PostWithoutContent[]>(
     (acc, { content, ...post }) => {
-      if (
-        partialPost.content.includes(`(${post.href})`) ||
-        partialPost.content.includes(`(${post.as})`)
-      ) {
+      if (partialPost.content.includes(`(${post.href})`)) {
         return [...acc, post];
       }
 

@@ -29,15 +29,7 @@ const RecommendationCard = ({
 }: {
   recommendation: Recommendation;
 }) => {
-  const { href, title, isReference, draft, as } = recommendation;
-
-  const hrefLink = (() => {
-    if (draft) {
-      return href;
-    }
-
-    return as || href;
-  })();
+  const { href, title, isReference, draft } = recommendation;
 
   return (
     <Flex
@@ -48,7 +40,7 @@ const RecommendationCard = ({
       }}
     >
       <Link
-        href={hrefLink}
+        href={href}
         sx={{
           fontSize: 3,
           fontWeight: 'bold',

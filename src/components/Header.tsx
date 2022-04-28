@@ -13,8 +13,8 @@ const SHOW_TOGGLE_MODE = false;
 
 const navs = [
   {
-    label: 'Articles',
-    href: '/articles',
+    label: 'Blog',
+    href: '/blog',
   },
   {
     label: 'Contact',

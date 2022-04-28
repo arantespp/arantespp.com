@@ -1,6 +1,7 @@
 # *
 User-agent: *
 Disallow: /api-key
+Disallow: /digest
 Disallow: /drafts
 Disallow: /editor
 Disallow: /journal

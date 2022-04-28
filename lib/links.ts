@@ -1,136 +1,67 @@
 import { getDrafts, getAllPosts } from './files';
-import { groupAbbreviation, GROUPS } from './groups';
-
-export const getRewrites = async () => {
-  const groupRewrites = GROUPS.map((group) => ({
-    destination: `/${group}/:slug`,
-    source: `/${groupAbbreviation[group]}/:slug`,
-  }));
-
-  const bitLinks = getAllPosts()
-    .filter((post) => post.bitLink)
-    .map((post) => {
-      if (post.bitLink) {
-        return {
-          destination: post.href,
-          source: `/${post.bitLink}`,
-        };
-      }
-
-      return {};
-    });
-
-  return [...groupRewrites, ...bitLinks];
-};
-
-const oldLinks = [
-  {
-    source: '/books/no-bs-time-management-for-entrepreneurs',
-    destination: '/books/no-b-s-time-management-for-entrepreneurs',
-    permanent: true,
-  },
-  {
-    source: '/instagram/no-bs-time',
-    destination: '/instagram/no-b-s-time',
-    permanent: true,
-  },
-  {
-    source: '/revue',
-    destination: '/digest',
-    permanent: true,
-  },
-];
 
 const pageLinks = [
   {
     source: '/c',
     destination: '/contact',
-    permanent: true,
   },
   {
     source: '/j',
     destination: '/journal',
-    permanent: true,
   },
   {
     source: '/n',
     destination: '/network',
-    permanent: true,
   },
   {
     source: '/agenda',
     destination: '/calendar',
-    permanent: true,
-  },
-  {
-    source: '/miro',
-    destination: 'https://miro.com/app/board/o9J_l4_vcY8=/',
-    permanent: true,
   },
   {
     source: '/ts',
     destination: '/tweets-scheduler',
-    permanent: true,
   },
   {
     source: '/tsa',
     destination: '/tweets-scheduler/all',
-    permanent: true,
   },
 ];
 
 export const getRedirects = async () => {
-  const postsRedirects = getAllPosts().flatMap((post) => {
-    if (post.bitLink) {
-      return [
-        {
-          source: `/${post.group}/${post.slug}`,
-          destination: `/${post.bitLink}`,
-          permanent: true,
-        },
-        {
-          source: `/${groupAbbreviation[post.group]}/${post.slug}`,
-          destination: `/${post.bitLink}`,
-          permanent: true,
-        },
-      ];
-    }
-
-    return [
-      {
-        source: `/${post.group}/${post.slug}`,
-        destination: `/${groupAbbreviation[post.group]}/${post.slug}`,
-        permanent: true,
-      },
-    ];
-  });
-
-  const draftsBitLinks = getDrafts()
+  const bitLinks = [...getAllPosts(), ...getDrafts()]
     .filter((post) => post.bitLink)
-    .map((post) => ({
-      source: `/${post.bitLink}`,
-      destination: post.href,
-      permanent: false,
-    }));
+    .map((post) => {
+      return {
+        source: `/${post.bitLink}`,
+        destination: post.href,
+      };
+    });
 
-  /**
-   * If a post is a draft, you cant access it via group abbreviation.
-   * If you do this, you'll be redirected to Not Found page, that shows a
-   * link to the draft post. This link add `/drafts` to the URL, but new URL,
-   * `/drafts/b/some-book` does not exist. This redirect redirect URL to the
-   * correct one, `/drafts/books/some-book`.
-   */
-  const draftsAbbreviation = GROUPS.map((group) => ({
-    destination: `/drafts/${group}/:path*`,
-    source: `/drafts/${groupAbbreviation[group]}/:path*`,
+  const oldUrls = [
+    {
+      source: '/z/:path*',
+      destination: '/zettel/:path*',
+    },
+    {
+      source: '/zettelkasten/:path*',
+      destination: '/zettel/:path*',
+    },
+    {
+      source: '/a/:path*',
+      destination: '/blog/:path*',
+    },
+    {
+      source: '/articles/:path*',
+      destination: '/blog/:path*',
+    },
+    {
+      source: '/b/:path*',
+      destination: '/books/:path*',
+    },
+  ];
+
+  return [...bitLinks, ...pageLinks, ...oldUrls].map((redirects) => ({
+    ...redirects,
     permanent: false,
   }));
-
-  return [
-    ...postsRedirects,
-    ...draftsBitLinks,
-    ...draftsAbbreviation,
-    ...pageLinks,
-    ...oldLinks,
-  ];
 };
