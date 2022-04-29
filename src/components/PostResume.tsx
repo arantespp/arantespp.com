@@ -9,6 +9,8 @@ import Tag from './Tag';
 const PostResume = ({ post }: { post: PostWithoutContent }) => {
   const { excerpt, group, formattedDate, tags, href, readingTime } = post;
 
+  const newGroup = group === 'zettel' ? 'zettelkasten' : group;
+
   return (
     <Box
       sx={{
@@ -28,8 +30,8 @@ const PostResume = ({ post }: { post: PostWithoutContent }) => {
           </Box>
         ))}
       </Flex>
-      <Link href={`/${group}`}>
-        <Text sx={{ fontSize: 2 }}>{pascalCase(group)},</Text>
+      <Link href={`/${newGroup}`}>
+        <Text sx={{ fontSize: 2 }}>{pascalCase(newGroup)},</Text>
       </Link>
       <Text as="span" sx={{ color: 'gray', fontSize: 1 }}>
         {' '}
