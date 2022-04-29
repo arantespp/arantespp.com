@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { AppProps } from 'next/app';
-import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
@@ -11,11 +10,11 @@ import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListene
 
 import { socialMedias } from '../../lib/socialMedias';
 
+import Layout from '../components/Layout';
+
 import Providers from '../providers/Providers';
 
 import { navigation } from '../../shortcuts';
-
-const Layout = dynamic(() => import('../components/Layout'));
 
 const title = "Pedro's Blog";
 

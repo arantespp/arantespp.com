@@ -1,15 +1,20 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun } from '@fortawesome/free-solid-svg-icons';
-import { pascalCase } from 'change-case';
-import NextLink from 'next/link';
-import { Flex, Text, useThemeUI } from 'theme-ui';
+import * as React from 'react';
+import dynamic from 'next/dynamic';
+import { Flex } from 'theme-ui';
 
-import { socialMedias } from '../../lib/socialMedias';
-
+import { HeaderColorModeProps } from './HeaderColorMode';
+import { HeaderTwitterProps } from './HeaderTwitter';
 import Link from './Link';
 import PedroArantes from './PedroArantes';
 
-const SHOW_TOGGLE_MODE = false;
+const HeaderColorMode = dynamic<HeaderColorModeProps>(() =>
+  import('./HeaderColorMode').then((mod) => mod.HeaderColorMode),
+);
+const HeaderTwitter = dynamic<HeaderTwitterProps>(() =>
+  import('./HeaderTwitter').then((mod) => mod.HeaderTwitter),
+);
+
+const FallbackNavIcon = () => <Flex sx={{ width: 22, height: 22 }} />;
 
 const navs = [
   {
@@ -27,8 +32,6 @@ const navs = [
 ];
 
 const Header = () => {
-  const { colorMode, setColorMode } = useThemeUI();
-
   const navSx: any = {
     fontSize: [2, 3],
     textAlign: 'center',
@@ -55,8 +58,7 @@ const Header = () => {
         borderBottomStyle: 'solid',
       }}
     >
-      {/* Should use NextLink because of styles. */}
-      <NextLink href="/">
+      <Link href="/" sx={{ color: 'text', textDecoration: 'none' }}>
         <PedroArantes
           sx={{
             fontSize: [4, 4],
@@ -64,7 +66,7 @@ const Header = () => {
             cursor: 'pointer',
           }}
         />
-      </NextLink>
+      </Link>
       <Flex
         sx={{
           display: 'flex',
@@ -77,32 +79,24 @@ const Header = () => {
       >
         {navs.map(({ href, label }) => (
           <Link key={href} href={href} sx={navSx}>
-            {pascalCase(label)}
+            {label}
           </Link>
         ))}
-        <Link
-          sx={{
-            ...navSx,
-            color: 'twitter',
-            fontSize: [3, 4],
-          }}
-          target="_blank"
-          rel="noopener noreferrer"
-          href={socialMedias.Twitter.href}
-          aria-label={socialMedias.Twitter.username}
-        >
-          <FontAwesomeIcon icon={socialMedias.Twitter.faIcon} />
-        </Link>
-        {setColorMode && SHOW_TOGGLE_MODE && (
-          <Text
-            sx={{ ...navSx, color: undefined }}
-            onClick={() => {
-              setColorMode(colorMode === 'default' ? 'dark' : 'default');
+        <React.Suspense fallback={<FallbackNavIcon />}>
+          <HeaderTwitter
+            sx={{
+              ...navSx,
+              color: 'twitter',
+              '&:hover': {
+                color: 'twitter',
+              },
+              fontSize: [3, 4],
             }}
-          >
-            <FontAwesomeIcon icon={faSun} />
-          </Text>
-        )}
+          />
+        </React.Suspense>
+        {/* <React.Suspense fallback={<FallbackNavIcon />}> */}
+        <HeaderColorMode sx={{ ...navSx, color: undefined }} />
+        {/* </React.Suspense> */}
       </Flex>
     </Flex>
   );
