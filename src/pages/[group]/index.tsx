@@ -1,53 +1,83 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import dynamic from 'next/dynamic';
 
-import { getFile, getRecommendations, Group } from '../../../lib/files';
+import {
+  getFile,
+  getRecommendations,
+  getAllPosts,
+  getPostAndPostsRecommendations,
+} from '../../../lib/files';
 
-import IndexPage from '../../components/IndexPage';
+const IndexPage = dynamic(() => import('../../components/IndexPage'));
+const Post = dynamic(() => import('../../components/Post'));
+const NotFound = dynamic(() => import('../../components/NotFound'));
+const Recommendations = dynamic(
+  () => import('../../components/Recommendations'),
+);
+
+const indexes = ['blog', 'zettelkasten', 'now', 'me'];
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const files = ['blog', 'zettelkasten', 'now', 'me'];
+  const allBlogPosts = getAllPosts().filter(({ group }) => group === 'blog');
 
   return {
-    paths: files.map((file) => ({ params: { group: file } })),
+    paths: [
+      ...indexes.map((file) => ({ params: { group: file } })),
+      ...allBlogPosts.map(({ slug }) => ({ params: { group: slug } })),
+    ],
     fallback: false,
   };
 };
 
 export const getStaticProps = async ({
-  params: { group: file },
+  params: { group: path },
 }: {
   params: { group: string };
 }) => {
-  const { data = {}, content = '' } = getFile(`${file}.md`) || {};
-  const recommendations = getRecommendations({ all: true });
-  const { excerpt = null } = data;
+  if (indexes.includes(path)) {
+    const { data = {}, content = '' } = getFile(`${path}.md`) || {};
+    const recommendations = getRecommendations({ all: true });
+    const { excerpt = null } = data;
+
+    return {
+      props: {
+        index: {
+          content,
+          recommendations,
+          title: path,
+          excerpt,
+        },
+      },
+    };
+  }
+
+  const post = getPostAndPostsRecommendations({ slug: path, group: 'blog' });
 
   return {
     props: {
-      content,
-      recommendations,
-      title: file,
-      excerpt,
+      post,
     },
   };
 };
 
 const GroupIndex = ({
-  content,
-  title,
-  recommendations,
-  excerpt,
+  index,
+  post,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return (
-    <IndexPage
-      {...{
-        content,
-        recommendations,
-        title,
-        excerpt,
-      }}
-    />
-  );
+  if (index) {
+    return <IndexPage {...index} />;
+  }
+
+  if (post.post) {
+    return (
+      <>
+        <Post post={post.post} />
+        <Recommendations recommendations={post.recommendations} />
+      </>
+    );
+  }
+
+  return <NotFound />;
 };
 
 export default GroupIndex;

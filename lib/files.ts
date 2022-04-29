@@ -203,7 +203,7 @@ export const getTags = (tags: string[] = []) =>
 export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
   try {
     const fullPath = path.join(postsDirectory, group || '', `${slug}.md`);
-    const href = path.join('/', group || '', slug);
+    const href = path.join('/', group === 'blog' ? '' : group, slug);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 

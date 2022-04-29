@@ -14,9 +14,11 @@ const Recommendations = dynamic(
 );
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: allPosts.map(({ group, slug }) => ({
-    params: { group, slug },
-  })),
+  paths: allPosts
+    .filter(({ group }) => group !== 'blog')
+    .map(({ group, slug }) => ({
+      params: { group, slug },
+    })),
   fallback: false,
 });
 
@@ -24,7 +26,9 @@ export const getStaticProps = async ({
   params: { group, slug },
 }: {
   params: { group: Group; slug: string };
-}) => ({ props: getPostAndPostsRecommendations({ slug, group }) });
+}) => ({
+  props: getPostAndPostsRecommendations({ slug, group }),
+});
 
 const GroupSlug = ({
   post,
