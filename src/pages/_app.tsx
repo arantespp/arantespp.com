@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { DefaultSeo } from 'next-seo';
@@ -67,6 +68,13 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Scripts />
+      <Head>
+        <meta
+          key="viewport"
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
       <DefaultSeo
         {...{
           title,
