@@ -1,13 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { NextSeo } from 'next-seo';
 import { Flex, Link, Themed, Text } from 'theme-ui';
-
-import HTMLHeaders from '../components/HTMLHeaders';
 
 import { socialMedias, socialMediasArr } from '../../lib/socialMedias';
 
 const Contact = () => (
   <>
-    <HTMLHeaders
+    <NextSeo
       title="Contact"
       description='You can find me on almost all social media by the username "arantespp".'
     />

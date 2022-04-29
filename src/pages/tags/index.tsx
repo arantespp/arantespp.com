@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from 'next';
+import { NextSeo } from 'next-seo';
 import { Box, Flex, Themed } from 'theme-ui';
 
-import HTMLHeaders from '../../components/HTMLHeaders';
 import Tag from '../../components/Tag';
 
 import { getAllTags } from '../../../lib/files';
@@ -17,7 +17,7 @@ const TagsIndex = ({
   tags,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <>
-    <HTMLHeaders keywords={tags} title="Tags" />
+    <NextSeo title="Tags" />
     <Themed.h1>Tags</Themed.h1>
     <Themed.p>Total of {tags.length} tags.</Themed.p>
     <Flex sx={{ flexWrap: 'wrap' }}>

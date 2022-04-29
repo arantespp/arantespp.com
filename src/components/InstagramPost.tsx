@@ -1,6 +1,7 @@
 import { saveAs } from 'file-saver';
 import html2canvas from 'html2canvas';
 import JSZip from 'jszip';
+import { NextSeo } from 'next-seo';
 import * as React from 'react';
 import {
   Box,
@@ -16,7 +17,6 @@ import {
 
 import type { InstagramPost as InstagramPostProps } from '../../lib/files';
 
-import HTMLHeaders from './HTMLHeaders';
 import Loading from './Loading';
 import Markdown from './Markdown';
 import PedroArantes from './PedroArantes';
@@ -195,6 +195,7 @@ const PostsGrid = ({
                       >
                         <Image
                           {...props}
+                          alt={props.alt}
                           sx={{
                             border: '1px solid black',
                             borderColor: 'muted',
@@ -341,7 +342,7 @@ const InstagramPost = ({
 
   return (
     <>
-      <HTMLHeaders title={title} />
+      <NextSeo title={title} />
 
       <PostsGrid {...{ pages, postsRefs, url }} />
 
@@ -367,7 +368,11 @@ const InstagramPost = ({
             const key = index;
             return (
               <Box key={key} sx={{ border: '1px solid', borderColor: 'muted' }}>
-                <Image src={post} sx={{ width: '100%', height: '100%' }} />
+                <Image
+                  src={post}
+                  sx={{ width: '100%', height: '100%' }}
+                  alt={title}
+                />
               </Box>
             );
           })}

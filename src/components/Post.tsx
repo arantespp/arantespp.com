@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
+import { ArticleJsonLd, NextSeo } from 'next-seo';
 import { Box, Flex, Themed } from 'theme-ui';
 
 import { editPost } from '../../shortcuts';
@@ -10,8 +11,6 @@ import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListene
 import type { Post } from '../../lib/files';
 
 import BookHeader from './BookHeader';
-import CustomImage from './CustomImage';
-import HTMLHeaders from './HTMLHeaders';
 import NetworkLink from './NetworkLink';
 import { PostFooter } from './PostFooter';
 import PostResume from './PostResume';
@@ -23,7 +22,6 @@ const PostComponent = ({ post }: { post: Post }) => {
   const ref = useContentEditable();
 
   const {
-    image,
     title,
     book,
     href,
@@ -41,36 +39,59 @@ const PostComponent = ({ post }: { post: Post }) => {
     router.push({ pathname: `/editor`, query: { group, slug } });
   });
 
-  const imageUrl = (() => {
-    if (group === 'zettel') {
-      return '/images/nonauthor/david-travis-5bYxXawHOQg-unsplash.webp';
-    }
+  const isBook = book && group === 'books';
 
-    if (image) {
-      return image.url;
-    }
-
-    if (book?.image) {
-      return book.image;
-    }
-
-    return '';
-  })();
+  const isArticle = !isBook;
 
   return (
     <>
-      <HTMLHeaders
-        title={title}
-        description={excerpt}
-        url={href}
-        keywords={tags}
-        image={{ url: imageUrl }}
-        createdAt={createdAt}
-        updatedAt={updatedAt}
-        structuredData
+      <NextSeo
+        {...{
+          title,
+          description: excerpt,
+          openGraph: {
+            url: 'https://arantespp.com' + href,
+            ...(isBook
+              ? {
+                  images: [
+                    {
+                      url: book.image,
+                      alt: title,
+                    },
+                  ],
+                  book: {
+                    authors: book?.authors,
+                    tags,
+                    isbn: book?.ISBN || book?.ASIN,
+                  },
+                }
+              : {
+                  article: {
+                    publishedTime: createdAt,
+                    modifiedTime: updatedAt,
+                    authors: ['https://arantespp.com/me'],
+                    tags,
+                  },
+                }),
+          },
+        }}
       />
       <Box ref={ref}>
         <Themed.h1>{title}</Themed.h1>
+        {isArticle && (
+          <ArticleJsonLd
+            {...{
+              type: 'Blog',
+              url: `https://arantespp.com${href}`,
+              description: excerpt,
+              title,
+              datePublished: createdAt,
+              dateModified: updatedAt,
+              authorName: 'Pedro Arantes',
+              images: [],
+            }}
+          />
+        )}
         <Box
           sx={{
             marginBottom: [4],
@@ -83,7 +104,6 @@ const PostComponent = ({ post }: { post: Post }) => {
         </Box>
       </Box>
       <Box sx={{ marginBottom: [5] }}>
-        {!!image && <CustomImage alt={image.alt} src={image.url} />}
         {!!book && <BookHeader book={book} />}
       </Box>
       <Markdown content={post.content} />

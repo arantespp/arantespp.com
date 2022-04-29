@@ -1,10 +1,9 @@
 import { pascalCase } from 'change-case';
 import dynamic from 'next/dynamic';
+import { NextSeo } from 'next-seo';
 import { Box } from 'theme-ui';
 
 import { Recommendation } from '../../lib/files';
-
-import HTMLHeaders from './HTMLHeaders';
 
 const Markdown = dynamic(() => import('./Markdown'));
 const Recommendations = dynamic(() => import('./Recommendations'));
@@ -14,25 +13,19 @@ const IndexPage = ({
   title,
   recommendations,
   excerpt,
-  image,
 }: {
   content: string;
   title?: string;
   recommendations: Recommendation[];
-  image?: { url: string };
   excerpt?: string;
 }) => {
-  const keywords = [
-    title || '',
-    ...recommendations.flatMap(({ tags }) => tags),
-  ];
   return (
     <>
-      <HTMLHeaders
-        title={title ? pascalCase(title) : undefined}
-        description={excerpt}
-        image={image}
-        keywords={keywords}
+      <NextSeo
+        {...{
+          title: pascalCase(title || ''),
+          description: excerpt,
+        }}
       />
       {content && (
         <Box sx={{ marginBottom: 6 }}>

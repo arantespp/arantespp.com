@@ -1,12 +1,12 @@
 import * as dateFns from 'date-fns';
 import { InferGetStaticPropsType } from 'next';
+import { NextSeo } from 'next-seo';
 import { Box, Themed } from 'theme-ui';
 
 import { allPosts, Post } from '../../lib/files';
 import { getClosestLastWeekDay } from '../../lib/getClosestLastWeekDay';
 import { getNextNewsletterDate } from '../../lib/getNextNewsletterDate';
 
-import HTMLHeaders from '../components/HTMLHeaders';
 import Link from '../components/Link';
 import RecommendationsList from '../components/RecommendationsList';
 
@@ -58,7 +58,7 @@ const Digest = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <>
-      <HTMLHeaders noIndex />
+      <NextSeo nofollow noindex />
       <Themed.h1>Weekly Digest Posts</Themed.h1>
       <Themed.p>
         I&apos;ll use the posts below in my next{' '}

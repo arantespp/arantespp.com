@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 import { useQuery } from 'react-query';
 import { Flex } from 'theme-ui';
 
-import HTMLHeaders from '../../components/HTMLHeaders';
 import Journal from '../../components/Journal';
 import Link from '../../components/Link';
 
@@ -32,7 +32,7 @@ const JournalPage = () => {
 
   return (
     <>
-      <HTMLHeaders noIndex title={title} />
+      <NextSeo noindex nofollow title={title} />
       <Journal markdown={content} title={title} />
       <Flex sx={{ gap: 3 }}>
         <Link href={`/journal/editor?date=${date}`}>Edit</Link>

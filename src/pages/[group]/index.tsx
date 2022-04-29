@@ -20,8 +20,16 @@ export const getStaticProps = async ({
 }) => {
   const { data = {}, content = '' } = getFile(`${file}.md`) || {};
   const recommendations = getRecommendations({ all: true });
-  const { image = null, excerpt = null } = data;
-  return { props: { content, recommendations, title: file, excerpt, image } };
+  const { excerpt = null } = data;
+
+  return {
+    props: {
+      content,
+      recommendations,
+      title: file,
+      excerpt,
+    },
+  };
 };
 
 const GroupIndex = ({
@@ -29,9 +37,17 @@ const GroupIndex = ({
   title,
   recommendations,
   excerpt,
-  image,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return <IndexPage {...{ content, recommendations, title, excerpt, image }} />;
+  return (
+    <IndexPage
+      {...{
+        content,
+        recommendations,
+        title,
+        excerpt,
+      }}
+    />
+  );
 };
 
 export default GroupIndex;

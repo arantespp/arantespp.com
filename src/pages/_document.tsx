@@ -6,6 +6,12 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
+          <meta
+            key="viewport"
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width"
+          />
+          <meta key="author" name="author" content="Pedro Arantes" />
           <link rel="icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link

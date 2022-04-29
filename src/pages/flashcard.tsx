@@ -1,10 +1,10 @@
 import { useQuery } from 'react-query';
+import { NextSeo } from 'next-seo';
 import { Box, Button, Flex, Text, Themed } from 'theme-ui';
 
 import { Flashcard as FlashcardType } from '../../lib/getFlashcard';
 
 import Flashcard from '../components/Flashcard';
-import HTMLHeaders from '../components/HTMLHeaders';
 import Loading from '../components/Loading';
 
 const description =
@@ -29,12 +29,7 @@ const FlashcardPage = () => {
 
   return (
     <>
-      <HTMLHeaders
-        title="Flashcard"
-        description={description}
-        image={{ url: '/images/amanda-jones-feLC4ZCxGqk-unsplash.jpg' }}
-        url="/flashcard"
-      />
+      <NextSeo title="Flashcard" description={description} />
       <Themed.h1>Flashcard</Themed.h1>
       <Text sx={{ fontWeight: 'normal' }}>{description}</Text>
       <Box sx={{ marginTop: 4, marginBottom: 5 }}>

@@ -1,5 +1,6 @@
 import * as dateFns from 'date-fns';
 import Router, { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 import * as React from 'react';
 import { useQuery } from 'react-query';
 
@@ -7,7 +8,6 @@ import { Box, Flex, Input, Themed, Text } from 'theme-ui';
 
 import Editor from '../../components/Editor';
 import ErrorMessage from '../../components/ErrorMessage';
-import HTMLHeaders from '../../components/HTMLHeaders';
 import { JournalSearchName } from '../../components/JournalSearchName';
 import Link from '../../components/Link';
 
@@ -268,7 +268,7 @@ const JournalEditor = () => {
 
   return (
     <>
-      <HTMLHeaders noIndex title={title} />
+      <NextSeo noindex nofollow title={title} />
       <Themed.h1>{title}</Themed.h1>
       <Box sx={{ marginY: 2 }}>
         <Link href={`/journal/${date}`}>

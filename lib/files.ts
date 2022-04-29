@@ -22,7 +22,7 @@ export type { Group };
 export type Book = {
   authors: string[];
   link: string;
-  image?: string;
+  image: string;
   ASIN?: string;
   ISBN?: string;
 };
@@ -48,13 +48,9 @@ type PostMeta = {
    */
   references?: PostWithoutContent[];
   /**
-   * image and book should have the `null` type because `getStaticProps` do not
+   * Book should have the `null` type because `getStaticProps` do not
    * accept undefined values.
    */
-  image?: {
-    url: string;
-    alt: string;
-  };
   book?: Book;
   editLink?: string;
   keywords: string[];
@@ -217,7 +213,6 @@ export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       date,
       rating,
       tags = [],
-      image,
       draft,
       book,
       bitLink,
@@ -271,7 +266,6 @@ export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
       content,
       rating,
       tags: allTags,
-      image,
       draft,
       book,
       editLink: `${GITHUB_PROJECT}/edit/main/posts${href}.md`,

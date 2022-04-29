@@ -1,12 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
+import { DefaultSeo } from 'next-seo';
 import * as React from 'react';
-
-import HTMLHeaders from '../components/HTMLHeaders';
 
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 
@@ -18,59 +16,10 @@ import { navigation } from '../../shortcuts';
 
 const Layout = dynamic(() => import('../components/Layout'));
 
-const title = 'Pedro Arantes';
+const title = "Pedro's Blog";
 
 const description =
   "Hello, my name is Pedro. I'm an entrepreneur, engineer, architect, programmer, product developer, writer, sales guy, athlete, and dancer. Welcome to my blog.";
-
-/**
- * Twitter meta tags:
- *
- * - https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup
- * - https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary
- */
-const DefaultHeaders = () => {
-  return (
-    <Head>
-      <title>{title}</title>
-      <meta
-        key="viewport"
-        name="viewport"
-        content="minimum-scale=1, initial-scale=1, width=device-width"
-      />
-      <meta key="author" name="author" content="Pedro Arantes" />
-      <meta
-        key="twitter:card"
-        name="twitter:card"
-        content="summary_large_image"
-      />
-      <meta
-        key="twitter:site"
-        name="twitter:site"
-        content={socialMedias.Twitter.username}
-      />
-      <meta
-        key="twitter:twitter:creator"
-        name="twitter:twitter:creator"
-        content={socialMedias.Twitter.username}
-      />
-      <meta key="og:url" property="og:url" content="https://arantespp.com" />
-      <meta key="og:type" property="og:type" content="website" />
-      <meta
-        key="og:image"
-        property="og:image"
-        content="https://arantespp.com/me.webp"
-      />
-      <meta key="description" name="description" content={description} />
-      <meta key="og:title" property="og:title" content={title} />
-      <meta
-        key="og:description"
-        property="og:description"
-        content={description}
-      />
-    </Head>
-  );
-};
 
 const Scripts = () => {
   return (
@@ -118,9 +67,24 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Scripts />
+      <DefaultSeo
+        {...{
+          title,
+          description,
+          twitter: {
+            cardType: 'summary',
+            site: socialMedias.Twitter.username,
+            handle: socialMedias.Twitter.username,
+          },
+          openGraph: {
+            url: 'https://arantespp.com',
+            type: 'website',
+            title,
+            description,
+          },
+        }}
+      />
       <Providers>
-        <DefaultHeaders />
-        <HTMLHeaders title={title} description={description} />
         <Layout>
           <Component {...pageProps} />
         </Layout>

@@ -47,14 +47,6 @@ const schema = yup.object({
     .notRequired()
     .nullable()
     .default(null),
-  image: yup
-    .object({
-      url: yup.string().required(),
-      alt: yup.string().required(),
-    })
-    .notRequired()
-    .nullable()
-    .default(null),
 });
 
 export type PostForm = yup.Asserts<typeof schema>;

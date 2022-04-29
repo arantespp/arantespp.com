@@ -1,7 +1,7 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import { NextSeo } from 'next-seo';
 import { Flex, Themed } from 'theme-ui';
 
-import HTMLHeaders from '../../components/HTMLHeaders';
 import Link from '../../components/Link';
 import NetworkLink from '../../components/NetworkLink';
 import RecommendationsList from '../../components/RecommendationsList';
@@ -35,7 +35,7 @@ const TagsIndex = ({
 
   return (
     <>
-      <HTMLHeaders keywords={[tag]} title={title} />
+      <NextSeo title={title} />
       <Themed.h1>{title}</Themed.h1>
       <Themed.p>
         {posts.length} posts related to the tag <Tag tag={tag} /> are shown

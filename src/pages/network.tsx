@@ -2,11 +2,11 @@ import * as React from 'react';
 import { InferGetStaticPropsType } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import { Box, Button, Flex, Text } from 'theme-ui';
+import { NextSeo } from 'next-seo';
+import { Box, Flex, Text } from 'theme-ui';
 
 // import { nodeColors } from '../components/NetworkGraph';
 import FullWidth from '../components/FullWidth';
-import HTMLHeaders from '../components/HTMLHeaders';
 import RecommendationCard from '../components/RecommendationCard';
 import Tag from '../components/Tag';
 
@@ -113,11 +113,19 @@ const Network = ({
 
   return (
     <>
-      <HTMLHeaders
-        title="Network"
-        url="/network"
-        description="All posts and tags and their connections."
-        image={{ url: 'https://arantespp.com/images/network.webp' }}
+      <NextSeo
+        {...{
+          title: 'Network',
+          description: 'Networking graph of all posts and tags connections.',
+          openGraph: {
+            images: [
+              {
+                url: 'https://arantespp.com/images/network.webp',
+                alt: 'Network',
+              },
+            ],
+          },
+        }}
       />
       <FullWidth>
         <NetworkGraph

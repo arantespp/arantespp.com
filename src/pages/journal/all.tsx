@@ -1,10 +1,10 @@
+import { NextSeo } from 'next-seo';
 import * as React from 'react';
 import { useInfiniteQuery } from 'react-query';
 import { Button, Flex } from 'theme-ui';
 
 import { Journal as JournalType } from '../../../lib/journal';
 
-import HTMLHeaders from '../../components/HTMLHeaders';
 import Journal from '../../components/Journal';
 import Link from '../../components/Link';
 
@@ -45,7 +45,7 @@ const JournalAll = () => {
 
   return (
     <>
-      <HTMLHeaders noIndex title="Journal - All" />
+      <NextSeo noindex nofollow title="Journal - All" />
       <Journal
         markdown={markdown}
         title={`Journal - All (${journals.length})`}

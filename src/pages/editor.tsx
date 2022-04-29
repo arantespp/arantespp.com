@@ -1,12 +1,11 @@
-import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 import * as React from 'react';
 import { useQuery } from 'react-query';
 
 import type { Post } from '../../lib/files';
 import { postTitleToSlug } from '../../lib/postTitleToSlug';
 
-import HTMLHeaders from '../components/HTMLHeaders';
 import PostEditor from '../components/PostEditor';
 
 const Editor = () => {
@@ -47,9 +46,7 @@ const Editor = () => {
 
   return (
     <>
-      <Head>
-        <HTMLHeaders noIndex />
-      </Head>
+      <NextSeo nofollow noindex />
       <PostEditor post={post} onCheckIfPostExists={onCheckIfPostExists} />
     </>
   );

@@ -1,5 +1,6 @@
 import { InferGetStaticPropsType } from 'next';
 import dynamic from 'next/dynamic';
+import { NextSeo } from 'next-seo';
 import { Themed } from 'theme-ui';
 
 import { getRecommendations } from '../../lib/files';
@@ -18,6 +19,11 @@ const Index = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
+      <NextSeo
+        {...{
+          openGraph: { images: [{ url: 'https://arantespp.com/me.webp' }] },
+        }}
+      />
       <Themed.h1>Pedro&apos;s Blog</Themed.h1>
       <Themed.p>
         Hello, my name is Pedro. I&apos;m an enthusiastic learner, optimistic,

@@ -1,10 +1,10 @@
 import * as React from 'react';
+import { NextSeo } from 'next-seo';
 import { useQuery } from 'react-query';
 
 import { JournalsSummary } from '../../../lib/journal';
 import { getToday } from '../../../lib/getToday';
 
-import HTMLHeaders from '../../components/HTMLHeaders';
 import Journal from '../../components/Journal';
 import Link from '../../components/Link';
 
@@ -41,7 +41,7 @@ const JournalIndex = () => {
 
   return (
     <>
-      <HTMLHeaders noIndex title="Journal" />
+      <NextSeo noindex nofollow title="Journal" />
       <Journal markdown={summary} title="Journal" />
       {summary && <Link href="/journal/all">All</Link>}
     </>
