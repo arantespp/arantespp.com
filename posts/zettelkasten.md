@@ -1,12 +1,8 @@
 ---
 excerpt: Zettelkasten is a method in which you write down your thoughts in notes, tag, and connect them over time.
-image:
-  url: '/images/nonauthor/david-travis-5bYxXawHOQg-unsplash.webp'
 ---
 
 # What is Zettelkasten?
-
-![Photo by <a href="https://unsplash.com/@dtravisphd?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">David Travis</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](/images/nonauthor/david-travis-5bYxXawHOQg-unsplash.webp)
 
 Zettelkasten is a method in which you write down your thoughts in notes, tag them, and connect them over time. The sociologist [Niklas Luhmann](https://en.wikipedia.org/wiki/Niklas_Luhmann) used this method, which helped him be highly prolific in his field. During his 40 years of research, he published more than 70 books and over 400 scholarly articles.
 

@@ -1,9 +1,9 @@
-import { paramCase } from 'change-case';
-import NextLink from 'next/link';
-import { useRouter } from 'next/router';
 import * as React from 'react';
 import { Link, Themed } from 'theme-ui';
+import { paramCase } from 'change-case';
 import { titleCase } from 'title-case';
+import { useRouter } from 'next/router';
+import NextLink from 'next/link';
 import url from 'url';
 
 const componentsByLevel = [

@@ -1,14 +1,14 @@
 /**
  * https://github.com/vercel/next.js/blob/canary/examples/blog-starter/lib/
  */
-import { paramCase } from 'change-case';
 import * as dateFns from 'date-fns';
+import { paramCase } from 'change-case';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 import readingTime from 'reading-time';
 
-import { Group, GROUPS } from './groups';
+import { GROUPS, Group } from './groups';
 import { getDateWithTimezone } from './getDateWithTimezone';
 
 export const postsDirectory = path.join(process.cwd(), 'posts');

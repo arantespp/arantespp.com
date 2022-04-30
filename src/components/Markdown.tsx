@@ -1,17 +1,17 @@
-import dynamic from 'next/dynamic';
 import * as React from 'react';
+import { Box, Flex, Message, Themed } from 'theme-ui';
 import ReactMarkdown, { Components } from 'react-markdown';
+import dynamic from 'next/dynamic';
 import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
-import { Box, Flex, Message, Themed } from 'theme-ui';
 
 import { useContentEditable } from '../hooks/useContentEditable';
 
+import { isTweet } from './Tweet';
 import Heading from './Heading';
 import Link from './Link';
 import Tag from './Tag';
-import { isTweet } from './Tweet';
 
 import 'katex/dist/katex.min.css';
 

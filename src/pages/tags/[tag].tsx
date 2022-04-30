@@ -1,6 +1,6 @@
+import { Flex, Themed } from 'theme-ui';
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
-import { Flex, Themed } from 'theme-ui';
 
 import Link from '../../components/Link';
 import NetworkLink from '../../components/NetworkLink';

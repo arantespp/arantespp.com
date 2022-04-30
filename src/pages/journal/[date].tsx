@@ -1,7 +1,7 @@
-import { useRouter } from 'next/router';
+import { Flex } from 'theme-ui';
 import { NextSeo } from 'next-seo';
 import { useQuery } from 'react-query';
-import { Flex } from 'theme-ui';
+import { useRouter } from 'next/router';
 
 import Journal from '../../components/Journal';
 import Link from '../../components/Link';

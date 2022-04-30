@@ -1,7 +1,3 @@
-import { saveAs } from 'file-saver';
-import html2canvas from 'html2canvas';
-import JSZip from 'jszip';
-import { NextSeo } from 'next-seo';
 import * as React from 'react';
 import {
   Box,
@@ -11,9 +7,13 @@ import {
   Image,
   Link,
   Text,
-  Themed,
   ThemeProvider,
+  Themed,
 } from 'theme-ui';
+import { NextSeo } from 'next-seo';
+import { saveAs } from 'file-saver';
+import JSZip from 'jszip';
+import html2canvas from 'html2canvas';
 
 import type { InstagramPost as InstagramPostProps } from '../../lib/files';
 

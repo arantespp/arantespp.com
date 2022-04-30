@@ -1,14 +1,14 @@
-import * as dateFns from 'date-fns';
-import Router, { useRouter } from 'next/router';
-import { NextSeo } from 'next-seo';
 import * as React from 'react';
+import * as dateFns from 'date-fns';
+import { NextSeo } from 'next-seo';
 import { useQuery } from 'react-query';
+import Router, { useRouter } from 'next/router';
 
-import { Box, Flex, Input, Themed, Text } from 'theme-ui';
+import { Box, Flex, Input, Text, Themed } from 'theme-ui';
 
+import { JournalSearchName } from '../../components/JournalSearchName';
 import Editor from '../../components/Editor';
 import ErrorMessage from '../../components/ErrorMessage';
-import { JournalSearchName } from '../../components/JournalSearchName';
 import Link from '../../components/Link';
 
 import { Journal } from '../../../lib/journal';

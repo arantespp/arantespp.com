@@ -1,10 +1,10 @@
+import { Flex, Text } from 'theme-ui';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+  IconDefinition,
   faLink,
   faPen,
-  IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Flex, Text } from 'theme-ui';
 
 import Link from './Link';
 

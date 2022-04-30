@@ -1,4 +1,4 @@
-import { getDrafts, getAllPosts } from './files';
+import { getAllPosts, getDrafts } from './files';
 
 const pageLinks = [
   {

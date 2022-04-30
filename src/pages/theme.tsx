@@ -1,4 +1,4 @@
-import { useThemeUI, Themed } from 'theme-ui';
+import { Themed, useThemeUI } from 'theme-ui';
 
 const Theme = () => {
   const { theme } = useThemeUI();

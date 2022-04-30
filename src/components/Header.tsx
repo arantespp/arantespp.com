@@ -1,11 +1,10 @@
 import * as React from 'react';
-import dynamic from 'next/dynamic';
 import { Flex } from 'theme-ui';
-
 import { HeaderColorModeProps } from './HeaderColorMode';
 import { HeaderTwitterProps } from './HeaderTwitter';
 import Link from './Link';
 import PedroArantes from './PedroArantes';
+import dynamic from 'next/dynamic';
 
 const HeaderColorMode = dynamic<HeaderColorModeProps>(() =>
   import('./HeaderColorMode').then((mod) => mod.HeaderColorMode),

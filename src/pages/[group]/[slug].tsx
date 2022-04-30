@@ -2,9 +2,9 @@ import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import dynamic from 'next/dynamic';
 
 import {
+  Group,
   allPosts,
   getPostAndPostsRecommendations,
-  Group,
 } from '../../../lib/files';
 
 const Post = dynamic(() => import('../../components/Post'));

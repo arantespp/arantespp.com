@@ -1,9 +1,9 @@
 import { getAllPosts } from './files';
 
 import {
-  getPNumber,
-  getFlashcards,
   getFlashcardByProbability,
+  getFlashcards,
+  getPNumber,
 } from './getFlashcard';
 
 jest.mock('./files', () => ({

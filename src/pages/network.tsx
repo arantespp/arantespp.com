@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { InferGetStaticPropsType } from 'next';
-import dynamic from 'next/dynamic';
-import { useRouter } from 'next/router';
-import { NextSeo } from 'next-seo';
 import { Box, Flex, Text } from 'theme-ui';
+import { InferGetStaticPropsType } from 'next';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
 
 // import { nodeColors } from '../components/NetworkGraph';
 import FullWidth from '../components/FullWidth';

@@ -1,7 +1,7 @@
-import dynamic from 'next/dynamic';
-import { useRouter } from 'next/router';
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 import { Box, Flex, Themed } from 'theme-ui';
+import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
 
 import { editPost } from '../../shortcuts';
 
@@ -10,9 +10,9 @@ import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListene
 
 import type { Post } from '../../lib/files';
 
+import { PostFooter } from './PostFooter';
 import BookHeader from './BookHeader';
 import NetworkLink from './NetworkLink';
-import { PostFooter } from './PostFooter';
 import PostResume from './PostResume';
 import SharePost from './SharePost';
 

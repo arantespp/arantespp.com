@@ -1,3 +1,4 @@
+import { faChessPawn, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import {
   faDev,
   faFacebookSquare,
@@ -10,7 +11,6 @@ import {
   faTelegramPlane,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { faChessPawn, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export const socialMedias = {
   Twitter: {

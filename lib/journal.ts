@@ -1,3 +1,4 @@
+import * as dateFns from 'date-fns';
 import {
   DynamoDBClient,
   GetItemCommand,
@@ -6,7 +7,6 @@ import {
   UpdateItemCommand,
 } from '@aws-sdk/client-dynamodb';
 import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
-import * as dateFns from 'date-fns';
 
 import { getDateWithTimezone } from './getDateWithTimezone';
 

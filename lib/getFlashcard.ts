@@ -1,6 +1,6 @@
 import * as dateFns from 'date-fns';
 
-import { getAllPosts, Group } from './files';
+import { Group, getAllPosts } from './files';
 import { getWeightedRandomInt } from './getRandomInt';
 
 export const INTERVAL = 7;

@@ -1,8 +1,8 @@
 import { InferGetStaticPropsType } from 'next';
-import Head from 'next/head';
 import { NextSeo } from 'next-seo';
+import Head from 'next/head';
 
-import { getPostsByGroup, getDrafts, Post } from '../../lib/files';
+import { Post, getDrafts, getPostsByGroup } from '../../lib/files';
 
 import Heading from '../components/Heading';
 import RecommendationsList from '../components/RecommendationsList';

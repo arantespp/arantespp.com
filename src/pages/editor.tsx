@@ -1,10 +1,10 @@
-import { useRouter } from 'next/router';
-import { NextSeo } from 'next-seo';
 import * as React from 'react';
+import { NextSeo } from 'next-seo';
 import { useQuery } from 'react-query';
+import { useRouter } from 'next/router';
 
-import type { Post } from '../../lib/files';
 import { postTitleToSlug } from '../../lib/postTitleToSlug';
+import type { Post } from '../../lib/files';
 
 import PostEditor from '../components/PostEditor';
 

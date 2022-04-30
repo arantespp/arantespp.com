@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Tweet as TweetWidget } from 'react-twitter-widgets';
 import { Box } from 'theme-ui';
+import { Tweet as TweetWidget } from 'react-twitter-widgets';
 
 const getTweetStatus = (href: string) => {
   const { pathname } = new URL(href);

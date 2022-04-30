@@ -1,7 +1,7 @@
-import { NextSeo } from 'next-seo';
 import * as React from 'react';
-import { useInfiniteQuery } from 'react-query';
 import { Button, Flex } from 'theme-ui';
+import { NextSeo } from 'next-seo';
+import { useInfiniteQuery } from 'react-query';
 
 import { Journal as JournalType } from '../../../lib/journal';
 

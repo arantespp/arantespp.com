@@ -1,4 +1,4 @@
-import { Flex, Image, Text, BaseStyles } from 'theme-ui';
+import { BaseStyles, Flex, Image, Text } from 'theme-ui';
 
 const CustomImage = ({ src, alt }: { src: string; alt: string }) => {
   const newAlt = alt.replace(

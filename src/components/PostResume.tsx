@@ -1,5 +1,5 @@
-import { pascalCase } from 'change-case';
 import { Box, Flex, Message, Text } from 'theme-ui';
+import { pascalCase } from 'change-case';
 
 import type { PostWithoutContent } from '../../lib/files';
 

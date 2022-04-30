@@ -1,9 +1,9 @@
 import * as dateFns from 'date-fns';
+import { Box, Themed } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
-import { Box, Themed } from 'theme-ui';
 
-import { allPosts, Post } from '../../lib/files';
+import { Post, allPosts } from '../../lib/files';
 import { getClosestLastWeekDay } from '../../lib/getClosestLastWeekDay';
 import { getNextNewsletterDate } from '../../lib/getNextNewsletterDate';
 

@@ -1,6 +1,6 @@
-import { useQuery } from 'react-query';
-import { NextSeo } from 'next-seo';
 import { Box, Button, Flex, Text, Themed } from 'theme-ui';
+import { NextSeo } from 'next-seo';
+import { useQuery } from 'react-query';
 
 import { Flashcard as FlashcardType } from '../../lib/getFlashcard';
 

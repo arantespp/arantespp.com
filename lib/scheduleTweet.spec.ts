@@ -2,10 +2,10 @@ import * as dateFns from 'date-fns';
 
 import * as getRandomIntModule from './getRandomInt';
 import {
+  SKIP_DAYS,
+  WEEKEND_PROPORTION,
   getScheduledDate,
   shouldSkipDay,
-  WEEKEND_PROPORTION,
-  SKIP_DAYS,
 } from './scheduleTweet';
 
 jest.mock('twitter-ads');

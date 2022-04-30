@@ -1,7 +1,7 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import dynamic from 'next/dynamic';
 
-import { getInstagramPosts, getInstagramPost } from '../../../lib/files';
+import { getInstagramPost, getInstagramPosts } from '../../../lib/files';
 
 import NotFound from '../../components/NotFound';
 

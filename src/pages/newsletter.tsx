@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { useQuery } from 'react-query';
 import { Button, Flex, Input, Themed } from 'theme-ui';
+import { useQuery } from 'react-query';
 
 import Flashcard from '../components/Flashcard';
 import Heading from '../components/Heading';

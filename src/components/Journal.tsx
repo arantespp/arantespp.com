@@ -1,5 +1,5 @@
-import dynamic from 'next/dynamic';
 import { Box } from 'theme-ui';
+import dynamic from 'next/dynamic';
 
 import Heading from './Heading';
 import Loading from './Loading';

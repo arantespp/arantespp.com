@@ -1,13 +1,8 @@
-import dynamic from 'next/dynamic';
 import * as React from 'react';
 import { Box, Container } from 'theme-ui';
-
 import { useApiKey } from '../hooks/useApiKey';
-
-/**
- * Don't dynamic import Header because of cumulative shift layout.
- */
-import Header from './Header';
+import Header from './Header'; // Don't dynamic import Header because of cumulative shift layout.
+import dynamic from 'next/dynamic';
 
 const Footer = dynamic(() => import('./Footer'));
 const Newsletter = dynamic(() => import('./Newsletter'));

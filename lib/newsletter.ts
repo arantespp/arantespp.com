@@ -2,8 +2,8 @@ import * as dateFns from 'date-fns';
 import { URL } from 'url';
 
 import { db } from './database';
-import { getFlashcard } from './getFlashcard';
 import { getClosestLastWeekDay } from './getClosestLastWeekDay';
+import { getFlashcard } from './getFlashcard';
 import { socialMedias } from './socialMedias';
 
 const format = 'yyyy-MM-dd';

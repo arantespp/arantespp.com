@@ -1,11 +1,12 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import { titleCase } from 'title-case';
 import dynamic from 'next/dynamic';
 
 import {
-  getFile,
-  getRecommendations,
   getAllPosts,
+  getFile,
   getPostAndPostsRecommendations,
+  getRecommendations,
 } from '../../../lib/files';
 
 const IndexPage = dynamic(() => import('../../components/IndexPage'));
@@ -44,7 +45,7 @@ export const getStaticProps = async ({
         index: {
           content,
           recommendations,
-          title: path,
+          title: titleCase(path),
           excerpt,
         },
       },

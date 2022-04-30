@@ -1,12 +1,12 @@
 import * as dateFns from 'date-fns';
 import * as fs from 'fs';
-import matter from 'gray-matter';
 import * as path from 'path';
 import { titleCase } from 'title-case';
+import matter from 'gray-matter';
 
 import type { PostForm } from '../src/components/PostEditor';
 
-import { getTags, postsDirectory, getPartialPost, Post, Book } from './files';
+import { Book, Post, getPartialPost, getTags, postsDirectory } from './files';
 import { Group } from './groups';
 import { postTitleToSlug } from './postTitleToSlug';
 

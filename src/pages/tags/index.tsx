@@ -1,6 +1,6 @@
+import { Box, Flex, Themed } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
-import { Box, Flex, Themed } from 'theme-ui';
 
 import Tag from '../../components/Tag';
 

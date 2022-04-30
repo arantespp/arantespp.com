@@ -1,4 +1,4 @@
-import { getClosestLastWeekDay, DayOfWeek } from './getClosestLastWeekDay';
+import { DayOfWeek, getClosestLastWeekDay } from './getClosestLastWeekDay';
 
 describe('method getClosestDayOfLastWeek', () => {
   beforeAll(() => {

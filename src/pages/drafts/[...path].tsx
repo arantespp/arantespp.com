@@ -2,7 +2,7 @@ import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 
-import { getDrafts, getDraft, Group } from '../../../lib/files';
+import { Group, getDraft, getDrafts } from '../../../lib/files';
 
 const Post = dynamic(() => import('../../components/Post'));
 

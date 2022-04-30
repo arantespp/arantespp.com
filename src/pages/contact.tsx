@@ -1,6 +1,6 @@
+import { Flex, Link, Text, Themed } from 'theme-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NextSeo } from 'next-seo';
-import { Flex, Link, Themed, Text } from 'theme-ui';
 
 import { socialMedias, socialMediasArr } from '../../lib/socialMedias';
 

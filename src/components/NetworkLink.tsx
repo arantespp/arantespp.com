@@ -1,5 +1,5 @@
-import NextLink from 'next/link';
 import { Link } from 'theme-ui';
+import NextLink from 'next/link';
 
 const NetworkLink = ({ nodeId }: { nodeId: string }) => (
     <NextLink href={`/network?node=${nodeId}`} passHref>

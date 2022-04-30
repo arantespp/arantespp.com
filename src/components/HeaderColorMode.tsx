@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun } from '@fortawesome/free-solid-svg-icons';
 import { Text, TextProps, useThemeUI } from 'theme-ui';
+import { faSun } from '@fortawesome/free-solid-svg-icons';
 
 export type HeaderColorModeProps = TextProps;
 

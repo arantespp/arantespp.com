@@ -1,7 +1,7 @@
+import { Box } from 'theme-ui';
+import { NextSeo } from 'next-seo';
 import { pascalCase } from 'change-case';
 import dynamic from 'next/dynamic';
-import { NextSeo } from 'next-seo';
-import { Box } from 'theme-ui';
 
 import { Recommendation } from '../../lib/files';
 

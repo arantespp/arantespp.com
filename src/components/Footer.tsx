@@ -1,6 +1,6 @@
+import { Flex, Link, Text } from 'theme-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NextLink from 'next/link';
-import { Flex, Link, Text } from 'theme-ui';
 
 import PedroArantes from './PedroArantes';
 

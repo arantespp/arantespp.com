@@ -1,8 +1,6 @@
-import { ErrorMessage } from '@hookform/error-message';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as dateFns from 'date-fns';
 import * as React from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import * as dateFns from 'date-fns';
+import * as yup from 'yup';
 import {
   Button,
   Checkbox,
@@ -14,10 +12,12 @@ import {
   Textarea,
   Themed,
 } from 'theme-ui';
-import * as yup from 'yup';
+import { Controller, useForm } from 'react-hook-form';
+import { ErrorMessage } from '@hookform/error-message';
+import { yupResolver } from '@hookform/resolvers/yup';
 
-import type { Post } from '../../lib/files';
 import { GROUPS } from '../../lib/groups';
+import type { Post } from '../../lib/files';
 
 import Editor from './Editor';
 import Link from './Link';

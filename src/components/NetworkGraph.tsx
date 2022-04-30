@@ -1,8 +1,8 @@
 import * as React from 'react';
+import { Box, Button, Flex, Input, useThemeUI } from 'theme-ui';
+import { useResponsiveValue } from '@theme-ui/match-media';
 import ForceGraph3D, { ForceGraphMethods } from 'react-force-graph-3d';
 import SpriteText from 'three-spritetext';
-import { Box, Button, Input, Flex, useThemeUI } from 'theme-ui';
-import { useResponsiveValue } from '@theme-ui/match-media';
 
 import { PostWithoutContent } from '../../lib/files';
 

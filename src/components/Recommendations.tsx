@@ -1,5 +1,5 @@
-import NextLink from 'next/link';
 import { Flex, Link, Text } from 'theme-ui';
+import NextLink from 'next/link';
 
 import RecommendationsList from './RecommendationsList';
 
