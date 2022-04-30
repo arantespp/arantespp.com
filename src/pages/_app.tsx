@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { AppProps } from 'next/app';
-import { DefaultSeo } from 'next-seo';
+import { DefaultSeo, DefaultSeoProps } from 'next-seo';
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import Providers from '../providers/Providers';
@@ -18,6 +18,22 @@ const title = "Pedro's Blog";
 const description =
   "Hello, my name is Pedro. I'm an entrepreneur, engineer, architect, programmer, product developer, writer, sales guy, athlete, and dancer. Welcome to my blog.";
 
+const defaultSeo: DefaultSeoProps = {
+  title,
+  description,
+  twitter: {
+    cardType: 'summary',
+    site: '@arantespp',
+    handle: '@arantespp',
+  },
+  openGraph: {
+    url: 'https://arantespp.com',
+    type: 'website',
+    title,
+    description,
+  },
+};
+
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
@@ -28,23 +44,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <DefaultSeo
-        {...{
-          title,
-          description,
-          twitter: {
-            cardType: 'summary',
-            site: '@arantespp',
-            handle: '@arantespp',
-          },
-          openGraph: {
-            url: 'https://arantespp.com',
-            type: 'website',
-            title,
-            description,
-          },
-        }}
-      />
+      <DefaultSeo {...defaultSeo} />
       <Shortcuts />
       <TagManager />
       <Providers>
