@@ -11,7 +11,7 @@ rating: 3
 
 ## Notes
 
-- It shows that more information is retained in your [long-term memory](/zettelkasten/long-term-memory) by multiple spaced-out study sessions.
+- It shows that more information is retained in your [long-term memory](/zettel/long-term-memory) by multiple spaced-out study sessions.
 
 - It was first identified by the German psychologist [Hermann Ebbinghaus](https://en.wikipedia.org/wiki/Hermann_Ebbinghaus) in 1885.
 

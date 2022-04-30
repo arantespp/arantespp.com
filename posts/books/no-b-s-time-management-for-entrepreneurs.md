@@ -46,7 +46,7 @@ readingTime: 21
 
 ## TL;DR
 
-This was the first book I read about time management. It changed how I perceive and value my and others' time, and I highly recommend it. [Dan](/zettelkasten/dan-s-kennedy) has some unorthodox methods to protect his time, like using fax machines instead of emails, but the most important is understanding the essence of blinding your time. The most important lessons that I took from the book are:
+This was the first book I read about time management. It changed how I perceive and value my and others' time, and I highly recommend it. [Dan](/zettel/dan-s-kennedy) has some unorthodox methods to protect his time, like using fax machines instead of emails, but the most important is understanding the essence of blinding your time. The most important lessons that I took from the book are:
 
 1. Time is your most valuable asset.
 
@@ -54,7 +54,7 @@ This was the first book I read about time management. It changed how I perceive 
 
 1. Transform your time in wealth, not money.
 
-1. Find your [Master Mind](/zettelkasten/master-mind).
+1. Find your [Master Mind](/zettel/master-mind).
 
 1. Be self-disciplined.
 
@@ -120,7 +120,7 @@ Three less obvious ways to leverage other people. The more you become adept at t
 
 This chapter talks about _Time Vampires_, which are people who take your time and energy all day. Dan defines some _Time Vampires_:
 
-1. **Mr. Have-You-Got-a-Minute**: they're always asking for "have you got a minute?" or "I just need a couple of minutes of your time?", for every random thought and question that pass to their mind (these requests take away your productivity because of the inefficiency of the [human multitasking](/zettelkasten/human-multitasking)). **Solution**: discipline yourself and your team to organize the questions and communicate everything at once - not one thing at a time.
+1. **Mr. Have-You-Got-a-Minute**: they're always asking for "have you got a minute?" or "I just need a couple of minutes of your time?", for every random thought and question that pass to their mind (these requests take away your productivity because of the inefficiency of the [human multitasking](/zettel/human-multitasking)). **Solution**: discipline yourself and your team to organize the questions and communicate everything at once - not one thing at a time.
 
 1. **Mr. Meeting**: they seem to do nothing but attend meetings. **Solution**: "you need to stop and always ask yourself: do I really need to be in - or hold - this meeting? Is there a more time-efficient way to handle this? A conference call? A memo circulated to each person?"
 
@@ -150,7 +150,7 @@ It's the productivity enemy number one. We have the culture to answer immediatel
 
 Instant communication creates an aura of immediacy among us. This happens because people expect an immediate or at least a quick response from you.
 
-The easier the mean of communication is, the more the number of junk messages. Which is easier, sending "we make a delicious cake" via texting or email? Or cellphone? Or fax? We can compare this with the [proof-of-work](/zettelkasten/proof-of-work) method, which creates some cost to the sender but no or low cost to the receiver - the sender will only pay the cost if the request is more important than the cost.
+The easier the mean of communication is, the more the number of junk messages. Which is easier, sending "we make a delicious cake" via texting or email? Or cellphone? Or fax? We can compare this with the [proof-of-work](/zettel/proof-of-work) method, which creates some cost to the sender but no or low cost to the receiver - the sender will only pay the cost if the request is more important than the cost.
 
 The author uses only fax. He compared the quality of the messages he receives with the messages of his clients that use email. His received messages are much more objective and organized.
 
@@ -242,7 +242,7 @@ Make inviolate appointments with yourself as you have your locked-in-stone appoi
 
 #### 8. Minimize Unplanned Activity
 
-This technique is fascinating. An unplanned activity means that it doesn't have a start and end time, so it may never finish. As stated by [Parkinson's Law](/zettelkasten/parkinson-s-law):
+This technique is fascinating. An unplanned activity means that it doesn't have a start and end time, so it may never finish. As stated by [Parkinson's Law](/zettel/parkinson-s-law):
 
 > Work expands to fill the time available for its completion.
 
@@ -279,7 +279,7 @@ He closes his sales in one fell swoop in 90% of the cases once he stopped propos
 
 ### Chapter 9 - Fire Yourself, Replace Yourself, Make More Money, and Have More Fun
 
-You must divest yourself of those activities you don't do well and don't do happily, or you must find a routine, to systematically invest your time in those things you do extraordinarily well and find intellectual stimulating ([flow state](/zettelkasten/flow-state-psychology)).
+You must divest yourself of those activities you don't do well and don't do happily, or you must find a routine, to systematically invest your time in those things you do extraordinarily well and find intellectual stimulating ([flow state](/zettel/flow-state-psychology)).
 
 Steps to achieve that:
 
@@ -330,7 +330,7 @@ Eliminate toxic people and saboteurs from your life. Besides taking your time, t
 
 Deliberately increase your time with constructive associations, with creative, inspiring, encouraging, can-do, strivers, and achievers people.
 
-Find your [Master Mind](/zettelkasten/master-mind).
+Find your [Master Mind](/zettel/master-mind).
 
 ### Chapter 11 - Buy Time by Buying Expertise
 
@@ -344,7 +344,7 @@ The same rule applies when you need to learn or master some skill. Instead of sp
 
 Dan says that you can create a state of mind that best facilitates achieving peak productivity by mastering certain [Psycho-Cybernetics](/books/psycho-cybernetics) techniques. For example, one technique requires that you become facile at stopping, storing, and cleaning the problem in your mind to direct 100% of your mental powers to one matter at a time.
 
-You can also rely on environment design to be more productive ([James Clear also wrote about this](https://jamesclear.com/environment-design-organ-donation)). You can surround yourself with objects that activate good [psychological triggers](/zettelkasten/psychological-trigger), such as having in your room pictures and artifacts that remind you of wealth. You can also create a space functional for you to perform your job without the need to fetch something every minute.
+You can also rely on environment design to be more productive ([James Clear also wrote about this](https://jamesclear.com/environment-design-organ-donation)). You can surround yourself with objects that activate good [psychological triggers](/zettel/psychological-trigger), such as having in your room pictures and artifacts that remind you of wealth. You can also create a space functional for you to perform your job without the need to fetch something every minute.
 
 It's part of your inner game that you set your price and toughly value your time. Set your rules, and don't let anyone break them. Dan, for instance, has a rule of only 20 minutes of phone calls. But don't impose control in a mean-spirited or diva-like manner. You can be polite and yet firm. Present your rules and the benefits to those you work with as well as to yourself.
 
@@ -362,7 +362,7 @@ Strategies to overcome alibis:
 
 ### Chapter 14 - Taming Tech and Surviving the Social Media Swamp
 
-This chapter explains how social media and technologies, in general, were designed to be [addictive](/zettelkasten/social-media-addiction) to us. Scientists, behavioral scientists, neurologists, psychologists, computer scientists, and others have invested their knowledge to create elements in technologies to catch our attention and time. Then we become less productive, and we cannot keep focus and attention on a single task for much time.
+This chapter explains how social media and technologies, in general, were designed to be [addictive](/zettel/social-media-addiction) to us. Scientists, behavioral scientists, neurologists, psychologists, computer scientists, and others have invested their knowledge to create elements in technologies to catch our attention and time. Then we become less productive, and we cannot keep focus and attention on a single task for much time.
 
 The more you use social media, the less time you have to pay attention in your life. Once this happens, you become more susceptible to others making decisions in your life for you. If you try to reduce your time losses to social media, society will pressure and intimidate you.
 

@@ -16,9 +16,9 @@ rating: 2
 
 - Walter Cannon discovered this biological reaction.
 
-- When presented with an immediate stressor, the body releases [adrenaline](/zettelkasten/adrenaline), [noradrenaline](/zettelkasten/noradrenaline), and [cortisol](/zettelkasten/cortisol). As a result, the heart rate increases, and blood is directed away from the organs and toward the arms and legs to fight or flee.
+- When presented with an immediate stressor, the body releases [adrenaline](/zettel/adrenaline), [noradrenaline](/zettel/noradrenaline), and [cortisol](/zettel/cortisol). As a result, the heart rate increases, and blood is directed away from the organs and toward the arms and legs to fight or flee.
 
-- The body spends less energy on functions such as thought, which can prejudice [short-term memory](/zettelkasten/short-term-memory) formation.
+- The body spends less energy on functions such as thought, which can prejudice [short-term memory](/zettel/short-term-memory) formation.
 
 ## References
 

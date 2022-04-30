@@ -13,21 +13,21 @@ excerpt: >-
 title: A Letter to My Friend - Create
 group: blog
 formattedDate: 'June 13, 2021'
-updatedAt: 'April 29, 2022'
+updatedAt: 'April 30, 2022'
 updateHistory: >-
-  https://github.com/arantespp/arantespp.com/commits/main/posts/blog/a-letter-to-my-friend-create.md
-href: /blog/a-letter-to-my-friend-create
+  https://github.com/arantespp/arantespp.com/commits/main/posts/a-letter-to-my-friend-create.md
+href: /a-letter-to-my-friend-create
 slug: a-letter-to-my-friend-create
 editLink: >-
-  https://github.com/arantespp/arantespp.com/edit/main/posts/blog/a-letter-to-my-friend-create.md
-url: 'https://arantespp.com/blog/a-letter-to-my-friend-create'
+  https://github.com/arantespp/arantespp.com/edit/main/posts/a-letter-to-my-friend-create.md
+url: 'https://arantespp.com/a-letter-to-my-friend-create'
 keywords:
   - blog
   - writing
 readingTime: 4
 ---
 
-It's interesting how things happen to us. This week I posted a story on Instagram about a workout I had finished, and a friend sent a message congratulating me. Then, we started to talk about training and what motivates us. I told him that what motivates me was [the five years habits project](/articles/five-habits-for-the-next-five-years). The "interesting" part happened because our conversation differed from our initial talk, only about workouts.
+It's interesting how things happen to us. This week I posted a story on Instagram about a workout I had finished, and a friend sent a message congratulating me. Then, we started to talk about training and what motivates us. I told him that what motivated me was [the five years habits project](/five-habits-for-the-next-five-years). The "interesting" part happened because our conversation differed from our initial talk, only about workouts.
 
 He also read others articles, said that I'm doing great and that he'd read everything I wrote from now on. So, first of all, thank you so much for your support. I do appreciate that. It's fuel for me to continue what I'm doing, that is, writing and hoping that I can impact an immense number of lives. So, I'm writing this letter to you because of all this.
 

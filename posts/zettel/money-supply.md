@@ -14,7 +14,7 @@ tags:
 - In macroeconomics, the money supply is the quantity of money in circulation that an economy has at a time.
 - Money supply can be defined as the quantity of the currency in circulation.
   - Each country may use the definition that best makes sense to them.
-- It affects the [inflation](/zettelkasten/inflation).
+- It affects the [inflation](/zettel/inflation).
   - If the money supply rises, inflation rises.
   - If the money supply decreases, inflation decreases.
 

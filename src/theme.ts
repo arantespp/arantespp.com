@@ -1,5 +1,5 @@
-import { toTheme } from '@theme-ui/typography';
 import { merge } from 'theme-ui';
+import { toTheme } from '@theme-ui/typography';
 import themeFairyGates from 'typography-theme-fairy-gates';
 
 /**

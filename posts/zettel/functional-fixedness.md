@@ -29,7 +29,7 @@ readingTime: 1
 
 ## Notes
 
-- Functional fixedness is a [cognitive bias](/z/cognitive-bias) that limits someone to use a tool only in the single way they've learned.
+- Functional fixedness is a [cognitive bias](/zettel/cognitive-bias) that limits someone to use a tool only in the single way they've learned.
 
 - It's the inability to use something and a new way than the usual way.
 

@@ -52,7 +52,7 @@ The newsletter template format has three parts: Reading, Twitter, and Spacing Ef
 
 - **Reading**: it's the main section. It is my considerations of the text I read during the week. In the best case, I'll share an article that I wrote. In the worst case, the link and some insights of the text that I read.
 - **Twitter**: this item is a tweet that I wrote in the past week, with a high probability of correlating with the reading topic.
-- **Spacing Effect**: this item cannot be correlated with the reading topic because it'll be a random [flashcard post](/flashcard) to apply the [spacing effect](/zettelkasten/spacing-effect-learning).
+- **Spacing Effect**: this item cannot be correlated with the reading topic because it'll be a random [flashcard post](/flashcard) to apply the [spacing effect](/zettel/spacing-effect-learning).
 
 I plan to send the news every Tuesday, at 10:00 -3 GMT (I need to find out the best time) because it's one of the [best times to send an email](https://blog.hubspot.com/marketing/best-time-to-send-email). Also, I'll prepare the content every morning on Sunday, which we can see as a reading closing. After finish this first stage, I'll choose another topic to read in the following week. So my habit staking of the Sunday morning is closing the current subject and choosing a new one to study.
 
@@ -62,7 +62,7 @@ I use, and I'll continue to use [Revue](https://www.getrevue.co/) to create and 
 
 ## Content
 
-I won't follow a particular topic in the following months. My personal goal is to create a broader knowledge base of as many subjects as I can. I read from biology, [hormones](/zettelkasten/hormones), for example, to articles about [startups](/tags/startups). I'm going to share my range of studies through the newsletter.
+I won't follow a particular topic in the following months. My personal goal is to create a broader knowledge base of as many subjects as I can. I read from biology, [hormones](/zettel/hormones), for example, to articles about [startups](/tags/startups). I'm going to share my range of studies through the newsletter.
 
 ## What Do I Want to Achieve?
 

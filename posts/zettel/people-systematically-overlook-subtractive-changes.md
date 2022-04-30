@@ -16,7 +16,7 @@ tags:
 
 - When faced with a problem, people tend to prefer solutions that add new elements rather than removing elements, even if removing is the more efficient solution.
 
-- It can be considered as a [system mental model](/zettelkasten/system-mental-models) because it explains how our mind works.
+- It can be considered as a [system mental model](/zettel/system-mental-models) because it explains how our mind works.
 
 - Experiments show that people tend to consider subtracting more if cues are given or if they had more time and opportunities to analyze the problem.
 

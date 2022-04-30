@@ -67,7 +67,7 @@ Abundance mindset and [win-win relationships](#win-win-relationships) are strong
 
 The opposite is to have a scarcity mindset. People who have a scarcity mindset will always see the world with a fixed number of opportunities, resources, relationships, friendships, fame, attention, etc. As a result, they always want to be better than the next person, and they'll always see others as competitors, not collaborators.
 
-Having an abundance mindset and seeing others as collaborators increase our changes to create more positive [asymmetric opportunities](/z/asymmetric-opportunity). In addition, it creates synergy in our relationships.
+Having an abundance mindset and seeing others as collaborators increase our changes to create more positive [asymmetric opportunities](/zettel/asymmetric-opportunity). In addition, it creates synergy in our relationships.
 
 ### Serendipity
 

@@ -173,12 +173,6 @@ const readFolderMarkdowns = async ({ folder }: { folder: string }) => {
   return markdowns;
 };
 
-const problems: {
-  slug: Array<{ title: string; slug: string; paramCaseTitle: string }>;
-} = { slug: [] };
-
-export const getProblems = () => problems;
-
 export const getTags = (tags: string[] = []) =>
   [...tags]
     /**
@@ -222,7 +216,7 @@ export const getPartialPost = ({ group, slug }: GetPartialPostProps) => {
      * Title and filename doesn't match.
      */
     if (title && slug !== paramCase(title)) {
-      problems.slug?.push({ title, slug, paramCaseTitle: paramCase(title) });
+      console.warn(`${slug} and ${title} don't match`);
       return undefined;
     }
 
@@ -368,11 +362,50 @@ export const allPosts = getGroups()
 
 export const getAllPosts = () => allPosts;
 
+const allHrefs = [
+  '/',
+  '/now',
+  '/zettelkasten',
+  '/blog',
+  '/books',
+  ...[
+    ...drafts,
+    ...allPosts,
+    ...getTags().map((tag) => ({ href: `/${tag}` })),
+  ].map(({ href }) => href),
+];
+
 const getPost = (props: GetPartialPostProps): Post | undefined => {
   const partialPost = getPartialPost(props);
 
   if (!partialPost) {
     return undefined;
+  }
+
+  /**
+   * Match `link` inside all markdown links.
+   * text text text [label](link) text text text.
+   */
+  const postMarkdownLinks = partialPost.content.match(
+    /(?<=\]\(\/)(.*?)(?=\))/gm,
+  );
+
+  if (postMarkdownLinks) {
+    postMarkdownLinks
+      .map((postMarkdownLink) => {
+        const [link] = postMarkdownLink.split('#');
+        return `/${link}`;
+      })
+      .forEach((link) => {
+        if (link.startsWith('/images/')) {
+          return;
+        }
+
+        if (!allHrefs.includes(link)) {
+          const message = `${link} is not a valid link on post ${partialPost.href}.`;
+          console.warn(message);
+        }
+      });
   }
 
   const backlinks = allPosts

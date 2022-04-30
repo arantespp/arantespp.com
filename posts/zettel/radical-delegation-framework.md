@@ -13,7 +13,7 @@ rating: 2
 
 - This framework helps you assign and do work that must be done.
 
-- It's a [decision mental model](/zettelkasten/decision-mental-models) because it helps you assign and do tasks.
+- It's a [decision mental model](/zettel/decision-mental-models) because it helps you assign and do tasks.
 
 - This framework starts with the work to be done. It assumes that you've already filtered and selected the work that you should pay attention to.
 

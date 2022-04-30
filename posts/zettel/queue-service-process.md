@@ -15,7 +15,7 @@ rating: 3
 
 - When the queue is empty, the service process doesn't do anything.
 
-- You can model it as a [Markov process](/zettelkasten/markov-process).
+- You can model it as a [Markov process](/zettel/markov-process).
 
 ## References
 

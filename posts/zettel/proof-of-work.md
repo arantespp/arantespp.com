@@ -25,14 +25,14 @@ tags:
   - It must be hard enough to provers finish the work.
   - It must be easy to validate the prover's result.
 
-- [Bitcoin](/zettelkasten/bitcoin) popularized it.
-  - Miners spend some computational resources to append blocks on the [blockchain](/zettelkasten/blockchain).
+- [Bitcoin](/zettel/bitcoin) popularized it.
+  - Miners spend some computational resources to append blocks on the [blockchain](/zettel/blockchain).
 
 ## Questions
 
 - It is a cryptography zero-knowledge. May we compare this to the gold miners, who need primarily physical force to find gold?
 
-- What is the difference between [CAPTCHA](/zettelkasten/CAPTCHA) and proof of work?
+- What is the difference between [CAPTCHA](/zettel/CAPTCHA) and proof of work?
 
 ## References
 

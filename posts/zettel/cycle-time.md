@@ -43,11 +43,11 @@ readingTime: 1
 
 - If a company takes ten days to deliver a feature to its customer on average, its cycle time is ten days.
 
-- One goal of [business agility](/z/business-agility) is to reduce cycle time.
+- One goal of [business agility](/zettel/business-agility) is to reduce cycle time.
 
 - To measure the cycle time, the product manager must consider the working and waiting times. For instance, if the team has worked on a feature for one day (active working time) and it has taken nine days to wait for some approval, its cycle time was ten days.
 
-- You can use the [Little's Law](/z/little-s-law) to find the average cycle time $W$ given the average WIP $L$ and the average throughput $\lambda$.
+- You can use the [Little's Law](/zettel/little-s-law) to find the average cycle time $W$ given the average WIP $L$ and the average throughput $\lambda$.
 
 $$
 W (\text{average cycle time}) = \frac{L (\text{average WIP})}{\lambda (\text{average throughput})}
@@ -55,5 +55,5 @@ $$
 
 ## References
 
-- [Principles of Product Development Flow](/flow)
+- [Principles of Product Development Flow](/books/the-principles-of-product-development-flow)
 - [Rethinking Agile](/rethinking-agile)

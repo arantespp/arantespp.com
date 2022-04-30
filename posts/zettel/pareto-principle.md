@@ -21,7 +21,7 @@ tags:
 
 - Also called **the 80/20 rule** or **law of the vital few**.
 
-- It's a [system mental model](/zettelkasten/system-mental-models) because it explains the proportion between causes and effects.
+- It's a [system mental model](/zettel/system-mental-models) because it explains the proportion between causes and effects.
 
 - Vilfredo Pareto saw the 80/20 connection in 1896 when noted that 20% of the population owned approximately 80% of the land in Italy.
 

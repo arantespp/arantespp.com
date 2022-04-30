@@ -18,7 +18,7 @@ tags:
 
 - It's a microeconomic theory.
 
-- It's a [decision mental model](/zettelkasten/decision-mental-models) because it helps you decide to choose among options.
+- It's a [decision mental model](/zettel/decision-mental-models) because it helps you decide to choose among options.
 
 - It's not easy to calculate the exact cost of all options because some are unseen because of the implicit costs.
 

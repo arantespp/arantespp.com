@@ -11,7 +11,7 @@ tags:
 
 ## Notes
 
-- Testosterone is the primary sex masculine [hormone](/zettelkasten/hormone).
+- Testosterone is the primary sex masculine [hormone](/zettel/hormone).
 
 - It plays several important roles, such as:
 

@@ -60,7 +60,7 @@ readingTime: 3
 - Monopolies thrive thanks to four things.
 
   1. Technological advantages: their proprietary technology works better than everyone else's.
-  1. [Network effects](/z/network-effects): the more valuable the product is, the more people use it. [Network effects](/z/network-effects) also act as an entry barrier for the newcomers.
+  1. [Network effects](/zettel/network-effects): the more valuable the product is, the more people use it. [Network effects](/zettel/network-effects) also act as an entry barrier for the newcomers.
   1. Economies of scale: producing something on a large scale reduces cost.
   1. Great branding: strong branding can't be replicated.
 

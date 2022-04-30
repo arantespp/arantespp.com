@@ -14,7 +14,7 @@ tags:
 - It stands that "work expands to fill the time available for its completion."
 - Currently, it's referred to by a mathematical equation describing the rate at which bureaucracies expand over time.
 
-- It's a [system mental model](/zettelkasten/system-mental-models) because it explains how work and time correlate.
+- It's a [system mental model](/zettel/system-mental-models) because it explains how work and time correlate.
 
 - It's correlated to the growth of bureaucracy in an organization or committee.
   1. Officials want to multiply subordinates, not rivals.

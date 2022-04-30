@@ -41,7 +41,7 @@ Your brain has an internal system to make decisions. It's an invisible force tha
 
 Any change to any element above can make a meaningful change in your life. However, you need to keep this system consistent with your desires and not by its past conditioning.
 
-[Tony](/zettelkasten/tony-robbins) says about the four steps of the Ultimate Success Formula. He affirms that there are no things that you can't achieve if you follow these steps:
+[Tony](/zettel/tony-robbins) says about the four steps of the Ultimate Success Formula. He affirms that there are no things that you can't achieve if you follow these steps:
 
 1. Decide what you want.
 1. You're willing to take massive action.

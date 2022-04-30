@@ -38,7 +38,7 @@ readingTime: 1
   2. Early adopters: they have a higher social status, financial liquidity, advanced education.
   3. Early majority: they have above average social status and contact with early adopters.
   4. Late majority: they adopt an innovation after the average participant and approach innovation with a high degree of skepticism. They have below-average social status little and financial liquidity.
-  5. Laggards: they are the last to adopt an innovation. They show little to no [opinion leadership](/z/opinion-leadership). They typically have an aversion to change agents, tend to focus on traditions, lowest social status, lowest financial liquidity, and contact only family and friends.
+  5. Laggards: they are the last to adopt an innovation. They show little to no [opinion leadership](/zettel/opinion-leadership). They typically have an aversion to change agents, tend to focus on traditions, lowest social status, lowest financial liquidity, and contact only family and friends.
 
 ## References
 

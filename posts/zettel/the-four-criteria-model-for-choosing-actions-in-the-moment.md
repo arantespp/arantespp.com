@@ -14,11 +14,11 @@ tags:
 
 - It helps you decide which action you take in the present moment.
 
-  - It's a [decision mental model](/zettelkasten/decision-mental-models).
+  - It's a [decision mental model](/zettel/decision-mental-models).
 
-- How to choose between studying about [mental models](/zettelkasten/mental-models), planning an application, or sending a WhatsApp message to your crush?
+- How to choose between studying about [mental models](/zettel/mental-models), planning an application, or sending a WhatsApp message to your crush?
 
-- It was taken from the book [Getting Things Done](/books/getting-things-done), by [David Allen](/zettelkasten/david-allen).
+- It was taken from the book [Getting Things Done](/books/getting-things-done), by [David Allen](/zettel/david-allen).
 
 - The Four Criteria are:
 

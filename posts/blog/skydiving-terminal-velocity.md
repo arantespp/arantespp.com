@@ -17,7 +17,7 @@ image:
 
 I like interdependency among subjects, and this is the reason why I wrote this article. Some years ago, I saw an article standing that a [skydiving](https://www.skydiveoc.com/about/articles/terminal-velocity-mean-skydiving/) object whose drag force is proportional to the square of the velocity will have its speed constant at some time. This proposition caught my attention. So I've decided to investigate it more.
 
-Skydiving terminal velocity is an interesting question because it involves math and physics. The level of the calculus theory is not too easy neither too hard. It's an optimal point to achieve the [flow state](/zettelkasten/flow-state-psychology). We also need to understand some physics concepts to set up some boundaries conditions that will help us solve some equations.
+Skydiving terminal velocity is an interesting question because it involves math and physics. The level of the calculus theory is not too easy neither too hard. It's an optimal point to achieve the [flow state](/zettel/flow-state-psychology). We also need to understand some physics concepts to set up some boundaries conditions that will help us solve some equations.
 
 Some days ago I remembered this problem and I decided to reproof it, this time writing this article. The questions we want to answer is:
 

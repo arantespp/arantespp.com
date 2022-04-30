@@ -13,7 +13,7 @@ rating: 2
 - Slack is the degree of freedom (free time, for instance) required to effect change.
 
   - If you have to do something new, you can only do it effectively if you have some degree of freedom.
-  - If you don't have free time and must do something, you'll have to stop what you're doing, thus being ineffective because of [context switching](/zettelkasten/context-switching).
+  - If you don't have free time and must do something, you'll have to stop what you're doing, thus being ineffective because of [context switching](/zettel/context-switching).
 
 - _"Slack is the natural enemy of efficiency and efficiency is the natural enemy of slack."_ Defined by [Tom DeMarco](https://www.amazon.com/gp/product/0767907698).
 

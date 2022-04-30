@@ -35,9 +35,9 @@ readingTime: 1
 
 - If you have $X$ time to complete some tasks and don't have enough motivation, why should you finish them in less time?
 
-  - [Parkinson's Law](/zettelkasten/parkinson-s-law) acts in this scenario.
+  - [Parkinson's Law](/zettel/parkinson-s-law) acts in this scenario.
 
-- A sense of ownership may be a driver of motivation and may block the effects of [Parkinson's Law](/zettelkasten/parkinson-s-law).
+- A sense of ownership may be a driver of motivation and may block the effects of [Parkinson's Law](/zettel/parkinson-s-law).
 
   - An [Atlassian research shows](https://www.atlassian.com/practices/open/research) that teams who have a clear vision of the bigger picture are more effective.
 

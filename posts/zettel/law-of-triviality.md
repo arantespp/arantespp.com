@@ -22,7 +22,7 @@ tags:
   - bicycle-shed effect;
   - bike-shed effect;
   - bike-shedding.
-- It's a corollary of the [Parkinson's Law](/zettelkasten/parkinson-s-law).
+- It's a corollary of the [Parkinson's Law](/zettel/parkinson-s-law).
 
 ## References
 

@@ -33,7 +33,7 @@ readingTime: 1
 
 ## Notes
 
-- Flow efficiency is the proportion of time where the team effectively spent active work within the total [cycle time](/z/cycle-time) of the task.
+- Flow efficiency is the proportion of time where the team effectively spent active work within the total [cycle time](/zettel/cycle-time) of the task.
 
 - Higher flow efficiency, higher active work, lower inactive work.
 
@@ -52,4 +52,4 @@ $$
 
 ## References
 
-- [The Principles of Product Development Flow](/flow)
+- [The Principles of Product Development Flow](/books/the-principles-of-product-development-flow)

@@ -87,7 +87,7 @@ A strategy or a plan for our product for a specific market or markets is the **p
 
 #### "Do"
 
-Start with the observation of behavior in the search for a problem to solve. Any other way, including technology, will not necessarily help build insanely great products. Instead, you need to find 15 unmet needs that your product will fulfill, and [brainstorming](/z/brainstorming) isn't the way to do it.
+Start with the observation of behavior in the search for a problem to solve. Any other way, including technology, will not necessarily help build insanely great products. Instead, you need to find 15 unmet needs that your product will fulfill, and [brainstorming](/zettel/brainstorming) isn't the way to do it.
 
 The question "What do you need?" is the wrong question to ask your potential customers when doing marker research. Instead, the question you should do is, "What do you do?" Better yet, you should act like a social anthropologist and go out to discover what they do first.
 
@@ -102,15 +102,15 @@ Observe your customers and prospective customers and try to find answers to thes
 
 Then you can translate those "do's" into wants and need and create real solutions that people will buy, not just a technology that may or may not solve a problem.
 
-If you are B2C, use [Maslow's Hierarchy of Needs](/z/maslow-s-hierarchy-of-needs); if you're B2B, use Porter's Value Chain to start figuring out what your customer does.
+If you are B2C, use [Maslow's Hierarchy of Needs](/zettel/maslow-s-hierarchy-of-needs); if you're B2B, use Porter's Value Chain to start figuring out what your customer does.
 
 #### Innovation
 
 Which innovation tools should one use? Which ones work?
 
-- [Design Thinking](/z/design-thinking)
+- [Design Thinking](/zettel/design-thinking)
 - User Experience (UX) and the User Interface (UI)
-- [Agile](/z/agile)
+- [Agile](/zettel/agile)
 - Documentation
 - Support
 
@@ -188,7 +188,7 @@ Use analytics to discover and communicate meaningful patterns in data. Additiona
 
 #### Market Status and Adoption
 
-There are [five categories of innovation adopters](/z/diffusion-of-innovations-adopter-categories): innovators, early adopters, early majority, late majority, and laggards. Decide early on which segment you plan to target and over the lifecycle of your product.
+There are [five categories of innovation adopters](/zettel/diffusion-of-innovations-adopter-categories): innovators, early adopters, early majority, late majority, and laggards. Decide early on which segment you plan to target and over the lifecycle of your product.
 
 #### Technology Insights
 

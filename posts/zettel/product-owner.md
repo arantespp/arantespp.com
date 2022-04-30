@@ -35,8 +35,8 @@ readingTime: 1
 
 ## Notes
 
-- The product owner (PO) is a role of the [scrum](/z/scrum) team—it's an individual.
-- Isn't always the [product manager](/z/product-manager). Compared with PMs, PO is more detail-oriented and focuses on the mid-term.
+- The product owner (PO) is a role of the [scrum](/zettel/scrum) team—it's an individual.
+- Isn't always the [product manager](/zettel/product-manager). Compared with PMs, PO is more detail-oriented and focuses on the mid-term.
 - He ensures that the developer team delivers the most value to the business on each sprint.
 - She's a person that represents the business and stakeholders.
 - He creates and manages the product backlog.

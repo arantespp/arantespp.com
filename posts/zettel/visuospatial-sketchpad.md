@@ -36,7 +36,7 @@ keywords:
 
 - You can imagine scenes or experiences from the past or imagining the future because of the visuospatial sketchpad.
 
-- It is a slave of the [working memory](/z/working-memory).
+- It is a slave of the [working memory](/zettel/working-memory).
 
 - It has two main components: the **visual cache** that stores the image and the **inner scribe** that rehearses and replays visual, spatial, and motion data.
 

@@ -30,7 +30,7 @@ readingTime: 1
 
 ## Notes
 
-- "A reality-growth mindset is the ability to accept the hard limits of the way things are (like the physical laws of the universe) and also to believe that anything is possible (the metaphysical way of looking at the universe)." [The Unfair Advantage.](/b/the-unfair-advantage)
+- "A reality-growth mindset is the ability to accept the hard limits of the way things are (like the physical laws of the universe) and also to believe that anything is possible (the metaphysical way of looking at the universe)." [The Unfair Advantage.](/books/the-unfair-advantage)
 
 - You have to have these two opposing viewpoints and learn to work with them simultaneously, pondering when each one is valid or not. For example, sometimes, you need to believe that you can accomplish the goal to feel inspired and motivated to take action. Other times, it's good to know that you can never achieve something, like being a basketball player.
 
@@ -40,4 +40,4 @@ readingTime: 1
 
 ## References
 
-- [The Unfair Advantage - Chapter 6.](/b/the-unfair-advantage)
+- [The Unfair Advantage - Chapter 6.](/books/the-unfair-advantage)

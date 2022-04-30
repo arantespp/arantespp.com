@@ -33,7 +33,7 @@ readingTime: 3
 
 ## Notes
 
-- It's is a lightweight [agile](/zettelkasten/agile) framework.
+- It's is a lightweight [agile](/zettel/agile) framework.
 
 - It helps teams and organizations generate the highest possible value for the project.
 
@@ -45,8 +45,8 @@ readingTime: 3
   - There are no sub-teams or hierarchies.
   - Every member must be focused on one objective at a time.
   - Roles:
-    - [Product Owner (PO)](/z/product-owner).
-    - [Scrum Master (SM)](/z/scrum-master).
+    - [Product Owner (PO)](/zettel/product-owner).
+    - [Scrum Master (SM)](/zettel/scrum-master).
     - Developers.
 
 - Tools or artifacts:
@@ -82,7 +82,7 @@ readingTime: 3
      - The more unknown and complex the work, the shorter the sprint should be.
      - All events happen during the sprint.
 
-  4. [Daily Scrum](/zettelkasten/daily-scrum):
+  4. [Daily Scrum](/zettel/daily-scrum):
 
      - Daily super-short meetings that happen at the same time and place.
      - The goal is for everyone on the team to be on the same page, aligned with the sprint goal.

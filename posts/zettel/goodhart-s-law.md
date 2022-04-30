@@ -19,7 +19,7 @@ rating: 3
 
   - The same happens to statistical variables.
 
-- It's a [system mental model](/zettelkasten/system-mental-models) because it explains how a system works when a measure becomes the target.
+- It's a [system mental model](/zettel/system-mental-models) because it explains how a system works when a measure becomes the target.
 
 - Using multiples targets avoids Goodhart's Law because you must increase them all, not only one.
 

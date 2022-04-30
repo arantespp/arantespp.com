@@ -32,7 +32,7 @@ keywords:
 
 ## Notes
 
-- The startup burn rate at which a [startup](/z/startup) spends money in its bank account.
+- The startup burn rate at which a [startup](/zettel/startup) spends money in its bank account.
 
 - It's calculated by startup total expenses minus income.
 

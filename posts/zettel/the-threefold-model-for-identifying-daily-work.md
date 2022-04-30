@@ -13,9 +13,9 @@ tags:
 
 - It helps you to identify the kind of daily work that you can be engaged in.
 
-- It's a [system mental model](/zettelkasten/system-mental-models).
+- It's a [system mental model](/zettel/system-mental-models).
 
-- It was taken from the book [Getting Things Done](/books/getting-things-done), by [David Allen](/zettelkasten/david-allen).
+- It was taken from the book [Getting Things Done](/books/getting-things-done), by [David Allen](/zettel/david-allen).
 
 - The three different kinds.
 

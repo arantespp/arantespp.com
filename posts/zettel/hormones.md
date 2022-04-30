@@ -17,16 +17,16 @@ tags:
 
 - A tiny amount of hormones is capable of causing significant changes in cells or even your whole body.
 
-- Endocrine glands make hormones. The major endocrine glands are the pituitary, pineal, thymus, thyroid, adrenal, pancreas, and [gonads](/zettelkasten/gonads).
+- Endocrine glands make hormones. The major endocrine glands are the pituitary, pineal, thymus, thyroid, adrenal, pancreas, and [gonads](/zettel/gonads).
 
 - They work slowly, over time, and affect many different processes, including:
   - growth and development;
-  - [metabolism](/zettelkasten/metabolism);
+  - [metabolism](/zettel/metabolism);
   - sexual function;
   - reproduction;
   - mood swings;
   - activation of inhibition of the [immune system](/zettelkaste/immune-system);
-  - wake-sleep cycle and other [circadian rhythms](/zettelkasten/circadian-rhythms).
+  - wake-sleep cycle and other [circadian rhythms](/zettel/circadian-rhythms).
 
 ## References
 

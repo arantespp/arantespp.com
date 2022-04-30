@@ -16,7 +16,7 @@ tags:
 
 - It's the Root Chakra because it grounds you with the Earth.
 
-- This chakra locates at the base of the spine. The [gonadal glands](/zettelkasten/gonads) are associated with this chakra.
+- This chakra locates at the base of the spine. The [gonadal glands](/zettel/gonads) are associated with this chakra.
 
 - This chakra connects you with your basic survival needs, procreation, interest in life, and sex drive.
 

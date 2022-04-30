@@ -13,23 +13,23 @@ rating: 3
 
 ## Notes
 
-- Yoga looks at chakras as the body's energy points, which has the almost exact location of the hormone-secreting glands of the [endocrine system](/zettelkasten/endocrine-system). These glands connect your mind and emotions to your body.
+- Yoga looks at chakras as the body's energy points, which has the almost exact location of the hormone-secreting glands of the [endocrine system](/zettel/endocrine-system). These glands connect your mind and emotions to your body.
 
 - Glands and chakras correlation:
 
-  1.  [Base chakra](/zettelkasten/base-chakra) - [Gonadal glands](/zettelkasten/gonadal-glands).
+  1.  [Base chakra](/zettel/base-chakra) - [Gonadal glands](/zettel/gonadal-glands).
 
-  2.  [Sacrum chakra](/zettelkasten/sacrum-chakra) - [Adrenal glands](/zettelkasten/adrenal-glands).
+  2.  [Sacrum chakra](/zettel/sacrum-chakra) - [Adrenal glands](/zettel/adrenal-glands).
 
-  3.  [Navel chakra](/zettelkasten/navel-chakra) - [Pancreas](/zettelkasten/pancreas).
+  3.  [Navel chakra](/zettel/navel-chakra) - [Pancreas](/zettel/pancreas).
 
-  4.  [Heart chakra](/zettelkasten/heart-chakra) - [Thymus](/zettelkasten/thymus).
+  4.  [Heart chakra](/zettel/heart-chakra) - [Thymus](/zettel/thymus).
 
-  5.  [Throat chakra](/zettelkasten/throat-chakra) - [Thyroid](/zettelkasten/thyroid).
+  5.  [Throat chakra](/zettel/throat-chakra) - [Thyroid](/zettel/thyroid).
 
-  6.  [Third eye chakra](/zettelkasten/third-eye-chakra) - [Pituitary gland](/zettelkasten/pituitary-gland).
+  6.  [Third eye chakra](/zettel/third-eye-chakra) - [Pituitary gland](/zettel/pituitary-gland).
 
-  7.  [Crown chakra](/zettelkasten/crown-chakra) - [Pineal glands](/zettelkasten/gonadal-glands).
+  7.  [Crown chakra](/zettel/crown-chakra) - [Pineal glands](/zettel/gonadal-glands).
 
 ## References
 

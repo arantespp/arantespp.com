@@ -55,6 +55,6 @@ Assume customers arrive at a rate of 10 per hour in a store and stay 0.5 hours o
 
 ## References
 
-- [The Principles of Product Development Flow](/flow#q12-little-s-formula-wait-time-queue-size-processing-rate)
+- [The Principles of Product Development Flow](/books/the-principles-of-product-development-flow#q12-little-s-formula-wait-time-queue-size-processing-rate)
 
 - [Wikipedia. Little's law](https://en.wikipedia.org/wiki/Little%27s_law)

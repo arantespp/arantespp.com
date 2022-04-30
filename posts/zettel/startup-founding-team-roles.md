@@ -34,7 +34,7 @@ keywords:
 
 There are roles that the founding team of a startup must cover:
 
-- Leading the business ([startup CEO](/z/startup-ceo)).
+- Leading the business ([startup CEO](/zettel/startup-ceo)).
 - Creating a strong vision.
 - Setting the culture.
 - Building the startup team.

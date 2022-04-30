@@ -17,19 +17,19 @@ rating: 3
 
 - Your brain needs a complex series of steps to occur before it can make anything happen physically.
 
-- The phases of the natural planning model that your mind goes through to accomplish virtually any task (opposite of the [reactive planning model](/zettelkasten/reactive-planning-model)):
+- The phases of the natural planning model that your mind goes through to accomplish virtually any task (opposite of the [reactive planning model](/zettel/reactive-planning-model)):
 
   1. Defining purpose and principles
   1. Outcome visioning
-  1. [Brainstorming](/zettelkasten/brainstorming)
+  1. [Brainstorming](/zettel/brainstorming)
   1. Organizing
   1. Identifying next actions
 
-- It's not necessarily normal. People often don't plan this much and end applying the opposite, the [reactive planning model](/zettelkasten/reactive-planning-model).
+- It's not necessarily normal. People often don't plan this much and end applying the opposite, the [reactive planning model](/zettel/reactive-planning-model).
 
-- It's a [system mental model](/zettelkasten/system-mental-models) because it helps you understand how your brain works when planning something.
+- It's a [system mental model](/zettel/system-mental-models) because it helps you understand how your brain works when planning something.
 
-- It's a [decision mental model](/zettelkasten/decision-mental-models) because it helps you decide how to plan something you want to accomplish.
+- It's a [decision mental model](/zettel/decision-mental-models) because it helps you decide how to plan something you want to accomplish.
 
 ## Questions
 

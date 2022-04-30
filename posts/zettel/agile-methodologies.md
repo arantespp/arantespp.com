@@ -26,8 +26,8 @@ keywords:
 
 ## Notes
 
-- Agile methodologies are a set of practices that live out the [agile philosophy](/z/agile).
+- Agile methodologies are a set of practices that live out the [agile philosophy](/zettel/agile).
 
 - Agile methodologies:
-  - [Scrum](/z/scrum)
-  - [Extreme Programming (XP)](/z/extreme-programming)
+  - [Scrum](/zettel/scrum)
+  - [Extreme Programming (XP)](/zettel/extreme-programming)

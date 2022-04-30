@@ -37,8 +37,8 @@ keywords:
 - It asserts that human memory has three separate components.
 
   1.  A sensory register, where sensory information enters memory.
-  1.  A [short-term memory](/zettelkasten/short-term-memory) that receives and holds information from the sensory register and the [long-term memory](/zettelkasten/long-term-memory).
-  1.  A [long-term memory](/zettelkasten/long-term-memory), where information that has been rehearsed in the [short-term memory](/zettelkasten/short-term-memory) is held indefinitely.
+  1.  A [short-term memory](/zettel/short-term-memory) that receives and holds information from the sensory register and the [long-term memory](/zettel/long-term-memory).
+  1.  A [long-term memory](/zettel/long-term-memory), where information that has been rehearsed in the [short-term memory](/zettel/short-term-memory) is held indefinitely.
 
 ## References
 

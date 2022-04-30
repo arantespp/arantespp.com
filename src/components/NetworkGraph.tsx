@@ -10,8 +10,8 @@ import { theme } from '../theme';
 
 const nodeColors: { [key: string]: string } = {
   post: theme.colors?.secondary as string,
-  tag: theme.colors?.primary as string,
-  selectedNode: theme.colors?.accent as string,
+  tag: theme.colors?.highlight as string,
+  selectedNode: theme.colors?.primary as string,
 };
 
 const SearchInput = ({

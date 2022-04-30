@@ -8,7 +8,7 @@ I can't remember the exact day we start talking, but I bet that was because this
 
 ![tweet](<blockquote class="twitter-tweet"><p lang="en" dir="ltr">It&#39;s not that easy. <br><br>I started using Twitter three days ago and wasn&#39;t easy to write my first tweet.</p>&mdash; Pedro Arantes 🌹 (@arantespp) <a href="https://twitter.com/arantespp/status/1197522233801027584?ref_src=twsrc%5Etfw">November 21, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>)
 
-I was learning [React.js](/zettelkasten/react-js) when I decided to participate of a group called [React Brasil](https://react.now.sh) on [Slack](https://slack.com/intl/en-br/), created by him. Sibelius was (and still is) an active member of the group. He is always helping people with their questions and posting interesting articles, not only about technology. I remember that my first thought about him was, "Who is this guy that keep posting a lot in this group?"
+I was learning [React.js](/zettel/react-js) when I decided to participate of a group called [React Brasil](https://react.now.sh) on [Slack](https://slack.com/intl/en-br/), created by him. Sibelius was (and still is) an active member of the group. He is always helping people with their questions and posting interesting articles, not only about technology. I remember that my first thought about him was, "Who is this guy that keep posting a lot in this group?"
 
 At that time, I wasn't using Twitter so much because I was afraid about what people would think about my tweets. After sendind that reploy to Sibelius, he messaged me on Slack asking how it was going using Twitter. I think that was our first talk.
 

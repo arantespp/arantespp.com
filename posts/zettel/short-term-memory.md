@@ -14,9 +14,9 @@ rating: 2
 
 - It has a limited capacity: we can remember $7 \pm 2$ things before them vanish.
 
-  - We can use the [chunking method](/zettelkasten/chunking-and-memory) to remember more things.
+  - We can use the [chunking method](/zettel/chunking-and-memory) to remember more things.
 
-- If you want to remember a information beyond a few seconds, it may get stored in your [long-term memory](/zettelkasten/long-term-memory).
+- If you want to remember a information beyond a few seconds, it may get stored in your [long-term memory](/zettel/long-term-memory).
 
 - It mostly encode memory acoustically, but also retain visuospatial images.
 

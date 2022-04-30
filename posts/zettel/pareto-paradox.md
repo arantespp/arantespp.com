@@ -26,11 +26,11 @@ keywords:
 
 ## Notes
 
-- Because of the [Pareto Principle](/zettelkasten/pareto-principle), we tend to overmanage the 20% high payoff causes and undermanage the remaining 80%. This management leads to what we might call the **Pareto Paradox**.
+- Because of the [Pareto Principle](/zettel/pareto-principle), we tend to overmanage the 20% high payoff causes and undermanage the remaining 80%. This management leads to what we might call the **Pareto Paradox**.
 
 - **Pareto Paradox** states that there are usually more opportunities for undermanaged 80% than the overmanaged 20%.
 
-- It's a [decision mental model](/zettelkasten/decision-mental-models) because it helps you decide how to manage the tasks of your job to get more potential opportunities.
+- It's a [decision mental model](/zettel/decision-mental-models) because it helps you decide how to manage the tasks of your job to get more potential opportunities.
 
 ## References
 

@@ -18,9 +18,9 @@ tags:
 
 - Authority powers anecdotal evidence.
 
-- It's a type of [inductive argument](/zettelkasten/inductive-argument).
+- It's a type of [inductive argument](/zettel/inductive-argument).
 
-- Anecdotal evidence is often unscientific or pseudoscientific because various forms of [cognitive bias](/zettelkasten/cognitive-bias) may affect the shreds of evidence.
+- Anecdotal evidence is often unscientific or pseudoscientific because various forms of [cognitive bias](/zettel/cognitive-bias) may affect the shreds of evidence.
 
 - Some definitions of anecdotal evidence:
   - _"Casual observations or indications rather than rigorous or scientific analysis."_

@@ -22,20 +22,20 @@ At the final stage, when we understand the whole subject, the connections in our
 
 ## The Feynman Technique
 
-This technique was used by [Richard Feynman](/zettelkasten/richard-feynman) while he was learning some subject. The method consists in four steps:
+This technique was used by [Richard Feynman](/zettel/richard-feynman) while he was learning some subject. The method consists in four steps:
 
 > 1. Choose the subject you want to learn and write down everything you know about the topic.
 > 2. Try to explain what you know to a child. When you're speaking with a child, you should be clear and concise.
 > 3. Identify gaps in your explanation. If you're struggling to explain clearly, go back to the material.
 > 4. Review, organize and simplify.
 
-The [Feynman Technique](/zettelkasten/the-feynman-technique) benefit is that it helps we assemble the puzzle in our head. When we force ourself to explain some topic to a child, we are forced to remove all complexities of our arguments, we have to figure out how to create the best connections. We can choose the least amount information that don't increase the complexity but that gives the most important overview of that topic - Pareto Principle. We can explain using 20% of the pieces and they give to our listener 80% of the topic overview. We don't need to talk about the huge amount of blue pieces of our puzzle that represents the sky as they aggregate less relevance to the picture.
+The [Feynman Technique](/zettel/the-feynman-technique) benefit is that it helps we assemble the puzzle in our head. When we force ourself to explain some topic to a child, we are forced to remove all complexities of our arguments, we have to figure out how to create the best connections. We can choose the least amount information that don't increase the complexity but that gives the most important overview of that topic - Pareto Principle. We can explain using 20% of the pieces and they give to our listener 80% of the topic overview. We don't need to talk about the huge amount of blue pieces of our puzzle that represents the sky as they aggregate less relevance to the picture.
 
 ## Mental Models
 
-[Mental models](/zettelkasten/mental-models) are information _templates_ that we can use to [understand situations](/zettelkasten/system-mental-models) in our lives or to make [decisions](/zettelkasten/decision-mental-models). Sometimes, when we learn some topic, we attach that topic to a specific context. When we extract a mental model from the topic we're learning, we can use that template in others contexts.
+[Mental models](/zettel/mental-models) are information _templates_ that we can use to [understand situations](/zettel/system-mental-models) in our lives or to make [decisions](/zettel/decision-mental-models). Sometimes, when we learn some topic, we attach that topic to a specific context. When we extract a mental model from the topic we're learning, we can use that template in others contexts.
 
-For instance, when I first learned about [entropy](/zettelkasten/entropy) in high school, I highly attached it to thermodynamics and physics and I thought that it could be used in this context. However, if we transform entropy in a template, in a mental model, we may use in others contexts.
+For instance, when I first learned about [entropy](/zettel/entropy) in high school, I highly attached it to thermodynamics and physics and I thought that it could be used in this context. However, if we transform entropy in a template, in a mental model, we may use in others contexts.
 
 EXPLAIN WHAT IS ENTROPY IN THERMODYNAMICS
 
@@ -47,6 +47,6 @@ In our analogy, using a knowledge in a specific context only is like we assemble
 
 Since I've started blogging, I've been reading a lot of topics, from [psychology](/tags/psychology) to [database systems](/tags/database). But at the same time, I've always been thinking in how to improve the knowledge retention, how to retain the knowledge more efficiently. An advantage of blogging is because I force myself to read and understand well the topic because my notes will be online and everyone can read them. But, even if I'm wrong, someone can tell me the right path and I'll continue learning. [Learn in Public](https://www.swyx.io/learn-in-public/).
 
-Explain to a child (mentally) the topic I'm learning and figuring out which mental models I can extract from it is the best way I found to retain the knowledge. Associated to them, I'm also using the [Zettelkasten](/zettelkasten/zettelkasten) to create small pieces of ideas and building the connections through tags and references. So while I write my notes, I try to write them as simple as possible, in a way that a child can comprehend the idea. I also keep trying to extract mental models. If I discover one, I open a new note and write about that mental model and how can we use it.
+Explain to a child (mentally) the topic I'm learning and figuring out which mental models I can extract from it is the best way I found to retain the knowledge. Associated to them, I'm also using the [Zettelkasten](/zettel/zettelkasten) to create small pieces of ideas and building the connections through tags and references. So while I write my notes, I try to write them as simple as possible, in a way that a child can comprehend the idea. I also keep trying to extract mental models. If I discover one, I open a new note and write about that mental model and how can we use it.
 
 I'm enjoying The Feynman Mental Model Technique. I can assure to you that it's already making difference for me, even though I have this blog for only one year. I'm focusing in a long-term result. I believe the results are exponential and the greatest outcomes will come in some years. I'll keep you in touch and I'll share with you the result of this project.

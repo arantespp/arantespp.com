@@ -52,4 +52,4 @@ readingTime: 1
 
 ## References
 
-[Flow. Chapter 3 - Managing Queues](/flow#3-managing-queues)
+[Flow. Chapter 3 - Managing Queues](/books/the-principles-of-product-development-flow#3-managing-queues)

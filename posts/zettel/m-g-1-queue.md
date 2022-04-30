@@ -11,7 +11,7 @@ tags:
 
 ## Notes
 
-- In [queueing theory](/zettelkasten/queueing-theory), an $M/G/1$ queue is a queue in which the arrivals are a [Markovian](zettelkasten/markov-process), service has a general distribution, and a single server.
+- In [queueing theory](/zettel/queueing-theory), an $M/G/1$ queue is a queue in which the arrivals are a [Markovian](zettelkasten/markov-process), service has a general distribution, and a single server.
 
 - The classic application of a $M/G/1$ queue is to model the performance of a fixed head hard disk.
 

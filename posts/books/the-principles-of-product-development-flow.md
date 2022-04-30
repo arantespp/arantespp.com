@@ -22,7 +22,6 @@ updatedAt: 'March 31, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /books/the-principles-of-product-development-flow
-as: /flow
 slug: the-principles-of-product-development-flow
 editLink: >-
   https://github.com/arantespp/arantespp.com/edit/main/posts/books/the-principles-of-product-development-flow.md
@@ -40,7 +39,7 @@ readingTime: 20
 
 _Why do you want to change the product development process?_ The answer: **to increase profits**.
 
-The economic view of product development allows you to make product development decisions based on economic choices. You don't chase the popular [proxy variable](/zettelkasten/proxy-variable) of the moment. Instead, you transform all proxy variables to the same unit of measure, life-cycle profits, and make multivariable trade-offs to increase profits, which is the core of product development.
+The economic view of product development allows you to make product development decisions based on economic choices. You don't chase the popular [proxy variable](/zettel/proxy-variable) of the moment. Instead, you transform all proxy variables to the same unit of measure, life-cycle profits, and make multivariable trade-offs to increase profits, which is the core of product development.
 
 #### E1: The Principle of Quantified Overall Economics: Select actions based on quantified overall economic impact.
 
@@ -48,7 +47,7 @@ You should consider the economic impact of all possible decisions when you have 
 
 #### E2: The Principle of Interconnected Variables: We can't just change one thing.
 
-One decision almost always simultaneously affects multiple variables. [Proxy variables](/zettelkasten/proxy-variable) are interconnected because they represent other variables.
+One decision almost always simultaneously affects multiple variables. [Proxy variables](/zettel/proxy-variable) are interconnected because they represent other variables.
 
 #### E3: The Principle of Quantified Cost of Delay If you only quantify one thing, quantify the cost of delay.
 
@@ -80,7 +79,7 @@ As you try to analyze economics, you uncover those assumptions that significantl
 
 Many companies make big decisions at a higher level but don't have an economic framework to make the many small decisions correctly. These small decisions have an enormous economic impact.
 
-Because of the [Pareto Paradox](/zettelkasten/pareto-paradox), influencing many small decisions has important implications because there are many opportunities there.
+Because of the [Pareto Paradox](/zettel/pareto-paradox), influencing many small decisions has important implications because there are many opportunities there.
 
 #### E9: The Principle of Continuous Economic Trade-offs: Economic choices must be made continuously.
 
@@ -131,13 +130,13 @@ You should make each decision at the point where further delay no longer increas
 
 #### E16: The Principle of Marginal Economics. Always compare marginal cost and marginal value.
 
-When evaluating the economic impact of incremental decisions, use [marginal analysis](/zettelkasten/marginal-analysis) instead of comparing total costa with the total value of the system. Whenever marginal value exceeds marginal cost, the action improves economic value. Sometimes, a feature implementation adds some value to the system, but the marginal value is smaller than the marginal cost.
+When evaluating the economic impact of incremental decisions, use [marginal analysis](/zettel/marginal-analysis) instead of comparing total costa with the total value of the system. Whenever marginal value exceeds marginal cost, the action improves economic value. Sometimes, a feature implementation adds some value to the system, but the marginal value is smaller than the marginal cost.
 
 An example is two feature implementations. The first one was 100% completed, and the second, 80%. Most companies would work on the second feature because they assume that achieving planned objectives maximize economic outcomes. However, the correct decision is the feature that has the most significant difference between marginal cost and benefit, which is often the completed feature since it's most likely to have additional unexploited opportunities for improvement.
 
 #### E17: The Sunk Cost Principle. Do not consider money already spent.
 
-Money already spent is a [sunk cost](/zettelkasten/sunk-cost) and should not enter into an economical choice. Instead, you should make a choice based on [marginal economics](#e16-the-principle-of-marginal-economics-always-compare-marginal-cost-and-marginal-value).
+Money already spent is a [sunk cost](/zettel/sunk-cost) and should not enter into an economical choice. Instead, you should make a choice based on [marginal economics](#e16-the-principle-of-marginal-economics-always-compare-marginal-cost-and-marginal-value).
 
 #### E18: The Principle of Buying Information: The value of information is its expected economic value.
 
@@ -149,17 +148,17 @@ Investments in product development can create economic value even when they don'
 
 When you develop backup solutions, you trade development expenses for risk reduction. Parallel development of a backup solution is an insurance policy; you pay money to reduce risk. Whenever the economic benefit of the risk reduction is less than the cost of insurance, it's not a good investment.
 
-Parallel development of multiple backup solutions is called [set-based concurrent engineering](/zettelkasten/set-based-concurrent-engineering). For example, if a single solution has $10$ percent failure rate, $n$ parallel solutions would have $0.1^n$ failure rate. Thus, the incremental value added by each additional backup solution decreases geometrically, while the incremental cost added by each additional solution is constant or possibly increasing.
+Parallel development of multiple backup solutions is called [set-based concurrent engineering](/zettel/set-based-concurrent-engineering). For example, if a single solution has $10$ percent failure rate, $n$ parallel solutions would have $0.1^n$ failure rate. Thus, the incremental value added by each additional backup solution decreases geometrically, while the incremental cost added by each additional solution is constant or possibly increasing.
 
 The optimum number of parallel paths occurs when incremental value equals incremental cost (U-curve optimization). Therefore, since this economic optimum can equal one, parallel paths don't always make economic sense.
 
 #### E20: The Newsboy Principle: High probability of failure does not equal bad economics.
 
-Uncertain opportunities have large payoff asymmetries, making them the best source of new ideas. Before acquiring sufficient information to make a good economical choice, filtering bad opportunities would eliminate uncertain and poorly understood opportunities. However, it also removes best asymmetries and opportunities. **Thus, opening the filter to pass these [asymmetric opportunities](/zettelkasten/asymmetric-opportunity) actually increases economic value.**
+Uncertain opportunities have large payoff asymmetries, making them the best source of new ideas. Before acquiring sufficient information to make a good economical choice, filtering bad opportunities would eliminate uncertain and poorly understood opportunities. However, it also removes best asymmetries and opportunities. **Thus, opening the filter to pass these [asymmetric opportunities](/zettel/asymmetric-opportunity) actually increases economic value.**
 
 #### E21: The Show Me the Money Principle: To influence financial decisions, speak the language of money.
 
-Most corporations give control over financial resources to people who worry about the economics of their choices. To influence those people, you must speak the language of economics, not the language of [proxy variables](/zettelkasten/proxy-variable). When you talk to those who control the money using the language of the money, you can get fast decisions and enthusiastic support.
+Most corporations give control over financial resources to people who worry about the economics of their choices. To influence those people, you must speak the language of economics, not the language of [proxy variables](/zettel/proxy-variable). When you talk to those who control the money using the language of the money, you can get fast decisions and enthusiastic support.
 
 ### 3 - Managing Queues
 
@@ -186,13 +185,13 @@ Product development queues do much more damage than manufacturing queues for two
    - **More Variability.** High levels of utilization tend to amplify variability.
    - **More Overhead.** The more projects you have in process, the more you have to track and report status to your managers. Even worse, your team asks for more progress reports per project because queues lead to long transit times.
    - **Lower Quality.** Queues reduce quality by delaying feedback from downstream processes. If a programmer makes a flawed assumption and must wait for 30 days to get this feedback, she'll embed the flawed assumption into 30 days' worth of code. Thus, following a wrong path typically increases exponentially, not linearly.
-   - **Less Motivation.** Queues undermine motivation and initiative. When the next process has a long time, you feel there is little value in hurrying to finish your work. [Parkinson's Law](/zettelkasten/parkinson-s-law) explains this behavior.
+   - **Less Motivation.** Queues undermine motivation and initiative. When the next process has a long time, you feel there is little value in hurrying to finish your work. [Parkinson's Law](/zettel/parkinson-s-law) explains this behavior.
 
-Queues off the [critical path](/zettelkasten/critical-path) also create costs to the project because only one of these six wastes arises from the cost of delay. The other five wastes are still present even when the queues are off the [critical path](/zettelkasten/critical-path).
+Queues off the [critical path](/zettel/critical-path) also create costs to the project because only one of these six wastes arises from the cost of delay. The other five wastes are still present even when the queues are off the [critical path](/zettel/critical-path).
 
 #### Q3: The Principle of Queueing Capacity Utilization: Capacity utilization increases queues exponentially.
 
-[Queue capacity utilization](/zettelkasten/queue-capacity-utilization) is the most critical factor that affects queue size. As you approach 100% of the queue capacity, queues become exponentially large. Knowing capacity utilization allow you to predict:
+[Queue capacity utilization](/zettel/queue-capacity-utilization) is the most critical factor that affects queue size. As you approach 100% of the queue capacity, queues become exponentially large. Knowing capacity utilization allow you to predict:
 
 - the percent of time arriving work will find the resource busy;
 - the average number of items in the queue;
@@ -284,7 +283,7 @@ The third question is important because the payoff from queueing discipline is h
 
 #### Q11: The Cumulative Flow Principle: Use CFDs to monitor queues.
 
-[Cumulative flow diagram (CFD) notes](/z/cumulative-flow-diagram-cfd).
+[Cumulative flow diagram (CFD) notes](/zettel/cumulative-flow-diagram-cfd).
 
 The CFD visually presents a great deal of information about your queue. Unfortunately, many companies only track queue size as a function of time, which provides less information. Using CDF, you can see if excess arrivals or insufficient departures caused a change in the queue size. You can also observe the time dependency of demand and capacity.
 
@@ -294,7 +293,7 @@ Changes in the slope of the arrival and departure lines inform trends in demand 
 
 #### Q12: Little's Formula: Wait Time = Queue Size/Processing Rate
 
-[Little's Law notes](/z/little-s-law).
+[Little's Law notes](/zettel/little-s-law).
 
 This formula applies to virtually all queues disciplines, arrival rates, and departure processes.
 

@@ -29,4 +29,4 @@ bitLink: the-unfair-advantage
 
 > But when the founding team has a combination of Money, Intelligence and Insight, Location and Luck, Education and Expertise, and Status, that's when they have a real Unfair Advantage.
 
-[The MILES Framework.](/z/the-miles-framework)
+[The MILES Framework.](/zettel/the-miles-framework)

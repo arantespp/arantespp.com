@@ -78,7 +78,7 @@ The stimuli to which the mind responds most freely are:
 3. The desire for fame, power, or money.
 4. Music
 5. Friendship
-6. A [Master Mind](/z/mastermind)
+6. A [Master Mind](/zettel/mastermind)
 7. Mutual suffering
 8. Auto-suggestion
 9. Fear

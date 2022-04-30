@@ -36,7 +36,7 @@ keywords:
 
 - Cognitive biases may lead to perceptual distortion, inaccurate judgment, illogical interpretation, or irrationality.
 
-- Some cognitive biases are presumably adaptive because some enable faster decisions in scenarios in which timeliness is more valuable than accuracy, for example, [recognition heuristic](/zettelkasten/recognition-heuristic).
+- Some cognitive biases are presumably adaptive because some enable faster decisions in scenarios in which timeliness is more valuable than accuracy, for example, [recognition heuristic](/zettel/recognition-heuristic).
 
 ## References
 

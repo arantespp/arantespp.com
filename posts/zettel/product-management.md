@@ -36,7 +36,7 @@ keywords:
 
 ## Notes
 
-- Product management is the intersection between business, [user experience](/z/user-experience), and technology.
+- Product management is the intersection between business, [user experience](/zettel/user-experience), and technology.
 
 - It's about bringing together the three functions above, a lot of market research, creativity, vision, and more to build value for the customers and the business.
 

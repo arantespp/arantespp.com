@@ -20,8 +20,8 @@ draft: true
 ## TL;DR
 
 - Getting Thigs Done (GTD) method helps you control all your work.
-- Your brain has a limited [working memory](/zettelkasten/working-memory). Trying to remember everything leads to an inability to concentrate fully on the work at hand because your brain will still try to remember problems and tasks that you've stored in it.
-- These unfinished problems and tasks are called [open loops](/zettelkasten/ideas-in-open-loop). Your brain will constantly remind you about them because they're open, unfinished. They steal your energy and focus.
+- Your brain has a limited [working memory](/zettel/working-memory). Trying to remember everything leads to an inability to concentrate fully on the work at hand because your brain will still try to remember problems and tasks that you've stored in it.
+- These unfinished problems and tasks are called [open loops](/zettel/ideas-in-open-loop). Your brain will constantly remind you about them because they're open, unfinished. They steal your energy and focus.
 - GTD helps you elimited those open loops and gives you a sense of control over your work, which gives to you a relaxed control and flexibility to handle changing circumstances. It consists in a specific and powerful five-stage workflow: [capture](#1-capture), [clarify](#2-clarify), [organize](#3-organize), [reflect](#4-reflect), and [engage](#5-engage).
 - To implement the GTD system, you need the right workplace, tools, and filling system where you always feel comfortable working.
 
@@ -31,7 +31,7 @@ draft: true
 
 You can access an infinite amount of data through the Internet and receive many inputs from the world. This scenario's transformed your work and life boundaries because every new information increases the limits of your commitments and your lives.
 
-The amount of new information creates [**open loops**](/zettelkasten/ideas-in-open-loop), or "incomplete tasks" in your mind. An open loop is an action that you decided to execute, but you didn't define the actions and outputs desired. If you have a huge amount of open loops, they'll appear from time to time and steal your energy (because your [short-term memory](/zettelkasten/short-term-memory) is very limited). Putting these incomplete tasks in a management tool, like a "to-do" list, won't help because they're unplanned and will be pulling on our attention.
+The amount of new information creates [**open loops**](/zettel/ideas-in-open-loop), or "incomplete tasks" in your mind. An open loop is an action that you decided to execute, but you didn't define the actions and outputs desired. If you have a huge amount of open loops, they'll appear from time to time and steal your energy (because your [short-term memory](/zettel/short-term-memory) is very limited). Putting these incomplete tasks in a management tool, like a "to-do" list, won't help because they're unplanned and will be pulling on our attention.
 
 To manage the open loops, you must follow 3 steps:
 
@@ -47,7 +47,7 @@ The difference between following these steps and just putting a task on a "to-do
 
 ### Chapter 2 - Getting Control of Your Life: The Five Steps of Mastering Workflow
 
-[David](/zettelkasten/david-allen) presents a method for mastering the art of relaxed and controlled engagement. It's a five-step method for managing your workflow. The main goal is taking back the job of your mind to remember your tasks. The steps are:
+[David](/zettel/david-allen) presents a method for mastering the art of relaxed and controlled engagement. It's a five-step method for managing your workflow. The main goal is taking back the job of your mind to remember your tasks. The steps are:
 
 #### 1. Capture
 
@@ -96,7 +96,7 @@ For each output of the step above, you'll need some tools to help you organize t
 
 1. Defining purpose and principles
 2. Outcome visioning
-3. [Brainstorming](/zettelkasten/brainstorming)
+3. [Brainstorming](/zettel/brainstorming)
 4. Organizing
 5. Identifying next actions
 
@@ -104,7 +104,7 @@ Planning dinner out example:
 
 1. Why do you want to dinner out? Desire to satisfy hunger, socialize with friends, celebrate special occasion or develop a romance. These are your **purpose**. Your **principles** creates the boundaries of your plan: standards of food and service, affordability, convenience and comfort.
 2. What do you imagine about the dinner about the physical place, sounding, and feelings? It could be like, "Italian food at Giovanni's," or "Sitting at a sidewalk table at the Bistro Café." That is your **outcome visioning**.
-3. You'll think about how you achieve your vision. "What time should we go?" "Is it open tonight?" "Will it be crowded?" "Is there gas in the car?" That is the **[brainstorming](/zettelkasten/brainstorming)**.
+3. You'll think about how you achieve your vision. "What time should we go?" "Is it open tonight?" "Will it be crowded?" "Is there gas in the car?" That is the **[brainstorming](/zettel/brainstorming)**.
 4. Once you have a lot of ideas, you start to **organize** them. You begin to sort them by components, priorities, and/or sequence of events.
 5. Finally, you focus in the **next action** that you need to take to make the first component happen. "Call Café Rouge to see if it's open, and make the reservation."
 
@@ -112,11 +112,11 @@ Planning dinner out example:
 
 1. Identifying next actions
 2. Organizing
-3. [Brainstorming](/zettelkasten/brainstorming)
+3. [Brainstorming](/zettel/brainstorming)
 4. Outcome visioning
 5. Defining purpose and principles
 
-[An example of this case.](/articles/from-reactive-planning-model-to-natural-planning-model)
+[An example of this case.](/from-reactive-planning-model-to-natural-planning-model)
 
 Let's examine the five phases.
 
@@ -154,11 +154,11 @@ Vision is a clear picture in your mind of what success would look like, sounds, 
 
 Focus has a great power in your brain. Your physiology will respond to an image in your head as if it were reality. The unconscious mind automatically works toward your goals when you create and focus on a clear picture of what you want. Such automatic guidance system helps you better than "you" ever could by conscious thought.
 
-[Focus brings unconscious support.](/zettelkasten/focus-brings-unconscious-support)
+[Focus brings unconscious support.](/zettel/focus-brings-unconscious-support)
 
 #### Brainstorming
 
-[Brainstorming notes.](/zettelkasten/brainstorming) It helps defining the _how_.
+[Brainstorming notes.](/zettel/brainstorming) It helps defining the _how_.
 
 #### Organizing
 

@@ -35,7 +35,7 @@ readingTime: 1
 
 ## Notes
 
-The book [The 7 Habits of Highly Effective People](/b/the-7-habits-of-highly-effective-people) says three social maps explain human nature. These three theories are widely accepted, independent or in combination, to explain the nature of man.
+The book [The 7 Habits of Highly Effective People](/books/the-7-habits-of-highly-effective-people) says three social maps explain human nature. These three theories are widely accepted, independent or in combination, to explain the nature of man.
 
 1. **Genetic determinism**: it says that you're who you're because of your DNA.
 
@@ -45,4 +45,4 @@ The book [The 7 Habits of Highly Effective People](/b/the-7-habits-of-highly-eff
 
 ## References
 
-- [The 7 Habits of Highly Effective People](/b/the-7-habits-of-highly-effective-people)
+- [The 7 Habits of Highly Effective People](/books/the-7-habits-of-highly-effective-people)

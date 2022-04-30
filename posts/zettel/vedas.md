@@ -10,7 +10,7 @@ rating: 2
 
 ## Notes
 
-- Vedas are religious texts originating in ancient India. They constitute the oldest layer of Sanskrit literature and the oldest scriptures of [Hinduism](/zettelkasten/hinduism).
+- Vedas are religious texts originating in ancient India. They constitute the oldest layer of Sanskrit literature and the oldest scriptures of [Hinduism](/zettel/hinduism).
 
 - There's four Vedas:
 

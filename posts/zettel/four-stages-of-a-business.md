@@ -24,7 +24,7 @@ keywords:
 
 ## Notes
 
-- Stage 1 - "Drunken Walk": the team is creating and experimenting with many things to achieve the [PMF](/z/product-market-fit). The product is the vision of the founders.
+- Stage 1 - "Drunken Walk": the team is creating and experimenting with many things to achieve the [PMF](/zettel/product-market-fit). The product is the vision of the founders.
 - Stage 2 - Product/Market Fit:
 - Stage 3 - Hypergrowth:
 - Stage 4 - Scale:

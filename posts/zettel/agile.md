@@ -30,7 +30,7 @@ keywords:
 
 ## Notes
 
-- At its core, you can see agile as a philosophy with four values and [12 principles](/z/twelve-principles-of-agile-software).
+- At its core, you can see agile as a philosophy with four values and [12 principles](/zettel/twelve-principles-of-agile-software).
 
 - There are projects in which you can apply agile philosophy, but not necessarily an agile methodology. For example, in building a home, one can use an agile philosophy about working with the client to ensure that the end product is what she wants, but one can't strictly apply scrum methodology to such a project.
 

@@ -13,9 +13,9 @@ rating: 2
 
 - It's a method that you can use the learn about anything.
 
-- It is based on the method [Richard Feynman](/zettelkasten/richard-feynman) originally used.
+- It is based on the method [Richard Feynman](/zettel/richard-feynman) originally used.
 
-- It makes you reading in a [metacognitive](/zettelkasten/reading-metacognitively) way.
+- It makes you reading in a [metacognitive](/zettel/reading-metacognitively) way.
 
 - It has 4 steps:
 

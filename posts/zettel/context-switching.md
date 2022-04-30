@@ -19,7 +19,7 @@ tags:
 
 - It kills productivity.
 
-- It happens when you do [multitasking](/zettelkasten/human-multitasking).
+- It happens when you do [multitasking](/zettel/human-multitasking).
 
 - Each extra task or "context" you switch eats up 20-80% of your overall productivity.
 

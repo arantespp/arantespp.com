@@ -34,7 +34,7 @@ readingTime: 1
 
 ## Notes
 
-- [Flow principle E3 states](/flow#e3-the-principle-of-quantified-cost-of-delay-if-you-only-quantify-one-thing-quantify-the-cost-of-delay)—_"If you only quantify one thing, quantify the cost of delay."_
+- [Flow principle E3 states](/books/the-principles-of-product-development-flow#e3-the-principle-of-quantified-cost-of-delay-if-you-only-quantify-one-thing-quantify-the-cost-of-delay)—_"If you only quantify one thing, quantify the cost of delay."_
 
 - Cost of delay (COD) determines the financial impact on the company if it releases a product on the market earlier or later. When a product arrives on the market X months earlier, revenues also roll in X months earlier.
 
@@ -57,5 +57,5 @@ https://twitter.com/arantespp/status/1511752951915692033
 
 ## References
 
-- [The Principles of Product Development Flow](/flow)
+- [The Principles of Product Development Flow](/books/the-principles-of-product-development-flow)
 - [Rethinking Agile](/rethinking-agile)

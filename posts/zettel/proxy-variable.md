@@ -22,7 +22,7 @@ tags:
 - Examples:
   - Proxy variable per-capita GDP measures standard of living or quality of life.
   - Changes in height over a fixed time are a proxy for hormone levels in the blood.
-  - [Slack](/zettelkasten/slack-and-efficiency) can be used to represent an economic impact on a project.
+  - [Slack](/zettel/slack-and-efficiency) can be used to represent an economic impact on a project.
 
 ## Questions
 

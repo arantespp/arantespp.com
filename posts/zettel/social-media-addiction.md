@@ -30,7 +30,7 @@ rating: 1
 
   - Most of the money these companies made is directly tied to the time users spend on their platforms.
 
-- Swiping right, double-clicking to like a post, receiving likes, and others generate ephemeral [dopamine](/zettelkasten/dopamine) bursts.
+- Swiping right, double-clicking to like a post, receiving likes, and others generate ephemeral [dopamine](/zettel/dopamine) bursts.
 
 ## Questions
 

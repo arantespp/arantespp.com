@@ -12,7 +12,7 @@ tags:
 
 - Chunking is a memorization method in which you group pieces of information in groups.
 
-- This technique helps you memorize better because our [short-term memory](/zettelkasten/short-term-memory) cannot retain a lot of information at the same time.
+- This technique helps you memorize better because our [short-term memory](/zettel/short-term-memory) cannot retain a lot of information at the same time.
 
   - When we group, we can retain the groups instead of each piece of information.
 

@@ -18,7 +18,7 @@ rating: 3
 - The pillars of a company venture backable are:
   - **Team**: the team is passionate and deep understand the industry and the customers they're working on. They have a long period of recognizing inefficiencies in the industry they've worked in.
   - **Market and Vision**: the market should worth billions. Also, the founder's insights about their idea should clarify that they're the ones to solve a critical problem.
-  - **Traction**: the team has to be able to execute the idea. The founders can use milestones to prove traction. For example, milestones might include the initial [product/market fit](/zettelkasten/product-market-fit) as the app's number of downloads.
+  - **Traction**: the team has to be able to execute the idea. The founders can use milestones to prove traction. For example, milestones might include the initial [product/market fit](/zettel/product-market-fit) as the app's number of downloads.
 
 ## References
 

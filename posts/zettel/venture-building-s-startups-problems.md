@@ -10,7 +10,7 @@ rating: 1
 
 ## Notes
 
-- Startups created in [Venture Buildings (VB)](/zettelkasten/startup-studio) may have some problems.
+- Startups created in [Venture Buildings (VB)](/zettel/startup-studio) may have some problems.
 
   1. Startups don't have the entrepreneur who "owns" the problem. This case happens when the VB realizes a problem and search for a person to solve that problem.
 

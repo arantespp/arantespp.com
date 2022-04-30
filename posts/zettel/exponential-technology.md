@@ -16,7 +16,7 @@ tags:
 
 - It means that the price of exponential technologies will decay in some years, and the population can have them at home.
 
-- The most familiar exponential technologies follow [Moore's law](/zettelkasten/moore-s-law).
+- The most familiar exponential technologies follow [Moore's law](/zettel/moore-s-law).
 
 - Other examples of exponential technologies are batteries for renewables, or solar power generation, which have an 18% to 20% annual improvement.
 

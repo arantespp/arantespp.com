@@ -45,11 +45,11 @@ We recently built an App for a research team to help other researchers keep thei
 
 The other projects aren't necessarily more straightforward, they were as tricky as **ProRes**, but they took 4x less time than **ProRes** to be finished. The most significant difference was the order in which we executed the implementation.
 
-In this article, we will better understand why this big difference happened. We think this problem is correlated to the [last mile problem](/z/last-mile-problem). So let's discuss a little about it.
+In this article, we will better understand why this big difference happened. We think this problem is correlated to the [last mile problem](/zettel/last-mile-problem). So let's discuss a little about it.
 
 ## Last Mile Problem
 
-Telecommunications is a common field where the [last mile problem](/z/last-mile-problem) appears. It occurs when it has a whole telecommunication infrastructure available except the one that links the final client, the final leg. For instance, suppose we have an optical fiber ring in a city that provides Internet to some buildings, but neighbor buildings don't have access to the ring. This is the last mile problem because the ring is working, but some clients can't access it.
+Telecommunications is a common field where the [last mile problem](/zettel/last-mile-problem) appears. It occurs when it has a whole telecommunication infrastructure available except the one that links the final client, the final leg. For instance, suppose we have an optical fiber ring in a city that provides Internet to some buildings, but neighbor buildings don't have access to the ring. This is the last mile problem because the ring is working, but some clients can't access it.
 
 We can see this problem in logistics too. A product may arrive in a country's capital but might not arrive in neighboring cities because there isn't an easy path there, for instance, need to cross a river.
 
@@ -59,7 +59,7 @@ _In summary, the last mile problem is the last thing that needs to be done befor
 
 We can see the last mile part in every implemented feature in almost every App we build. The first part of a feature is its core. We can call core the essential functionalities that such a feature must have. After the core is implemented, we have the final adjustments (FA) or the last mile. These adjustments don't change the functionalities but improve the application's user experience. For instance, if we're building a form, the core features are the fields and the submit logic; the FA are some input masks and designs.
 
-These final adjustments can have fewer tasks than the core, but it is laborious. The time to finish it is almost like the core time implementation. We may explain this using the [flow state](/z/flow-state-psychology). Core tasks commonly are more challenging and exciting to be done, a condition to enter the state, while the last mile tasks don't. Then the FA may be the least efficient part of feature implementation.
+These final adjustments can have fewer tasks than the core, but it is laborious. The time to finish it is almost like the core time implementation. We may explain this using the [flow state](/zettel/flow-state-psychology). Core tasks commonly are more challenging and exciting to be done, a condition to enter the state, while the last mile tasks don't. Then the FA may be the least efficient part of feature implementation.
 
 ![Core and last-mile development time vs. the number of tasks.](/images/originals/last-mile-time-vs-tasks.png)
 
@@ -81,7 +81,7 @@ One of the reasons the dependency exists is because you need to switch between f
 
 ### 90-90 Rule
 
-This scenario is correlated to the [90-90 Rule](/z/the-90-90-rule), which states that
+This scenario is correlated to the [90-90 Rule](/zettel/the-90-90-rule), which states that
 
 > "The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other 90 percent of the development time." Tom Cargill, Bell Labs.
 
@@ -105,4 +105,4 @@ We didn't have to worry about the energy dependency in these cases because it di
 
 The stakeholders and we weren't pleased with the **ProRes** execution. However, it was a very insightful experience that taught us more about the importance of having an efficient development path.
 
-As developers, maybe we'll always want to develop the most excellent parts of an application, and because of this, the role of a [product manager (PM)](/z/product-manager) is significant. Also, to manage the development time, it's far-reaching that they, together with the whole team and the stakeholders, plan the most compelling features' sequence implementation to avoid the dependencies among all software's unfinished parts. It's also substantial that the PM guarantees that one feature is being implemented at a time.
+As developers, maybe we'll always want to develop the most excellent parts of an application, and because of this, the role of a [product manager (PM)](/zettel/product-manager) is significant. Also, to manage the development time, it's far-reaching that they, together with the whole team and the stakeholders, plan the most compelling features' sequence implementation to avoid the dependencies among all software's unfinished parts. It's also substantial that the PM guarantees that one feature is being implemented at a time.

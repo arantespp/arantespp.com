@@ -22,7 +22,7 @@ tags:
 
 - In 1906, [Mark Twain](https://en.wikipedia.org/wiki/Mark_Twain) dictated. _"The glory which is built upon a lie soon becomes a most unpleasant incumbrance... How easy is to make people believe a lie, and how hard it is to undo that work again."_
 
-- It's a [system mental model](/zettelkasten/system-mental-models) because it explains how fake news becomes viral. It also gives insights into how easy someone believes in information but how hard it is to replace or remove such information.
+- It's a [system mental model](/zettel/system-mental-models) because it explains how fake news becomes viral. It also gives insights into how easy someone believes in information but how hard it is to replace or remove such information.
 
 ## Questions
 

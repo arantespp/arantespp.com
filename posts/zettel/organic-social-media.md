@@ -27,7 +27,7 @@ rating: 1
 
 ## Questions
 
-- When organic social media is preferable over [paid social media](/zettelkasten/paid-social-media)?
+- When organic social media is preferable over [paid social media](/zettel/paid-social-media)?
 
 ## References
 

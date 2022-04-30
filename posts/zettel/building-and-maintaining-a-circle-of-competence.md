@@ -32,13 +32,13 @@ readingTime: 1
 
 ## Notes
 
-You need three key practices to build and maintain a [circle of competence](/z/circle-of-competence):
+You need three key practices to build and maintain a [circle of competence](/zettel/circle-of-competence):
 
 1. **Curiosity and desire to learn**. You need always to approach your circle with curiosity and seek information to expand and strengthen it. You can learn from your or others' experiences—books, articles, and conversations. Learning from others is more productive because you don't have to pay the cost yourself.
 
 2. **Monitoring**. You need to monitor honestly the areas in which you have or want to have a circle of competence. Keeping a journal of your performance and activities is the easiest way to monitor and give self-feedback. Journals allow you to step out of your automatic thinking and help you reflect on what went wrong and how you could do better.
 
-3. **External feedback**. People who observe you operating in your circle of competence can provide valuable perspectives on your competence—awareness of your suboptimal skills and techniques. Unfortunately, we have too many [biases](/z/cognitive-bias) to rely on our own observations.
+3. **External feedback**. People who observe you operating in your circle of competence can provide valuable perspectives on your competence—awareness of your suboptimal skills and techniques. Unfortunately, we have too many [biases](/zettel/cognitive-bias) to rely on our own observations.
 
 ## References
 

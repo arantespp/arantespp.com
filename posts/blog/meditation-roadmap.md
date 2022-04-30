@@ -40,7 +40,7 @@ keywords:
 readingTime: 4
 ---
 
-Meditation is one of the five habits I'm cultivating in my [five years project](/articles/five-habits-for-the-next-five-years). Currently, I'm meditating for every 35 minutes every morning, right after waking up. Still, it took some time to reach these minutes, and I wrote this text to share with you the roadmap I followed during my meditation journey, which fits me very well.
+Meditation is one of the five habits I'm cultivating in my [five years project](/five-habits-for-the-next-five-years). Currently, I'm meditating for every 35 minutes every morning, right after waking up. Still, it took some time to reach these minutes, and I wrote this text to share with you the roadmap I followed during my meditation journey, which fits me very well.
 
 The roadmap consists of these steps:
 
@@ -57,13 +57,13 @@ This step is crucial because it determines if you'll keep meditating once you st
 
 ## Watch the eye and the voice of your mind
 
-Once you become comfortable sitting with closed eyes, you can start to notice the eyes and the voice of your mind. The eye of your mind is your [visuospatial sketchpad](/zettelkasten/visuospatial-sketchpad), a slave of your [working memory](/z/working-memory). It is because of it that you can imagine scenes or experiences. The voice of your mind is also a slave of the [working memory](/z/working-memory). It is the [phonological loop](/z/phonological-loop), and it acts as the inner voice and the inner ear of your head.
+Once you become comfortable sitting with closed eyes, you can start to notice the eyes and the voice of your mind. The eye of your mind is your [visuospatial sketchpad](/zettel/visuospatial-sketchpad), a slave of your [working memory](/zettel/working-memory). It is because of it that you can imagine scenes or experiences. The voice of your mind is also a slave of the [working memory](/zettel/working-memory). It is the [phonological loop](/zettel/phonological-loop), and it acts as the inner voice and the inner ear of your head.
 
 In this step, try to notice when some of these slaves enter into action and observe them. Observe the pictures and the talks inside your head.
 
 ## Stop your mind's eye
 
-In this step, instead of just observing the [visuospatial sketchpad](/z/visuospatial-sketchpad), you also try to stop it. In the beginning, you can think of nothing for some seconds, but without you noticing, soon you'll imagine other scenes and experiences again. No problem, try to catch every new thought and stop it.
+In this step, instead of just observing the [visuospatial sketchpad](/zettel/visuospatial-sketchpad), you also try to stop it. In the beginning, you can think of nothing for some seconds, but without you noticing, soon you'll imagine other scenes and experiences again. No problem, try to catch every new thought and stop it.
 
 ## Silence your mind's voice
 

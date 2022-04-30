@@ -9,7 +9,7 @@ tags:
 
 ## Notes
 
-- It's a [Scrum](/zettelkasten/scrum) ceremony whose purpose is to inspect progress toward the Sprint Goal.
+- It's a [Scrum](/zettel/scrum) ceremony whose purpose is to inspect progress toward the Sprint Goal.
 
 - It's a 15-minute event for the developers of the team. Product Owner and Scrum Master also participate if they're actively working on items in the Sprint Backlog.
 
@@ -24,7 +24,7 @@ tags:
     - This question helps managers manage and organize the backlog, priorities, and the value that will be delivered to the product.
   - What do I plan to do today?
     - This question helps each member of the team to create focus and improves self-management.
-    - It also gives a little [slack](/zettelkasten/slack-and-efficiency) to each member.
+    - It also gives a little [slack](/zettel/slack-and-efficiency) to each member.
   - Are there any obstacles?
     - Allow members to help each other after meeting.
 

@@ -32,7 +32,7 @@ readingTime: 1
 
 ## Notes
 
-There are three parts to operating outside a [circle of competence](/z/circle-of-competence) successfully:
+There are three parts to operating outside a [circle of competence](/zettel/circle-of-competence) successfully:
 
 1. Learn at least the basics of the new circle you'll operate, and keep in mind that there are many many things that you won't know and don't know that you don't know. Basic information that is easy to obtain often gives you unwarranted confidence.
 

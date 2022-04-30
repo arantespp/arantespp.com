@@ -53,12 +53,12 @@ readingTime: 1
   - **Queue**: the waiting work.
   - **Server**: the resource performing the work, whose time to complete the work may be unpredictable.
   - **Arrival Process**: the pattern with which work arrives, which is usually unpredictable.
-  - [**Service Process**](/zettelkasten/queue-service-process): the process in which the server accomplishes the work.
+  - [**Service Process**](/zettel/queue-service-process): the process in which the server accomplishes the work.
   - **Queueing discipline**: how queue handles the waiting work.
 
 - Kendall notation: $M/M/1/\infty$ queue.
-  - The first $M$ refers to the **arrival process**, in this case, is the [Markov process](/zettelkasten/markov-process).
-  - The second $M$ refers to the **service process**, which is also a [Markov process](/zettelkasten/markov-process).
+  - The first $M$ refers to the **arrival process**, in this case, is the [Markov process](/zettel/markov-process).
+  - The second $M$ refers to the **service process**, which is also a [Markov process](/zettel/markov-process).
   - The number $1$ refers to the number of parallel **servers** in the system.
   - The final term $\infty$ describes the upper limit on queue size.
 

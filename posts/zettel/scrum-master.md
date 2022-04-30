@@ -28,7 +28,7 @@ keywords:
 
 ## Notes
 
-- Scrum Master is a role of a [scrum](/z/scrum) team.
+- Scrum Master is a role of a [scrum](/zettel/scrum) team.
 
 - Scrum Master roles and responsibilities:
   - A team guide.

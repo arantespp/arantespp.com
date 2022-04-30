@@ -41,7 +41,7 @@ readingTime: 1
 
 - They need to give the team the direction and the vision for the future—a future market, opportunities, new product, service, or technology, a marketing methodology, and a sales channel. It's the kernel idea and the path to go there.
 
-- [Startup co-CEOs problems.](/z/startup-co-ce-os-problems)
+- [Startup co-CEOs problems.](/zettel/startup-co-ce-os-problems)
 
 ## References
 

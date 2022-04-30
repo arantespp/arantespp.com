@@ -21,7 +21,7 @@ rating: 4
 
 - They're thinking tools that we use to solve problems and make decisions.
 
-- They help us overcome the [hyperbolic discounting](/zettelkasten/hyperbolic-discounting) problem.
+- They help us overcome the [hyperbolic discounting](/zettel/hyperbolic-discounting) problem.
 
 - Without mental models, you rely on your current emotions or instincts.
 
