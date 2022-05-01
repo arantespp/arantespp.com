@@ -1,5 +1,5 @@
 import { Flex, Link, Text } from 'theme-ui';
-import { Recommendation } from '../../lib/filesv2';
+import { Recommendation } from '../../lib/files';
 import NextLink from 'next/link';
 import RecommendationsList from './RecommendationsList';
 

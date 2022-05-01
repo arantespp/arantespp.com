@@ -1,10 +1,10 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
-import { getFile } from '../../../lib/files';
 import {
   getPostAndRecommendations,
   getPosts,
   getRecommendations,
-} from '../../../lib/filesv2';
+  readMarkdownFile,
+} from '../../../lib/files';
 import { titleCase } from 'title-case';
 import dynamic from 'next/dynamic';
 
@@ -35,7 +35,8 @@ export const getStaticProps = async ({
   params: { group: string };
 }) => {
   if (indexes.includes(path)) {
-    const { data = {}, content = '' } = getFile(`${path}.md`) || {};
+    const { data = {}, content = '' } =
+      (await readMarkdownFile(`${path}.md`)) || {};
     const group = path === 'zettelkasten' ? 'zettel' : 'blog';
     const recommendations = await getRecommendations({ group });
     const { excerpt = null } = data;

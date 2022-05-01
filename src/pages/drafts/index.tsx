@@ -1,13 +1,11 @@
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 import { Themed } from 'theme-ui';
-
 import { getDrafts } from '../../../lib/files';
-
 import RecommendationsList from '../../components/RecommendationsList';
 
 export const getStaticProps = async () => {
-  const drafts = getDrafts();
+  const drafts = await getDrafts();
   return { props: { drafts } };
 };
 

@@ -2,7 +2,7 @@ import * as dateFns from 'date-fns';
 import { Box, Themed } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
-import { Post, getPosts } from '../../lib/filesv2';
+import { Post, getPosts } from '../../lib/files';
 import { getClosestLastWeekDay } from '../../lib/getClosestLastWeekDay';
 import { getNextNewsletterDate } from '../../lib/getNextNewsletterDate';
 import Link from '../components/Link';

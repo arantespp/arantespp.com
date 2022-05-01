@@ -1,13 +1,12 @@
+import { GROUPS } from '../../../lib/groups';
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 import { Themed } from 'theme-ui';
-
-import { getDrafts, getGroups } from '../../../lib/files';
-
+import { getDrafts } from '../../../lib/files';
 import RecommendationsList from '../../components/RecommendationsList';
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: getGroups().map((group) => ({
+  paths: GROUPS.map((group) => ({
     params: { group },
   })),
   fallback: false,
@@ -18,7 +17,7 @@ export const getStaticProps = async ({
 }: {
   params: { group: string };
 }) => {
-  const drafts = getDrafts();
+  const drafts = await getDrafts();
   return { props: { drafts: drafts.filter((draft) => draft.group === group) } };
 };
 

@@ -13,13 +13,11 @@ import {
 import { NextSeo } from 'next-seo';
 import { saveAs } from 'file-saver';
 import JSZip from 'jszip';
-import html2canvas from 'html2canvas';
-
-import type { InstagramPost as InstagramPostProps } from '../../lib/files';
-
 import Loading from './Loading';
 import Markdown from './Markdown';
 import PedroArantes from './PedroArantes';
+import html2canvas from 'html2canvas';
+import type { InstagramPost as InstagramPostProps } from '../../lib/instagram';
 
 const PostsGrid = ({
   pages,

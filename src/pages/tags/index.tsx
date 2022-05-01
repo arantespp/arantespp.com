@@ -1,14 +1,11 @@
 import { Box, Flex, Themed } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
-
+import { getAllTags } from '../../../lib/files';
 import Tag from '../../components/Tag';
-
-import { getAllTags } from '../../../lib/filesv2';
 
 export const getStaticProps = async () => {
   const tags = await getAllTags();
-  console.log(tags);
   return { props: { tags } };
 };
 

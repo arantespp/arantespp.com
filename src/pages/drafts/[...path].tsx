@@ -1,5 +1,5 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
-import { Group, getDraft, getDrafts } from '../../../lib/filesv2';
+import { Group, getDraft, getDrafts } from '../../../lib/files';
 import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 

@@ -1,11 +1,9 @@
 import { InferGetStaticPropsType } from 'next';
-
-import { getFile } from '../../lib/files';
-
+import { readMarkdownFile } from '../../lib/files';
 import IndexPage from '../components/IndexPage';
 
 export const getStaticProps = async () => {
-  const { content = '' } = getFile('../LICENSE.md') || {};
+  const { content = '' } = (await readMarkdownFile('../LICENSE.md')) || {};
   return { props: { content } };
 };
 

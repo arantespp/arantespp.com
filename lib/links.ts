@@ -1,4 +1,4 @@
-import { getAllPosts, getDrafts } from './files';
+import { getDrafts, getPosts } from './files';
 
 const pageLinks = [
   {
@@ -28,7 +28,7 @@ const pageLinks = [
 ];
 
 export const getRedirects = async () => {
-  const bitLinks = [...getAllPosts(), ...getDrafts()]
+  const bitLinks = [...(await getPosts()), ...(await getDrafts())]
     .filter((post) => post.bitLink)
     .map((post) => {
       return {

@@ -1,9 +1,7 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
-import dynamic from 'next/dynamic';
-
-import { getInstagramPost, getInstagramPosts } from '../../../lib/files';
-
+import { getInstagramPost, getInstagramPosts } from '../../../lib/instagram';
 import NotFound from '../../components/NotFound';
+import dynamic from 'next/dynamic';
 
 const InstagramPost = dynamic(() => import('../../components/InstagramPost'));
 

@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 import { Themed } from 'theme-ui';
-import { getRecommendations } from '../../lib/filesv2';
+import { getRecommendations } from '../../lib/files';
 import dynamic from 'next/dynamic';
 
 const Link = dynamic(() => import('../components/Link'));

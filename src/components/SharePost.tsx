@@ -1,5 +1,5 @@
 import { Flex, Link } from 'theme-ui';
-import { Post } from '../../lib/filesv2';
+import { Post } from '../../lib/files';
 
 const TEMP = true;
 

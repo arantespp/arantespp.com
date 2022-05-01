@@ -14,11 +14,9 @@ import {
 } from 'theme-ui';
 import { Controller, useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
-import { yupResolver } from '@hookform/resolvers/yup';
-
 import { GROUPS } from '../../lib/groups';
-import type { Post } from '../../lib/files';
-
+import { Post } from '../../lib/files';
+import { yupResolver } from '@hookform/resolvers/yup';
 import Editor from './Editor';
 import Link from './Link';
 

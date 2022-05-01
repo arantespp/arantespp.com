@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box } from 'theme-ui';
-import { Recommendation } from '../../lib/filesv2';
+import { Recommendation } from '../../lib/files';
 import RecommendationCard from './RecommendationCard';
 
 const RecommendationsList = ({

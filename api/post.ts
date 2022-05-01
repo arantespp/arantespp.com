@@ -1,14 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
-import { getPartialPost, getDraft } from '../lib/files';
-import { savePost } from '../lib/savePost';
-
+import { getDraft, getPost } from '../lib/files';
 import { productionBlocker } from '../lib/hofs/productionBlocker';
+import { savePost } from '../lib/savePost';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     const args = req.query as any;
-    res.status(200).json(getPartialPost(args) || getDraft(args));
+    res.status(200).json(getPost(args) || getDraft(args));
     return;
   }
 

@@ -5,7 +5,7 @@ import {
   faLink,
   faPen,
 } from '@fortawesome/free-solid-svg-icons';
-import { Recommendation } from '../../lib/filesv2';
+import { Recommendation } from '../../lib/files';
 import Link from './Link';
 import PostResume from './PostResume';
 

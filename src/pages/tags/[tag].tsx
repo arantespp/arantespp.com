@@ -1,7 +1,7 @@
 import { Flex, Themed } from 'theme-ui';
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
-import { getAllTags, getPosts, getRecommendations } from '../../../lib/filesv2';
+import { getAllTags, getPosts, getRecommendations } from '../../../lib/files';
 import Link from '../../components/Link';
 import NetworkLink from '../../components/NetworkLink';
 import RecommendationsList from '../../components/RecommendationsList';

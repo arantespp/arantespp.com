@@ -1,5 +1,4 @@
-import type { Book } from '../../lib/files';
-
+import { Book } from '../../lib/files';
 import CustomImage from './CustomImage';
 
 const BookHeader = ({ book }: { book: Book }) => {

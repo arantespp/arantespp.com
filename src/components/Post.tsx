@@ -1,6 +1,6 @@
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 import { Box, Flex, Themed } from 'theme-ui';
-import { Draft, Post } from '../../lib/filesv2';
+import { Draft, Post } from '../../lib/files';
 import { PostFooter } from './PostFooter';
 import { editPost } from '../../shortcuts';
 import { useContentEditable } from '../hooks/useContentEditable';
@@ -48,12 +48,14 @@ const PostComponent = ({ post }: { post: Post | Draft }) => {
             url: 'https://arantespp.com' + href,
             ...(isBook
               ? {
-                  images: [
-                    {
-                      url: book.image,
-                      alt: title,
-                    },
-                  ],
+                  images: book.image
+                    ? [
+                        {
+                          url: book.image,
+                          alt: title,
+                        },
+                      ]
+                    : undefined,
                   book: {
                     authors: book?.authors,
                     tags,

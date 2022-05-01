@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Flex, Text } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
-import { getAllTags, getPosts } from '../../lib/filesv2';
+import { getAllTags, getPosts } from '../../lib/files';
 import { useRouter } from 'next/router';
 import FullWidth from '../components/FullWidth';
 import RecommendationCard from '../components/RecommendationCard';

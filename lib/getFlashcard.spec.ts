@@ -1,13 +1,12 @@
-import { getAllPosts } from './files';
-
 import {
   getFlashcardByProbability,
   getFlashcards,
   getPNumber,
 } from './getFlashcard';
+import { getPosts } from './files';
 
 jest.mock('./files', () => ({
-  getAllPosts: jest.fn(),
+  getPosts: jest.fn(),
 }));
 
 beforeAll(() => {
@@ -58,7 +57,7 @@ test.each([
     ],
   ],
 ])('getFlashcards test: %#', async (_, allPosts, returnedPosts) => {
-  (getAllPosts as jest.Mock).mockReturnValue(allPosts);
+  (getPosts as jest.Mock).mockReturnValue(allPosts);
   const flashcards = (await getFlashcards()).map(
     ({ date, diffDays, pNumber }) => ({ date, diffDays, pNumber }),
   );

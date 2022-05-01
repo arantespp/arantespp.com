@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Post } from '../../lib/filesv2';
+import { Post } from '../../lib/files';
 import { findBestMatch } from 'string-similarity';
 import { useDebounce } from 'use-debounce';
 

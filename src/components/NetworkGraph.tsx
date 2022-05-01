@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box, Button, Flex, Input, useThemeUI } from 'theme-ui';
-import { Recommendation } from '../../lib/filesv2';
+import { Recommendation } from '../../lib/files';
 import { theme } from '../theme';
 import { useResponsiveValue } from '@theme-ui/match-media';
 import ForceGraph3D, { ForceGraphMethods } from 'react-force-graph-3d';

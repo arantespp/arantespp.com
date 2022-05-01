@@ -1,21 +1,19 @@
 import * as dateFns from 'date-fns';
 import * as fs from 'fs';
 import * as path from 'path';
-import { titleCase } from 'title-case';
-import matter from 'gray-matter';
-
-import type { PostForm } from '../src/components/PostEditor';
-
-import { Book, Post, getPartialPost, getTags, postsDirectory } from './files';
+import { Book, Post, getPost, normalizeTags, postsDirectory } from './files';
 import { Group } from './groups';
 import { postTitleToSlug } from './postTitleToSlug';
+import { titleCase } from 'title-case';
+import matter from 'gray-matter';
+import type { PostForm } from '../src/components/PostEditor';
 
 export const savePost = async ({ content, ...meta }: PostForm) => {
   const { group, book } = meta;
 
   const title = titleCase(meta.title.trim());
   const date = meta.date || dateFns.format(new Date(), 'yyyy-MM-dd');
-  const tags = getTags(meta.tags?.split(';'));
+  const tags = normalizeTags(meta.tags?.split(';'));
 
   const mdMeta: Partial<Post> = {
     ...(meta as Partial<Post>),
@@ -46,5 +44,5 @@ export const savePost = async ({ content, ...meta }: PostForm) => {
 
   await fs.promises.writeFile(filePath, md);
 
-  return getPartialPost({ group: group as Group, slug });
+  return getPost({ group: group as Group, slug });
 };

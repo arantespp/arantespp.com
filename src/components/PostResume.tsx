@@ -1,5 +1,5 @@
 import { Box, Flex, Message, Text } from 'theme-ui';
-import { Recommendation } from '../../lib/filesv2';
+import { Recommendation } from '../../lib/files';
 import { pascalCase } from 'change-case';
 import Link from './Link';
 import Tag from './Tag';

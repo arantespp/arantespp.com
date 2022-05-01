@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, Flex, Input, Text, Themed } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
-import { getPosts } from '../../lib/filesv2';
+import { getPosts } from '../../lib/files';
 import { useSearchPosts } from '../hooks/useSearchPosts';
 import RecommendationsList from '../components/RecommendationsList';
 
