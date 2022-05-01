@@ -143,7 +143,6 @@ const NetworkGraph = ({
         }}
         onClick={() => {
           if (forceGraphRef.current) {
-            console.log(forceGraphRef.current);
             forceGraphRef.current.zoomToFit();
           }
         }}

@@ -483,23 +483,26 @@ export const getPost = async (params: GetPostParams) => {
 export const getPostAndRecommendations = async (params: GetPostParams) => {
   const [post, allPosts] = await Promise.all([getPost(params), getPosts()]);
 
-  const score = allPosts.reduce<{ [key: string]: number }>((acc, { href }) => {
-    acc[href] = 0;
-    return acc;
-  }, {});
+  const scoreMap = allPosts.reduce<{ [key: string]: number }>(
+    (acc, { href }) => {
+      acc[href] = 0;
+      return acc;
+    },
+    {},
+  );
 
   post?.references.forEach((reference) => {
-    score[reference] += 6;
+    scoreMap[reference] += 6;
   });
 
   post?.backlinks.forEach((backlink) => {
-    score[backlink.href] += 3;
+    scoreMap[backlink.href] += 3;
   });
 
   post?.tags.forEach((tag) => {
     allPosts.forEach(({ tags, href }) => {
       if (tags.includes(tag)) {
-        score[href] += 1;
+        scoreMap[href] += 1;
       }
     });
   });
@@ -510,7 +513,7 @@ export const getPostAndRecommendations = async (params: GetPostParams) => {
     zettel: 0,
   };
 
-  const recommendations = Object.entries(score)
+  const recommendations = Object.entries(scoreMap)
     .map(([href, score]) => {
       const post = allPosts.find((post) => post.href === href);
       return [post, score] as const;
@@ -525,7 +528,7 @@ export const getPostAndRecommendations = async (params: GetPostParams) => {
 
       return scoreB - scoreA;
     })
-    .filter(([post]) => !!post)
+    .filter(([post, score]) => !!post && score > 0)
     .map(([post]) => getOnlyRecommendationProperties(post as Post))
     /**
      * Remove itself from recommendations.
