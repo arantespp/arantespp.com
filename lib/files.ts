@@ -364,7 +364,7 @@ const addFinalParametersToPost = async (post: GroupPostFromMarkdown) => {
   });
 
   /**
-   * Array of all hrefs that `post` references.
+   * Array of all hrefs that `post` use as references.
    */
   const references = allMarkdownGroupPosts.reduce((acc, { href }) => {
     if (post.content.includes(`(${href})`)) {
@@ -375,25 +375,13 @@ const addFinalParametersToPost = async (post: GroupPostFromMarkdown) => {
   }, []);
 
   /**
-   * Add backlinks to post.
+   * Add backlinks to post. `Post` component will render backlinks.
    */
   const backlinks = allMarkdownGroupPosts
     .filter(({ content }) => content.includes(`(${post.href})`))
     .map(({ href, title }) => ({ title, href }));
 
-  const newContent = (() => {
-    if (backlinks.length === 0) {
-      return post.content;
-    }
-
-    return [
-      post.content,
-      '## Backlinks',
-      ...backlinks.map(({ href, title }) => `- [${title}](${href})`),
-    ].join('\n');
-  })();
-
-  return { ...post, references, backlinks, content: newContent };
+  return { ...post, references, backlinks };
 };
 
 export type Post = NonNullable<
@@ -416,12 +404,31 @@ export const getPosts = async ({ group }: { group?: Group } = {}) => {
   return _allPosts.filter(filterByGroup(group));
 };
 
-// /**
-//  * Remove duplicated posts that may come from group and tags posts.
-//  * https://stackoverflow.com/a/56757215/8786986
-//  */
-//  const removeDuplicatedPosts = (post: Post, index: number, arr: Post[]) =>
-//  arr.findIndex(({ href }) => href === post.href) === index;
+const RECOMMENDATIONS_LIMIT = 10;
+
+const getOnlyRecommendationProperties = (post: Post) => {
+  const {
+    title,
+    excerpt,
+    tags,
+    group,
+    href,
+    draft,
+    formattedDate,
+    readingTime,
+  } = post;
+
+  return {
+    title,
+    excerpt,
+    tags,
+    group,
+    href,
+    draft,
+    formattedDate,
+    readingTime,
+  };
+};
 
 export const getRecommendations = async ({
   group,
@@ -443,30 +450,8 @@ export const getRecommendations = async ({
     return getPosts({ group: 'blog' });
   })();
 
-  const RECOMMENDATIONS_LIMIT = 10;
-
   const recommendations = fullRecommendations
-    .map(
-      ({
-        title,
-        excerpt,
-        tags,
-        group,
-        href,
-        draft,
-        formattedDate,
-        readingTime,
-      }) => ({
-        title,
-        excerpt,
-        tags,
-        group,
-        href,
-        draft,
-        formattedDate,
-        readingTime,
-      }),
-    )
+    .map(getOnlyRecommendationProperties)
     .slice(0, RECOMMENDATIONS_LIMIT);
 
   return recommendations;
@@ -496,11 +481,65 @@ export const getPost = async (params: GetPostParams) => {
 };
 
 export const getPostAndRecommendations = async (params: GetPostParams) => {
-  const post = await getPost(params);
+  const [post, allPosts] = await Promise.all([getPost(params), getPosts()]);
 
-  const recommendations = await getRecommendations({
-    group: post?.group,
+  const score = allPosts.reduce<{ [key: string]: number }>((acc, { href }) => {
+    acc[href] = 0;
+    return acc;
+  }, {});
+
+  post?.references.forEach((reference) => {
+    score[reference] += 6;
   });
+
+  post?.backlinks.forEach((backlink) => {
+    score[backlink.href] += 3;
+  });
+
+  post?.tags.forEach((tag) => {
+    allPosts.forEach(({ tags, href }) => {
+      if (tags.includes(tag)) {
+        score[href] += 1;
+      }
+    });
+  });
+
+  const groupScore: { [key in Group]: number } = {
+    blog: 1,
+    books: 2,
+    zettel: 0,
+  };
+
+  const recommendations = Object.entries(score)
+    .map(([href, score]) => {
+      const post = allPosts.find((post) => post.href === href);
+      return [post, score] as const;
+    })
+    .sort(([postA, scoreA], [postB, scoreB]) => {
+      /**
+       * If the score is the same, sort by group.
+       */
+      if (scoreA === scoreB && postA && postB) {
+        return groupScore[postB.group] - groupScore[postA.group];
+      }
+
+      return scoreB - scoreA;
+    })
+    .filter(([post]) => !!post)
+    .map(([post]) => getOnlyRecommendationProperties(post as Post))
+    /**
+     * Remove itself from recommendations.
+     */
+    .filter(({ href }) => href !== post?.href)
+    .slice(0, RECOMMENDATIONS_LIMIT)
+    .map((recommendation) => {
+      return {
+        ...recommendation,
+        isReference:
+          post?.references.includes(recommendation.href) ||
+          post?.backlinks.some(({ href }) => href === recommendation.href),
+      };
+    });
 
   return { post, recommendations };
 };

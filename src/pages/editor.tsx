@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { NextSeo } from 'next-seo';
+import { Post } from '../../lib/files';
+import { postTitleToSlug } from '../../lib/postTitleToSlug';
 import { useQuery } from 'react-query';
 import { useRouter } from 'next/router';
-
-import { postTitleToSlug } from '../../lib/postTitleToSlug';
-import type { Post } from '../../lib/files';
-
 import PostEditor from '../components/PostEditor';
 
 const Editor = () => {

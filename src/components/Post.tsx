@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 import { Box, Flex, Themed } from 'theme-ui';
 import { Draft, Post } from '../../lib/files';
@@ -37,6 +38,18 @@ const PostComponent = ({ post }: { post: Post | Draft }) => {
   const isBook = book && group === 'books';
 
   const isArticle = !isBook;
+
+  const content = React.useMemo(() => {
+    if ('backlinks' in post) {
+      return [
+        post.content,
+        '## Backlinks',
+        ...post.backlinks.map(({ href, title }) => `- [${title}](${href})`),
+      ].join('\n');
+    }
+
+    return post.content;
+  }, [post]);
 
   return (
     <>
@@ -103,7 +116,7 @@ const PostComponent = ({ post }: { post: Post | Draft }) => {
       <Box sx={{ marginBottom: [5] }}>
         {!!book && <BookHeader book={book} />}
       </Box>
-      <Markdown content={post.content} />
+      <Markdown content={content} />
       <Flex
         sx={{
           width: '100%',

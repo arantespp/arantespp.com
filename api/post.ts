@@ -6,7 +6,7 @@ import { savePost } from '../lib/savePost';
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     const args = req.query as any;
-    res.status(200).json(getPost(args) || getDraft(args));
+    res.status(200).json((await getPost(args)) || (await getDraft(args)));
     return;
   }
 

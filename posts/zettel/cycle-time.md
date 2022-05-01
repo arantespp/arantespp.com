@@ -1,5 +1,4 @@
 ---
-image: null
 book: null
 draft: false
 tags:
@@ -7,30 +6,34 @@ tags:
   - business
   - product-development
   - time-to-market
-rating: 3
 date: '2022-04-21'
 excerpt: >-
   If a company takes ten days to deliver a feature to its customer on average,
   its cycle time is ten days.
 title: Cycle Time
-group: zettelkasten
+group: zettel
 formattedDate: 'April 21, 2022'
-updatedAt: 'April 22, 2022'
+updatedAt: 'May 01, 2022'
 updateHistory: >-
-  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/cycle-time.md
-href: /zettelkasten/cycle-time
-as: /z/cycle-time
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/cycle-time.md
+href: /zettel/cycle-time
 slug: cycle-time
 editLink: >-
-  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/cycle-time.md
-url: 'https://arantespp.com/zettelkasten/cycle-time'
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/cycle-time.md
+url: 'https://arantespp.com/zettel/cycle-time'
 keywords:
-  - zettelkasten
+  - zettel
   - agile
   - business
   - product-development
   - time-to-market
 readingTime: 1
+references:
+  - /zettel/little-s-law
+  - /zettel/business-agility
+backlinks:
+  - title: Flow Efficiency
+    href: /zettel/flow-efficiency
 ---
 
 ## Notes
@@ -45,7 +48,7 @@ readingTime: 1
 
 - One goal of [business agility](/zettel/business-agility) is to reduce cycle time.
 
-- To measure the cycle time, the product manager must consider the working and waiting times. For instance, if the team has worked on a feature for one day (active working time) and it has taken nine days to wait for some approval, its cycle time was ten days.
+- The product manager must consider the working and waiting times to measure the cycle time. For instance, if the team has worked on a feature for one day (active working time) and it has taken nine days to wait for some approval, its cycle time was ten days.
 
 - You can use the [Little's Law](/zettel/little-s-law) to find the average cycle time $W$ given the average WIP $L$ and the average throughput $\lambda$.
 

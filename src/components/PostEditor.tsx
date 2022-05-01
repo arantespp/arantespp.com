@@ -31,7 +31,6 @@ const schema = yup.object({
    */
   excerpt: yup.string().min(50).max(160),
   date: yup.string(),
-  rating: yup.number().positive().integer().required(),
   tags: yup.string(),
   content: yup.string().required(),
   draft: yup.boolean(),
@@ -77,7 +76,6 @@ const PostEditor = ({
 }) => {
   const defaultValues = React.useMemo(
     (): Partial<PostForm> => ({
-      rating: 3,
       group: 'zettelkasten',
       content: '',
       tags: '',
@@ -120,7 +118,7 @@ const PostEditor = ({
 
     reset(
       post
-        ? { ...post, tags: post.tags.join('; ') }
+        ? { ...post, tags: post?.tags?.join('; ') }
         : { ...defaultValues, title: watch('title') },
       {
         keepDefaultValues: false,
@@ -214,10 +212,6 @@ const PostEditor = ({
         ))}
       </Select>
       <ErrorMessage errors={errors} name="group" />
-
-      <Label>Rating</Label>
-      <Input {...register('rating')} type="number" />
-      <ErrorMessage errors={errors} name="rating" />
 
       <Label>Tags</Label>
       <Textarea rows={3} {...register('tags')} />
