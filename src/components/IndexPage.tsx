@@ -1,9 +1,8 @@
 import { Box } from 'theme-ui';
 import { NextSeo } from 'next-seo';
+import { Recommendation } from '../../lib/filesv2';
 import { pascalCase } from 'change-case';
 import dynamic from 'next/dynamic';
-
-import { Recommendation } from '../../lib/files';
 
 const Markdown = dynamic(() => import('./Markdown'));
 const Recommendations = dynamic(() => import('./Recommendations'));

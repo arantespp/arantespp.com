@@ -1,13 +1,12 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import { getFile } from '../../../lib/files';
+import {
+  getPostAndRecommendations,
+  getPosts,
+  getRecommendations,
+} from '../../../lib/filesv2';
 import { titleCase } from 'title-case';
 import dynamic from 'next/dynamic';
-
-import {
-  getAllPosts,
-  getFile,
-  getPostAndPostsRecommendations,
-  getRecommendations,
-} from '../../../lib/files';
 
 const IndexPage = dynamic(() => import('../../components/IndexPage'));
 const Post = dynamic(() => import('../../components/Post'));
@@ -19,7 +18,7 @@ const Recommendations = dynamic(
 const indexes = ['blog', 'zettelkasten', 'now', 'me'];
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allBlogPosts = getAllPosts().filter(({ group }) => group === 'blog');
+  const allBlogPosts = await getPosts({ group: 'blog' });
 
   return {
     paths: [
@@ -37,7 +36,8 @@ export const getStaticProps = async ({
 }) => {
   if (indexes.includes(path)) {
     const { data = {}, content = '' } = getFile(`${path}.md`) || {};
-    const recommendations = getRecommendations({ all: true });
+    const group = path === 'zettelkasten' ? 'zettel' : 'blog';
+    const recommendations = await getRecommendations({ group });
     const { excerpt = null } = data;
 
     return {
@@ -52,13 +52,9 @@ export const getStaticProps = async ({
     };
   }
 
-  const post = getPostAndPostsRecommendations({ slug: path, group: 'blog' });
+  const post = await getPostAndRecommendations({ slug: path, group: 'blog' });
 
-  return {
-    props: {
-      post,
-    },
-  };
+  return { props: { post } };
 };
 
 const GroupIndex = ({

@@ -4,13 +4,12 @@ import { NextSeo } from 'next-seo';
 
 import Tag from '../../components/Tag';
 
-import { getAllTags } from '../../../lib/files';
+import { getAllTags } from '../../../lib/filesv2';
 
 export const getStaticProps = async () => {
-  const tags = getAllTags();
-  return {
-    props: { tags },
-  };
+  const tags = await getAllTags();
+  console.log(tags);
+  return { props: { tags } };
 };
 
 const TagsIndex = ({

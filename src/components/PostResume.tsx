@@ -1,12 +1,10 @@
 import { Box, Flex, Message, Text } from 'theme-ui';
+import { Recommendation } from '../../lib/filesv2';
 import { pascalCase } from 'change-case';
-
-import type { PostWithoutContent } from '../../lib/files';
-
 import Link from './Link';
 import Tag from './Tag';
 
-const PostResume = ({ post }: { post: PostWithoutContent }) => {
+const PostResume = ({ post }: { post: Recommendation }) => {
   const { excerpt, group, formattedDate, tags, href, readingTime } = post;
 
   const newGroup = group === 'zettel' ? 'zettelkasten' : group;

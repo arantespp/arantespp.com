@@ -1,9 +1,7 @@
 import { Box, Button, Flex, Text, Themed } from 'theme-ui';
+import { Flashcard as FlashcardType } from '../../lib/getFlashcard';
 import { NextSeo } from 'next-seo';
 import { useQuery } from 'react-query';
-
-import { Flashcard as FlashcardType } from '../../lib/getFlashcard';
-
 import Flashcard from '../components/Flashcard';
 import Loading from '../components/Loading';
 

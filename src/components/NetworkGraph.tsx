@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { Box, Button, Flex, Input, useThemeUI } from 'theme-ui';
+import { Recommendation } from '../../lib/filesv2';
+import { theme } from '../theme';
 import { useResponsiveValue } from '@theme-ui/match-media';
 import ForceGraph3D, { ForceGraphMethods } from 'react-force-graph-3d';
 import SpriteText from 'three-spritetext';
-
-import { PostWithoutContent } from '../../lib/files';
-
-import { theme } from '../theme';
 
 const nodeColors: { [key: string]: string } = {
   post: theme.colors?.secondary as string,
@@ -19,7 +17,7 @@ const SearchInput = ({
   allPosts,
 }: {
   setSelectedNodeId: (id: string) => void;
-  allPosts: PostWithoutContent[];
+  allPosts: Recommendation[];
 }) => {
   const [inputValue, setInputValue] = React.useState('');
 
@@ -70,7 +68,7 @@ const NetworkGraph = ({
   graphData: { nodes: any; links: any };
   selectedNodeId?: string;
   setSelectedNodeId: (id: string) => void;
-  allPosts: PostWithoutContent[];
+  allPosts: Recommendation[];
 }) => {
   const { theme } = useThemeUI();
 

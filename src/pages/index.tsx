@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 import { Themed } from 'theme-ui';
-import { getRecommendations } from '../../lib/files';
+import { getRecommendations } from '../../lib/filesv2';
 import dynamic from 'next/dynamic';
 
 const Link = dynamic(() => import('../components/Link'));
@@ -9,7 +9,7 @@ const Recommendations = dynamic(() => import('../components/Recommendations'));
 const PostFooter = dynamic(() => import('../components/PostFooter'));
 
 export const getStaticProps = async () => {
-  const recommendations = getRecommendations({ all: true });
+  const recommendations = await getRecommendations();
   return { props: { recommendations } };
 };
 

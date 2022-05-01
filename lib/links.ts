@@ -43,8 +43,8 @@ export const getRedirects = async () => {
       destination: '/zettel/:path*',
     },
     {
-      source: '/zettelkasten/:path*',
-      destination: '/zettel/:path*',
+      source: '/zettelkasten/:path',
+      destination: '/zettel/:path',
     },
     {
       source: '/a/:path*',

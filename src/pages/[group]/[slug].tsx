@@ -1,11 +1,10 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
-import dynamic from 'next/dynamic';
-
 import {
   Group,
-  allPosts,
-  getPostAndPostsRecommendations,
-} from '../../../lib/files';
+  getPostAndRecommendations,
+  getPosts,
+} from '../../../lib/filesv2';
+import dynamic from 'next/dynamic';
 
 const Post = dynamic(() => import('../../components/Post'));
 const NotFound = dynamic(() => import('../../components/NotFound'));
@@ -14,7 +13,7 @@ const Recommendations = dynamic(
 );
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: allPosts
+  paths: (await getPosts())
     .filter(({ group }) => group !== 'blog')
     .map(({ group, slug }) => ({
       params: { group, slug },
@@ -27,7 +26,7 @@ export const getStaticProps = async ({
 }: {
   params: { group: Group; slug: string };
 }) => ({
-  props: getPostAndPostsRecommendations({ slug, group }),
+  props: await getPostAndRecommendations({ slug, group }),
 });
 
 const GroupSlug = ({

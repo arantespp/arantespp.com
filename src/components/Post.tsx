@@ -1,24 +1,19 @@
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 import { Box, Flex, Themed } from 'theme-ui';
-import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
-
+import { Draft, Post } from '../../lib/filesv2';
+import { PostFooter } from './PostFooter';
 import { editPost } from '../../shortcuts';
-
 import { useContentEditable } from '../hooks/useContentEditable';
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
-
-import type { Post } from '../../lib/files';
-
-import { PostFooter } from './PostFooter';
+import { useRouter } from 'next/router';
 import BookHeader from './BookHeader';
 import NetworkLink from './NetworkLink';
 import PostResume from './PostResume';
-import SharePost from './SharePost';
+import dynamic from 'next/dynamic';
 
 const Markdown = dynamic(() => import('./Markdown'));
 
-const PostComponent = ({ post }: { post: Post }) => {
+const PostComponent = ({ post }: { post: Post | Draft }) => {
   const ref = useContentEditable();
 
   const {
@@ -120,7 +115,6 @@ const PostComponent = ({ post }: { post: Post }) => {
         <NetworkLink nodeId={href} />
       </Flex>
       <PostFooter />
-      <SharePost post={post} />
     </>
   );
 };

@@ -1,10 +1,9 @@
 import * as React from 'react';
+import { Post } from '../../lib/filesv2';
 import { findBestMatch } from 'string-similarity';
 import { useDebounce } from 'use-debounce';
 
-import { PostWithoutContent } from '../../lib/files';
-
-const postPropertiesToBeCompared: Array<keyof PostWithoutContent> = [
+const postPropertiesToBeCompared: Array<keyof Post> = [
   'title',
   'tags',
   'excerpt',
@@ -14,14 +13,14 @@ const MAX_POSTS_BEST_MATCHES = 5;
 
 const POST_MIN_RATING = 0.2;
 
-const sortByDate = (postA: PostWithoutContent, postB: PostWithoutContent) => {
+const sortByDate = (postA: Post, postB: Post) => {
   return postB.date.localeCompare(postA.date);
 };
 
 export const useSearchPosts = ({
   allPosts,
 }: {
-  allPosts: PostWithoutContent[];
+  allPosts: Omit<Post, 'content'>[];
 }) => {
   const [search, setSearch] = React.useState('');
   const [debouncedSearch] = useDebounce(search, 500);

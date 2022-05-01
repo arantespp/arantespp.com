@@ -1,9 +1,7 @@
 import { Flex, Link, Text } from 'theme-ui';
+import { Recommendation } from '../../lib/filesv2';
 import NextLink from 'next/link';
-
 import RecommendationsList from './RecommendationsList';
-
-import type { Recommendation } from '../../lib/files';
 
 const Recommendations = ({
   recommendations,

@@ -2,11 +2,9 @@ import * as dateFns from 'date-fns';
 import { Box, Themed } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
-
-import { Post, allPosts } from '../../lib/files';
+import { Post, getPosts } from '../../lib/filesv2';
 import { getClosestLastWeekDay } from '../../lib/getClosestLastWeekDay';
 import { getNextNewsletterDate } from '../../lib/getNextNewsletterDate';
-
 import Link from '../components/Link';
 import RecommendationsList from '../components/RecommendationsList';
 
@@ -42,7 +40,7 @@ const filterDigestPosts =
   };
 
 export const getStaticProps = async () => {
-  const posts = allPosts
+  const posts = (await getPosts())
     .filter(filterDigestPosts({ week: false }))
     .sort(
       (postA, postB) =>

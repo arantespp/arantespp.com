@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Box, Flex, Input, Text, Themed } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
-import { getAllPosts } from '../../lib/files';
+import { getPosts } from '../../lib/filesv2';
 import { useSearchPosts } from '../hooks/useSearchPosts';
 import RecommendationsList from '../components/RecommendationsList';
 
 export const getStaticProps = async () => {
-  const allPosts = (await getAllPosts()).map(({ content, ...rest }) => rest);
+  const allPosts = (await getPosts()).map(({ content, ...rest }) => rest);
 
   return {
     props: {

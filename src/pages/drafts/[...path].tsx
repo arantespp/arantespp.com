@@ -1,13 +1,12 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import { Group, getDraft, getDrafts } from '../../../lib/filesv2';
 import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
-
-import { Group, getDraft, getDrafts } from '../../../lib/files';
 
 const Post = dynamic(() => import('../../components/Post'));
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: getDrafts().map(({ group, slug }) => ({
+  paths: (await getDrafts()).map(({ group, slug }) => ({
     params: { path: [group, slug] },
   })),
   fallback: false,
@@ -19,7 +18,7 @@ export const getStaticProps = async ({
   params: { path: string[] };
 }) => {
   const [group, slug] = path;
-  const draft = getDraft({ group: group as Group, slug });
+  const draft = await getDraft({ group: group as Group, slug });
 
   if (!draft) {
     throw new Error();

@@ -2,23 +2,20 @@ import * as React from 'react';
 import { Box, Flex, Text } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
+import { getAllTags, getPosts } from '../../lib/filesv2';
 import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
-
-// import { nodeColors } from '../components/NetworkGraph';
 import FullWidth from '../components/FullWidth';
 import RecommendationCard from '../components/RecommendationCard';
 import Tag from '../components/Tag';
-
-import { getAllTags, getPosts } from '../../lib/files';
+import dynamic from 'next/dynamic';
 
 const NetworkGraph = dynamic(() => import('../components/NetworkGraph'), {
   ssr: false,
 });
 
 export const getStaticProps = async () => {
-  const allPosts = getPosts({ all: true });
-  const allTags = getAllTags();
+  const allPosts = await getPosts();
+  const allTags = await getAllTags();
 
   const postsNodes = allPosts.map(({ href, title }) => ({
     id: href,
