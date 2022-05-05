@@ -37,8 +37,6 @@ keywords:
 readingTime: 1
 ---
 
-[Article: An Effortless Way to Improve Your Memory](https://getpocket.com/explore/item/an-effortless-way-to-improve-your-memory)
-
 ## Notes
 
 - Your memory retains more if you spend 10 to 15 minutes doing nothing instead of doing something productive after studying. Pacing your studies with minimal interferences during these breaks helps the process of memory consolidation.

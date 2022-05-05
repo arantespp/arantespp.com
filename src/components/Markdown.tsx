@@ -131,7 +131,7 @@ const Markdown = ({
   const ref = useContentEditable();
 
   return (
-    <Box ref={ref}>
+    <Box ref={ref} as="article">
       <ReactMarkdown
         components={{ ...getComponents({ noH1 }), ...components }}
         /**

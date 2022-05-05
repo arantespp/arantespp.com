@@ -41,6 +41,10 @@ const PostComponent = ({ post }: { post: Post | Draft }) => {
 
   const content = React.useMemo(() => {
     if ('backlinks' in post) {
+      if (post.backlinks.length === 0) {
+        return post.content;
+      }
+
       return [
         post.content,
         '## Backlinks',

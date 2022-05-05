@@ -404,7 +404,7 @@ export const getPosts = async ({ group }: { group?: Group } = {}) => {
   return _allPosts.filter(filterByGroup(group));
 };
 
-const RECOMMENDATIONS_LIMIT = 10;
+const RECOMMENDATIONS_LIMIT = 7;
 
 const getOnlyRecommendationProperties = (post: Post) => {
   const {
@@ -466,18 +466,25 @@ type GetPostParams =
       group: Group;
       slug: string;
     }
-  | { href: string };
+  | { href: string }
+  | { title: string };
 
 export const getPost = async (params: GetPostParams) => {
-  const allPosts = await getPosts();
+  const allPosts = [...(await getPosts()), ...(await getDrafts())] as Post[];
 
   if ('href' in params) {
     return allPosts.find((post) => post.href === params.href);
   }
 
-  return allPosts.find(
+  if ('title' in params) {
+    return allPosts.find((post) => post.title === params.title);
+  }
+
+  const post = allPosts.find(
     (post) => post.group === params.group && post.slug === params.slug,
   );
+
+  return post;
 };
 
 export const getPostAndRecommendations = async (params: GetPostParams) => {

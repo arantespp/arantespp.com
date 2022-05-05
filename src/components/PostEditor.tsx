@@ -76,7 +76,7 @@ const PostEditor = ({
 }) => {
   const defaultValues = React.useMemo(
     (): Partial<PostForm> => ({
-      group: 'zettelkasten',
+      group: 'zettel',
       content: '',
       tags: '',
       excerpt: '',

@@ -44,7 +44,7 @@ const Editor = () => {
 
   return (
     <>
-      <NextSeo nofollow noindex />
+      <NextSeo nofollow noindex title="Editor" />
       <PostEditor post={post} onCheckIfPostExists={onCheckIfPostExists} />
     </>
   );
