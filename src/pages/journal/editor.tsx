@@ -1,61 +1,24 @@
 import * as React from 'react';
 import * as dateFns from 'date-fns';
-import { NextSeo } from 'next-seo';
-import { useQuery } from 'react-query';
-import Router, { useRouter } from 'next/router';
-
 import { Box, Flex, Input, Text, Themed } from 'theme-ui';
-
+import { Journal } from '../../../lib/journal';
 import { JournalSearchName } from '../../components/JournalSearchName';
+import { NextSeo } from 'next-seo';
+import { getToday } from '../../../lib/getToday';
+import { useApiKey } from '../../hooks/useApiKey';
+import { useQuery } from 'react-query';
+import { useQueryParamsDateOrToday } from '../../hooks/useQueryParamsDateOrToday';
 import Editor from '../../components/Editor';
 import ErrorMessage from '../../components/ErrorMessage';
 import Link from '../../components/Link';
-
-import { Journal } from '../../../lib/journal';
-import { getToday } from '../../../lib/getToday';
-
-import { useApiKey } from '../../hooks/useApiKey';
-
-const useNextQueryParams = (): { [key: string]: string } => {
-  const router = useRouter();
-
-  const value = React.useMemo(() => {
-    // @see https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
-    const queryParamsStr = router.asPath.split('?').slice(1).join('');
-    const urlSearchParams = new URLSearchParams(queryParamsStr);
-    // the first key might be in the shape "/assets?foobar", we must change to "foobar"
-    const params = Object.fromEntries(urlSearchParams.entries());
-    return params;
-  }, [router.asPath]);
-
-  return value;
-};
-
-const useDate = () => {
-  const { asPath, push } = useRouter();
-
-  const query = useNextQueryParams();
-
-  const date = query.date || getToday();
-
-  /**
-   * Add `date` to the URL if it's not already there. It's easier to edit date if needed.
-   */
-  React.useEffect(() => {
-    if (!asPath.includes('?date=')) {
-      push({ pathname: asPath, query: { date } });
-    }
-  }, [asPath, date, push, query.date]);
-
-  return date;
-};
+import Router, { useRouter } from 'next/router';
 
 const AUTO_SAVE_DELAY = 500;
 
 const useAutoSave = (content: string) => {
   const { apiKey } = useApiKey();
 
-  const date = useDate();
+  const { date } = useQueryParamsDateOrToday();
 
   const [error, setError] = React.useState('');
 
@@ -128,7 +91,7 @@ const useAutoSave = (content: string) => {
 };
 
 const useContent = () => {
-  const date = useDate();
+  const { date } = useQueryParamsDateOrToday();
 
   const { apiKey } = useApiKey();
 

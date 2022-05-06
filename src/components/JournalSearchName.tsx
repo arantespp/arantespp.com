@@ -1,10 +1,8 @@
 import * as React from 'react';
+import { Flex, Text } from 'theme-ui';
+import { useApiKey } from '../hooks/useApiKey';
 import { useQuery } from 'react-query';
 import getCaretCoordinates from 'textarea-caret';
-
-import { Flex, Text } from 'theme-ui';
-
-import { useApiKey } from '../hooks/useApiKey';
 
 type Contact = { firstName: string; completeName: string; url: string };
 
@@ -94,7 +92,7 @@ export const JournalSearchName = ({
 
       const content = textAreaRef.current?.value.replace(
         query,
-        `[${contact.firstName}](${contact.url})`,
+        `[${contact.firstName}](${contact.url}) `,
       );
 
       /**

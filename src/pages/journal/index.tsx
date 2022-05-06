@@ -1,22 +1,19 @@
 import * as React from 'react';
-import { NextSeo } from 'next-seo';
-import { useQuery } from 'react-query';
-
 import { JournalsSummary } from '../../../lib/journal';
-import { getToday } from '../../../lib/getToday';
-
+import { NextSeo } from 'next-seo';
+import { useApiKey } from '../../hooks/useApiKey';
+import { useQuery } from 'react-query';
+import { useQueryParamsDateOrToday } from '../../hooks/useQueryParamsDateOrToday';
 import Journal from '../../components/Journal';
 import Link from '../../components/Link';
 
-import { useApiKey } from '../../hooks/useApiKey';
-
 const useJournalsSummary = () => {
-  const today = getToday();
+  const { date } = useQueryParamsDateOrToday();
 
   const { apiKey } = useApiKey();
 
   const { data } = useQuery(
-    `/api/journal/summary?date=${today}`,
+    `/api/journal/summary?date=${date}`,
     async ({ queryKey }) => {
       return fetch(queryKey[0], {
         headers: {
@@ -24,7 +21,7 @@ const useJournalsSummary = () => {
         },
       }).then((r): Promise<{ summary: JournalsSummary }> => r.json());
     },
-    { enabled: Boolean(today && apiKey) },
+    { enabled: Boolean(date && apiKey) },
   );
 
   const summary = data?.summary?.reduce((acc, { key, journal }) => {

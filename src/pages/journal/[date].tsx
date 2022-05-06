@@ -1,12 +1,10 @@
 import { Flex } from 'theme-ui';
 import { NextSeo } from 'next-seo';
+import { useApiKey } from '../../hooks/useApiKey';
 import { useQuery } from 'react-query';
 import { useRouter } from 'next/router';
-
 import Journal from '../../components/Journal';
 import Link from '../../components/Link';
-
-import { useApiKey } from '../../hooks/useApiKey';
 
 const JournalPage = () => {
   const { apiKey } = useApiKey();
