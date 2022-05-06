@@ -1,28 +1,11 @@
 import * as React from 'react';
-import { useRouter } from 'next/router';
 import Script from 'next/script';
 
 const env = process.env.NODE_ENV;
 
 export const GTM_ID = 'GTM-PPHFWMF';
 
-export const pageview = (url) => {
-  (window as any)?.dataLayer?.push({
-    event: 'pageview',
-    page: url,
-  });
-};
-
 export const TagManager = () => {
-  const router = useRouter();
-
-  React.useEffect(() => {
-    router.events.on('routeChangeComplete', pageview);
-    return () => {
-      router.events.off('routeChangeComplete', pageview);
-    };
-  }, [router.events]);
-
   if (env !== 'production') {
     return null;
   }
