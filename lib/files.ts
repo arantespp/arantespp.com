@@ -404,7 +404,7 @@ export const getPosts = async ({ group }: { group?: Group } = {}) => {
   return _allPosts.filter(filterByGroup(group));
 };
 
-const RECOMMENDATIONS_LIMIT = 7;
+const RECOMMENDATIONS_LIMIT = 5;
 
 const getOnlyRecommendationProperties = (post: Post) => {
   const {

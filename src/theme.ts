@@ -151,7 +151,7 @@ const partialTheme = {
       fontSize: 6,
       marginY: 5,
       wordBreak,
-      textAlign: ['center', null, 'left'],
+      textAlign: ['left'],
     },
     h2: {
       fontSize: 5,
