@@ -1,10 +1,16 @@
 import * as React from 'react';
 import { Box, Button, Flex, Input, useThemeUI } from 'theme-ui';
+import { ForceGraphMethods as ForceGraph2DMethods } from 'react-force-graph-2d';
+import { ForceGraphMethods as ForceGraph3DMethods } from 'react-force-graph-3d';
+import { Loading } from './Loading';
 import { Recommendation } from '../../lib/files';
 import { theme } from '../theme';
 import { useResponsiveValue } from '@theme-ui/match-media';
-import ForceGraph3D, { ForceGraphMethods } from 'react-force-graph-3d';
 import SpriteText from 'three-spritetext';
+import dynamic from 'next/dynamic';
+
+const ForceGraph2D = dynamic(() => import('react-force-graph-2d'));
+const ForceGraph3D = dynamic(() => import('react-force-graph-3d'));
 
 const nodeColors: { [key: string]: string } = {
   post: theme.colors?.secondary as string,
@@ -72,7 +78,13 @@ const NetworkGraph = ({
 }) => {
   const { theme } = useThemeUI();
 
-  const forceGraphRef = React.useRef<ForceGraphMethods>();
+  const darkBackgroundColor = theme?.rawColors?.modes?.dark
+    ?.background as string;
+
+  const forceGraph2DRef = React.useRef<ForceGraph2DMethods>();
+  const forceGraph3DRef = React.useRef<ForceGraph3DMethods>();
+
+  const [show2D, setShow2D] = React.useState(true);
 
   const [{ height, width }, setDimensions] = React.useState({
     height: 0,
@@ -84,7 +96,7 @@ const NetworkGraph = ({
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
       setDimensions({
-        height: 0.7 * window.innerHeight,
+        height: 0.8 * window.innerHeight,
         width: widthPercentage * window.innerWidth,
       });
     }
@@ -94,56 +106,99 @@ const NetworkGraph = ({
     return null;
   }
 
+  const graphCommonProps = {
+    height,
+    width,
+    graphData,
+    nodeOpacity: 0.9,
+    nodeResolution: 32,
+    onNodeClick: (node: any) => {
+      setSelectedNodeId(node.id);
+    },
+    nodeColor: (node: any) => {
+      if (selectedNodeId === node.id) {
+        return nodeColors.selectedNode;
+      }
+
+      if (node.group === 'post') {
+        return nodeColors.post;
+      }
+
+      return nodeColors.tag;
+    },
+  };
+
+  const buttonCommonProps = {
+    position: 'absolute',
+    backgroundColor: 'background',
+    color: 'text',
+    border: '1px solid',
+    borderColor: 'text',
+  } as const;
+
   return (
     <Flex
       sx={{
         height,
         width,
         position: 'relative',
+        flexDirection: 'column',
       }}
     >
-      <ForceGraph3D
-        backgroundColor={theme?.rawColors?.modes?.dark?.background as string}
-        ref={forceGraphRef}
-        height={height}
-        width={width}
-        graphData={graphData}
-        nodeOpacity={0.9}
-        nodeResolution={32}
-        nodeThreeObjectExtend={true}
-        nodeThreeObject={(node) => {
-          const sprite = new SpriteText(node.name);
-          sprite.color = 'white';
-          sprite.textHeight = 4;
-          return sprite;
-        }}
-        onNodeClick={(node: any) => {
-          setSelectedNodeId(node.id);
-        }}
-        nodeColor={(node: any) => {
-          if (selectedNodeId === node.id) {
-            return nodeColors.selectedNode;
-          }
-
-          if (node.group === 'post') {
-            return nodeColors.post;
-          }
-
-          return nodeColors.tag;
-        }}
-        linkWidth={2}
-      />
+      <React.Suspense fallback={<Loading />}>
+        {show2D ? (
+          <ForceGraph2D
+            ref={forceGraph2DRef}
+            {...graphCommonProps}
+            backgroundColor={theme.rawColors?.background as string}
+            linkColor={() => theme.rawColors?.text as string}
+            linkWidth={0.3}
+            // nodeCanvasObjectMode="replace"
+            // nodeCanvasObject={(node, ctx, globalScale) => {
+            // }}
+          />
+        ) : (
+          <ForceGraph3D
+            ref={forceGraph3DRef}
+            {...graphCommonProps}
+            backgroundColor={darkBackgroundColor}
+            nodeThreeObjectExtend={true}
+            nodeThreeObject={(node) => {
+              const sprite = new SpriteText(node.name);
+              sprite.color = 'white';
+              sprite.textHeight = 4;
+              return sprite;
+            }}
+            linkWidth={2}
+          />
+        )}
+      </React.Suspense>
       <SearchInput setSelectedNodeId={setSelectedNodeId} allPosts={allPosts} />
       <Button
         sx={{
-          position: 'absolute',
-          bottom: 2,
+          ...buttonCommonProps,
           right: 2,
-          backgroundColor: 'transparent',
+          top: 2,
         }}
         onClick={() => {
-          if (forceGraphRef.current) {
-            forceGraphRef.current.zoomToFit();
+          setShow2D(!show2D);
+        }}
+      >
+        {show2D ? '3D' : '2D'}
+      </Button>
+      <Button
+        sx={{
+          ...buttonCommonProps,
+          bottom: 2,
+          right: 2,
+        }}
+        onClick={() => {
+          if (forceGraph2DRef.current) {
+            forceGraph2DRef.current?.zoomToFit?.();
+          }
+
+          if (forceGraph3DRef.current) {
+            forceGraph3DRef.current.zoomToFit?.();
           }
         }}
       >

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Flex, Spinner } from 'theme-ui';
 
-const Loading = ({ delay = 100 }: { delay?: number }) => {
+export const Loading = ({ delay = 100 }: { delay?: number }) => {
   const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
