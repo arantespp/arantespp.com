@@ -22,16 +22,26 @@ export const useQueryParamsDateOrToday = () => {
 
   const query = useNextQueryParams();
 
-  const date = query.date || getToday();
+  const today = getToday();
+
+  const date = query.date || today;
 
   /**
    * Add `date` to the URL if it's not already there. It's easier to edit date if needed.
    */
   React.useEffect(() => {
     if (!asPath.includes('?date=')) {
+      /**
+       * If date is today, do nothing to keep the URL clean to save the URL on
+       * mobile.
+       */
+      if (date === today) {
+        return;
+      }
+
       push({ pathname: asPath, query: { date } });
     }
-  }, [asPath, date, push, query.date]);
+  }, [asPath, date, push, query.date, today]);
 
   return { date };
 };

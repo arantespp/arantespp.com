@@ -213,6 +213,13 @@ const useDateInput = (date: string) => {
       return;
     }
 
+    /**
+     * Do not push if the date is in the future.
+     */
+    if (dateFns.isFuture(dateFns.parseISO(dateInput))) {
+      return;
+    }
+
     push({ pathname, query: { date: dateInput } });
   }, [date, dateInput, pathname, push]);
 
@@ -228,6 +235,14 @@ const JournalEditor = () => {
   const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
 
   const title = 'Journal Editor';
+
+  const disableEditor =
+    isLoadingContent ||
+    /**
+     * `date` and `dateInput` can be different because user can type anything
+     * or `dateInput` can be a future date. In this case, user can't write.
+     */
+    date !== dateInput;
 
   return (
     <>
@@ -253,7 +268,7 @@ const JournalEditor = () => {
       <Box sx={{ marginY: 4 }}>
         <Editor
           ref={textAreaRef}
-          disabled={isLoadingContent}
+          disabled={disableEditor}
           isValid={!!content}
           value={content}
           onChange={(e) => {
@@ -274,7 +289,7 @@ const JournalEditor = () => {
               : { color: 'text' }
           }
         >
-          Saved
+          {disableEditor ? 'Disabled' : 'Saved'}
         </Text>
       </Flex>
       <JournalSearchName {...{ date, setContent, textAreaRef }} />
