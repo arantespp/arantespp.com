@@ -1,6 +1,6 @@
-import { Flex, Link, Text } from 'theme-ui';
+import { Flex, Text } from 'theme-ui';
 import { Recommendation } from '../../lib/files';
-import NextLink from 'next/link';
+import Link from './Link';
 import RecommendationsList from './RecommendationsList';
 
 const Recommendations = ({
@@ -36,17 +36,16 @@ const Recommendations = ({
       >
         Recommendations
       </Text>
-      <NextLink href="/all" passHref>
-        <Link
-          sx={{
-            fontSize: 1,
-            marginBottom: 4,
-            textAlign: 'center',
-          }}
-        >
-          Do you want to see all posts instead?
-        </Link>
-      </NextLink>
+      <Link
+        href="/all"
+        sx={{
+          fontSize: 1,
+          marginBottom: 4,
+          textAlign: 'center',
+        }}
+      >
+        Do you want to see all posts instead?
+      </Link>
       <RecommendationsList recommendations={recommendations} />
     </Flex>
   );

@@ -1,12 +1,8 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { Group, getPostAndRecommendations, getPosts } from '../../../lib/files';
-import dynamic from 'next/dynamic';
-
-const Post = dynamic(() => import('../../components/Post'));
-const NotFound = dynamic(() => import('../../components/NotFound'));
-const Recommendations = dynamic(
-  () => import('../../components/Recommendations'),
-);
+import NotFound from '../../components/NotFound';
+import Post from '../../components/Post';
+import Recommendations from '../../components/Recommendations';
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: (await getPosts())

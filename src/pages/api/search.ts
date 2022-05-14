@@ -1,9 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getPosts } from '../../../lib/files';
+import { searchPosts } from '../../../lib/searchPosts';
 
-const search = async (req: NextApiRequest, res: NextApiResponse) => {
-  const posts = await getPosts();
-  res.status(200).json({ length: posts.length });
+const searchHandler = async (req: NextApiRequest, res: NextApiResponse) => {
+  const { query } = JSON.parse(req.body);
+  const posts = await searchPosts({ query });
+  const postsWithoutContent = posts.map(({ content, ...post }) => post);
+  res.status(200).json({ query, posts: postsWithoutContent });
 };
 
-export default search;
+export default searchHandler;

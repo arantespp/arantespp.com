@@ -9,6 +9,11 @@ import { useResponsiveValue } from '@theme-ui/match-media';
 import SpriteText from 'three-spritetext';
 import dynamic from 'next/dynamic';
 
+/**
+ * Error [ERR_REQUIRE_ESM]: require() of ES Module not supported.
+ * Instead change the require of index.js to a dynamic import() which is
+ * available in all CommonJS modules.
+ */
 const ForceGraph2D = dynamic(() => import('react-force-graph-2d'));
 const ForceGraph3D = dynamic(() => import('react-force-graph-3d'));
 

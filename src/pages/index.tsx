@@ -2,11 +2,8 @@ import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 import { Themed } from 'theme-ui';
 import { getRecommendations } from '../../lib/files';
-import dynamic from 'next/dynamic';
-
-const Link = dynamic(() => import('../components/Link'));
-const Recommendations = dynamic(() => import('../components/Recommendations'));
-const PostFooter = dynamic(() => import('../components/PostFooter'));
+import Link from '../components/Link';
+import Recommendations from '../components/Recommendations';
 
 export const getStaticProps = async () => {
   const recommendations = await getRecommendations();
@@ -44,7 +41,6 @@ const Index = ({
         and improving my value and status. The opportunities that may arise
         doing this blog are endless.
       </Themed.p>
-      <PostFooter />
       <Recommendations recommendations={recommendations} />
     </>
   );

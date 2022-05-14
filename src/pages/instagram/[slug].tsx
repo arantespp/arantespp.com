@@ -1,9 +1,7 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { getInstagramPost, getInstagramPosts } from '../../../lib/instagram';
+import InstagramPost from '../../components/InstagramPost';
 import NotFound from '../../components/NotFound';
-import dynamic from 'next/dynamic';
-
-const InstagramPost = dynamic(() => import('../../components/InstagramPost'));
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: (await getInstagramPosts()).map(({ slug }) => ({

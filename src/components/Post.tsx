@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 import { Box, Flex, Themed } from 'theme-ui';
 import { Draft, Post } from '../../lib/files';
+import { Markdown } from './Markdown';
 import { PostFooter } from './PostFooter';
 import { editPost } from '../../shortcuts';
 import { useContentEditable } from '../hooks/useContentEditable';
@@ -10,9 +11,6 @@ import { useRouter } from 'next/router';
 import BookHeader from './BookHeader';
 import NetworkLink from './NetworkLink';
 import PostResume from './PostResume';
-import dynamic from 'next/dynamic';
-
-const Markdown = dynamic(() => import('./Markdown'));
 
 const PostComponent = ({ post }: { post: Post | Draft }) => {
   const ref = useContentEditable();

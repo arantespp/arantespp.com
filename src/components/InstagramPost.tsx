@@ -10,11 +10,11 @@ import {
   ThemeProvider,
   Themed,
 } from 'theme-ui';
+import { Markdown } from './Markdown';
 import { NextSeo } from 'next-seo';
 import { saveAs } from 'file-saver';
 import JSZip from 'jszip';
 import Loading from './Loading';
-import Markdown from './Markdown';
 import PedroArantes from './PedroArantes';
 import html2canvas from 'html2canvas';
 import type { InstagramPost as InstagramPostProps } from '../../lib/instagram';

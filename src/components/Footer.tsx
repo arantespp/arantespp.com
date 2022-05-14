@@ -1,12 +1,7 @@
-import { Flex, Link, Text } from 'theme-ui';
+import { Flex, Text } from 'theme-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import NextLink from 'next/link';
-
-import PedroArantes from './PedroArantes';
-
 import { socialMediasArr } from '../../lib/socialMedias';
-
-const SHOW_LOGO = false;
+import Link from '../components/Link';
 
 const Footer = () => (
   <Flex
@@ -19,19 +14,6 @@ const Footer = () => (
       padding: [3, 3],
     }}
   >
-    {SHOW_LOGO && (
-      <NextLink href="/" passHref>
-        <PedroArantes
-          sx={{
-            color: 'white',
-            cursor: 'pointer',
-            fontSize: [3],
-            fontWeight: '500',
-            marginRight: [0, 2],
-          }}
-        />
-      </NextLink>
-    )}
     <Flex sx={{ flexWrap: 'wrap', justifyContent: 'center', marginTop: 2 }}>
       {socialMediasArr.map(({ href, faIcon, name }) => (
         <Link
@@ -40,10 +22,7 @@ const Footer = () => (
             fontSize: 3,
             marginX: [2],
           }}
-          target="_blank"
-          rel="noopener noreferrer"
           href={href}
-          aria-label={name}
         >
           <FontAwesomeIcon icon={faIcon} />
         </Link>

@@ -1,83 +1,39 @@
 import * as React from 'react';
-import { Box, Flex, Input, Text, Themed } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
+import { Text, Themed } from 'theme-ui';
 import { getPosts } from '../../lib/files';
-import { useQuery } from 'react-query';
-import { useSearchPosts } from '../hooks/useSearchPosts';
-import RecommendationsList from '../components/RecommendationsList';
+import Link from '../components/Link';
 
 export const getStaticProps = async () => {
-  const allPosts = (await getPosts()).map(({ content, ...rest }) => rest);
+  const posts = await getPosts();
 
   return {
     props: {
-      allPosts,
+      posts: posts
+        .sort((a, b) => a.title.localeCompare(b.title))
+        .map(({ title, href }) => ({ title, href })),
     },
   };
 };
 
-const useSearch = ({ query }: { query?: string } = {}) => {
-  const { data } = useQuery(
-    '/api/search',
-    () => fetch('/api/search').then((r) => r.json()),
-    {},
-  );
-
-  console.log(data);
-};
-
-const FilterBlock = ({
-  children,
-  hidden,
-  title,
-}: {
-  children: React.ReactNode;
-  title: string;
-  hidden?: boolean;
-}) => {
-  if (hidden) {
-    return null;
-  }
-
-  return (
-    <Box
-      sx={{
-        fontSize: 1,
-        paddingBottom: 3,
-      }}
-    >
-      <Text as="p" sx={{ fontWeight: 'bold', paddingBottom: 1 }}>
-        {title}
-      </Text>
-      <Flex sx={{ justifyContent: 'flex-start', flexDirection: 'column' }}>
-        {children}
-      </Flex>
-    </Box>
-  );
-};
-
-const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { setSearch, results } = useSearchPosts({ allPosts });
-
-  useSearch({});
-
+const AllRaw = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <Themed.h1>All Posts</Themed.h1>
+      <Themed.h1>All Posts - Raw</Themed.h1>
 
-      <Box sx={{ marginBottom: 5, marginTop: 5 }}>
-        <FilterBlock title={`Search among ${allPosts.length} posts:`}>
-          <Input
-            autoFocus
-            placeholder="What do you want to read?"
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </FilterBlock>
-      </Box>
+      <Text
+        sx={{ fontStyle: 'italic', marginY: 4, display: 'block', fontSize: 2 }}
+      >
+        <Link href="/search">Search posts.</Link>
+      </Text>
 
-      <RecommendationsList recommendations={results} />
+      {posts.map(({ title, href }) => (
+        <Themed.p key={href}>
+          <Link href={href}>{title}</Link>
+        </Themed.p>
+      ))}
     </>
   );
 };
 
-export default All;
+export default AllRaw;

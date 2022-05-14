@@ -1,9 +1,7 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { Group, getDraft, getDrafts } from '../../../lib/files';
 import { NextSeo } from 'next-seo';
-import dynamic from 'next/dynamic';
-
-const Post = dynamic(() => import('../../components/Post'));
+import Post from '../../components/Post';
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: (await getDrafts()).map(({ group, slug }) => ({

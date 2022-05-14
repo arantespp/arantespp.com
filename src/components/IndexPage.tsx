@@ -1,11 +1,9 @@
 import { Box } from 'theme-ui';
+import { Markdown } from './Markdown';
 import { NextSeo } from 'next-seo';
 import { Recommendation } from '../../lib/files';
 import { pascalCase } from 'change-case';
-import dynamic from 'next/dynamic';
-
-const Markdown = dynamic(() => import('./Markdown'));
-const Recommendations = dynamic(() => import('./Recommendations'));
+import Recommendations from './Recommendations';
 
 const IndexPage = ({
   content,

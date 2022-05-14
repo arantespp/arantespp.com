@@ -11,13 +11,20 @@ const Link: React.FC<LinkProps> = ({ children, ...props }) => {
   if (href.startsWith('/') || href.startsWith('#')) {
     return (
       <NextLink href={href} passHref>
-        <LinkUi {...props}>{children}</LinkUi>
+        <LinkUi aria-label={props.href} {...props}>
+          {children}
+        </LinkUi>
       </NextLink>
     );
   }
 
   return (
-    <LinkUi target="_blank" rel="noopener noreferrer" {...props}>
+    <LinkUi
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={props.href}
+      {...props}
+    >
       {children}
     </LinkUi>
   );

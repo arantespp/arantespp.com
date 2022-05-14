@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Link, Themed } from 'theme-ui';
+import { Themed } from 'theme-ui';
 import { paramCase } from 'change-case';
 import { titleCase } from 'title-case';
 import { useRouter } from 'next/router';
-import NextLink from 'next/link';
+import Link from './Link';
 import url from 'url';
 
 const componentsByLevel = [
@@ -42,30 +42,29 @@ const HeadingLink = ({
       {level === 1 ? (
         children
       ) : (
-        <NextLink href={href} passHref>
-          <Link
-            sx={{
-              cursor: 'pointer',
-              color: 'inherit',
-              textDecoration: 'none',
-              '&:hover': {
-                textDecoration: 'underline',
-              },
-            }}
-          >
-            {React.Children.map(children, (child) => {
-              if (typeof child === 'string') {
-                if (route === '/instagram/[slug]') {
-                  return child;
-                }
-
-                return titleCase(child);
+        <Link
+          href={href}
+          sx={{
+            cursor: 'pointer',
+            color: 'inherit',
+            textDecoration: 'none',
+            '&:hover': {
+              textDecoration: 'underline',
+            },
+          }}
+        >
+          {React.Children.map(children, (child) => {
+            if (typeof child === 'string') {
+              if (route === '/instagram/[slug]') {
+                return child;
               }
 
-              return child;
-            })}
-          </Link>
-        </NextLink>
+              return titleCase(child);
+            }
+
+            return child;
+          })}
+        </Link>
       )}
     </ResolvedComponent>
   );
