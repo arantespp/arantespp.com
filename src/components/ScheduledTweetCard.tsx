@@ -1,10 +1,8 @@
 import * as React from 'react';
 import * as dateFns from 'date-fns';
 import { Button, Flex, Text } from 'theme-ui';
-
-import { useApiKey } from '../hooks/useApiKey';
-
 import { TweetEditor } from './TweetEditor';
+import { useApiKey } from '../hooks/useApiKey';
 
 export type ScheduledTweetProps = {
   text: string;
@@ -143,11 +141,11 @@ export const ScheduledTweetCard = ({
             <Button
               onClick={() => setIsOnUpdatingMode(true)}
               disabled={disabled}
+              sx={{ backgroundColor: 'secondary' }}
             >
               Update
             </Button>
             <Button
-              sx={{ backgroundColor: 'accent' }}
               onDoubleClick={() => setIsOnDeleteConfirmation(true)}
               disabled={disabled}
             >
@@ -175,7 +173,7 @@ export const ScheduledTweetCard = ({
         {renderDeleteConfirmationButtons && (
           <>
             <Button
-              sx={{ backgroundColor: 'accent' }}
+              sx={{ backgroundColor: 'primary' }}
               onClick={deleteScheduledTweet}
               disabled={disabled}
             >

@@ -1,27 +1,48 @@
 ---
-title: The Feynman Technique
-excerpt: It's a method that you can use the learn about anything.
-date: '2020-05-29'
+book: null
+draft: false
 tags:
   - feynman-technique
   - learning
   - richard-feynman
-rating: 2
+date: '2020-05-29'
+excerpt: It's a method that you can use the learn about anything.
+title: The Feynman Technique
+group: zettel
+formattedDate: 'May 29, 2020'
+updatedAt: '2022-04-30'
+formattedUpdatedAt: 'April 30, 2022'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/the-feynman-technique.md
+href: /zettel/the-feynman-technique
+slug: the-feynman-technique
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/the-feynman-technique.md
+url: 'https://arantespp.com/zettel/the-feynman-technique'
+keywords:
+  - zettel
+  - feynman-technique
+  - learning
+  - richard-feynman
+readingTime: 1
+references:
+  - /zettel/reading-metacognitively
+backlinks: []
 ---
 
 ## Notes
 
 - It's a method that you can use the learn about anything.
 
-- It is based on the method [Richard Feynman](/zettel/richard-feynman) originally used.
+- It is based on the method [Richard Feynman](/zettel/richard-feynman) used initially.
 
-- It makes you reading in a [metacognitive](/zettel/reading-metacognitively) way.
+- It makes you read in a [metacognitive](/zettel/reading-metacognitively) way.
 
-- It has 4 steps:
+- It has four steps:
 
   1. Choose the subject you want to learn and write down everything you know about the topic.
 
-  2. Try to explain what you know to a child. When you're speaking with a child, you should be clear and concise.
+  2. Try to explain what you know to a child—you should be clear and concise.
 
      - Clear: children don't understand jargon or a dense vocabulary. You have to speak in plain terms. Also, we can use jargon to hide our lack of knowledge.
 

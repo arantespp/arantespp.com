@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Box, Container } from 'theme-ui';
 import { useApiKey } from '../hooks/useApiKey';
 import Header from './Header'; // Don't dynamic import Header because of cumulative shift layout.
+import Loading from './Loading';
 import dynamic from 'next/dynamic';
 
 const Footer = dynamic(() => import('./Footer'));
@@ -25,7 +26,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           paddingX: 3,
         }}
       >
-        {children}
+        <React.Suspense fallback={<Loading />}>{children}</React.Suspense>
         <Box sx={{ marginTop: 6 }}>
           <Newsletter />
         </Box>
