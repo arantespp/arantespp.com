@@ -57,7 +57,14 @@ const Header = () => {
         borderBottomStyle: 'solid',
       }}
     >
-      <Link href="/" sx={{ color: 'text', textDecoration: 'none' }}>
+      <Link
+        href="/"
+        sx={{
+          color: 'text',
+          textDecoration: 'none',
+          ':hover': { color: 'text' },
+        }}
+      >
         <PedroArantes
           sx={{
             fontSize: [4, 4],

@@ -44,8 +44,10 @@ export const getStaticProps = async ({
         index: {
           content,
           recommendations,
-          title: titleCase(path),
-          excerpt,
+          seo: {
+            title: titleCase(path),
+            description: excerpt,
+          },
         },
       },
     };
