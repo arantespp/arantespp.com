@@ -1,8 +1,0 @@
-{
-  "functions": {
-    "api/*.ts": {
-      "includeFiles": "post/**",
-      "maxDuration": 10
-    }
-  }
-}
