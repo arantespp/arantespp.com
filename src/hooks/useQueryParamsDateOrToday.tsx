@@ -43,5 +43,5 @@ export const useQueryParamsDateOrToday = () => {
     }
   }, [asPath, date, push, query.date, today]);
 
-  return { date };
+  return { date, today };
 };

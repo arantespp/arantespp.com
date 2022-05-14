@@ -132,7 +132,8 @@ const readGroupPost = async ({ group, slug }: GroupPostParams) => {
     }
 
     const { mtime } = await fs.promises.stat(fullPath);
-    const { formattedDate: updatedAt } = getDate(mtime);
+    const { date: updatedAt, formattedDate: formattedUpdatedAt } =
+      getDate(mtime);
 
     /**
      * Add book image.
@@ -169,6 +170,7 @@ const readGroupPost = async ({ group, slug }: GroupPostParams) => {
       excerpt,
       ...(date ? getDate(date) : {}),
       updatedAt,
+      formattedUpdatedAt,
       updateHistory: `${GITHUB_PROJECT}/commits/main/posts/${group}/${slug}.md`,
       href,
       group,

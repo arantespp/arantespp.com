@@ -1,3 +1,5 @@
+const { getPosts } = require('./lib/files');
+
 const exclude = [
   '/api-key',
   '/digest',
@@ -15,7 +17,9 @@ module.exports = {
   siteUrl,
   exclude: exclude.flatMap((e) => [e, `${e}/*`]),
   transform: async (config, path) => {
-    let loc = path;
+    const posts = await getPosts();
+
+    const post = posts.find((p) => p.href === path);
 
     const priority = (() => {
       if (path === '/') {
@@ -26,18 +30,24 @@ module.exports = {
         return 0.9;
       }
 
-      if (path.includes('/articles/')) {
+      if (['/zettelkasten', '/blog', '/books'].includes(path)) {
+        return 0.85;
+      }
+
+      if (post?.group === 'blog') {
         return 0.8;
       }
 
       return 0.7;
     })();
 
+    const lastmod = post?.updatedAt;
+
     return {
-      loc,
-      changefreq: config.changefreq,
+      loc: path,
+      changefreq: 'monthly',
       priority,
-      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+      lastmod,
       alternateRefs: config.alternateRefs ?? [],
     };
   },

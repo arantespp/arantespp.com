@@ -1,7 +1,5 @@
 import * as React from 'react';
-
 import { contentEditable } from '../../shortcuts';
-
 import { useKeypressSequenceListener } from './useKeypressSequenceListener';
 
 export const useContentEditable = () => {
@@ -23,9 +21,6 @@ export const useContentEditable = () => {
   React.useEffect(() => {
     if (ref) {
       ref.current?.setAttribute('contentEditable', JSON.stringify(editable));
-      setTimeout(() => {
-        ref.current?.focus();
-      }, 1);
     }
   }, [editable, ref]);
 

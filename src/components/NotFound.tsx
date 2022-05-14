@@ -1,6 +1,6 @@
-import { Flex, Link, Text } from 'theme-ui';
+import { Flex, Text } from 'theme-ui';
 import { useRouter } from 'next/router';
-import NextLink from 'next/link';
+import Link from './Link';
 
 const NotFound = () => {
   const { asPath } = useRouter();
@@ -28,17 +28,7 @@ const NotFound = () => {
       {showDraftMessage && (
         <Text sx={{ textAlign: 'center' }}>
           That page does&apos;t exist. But, maybe it is unfinished post and it
-          is still a{' '}
-          <NextLink href={draftHref}>
-            <Link
-              sx={{
-                cursor: 'pointer',
-                textDecoration: 'underline',
-              }}
-            >
-              draft.
-            </Link>
-          </NextLink>
+          is still a <Link href={draftHref}>draft.</Link>
         </Text>
       )}
     </Flex>

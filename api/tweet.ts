@@ -1,12 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
-import { requireApiKey } from '../lib/hofs/requireApiKey';
-
 import {
-  scheduleTweet,
   deleteScheduledTweet,
+  scheduleTweet,
   updateTweet,
 } from '../lib/scheduleTweet';
+import { requireApiKey } from '../lib/hofs/requireApiKey';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {

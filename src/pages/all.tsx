@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Box, Flex, Input, Text, Themed } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
 import { getPosts } from '../../lib/files';
+import { useQuery } from 'react-query';
 import { useSearchPosts } from '../hooks/useSearchPosts';
 import RecommendationsList from '../components/RecommendationsList';
 
@@ -13,6 +14,16 @@ export const getStaticProps = async () => {
       allPosts,
     },
   };
+};
+
+const useSearch = ({ query }: { query?: string } = {}) => {
+  const { data } = useQuery(
+    '/api/search',
+    () => fetch('/api/search').then((r) => r.json()),
+    {},
+  );
+
+  console.log(data);
 };
 
 const FilterBlock = ({
@@ -47,6 +58,8 @@ const FilterBlock = ({
 
 const All = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { setSearch, results } = useSearchPosts({ allPosts });
+
+  useSearch({});
 
   return (
     <>
