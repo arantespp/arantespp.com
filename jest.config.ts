@@ -1,10 +1,9 @@
-module.exports = {
+const config = {
   projects: [
     {
       displayName: 'dom',
       testEnvironment: 'jsdom',
       testMatch: ['/**/*.spec.tsx'],
-      timers: 'fake',
     },
     {
       displayName: 'node',
@@ -13,3 +12,5 @@ module.exports = {
     },
   ],
 };
+
+export default config;

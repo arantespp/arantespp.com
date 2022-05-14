@@ -1,17 +1,15 @@
 import * as React from 'react';
 import { Box, Flex, Message, Themed } from 'theme-ui';
+import { isTweet } from './Tweet';
+import { useContentEditable } from '../hooks/useContentEditable';
+import Heading from './Heading';
+import Link from './Link';
 import ReactMarkdown, { Components } from 'react-markdown';
+import Tag from './Tag';
 import dynamic from 'next/dynamic';
 import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
-
-import { useContentEditable } from '../hooks/useContentEditable';
-
-import { isTweet } from './Tweet';
-import Heading from './Heading';
-import Link from './Link';
-import Tag from './Tag';
 
 import 'katex/dist/katex.min.css';
 

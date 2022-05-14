@@ -1,15 +1,6 @@
 import * as faker from 'faker';
-
 import { act, render, screen } from '../testUtils';
-
 import Journal from './Journal';
-
-jest.mock('next/dynamic', () => () => {
-  const DynamicComponent = () => null;
-  DynamicComponent.displayName = 'LoadableComponent';
-  DynamicComponent.preload = jest.fn();
-  return DynamicComponent;
-});
 
 jest.mock('next/router', () => ({
   useRouter() {
