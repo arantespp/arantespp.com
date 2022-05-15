@@ -10,18 +10,18 @@ const IndexPage = ({
   seo,
 }: {
   content: string;
-  recommendations: Recommendation[];
-  seo: NextSeoProps;
+  recommendations?: Recommendation[];
+  seo?: NextSeoProps;
 }) => {
   return (
     <>
-      <NextSeo {...seo} />
+      {seo && <NextSeo {...seo} />}
       {content && (
         <Box sx={{ marginBottom: 6 }}>
           <Markdown content={content} noH1={false} />
         </Box>
       )}
-      <Recommendations recommendations={recommendations} />
+      {recommendations && <Recommendations recommendations={recommendations} />}
     </>
   );
 };
