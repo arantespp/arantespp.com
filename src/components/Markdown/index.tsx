@@ -3,10 +3,20 @@ import { Box } from 'theme-ui';
 import { MarkdownProps } from './Markdown';
 import dynamic from 'next/dynamic';
 
-const DynamicMarkdown = dynamic(() => import('./Markdown'));
+const DynamicMarkdown = dynamic(() => import('./Markdown'), {
+  suspense: true,
+});
 
 const SimplyContent = ({ content }: { content: string }) => {
-  return <>{content}</>;
+  return (
+    <Box
+      sx={{
+        whiteSpace: 'pre-line',
+      }}
+    >
+      {content}
+    </Box>
+  );
 };
 
 export const Markdown = (props: MarkdownProps) => {

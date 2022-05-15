@@ -20,3 +20,5 @@ export const HeaderTwitter = (props: HeaderTwitterProps) => {
     </Link>
   );
 };
+
+export default HeaderTwitter;

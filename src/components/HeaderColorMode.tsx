@@ -25,3 +25,5 @@ export const HeaderColorMode = (props: HeaderColorModeProps) => {
     </Text>
   );
 };
+
+export default HeaderColorMode;

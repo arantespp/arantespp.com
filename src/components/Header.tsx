@@ -6,11 +6,18 @@ import Link from './Link';
 import PedroArantes from './PedroArantes';
 import dynamic from 'next/dynamic';
 
-const HeaderColorMode = dynamic<HeaderColorModeProps>(() =>
-  import('./HeaderColorMode').then((mod) => mod.HeaderColorMode),
+const HeaderColorMode = dynamic<HeaderColorModeProps>(
+  () => import('./HeaderColorMode'),
+  {
+    suspense: false,
+  },
 );
-const HeaderTwitter = dynamic<HeaderTwitterProps>(() =>
-  import('./HeaderTwitter').then((mod) => mod.HeaderTwitter),
+
+const HeaderTwitter = dynamic<HeaderTwitterProps>(
+  () => import('./HeaderTwitter'),
+  {
+    suspense: true,
+  },
 );
 
 const FallbackNavIcon = () => <Flex sx={{ width: 22, height: 22 }} />;
@@ -100,9 +107,9 @@ const Header = () => {
             }}
           />
         </React.Suspense>
-        {/* <React.Suspense fallback={<FallbackNavIcon />}> */}
-        <HeaderColorMode sx={{ ...navSx, color: undefined }} />
-        {/* </React.Suspense> */}
+        <React.Suspense fallback={<FallbackNavIcon />}>
+          <HeaderColorMode sx={{ ...navSx, color: undefined }} />
+        </React.Suspense>
       </Flex>
     </Flex>
   );
