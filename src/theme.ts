@@ -97,8 +97,8 @@ const katex = {
  * https://theme-ui.com/theming/#configuration-flags
  */
 const config = {
-  initialColorModeName: 'default',
-  useColorSchemeMediaQuery: 'system',
+  initialColorModeName: 'light',
+  useColorSchemeMediaQuery: true,
   useLocalStorage: false,
 };
 
