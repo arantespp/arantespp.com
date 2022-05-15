@@ -9,3 +9,17 @@ I believe sharing knowledge is powerful because I can leverage my studying hours
 As my blog grew up and I started to use it more and more, I've created more functionalities to automate some tasks. So, besides the [Zettelkasten](/zettelkasten) engine, I've also made the features below in chronological order.
 
 ### About Pages
+
+### Tags
+
+### Blog
+
+### Search
+
+### Flashcards
+
+### Network
+
+### Drafts
+
+### Calendar

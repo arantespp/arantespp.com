@@ -24,11 +24,7 @@ const FetchFlashcard = () => {
     },
   );
 
-  return (
-    <Box sx={{ marginTop: 4, marginBottom: 5 }}>
-      {data?.flashcard && <Flashcard flashcard={data.flashcard} />}
-    </Box>
-  );
+  return <>{data?.flashcard && <Flashcard flashcard={data.flashcard} />}</>;
 };
 
 const FlashcardPage = () => {
@@ -37,9 +33,11 @@ const FlashcardPage = () => {
       <NextSeo title="Flashcard" description={description} />
       <Themed.h1>Flashcard</Themed.h1>
       <Text sx={{ fontWeight: 'normal' }}>{description}</Text>
-      <React.Suspense fallback={<Loading />}>
-        <FetchFlashcard />
-      </React.Suspense>
+      <Box sx={{ marginTop: 4, marginBottom: 5 }}>
+        <React.Suspense fallback={<Loading />}>
+          <FetchFlashcard />
+        </React.Suspense>
+      </Box>
     </>
   );
 };

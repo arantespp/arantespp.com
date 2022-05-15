@@ -1,7 +1,5 @@
 import { getRecommendations, readMarkdownFile } from '../../lib/files';
-import dynamic from 'next/dynamic';
-
-const IndexPage = dynamic(() => import('../components/IndexPage'));
+import IndexPage from '../components/IndexPage';
 
 export const getStaticProps = async () => {
   const { content = '' } = (await readMarkdownFile('index.md')) || {};

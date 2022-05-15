@@ -17,4 +17,4 @@ const RecommendationsList = ({
   </>
 );
 
-export default React.memo(RecommendationsList);
+export default RecommendationsList;

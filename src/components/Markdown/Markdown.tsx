@@ -117,19 +117,17 @@ const getComponents = ({
   },
 });
 
-const Markdown = ({
-  content,
-  components,
-  noH1,
-}: {
+export type MarkdownProps = {
   content: string;
   components?: Components;
   noH1?: boolean;
-}) => {
+};
+
+const Markdown = ({ content, components, noH1 }: MarkdownProps) => {
   const ref = useContentEditable();
 
   return (
-    <Box ref={ref} as="article">
+    <Box ref={ref}>
       <ReactMarkdown
         components={{ ...getComponents({ noH1 }), ...components }}
         /**

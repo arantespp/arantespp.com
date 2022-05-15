@@ -6,12 +6,10 @@ import {
   readMarkdownFile,
 } from '../../../lib/files';
 import { titleCase } from 'title-case';
+import IndexPage from '../../components/IndexPage';
 import NotFound from '../../components/NotFound';
+import Post from '../../components/Post';
 import Recommendations from '../../components/Recommendations';
-import dynamic from 'next/dynamic';
-
-const IndexPage = dynamic(() => import('../../components/IndexPage'));
-const Post = dynamic(() => import('../../components/Post'));
 
 const indexes = ['blog', 'zettelkasten', 'now', 'me'];
 
