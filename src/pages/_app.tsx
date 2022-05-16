@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic';
 const Shortcuts = dynamic(() =>
   import('../components/Shortcuts').then((mod) => mod.Shortcuts),
 );
+
 const TagManager = dynamic(() =>
   import('../components/TagManager').then((mod) => mod.TagManager),
 );

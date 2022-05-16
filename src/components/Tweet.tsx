@@ -1,6 +1,10 @@
 import * as React from 'react';
-import { Box } from 'theme-ui';
-import { Tweet as TweetWidget } from 'react-twitter-widgets';
+import { Box, useThemeUI } from 'theme-ui';
+import dynamic from 'next/dynamic';
+
+const TweetWidget = dynamic(() =>
+  import('react-twitter-widgets').then((mod) => mod.Tweet),
+);
 
 const getTweetStatus = (href: string) => {
   const { pathname } = new URL(href);
@@ -13,6 +17,8 @@ export const isTweet = (href: string) => {
 };
 
 const Tweet = ({ href }: { href: string }) => {
+  const { colorMode } = useThemeUI();
+
   if (!isTweet(href)) {
     return null;
   }
@@ -21,7 +27,10 @@ const Tweet = ({ href }: { href: string }) => {
 
   return (
     <Box data-testid="embed-tweet" sx={{ marginY: 4 }}>
-      <TweetWidget tweetId={status} options={{ align: 'center' }} />
+      <TweetWidget
+        tweetId={status}
+        options={{ align: 'center', theme: colorMode }}
+      />
     </Box>
   );
 };

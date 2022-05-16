@@ -1,5 +1,5 @@
+import { PostPage } from '../components/PostPage';
 import { getRecommendations, readMarkdownFile } from '../../lib/files';
-import IndexPage from '../components/IndexPage';
 
 export const getStaticProps = async () => {
   const { content = '' } = (await readMarkdownFile('index.md')) || {};
@@ -14,4 +14,4 @@ export const getStaticProps = async () => {
   return { props: { recommendations, seo, content } };
 };
 
-export default IndexPage;
+export default PostPage;

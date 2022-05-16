@@ -9,13 +9,15 @@ import dynamic from 'next/dynamic';
 const HeaderColorMode = dynamic<HeaderColorModeProps>(
   () => import('./HeaderColorMode'),
   {
-    suspense: false,
+    ssr: false,
+    suspense: true,
   },
 );
 
 const HeaderTwitter = dynamic<HeaderTwitterProps>(
   () => import('./HeaderTwitter'),
   {
+    ssr: false,
     suspense: true,
   },
 );
@@ -83,11 +85,11 @@ const Header = () => {
       <Flex
         sx={{
           display: 'flex',
-          flexDirection: ['row', null, 'row'],
+          flexDirection: 'row',
           flexWrap: 'wrap',
           justifyContent: 'center',
-          alignItems: ['center', 'flex-start'],
-          gap: [3, 3, 4],
+          alignItems: ['center', 'center'],
+          gap: [4, 4, 4],
         }}
       >
         {navs.map(({ href, label }) => (
@@ -108,7 +110,9 @@ const Header = () => {
           />
         </React.Suspense>
         <React.Suspense fallback={<FallbackNavIcon />}>
-          <HeaderColorMode sx={{ ...navSx, color: undefined }} />
+          <HeaderColorMode
+            sx={{ ...navSx, fontSize: [1, 2], color: undefined }}
+          />
         </React.Suspense>
       </Flex>
     </Flex>

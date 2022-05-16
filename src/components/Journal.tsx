@@ -1,7 +1,7 @@
 import { Box } from 'theme-ui';
-import { Markdown } from './Markdown';
 import Heading from './Heading';
 import Loading from './Loading';
+import Markdown from './Markdown';
 
 const Journal = ({ markdown, title }: { markdown?: string; title: string }) => {
   return (

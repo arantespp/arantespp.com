@@ -1,5 +1,4 @@
 import * as dateFns from 'date-fns';
-
 import { getClosestLastWeekDay } from './getClosestLastWeekDay';
 
 const WEEK_DAY = 'Tue';

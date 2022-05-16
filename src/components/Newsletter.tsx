@@ -1,7 +1,4 @@
 import { Box, Button, Flex, Input, Text, Themed } from 'theme-ui';
-
-import { getNextNewsletterDate } from '../../lib/getNextNewsletterDate';
-
 import Link from './Link';
 import Tag from './Tag';
 
@@ -13,10 +10,9 @@ const Newsletter = () => (
       </Text>
     </Box>
     <Themed.p>
-      On {getNextNewsletterDate({ format: 'EEEE' })} (not weekly), I publish my
-      most recent readings and thoughts. Subscribe to my newsletter if you want
-      to follow posts about <Tag tag="startups" />,{' '}
-      <Tag tag="product-development" />
+      On Tuesday (not weekly), I publish my most recent readings and thoughts.
+      Subscribe to my newsletter if you want to follow posts about{' '}
+      <Tag tag="startups" />, <Tag tag="product-development" />
       , <Tag tag="mental-models" />, and <Link href="/tags">more topics</Link>.
       You can also check{' '}
       <Link href="https://www.getrevue.co/profile/arantespp">

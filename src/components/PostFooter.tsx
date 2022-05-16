@@ -1,34 +1,26 @@
-import { Flex, Image } from 'theme-ui';
+import { Draft, Post } from '../../lib/files';
+import { Flex } from 'theme-ui';
+import NetworkLink from './NetworkLink';
 
-const NO_FOOTER = true;
-
-export const PostFooter = () => {
-  if (NO_FOOTER) {
-    return (
-      <Flex
-        sx={{
-          marginTop: 5,
-          marginBottom: 5,
-        }}
-      />
-    );
-  }
-
+export const PostFooter = ({ post }: { post: Post | Draft }) => {
   return (
     <Flex
       sx={{
         justifyContent: 'center',
         marginTop: 5,
-        marginBottom: 6,
+        marginBottom: 5,
       }}
     >
-      <Image
-        role="button"
-        onClick={() => window.scroll({ top: 0, left: 0 })}
-        sx={{ height: '1.5em', marginLeft: 1, cursor: 'pointer' }}
-        src="/logo.png"
-        alt="Logo"
-      />
+      <Flex
+        sx={{
+          width: '100%',
+          justifyContent: 'space-between',
+          fontSize: 1,
+          textAlign: 'center',
+        }}
+      >
+        <NetworkLink nodeId={post.href} />
+      </Flex>
     </Flex>
   );
 };

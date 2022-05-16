@@ -1,20 +1,16 @@
 import * as React from 'react';
 import { Box, Flex, Message, Themed } from 'theme-ui';
-import { isTweet } from '../Tweet';
-import { useContentEditable } from '../../hooks/useContentEditable';
-import Heading from '../Heading';
-import Link from '../Link';
+import { useContentEditable } from './../hooks/useContentEditable';
+import CustomImage from './CustomImage';
+import Heading from './Heading';
+import Link from './Link';
 import ReactMarkdown, { Components } from 'react-markdown';
-import Tag from '../Tag';
-import dynamic from 'next/dynamic';
+import Tag from './Tag';
+import Tweet, { isTweet } from './Tweet';
 import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
-
 import 'katex/dist/katex.min.css';
-
-const CustomImage = dynamic(() => import('../CustomImage'));
-const Tweet = dynamic(() => import('../Tweet'));
 
 /**
  * https://github.com/remarkjs/react-markdown/tree/main#appendix-b-components
@@ -98,7 +94,10 @@ const getComponents = ({
        * - href: Twitter URL.
        */
       const { src, href } = (children[0] as any).props;
-      if (src || href) return children;
+
+      if (src || href) {
+        return children;
+      }
     }
 
     return <Themed.p>{children}</Themed.p>;

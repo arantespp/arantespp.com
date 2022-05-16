@@ -1,4 +1,5 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import { PostPage } from '../../components/PostPage';
 import {
   getPostAndRecommendations,
   getPosts,
@@ -6,10 +7,6 @@ import {
   readMarkdownFile,
 } from '../../../lib/files';
 import { titleCase } from 'title-case';
-import IndexPage from '../../components/IndexPage';
-import NotFound from '../../components/NotFound';
-import Post from '../../components/Post';
-import Recommendations from '../../components/Recommendations';
 
 const indexes = ['blog', 'zettelkasten', 'now', 'me'];
 
@@ -39,41 +36,26 @@ export const getStaticProps = async ({
 
     return {
       props: {
-        index: {
-          content,
-          recommendations,
-          seo: {
-            title: titleCase(path),
-            description: excerpt,
-          },
+        content,
+        recommendations,
+        seo: {
+          title: titleCase(path),
+          description: excerpt,
         },
       },
     };
   }
 
-  const post = await getPostAndRecommendations({ slug: path, group: 'blog' });
+  const { post, recommendations } = await getPostAndRecommendations({
+    slug: path,
+    group: 'blog',
+  });
 
-  return { props: { post } };
-};
-
-const GroupIndex = ({
-  index,
-  post,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  if (index) {
-    return <IndexPage {...index} />;
+  if (!post) {
+    throw new Error();
   }
 
-  if (post.post) {
-    return (
-      <>
-        <Post post={post.post} />
-        <Recommendations recommendations={post.recommendations} />
-      </>
-    );
-  }
-
-  return <NotFound />;
+  return { props: { post, recommendations } };
 };
 
-export default GroupIndex;
+export default PostPage;

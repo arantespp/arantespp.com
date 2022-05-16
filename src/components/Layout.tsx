@@ -3,10 +3,10 @@ import { Box, Container } from 'theme-ui';
 import { useApiKey } from '../hooks/useApiKey';
 import Header from './Header'; // Don't dynamic import Header because of cumulative shift layout.
 import Loading from './Loading';
+import Newsletter from './Newsletter';
 import dynamic from 'next/dynamic';
 
 const Footer = dynamic(() => import('./Footer'));
-const Newsletter = dynamic(() => import('./Newsletter'));
 const TweetScheduler = dynamic(() => import('./TweetScheduler'));
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

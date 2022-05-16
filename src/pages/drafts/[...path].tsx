@@ -1,7 +1,6 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { Group, getDraft, getDrafts } from '../../../lib/files';
-import { NextSeo } from 'next-seo';
-import Post from '../../components/Post';
+import { PostPage } from '../../components/PostPage';
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: (await getDrafts()).map(({ group, slug }) => ({
@@ -22,26 +21,7 @@ export const getStaticProps = async ({
     throw new Error();
   }
 
-  return { props: { path, draft } };
+  return { props: { seo: { nofollow: true, noindex: true }, post: draft } };
 };
 
-const DraftsSlug = ({
-  draft,
-}: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <>
-    <NextSeo
-      {...{
-        nofollow: true,
-        noindex: true,
-        title: draft.title,
-        description: draft.excerpt,
-        openGraph: {
-          url: `https://arantespp.com${draft.href}`,
-        },
-      }}
-    />
-    <Post post={draft} />
-  </>
-);
-
-export default DraftsSlug;
+export default PostPage;

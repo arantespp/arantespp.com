@@ -99,7 +99,7 @@ const katex = {
 const config = {
   initialColorModeName: 'light',
   useColorSchemeMediaQuery: true,
-  useLocalStorage: false,
+  useLocalStorage: true,
 };
 
 const partialTheme = {
