@@ -88,7 +88,7 @@ const Header = () => {
           flexDirection: 'row',
           flexWrap: 'wrap',
           justifyContent: 'center',
-          alignItems: ['center', 'center'],
+          alignItems: ['center', 'baseline'],
           gap: [4, 4, 4],
         }}
       >
@@ -105,6 +105,8 @@ const Header = () => {
               '&:hover': {
                 color: 'twitter',
               },
+              position: 'relative',
+              top: [0, '2px'],
               fontSize: [3, 4],
             }}
           />
