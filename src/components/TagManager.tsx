@@ -6,7 +6,23 @@ const env = process.env.NODE_ENV;
 export const GTM_ID = 'GTM-PPHFWMF';
 
 export const TagManager = () => {
+  const [loadTagManager, setLoadTagManager] = React.useState(false);
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoadTagManager(true);
+    }, 5 * 1000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  });
+
   if (env !== 'production') {
+    return null;
+  }
+
+  if (!loadTagManager) {
     return null;
   }
 
