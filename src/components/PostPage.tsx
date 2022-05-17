@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Themed } from 'theme-ui';
+import { Box, Text, Themed } from 'theme-ui';
 import { Draft, Post, Recommendation } from '../../lib/files';
 import { NextSeo, NextSeoProps } from 'next-seo';
 import { editPost } from '../../shortcuts';
@@ -21,13 +21,13 @@ const Recommendations = dynamic(() => import('./Recommendations'));
 
 const SimplyContent = ({ content }: { content: string }) => {
   return (
-    <Box
+    <Text
       sx={{
         whiteSpace: 'pre-line',
       }}
     >
-      {content}
-    </Box>
+      {content.trim()}
+    </Text>
   );
 };
 
@@ -158,11 +158,11 @@ export const PostPage = ({
           <BookHeader book={postOrContent.post.book!} />
         </Box>
       )}
-      <React.Suspense fallback={<SimplyContent content={newContent} />}>
-        <Box as="article">
+      <Box as="article">
+        <React.Suspense fallback={<SimplyContent content={newContent} />}>
           <Markdown content={newContent} noH1={isPost} />
-        </Box>
-      </React.Suspense>
+        </React.Suspense>
+      </Box>
       {isPost && <PostFooter post={postOrContent.post} />}
       {recommendations && <Recommendations recommendations={recommendations} />}
     </>
