@@ -1,8 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LinkProps } from 'theme-ui';
-
 import { socialMedias } from '../../lib/socialMedias';
-
 import Link from './Link';
 
 export type HeaderTwitterProps = LinkProps;

@@ -1,6 +1,6 @@
 import { Flex, Text } from 'theme-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { socialMediasArr } from '../../lib/socialMedias';
+import { getSocialMediasArr } from '../../lib/socialMedias';
 import Link from '../components/Link';
 
 const Footer = () => (
@@ -15,7 +15,7 @@ const Footer = () => (
     }}
   >
     <Flex sx={{ flexWrap: 'wrap', justifyContent: 'center', marginTop: 2 }}>
-      {socialMediasArr.map(({ href, faIcon, name }) => (
+      {getSocialMediasArr().map(({ href, faIcon, name }) => (
         <Link
           key={name}
           sx={{

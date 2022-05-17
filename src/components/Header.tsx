@@ -1,28 +1,9 @@
 import * as React from 'react';
 import { Flex } from 'theme-ui';
-import { HeaderColorModeProps } from './HeaderColorMode';
-import { HeaderTwitterProps } from './HeaderTwitter';
+import HeaderColorMode from './HeaderColorMode';
+import HeaderTwitter from './HeaderTwitter';
 import Link from './Link';
 import PedroArantes from './PedroArantes';
-import dynamic from 'next/dynamic';
-
-const HeaderColorMode = dynamic<HeaderColorModeProps>(
-  () => import('./HeaderColorMode'),
-  {
-    ssr: false,
-    suspense: true,
-  },
-);
-
-const HeaderTwitter = dynamic<HeaderTwitterProps>(
-  () => import('./HeaderTwitter'),
-  {
-    ssr: false,
-    suspense: true,
-  },
-);
-
-const FallbackNavIcon = () => <Flex sx={{ width: 22, height: 22 }} />;
 
 const navs = [
   {
@@ -97,25 +78,21 @@ const Header = () => {
             {label}
           </Link>
         ))}
-        <React.Suspense fallback={<FallbackNavIcon />}>
-          <HeaderTwitter
-            sx={{
-              ...navSx,
+        <HeaderTwitter
+          sx={{
+            ...navSx,
+            color: 'twitter',
+            '&:hover': {
               color: 'twitter',
-              '&:hover': {
-                color: 'twitter',
-              },
-              position: 'relative',
-              top: [0, '2px'],
-              fontSize: [3, 4],
-            }}
-          />
-        </React.Suspense>
-        <React.Suspense fallback={<FallbackNavIcon />}>
-          <HeaderColorMode
-            sx={{ ...navSx, fontSize: [1, 2], color: undefined }}
-          />
-        </React.Suspense>
+            },
+            position: 'relative',
+            top: [0, '2px'],
+            fontSize: [3, 4],
+          }}
+        />
+        <HeaderColorMode
+          sx={{ ...navSx, fontSize: [1, 2], color: undefined }}
+        />
       </Flex>
     </Flex>
   );

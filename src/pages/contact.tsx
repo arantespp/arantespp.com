@@ -2,7 +2,7 @@ import { Flex, Link, Text, Themed } from 'theme-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NextSeo } from 'next-seo';
 
-import { socialMedias, socialMediasArr } from '../../lib/socialMedias';
+import { getSocialMediasArr, socialMedias } from '../../lib/socialMedias';
 
 const Contact = () => (
   <>
@@ -45,7 +45,7 @@ const Contact = () => (
         flexWrap: 'wrap',
       }}
     >
-      {socialMediasArr.map(({ href, faIcon, name }) => (
+      {getSocialMediasArr().map(({ href, faIcon, name }) => (
         <Link
           key={href}
           href={href}
