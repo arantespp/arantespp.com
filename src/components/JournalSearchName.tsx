@@ -57,7 +57,7 @@ export const JournalSearchName = ({
     ['monica-contact', query],
     async ({ queryKey }) =>
       searchMonicaContacts({ query: queryKey[1].slice(1) }),
-    { enabled: !!query },
+    { enabled: !!query, suspense: false },
   );
 
   const contacts = React.useMemo(() => data?.contacts || [], [data]);
