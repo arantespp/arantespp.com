@@ -41,7 +41,7 @@ readingTime: 1
 
 - Your memory retains more if you spend 10 to 15 minutes doing nothing instead of doing something productive after studying. Pacing your studies with minimal interferences during these breaks helps the process of memory consolidation.
 
-- The minimal interferences include tasks requiring mental effort, like scrolling on social media, answering emails, checking the cellphone, and even intense thoughts, such as thinking about the present or future.
+- The minimal interferences mean not doing tasks that require mental effort, like scrolling on social media, answering emails, checking the cellphone, and even intense thoughts, such as thinking about the present or future.
 
 - The exact mechanism of memory consolidation is still unknown. Scientists thought that such a mechanism only worked during sleeping, but it also occurs during wakeful rest periods.
 

@@ -1,19 +1,4 @@
-import { merge } from 'theme-ui';
-import { toTheme } from '@theme-ui/typography';
-import themeFairyGates from 'typography-theme-fairy-gates';
-
-/**
- * https://kyleamathews.github.io/typography.js/
- */
-const typography = toTheme({
-  ...themeFairyGates,
-  baseFontSize: '18px',
-  /**
-   * Golden Ratio.
-   * https://en.wikipedia.org/wiki/Golden_ratio
-   */
-  baseLineHeight: 1.618033,
-});
+import { Theme } from 'theme-ui';
 
 /**
  * https://www.canva.com/colors/color-wheel/
@@ -36,7 +21,20 @@ const lightGray = '#6f6f6f';
 
 const lightLightGray = '#ddd';
 
+const dark = {
+  text: '#eee',
+  background: '#212121',
+  primary: '#ED975E',
+  secondary: '#5EB4ED',
+  accent: '#ED5E6D',
+  highlight: '#EDDF5E',
+  error: '#ED5E6D',
+  link: '#ccc',
+  gray: '#ccc',
+};
+
 const colors = {
+  modes: { dark },
   ...palette,
   text: '#2a2a2a',
   gray: '#515151',
@@ -51,46 +49,6 @@ const colors = {
   highlight: palette.analogous1,
   error: palette.primary,
   twitter: palette.twitterBlue,
-  modes: {
-    dark: {
-      text: '#eee',
-      background: '#212121',
-      primary: '#ED975E',
-      secondary: '#5EB4ED',
-      accent: '#ED5E6D',
-      highlight: '#EDDF5E',
-      error: '#ED5E6D',
-      link: '#ccc',
-      gray: '#ccc',
-    },
-  },
-};
-
-const wordBreak = 'break-word';
-
-const message = {
-  fontSize: [2],
-  fontStyle: 'italic',
-  padding: 0,
-  paddingLeft: 3,
-  marginY: 2,
-  backgroundColor: 'transparent',
-  color: 'gray',
-  borderColor: 'muted',
-};
-
-const katex = {
-  '.katex .mord.text': { fontSize: 2, fontFamily: 'body' },
-  '.katex-display > .katex': {
-    /*
-     * Scroll doesn't work because numbered equations.
-     */
-    whiteSpace: 'normal !important',
-    marginY: 4,
-  },
-  '.katex-display .base': {
-    marginBottom: 3,
-  },
 };
 
 /**
@@ -102,20 +60,258 @@ const config = {
   useLocalStorage: true,
 };
 
-const partialTheme = {
+export const theme: Theme = {
   config,
   colors,
-  borderWidths: [0, 1, 4],
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
+    body: "'Quattrocento Sans', sans-serif",
+    heading: "'Work Sans', sans-serif",
     monospace: "'Overpass Mono', monospace",
   },
   fontSizes: [14, 16, 18, 22, 24, 28, 32],
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  fontWeights: {
+    body: 400,
+    bold: 700,
+    heading: '600',
+  },
+  lineHeights: {
+    body: 1.618033,
+    heading: 1.1,
+  },
+  borderWidths: [0, 1, 4],
   sizes: {
     container: '48em',
   },
   radii: [0, '4px'],
-  shadows: ['none', `10px 10px 10px -10px #aaa`],
+  shadows: ['none', '10px 10px 10px -10px #aaa'],
+  styles: {
+    root: {
+      fontFamily: 'body',
+      fontSize: 2,
+      fontWeight: 'body',
+      lineHeight: 'body',
+      button: {
+        cursor: 'pointer',
+        '&:disabled': {
+          backgroundColor: 'muted',
+          cursor: 'not-allowed',
+        },
+      },
+      '.katex .mord.text': {
+        fontSize: 2,
+        fontFamily: 'body',
+      },
+      '.katex-display > .katex': {
+        // whiteSpace: 'normal !important',
+        whiteSpace: 'normal',
+        marginY: 4,
+      },
+      '.katex-display .base': {
+        marginBottom: 3,
+      },
+    },
+    img: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+      maxWidth: '100%',
+    },
+    h1: {
+      padding: 0,
+      margin: 0,
+      fontSize: 5,
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
+      marginY: 4,
+      wordBreak: 'break-word',
+      textAlign: ['left'],
+    },
+    h2: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+      fontSize: 4,
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
+      marginY: 4,
+      wordBreak: 'break-word',
+    },
+    h3: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+      fontSize: 3,
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
+      marginY: 4,
+      wordBreak: 'break-word',
+    },
+    h4: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+      fontSize: 2,
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
+      marginY: 4,
+      wordBreak: 'break-word',
+    },
+    h5: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+      fontSize: 2,
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'normal',
+      marginY: 4,
+      wordBreak: 'break-word',
+    },
+    h6: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+      fontSize: 2,
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'normal',
+      fontStyle: 'italic',
+      wordBreak: 'break-word',
+    },
+    ul: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+      listStylePosition: 'outside',
+      listStyleImage: 'none',
+      ml: 4,
+    },
+    ol: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+      listStylePosition: 'outside',
+      listStyleImage: 'none',
+      ml: 4,
+    },
+    li: {
+      mb: 2,
+      pl: 0,
+      ol: {
+        my: 2,
+        ml: 3,
+      },
+      ul: {
+        my: 2,
+        ml: 3,
+      },
+      p: {
+        mb: 2,
+      },
+    },
+    p: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+    },
+    table: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+      borderCollapse: 'collapse',
+      /**
+       * https://blog.cykerway.com/posts/2018/07/20/css-trick-centering-an-overflowed-table.html
+       */
+      width: 'auto',
+      overflowX: 'auto',
+      display: 'inline-block',
+      maxWidth: '100%',
+      marginX: 'auto',
+      textAlign: 'center',
+      strong: {
+        color: 'text',
+      },
+    },
+    th: {
+      textAlign: 'center',
+      borderBottom: '1px solid',
+      px: 2,
+      py: 1,
+      ':first-child': {
+        pl: 0,
+      },
+      ':last-child': {
+        pr: 0,
+      },
+    },
+    td: {
+      textAlign: 'center',
+      borderBottom: '1px solid',
+      px: 2,
+      py: 1,
+      mt: '-1px',
+      ':first-child': {
+        pl: 0,
+      },
+      ':last-child': {
+        pr: 0,
+      },
+      borderBottomColor: 'muted',
+    },
+    blockquote: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+      mx: 3,
+      fontStyle: 'italic',
+      marginY: 4,
+    },
+    hr: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+      border: 0,
+      borderBottom: '1px solid',
+      mt: '-1px',
+      mb: 3,
+      color: 'muted',
+      width: '20%',
+      marginX: 'auto',
+      marginY: 4,
+    },
+    b: {
+      fontWeight: 'bold',
+    },
+    strong: {
+      fontWeight: 'bold',
+      color: 'text',
+    },
+    code: {
+      fontSize: '85%',
+    },
+    pre: {
+      padding: 3,
+      margin: 0,
+      marginBottom: 3,
+      fontSize: 1,
+      fontFamily: 'monospace',
+      overflowX: 'auto',
+      color: 'text',
+      backgroundColor: 'lightLightGray',
+    },
+    a: {
+      color: 'link',
+      '&:hover': {
+        color: 'primary',
+        textDecoration: 'none',
+      },
+    },
+  },
   links: {
     tag: {
       color: 'primary',
@@ -129,110 +325,25 @@ const partialTheme = {
   },
   messages: {
     excerpt: {
-      ...message,
+      fontSize: [2],
+      fontStyle: 'italic',
+      padding: 0,
+      paddingLeft: 3,
+      marginY: 2,
+      backgroundColor: 'transparent',
+      color: 'gray',
+      borderColor: 'muted',
     },
     quote: {
-      ...message,
+      fontSize: [2],
+      fontStyle: 'italic',
+      padding: 0,
+      paddingLeft: 3,
+      marginY: 2,
+      backgroundColor: 'transparent',
+      color: 'gray',
+      borderColor: 'muted',
       marginX: 4,
-    },
-  },
-  styles: {
-    root: {
-      button: {
-        cursor: 'pointer',
-        '&:disabled': {
-          backgroundColor: 'muted',
-          cursor: 'not-allowed',
-        },
-      },
-      ...katex,
-    },
-    h1: {
-      fontSize: 6,
-      marginY: 5,
-      wordBreak,
-      textAlign: ['left'],
-    },
-    h2: {
-      fontSize: 5,
-      marginY: 4,
-      wordBreak,
-    },
-    h3: {
-      fontSize: 4,
-      marginY: 4,
-      wordBreak,
-    },
-    h4: {
-      fontSize: 3,
-      marginY: 4,
-      wordBreak,
-    },
-    h5: {
-      fontSize: 2,
-      marginY: 4,
-      fontWeight: 'normal',
-      wordBreak,
-    },
-    h6: {
-      fontSize: 2,
-      fontWeight: 'normal',
-      fontStyle: 'italic',
-      wordBreak,
-    },
-    a: {
-      color: 'link',
-      '&:hover': {
-        color: 'primary',
-        textDecoration: 'none',
-      },
-    },
-    strong: {
-      color: 'text',
-    },
-    ol: {
-      ml: 4,
-    },
-    ul: {
-      ml: 4,
-    },
-    pre: {
-      fontFamily: 'monospace',
-      fontSize: 1,
-      overflowX: 'auto',
-      color: 'text',
-      backgroundColor: 'lightLightGray',
-    },
-    blockquote: {
-      fontStyle: 'italic',
-      marginY: 4,
-    },
-    table: {
-      /**
-       * https://blog.cykerway.com/posts/2018/07/20/css-trick-centering-an-overflowed-table.html
-       */
-      overflowX: 'auto',
-      display: 'inline-block',
-      maxWidth: '100%',
-      width: 'auto',
-      marginX: 'auto',
-      textAlign: 'center',
-      strong: {
-        color: 'text',
-      },
-    },
-    th: {
-      textAlign: 'center',
-    },
-    td: {
-      borderBottomColor: 'muted',
-      textAlign: 'center',
-    },
-    hr: {
-      color: 'muted',
-      width: '20%',
-      marginX: 'auto',
-      marginY: 4,
     },
   },
   text: {
@@ -262,5 +373,3 @@ const partialTheme = {
     },
   },
 };
-
-export const theme = merge(typography, partialTheme as any);

@@ -143,7 +143,7 @@ export const PostPage = ({
           <Themed.h1>{postOrContent.post.title}</Themed.h1>
           <Box
             sx={{
-              marginBottom: [4],
+              marginBottom: [5],
               borderWidth: 1,
               borderColor: 'muted',
               borderBottomStyle: 'solid',
@@ -153,9 +153,11 @@ export const PostPage = ({
           </Box>
         </Box>
       )}
-      <Box sx={{ marginBottom: [5] }}>
-        {isBook && <BookHeader book={postOrContent.post.book!} />}
-      </Box>
+      {isBook && (
+        <Box sx={{ marginBottom: [5] }}>
+          <BookHeader book={postOrContent.post.book!} />
+        </Box>
+      )}
       <React.Suspense fallback={<SimplyContent content={newContent} />}>
         <Box as="article">
           <Markdown content={newContent} noH1={isPost} />

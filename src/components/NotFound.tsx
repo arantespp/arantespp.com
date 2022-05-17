@@ -28,7 +28,8 @@ const NotFound = () => {
       {showDraftMessage && (
         <Text sx={{ textAlign: 'center' }}>
           That page does&apos;t exist. But, maybe it is unfinished post and it
-          is still a <Link href={draftHref}>draft.</Link>
+          is still a <Link href={draftHref}>draft.</Link> If you prefer, you can
+          check <Link href="/all">all posts</Link> instead.
         </Text>
       )}
     </Flex>

@@ -1,7 +1,6 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { getInstagramPost, getInstagramPosts } from '../../../lib/instagram';
 import InstagramPost from '../../components/InstagramPost';
-import NotFound from '../../components/NotFound';
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: (await getInstagramPosts()).map(({ slug }) => ({
@@ -14,15 +13,21 @@ export const getStaticProps = async ({
   params: { slug },
 }: {
   params: { slug: string };
-}) => ({ props: await getInstagramPost({ slug }) });
+}) => {
+  const props = await getInstagramPost({ slug });
+
+  if (!props) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return { props };
+};
 
 const InstagramSlug = (
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) => {
-  if (!props) {
-    return <NotFound />;
-  }
-
   return <InstagramPost {...props} />;
 };
 
