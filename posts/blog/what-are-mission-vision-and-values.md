@@ -37,7 +37,6 @@ keywords:
   - startups
   - time
 readingTime: 3
-bitLink: what-are-mission-vision-and-values
 ---
 
 One of the most reflective and challenging subjects as a first-time founder is understanding the definition of **mission**, **vision**, and **values**, especially **mission**. Before defining these statements for your company, you need to know their meaning. Using my case as an example, a friend told me that he couldn't see what my company does because these statements weren't clear, and he was right. They weren't clear even for me because of my lack of a solid definition.
