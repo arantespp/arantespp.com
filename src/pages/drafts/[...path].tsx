@@ -1,4 +1,4 @@
-import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import { GetStaticPaths } from 'next';
 import { Group, getDraft, getDrafts } from '../../../lib/files';
 import { PostPage } from '../../components/PostPage';
 

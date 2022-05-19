@@ -5,7 +5,7 @@ import { getDrafts } from '../../../lib/files';
 import RecommendationsList from '../../components/RecommendationsList';
 
 export const getStaticProps = async () => {
-  const drafts = await getDrafts();
+  const drafts = (await getDrafts()).map(({ content, ...rest }) => rest);
   return { props: { drafts } };
 };
 
