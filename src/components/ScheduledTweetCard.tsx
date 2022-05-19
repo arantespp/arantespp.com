@@ -93,7 +93,7 @@ export const ScheduledTweetCard = ({
     }
 
     if (cardNumber) {
-      return `#${cardNumber} ${date}`;
+      return `#${cardNumber} - ${date}`;
     }
 
     return date;
@@ -102,7 +102,6 @@ export const ScheduledTweetCard = ({
   return (
     <Flex
       sx={{
-        marginBottom: 4,
         flexDirection: 'column',
         borderColor: 'muted',
         borderWidth: 1,
