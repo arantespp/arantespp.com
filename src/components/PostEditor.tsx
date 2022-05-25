@@ -5,7 +5,6 @@ import {
   Button,
   Checkbox,
   Flex,
-  Input,
   Label,
   Select,
   Text,
@@ -26,10 +25,22 @@ const schema = yup.object({
     .oneOf([...GROUPS])
     .required(),
   title: yup.string().required(),
-  /**
-   * https://moz.com/learn/seo/meta-description
-   */
-  excerpt: yup.string().min(50).max(160),
+  excerpt: yup
+    .string()
+    .test(
+      'len',
+      'can be empty or with string at least 50 characters and not more than 160',
+      (val) => {
+        if (val === undefined) {
+          return true;
+        }
+
+        /**
+         * https://moz.com/learn/seo/meta-description
+         */
+        return val.length === 0 || (val.length >= 50 && val.length <= 160);
+      },
+    ),
   date: yup.string(),
   tags: yup.string(),
   content: yup.string().required(),
@@ -147,6 +158,7 @@ const PostEditor = ({
         });
 
         const response = await putPost({ ...data });
+
         const json = await response.json();
 
         if (response.status === 200) {

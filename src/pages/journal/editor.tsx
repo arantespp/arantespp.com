@@ -3,6 +3,8 @@ import * as dateFns from 'date-fns';
 import { Box, Flex, Input, Text, Themed } from 'theme-ui';
 import { Journal } from '../../../lib/journal';
 import { JournalSearchName } from '../../components/JournalSearchName';
+import { JournalSummary } from '../../components/JournalSummary';
+import { Loading } from '../../components/Loading';
 import { NextSeo } from 'next-seo';
 import { useApiKey } from '../../hooks/useApiKey';
 import { useDateInput } from '../../hooks/useDateInput';
@@ -15,43 +17,39 @@ import Router from 'next/router';
 
 const AUTO_SAVE_DELAY = 500;
 
-const useAutoSave = (content: string) => {
+const useAutoSave = ({ content, date }: { content: string; date: string }) => {
   const { apiKey } = useApiKey();
-
-  const { date } = useQueryParamsDateOrToday();
 
   const [error, setError] = React.useState('');
 
   const [isSaving, setIsSaving] = React.useState(false);
 
   React.useEffect(() => {
-    if (!content || !date) {
-      return () => null;
+    if (content && date && apiKey) {
+      setIsSaving(true);
+
+      const timeout = setTimeout(async () => {
+        setError('');
+
+        const response = await fetch('/api/journal', {
+          method: 'PUT',
+          headers: {
+            'x-api-key': apiKey,
+          },
+          body: JSON.stringify({ date, content }),
+        });
+
+        const json = await response.json();
+
+        if (response.status !== 200) {
+          setError(`Error: ${json.error}`);
+        }
+
+        setIsSaving(false);
+      }, AUTO_SAVE_DELAY);
+
+      return () => clearTimeout(timeout);
     }
-
-    setIsSaving(true);
-
-    const timeout = setTimeout(async () => {
-      setError('');
-
-      const response = await fetch('/api/journal', {
-        method: 'PUT',
-        headers: {
-          'x-api-key': apiKey,
-        },
-        body: JSON.stringify({ date, content }),
-      });
-
-      const json = await response.json();
-
-      if (response.status !== 200) {
-        setError(`Error: ${json.error}`);
-      }
-
-      setIsSaving(false);
-    }, AUTO_SAVE_DELAY);
-
-    return () => clearTimeout(timeout);
   }, [apiKey, content, date]);
 
   /**
@@ -90,17 +88,15 @@ const useAutoSave = (content: string) => {
   return { error, isSaving };
 };
 
-const useContent = () => {
-  const { date } = useQueryParamsDateOrToday();
-
+const useContent = ({ date }: { date: string }) => {
   const { apiKey } = useApiKey();
 
   const { data, isLoading: isLoadingContent } = useQuery(
-    `/api/journal?date=${date}`,
+    [`/api/journal?date=${date}`, apiKey],
     async ({ queryKey }) =>
       fetch(queryKey[0], {
         headers: {
-          'x-api-key': apiKey,
+          'x-api-key': queryKey[1],
         },
       }).then((r): Promise<{ journal: Journal }> => r.json()),
     { enabled: !!apiKey },
@@ -110,8 +106,6 @@ const useContent = () => {
 
   const [content, setContent] = React.useState(contentFromApi);
 
-  const { error, isSaving } = useAutoSave(content);
-
   React.useEffect(() => {
     if (!contentFromApi || !date) {
       return setContent('');
@@ -120,26 +114,64 @@ const useContent = () => {
     setContent(contentFromApi);
   }, [date, contentFromApi]);
 
-  return { content, setContent, date, error, isSaving, isLoadingContent };
+  return { content, setContent, date, isLoadingContent };
 };
 
-const JournalEditor = () => {
-  const { date, content, setContent, error, isSaving, isLoadingContent } =
-    useContent();
-
-  const { date: dateInput, setDate: setDateInput } = useDateInput(date);
+const EditorWithContent = ({ date }: { date: string }) => {
+  const { content, setContent, isLoadingContent } = useContent({ date });
 
   const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
 
+  const { error, isSaving } = useAutoSave({ content, date });
+
+  return (
+    <>
+      <Box sx={{ marginY: 4 }}>
+        <Editor
+          ref={textAreaRef}
+          isValid={!!content}
+          value={content}
+          onChange={(e) => {
+            setContent(e.target.value);
+          }}
+          autoFocus
+        />
+      </Box>
+      <Flex sx={{ justifyContent: 'space-between' }}>
+        <Flex sx={{ gap: 3 }}>
+          <Link href="/journal/all">All</Link>
+          <Link href="/journal">Summary</Link>
+        </Flex>
+        <Text
+          sx={
+            isSaving || isLoadingContent
+              ? { color: 'muted', fontStyle: 'italic' }
+              : { color: 'text' }
+          }
+        >
+          {'Saved'}
+        </Text>
+      </Flex>
+      <JournalSearchName {...{ date, setContent, textAreaRef }} />
+      <ErrorMessage error={error} />
+    </>
+  );
+};
+
+const JournalEditor = () => {
+  const { date } = useQueryParamsDateOrToday();
+
+  const { date: dateInput, setDate: setDateInput } = useDateInput(date);
+
   const title = 'Journal Editor';
 
-  const disableEditor =
-    isLoadingContent ||
-    /**
-     * `date` and `dateInput` can be different because user can type anything
-     * or `dateInput` can be a future date. In this case, user can't write.
-     */
-    date !== dateInput;
+  // const disableEditor =
+  //   isLoadingContent ||
+  //   /**
+  //    * `date` and `dateInput` can be different because user can type anything
+  //    * or `dateInput` can be a future date. In this case, user can't write.
+  //    */
+  //   date !== dateInput;
 
   return (
     <>
@@ -161,35 +193,14 @@ const JournalEditor = () => {
           setDateInput(e.target.value);
         }}
       />
-      <ErrorMessage error={error} />
-      <Box sx={{ marginY: 4 }}>
-        <Editor
-          ref={textAreaRef}
-          disabled={disableEditor}
-          isValid={!!content}
-          value={content}
-          onChange={(e) => {
-            setContent(e.target.value);
-          }}
-          autoFocus
-        />
+      <React.Suspense fallback={<Loading />}>
+        <EditorWithContent date={date} />
+      </React.Suspense>
+      <Box sx={{ marginTop: 5 }}>
+        <React.Suspense fallback={<Loading />}>
+          <JournalSummary date={date} />
+        </React.Suspense>
       </Box>
-      <Flex sx={{ justifyContent: 'space-between' }}>
-        <Flex sx={{ gap: 3 }}>
-          <Link href="/journal/all">All</Link>
-          <Link href="/journal">Summary</Link>
-        </Flex>
-        <Text
-          sx={
-            isSaving || isLoadingContent
-              ? { color: 'muted', fontStyle: 'italic' }
-              : { color: 'text' }
-          }
-        >
-          {disableEditor ? 'Disabled' : 'Saved'}
-        </Text>
-      </Flex>
-      <JournalSearchName {...{ date, setContent, textAreaRef }} />
     </>
   );
 };

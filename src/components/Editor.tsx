@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Text, Textarea, TextareaProps } from 'theme-ui';
+import { Box, Container, Text, Textarea, TextareaProps } from 'theme-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCompress, faExpand } from '@fortawesome/free-solid-svg-icons';
 
@@ -25,7 +25,7 @@ const TextAreaContainer = ({
           justifyContent: 'center',
         }}
       >
-        {children}
+        <Container>{children}</Container>
       </Box>
     );
   }

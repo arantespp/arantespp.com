@@ -30,9 +30,18 @@ const Editor = () => {
     ['editor', { group, slug }],
     async () => {
       const url = `/api/post?group=${group}&slug=${slug}`;
-      return fetch(url).then((r) => r.json());
+      return fetch(url).then(async (r) => {
+        try {
+          return await r.json();
+        } catch {
+          return undefined;
+        }
+      });
     },
-    { enabled: !!(group && slug) },
+    {
+      enabled: Boolean(group && slug),
+      suspense: false,
+    },
   );
 
   const onCheckIfPostExists = React.useCallback(
