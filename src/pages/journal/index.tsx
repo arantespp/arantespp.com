@@ -5,13 +5,14 @@ import { JournalSummary } from '../../components/JournalSummary';
 import { NextSeo } from 'next-seo';
 import { useDateInput } from '../../hooks/useDateInput';
 import { useQueryParamsDateOrToday } from '../../hooks/useQueryParamsDateOrToday';
+import { useResponsiveValue } from '@theme-ui/match-media';
 import Link from '../../components/Link';
 import Loading from '../../components/Loading';
 
 const title = 'Journal Summary';
 
 const useDate = () => {
-  const { date: initialDate } = useQueryParamsDateOrToday();
+  const { date: initialDate, today } = useQueryParamsDateOrToday();
 
   const { date, setDate } = useDateInput(initialDate);
 
@@ -25,11 +26,13 @@ const useDate = () => {
     setDate(dateFns.format(addDay, format));
   };
 
-  return { date, setDate, addOneDayToDate };
+  return { date, setDate, addOneDayToDate, today };
 };
 
 const JournalIndex = () => {
-  const { date, setDate, addOneDayToDate } = useDate();
+  const { date, setDate, addOneDayToDate, today } = useDate();
+
+  const middle = useResponsiveValue(['today', 'input']);
 
   return (
     <>
@@ -52,6 +55,12 @@ const JournalIndex = () => {
           }}
           autoFocus
         />
+        <Button
+          sx={{ flexBasis: ['100%', '120px'] }}
+          onClick={() => setDate(today)}
+        >
+          Today
+        </Button>
         <Button
           sx={{ flexBasis: ['100%', '120px'] }}
           onClick={addOneDayToDate(1)}
