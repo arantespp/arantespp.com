@@ -60,7 +60,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 /**
  * This fixes:
  * - initial color mode flash
- * - Next.js SSR and suspense error.
+ * - Next.js SSR and suspense error
  */
 export default dynamic(() => Promise.resolve(App), {
   ssr: false,
