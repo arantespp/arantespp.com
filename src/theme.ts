@@ -21,7 +21,21 @@ const lightGray = '#6f6f6f';
 
 const lightLightGray = '#ddd';
 
-const dark = {
+const light = {
+  text: '#2a2a2a',
+  background: '#fff',
+  primary: palette.primary,
+  secondary: palette.complementary,
+  accent: palette.analogous2,
+  highlight: palette.analogous1,
+  error: palette.primary,
+  link: lightGray,
+  gray: '#515151',
+};
+
+type BlogColorMode = typeof light;
+
+const dark: BlogColorMode = {
   text: '#eee',
   background: '#212121',
   primary: '#ED975E',
@@ -36,19 +50,11 @@ const dark = {
 const colors = {
   modes: { dark },
   ...palette,
-  text: '#2a2a2a',
-  gray: '#515151',
   lightGray,
-  link: lightGray,
   lightLightGray,
-  background: '#fff',
   muted: '#aaa',
-  primary: palette.primary,
-  secondary: palette.complementary,
-  accent: palette.analogous2,
-  highlight: palette.analogous1,
-  error: palette.primary,
   twitter: palette.twitterBlue,
+  ...light,
 };
 
 /**
@@ -56,8 +62,6 @@ const colors = {
  */
 const config = {
   initialColorModeName: 'light',
-  useColorSchemeMediaQuery: true,
-  useLocalStorage: true,
 };
 
 export const theme: Theme = {

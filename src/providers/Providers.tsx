@@ -14,13 +14,13 @@ const queryClient = new QueryClient({
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <QueryClientProvider client={queryClient}>
         <ApiKeyProvider>
           <>{children}</>
         </ApiKeyProvider>
-      </ThemeProvider>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 };
 
