@@ -14,6 +14,8 @@ const DOMAIN = 'https://arantespp.com';
 
 const GITHUB_PROJECT = 'https://github.com/arantespp/arantespp.com';
 
+const RECOMMENDATIONS_LIMIT = 5;
+
 export const postsDirectory = path.join(process.cwd(), 'posts');
 
 export const readMarkdownFile = async (filePathFromPostsDirectory: string) => {
@@ -405,8 +407,6 @@ export const getPosts = async ({ group }: { group?: Group } = {}) => {
 
   return _allPosts.filter(filterByGroup(group));
 };
-
-const RECOMMENDATIONS_LIMIT = 5;
 
 const getOnlyRecommendationProperties = (post: Post) => {
   const {
