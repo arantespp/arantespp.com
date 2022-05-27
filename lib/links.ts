@@ -33,7 +33,7 @@ export const getRedirects = async () => {
     .map((post) => {
       return {
         source: `/${post.bitLink}`,
-        destination: post.href,
+        destination: post.draft ? '/drafts' : '' + post.href,
       };
     });
 
