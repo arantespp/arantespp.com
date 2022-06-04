@@ -170,11 +170,11 @@ const readGroupPost = async ({ group, slug }: GroupPostParams) => {
     const post = {
       title: titleCase(title || ''),
       excerpt,
-      ...(date ? getDate(date) : {}),
+      ...(date ? getDate(date) : { date: '', formattedDate: '' }),
       updatedAt,
       formattedUpdatedAt,
       updateHistory: `${GITHUB_PROJECT}/commits/main/posts/${group}/${slug}.md`,
-      href,
+      href: `${draft ? '/drafts' : ''}${href}`,
       group,
       slug,
       content,
@@ -312,6 +312,14 @@ const filterByGroup = (group?: Group) => (post: GroupPostFromMarkdown) => {
 
 let _allGroupPostsFromMarkdown: GroupPostFromMarkdown[];
 
+const readAllPostsGroups = async () => {
+  return (await Promise.all(GROUPS.map((g) => readAllPostsByGroup(g))))
+    .flatMap((groupPosts) => {
+      return groupPosts;
+    })
+    .sort(sortByMostRecentFirst);
+};
+
 const getGroupPostsFromMarkdown = async ({
   group,
   draft,
@@ -320,13 +328,7 @@ const getGroupPostsFromMarkdown = async ({
   draft?: boolean;
 } = {}): Promise<GroupPostFromMarkdown[]> => {
   if (!_allGroupPostsFromMarkdown) {
-    _allGroupPostsFromMarkdown = (
-      await Promise.all(GROUPS.map((g) => readAllPostsByGroup(g)))
-    )
-      .flatMap((groupPosts) => {
-        return groupPosts;
-      })
-      .sort(sortByMostRecentFirst);
+    _allGroupPostsFromMarkdown = await readAllPostsGroups();
   }
 
   return _allGroupPostsFromMarkdown
@@ -482,11 +484,19 @@ export const getPost = async (params: GetPostParams) => {
     return allPosts.find((post) => post.title === params.title);
   }
 
-  const post = allPosts.find(
+  const oldPost = allPosts.find(
     (post) => post.group === params.group && post.slug === params.slug,
   );
 
-  return post;
+  if (oldPost) {
+    const post = await readGroupPost(oldPost);
+
+    if (post) {
+      return addFinalParametersToPost(post);
+    }
+  }
+
+  return oldPost;
 };
 
 export const getPostAndRecommendations = async (params: GetPostParams) => {

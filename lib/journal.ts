@@ -6,9 +6,8 @@ import {
   QueryCommand,
   UpdateItemCommand,
 } from '@aws-sdk/client-dynamodb';
-import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
-
 import { getDateWithTimezone } from './getDateWithTimezone';
+import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
 
 const client = new DynamoDBClient({
   credentials: {
