@@ -484,19 +484,16 @@ export const getPost = async (params: GetPostParams) => {
     return allPosts.find((post) => post.title === params.title);
   }
 
-  const oldPost = allPosts.find(
-    (post) => post.group === params.group && post.slug === params.slug,
-  );
+  /**
+   * Read post again from markdown.
+   */
+  const post = await readGroupPost(params);
 
-  if (oldPost) {
-    const post = await readGroupPost(oldPost);
-
-    if (post) {
-      return addFinalParametersToPost(post);
-    }
+  if (post) {
+    return addFinalParametersToPost(post);
   }
 
-  return oldPost;
+  return post;
 };
 
 export const getPostAndRecommendations = async (params: GetPostParams) => {

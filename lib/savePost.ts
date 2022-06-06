@@ -3,10 +3,10 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { Book, Post, getPost, normalizeTags, postsDirectory } from './files';
 import { Group } from './groups';
+import { PostForm } from '../src/components/PostEditor';
 import { postTitleToSlug } from './postTitleToSlug';
 import { titleCase } from 'title-case';
 import matter from 'gray-matter';
-import type { PostForm } from '../src/components/PostEditor';
 
 export const savePost = async ({ content, ...meta }: PostForm) => {
   const { group, book } = meta;

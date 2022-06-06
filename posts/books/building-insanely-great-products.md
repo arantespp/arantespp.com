@@ -134,37 +134,11 @@ TODO: Importance vs Satisfaction Framework
 
 #### Value Propositions
 
-_A value proposition is when the perceived cost is less than the perceived value._
-
-The value proposition is the company's brand, its promise. The product's branch must be in alignment with the company's. The values are in the business outcomes and the collections of "do's," which will vary by persona, and each might have a different use scenario.
-
-To create a value proposition, you need:
-
-- Name of the product: Which products or services the company offers?
-- Value: What does the market value most?
-- Market description: For which market is the company creating the value proposition?
-- List of benefits: What are the benefits the market will derive from the product or service?
-- List of alternatives and differentiation: What alternatives options does the market have for product or service?
-- Proof of value: What evidences are there to substantiate your value proposition?
+[Notes](/zettel/value-proposition)
 
 #### Personas
 
-Personas bring to life the target consumer and help you understand your customers. There are three personas for a business-to-business (B2B) market: User, Influencer, and Buyer.
-
-- The User is the person who will use the product. They care about the ease of use and whether the product will enable them to get their job done.
-- The Influencer is the expert on that type of solution, and the Buyer might consult them. The Influencer may not care about the ease of use as the User.
-- The Buyer is the one with the money and will care about the price, support, service, and sales terms.
-
-The [value proposition](#value-proposition) could be different for each type of persona. Likewise, each persona will have distinct goals, so planning for building an insanely great product needs to take those differences into account.
-
-For the business-to-consumer (B2C) market, the three personas might be one person.
-
-Questions you need to answer to write the personas for the development, marketing, sales, and support teams:
-
-- What do people do?
-- How do they do it?
-- Why do they do it?
-- Who do they do it with?
+[Notes](/zettel/personas)
 
 #### Market/Competitive Research and Analysis
 
