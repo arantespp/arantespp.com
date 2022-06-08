@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as xslx from 'xlsx';
 import * as yup from 'yup';
-import { Button, Checkbox, Flex, Input, Label, Text, Textarea } from 'theme-ui';
+import { Box, Button, Checkbox, Flex, Input, Label, Text } from 'theme-ui';
 import {
   Control,
   Controller,
@@ -213,6 +213,9 @@ const useSaveForm = ({
 }) => {
   const key = 'arantespp.com/tweets-scheduler';
 
+  /**
+   * Load tweets from local storage at the beginning.
+   */
   React.useEffect(() => {
     if (singleTweet) {
       return;
@@ -231,6 +234,9 @@ const useSaveForm = ({
 
   const formValues = useWatch({ control });
 
+  /**
+   * Update local storage as soon as the form is updated.
+   */
   React.useEffect(() => {
     if (singleTweet) {
       return;
@@ -238,6 +244,10 @@ const useSaveForm = ({
 
     if (isDirty) {
       localStorage.setItem(key, JSON.stringify(formValues));
+    }
+
+    if (formValues.tweets.length === 0) {
+      localStorage.removeItem(key);
     }
   }, [formValues, isDirty, singleTweet]);
 
@@ -270,7 +280,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
     resolver: yupResolver(schema),
   });
 
-  const { fields, append, prepend, remove, insert } = useFieldArray({
+  const { fields, prepend, remove, insert } = useFieldArray({
     control,
     name: 'tweets',
   });
@@ -293,10 +303,14 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
 
   const [responses, setResponses] = React.useState<PostTweetResponse[]>([]);
 
+  const [isScheduling, setIsScheduling] = React.useState(false);
+
   const tweetMaxChars = getTweetMaxCharsLeft({ suffix: watch('suffix') });
 
   const onSubmit = async (values: TweetsSchedulerFormValues) => {
     try {
+      setIsScheduling(true);
+
       const toBeRemoved = (
         await Promise.all(
           values.tweets.map(async (tweet, index) => {
@@ -341,6 +355,8 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
       remove(toBeRemoved);
     } catch (err) {
       setError('tweets', { type: 'manual', message: err.message });
+    } finally {
+      setIsScheduling(false);
     }
   };
 
@@ -384,7 +400,37 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
           </Button>
         </>
       )}
+      {responses.length > 0 && (
+        <Box sx={{ marginY: 4 }}>
+          {responses.map((response, index) => {
+            /**
+             * Error is show on Tweet editor.
+             */
+            if ('error' in response) {
+              return null;
+            }
 
+            return (
+              <Box
+                key={response.id}
+                sx={{ marginY: 3 }}
+                ref={(ref) => {
+                  if (ref && responses.length - 1 === index) {
+                    ref.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                <PostTweetResponseCard
+                  response={response}
+                  onUpdated={onTweetUpdated(index)}
+                />
+              </Box>
+            );
+          })}
+
+          <Text>Scheduled: {responses.length}</Text>
+        </Box>
+      )}
       {fields.map((field, index) => {
         const name = `tweets.${index}.value` as const;
 
@@ -460,25 +506,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
         );
       })}
       {!singleTweet && <ErrorMessage errors={errors} name="tweets" />}
-
-      {responses.map((response, index) => {
-        /**
-         * Error is show on Tweet editor.
-         */
-        if ('error' in response) {
-          return null;
-        }
-
-        return (
-          <PostTweetResponseCard
-            key={response.id}
-            response={response}
-            onUpdated={onTweetUpdated(index)}
-          />
-        );
-      })}
-
-      {!singleTweet && (
+      {!singleTweet && numberOfTweets > 0 && (
         <Flex
           sx={{
             position: 'sticky',
@@ -490,12 +518,14 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
           <Text
             sx={{ fontSize: 4, backgroundColor: 'white', fontWeight: 'bold' }}
           >
-            Checks: {numberOfCheckedTweets}/{numberOfTweets}
+            {`${isScheduling ? 'Scheduled' : 'Checks'}: ${
+              isScheduling ? responses.length : numberOfCheckedTweets
+            }/${numberOfTweets}`}
           </Text>
         </Flex>
       )}
 
-      {!isSubmitSuccessful && (
+      {!isSubmitSuccessful && numberOfTweets > 0 && (
         <Button
           aria-label="submitButton"
           type="submit"
@@ -508,7 +538,6 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
           Schedule
         </Button>
       )}
-
       {isSubmitSuccessful && (
         <Button
           type="button"
