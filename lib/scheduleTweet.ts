@@ -122,7 +122,7 @@ export const getScheduledDate = ({
   const today = new Date();
 
   /**
-   * We'll schedule tweets from tomorrow.
+   * We'll schedule tweets from `SCHEDULE_FROM`.
    */
   let scheduledDate = dateFns.addDays(today, SCHEDULE_FROM);
 

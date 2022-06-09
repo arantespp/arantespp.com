@@ -147,6 +147,7 @@ export const ScheduledTweetCard = ({
             <Button
               onDoubleClick={() => setIsOnDeleteConfirmation(true)}
               disabled={disabled}
+              sx={{ backgroundColor: 'accent' }}
             >
               Delete (double click)
             </Button>
@@ -158,7 +159,7 @@ export const ScheduledTweetCard = ({
               Update
             </Button>
             <Button
-              sx={{ backgroundColor: 'secondary' }}
+              sx={{ backgroundColor: 'accent' }}
               disabled={disabled}
               onClick={() => {
                 setIsOnUpdatingMode(false);
@@ -179,7 +180,7 @@ export const ScheduledTweetCard = ({
               Yes
             </Button>
             <Button
-              sx={{ backgroundColor: 'secondary' }}
+              sx={{ backgroundColor: 'accent' }}
               onClick={() => setIsOnDeleteConfirmation(false)}
               disabled={disabled}
             >

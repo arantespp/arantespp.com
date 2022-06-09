@@ -190,7 +190,6 @@ const schema = yup
             .required(),
         }),
       )
-      .min(1, 'You must provide at least one tweet')
       .required(),
   })
   .required();
