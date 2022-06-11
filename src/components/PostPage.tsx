@@ -13,7 +13,7 @@ import { editPost } from '../../shortcuts';
 import { useContentEditable } from '../hooks/useContentEditable';
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 import { useRouter } from 'next/router';
-import Markdown from './Markdown';
+import Markdown from './MarkdownDynamic';
 import PostFooter from './PostFooter';
 import PostResume from './PostResume';
 import dynamic from 'next/dynamic';
@@ -210,20 +210,14 @@ export const PostPage = ({
       )}
       {isBook && (
         <Box sx={{ marginBottom: [5] }}>
-          <React.Suspense>
-            <BookHeader book={postOrContent.post.book!} />
-          </React.Suspense>
+          <BookHeader book={postOrContent.post.book!} />
         </Box>
       )}
       <Box as="article" sx={{ marginBottom: 5 }}>
         <Markdown content={newContent} noH1={isPost} />
       </Box>
       {isPost && <PostFooter post={postOrContent.post} />}
-      <React.Suspense>
-        {recommendations && (
-          <Recommendations recommendations={recommendations} />
-        )}
-      </React.Suspense>
+      {recommendations && <Recommendations recommendations={recommendations} />}
     </>
   );
 };

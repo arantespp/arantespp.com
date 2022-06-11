@@ -4,7 +4,6 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 
 const Markdown = dynamic(() => import('./Markdown'), {
-  ssr: false,
   suspense: true,
 });
 
@@ -20,7 +19,7 @@ const SimplyContent = ({ content }: { content: string }) => {
   );
 };
 
-const MarkdownNoSSR = (props: MarkdownProps) => {
+const MarkdownDynamic = (props: MarkdownProps) => {
   return (
     <React.Suspense fallback={<SimplyContent content={props.content} />}>
       <Markdown {...props} />
@@ -28,4 +27,4 @@ const MarkdownNoSSR = (props: MarkdownProps) => {
   );
 };
 
-export default MarkdownNoSSR;
+export default MarkdownDynamic;
