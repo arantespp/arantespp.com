@@ -6,30 +6,14 @@ import { editPost } from '../../shortcuts';
 import { useContentEditable } from '../hooks/useContentEditable';
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 import { useRouter } from 'next/router';
+import Markdown from './Markdown';
 import PostFooter from './PostFooter';
 import PostResume from './PostResume';
 import dynamic from 'next/dynamic';
 
 const BookHeader = dynamic(() => import('./BookHeader'));
 
-const Markdown = dynamic(() => import('./Markdown'), {
-  ssr: false,
-  suspense: true,
-});
-
 const Recommendations = dynamic(() => import('./Recommendations'));
-
-const SimplyContent = ({ content }: { content: string }) => {
-  return (
-    <Text
-      sx={{
-        whiteSpace: 'pre-line',
-      }}
-    >
-      {content.trim()}
-    </Text>
-  );
-};
 
 export type PostPageProps = {
   seo?: NextSeoProps;
@@ -174,12 +158,14 @@ export const PostPage = ({
         </Box>
       )}
       <Box as="article">
-        <React.Suspense fallback={<SimplyContent content={newContent} />}>
-          <Markdown content={newContent} noH1={isPost} />
-        </React.Suspense>
+        <Markdown content={newContent} noH1={isPost} />
       </Box>
       {isPost && <PostFooter post={postOrContent.post} />}
-      {recommendations && <Recommendations recommendations={recommendations} />}
+      <React.Suspense>
+        {recommendations && (
+          <Recommendations recommendations={recommendations} />
+        )}
+      </React.Suspense>
     </>
   );
 };
