@@ -1,27 +1,23 @@
 ---
-image: null
+title: Think and Grow Rich
+date: '2022-03-09'
+formattedDate: 'March 09, 2022'
+updatedAt: '2022-06-11'
+formattedUpdatedAt: 'June 11, 2022'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/books/think-and-grow-rich.md
+href: /drafts/books/think-and-grow-rich
+group: books
+slug: think-and-grow-rich
+tags:
+  - napoleon-hill
+draft: true
 book:
   authors:
     - Napoleon Hill
   link: 'https://www.amazon.com.br/Think-Grow-Rich-Napoleon-Hill/dp/8568014062/'
   ASIN: B0153TBCC2
   image: /images/books/think-and-grow-rich.jpg
-bitLink: think-and-grow-rich
-draft: true
-tags:
-  - napoleon-hill
-rating: 2
-date: '2022-03-09'
-excerpt: ''
-title: Think and Grow Rich
-group: books
-formattedDate: 'March 09, 2022'
-updatedAt: 'March 26, 2022'
-updateHistory: >-
-  https://github.com/arantespp/arantespp.com/commits/main/posts/books/think-and-grow-rich.md
-href: /books/think-and-grow-rich
-as: /think-and-grow-rich
-slug: think-and-grow-rich
 editLink: >-
   https://github.com/arantespp/arantespp.com/edit/main/posts/books/think-and-grow-rich.md
 url: 'https://arantespp.com/books/think-and-grow-rich'
@@ -29,6 +25,10 @@ keywords:
   - books
   - napoleon-hill
 readingTime: 4
+bitLink: think-and-grow-rich
+references: []
+backlinks: []
+excerpt: ''
 ---
 
 ## TL;DR
@@ -58,6 +58,10 @@ Napoleon says that this story contains the sum and substance of the secret of th
 We're the masters of our Fate, the Captains of our souls because we have the power to control our thoughts. Our brains become magnetized with the dominating thoughts in our minds. These magnets attract to us the forces, the people, the circumstances of life which resonate with the nature of our dominating thoughts.
 
 Wherever we want for us, we have to magnetize our minds with an intense **desire** for what we want.
+
+## Chapter 7 - Organized Planning
+
+(The Sixth Step to Riches)
 
 ## Chapter 11 - The Mystery of Sex Transmutation
 
@@ -94,7 +98,7 @@ The sixth sense is **creative imagination**—the direct link between the finite
 
 Many people don't reach the creative imagination. They use only the synthetic or reasoning faculty, which are often faulty because one's accumulated experience primarily guides it. Not all knowledge accumulated by experience is accurate. Genius makes use of both the synthetic and the creative faculties of imagination.
 
-The importance of the urge sex is because it's the most outstanding and most potent mind stimuli. When harnessed and transmuted, this driving force can lift men into a higher sphere of thought. Sex energy is the creative energy of all genii. However, the mere possession of this energy isn't sufficient to produce genius. One must transmute the energy from the desire for physical contact into some other form of desire and action.
+The importance of the urge sex is because it's the most outstanding and most potent mind stimuli. This driving force can lift men into a higher sphere of thought when harnessed and transmuted. Sex energy is the creative energy of all genii. However, the mere possession of this energy isn't sufficient to produce genius. One must transmute the energy from the desire for physical contact into some other form of desire and action.
 
 Generally, the procedure to achieve a higher state of thoughts and active, creative imagination is:
 
