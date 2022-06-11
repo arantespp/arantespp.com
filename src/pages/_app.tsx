@@ -1,6 +1,14 @@
 import * as React from 'react';
 import { AppProps } from 'next/app';
-import { DefaultSeo, DefaultSeoProps } from 'next-seo';
+import {
+  DefaultSeo,
+  DefaultSeoProps,
+  LogoJsonLd,
+  LogoJsonLdProps,
+  SocialProfileJsonLd,
+  SocialProfileJsonLdProps,
+} from 'next-seo';
+import { socialMedias } from '../../lib/socialMedias';
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import Providers from '../providers/Providers';
@@ -13,6 +21,8 @@ const Shortcuts = dynamic(() =>
 const TagManager = dynamic(() =>
   import('../components/TagManager').then((mod) => mod.TagManager),
 );
+
+const URL = process.env.NEXT_PUBLIC_URL as string;
 
 const title = "Pedro's Blog";
 
@@ -28,11 +38,28 @@ const defaultSeo: DefaultSeoProps = {
     handle: '@arantespp',
   },
   openGraph: {
-    url: 'https://arantespp.com',
+    url: URL,
     type: 'website',
     title,
     description,
   },
+};
+
+const profileJsonLd: SocialProfileJsonLdProps = {
+  type: 'Person',
+  name: 'Pedro Arantes',
+  url: URL,
+  sameAs: [
+    socialMedias.Twitter.href,
+    socialMedias.Facebook.href,
+    socialMedias.Instagram.href,
+    socialMedias.LinkedIn.href,
+  ],
+};
+
+const logoJsonLd: LogoJsonLdProps = {
+  url: URL,
+  logo: `${URL}/images/logo.png`,
 };
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -46,6 +73,8 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <DefaultSeo {...defaultSeo} />
+      <LogoJsonLd {...logoJsonLd} />
+      <SocialProfileJsonLd {...profileJsonLd} />
       <Shortcuts />
       <TagManager />
       <Providers>

@@ -38,3 +38,4 @@ lib/*.js
 
 *.tsbuildinfo
 .vscode/
+.vercel
