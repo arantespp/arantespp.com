@@ -13,7 +13,7 @@ import { editPost } from '../../shortcuts';
 import { useContentEditable } from '../hooks/useContentEditable';
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 import { useRouter } from 'next/router';
-import Markdown from './MarkdownDynamic';
+import Markdown from './Markdown';
 import PostFooter from './PostFooter';
 import PostResume from './PostResume';
 import dynamic from 'next/dynamic';
