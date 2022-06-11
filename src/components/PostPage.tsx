@@ -98,36 +98,51 @@ export const PostPage = ({
         date: createdAt,
       } = post;
 
+      const openGraph: NextSeoProps['openGraph'] = {
+        url: 'https://arantespp.com' + href,
+        title,
+        description: excerpt,
+      };
+
+      if (book && isBook) {
+        openGraph.type = 'book';
+
+        openGraph.book = {
+          authors: book?.authors,
+          tags,
+          isbn: book?.ISBN || book?.ASIN,
+        };
+
+        openGraph.images = [
+          {
+            url:
+              book.image ||
+              'https://arantespp.com/images/creators/jess-bailey-X5gDoysLbBc-unsplash.webp',
+            alt: title,
+          },
+        ];
+      } else {
+        openGraph.type = 'article';
+
+        openGraph.article = {
+          publishedTime: createdAt,
+          modifiedTime: updatedAt,
+          authors: ['Pedro Arantes'],
+          tags,
+        };
+
+        openGraph.images = [
+          {
+            url: 'https://arantespp.com/images/creators/david-travis-5bYxXawHOQg-unsplash.webp',
+            alt: title,
+          },
+        ];
+      }
+
       return {
         title,
         description: excerpt,
-        openGraph: {
-          url: 'https://arantespp.com' + href,
-          ...(book && isBook
-            ? {
-                images: book.image
-                  ? [
-                      {
-                        url: book.image,
-                        alt: title,
-                      },
-                    ]
-                  : undefined,
-                book: {
-                  authors: book?.authors,
-                  tags,
-                  isbn: book?.ISBN || book?.ASIN,
-                },
-              }
-            : {
-                article: {
-                  publishedTime: createdAt,
-                  modifiedTime: updatedAt,
-                  authors: ['https://arantespp.com/me'],
-                  tags,
-                },
-              }),
-        },
+        openGraph,
         ...seo,
       };
     }
