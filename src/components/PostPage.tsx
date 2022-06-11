@@ -37,7 +37,7 @@ export type PostPageProps = {
 } & ({ post: Post | Draft } | { content: string });
 
 export const PostPage = ({
-  seo,
+  seo = {},
   recommendations,
   ...postOrContent
 }: PostPageProps) => {
@@ -84,7 +84,7 @@ export const PostPage = ({
     return post.content;
   }, [postOrContent]);
 
-  const newSeo = React.useMemo(() => {
+  const newSeo: NextSeoProps = (() => {
     if ('post' in postOrContent) {
       const { post } = postOrContent;
 
@@ -148,7 +148,7 @@ export const PostPage = ({
     }
 
     return seo;
-  }, [postOrContent, seo, isBook]);
+  })();
 
   return (
     <>
