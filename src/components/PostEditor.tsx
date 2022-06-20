@@ -261,4 +261,4 @@ const PostEditor = ({
   );
 };
 
-export default PostEditor;
+export default React.memo(PostEditor);

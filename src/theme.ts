@@ -48,20 +48,20 @@ const dark: BlogColorMode = {
 };
 
 const colors = {
-  modes: { dark },
+  modes: { light },
   ...palette,
   lightGray,
   lightLightGray,
   muted: '#aaa',
   twitter: palette.twitterBlue,
-  ...light,
+  ...dark,
 };
 
 /**
  * https://theme-ui.com/theming/#configuration-flags
  */
 const config = {
-  initialColorModeName: 'light',
+  initialColorModeName: 'dark',
 };
 
 export const theme: Theme = {

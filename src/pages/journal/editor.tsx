@@ -8,7 +8,7 @@ import { Loading } from '../../components/Loading';
 import { NextSeo } from 'next-seo';
 import { useApiKey } from '../../hooks/useApiKey';
 import { useDateInput } from '../../hooks/useDateInput';
-import { useQuery } from 'react-query';
+import { useQuery, useQueryClient } from 'react-query';
 import { useQueryParamsDateOrToday } from '../../hooks/useQueryParamsDateOrToday';
 import Editor from '../../components/Editor';
 import ErrorMessage from '../../components/ErrorMessage';
@@ -89,10 +89,14 @@ const useAutoSave = ({ content, date }: { content: string; date: string }) => {
 };
 
 const useContent = ({ date }: { date: string }) => {
+  const queryClient = useQueryClient();
+
   const { apiKey } = useApiKey();
 
+  const queryKey = [`/api/journal?date=${date}`, apiKey];
+
   const { data, isLoading: isLoadingContent } = useQuery(
-    [`/api/journal?date=${date}`, apiKey],
+    queryKey,
     async ({ queryKey }) =>
       fetch(queryKey[0], {
         headers: {
@@ -114,15 +118,41 @@ const useContent = ({ date }: { date: string }) => {
     setContent(contentFromApi);
   }, [date, contentFromApi]);
 
+  /**
+   * Update the cache with the new content.
+   */
+  React.useEffect(() => {
+    if (!queryKey[1]) {
+      return;
+    }
+
+    const queryData = queryClient.getQueryData<{
+      journal: any;
+    }>(queryKey);
+
+    if (!queryData || !queryData.journal) {
+      return;
+    }
+
+    if (queryData.journal.content === content) {
+      return;
+    }
+
+    queryClient.setQueryData(queryKey, {
+      journal: { ...queryData.journal, content },
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [content]);
+
   return { content, setContent, date, isLoadingContent };
 };
 
 const EditorWithContent = ({ date }: { date: string }) => {
   const { content, setContent, isLoadingContent } = useContent({ date });
 
-  const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
-
   const { error, isSaving } = useAutoSave({ content, date });
+
+  const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
 
   return (
     <>
@@ -157,6 +187,8 @@ const EditorWithContent = ({ date }: { date: string }) => {
     </>
   );
 };
+
+const MemoizedEditorWithContent = React.memo(EditorWithContent);
 
 const JournalEditor = () => {
   const { date } = useQueryParamsDateOrToday();
@@ -194,10 +226,10 @@ const JournalEditor = () => {
         }}
       />
       <React.Suspense fallback={<Loading />}>
-        <EditorWithContent date={date} />
+        <MemoizedEditorWithContent date={date} />
       </React.Suspense>
       <Box sx={{ marginTop: 5 }}>
-        <React.Suspense fallback={<Loading />}>
+        <React.Suspense>
           <JournalSummary date={date} />
         </React.Suspense>
       </Box>
