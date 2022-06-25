@@ -19,7 +19,7 @@ draft: true
 
 ## TL;DR
 
-- Getting Thigs Done (GTD) method helps you control all your work.
+- Getting Things Done (GTD) method helps you control all your work.
 - Your brain has a limited [working memory](/zettel/working-memory). Trying to remember everything leads to an inability to concentrate fully on the work at hand because your brain will still try to remember problems and tasks that you've stored in it.
 - These unfinished problems and tasks are called [open loops](/zettel/ideas-in-open-loop). Your brain will constantly remind you about them because they're open, unfinished. They steal your energy and focus.
 - GTD helps you elimited those open loops and gives you a sense of control over your work, which gives to you a relaxed control and flexibility to handle changing circumstances. It consists in a specific and powerful five-stage workflow: [capture](#1-capture), [clarify](#2-clarify), [organize](#3-organize), [reflect](#4-reflect), and [engage](#5-engage).

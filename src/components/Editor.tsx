@@ -21,8 +21,7 @@ const TextAreaContainer = ({
           height: '100%',
           backgroundColor: 'background',
           padding: 4,
-          display: 'flex',
-          justifyContent: 'center',
+          overflow: 'auto',
         }}
       >
         <Container>{children}</Container>
@@ -63,7 +62,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
 
     const [isFullScreen, setIsFullScreen] = React.useState(false);
 
-    const { value } = props;
+    const { value, onChange } = props;
 
     React.useEffect(() => {
       if (textAreaRef?.current) {
@@ -81,7 +80,24 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
 
         window.scrollTo(scrollLeft, scrollTop);
       }
-    }, [textAreaRef, value]);
+    }, [textAreaRef, value, isFullScreen]);
+
+    /**
+     * React controlled input cursor jumps
+     * https://stackoverflow.com/a/68928267/8786986
+     */
+    const [cursor, setCursor] = React.useState<number>();
+
+    React.useEffect(() => {
+      if (textAreaRef?.current && cursor) {
+        textAreaRef.current.setSelectionRange(cursor, cursor);
+      }
+    }, [cursor, value, textAreaRef]);
+
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setCursor(e.target.selectionStart);
+      onChange?.(e);
+    };
 
     return (
       <TextAreaContainer isFullScreen={isFullScreen}>
@@ -103,6 +119,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
             }}
             {...props}
             value={value}
+            onChange={handleChange}
             sx={{
               '&:disabled': {
                 color: 'muted',

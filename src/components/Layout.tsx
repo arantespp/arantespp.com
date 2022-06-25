@@ -26,7 +26,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           paddingX: 3,
         }}
       >
-        <React.Suspense fallback={<Loading />}>{children}</React.Suspense>
+        {children}
         <Box sx={{ marginTop: 6 }}>
           <Newsletter />
         </Box>

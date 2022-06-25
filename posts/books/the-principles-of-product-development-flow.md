@@ -1,5 +1,18 @@
 ---
-image: null
+title: The Principles of Product Development Flow
+date: '2021-08-31'
+formattedDate: 'August 31, 2021'
+updatedAt: '2022-06-25'
+formattedUpdatedAt: 'June 25, 2022'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
+href: /drafts/books/the-principles-of-product-development-flow
+group: books
+slug: the-principles-of-product-development-flow
+tags:
+  - donald-g-reinertsen
+  - product-development
+draft: true
 book:
   authors:
     - Donald G. Reinertsen
@@ -7,22 +20,6 @@ book:
     https://www.amazon.com/Principles-Product-Development-Flow-Generation-ebook/dp/B00K7OWG7O
   ASIN: B00K7OWG7O
   image: /images/books/the-principles-of-product-development-flow.jpg
-bitLink: flow
-draft: true
-tags:
-  - donald-g-reinertsen
-  - product-development
-rating: 6
-date: '2021-08-31'
-excerpt: ''
-title: The Principles of Product Development Flow
-group: books
-formattedDate: 'August 31, 2021'
-updatedAt: 'March 31, 2022'
-updateHistory: >-
-  https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
-href: /books/the-principles-of-product-development-flow
-slug: the-principles-of-product-development-flow
 editLink: >-
   https://github.com/arantespp/arantespp.com/edit/main/posts/books/the-principles-of-product-development-flow.md
 url: 'https://arantespp.com/books/the-principles-of-product-development-flow'
@@ -30,12 +27,27 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 20
+readingTime: 21
+bitLink: flow
+references:
+  - /zettel/parkinson-s-law
+  - /zettel/proxy-variable
+  - /zettel/pareto-paradox
+  - /zettel/sunk-cost
+  - /zettel/marginal-analysis
+  - /zettel/set-based-concurrent-engineering
+  - /zettel/asymmetric-opportunity
+  - /zettel/critical-path
+  - /zettel/queue-capacity-utilization
+  - /zettel/cumulative-flow-diagram-cfd
+  - /zettel/little-s-law
+backlinks: []
+excerpt: ''
 ---
 
 ## Principles
 
-### 2 - The Economic View
+### Chapter 2 - The Economic View
 
 _Why do you want to change the product development process?_ The answer: **to increase profits**.
 
@@ -160,25 +172,25 @@ Uncertain opportunities have large payoff asymmetries, making them the best sour
 
 Most corporations give control over financial resources to people who worry about the economics of their choices. To influence those people, you must speak the language of economics, not the language of [proxy variables](/zettel/proxy-variable). When you talk to those who control the money using the language of the money, you can get fast decisions and enthusiastic support.
 
-### 3 - Managing Queues
+### Chapter 3 - Managing Queues
 
-Queues matter because they're economically important.
+**[Q1](#) to [Q2](#) - Why Queues Matter?** Queues matter because they're economically important, poorly managed, and they have the potential to be much better managed. They profoundly affect the economics of product development.
 
-**[Q1](#) to [Q2](#) - Why Queues Matter?**
+**[Q3](#) to [Q8](#) - The Behavior of Queues.** To understand the behavior of queues, you need to understand how capacity utilization and variability affect the size of queues, the relative frequency of high-queue states, and how the structure of a queueing system affects their performance.
 
-**[Q3](#) to [Q8](#) - The Behavior of Queues**
+**[Q9](#) to [Q10](#) - The Economics of Queues.** Optimizing queues brings a problem because the higher you utilize capacity, the more you pay for queues, but the less you pay for excess capacity. How to make quantitative trade-offs between them? How can you use queueing discipline to reduce the economic cost without reducing the queue size?
 
-**[Q9](#) to [Q10](#) - The Economics of Queues**. Optimizing queues brings a problem because the higher you utilize capacity, the more you pay for queues, but the less you pay for excess capacity. How to make quantitative trade-offs between them? How can you use queueing discipline to reduce the economic cost without reducing the queue size?
+**[Q11](#) to [Q16](#) - Managing Queues.** Six principles to help you manage queues. First is the cumulative flow diagram (CFD). Second, the Little's Formula. Then, two important principles for controlling queue size. Finally, the counterintuitive nature of random processes.
 
 #### Q1: The Principle of Invisible Inventory: Product development inventory is physically and financially invisible.
 
-Inventory in product development isn't physical objects but information, then it's virtually invisible, both physically and financially. Product development inventory's effects: increased cycle time, delayed feedback, constantly shifting priorities, and status reporting.
+Inventory in product development isn't physical objects but information. Then, it's virtually invisible, both physically and financially. Product development inventory's effects: increased cycle time, delayed feedback, constantly shifting priorities, and status reporting.
 
 #### Q2: The Principle of Queueing Waste: Queues are the root cause of the majority of economic waste in product development.
 
 Product development queues do much more damage than manufacturing queues for two reasons.
 
-1. Product development queues tend to be much bigger than manufacturing queues. No natural predators are keeping them under control because these [queues are invisible](#q1-the-principle-of-invisible-inventory-product-development-inventory-is-physically-and-financially-invisible). Then companies don't measure, manage, and realize that queues are a problem.
+1. Product development queues tend to be much bigger than manufacturing queues. No natural predators are controlling them because these [queues are invisible](#q1-the-principle-of-invisible-inventory-product-development-inventory-is-physically-and-financially-invisible). Then companies don't measure, manage, and realize that queues are a problem.
 2. Queues create many forms of economic waste.
    - **Longer Cycle Time.** It takes longer to reach the front of an extensive line than a small one. Usually, delay costs rise linearly with queue size.
    - **Increased Risk.** Queues increase the transit time through the product development pipeline. When transit time goes up, you're more vulnerable to changes in customer preference, preemption by competitors, and shifts in the underlying technology.
@@ -223,7 +235,7 @@ $$
 
 The equation shows that queues are proportional to the average squares of the coefficient of variation for arrivals and service processes. You compute the coefficient as the ratio between standard deviation and the mean of a probability distribution. Since the square of the standard deviation is the variance, **this means that queues vary linearly with variance**.
 
-If you were able to make the processing time of a queue equal every time ($C^2_\text{service} = 0$), this would only cut the average queue size in half because of the randomness of arrival times. **So, be very cautious if you think you can solve the problem of queues by reducing variability.**
+If you could make the processing time of a queue equal every time ($C^2_\text{service} = 0$), this would only cut the average queue size in half because of the randomness of arrival times. **So, be very cautious if you think you can solve the problem of queues by reducing variability.**
 
 #### Q6: The Principle of Variability Amplification: Operating at high levels of capacity utilization increases variability.
 
@@ -233,23 +245,25 @@ $$
 \frac{dW}{d\rho} = \frac{1}{(1-\rho)^2}T_\text{service}
 $$
 
-For example, a change in loading at 95 percent utilization produces a cycle time impact that is 25 times higher than the exact change in loading at 75 percent utilization.
+$W$ represents queue size, $T_\text{service}$ represents service time or loading, and $\rho$ represents queue capacity utilization.
+
+A change in loading at 95 percent utilization produces a cycle time impact that is 25 times higher than the exact change in loading at 75 percent utilization.
 
 #### Q7. The Principle of Queueing Structure: Serve pooled demand with reliable high-capacity servers.
 
-Exists many process structures in a queue. For example, you can have a single demand stream with a single server in an $M/M/1$ queue, or with $n$ servers in an $M/M/n$ queue. You can have single or multiple servers with a single shared queue, or you can have individual queues for each server. The performance of these structures differs.
+Exists many process structures in a queue. For example, you can have a single demand stream with a single server in an $M/M/1$ queue or with $n$ servers in an $M/M/n$ queue. In addition, you can have single or multiple servers with a single shared queue or individual queues for each server. Naturally, the performance of these structures differs.
 
-![Queueing System Structure.](/images/books/originals/queueing-system-structure.png)
+![Queueing System Structure.](/images/originals/queueing-system-structure.png)
 
 - One queue per server: a single bad job can block everything behind it in the queue.
-- Single-queue multiple-server: smaller delay and the variance in processing times is lower.
+- Single-queue multiple-server: smaller delay and lower processing time variance.
 - Single-queue single high-capacity server: the processing time will be faster. In a light-loaded queue, a high-capacity server accomplishes tasks faster than many low-capacity servers because the service time is the majority of cycle time. However, it's also less robust because a failure will stop all flow, and a bad job can block the entire flow.
 
 #### Q8. The Principle of Linked Queues: Adjacent queues see arrival or service variability depending on loading.
 
-The departure process for a queue becomes the arrival process for the next one if they're linked. Depending on the size of the queue at a process, its output pattern will either look more like its arrival pattern or its service pattern.
+The departure process for a queue becomes the arrival process for the next one if they're linked. Depending on the queue size at a process, its output pattern will either look more like its arrival pattern or its service pattern.
 
-In a process with a chain of linked queues, one of them is the bottleneck. In a scenario like this, you need to reduce the variability from the bottleneck to permit smoother flow on it, which leads to a higher throughput.
+In a process with a chain of linked queues, one of them is the bottleneck. In a scenario like this, you need to reduce the variability from the bottleneck to permit smoother flow, which leads to a higher throughput.
 
 It's important to go beyond the popular but simplistic idea that the bottleneck's capacity controls system flow. In other words, flow through a bottleneck is affected strongly by the process that precedes it. The upstream process determines the variation in the arrival rate at the bottleneck. **Managing the process upstream of the bottleneck is a valuable tool for improving flow at the bottleneck.**
 
@@ -311,17 +325,21 @@ For example, if your development process has 50 projects in process and complete
 
 Queues' capacity utilization is almost useless as a metric for real-time control because you can't estimate either demand or capacity with sufficient accuracy, as discussed in [Principle Q3](#q3-the-principle-of-queueing-capacity-utilization-capacity-utilization-increases-queues-exponentially).
 
-Choose queue size as the control variable, instead of capacity utilization.
+Choose queue size as the control variable instead of capacity utilization.
 
-Small changes in capacity utilization will translate to large changes in queue size and cycle time because of the steep slope of the queueing curve (exponential). This means that a relatively wide control band of queue size will force the system into a very tight range of capacity utilization. **Controlling queue size directly controls cycle time.**
+Small changes in capacity utilization will translate to large changes in queue size and cycle time because of the steep slope of the queueing curve (exponential). This means that a relatively wide control band of queue size will force the system into a very tight capacity utilization range. **Controlling queue size directly controls cycle time.**
 
 ![Steep slope of the queuing curve](/images/originals/queue-size-vs-percent-capacity-utilization-slope.png)
 
 #### Q14: The Second Queue Size Control Principle: Don't control cycle time, control queue size.
 
-???
+It's more manageable controlling queue size than cycle time. Cycle time is a lagging indicator because you can only evaluate it when a job exits the system. You can determine the queue size instantly at the moment that it changes.
 
-### 4 - Exploiting Variability
+#### Q15: The Diffusion Principle: Over time, queues will randomly spin seriously out of control and will remain in this state for long periods.
+
+#### Q16: The Intervention Principle: We cannot rely on randomness to correct a random queue.
+
+### Chapter 4 - Exploiting Variability
 
 #### V1: The Principle of Beneficial Variability: Variability can create economic value.
 
@@ -345,4 +363,4 @@ The economics of each discrete choice depends on two factors: the probability an
 
 Cadence enforces small batch size by forcing work products to move forward on a fixed rhythm. For example, if the review is every X time, the batch size is X time worth of work.
 
-It also enforces small batch sizes because it removes coordination overhead, the transaction cost. Everyone knows that the event will occur on some date, so there is no overhead associated with setting up the event. With the lower transaction cost, small batches are economical.
+It also enforces small batch sizes because it removes coordination overhead, and the transaction cost. Everyone knows that the event will occur on some date, so there is no overhead associated with setting up the event. With the lower transaction cost, small batches are economical.

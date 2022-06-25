@@ -36,7 +36,7 @@ const light = {
 type BlogColorMode = typeof light;
 
 const dark: BlogColorMode = {
-  text: '#eee',
+  text: '#ddd',
   background: '#212121',
   primary: '#ED975E',
   secondary: '#5EB4ED',
@@ -157,7 +157,7 @@ export const theme: Theme = {
     h4: {
       padding: 0,
       margin: 0,
-      marginTop: 4,
+      marginTop: 5,
       marginBottom: 3,
       fontSize: 2,
       fontFamily: 'heading',

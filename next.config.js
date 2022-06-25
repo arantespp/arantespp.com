@@ -5,11 +5,14 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const { getRedirects } = require('./lib/links');
 
-module.exports = withBundleAnalyzer(
-  /** @type {import('next').NextConfig} */
-  {
-    async redirects() {
-      return getRedirects();
-    },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async redirects() {
+    return getRedirects();
   },
-);
+  compiler: {
+    emotion: true,
+  },
+};
+
+module.exports = withBundleAnalyzer(nextConfig);
