@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-06-25'
-formattedUpdatedAt: 'June 25, 2022'
+updatedAt: '2022-06-26'
+formattedUpdatedAt: 'June 26, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 21
+readingTime: 22
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -174,13 +174,13 @@ Most corporations give control over financial resources to people who worry abou
 
 ### Chapter 3 - Managing Queues
 
-**[Q1](#) to [Q2](#) - Why Queues Matter?** Queues matter because they're economically important, poorly managed, and they have the potential to be much better managed. They profoundly affect the economics of product development.
+**[Q1](#q1-the-principle-of-invisible-inventory-product-development-inventory-is-physically-and-financially-invisible) to [Q2](#q2-the-principle-of-queueing-waste-queues-are-the-root-cause-of-the-majority-of-economic-waste-in-product-development) - Why Queues Matter?** Queues matter because they're economically important, poorly managed, and they have the potential to be much better managed. They profoundly affect the economics of product development.
 
-**[Q3](#) to [Q8](#) - The Behavior of Queues.** To understand the behavior of queues, you need to understand how capacity utilization and variability affect the size of queues, the relative frequency of high-queue states, and how the structure of a queueing system affects their performance.
+**[Q3](#q3-the-principle-of-queueing-capacity-utilization-capacity-utilization-increases-queues-exponentially) to [Q8](#q8-the-principle-of-linked-queues-adjacent-queues-see-arrival-or-service-variability-depending-on-loading) - The Behavior of Queues.** To understand the behavior of queues, you need to understand how capacity utilization and variability affect the size of queues, the relative frequency of high-queue states, and how the structure of a queueing system affects their performance.
 
-**[Q9](#) to [Q10](#) - The Economics of Queues.** Optimizing queues brings a problem because the higher you utilize capacity, the more you pay for queues, but the less you pay for excess capacity. How to make quantitative trade-offs between them? How can you use queueing discipline to reduce the economic cost without reducing the queue size?
+**[Q9](#q9-the-principle-of-queue-size-optimization-optimum-queue-size-is-an-economic-trade-off) to [Q10](#q10-the-principle-of-queueing-discipline-queue-cost-is-affected-by-the-sequence-in-which-we-handle-the-jobs-in-the-queue) - The Economics of Queues.** Optimizing queues brings a problem because the higher you utilize capacity, the more you pay for queues, but the less you pay for excess capacity. How to make quantitative trade-offs between them? How can you use queueing discipline to reduce the economic cost without reducing the queue size?
 
-**[Q11](#) to [Q16](#) - Managing Queues.** Six principles to help you manage queues. First is the cumulative flow diagram (CFD). Second, the Little's Formula. Then, two important principles for controlling queue size. Finally, the counterintuitive nature of random processes.
+**[Q11](#q11-the-cumulative-flow-principle-use-cf-ds-to-monitor-queues) to [Q16](#q16-the-intervention-principle-we-cannot-rely-on-randomness-to-correct-a-random-queue) - Managing Queues.** Six principles to help you manage queues. First is the cumulative flow diagram (CFD). Second, the Little's Formula. Then, two important principles for controlling queue size. Finally, the counterintuitive nature of random processes.
 
 #### Q1: The Principle of Invisible Inventory: Product development inventory is physically and financially invisible.
 
@@ -203,9 +203,9 @@ Queues off the [critical path](/zettel/critical-path) also create costs to the p
 
 #### Q3: The Principle of Queueing Capacity Utilization: Capacity utilization increases queues exponentially.
 
-[Queue capacity utilization](/zettel/queue-capacity-utilization) is the most critical factor that affects queue size. As you approach 100% of the queue capacity, queues become exponentially large. Knowing capacity utilization allow you to predict:
+[Queue capacity utilization](/zettel/queue-capacity-utilization) is the most critical factor that affects queue size. As you approach 100% of the queue capacity, queues become exponentially large. Knowing capacity utilization allows you to predict:
 
-- the percent of time arriving work will find the resource busy;
+- the percent of the time that the arriving work will find the server busy;
 - the average number of items in the queue;
 - the average number of items in the system;
 - the percent of overall cycle time is queue time;
@@ -283,7 +283,7 @@ $$
 \mu_0 = \lambda + \sqrt{\frac{C_D\lambda}{C_C}}.
 $$
 
-Optimal capacity for a process must be higher when the cost of delay increases because queues become more expensive. When the cost of capacity rises, then optimal capacity decrease.
+The optimal capacity for a process must be higher when the cost of delay increases because queues become more expensive. When the cost of capacity rises, then optimal capacity decreases.
 
 #### Q10. The Principle of Queueing Discipline: Queue cost is affected by the sequence in which we handle the jobs in the queue.
 
@@ -337,7 +337,17 @@ It's more manageable controlling queue size than cycle time. Cycle time is a lag
 
 #### Q15: The Diffusion Principle: Over time, queues will randomly spin seriously out of control and will remain in this state for long periods.
 
+A random process—a sequence of random variables event—can lead a system to specific states. In the case of product development, queues can reach high-queue states. When these states occur, you can't rely on randomness to correct the problems that randomness creates, which leads to the last principle.
+
 #### Q16: The Intervention Principle: We cannot rely on randomness to correct a random queue.
+
+A queue that drifted into a sustained high-queue state won't easily and quickly drift back to a low-queue state.
+
+If you drifted 10 heads in a sequence, the probability of getting 10 tails in a row to cancel the first 10 heads is about 1 in 1,000.
+
+When situations like these happen, you need to make quick and forceful interventions. You might set limits on maximum queue size and intervene as your system approach these limits.
+
+**The more you monitor queues and the more quickly you intervene, the less queues will cost you.**
 
 ### Chapter 4 - Exploiting Variability
 
