@@ -5,7 +5,6 @@ import { JournalSummary } from '../../components/JournalSummary';
 import { NextSeo } from 'next-seo';
 import { useDateInput } from '../../hooks/useDateInput';
 import { useQueryParamsDateOrToday } from '../../hooks/useQueryParamsDateOrToday';
-import { useResponsiveValue } from '@theme-ui/match-media';
 import Link from '../../components/Link';
 import Loading from '../../components/Loading';
 
@@ -32,14 +31,17 @@ const useDate = () => {
 const JournalIndex = () => {
   const { date, setDate, addOneDayToDate, today } = useDate();
 
-  const middle = useResponsiveValue(['today', 'input']);
-
   return (
     <>
       <NextSeo noindex nofollow title={title} />
-      <Text>
-        {dateFns.format(dateFns.parse(date, 'yyyy-MM-dd', new Date()), 'PPPP')}
-      </Text>
+      <Link href={`/journal/${date}`}>
+        <Text>
+          {dateFns.format(
+            dateFns.parse(date, 'yyyy-MM-dd', new Date()),
+            'PPPP',
+          )}
+        </Text>
+      </Link>
       <Flex sx={{ gap: 2 }}>
         <Button
           sx={{ flexBasis: ['100%', '120px'] }}

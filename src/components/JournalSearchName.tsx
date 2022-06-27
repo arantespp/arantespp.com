@@ -90,10 +90,9 @@ export const JournalSearchName = ({
         return;
       }
 
-      const content = textAreaRef.current?.value.replace(
-        query,
-        `[${contact.firstName}](${contact.url}) `,
-      );
+      const queryReplacer = `[${contact.firstName}](${contact.url})`;
+
+      const content = textAreaRef.current?.value.replace(query, queryReplacer);
 
       /**
        * Do not need to wait for the content to be updated, so `await` isn't
@@ -105,7 +104,7 @@ export const JournalSearchName = ({
 
       setQuery('');
 
-      textAreaRef.current?.focus();
+      textAreaRef.current.focus();
     },
     [textAreaRef, query, setContent, updateContactActivity, date],
   );
@@ -162,12 +161,6 @@ export const JournalSearchName = ({
        * Set query.
        * https://stackoverflow.com/a/40338359/8786986
        */
-      let endPos = textarea.value.indexOf(' ', textarea.selectionEnd);
-
-      if (endPos === -1) {
-        endPos = textarea.value.length;
-      }
-
       const slicedString = textarea.value.slice(0, textarea.selectionEnd);
 
       const result = /\S+$/.exec(slicedString);
