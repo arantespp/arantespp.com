@@ -23,7 +23,7 @@ const lightLightGray = '#ddd';
 
 const light = {
   text: '#2a2a2a',
-  background: '#fff',
+  background: '#fdfdfd',
   primary: palette.primary,
   secondary: palette.complementary,
   accent: palette.analogous2,
@@ -48,20 +48,20 @@ const dark: BlogColorMode = {
 };
 
 const colors = {
-  modes: { light },
+  modes: { dark },
   ...palette,
   lightGray,
   lightLightGray,
   muted: '#aaa',
   twitter: palette.twitterBlue,
-  ...dark,
+  ...light,
 };
 
 /**
  * https://theme-ui.com/theming/#configuration-flags
  */
 const config = {
-  initialColorModeName: 'dark',
+  initialColorModeName: 'light',
 };
 
 export const theme: Theme = {

@@ -30,17 +30,12 @@ const Footer = () => (
     </Flex>
     <Text
       sx={{
-        fontSize: 2,
+        fontSize: 1,
         marginTop: 2,
         textAlign: 'center',
       }}
     >
-      <span>This website is </span>
-      <Link href="https://github.com/arantespp/arantespp.com">
-        open-sourced
-      </Link>
-      <span> under </span>
-      <Link href="/license">CC BY 4.0 license.</Link>
+      Hello, my name is Pedro. Welcome to my blog!
     </Text>
   </Flex>
 );
