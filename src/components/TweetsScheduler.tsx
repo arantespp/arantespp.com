@@ -4,9 +4,11 @@ import * as yup from 'yup';
 import { Box, Button, Checkbox, Flex, Input, Label, Text } from 'theme-ui';
 import {
   Control,
-  Controller,
+  FormProvider,
+  useController,
   useFieldArray,
   useForm,
+  useFormContext,
   useWatch,
 } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
@@ -258,6 +260,138 @@ const useSaveForm = ({
   return { clear };
 };
 
+const ControlledTweetEditor = ({
+  control,
+  index,
+  tweetMaxChars,
+  setValue,
+}: {
+  control: Control<any>;
+  index: number;
+  tweetMaxChars: number;
+  setValue: (name: string, value: any) => void;
+}) => {
+  const name = `tweets.${index}.value` as const;
+
+  const {
+    field: { onChange, onBlur, value },
+    formState: { isSubmitting, errors },
+  } = useController({
+    control,
+    name,
+  });
+
+  return (
+    <>
+      <TweetEditor
+        value={value}
+        onBlur={() => {
+          setValue(`tweets.${index}.checked`, true);
+          onBlur();
+        }}
+        setValue={onChange}
+        maxChars={tweetMaxChars}
+        disabled={isSubmitting}
+      />
+      <ErrorMessage
+        errors={errors}
+        name={name}
+        as={<Text sx={{ color: 'error', fontStyle: 'italic' }} />}
+      />
+    </>
+  );
+};
+
+const MemoizedControlledTweetEditor = React.memo(ControlledTweetEditor);
+
+const TweetFieldButtons = ({
+  control,
+  index,
+  insert,
+  remove,
+}: {
+  index: number;
+  control: Control<any>;
+  insert: (index: number, value: any) => void;
+  remove: (index: number) => void;
+}) => {
+  const name = `tweets.${index}.checked` as const;
+
+  const {
+    field: { onChange, onBlur, value },
+  } = useController({
+    defaultValue: false,
+    control,
+    name,
+  });
+
+  return (
+    <Flex
+      sx={{
+        gap: 3,
+        alignItems: 'center',
+        flexDirection: ['column', 'row'],
+      }}
+    >
+      <Button type="button" onClick={() => insert(index + 1, { value: '' })}>
+        Add
+      </Button>
+      <Button
+        type="button"
+        onDoubleClick={() => remove(index)}
+        sx={{ backgroundColor: 'accent' }}
+      >
+        Remove #{index + 1} (double click)
+      </Button>
+      <Label sx={{ width: 10 }}>
+        <Checkbox onBlur={onBlur} onChange={onChange} checked={value} />
+      </Label>
+    </Flex>
+  );
+};
+
+const MemoizedTweetFieldButtons = React.memo(TweetFieldButtons);
+
+const TweetField = ({
+  control,
+  index,
+  tweetMaxChars,
+  singleTweet,
+  insert,
+  remove,
+  setValue,
+}: {
+  control: Control<any>;
+  index: number;
+  tweetMaxChars: number;
+  singleTweet?: boolean;
+  insert: (index: number, value: any) => void;
+  remove: (index: number) => void;
+  setValue: (name: string, value: any) => void;
+}) => {
+  return (
+    <Flex sx={{ flexDirection: 'column' }}>
+      <Text>Tweet #{index + 1}</Text>
+      <MemoizedControlledTweetEditor
+        control={control}
+        index={index}
+        tweetMaxChars={tweetMaxChars}
+        setValue={setValue}
+      />
+      {!singleTweet && (
+        <MemoizedTweetFieldButtons
+          control={control}
+          index={index}
+          insert={insert}
+          remove={remove}
+        />
+      )}
+    </Flex>
+  );
+};
+
+const MemoizedTweetField = React.memo(TweetField);
+
 export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
   const { postTweet } = usePostTweet();
 
@@ -399,6 +533,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
           </Button>
         </>
       )}
+
       {responses.length > 0 && (
         <Box sx={{ marginY: 4 }}>
           {responses.map((response, index) => {
@@ -430,81 +565,25 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
           <Text>Scheduled: {responses.length}</Text>
         </Box>
       )}
-      {fields.map((field, index) => {
-        const name = `tweets.${index}.value` as const;
 
+      {fields.map((field, index) => {
         return (
-          <Flex
-            key={field.id}
-            sx={{ flexDirection: 'column', marginY: singleTweet ? 0 : 4 }}
-          >
-            <Text>Tweet #{index + 1}</Text>
-            <Controller
+          <Box key={field.id} sx={{ marginY: singleTweet ? 0 : 4 }}>
+            <MemoizedTweetField
               control={control}
-              name={name}
-              render={({ field: { value, onBlur } }) => {
-                return (
-                  <TweetEditor
-                    value={value}
-                    onBlur={() => {
-                      setValue(`tweets.${index}.checked`, true);
-                      onBlur();
-                    }}
-                    setValue={(v) => setValue(name, v)}
-                    maxChars={tweetMaxChars}
-                    disabled={disabled}
-                  />
-                );
-              }}
+              index={index}
+              tweetMaxChars={tweetMaxChars}
+              singleTweet={singleTweet}
+              insert={insert}
+              remove={remove}
+              setValue={setValue}
             />
-            <ErrorMessage
-              errors={errors}
-              name={name}
-              as={<Text sx={{ color: 'error', fontStyle: 'italic' }} />}
-            />
-            {!singleTweet && (
-              <Flex
-                sx={{
-                  gap: 3,
-                  alignItems: 'center',
-                  flexDirection: ['column', 'row'],
-                }}
-              >
-                <Button
-                  type="button"
-                  onClick={() => insert(index + 1, { value: '' })}
-                >
-                  Add
-                </Button>
-                <Button
-                  type="button"
-                  onDoubleClick={() => remove(index)}
-                  sx={{ backgroundColor: 'accent' }}
-                >
-                  Remove #{index + 1} (double click)
-                </Button>
-                <Controller
-                  defaultValue={false}
-                  control={control}
-                  name={`tweets.${index}.checked`}
-                  render={({ field: { onChange, onBlur, value } }) => {
-                    return (
-                      <Label sx={{ width: 10 }}>
-                        <Checkbox
-                          onBlur={onBlur}
-                          onChange={onChange}
-                          checked={value}
-                        />
-                      </Label>
-                    );
-                  }}
-                />
-              </Flex>
-            )}
-          </Flex>
+          </Box>
         );
       })}
+
       {!singleTweet && <ErrorMessage errors={errors} name="tweets" />}
+
       {!singleTweet && numberOfTweets > 0 && (
         <Flex
           sx={{
@@ -537,6 +616,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
           Schedule
         </Button>
       )}
+
       {isSubmitSuccessful && (
         <Button
           type="button"
