@@ -8,7 +8,7 @@ import {
 } from '../../../lib/files';
 import { titleCase } from 'title-case';
 
-const indexes = ['blog', 'zettelkasten', 'now', 'me'];
+const indexes = ['blog', 'zettelkasten', 'now', 'me', 'features'];
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const allBlogPosts = await getPosts({ group: 'blog' });

@@ -16,7 +16,7 @@ formattedDate: 'June 04, 2022'
 updatedAt: '2022-06-04'
 formattedUpdatedAt: 'June 04, 2022'
 updateHistory: 'https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/ethos.md'
-href: /drafts/zettel/ethos
+href: /zettel/ethos
 slug: ethos
 editLink: 'https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/ethos.md'
 url: 'https://arantespp.com/zettel/ethos'
@@ -27,6 +27,8 @@ keywords:
   - rhetorical-triangle
   - values
 readingTime: 1
+references: []
+backlinks: []
 ---
 
 ## Notes

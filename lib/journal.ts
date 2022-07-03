@@ -79,15 +79,17 @@ export const getJournal = async ({ date }: { date: string | Date }) => {
 
   const dateKey = `${year}-${month}-${day}`;
 
+  const keys = { pk: JOURNAL_PK, sk: dateKey };
+
   const { Item } = await client.send(
     new GetItemCommand({
       TableName,
-      Key: marshall({ pk: JOURNAL_PK, sk: dateKey }),
+      Key: marshall(keys),
     }),
   );
 
   if (!Item) {
-    return undefined;
+    return mapJournal({ ...keys, content: '' });
   }
 
   return mapJournal(unmarshall(Item) as JournalFromDatabase);
@@ -207,7 +209,33 @@ export const getJournalsSummary = async ({ date }: { date: string | Date }) => {
         return { key, journal: await getJournal({ date: dt }) };
       }),
     )
-  ).filter(({ journal }) => !!journal);
+  )
+    .filter(({ key, journal }) => {
+      if (journal?.content) {
+        return true;
+      }
+
+      if (
+        ['Last Ten Years', 'Last Five Years', 'Last Two Years'].includes(key)
+      ) {
+        if (!journal?.content) {
+          return false;
+        }
+      }
+
+      return true;
+    })
+    .sort((journalA, journalB) => {
+      if (!journalA.journal?.content) {
+        return -10;
+      }
+
+      if (!journalB.journal?.content) {
+        return 10;
+      }
+
+      return journalA.journal.date.localeCompare(journalB.journal.date);
+    });
 
   return summary;
 };

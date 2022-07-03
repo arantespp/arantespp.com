@@ -14,7 +14,7 @@ const NetworkGraph = dynamic(() => import('../components/NetworkGraph'), {
 });
 
 export const getStaticProps = async () => {
-  const allPosts = await getPosts();
+  const allPosts = (await getPosts()).map(({ content, ...rest }) => rest);
   const allTags = await getAllTags();
 
   const postsNodes = allPosts.map(({ href, title }) => ({

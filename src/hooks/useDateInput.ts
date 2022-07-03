@@ -1,47 +1,53 @@
 import * as React from 'react';
 import * as dateFns from 'date-fns';
 import { getToday } from '../../lib/getToday';
+import { useQueryParamsDateOrToday } from './useQueryParamsDateOrToday';
 import { useRouter } from 'next/router';
 
 const isValidDate = (date: string) => dateFns.isValid(dateFns.parseISO(date));
 
 export const useDateInput = (initialDate: string) => {
+  const { today } = useQueryParamsDateOrToday();
+
   const { pathname, push } = useRouter();
+
+  const [dateInput, setDateInput] = React.useState(initialDate);
 
   const [date, setDate] = React.useState(initialDate);
 
-  /**
-   * If press "T" or "t", navigate to today date.
-   */
   React.useEffect(() => {
-    const today = getToday();
-
-    if (/t|T/.test(date) && date !== today) {
-      setDate(today);
+    if (date === dateInput) {
+      return;
     }
-  }, [date]);
 
-  /**
-   * h/H: subtract 1 day.
-   * j/J: subtract 1 month.
-   * k/K: add 1 month.
-   * l/L: add 1 day.
-   */
-  React.useEffect(() => {
+    /**
+     * If press "T" or "t", navigate to today date.
+     */
+    if (/t|T/.test(dateInput)) {
+      setDate(today);
+      return;
+    }
+
+    /**
+     * h/H: subtract 1 day.
+     * j/J: subtract 1 month.
+     * k/K: add 1 month.
+     * l/L: add 1 day.
+     */
     const add = (() => {
-      if (/h|H/.test(date)) {
+      if (/h|H/.test(dateInput)) {
         return { months: -1 };
       }
 
-      if (/j|J/.test(date)) {
+      if (/j|J/.test(dateInput)) {
         return { days: -1 };
       }
 
-      if (/k|K/.test(date)) {
+      if (/k|K/.test(dateInput)) {
         return { days: 1 };
       }
 
-      if (/l|L/.test(date)) {
+      if (/l|L/.test(dateInput)) {
         return { months: 1 };
       }
 
@@ -49,23 +55,17 @@ export const useDateInput = (initialDate: string) => {
     })();
 
     /**
-     * If code goes to `dateReplace` with `add`, it will replace `date`
-     * that could have been set by today shortcut.
-     */
-    if (!add) {
-      return;
-    }
-
-    /**
      * Replace everything except numbers and "-".
      */
-    const dateReplace = date.replace(/[^\d-]/g, '');
+    const dateReplace = dateInput.replace(/[^\d-]/g, '');
 
     if (isValidDate(dateReplace)) {
-      const newDate = dateFns.format(
-        dateFns.add(dateFns.parseISO(dateReplace), add),
-        'yyyy-MM-dd',
-      );
+      const newDate = add
+        ? dateFns.format(
+            dateFns.add(dateFns.parseISO(dateReplace), add),
+            'yyyy-MM-dd',
+          )
+        : dateInput;
 
       /**
        * Do not replace if the date is in the future.
@@ -77,7 +77,7 @@ export const useDateInput = (initialDate: string) => {
 
       setDate(newDate);
     }
-  }, [date]);
+  }, [date, dateInput, today]);
 
   React.useEffect(() => {
     /**
@@ -101,8 +101,8 @@ export const useDateInput = (initialDate: string) => {
       return;
     }
 
-    push({ pathname, query: { date: date } });
+    push({ pathname, query: { date } });
   }, [date, initialDate, pathname, push]);
 
-  return { date, setDate };
+  return { date, setDate: setDateInput };
 };

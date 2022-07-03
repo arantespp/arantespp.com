@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as dateFns from 'date-fns';
 import { Box, Flex, Input, Text, Themed } from 'theme-ui';
 import { Journal } from '../../../lib/journal';
+import { JournalDateNavigator } from '../../components/JournalDateNavigator';
 import { JournalSearchName } from '../../components/JournalSearchName';
 import { JournalSummary } from '../../components/JournalSummary';
 import { Loading } from '../../components/Loading';
@@ -169,7 +170,6 @@ const EditorWithContent = ({ date }: { date: string }) => {
       </Box>
       <Flex sx={{ justifyContent: 'space-between' }}>
         <Flex sx={{ gap: 3 }}>
-          <Link href="/journal/all">All</Link>
           <Link href="/journal">Summary</Link>
         </Flex>
         <Text
@@ -209,22 +209,7 @@ const JournalEditor = () => {
     <>
       <NextSeo noindex nofollow title={title} />
       <Themed.h1>{title}</Themed.h1>
-      <Box sx={{ marginY: 2 }}>
-        <Link href={`/journal/${date}`}>
-          <Text>
-            {dateFns.format(
-              dateFns.parse(date, 'yyyy-MM-dd', new Date()),
-              'PPPP',
-            )}
-          </Text>
-        </Link>
-      </Box>
-      <Input
-        value={dateInput}
-        onChange={(e) => {
-          setDateInput(e.target.value);
-        }}
-      />
+      <JournalDateNavigator date={dateInput} setDate={setDateInput} />
       <React.Suspense fallback={<Loading />}>
         <MemoizedEditorWithContent date={date} />
       </React.Suspense>

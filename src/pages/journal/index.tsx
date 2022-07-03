@@ -1,79 +1,25 @@
 import * as React from 'react';
-import * as dateFns from 'date-fns';
-import { Button, Flex, Input, Text } from 'theme-ui';
+import { JournalDateNavigator } from '../../components/JournalDateNavigator';
 import { JournalSummary } from '../../components/JournalSummary';
 import { NextSeo } from 'next-seo';
 import { useDateInput } from '../../hooks/useDateInput';
 import { useQueryParamsDateOrToday } from '../../hooks/useQueryParamsDateOrToday';
-import Link from '../../components/Link';
 import Loading from '../../components/Loading';
 
 const title = 'Journal Summary';
 
-const useDate = () => {
-  const { date: initialDate, today } = useQueryParamsDateOrToday();
+const JournalIndex = () => {
+  const { date: initialDate } = useQueryParamsDateOrToday();
 
   const { date, setDate } = useDateInput(initialDate);
-
-  const addOneDayToDate = (addValue: number) => () => {
-    const format = 'yyyy-MM-dd';
-
-    const parsedDate = dateFns.parse(date, format, new Date());
-
-    const addDay = dateFns.addDays(parsedDate, addValue);
-
-    setDate(dateFns.format(addDay, format));
-  };
-
-  return { date, setDate, addOneDayToDate, today };
-};
-
-const JournalIndex = () => {
-  const { date, setDate, addOneDayToDate, today } = useDate();
 
   return (
     <>
       <NextSeo noindex nofollow title={title} />
-      <Link href={`/journal/${date}`}>
-        <Text>
-          {dateFns.format(
-            dateFns.parse(date, 'yyyy-MM-dd', new Date()),
-            'PPPP',
-          )}
-        </Text>
-      </Link>
-      <Flex sx={{ gap: 2 }}>
-        <Button
-          sx={{ flexBasis: ['100%', '120px'] }}
-          onClick={addOneDayToDate(-1)}
-        >
-          Previous
-        </Button>
-        <Input
-          sx={{ flex: 1, display: ['none', 'block'] }}
-          value={date}
-          onChange={(e) => {
-            setDate(e.target.value);
-          }}
-          autoFocus
-        />
-        <Button
-          sx={{ flexBasis: ['100%', '120px'] }}
-          onClick={() => setDate(today)}
-        >
-          Today
-        </Button>
-        <Button
-          sx={{ flexBasis: ['100%', '120px'] }}
-          onClick={addOneDayToDate(1)}
-        >
-          Next
-        </Button>
-      </Flex>
+      <JournalDateNavigator date={date} setDate={setDate} />
       <React.Suspense fallback={<Loading />}>
         <JournalSummary date={date} />
       </React.Suspense>
-      <Link href="/journal/all">All</Link>
     </>
   );
 };
