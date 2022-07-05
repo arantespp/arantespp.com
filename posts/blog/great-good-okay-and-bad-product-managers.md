@@ -1,14 +1,21 @@
 ---
 book: null
-draft: true
-tags: []
-date: '2021-12-23'
-excerpt: ''
+draft: false
+tags:
+  - hypotheses
+  - product-development
+  - product-manager
+  - product-strategy
+  - shreyas-doshi
+date: '2022-07-04'
+excerpt: >-
+  If I know the characteristics of Bad and Okay Product Managers, I know what I
+  shouldn't do.
 title: 'Great, Good, Okay, and Bad Product Managers'
 group: blog
-formattedDate: 'December 23, 2021'
-updatedAt: '2022-06-02'
-formattedUpdatedAt: 'June 02, 2022'
+formattedDate: 'July 04, 2022'
+updatedAt: '2022-07-05'
+formattedUpdatedAt: 'July 05, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/blog/great-good-okay-and-bad-product-managers.md
 href: /great-good-okay-and-bad-product-managers
@@ -18,12 +25,20 @@ editLink: >-
 url: 'https://arantespp.com/great-good-okay-and-bad-product-managers'
 keywords:
   - blog
-readingTime: 11
+  - hypotheses
+  - product-development
+  - product-manager
+  - product-strategy
+  - shreyas-doshi
+readingTime: 14
+references:
+  - /zettel/ethos
+backlinks: []
 ---
 
-I wrote this article as an exercise to understand the characteristics of the role of a Product Manager. This idea came after reading a [Shreyas Doshi](https://twitter.com/shreyas) thread in which he explained some traits of Good and Great Product Managers.
+I wrote this article as an exercise to understand the characteristics of the Product Manager's role. This idea came after reading a [Shreyas Doshi](https://twitter.com/shreyas) thread in which he explained some traits of Good and Great Product Managers.
 
-While reading, I asked myself, "Great thread explaining the Great and the Good Product Managers, but what about the Bad and Okay ones? If I know their characteristics, I know what I shouldn't do."
+While reading, I asked myself, "Great thread explaining the Great and the Good Product Managers, but what about the Bad and Okay ones? If I know the characteristics of Bad and Okay Product Managers, I know what I shouldn't do."
 
 https://twitter.com/shreyas/status/1249039638829793280
 
@@ -48,8 +63,8 @@ _How do PMs use metrics and data to make product decisions?_
 
 - **Great**: _Great PMs make metrics-informed product decisions. Great PMs are masters of the art of blending quantitative and qualitative inputs, as warranted by each individual situation._
 - **Good**: _Good PMs make metrics-driven product decisions._
-- **Okay**: Okay PMs use the wrong metrics to make product decisions.
-- **Bad**: Bad PMs don't use metrics to make product decisions.
+- **Okay**: Okay PMs don't use metrics to make product decisions.
+- **Bad**: Bad PMs use the wrong metrics to make product decisions.
 
 ### 3/ Product Domain
 
@@ -76,7 +91,7 @@ How do PMs view logic, reasons, and emotions?
 - **Great**: _Great PMs view logic and reason as important tools, but they also know that people—and therefore the users & customers of their product—are driven by emotion more than by logic._
 - **Good**: _Good PMs make product decisions based on a thoroughly logical and rational view of the world._
 - **Okay**: Okay PMs make product decisions based on their logic and view of the world.
-- **Bad**: The same as Okay PMs and don't accept others question them.
+- **Bad**: Bad PMs do the same as Okay PMs and don't accept others question them.
 
 ### 6/ Developing Product Hypothesis
 
@@ -129,7 +144,7 @@ How do PMs write PRDs to support engineering & design?
 
 - **Great**: _Great PMs iteratively write their PRDs so engineering & design tasks are rarely blocked on them._
 - **Good**: _Good PMs write detailed and lucid product requirements documents (PRDs). Their teams become highly reliant on these PRDs to make forward progress on engineering & design tasks._
-- **Okay**: Okay PMs write low to medium quality PRDs.
+- **Okay**: Okay PMs write low to medium-quality PRDs.
 - **Bad**: Bad PMs cannot write and put in words the product requirements. The team relies only on meetings and synchronous conversations.
 
 ### 12/ Hard Working
@@ -170,7 +185,7 @@ _How do PMs answer their executives' questions?_
 - **Okay**: Okay PMs don't always provide thoughtful answers to executives' questions. Sometimes they have good answers, but sometimes they don't.
 - **Bad**: Bad PMs don't have good answers nor reframe executives' questions.
 
-### 17/ Questions, Answers, Wisdom and Data.
+### 17/ Questions, Answers, Wisdom, and Data.
 
 _How do PMs deal with questions, answers, wisdom and data?_
 
@@ -266,7 +281,7 @@ _How do PMs acts when their values are at odds with the company's values?_
 
 - **Great**: _Great PMs know when it's time to disembark amicably & muster up the courage to do it._
 - **Good**: _Good PMs find a way to motivate themselves to deliver value despite being at odds with the company's values. Even within rapidly deteriorating cultures, they pledge to go down with the ship._
-- **Okay**: Okay PMs don't do a good job when their values are at odds with the company's values and don't have courage to leave.
+- **Okay**: Okay PMs don't do a good job when their values are at odds with the company's values and don't have the courage to leave.
 - **Bad**: Bad PMs behaviors help deteriorate the company's culture.
 
 ### 28/ PM-Driven vs Product-Obsessed Companies
@@ -275,7 +290,7 @@ _How do PMs choose between PM-driven and product-obsessed companies?_
 
 - **Great**: _Great PMs know that "PM-driven" companies are rarely able to create superb products. Great PMs seek "product-obsessed" companies where Eng-Design-PM-DataScience operate as equals._
 - **Good**: _Good PMs seek "PM-driven" companies as a way to make an impact in their role as PMs._
-- **Okay**: Okay PMs seek "PM-driven" companies as a way to improve their status and optics.
+- **Okay**: Okay PMs seek "PM-driven" companies to improve their status and optics.
 - **Bad**: Bad PMs don't know the difference between "PM-driven" and "product-obsessed" companies.
 
 ### 29/ Learning

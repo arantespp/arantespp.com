@@ -28,11 +28,25 @@ const pageLinks = [
 ];
 
 export const getRedirects = async () => {
-  const bitLinks = [...(await getPosts()), ...(await getDrafts())]
+  const [posts, drafts] = await Promise.all([getPosts(), getDrafts()]);
+
+  const bitLinks = [...posts, ...drafts]
     .filter((post) => post.bitLink)
     .map((post) => {
       return {
         source: `/${post.bitLink}`,
+        destination: post.href,
+      };
+    });
+
+  /**
+   * Redirect blog article draft links to the post's permalink
+   */
+  const oldDrafts = posts
+    .filter((post) => post.group === 'blog')
+    .map((post) => {
+      return {
+        source: `/drafts${post.href}`,
         destination: post.href,
       };
     });
@@ -60,8 +74,10 @@ export const getRedirects = async () => {
     },
   ];
 
-  return [...bitLinks, ...pageLinks, ...oldUrls].map((redirects) => ({
-    ...redirects,
-    permanent: false,
-  }));
+  return [...bitLinks, ...pageLinks, ...oldDrafts, ...oldUrls].map(
+    (redirects) => ({
+      ...redirects,
+      permanent: false,
+    }),
+  );
 };

@@ -10,9 +10,6 @@ const nextConfig = {
   async redirects() {
     return getRedirects();
   },
-  compiler: {
-    emotion: true,
-  },
 };
 
 module.exports = withBundleAnalyzer(nextConfig);

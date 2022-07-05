@@ -148,10 +148,10 @@ export const getScheduledDate = ({
 
   /**
    * Set random hour.
-   * 8h UTC = 5h America/Sao_Paulo
+   * 10h UTC = 7h America/Sao_Paulo
    * 14h UTC = 11h America/Sao_Paulo
    */
-  const setRandomHour = getRandomInt({ min: 8, max: 14 });
+  const setRandomHour = getRandomInt({ min: 10, max: 14 });
   scheduledDate = dateFns.setHours(scheduledDate, setRandomHour);
   scheduledDate = dateFns.subMinutes(scheduledDate, today.getTimezoneOffset());
 
