@@ -372,7 +372,11 @@ export const theme: Theme = {
     },
   },
   forms: {
+    input: {
+      backgroundColor: 'background',
+    },
     textarea: {
+      backgroundColor: 'background',
       fontSize: 1,
     },
   },

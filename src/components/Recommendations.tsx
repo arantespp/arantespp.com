@@ -18,7 +18,7 @@ const Recommendations = ({
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        paddingTop: 4,
+        paddingTop: 5,
         borderTopColor: 'muted',
         borderWidth: 1,
         borderTopStyle: 'solid',

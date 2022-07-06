@@ -7,8 +7,8 @@ import PedroArantes from './PedroArantes';
 
 const navs = [
   {
-    label: 'Blog',
-    href: '/blog',
+    label: 'Home',
+    href: '/',
   },
   {
     label: 'Contact',

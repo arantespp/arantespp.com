@@ -3,7 +3,6 @@ import { Box, Container } from 'theme-ui';
 import { useApiKey } from '../hooks/useApiKey';
 import Footer from './Footer';
 import Header from './Header';
-import Loading from './Loading';
 import Newsletter from './Newsletter';
 import dynamic from 'next/dynamic';
 
@@ -27,10 +26,19 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         }}
       >
         {children}
-        <Box sx={{ marginTop: 6 }}>
-          <Newsletter />
-        </Box>
       </Container>
+      <Box
+        sx={{
+          marginTop: 6,
+          marginBottom: 4,
+          padding: 4,
+          backgroundColor: '#f5f5f5',
+        }}
+      >
+        <Container>
+          <Newsletter />
+        </Container>
+      </Box>
       <Footer />
       {apiKey && <TweetScheduler />}
     </>

@@ -4,7 +4,7 @@ import Tag from './Tag';
 
 const Newsletter = () => (
   <Box>
-    <Box sx={{ marginY: 3 }}>
+    <Box sx={{ marginBottom: 3 }}>
       <Text sx={{ fontSize: 5, fontFamily: 'heading', fontWeight: 'heading' }}>
         Newsletter
       </Text>

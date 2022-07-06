@@ -217,6 +217,7 @@ export const PostPage = ({
         <Markdown content={newContent} noH1={isPost} />
       </Box>
       {isPost && <PostFooter post={postOrContent.post} />}
+      <Box sx={{ paddingY: 5 }} />
       {recommendations && <Recommendations recommendations={recommendations} />}
     </>
   );
