@@ -213,7 +213,7 @@ export const PostPage = ({
           <BookHeader book={postOrContent.post.book!} />
         </Box>
       )}
-      <Box as="article" sx={{ marginBottom: 5 }}>
+      <Box as="article">
         <Markdown content={newContent} noH1={isPost} />
       </Box>
       {isPost && <PostFooter post={postOrContent.post} />}
