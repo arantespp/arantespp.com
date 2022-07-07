@@ -4,6 +4,8 @@ import removeMarkdown from 'remove-markdown';
 
 const MAX_POSTS = 5;
 
+const MIN_SIMILARITY = 0.15;
+
 export const searchPosts = async ({ query }: { query: string }) => {
   const posts = await getPosts();
 
@@ -29,6 +31,7 @@ export const searchPosts = async ({ query }: { query: string }) => {
   });
 
   const sortedPosts = postsWithRatings
+    .filter((post) => post.rating > MIN_SIMILARITY)
     .sort((a, b) => b.rating - a.rating)
     .splice(0, MAX_POSTS);
 

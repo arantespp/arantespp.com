@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Input, Themed } from 'theme-ui';
+import { Flex, Input, Themed } from 'theme-ui';
 import { Recommendation } from '../../lib/files';
 import { useQuery } from 'react-query';
 import Link from '../components/Link';
@@ -7,7 +7,7 @@ import Loading from '../components/Loading';
 import RecommendationsList from '../components/RecommendationsList';
 
 const SearchPosts = ({ query }: { query: string }) => {
-  const { data, isLoading } = useQuery<{ posts: Recommendation[] }>(
+  const { data, isFetching } = useQuery<{ posts: Recommendation[] }>(
     ['/api/search', query],
     ({ queryKey }) =>
       fetch('/api/search', {
@@ -16,6 +16,7 @@ const SearchPosts = ({ query }: { query: string }) => {
       }).then((r) => r.json()),
     {
       enabled: !!query,
+      keepPreviousData: true,
       suspense: false,
     },
   );
@@ -24,7 +25,15 @@ const SearchPosts = ({ query }: { query: string }) => {
 
   return (
     <>
-      {isLoading && <Loading />}
+      <Flex
+        sx={{
+          height: 100,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        {isFetching && <Loading delay={500} />}
+      </Flex>
       <RecommendationsList recommendations={posts} />
     </>
   );
@@ -44,9 +53,7 @@ const All = () => {
         What do you want to read?{' '}
         <Link href="/all">See all posts instead.</Link>
       </Themed.p>
-      <Box sx={{ marginBottom: 5 }}>
-        <Input autoFocus onChange={(e) => setQuery(e.target.value)} />
-      </Box>
+      <Input autoFocus onChange={(e) => setQuery(e.target.value)} />
       <MemoizedSearchPosts query={deferredQuery} />
     </>
   );
