@@ -7,7 +7,7 @@ import Loading from '../components/Loading';
 import RecommendationsList from '../components/RecommendationsList';
 
 const SearchPosts = ({ query }: { query: string }) => {
-  const { data } = useQuery<{ posts: Recommendation[] }>(
+  const { data, isLoading } = useQuery<{ posts: Recommendation[] }>(
     ['/api/search', query],
     ({ queryKey }) =>
       fetch('/api/search', {
@@ -21,7 +21,12 @@ const SearchPosts = ({ query }: { query: string }) => {
 
   const posts = data?.posts || [];
 
-  return <RecommendationsList recommendations={posts} />;
+  return (
+    <>
+      {isLoading && <Loading />}
+      <RecommendationsList recommendations={posts} />
+    </>
+  );
 };
 
 const All = () => {

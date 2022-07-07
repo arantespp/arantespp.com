@@ -1,19 +1,22 @@
 import { compareTwoStrings, findBestMatch } from 'string-similarity';
 import { getPosts } from './files';
+import removeMarkdown from 'remove-markdown';
 
 const MAX_POSTS = 5;
-
-const POST_MIN_RATING = 0.1;
 
 export const searchPosts = async ({ query }: { query: string }) => {
   const posts = await getPosts();
 
   const postsWithRatings = posts.map((post) => {
+    const tagsWithoutHyphens = post.tags.map((tag) => tag.replace(/-/g, ' '));
+
+    const plainContent = removeMarkdown(post.content);
+
     const weightedRatings = [
-      [compareTwoStrings(query, post.title), 10],
-      [compareTwoStrings(query, post.excerpt), 10],
-      [findBestMatch(query, post.tags).bestMatch.rating, 8],
-      [compareTwoStrings(query, post.content), 5],
+      [compareTwoStrings(query, post.title), 3],
+      [compareTwoStrings(query, post.excerpt), 2],
+      [findBestMatch(query, tagsWithoutHyphens).bestMatch.rating, 2],
+      [compareTwoStrings(query, plainContent), 1],
     ];
 
     const weightedRatingMean =
@@ -26,7 +29,6 @@ export const searchPosts = async ({ query }: { query: string }) => {
   });
 
   const sortedPosts = postsWithRatings
-    .filter(({ rating }) => rating > POST_MIN_RATING)
     .sort((a, b) => b.rating - a.rating)
     .splice(0, MAX_POSTS);
 

@@ -9,7 +9,7 @@ import Link from '../components/Link';
 
 type GroupPosts = {
   group: string;
-  posts: { title: string; href: string }[];
+  posts: { title: string; href: string; formattedDate: string }[];
 };
 
 export const getStaticProps = async () => {
@@ -18,11 +18,13 @@ export const getStaticProps = async () => {
       return {
         group: titleCase(group),
         posts: (await getPosts({ group }))
-          .map(({ title, href }) => ({
+          .map(({ title, href, date, formattedDate }) => ({
             title,
             href,
+            date,
+            formattedDate,
           }))
-          .sort((a, b) => a.title.localeCompare(b.title)),
+          .sort((a, b) => b.date.localeCompare(a.date)),
       };
     }),
   );
@@ -35,9 +37,13 @@ const GroupLinks = ({ group, posts }: GroupPosts) => {
     <>
       <Heading level={2}>{group}</Heading>
 
-      {posts.map(({ title, href }) => (
+      {posts.map(({ title, href, formattedDate }) => (
         <Themed.p key={href}>
           <Link href={href}>{title}</Link>
+          <br />
+          <Text sx={{ fontSize: 1, color: 'muted', fontStyle: 'italic' }}>
+            {formattedDate}
+          </Text>
         </Themed.p>
       ))}
     </>
