@@ -16,6 +16,7 @@ const SearchPosts = ({ query }: { query: string }) => {
       }).then((r) => r.json()),
     {
       enabled: !!query,
+      suspense: false,
     },
   );
 
@@ -29,30 +30,24 @@ const SearchPosts = ({ query }: { query: string }) => {
   );
 };
 
+const MemoizedSearchPosts = React.memo(SearchPosts);
+
 const All = () => {
   const [query, setQuery] = React.useState('');
 
   const deferredQuery = React.useDeferredValue(query);
 
-  const posts = React.useMemo(
-    () => <SearchPosts query={deferredQuery} />,
-    [deferredQuery],
-  );
-
   return (
     <>
       <Themed.h1>Search</Themed.h1>
-
       <Themed.p>
         What do you want to read?{' '}
         <Link href="/all">See all posts instead.</Link>
       </Themed.p>
-
       <Box sx={{ marginBottom: 5 }}>
         <Input autoFocus onChange={(e) => setQuery(e.target.value)} />
       </Box>
-
-      <React.Suspense fallback={<Loading />}>{posts}</React.Suspense>
+      <MemoizedSearchPosts query={deferredQuery} />
     </>
   );
 };
