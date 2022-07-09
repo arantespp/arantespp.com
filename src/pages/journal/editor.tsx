@@ -16,7 +16,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 import Link from '../../components/Link';
 import Router from 'next/router';
 
-const AUTO_SAVE_DELAY = 500;
+const AUTO_SAVE_DELAY = 200;
 
 const useAutoSave = ({ content, date }: { content: string; date: string }) => {
   const { apiKey } = useApiKey();
@@ -27,9 +27,8 @@ const useAutoSave = ({ content, date }: { content: string; date: string }) => {
 
   React.useEffect(() => {
     if (content && date && apiKey) {
-      setIsSaving(true);
-
       const timeout = setTimeout(async () => {
+        setIsSaving(true);
         setError('');
 
         const response = await fetch('/api/journal', {

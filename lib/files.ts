@@ -420,6 +420,7 @@ const getOnlyRecommendationProperties = (post: Post) => {
     draft,
     formattedDate,
     readingTime,
+    url,
   } = post;
 
   return {
@@ -431,6 +432,7 @@ const getOnlyRecommendationProperties = (post: Post) => {
     draft,
     formattedDate,
     readingTime,
+    url,
   };
 };
 

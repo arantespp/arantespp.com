@@ -133,7 +133,7 @@ const putJournal = async ({ date, content }: SaveJournalArgs) => {
 
 const backupJournal = async ({ date, content }: SaveJournalArgs) => {
   const now = dateFns.format(
-    dateFns.roundToNearestMinutes(new Date()),
+    dateFns.roundToNearestMinutes(new Date(), { nearestTo: 5 }),
     'yyyy-MM-dd HH:mm',
   );
 
