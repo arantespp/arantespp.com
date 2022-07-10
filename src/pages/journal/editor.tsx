@@ -9,6 +9,7 @@ import { Loading } from '../../components/Loading';
 import { NextSeo } from 'next-seo';
 import { useApiKey } from '../../hooks/useApiKey';
 import { useDateInput } from '../../hooks/useDateInput';
+import { useDebounce } from 'use-debounce';
 import { useQuery, useQueryClient } from 'react-query';
 import { useQueryParamsDateOrToday } from '../../hooks/useQueryParamsDateOrToday';
 import Editor from '../../components/Editor';
@@ -154,6 +155,8 @@ const EditorWithContent = ({ date }: { date: string }) => {
 
   const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
 
+  const [debouncedIsSaving] = useDebounce(isSaving, 1000);
+
   return (
     <>
       <Box sx={{ marginY: 4 }}>
@@ -173,7 +176,7 @@ const EditorWithContent = ({ date }: { date: string }) => {
         </Flex>
         <Text
           sx={
-            isSaving || isLoadingContent
+            debouncedIsSaving || isLoadingContent
               ? { color: 'muted', fontStyle: 'italic' }
               : { color: 'text' }
           }

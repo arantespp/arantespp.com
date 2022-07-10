@@ -1,5 +1,4 @@
 ---
-image: null
 book: null
 draft: false
 tags:
@@ -10,27 +9,27 @@ tags:
   - marketing
   - product
   - product-development
+  - product-manager
   - startups
   - vision
-rating: 2
 date: '2022-03-30'
 excerpt: >-
   The PM discovers what customers need, studies the market and tendencies,
   prioritize what to build next, and rallies the team around a product roadmap.
 title: Product Manager
-group: zettelkasten
+group: zettel
 formattedDate: 'March 30, 2022'
-updatedAt: 'April 24, 2022'
+updatedAt: '2022-04-24'
+formattedUpdatedAt: 'April 24, 2022'
 updateHistory: >-
-  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/product-manager.md
-href: /zettelkasten/product-manager
-as: /z/product-manager
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/product-manager.md
+href: /zettel/product-manager
 slug: product-manager
 editLink: >-
-  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/product-manager.md
-url: 'https://arantespp.com/zettelkasten/product-manager'
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/product-manager.md
+url: 'https://arantespp.com/zettel/product-manager'
 keywords:
-  - zettelkasten
+  - zettel
   - business
   - design
   - engineering
@@ -41,6 +40,14 @@ keywords:
   - startups
   - vision
 readingTime: 1
+references: []
+backlinks:
+  - title: 'Article: The 5 Dysfunctions of Product Management Teams'
+    href: /zettel/article-the-5-dysfunctions-of-product-management-teams
+  - title: Product Owner
+    href: /zettel/product-owner
+  - title: Last Mile in a Software Project
+    href: /last-mile-in-a-software-project
 ---
 
 ## Notes

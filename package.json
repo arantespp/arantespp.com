@@ -67,6 +67,7 @@
     "title-case": "^3.0.3",
     "twitter-ads": "^0.2.1",
     "typography-theme-fairy-gates": "^0.16.19",
+    "use-debounce": "^8.0.1",
     "waait": "^1.0.5",
     "xlsx": "^0.18.5",
     "yup": "^0.32.11"

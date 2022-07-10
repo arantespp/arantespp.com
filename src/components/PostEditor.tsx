@@ -212,9 +212,10 @@ const PostEditor = ({
       <Textarea rows={3} {...register('excerpt')} />
       <ErrorMessage errors={errors} name="excerpt" />
 
-      <Label>Groups</Label>
+      <Label>Group</Label>
       <Select
         {...register('group')}
+        disabled={!!post?.group}
         sx={{ pointerEvents: post?.group ? 'none' : 'auto' }}
       >
         {GROUPS.map((groupOption) => (

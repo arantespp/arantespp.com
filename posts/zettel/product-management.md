@@ -32,7 +32,9 @@ keywords:
   - user-experience
 readingTime: 1
 references: []
-backlinks: []
+backlinks:
+  - title: 'Article: The 5 Dysfunctions of Product Management Teams'
+    href: /zettel/article-the-5-dysfunctions-of-product-management-teams
 ---
 
 ## Notes
@@ -43,7 +45,7 @@ backlinks: []
 
 - It's about bringing together the three functions above, a lot of market research, creativity, vision, and more to build value for the customers and the business.
 
-- It also contains a roadmap of interactive and incremental development to help the business reach the vision.
+- It also contains a roadmap of interactive and incremental development to help the business reach its vision.
 
 ## References
 

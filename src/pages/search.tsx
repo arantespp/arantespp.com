@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { Flex, Input, Themed } from 'theme-ui';
 import { Recommendation } from '../../lib/files';
+import { useDebounce } from 'use-debounce';
 import { useQuery } from 'react-query';
 import Link from '../components/Link';
 import Loading from '../components/Loading';
 import RecommendationsList from '../components/RecommendationsList';
 
 const SearchPosts = ({ query }: { query: string }) => {
-  const { data, isFetching } = useQuery<{ posts: Recommendation[] }>(
+  const { data, isLoading } = useQuery<{ posts: Recommendation[] }>(
     ['/api/search', query],
     ({ queryKey }) =>
       fetch('/api/search', {
@@ -32,7 +33,7 @@ const SearchPosts = ({ query }: { query: string }) => {
           alignItems: 'center',
         }}
       >
-        {isFetching && <Loading delay={500} />}
+        {isLoading && <Loading delay={500} />}
       </Flex>
       <RecommendationsList recommendations={posts} />
     </>
@@ -41,10 +42,10 @@ const SearchPosts = ({ query }: { query: string }) => {
 
 const MemoizedSearchPosts = React.memo(SearchPosts);
 
-const All = () => {
+const Search = () => {
   const [query, setQuery] = React.useState('');
 
-  const deferredQuery = React.useDeferredValue(query);
+  const [debouncedQuery] = useDebounce(query, 500);
 
   return (
     <>
@@ -54,9 +55,9 @@ const All = () => {
         <Link href="/all">See all posts instead.</Link>
       </Themed.p>
       <Input autoFocus onChange={(e) => setQuery(e.target.value)} />
-      <MemoizedSearchPosts query={deferredQuery} />
+      <MemoizedSearchPosts query={debouncedQuery} />
     </>
   );
 };
 
-export default All;
+export default Search;
