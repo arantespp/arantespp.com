@@ -24,7 +24,7 @@ const JournalPage = () => {
     { enabled: Boolean(date && apiKey) },
   );
 
-  const content = data?.journal?.content || '';
+  const content = data?.journal?.content || '_No content._';
 
   const title = `Journal - ${data?.journal?.formattedDate}`;
 
