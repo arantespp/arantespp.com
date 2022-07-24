@@ -5,8 +5,14 @@ import Heading from '../components/Heading';
 import RecommendationsList from '../components/RecommendationsList';
 
 export const getStaticProps = async () => {
-  const books = await getPosts({ group: 'books' });
-  const drafts = await getDrafts({ group: 'books' });
+  const books = (await getPosts({ group: 'books' })).map(
+    ({ content, ...rest }) => ({ ...rest }),
+  );
+
+  const drafts = (await getDrafts({ group: 'books' })).map(
+    ({ content, ...rest }) => ({ ...rest }),
+  );
+
   return { props: { books, drafts } };
 };
 
