@@ -198,6 +198,7 @@ export const PostPage = ({
           <Themed.h1>{postOrContent.post.title}</Themed.h1>
           <Box
             sx={{
+              paddingBottom: 3,
               marginBottom: [5],
               borderWidth: 1,
               borderColor: 'muted',
