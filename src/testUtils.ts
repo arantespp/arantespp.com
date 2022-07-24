@@ -1,10 +1,9 @@
+import { RenderOptions, render } from '@testing-library/react';
 import { enableFetchMocks } from 'jest-fetch-mock';
-import '@testing-library/jest-dom';
-import { render, RenderOptions } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
-import userEvent from '@testing-library/user-event';
-
 import Providers from './providers/Providers';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 enableFetchMocks();
 

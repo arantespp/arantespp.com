@@ -1,7 +1,6 @@
-import { act, render, screen, userEvent } from '../testUtils';
-
-import { useContentEditable } from './useContentEditable';
 import { RESET_SEQUENCE_MS } from './useKeypressSequenceListener';
+import { act, render, screen, userEvent } from '../testUtils';
+import { useContentEditable } from './useContentEditable';
 
 const dataTestId = 'dataTestId';
 

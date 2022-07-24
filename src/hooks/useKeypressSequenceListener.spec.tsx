@@ -1,10 +1,9 @@
-import { act, renderHook, userEvent } from '../testUtils';
-
 import {
-  useKeypressSequenceListener,
   RESET_SEQUENCE_MS,
   WAIT_BEFORE_ACTION_MS,
+  useKeypressSequenceListener,
 } from './useKeypressSequenceListener';
+import { act, renderHook, userEvent } from '../testUtils';
 
 test('should call handler and reset sequence', async () => {
   const sequence = 'somerandomchars';
