@@ -13,7 +13,7 @@ const PedroArantes: React.ForwardRefRenderFunction<any, TextProps> = (
         display: 'flex',
         alignItems: 'center',
         whiteSpace: 'nowrap',
-        fontFamily: 'body',
+        fontFamily: 'heading',
         ...props.sx,
       }}
     >

@@ -46,6 +46,7 @@ const RecommendationCard = ({
           textDecoration: 'none',
           display: 'inline-flex',
           alignItems: 'center',
+          fontFamily: 'heading',
         }}
       >
         {title}

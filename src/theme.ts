@@ -69,9 +69,9 @@ export const theme: Theme = {
   colors,
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body: "'Quattrocento Sans', sans-serif",
-    heading: "'Work Sans', sans-serif",
-    monospace: "'Overpass Mono', monospace",
+    body: '"Open Sans", sans-serif',
+    heading: 'sans-serif',
+    monospace: 'monospace',
   },
   fontSizes: [14, 16, 18, 22, 24, 28, 32],
   fontWeights: {
@@ -319,7 +319,7 @@ export const theme: Theme = {
   links: {
     tag: {
       color: 'primary',
-      fontFamily: 'heading',
+      fontFamily: 'body',
       fontSize: 1,
       textDecoration: 'none',
       '&:hover': {

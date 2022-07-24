@@ -22,7 +22,7 @@ const navs = [
 
 const Header = () => {
   const navSx: any = {
-    fontSize: [2, 3],
+    fontSize: [2, 2],
     textAlign: 'center',
     textDecoration: 'none',
     cursor: 'pointer',
@@ -81,6 +81,7 @@ const Header = () => {
         <HeaderTwitter
           sx={{
             ...navSx,
+            width: 24,
             color: 'twitter',
             '&:hover': {
               color: 'twitter',
