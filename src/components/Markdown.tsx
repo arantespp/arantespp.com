@@ -114,6 +114,15 @@ const getComponents = ({
       </Flex>
     );
   },
+  li: (props) => {
+    return <Themed.li {...{ ...props, ordered: props.ordered.toString() }} />;
+  },
+  ol: (props) => {
+    return <Themed.ol {...{ ...props, ordered: props.ordered.toString() }} />;
+  },
+  ul: (props) => {
+    return <Themed.ul {...{ ...props, ordered: props.ordered.toString() }} />;
+  },
 });
 
 export type MarkdownProps = {

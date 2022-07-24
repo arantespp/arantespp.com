@@ -1,13 +1,14 @@
 import * as dateFns from 'date-fns';
+import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import {
-  DynamoDBClient,
-  GetItemCommand,
-  PutItemCommand,
+  DynamoDBDocumentClient,
+  GetCommand,
+  PutCommand,
   QueryCommand,
-  UpdateItemCommand,
-} from '@aws-sdk/client-dynamodb';
+  UpdateCommand,
+} from '@aws-sdk/lib-dynamodb';
 import { getDateWithTimezone } from './getDateWithTimezone';
-import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
+import { getToday } from './getToday';
 
 const client = new DynamoDBClient({
   credentials: {
@@ -17,11 +18,15 @@ const client = new DynamoDBClient({
   region: 'us-east-1',
 });
 
+const ddbDocClient = DynamoDBDocumentClient.from(client);
+
 const TableName = process.env.AWS_DYNAMODB_TABLE as string;
 
 const JOURNAL_PK = 'journal';
 
 const BACKUP_JOURNAL_PK = 'backup-journal';
+
+const JOURNAL_FIRST_DATE = '2021-06-08';
 
 type JournalFromDatabase = { pk: string; sk: string; content: string };
 
@@ -43,21 +48,19 @@ export const getJournals = async (
     limit?: number;
   } = { limit: 7 },
 ) => {
-  const { Items = [] } = await client.send(
+  const { Items = [] } = await ddbDocClient.send(
     new QueryCommand({
       TableName,
-      ExpressionAttributeValues: marshall({
+      ExpressionAttributeValues: {
         ':pk': JOURNAL_PK,
-      }),
+      },
       KeyConditionExpression: 'pk = :pk',
       Limit: limit,
       ScanIndexForward: false,
     }),
   );
 
-  return Items.map((journal) =>
-    mapJournal(unmarshall(journal) as JournalFromDatabase),
-  ).filter(Boolean);
+  return Items.filter(Boolean) as JournalFromDatabase[];
 };
 
 const journalDateToSlug = (parsed: Date) =>
@@ -81,10 +84,10 @@ export const getJournal = async ({ date }: { date: string | Date }) => {
 
   const keys = { pk: JOURNAL_PK, sk: dateKey };
 
-  const { Item } = await client.send(
-    new GetItemCommand({
+  const { Item } = await ddbDocClient.send(
+    new GetCommand({
       TableName,
-      Key: marshall(keys),
+      Key: keys,
     }),
   );
 
@@ -92,7 +95,7 @@ export const getJournal = async ({ date }: { date: string | Date }) => {
     return mapJournal({ ...keys, content: '' });
   }
 
-  return mapJournal(unmarshall(Item) as JournalFromDatabase);
+  return mapJournal(Item as JournalFromDatabase);
 };
 
 type SaveJournalArgs = {
@@ -101,14 +104,14 @@ type SaveJournalArgs = {
 };
 
 const putJournal = async ({ date, content }: SaveJournalArgs) => {
-  await client.send(
-    new PutItemCommand({
+  await ddbDocClient.send(
+    new PutCommand({
       TableName,
-      Item: marshall({
+      Item: {
         pk: JOURNAL_PK,
         sk: date,
         content,
-      }),
+      },
     }),
   );
 };
@@ -138,18 +141,18 @@ const backupJournal = async ({ date, content }: SaveJournalArgs) => {
   );
 
   try {
-    await client.send(
-      new UpdateItemCommand({
+    await ddbDocClient.send(
+      new UpdateCommand({
         TableName,
-        Key: marshall({ pk: BACKUP_JOURNAL_PK, sk: date }),
+        Key: { pk: BACKUP_JOURNAL_PK, sk: date },
         UpdateExpression: 'SET #history.#now = :content',
         ExpressionAttributeNames: {
           '#history': 'history',
           '#now': now,
         },
-        ExpressionAttributeValues: marshall({
+        ExpressionAttributeValues: {
           ':content': content,
-        }),
+        },
       }),
     );
   } catch (err) {
@@ -157,16 +160,16 @@ const backupJournal = async ({ date, content }: SaveJournalArgs) => {
       err.message ===
       'The document path provided in the update expression is invalid for update'
     ) {
-      await client.send(
-        new PutItemCommand({
+      await ddbDocClient.send(
+        new PutCommand({
           TableName,
-          Item: marshall({
+          Item: {
             pk: BACKUP_JOURNAL_PK,
             sk: date,
             history: {
               [now]: content,
             },
-          }),
+          },
         }),
       );
 
@@ -245,3 +248,65 @@ type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
 export type JournalsSummary = NonNullable<
   ThenArg<ReturnType<typeof getJournalsSummary>>
 >;
+
+export const getMissingDays = async ({
+  from = JOURNAL_FIRST_DATE,
+  to = getToday(),
+}: {
+  from?: string;
+  to?: string;
+} = {}) => {
+  const { Items = [] } = await ddbDocClient.send(
+    new QueryCommand({
+      TableName,
+      ExpressionAttributeValues: {
+        ':pk': JOURNAL_PK,
+      },
+      KeyConditionExpression: 'pk = :pk',
+      ProjectionExpression: 'sk',
+    }),
+  );
+
+  const journalDays = Items.map(({ sk }) => sk);
+
+  const parsedTo = dateFns.parse(to, 'yyyy-MM-dd', new Date());
+
+  const currentDate = dateFns.parse(from, 'yyyy-MM-dd', new Date());
+
+  let missingDates: string[] = [];
+
+  while (!dateFns.isAfter(currentDate, parsedTo)) {
+    const date = dateFns.format(currentDate, 'yyyy-MM-dd');
+
+    const journalDate = journalDays.find((journalDay) => journalDay === date);
+
+    if (!journalDate) {
+      missingDates.push(date);
+    }
+
+    currentDate.setDate(currentDate.getDate() + 1);
+  }
+
+  missingDates = missingDates.reverse();
+
+  const groupedMissingDays = missingDates.reduce((acc, date) => {
+    const [, , day] = date.split('-');
+
+    const label = dateFns.format(
+      dateFns.parse(date, 'yyyy-MM-dd', new Date()),
+      'LLLL yyyy',
+    );
+
+    const group = acc.find((g) => g.label === label);
+
+    if (!group) {
+      acc.push({ label, dates: [{ date, day }] });
+    } else {
+      group.dates.push({ date, day });
+    }
+
+    return acc;
+  }, [] as { label: string; dates: { date: string; day: string }[] }[]);
+
+  return { missingDates, groupedMissingDays };
+};

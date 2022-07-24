@@ -1,14 +1,11 @@
 import * as React from 'react';
 import { Button, Flex } from 'theme-ui';
-import { NextSeo } from 'next-seo';
-import { useInfiniteQuery } from 'react-query';
-
 import { Journal as JournalType } from '../../../lib/journal';
-
+import { NextSeo } from 'next-seo';
+import { useApiKey } from '../../hooks/useApiKey';
+import { useInfiniteQuery } from 'react-query';
 import Journal from '../../components/Journal';
 import Link from '../../components/Link';
-
-import { useApiKey } from '../../hooks/useApiKey';
 
 const JournalAll = () => {
   const { apiKey } = useApiKey();
