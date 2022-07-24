@@ -207,7 +207,7 @@ const useSaveForm = ({
   isDirty,
   singleTweet,
 }: {
-  control: Control<any>;
+  control: any;
   reset: any;
   isDirty: boolean;
   singleTweet?: boolean;
@@ -361,7 +361,7 @@ const TweetField = ({
   remove,
   setValue,
 }: {
-  control: Control<any>;
+  control: any;
   index: number;
   tweetMaxChars: number;
   singleTweet?: boolean;
