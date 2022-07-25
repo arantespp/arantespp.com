@@ -21,10 +21,11 @@ const TextAreaContainer = ({
           height: '100%',
           backgroundColor: 'background',
           padding: 4,
+          paddingBottom: 7,
           overflow: 'auto',
         }}
       >
-        <Container>{children}</Container>
+        <Container sx={{ maxWidth: '60em' }}>{children}</Container>
       </Box>
     );
   }
@@ -66,19 +67,35 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
 
     React.useEffect(() => {
       if (textAreaRef?.current) {
-        /**
-         * https://stackoverflow.com/a/18262927/8786986
-         */
-        const scrollLeft = window.pageXOffset || textAreaRef.current.scrollLeft;
-        const scrollTop = window.pageYOffset || textAreaRef.current.scrollTop;
+        const textAreaHeight = Number(
+          textAreaRef.current.style.height.replace('px', ''),
+        );
 
-        textAreaRef.current.style.height = 'auto';
+        const textHeight = textAreaRef.current.scrollHeight;
 
-        textAreaRef.current.style.height = `${
-          textAreaRef.current.scrollHeight + 50
-        }px`;
+        if (isFullScreen) {
+          console.log({ textAreaHeight, textHeight });
+          if (textHeight > textAreaHeight) {
+            textAreaRef.current.style.height = 'auto';
+            textAreaRef.current.style.height = `${textHeight + 5000}px`;
+          }
+        }
 
-        window.scrollTo(scrollLeft, scrollTop);
+        if (!isFullScreen) {
+          textAreaRef.current.style.height = 'auto';
+
+          textAreaRef.current.style.height = `${
+            textAreaRef.current.scrollHeight + 50
+          }px`;
+          /**
+           * https://stackoverflow.com/a/18262927/8786986
+           */
+          const scrollLeft =
+            window.pageXOffset || textAreaRef.current.scrollLeft;
+          const scrollTop = window.pageYOffset || textAreaRef.current.scrollTop;
+
+          window.scrollTo(scrollLeft, scrollTop);
+        }
       }
     }, [textAreaRef, value, isFullScreen]);
 

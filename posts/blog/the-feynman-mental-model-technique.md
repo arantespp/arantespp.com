@@ -1,18 +1,45 @@
 ---
-title: The Feynman Mental Model Technique
-excerpt:
-rating: 4
-date: 2021-04-29
-tags:
-  - mental models
-  - learning
-  - feynman-technique
-image:
-  url: https://source.unsplash.com/qDY9ahp0Mto
-  alt: Photo by <a href="https://unsplash.com/@benwhitephotography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ben White</a> on <a href="https://unsplash.com/s/photos/learning?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
+book: null
 draft: true
+tags:
+  - feynman-technique
+  - learning
+  - mental-models
+date: '2021-04-29'
+excerpt: ''
+title: The Feynman Mental Model Technique
+group: blog
+formattedDate: 'April 29, 2021'
+updatedAt: '2022-07-25'
+formattedUpdatedAt: 'July 25, 2022'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/blog/the-feynman-mental-model-technique.md
+href: /drafts/the-feynman-mental-model-technique
+slug: the-feynman-mental-model-technique
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/blog/the-feynman-mental-model-technique.md
+url: 'https://arantespp.com/the-feynman-mental-model-technique'
+keywords:
+  - blog
+  - feynman-technique
+  - learning
+  - mental-models
+readingTime: 5
+references:
+  - /zettel/zettelkasten
+  - /zettel/the-feynman-technique
+  - /zettel/mental-models
+  - /zettel/decision-mental-models
+  - /zettel/system-mental-models
+backlinks: []
 ---
+
+- Motivation
+- The Feynman Technique
+- Mental Model Transformation
+- Systems
+- The Last Resistance
+- Results
 
 I need to think more about this, but I have a feeling that our explanations of things we're learning follows a sine curve. When we know nothing or a little, we explain with simplicity because we don't know so much.
 
@@ -50,3 +77,19 @@ Since I've started blogging, I've been reading a lot of topics, from [psychology
 Explain to a child (mentally) the topic I'm learning and figuring out which mental models I can extract from it is the best way I found to retain the knowledge. Associated to them, I'm also using the [Zettelkasten](/zettel/zettelkasten) to create small pieces of ideas and building the connections through tags and references. So while I write my notes, I try to write them as simple as possible, in a way that a child can comprehend the idea. I also keep trying to extract mental models. If I discover one, I open a new note and write about that mental model and how can we use it.
 
 I'm enjoying The Feynman Mental Model Technique. I can assure to you that it's already making difference for me, even though I have this blog for only one year. I'm focusing in a long-term result. I believe the results are exponential and the greatest outcomes will come in some years. I'll keep you in touch and I'll share with you the result of this project.
+
+## Systems
+
+The last part of this technique is the systems you should create to support it. You can ask yourself, "How can I set up a system that makes me apply this technique so easily, and I don't need to rely on my motivation?" You can ask this question to many others parts of your life—to create habits or be more productive in your work. Creating systems is creating a passive environment that supports you for whatever you want to accomplish.
+
+For this methodology specifically, I created this blog to support it. I wanted X prerequisites:
+
+1. A system in which I could write notes easily.
+1. I could search and connect notes through tags and references.
+1. I could share it with many people.
+
+Your system's requisites may diverge a little bit. Depending on your choice, you can fork this blog, use Notion, Obsidian, or even paper notes. It doesn't matter which one you choose for yourself, as long as you eliminate most frictions and make your job easier.
+
+## The Last Resistance
+
+The last resistance is a barrier that doesn't allow applying this technique (or doing any other job). It's more difficult to sit to do the work than to do the work. Procrastination.
