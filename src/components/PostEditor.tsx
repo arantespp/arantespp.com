@@ -13,7 +13,7 @@ import {
 } from 'theme-ui';
 import { Controller, useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
-import { GROUPS } from '../../lib/groups';
+import { GROUPS, Group } from '../../lib/groups';
 import { Post } from '../../lib/files';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Editor from './Editor';
@@ -111,7 +111,7 @@ const PostEditor = ({
 
   const title = watch('title');
 
-  const group = watch('group');
+  const group = watch('group') as Group;
 
   React.useEffect(() => {
     if (group && title) {

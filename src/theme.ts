@@ -9,6 +9,7 @@ const palette = {
    * Red
    */
   primary: '#B60000',
+  lightPrimary: '#FFD0D0',
   complementary: '#00B6B6',
   analogous1: '#B65B00',
   analogous2: '#B6005B',
@@ -26,8 +27,8 @@ const light = {
   background: '#fdfdfd',
   primary: palette.primary,
   secondary: palette.complementary,
-  accent: palette.analogous2,
-  highlight: palette.analogous1,
+  accent: palette.analogous1,
+  highlight: palette.lightPrimary,
   error: palette.primary,
   link: lightGray,
   gray: '#515151',
@@ -80,8 +81,8 @@ export const theme: Theme = {
     heading: '600',
   },
   lineHeights: {
-    body: 1.618033,
-    heading: 1.1,
+    body: 1.75,
+    heading: 1.25,
   },
   borderWidths: [0, 1, 4],
   sizes: {
@@ -372,6 +373,7 @@ export const theme: Theme = {
     },
   },
   forms: {
+    checkbox: {},
     input: {
       backgroundColor: 'background',
     },
