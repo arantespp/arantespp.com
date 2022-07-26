@@ -9,6 +9,7 @@ const Newsletter = () => (
         Newsletter
       </Text>
     </Box>
+
     <Themed.p>
       On Tuesday (not weekly), I publish my most recent readings and thoughts.
       Subscribe to my newsletter if you want to follow posts about{' '}
@@ -28,7 +29,7 @@ const Newsletter = () => (
         width: '100%',
       }}
     >
-      <Box sx={{ maxWidth: 450 }}>
+      <Box sx={{ maxWidth: 500 }}>
         <form
           action="https://www.getrevue.co/profile/arantespp/add_subscriber"
           method="post"
