@@ -115,13 +115,13 @@ export const getMDXComponents = ({
     );
   },
   li: (props) => {
-    return <Themed.li {...{ ...props, ordered: props.ordered.toString() }} />;
+    return <Themed.li {...{ ...props, ordered: props.ordered?.toString() }} />;
   },
   ol: (props) => {
-    return <Themed.ol {...{ ...props, ordered: props.ordered.toString() }} />;
+    return <Themed.ol {...{ ...props, ordered: props.ordered?.toString() }} />;
   },
   ul: (props) => {
-    return <Themed.ul {...{ ...props, ordered: props.ordered.toString() }} />;
+    return <Themed.ul {...{ ...props, ordered: props.ordered?.toString() }} />;
   },
 });
 

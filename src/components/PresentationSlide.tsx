@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Flex } from 'theme-ui';
+import { Container } from 'theme-ui';
 
 export const PresentationSlide = ({
   children,
@@ -11,17 +11,18 @@ export const PresentationSlide = ({
   className?: string;
 }) => {
   return (
-    <Flex
+    <Container
       id={id}
       className={className}
       sx={{
         paddingY: 3,
+        display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'flex-start',
+        alignItems: 'center',
       }}
     >
       {children}
-    </Flex>
+    </Container>
   );
 };

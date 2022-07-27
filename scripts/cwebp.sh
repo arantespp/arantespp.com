@@ -7,4 +7,4 @@ IMAGE_NAME="${IMAGE_BASENAME%.*}"
 
 cwebp -q 70 -resize 1024 0 "$IMAGE_PATH" -o "$IMAGE_DIR/$IMAGE_NAME.webp"
 
-
+rm "$IMAGE_PATH"
