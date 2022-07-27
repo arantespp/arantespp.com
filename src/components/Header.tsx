@@ -36,6 +36,7 @@ const Header = () => {
     <Flex
       as="header"
       sx={{
+        width: '100%',
         display: 'flex',
         flexDirection: ['column', null, 'row'],
         justifyContent: 'space-between',

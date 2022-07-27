@@ -58,7 +58,6 @@ const HeadingLink = ({
               if (route === '/instagram/[slug]') {
                 return child;
               }
-
               return titleCase(child);
             }
 

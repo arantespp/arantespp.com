@@ -9,9 +9,15 @@
 <url><loc>https://arantespp.com/license</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/network</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/newsletter</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://arantespp.com/presentations/2022-07-27-sibsday</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/search</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/tags</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/theme</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://arantespp.com/instagram/atomic-habits</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://arantespp.com/instagram/no-b-s-time</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://arantespp.com/instagram/the-almanack-of-naval-ravikant</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://arantespp.com/instagram/the-psychology-of-money</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://arantespp.com/instagram/zero-to-one</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/tags/500-startups</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/tags/80-20-rule</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/tags/90-90-rule</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -297,11 +303,6 @@
 <url><loc>https://arantespp.com/tags/writing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/tags/y-combinator</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/tags/zettelkasten</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://arantespp.com/instagram/atomic-habits</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://arantespp.com/instagram/no-b-s-time</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://arantespp.com/instagram/the-almanack-of-naval-ravikant</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://arantespp.com/instagram/the-psychology-of-money</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://arantespp.com/instagram/zero-to-one</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/zettel/article-the-5-dysfunctions-of-product-management-teams</loc><lastmod>2022-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/zettel/think-and-grow-rich-the-major-attributes-of-leadership</loc><lastmod>2022-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://arantespp.com/zettel/proprietary-product-distribution</loc><lastmod>2022-06-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>

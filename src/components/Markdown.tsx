@@ -15,27 +15,27 @@ import 'katex/dist/katex.min.css';
 /**
  * https://github.com/remarkjs/react-markdown/tree/main#appendix-b-components
  */
-const getComponents = ({
+export const getMDXComponents = ({
   noH1 = true,
 }: { noH1?: boolean } = {}): Components => ({
   ...(Themed as any),
-  h1: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
-    <Heading {...{ children, level, noH1 }} />
+  h1: ({ children }: { children: React.ReactNode[]; level: number }) => (
+    <Heading {...{ children, as: 'h1', noH1 }} />
   ),
-  h2: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
-    <Heading {...{ children, level, noH1 }} />
+  h2: ({ children }: { children: React.ReactNode[]; level: number }) => (
+    <Heading {...{ children, as: 'h2' }} />
   ),
-  h3: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
-    <Heading {...{ children, level, noH1 }} />
+  h3: ({ children }: { children: React.ReactNode[]; level: number }) => (
+    <Heading {...{ children, as: 'h3' }} />
   ),
-  h4: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
-    <Heading {...{ children, level, noH1 }} />
+  h4: ({ children }: { children: React.ReactNode[]; level: number }) => (
+    <Heading {...{ children, as: 'h4' }} />
   ),
-  h5: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
-    <Heading {...{ children, level, noH1 }} />
+  h5: ({ children }: { children: React.ReactNode[]; level: number }) => (
+    <Heading {...{ children, as: 'h5' }} />
   ),
-  h6: ({ children, level }: { children: React.ReactNode[]; level: number }) => (
-    <Heading {...{ children, level, noH1 }} />
+  h6: ({ children }: { children: React.ReactNode[]; level: number }) => (
+    <Heading {...{ children, as: 'h6' }} />
   ),
   a: ({ children, href }) => {
     if (href && href.startsWith('/tags/')) {
@@ -125,6 +125,15 @@ const getComponents = ({
   },
 });
 
+const markdownPlugins = {
+  /**
+   * https://katex.org/docs/supported.html
+   * https://github.com/remarkjs/remark-math
+   */
+  remarkPlugins: [remarkMath, remarkGfm],
+  rehypePlugins: [rehypeKatex],
+};
+
 export type MarkdownProps = {
   content: string;
   components?: Components;
@@ -137,13 +146,8 @@ const Markdown = ({ content, components, noH1 }: MarkdownProps) => {
   return (
     <Box ref={ref}>
       <ReactMarkdown
-        components={{ ...getComponents({ noH1 }), ...components }}
-        /**
-         * https://katex.org/docs/supported.html
-         * https://github.com/remarkjs/remark-math
-         */
-        remarkPlugins={[remarkMath, remarkGfm]}
-        rehypePlugins={[rehypeKatex]}
+        components={{ ...getMDXComponents({ noH1 }), ...components }}
+        {...markdownPlugins}
       >
         {content}
       </ReactMarkdown>

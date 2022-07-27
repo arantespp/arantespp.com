@@ -4,5 +4,5 @@
     "module": "CommonJS",
     "noEmit": false
   },
-  "include": ["lib/links.ts"]
+  "include": ["lib/*.ts"]
 }

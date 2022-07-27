@@ -8,6 +8,9 @@ import {
   SocialProfileJsonLd,
   SocialProfileJsonLdProps,
 } from 'next-seo';
+import { PresentationLayout } from '../components/PresentationLayout';
+import { PresentationProviders } from '../providers/PresentationProviders';
+import { PresentationSlidePage } from '../components/PresentationSlidePage';
 import { socialMedias } from '../../lib/socialMedias';
 import Head from 'next/head';
 import Layout from '../components/Layout';
@@ -62,7 +65,17 @@ const logoJsonLd: LogoJsonLdProps = {
   logo: `${URL}/images/logo.png`,
 };
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps, router }: AppProps) => {
+  if (router.pathname.startsWith('/presentations/')) {
+    return (
+      <PresentationProviders>
+        <PresentationLayout>
+          <Component {...pageProps} />
+        </PresentationLayout>
+      </PresentationProviders>
+    );
+  }
+
   return (
     <>
       <Head>
