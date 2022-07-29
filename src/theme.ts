@@ -379,7 +379,7 @@ export const theme: Theme = {
     },
     textarea: {
       backgroundColor: 'background',
-      fontSize: 1,
+      fontSize: [0, 1],
     },
   },
 };
