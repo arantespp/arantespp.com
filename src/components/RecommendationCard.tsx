@@ -39,7 +39,7 @@ const RecommendationCard = ({
       <Link
         href={href}
         sx={{
-          fontSize: 3,
+          fontSize: [2, 3],
           fontWeight: 'bold',
           cursor: 'pointer',
           color: 'text',
@@ -53,7 +53,6 @@ const RecommendationCard = ({
         {isReference && <IconText icon={faLink} />}
         {draft && <IconText icon={faPen} />}
       </Link>
-
       <PostResume post={recommendation} />
     </Flex>
   );

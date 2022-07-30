@@ -74,11 +74,11 @@ export const theme: Theme = {
     heading: 'sans-serif',
     monospace: 'monospace',
   },
-  fontSizes: [14, 16, 18, 22, 24, 28, 32],
+  fontSizes: [14, 16, 18, 20, 24, 28, 32],
   fontWeights: {
     body: 400,
     bold: 700,
-    heading: '600',
+    heading: 600,
   },
   lineHeights: {
     body: 1.75,
@@ -93,7 +93,7 @@ export const theme: Theme = {
   styles: {
     root: {
       fontFamily: 'body',
-      fontSize: 2,
+      fontSize: [1, 2],
       fontWeight: 'body',
       lineHeight: 'body',
       button: {
@@ -104,7 +104,7 @@ export const theme: Theme = {
         },
       },
       '.katex .mord.text': {
-        fontSize: 2,
+        fontSize: [0, 2],
         fontFamily: 'body',
       },
       '.katex-display > .katex': {
@@ -125,7 +125,7 @@ export const theme: Theme = {
     h1: {
       padding: 0,
       margin: 0,
-      fontSize: 5,
+      fontSize: [4, 5],
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
@@ -138,7 +138,7 @@ export const theme: Theme = {
       margin: 0,
       marginTop: 5,
       marginBottom: 4,
-      fontSize: 4,
+      fontSize: [3, 4],
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
@@ -149,7 +149,7 @@ export const theme: Theme = {
       margin: 0,
       marginTop: 5,
       marginBottom: 4,
-      fontSize: 3,
+      fontSize: [3, 3],
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
@@ -321,7 +321,7 @@ export const theme: Theme = {
     tag: {
       color: 'primary',
       fontFamily: 'body',
-      fontSize: 1,
+      fontSize: [0, 1],
       textDecoration: 'none',
       '&:hover': {
         color: 'text',
@@ -330,7 +330,7 @@ export const theme: Theme = {
   },
   messages: {
     excerpt: {
-      fontSize: [2],
+      fontSize: [1, 2],
       fontStyle: 'italic',
       padding: 0,
       paddingLeft: 3,
@@ -340,7 +340,7 @@ export const theme: Theme = {
       borderColor: 'muted',
     },
     quote: {
-      fontSize: [2],
+      fontSize: [1, 2],
       fontStyle: 'italic',
       padding: 0,
       paddingLeft: 3,

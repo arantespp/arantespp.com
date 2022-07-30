@@ -16,7 +16,7 @@ const TagsIndex = ({
     <NextSeo title="Tags" />
     <Themed.h1>Tags</Themed.h1>
     <Themed.p>Total of {tags.length} tags.</Themed.p>
-    <Flex sx={{ flexWrap: 'wrap' }}>
+    <Flex sx={{ flexWrap: 'wrap', justifyContent: 'center' }}>
       {tags.map((tag) => (
         <Box sx={{ marginRight: 4, marginBottom: 3 }} key={tag}>
           <Tag tag={tag} />

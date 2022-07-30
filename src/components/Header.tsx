@@ -22,7 +22,7 @@ const navs = [
 
 const Header = () => {
   const navSx: any = {
-    fontSize: [2, 2],
+    fontSize: [1, 2],
     textAlign: 'center',
     textDecoration: 'none',
     cursor: 'pointer',

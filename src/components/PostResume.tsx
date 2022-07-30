@@ -29,15 +29,15 @@ const PostResume = ({ post }: { post: Recommendation }) => {
         ))}
       </Flex>
       <Link href={`/${newGroup}`}>
-        <Text sx={{ fontSize: 2 }}>{pascalCase(newGroup)},</Text>
+        <Text>{pascalCase(newGroup)},</Text>
       </Link>
-      <Text as="span" sx={{ color: 'gray', fontSize: 1 }}>
+      <Text as="span" sx={{ color: 'gray', fontSize: [0, 1] }}>
         {' '}
         {formattedDate}
       </Text>
       {readingTime > 1 && (
         <Box>
-          <Text sx={{ color: 'lightGray', fontSize: 1 }}>
+          <Text sx={{ color: 'lightGray', fontSize: [0, 1] }}>
             Reading time: {readingTime} minutes
           </Text>
         </Box>
