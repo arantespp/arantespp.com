@@ -23,11 +23,14 @@ const PostResume = ({
       }}
     >
       <Link href={href} sx={{ textDecoration: 'none' }}>
-        <Message variant="excerpt" sx={{ cursor: 'pointer' }}>
+        <Message
+          variant="excerpt"
+          sx={{ cursor: 'pointer', marginTop: 3, marginBottom: 1 }}
+        >
           {excerpt}
         </Message>
       </Link>
-      <Flex sx={{ flexWrap: 'wrap', marginY: 1 }}>
+      <Flex sx={{ flexWrap: 'wrap', marginTop: 1 }}>
         {tags.map((tag) => (
           <Box key={tag} sx={{ paddingRight: 3 }}>
             <Tag tag={tag} />

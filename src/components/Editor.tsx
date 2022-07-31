@@ -74,7 +74,6 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
         const textHeight = textAreaRef.current.scrollHeight;
 
         if (isFullScreen) {
-          console.log({ textAreaHeight, textHeight });
           if (textHeight > textAreaHeight) {
             textAreaRef.current.style.height = 'auto';
             textAreaRef.current.style.height = `${textHeight + 5000}px`;

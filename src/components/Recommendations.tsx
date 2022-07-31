@@ -1,4 +1,4 @@
-import { Flex, Text } from 'theme-ui';
+import { Box, Flex, Text } from 'theme-ui';
 import { Recommendation } from '../../lib/files';
 import Link from './Link';
 import RecommendationsList from './RecommendationsList';
@@ -46,7 +46,9 @@ const Recommendations = ({
       >
         Do you want to see all posts instead?
       </Link>
-      <RecommendationsList recommendations={recommendations} />
+      <Box sx={{ marginTop: [4] }}>
+        <RecommendationsList recommendations={recommendations} />
+      </Box>
     </Flex>
   );
 };

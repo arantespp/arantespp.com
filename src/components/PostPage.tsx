@@ -205,7 +205,7 @@ export const PostPage = ({
               borderBottomStyle: 'solid',
             }}
           >
-            <PostResume post={postOrContent.post} />
+            <PostResume post={postOrContent.post} isPostPage />
           </Box>
         </Box>
       )}

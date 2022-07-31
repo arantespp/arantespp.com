@@ -335,7 +335,7 @@ export const theme: Theme = {
       padding: 2,
       paddingLeft: 3,
       paddingRight: 0,
-      marginY: 3,
+      margin: 0,
       backgroundColor: 'transparent',
       color: 'gray',
       borderColor: 'muted',
