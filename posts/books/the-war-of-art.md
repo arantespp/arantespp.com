@@ -7,8 +7,8 @@ excerpt: ''
 title: The War of Art
 group: books
 formattedDate: 'July 26, 2022'
-updatedAt: '2022-07-26'
-formattedUpdatedAt: 'July 26, 2022'
+updatedAt: '2022-07-31'
+formattedUpdatedAt: 'July 31, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-war-of-art.md
 href: /drafts/books/the-war-of-art
@@ -32,3 +32,9 @@ backlinks: []
 ### Resistance is Insidious
 
 ### Resistance is Impersonal
+
+## Book Three
+
+### The Magic of Making a Start
+
+When you commit yourself and start, then the providence moves too. A whole stream of events issues from that decision, such as material assistance, meetings, and favors.

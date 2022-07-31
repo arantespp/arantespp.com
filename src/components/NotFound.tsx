@@ -1,13 +1,27 @@
+import * as React from 'react';
 import { Flex, Text } from 'theme-ui';
 import { useRouter } from 'next/router';
 import Link from './Link';
+import Loading from './Loading';
 
-const NotFound = () => {
-  const { asPath } = useRouter();
+const NotFound = ({ draftsHrefs }: { draftsHrefs: string[] }) => {
+  const { asPath, push } = useRouter();
 
   const draftHref = asPath.startsWith('/drafts') ? asPath : `/drafts${asPath}`;
 
-  const showDraftMessage = !asPath.startsWith('/drafts');
+  const [isChecking, setIsChecking] = React.useState(true);
+
+  React.useEffect(() => {
+    if (draftsHrefs.includes(draftHref)) {
+      push(draftHref).finally(() => setIsChecking(false));
+    } else {
+      setIsChecking(false);
+    }
+  }, [draftHref, draftsHrefs, push]);
+
+  if (isChecking) {
+    return <Loading />;
+  }
 
   return (
     <Flex sx={{ margin: 3, flexDirection: 'column' }}>
@@ -18,20 +32,17 @@ const NotFound = () => {
           flexDirection: 'column',
         }}
       >
-        <Text sx={{ fontSize: 5, fontWeight: 'bold', textAlign: 'center' }}>
+        <Text sx={{ fontSize: 6, fontWeight: 'bold', textAlign: 'center' }}>
           404
         </Text>
         <Text sx={{ fontSize: 4, fontWeight: 'bold', textAlign: 'center' }}>
           Ops, page not found 😢
         </Text>
       </Flex>
-      {showDraftMessage && (
-        <Text sx={{ textAlign: 'center' }}>
-          That page does&apos;t exist. But, maybe it is unfinished post and it
-          is still a <Link href={draftHref}>draft.</Link> If you prefer, you can
-          check <Link href="/all">all posts</Link> instead.
-        </Text>
-      )}
+      <Text sx={{ textAlign: 'center', marginY: 4 }}>
+        That page does&apos;t exist. But, you can check{' '}
+        <Link href="/all">all posts</Link> instead.
+      </Text>
     </Flex>
   );
 };

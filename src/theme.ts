@@ -332,9 +332,10 @@ export const theme: Theme = {
     excerpt: {
       fontSize: [1, 2],
       fontStyle: 'italic',
-      padding: 0,
+      padding: 2,
       paddingLeft: 3,
-      marginY: 2,
+      paddingRight: 0,
+      marginY: 3,
       backgroundColor: 'transparent',
       color: 'gray',
       borderColor: 'muted',

@@ -4,7 +4,13 @@ import { pascalCase } from 'change-case';
 import Link from './Link';
 import Tag from './Tag';
 
-const PostResume = ({ post }: { post: Recommendation }) => {
+const PostResume = ({
+  post,
+  isPostPage,
+}: {
+  post: Recommendation;
+  isPostPage?: boolean;
+}) => {
   const { excerpt, group, formattedDate, tags, href, readingTime } = post;
 
   const newGroup = group === 'zettel' ? 'zettelkasten' : group;
@@ -28,13 +34,12 @@ const PostResume = ({ post }: { post: Recommendation }) => {
           </Box>
         ))}
       </Flex>
-      <Link href={`/${newGroup}`}>
-        <Text>{pascalCase(newGroup)},</Text>
-      </Link>
-      <Text as="span" sx={{ color: 'gray', fontSize: [0, 1] }}>
-        {' '}
-        {formattedDate}
-      </Text>
+      {isPostPage && (
+        <Text as="span" sx={{ color: 'gray', fontSize: [0, 1] }}>
+          <Link href={`/${newGroup}`}>{pascalCase(newGroup)},</Link>{' '}
+          {formattedDate}
+        </Text>
+      )}
       {readingTime > 1 && (
         <Box>
           <Text sx={{ color: 'lightGray', fontSize: [0, 1] }}>

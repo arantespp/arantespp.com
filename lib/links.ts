@@ -40,7 +40,8 @@ export const getRedirects = async () => {
     });
 
   /**
-   * Redirect blog article draft links to the post's permalink
+   * Redirect blog article draft old links to the post's permalink in case
+   * someone has the old draft link but the post isn't draft anymore.
    */
   const oldDrafts = posts
     .filter((post) => post.group === 'blog')
