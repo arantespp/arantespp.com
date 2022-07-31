@@ -527,7 +527,7 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
           <Button
             type="button"
             aria-label="prependTweetButton"
-            onClick={() => prepend({ value: '' })}
+            onClick={() => prepend({ value: '', checked: false })}
           >
             Add Tweet
           </Button>
