@@ -30,7 +30,7 @@ const Footer = () => (
     </Flex>
     <Text
       sx={{
-        fontSize: 1,
+        fontSize: [0, 1],
         marginTop: 2,
         textAlign: 'center',
       }}
