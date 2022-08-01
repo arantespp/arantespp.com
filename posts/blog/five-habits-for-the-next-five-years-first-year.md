@@ -35,7 +35,7 @@ references:
 backlinks: []
 ---
 
-One year ago, January 02, 2021, I started my most audacious project, creating [five habits in five years](/five-habits). I decided to start such a project because of my low consistency level. I couldn't keep every long-term activity I began because my peaks of motivation and self-discipline vanished quickly. So I started this journey because being that way bothered me so much.
+One year ago, January 02, 2021, I started my most audacious project, creating [five habits in five years](/five-habits-for-the-next-five-years). I decided to start such a project because of my low consistency level. I couldn't keep every long-term activity I began because my peaks of motivation and self-discipline vanished quickly. So I started this journey because being that way bothered me so much.
 
 Now, I want to relate how the first year was, the achievements, and the difficulties. I must confess that it wasn't easy, and I still don't master the habits very well, but I'm proud of myself for the whole evolution and the new concepts and paradigms I acquired this year.
 
