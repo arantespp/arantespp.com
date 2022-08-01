@@ -24,7 +24,7 @@ export const JournalDateNavigator = ({
   };
 
   return (
-    <Flex sx={{ flexDirection: 'column', paddingBottom: 4 }}>
+    <Flex sx={{ flexDirection: 'column' }}>
       <Link href={`/journal/${date}`}>
         <Text>
           {dateFns.format(
@@ -35,7 +35,8 @@ export const JournalDateNavigator = ({
       </Link>
       <Flex
         sx={{
-          gap: 2,
+          marginY: 2,
+          gap: [2, 3],
           flexWrap: 'wrap',
           justifyContent: ['center', 'flex-start'],
           button: {

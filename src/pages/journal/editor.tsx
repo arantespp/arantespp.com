@@ -10,12 +10,13 @@ import { NextSeo } from 'next-seo';
 import { useApiKey } from '../../hooks/useApiKey';
 import { useDateInput } from '../../hooks/useDateInput';
 import { useDebounce } from 'use-debounce';
+import { useIdleTimer } from 'react-idle-timer';
 import { useQuery, useQueryClient } from 'react-query';
 import { useQueryParamsDateOrToday } from '../../hooks/useQueryParamsDateOrToday';
 import Editor from '../../components/Editor';
 import ErrorMessage from '../../components/ErrorMessage';
 import Link from '../../components/Link';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 
 const AUTO_SAVE_DELAY = 200;
 
@@ -192,8 +193,23 @@ const EditorWithContent = ({ date }: { date: string }) => {
 
 const MemoizedEditorWithContent = React.memo(EditorWithContent);
 
+const useIdleRedirect = ({ date }: { date: string }) => {
+  const { push } = useRouter();
+
+  const handleOnIdle = () => {
+    push(`/journal/${date}`);
+  };
+
+  useIdleTimer({
+    timeout: 1000 * 60 * 3, // 3 minutes
+    onIdle: handleOnIdle,
+  });
+};
+
 const JournalEditor = () => {
   const { date } = useQueryParamsDateOrToday();
+
+  useIdleRedirect({ date });
 
   const { date: dateInput, setDate: setDateInput } = useDateInput(date);
 

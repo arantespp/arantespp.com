@@ -55,6 +55,7 @@
     "react-force-graph-2d": "^1.23.10",
     "react-force-graph-3d": "^1.21.12",
     "react-hook-form": "^7.34.0",
+    "react-idle-timer": "^5.4.1",
     "react-markdown": "^8.0.3",
     "react-query": "^3.39.2",
     "react-swipeable": "^7.0.0",
