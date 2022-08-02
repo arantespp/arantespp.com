@@ -45,18 +45,20 @@ I need to think more about this, but I have a feeling that our explanations of t
 
 When we start understanding the subject, our brain is creating connections while we're learning, but they're messy, we don't have enough effective connections. Every piece of information looks like independent but at the same time, may be connected to each other. At this point, we can't explain in a concise way because we don't know how the pieces effectively correlated. It's like a thousand piece puzzle that we just opened and throw the pieces on the table. Trying to explain is like catching pieces randomically and trying to create a explanation of how these pieces fit together, even if they don't.
 
-At the final stage, when we understand the whole subject, the connections in our brain are well defined and clear. When this happens, we are able to explain plainly. At this point, your puzzle is finished and, for every group of pieces we pick up, we can show clearly because they fit together and we don't have to create complexes explanations, it's straightforward. It's simple.
+When we understand the whole subject, the connections in our brain are well defined and clear. When this happens, we are able to explain plainly. At this point, your puzzle is finished and, for every group of pieces we pick up, we can show clearly because they fit together and we don't have to create complexes explanations, it's straightforward. It's simple.
+
+I wrote this article to share my learning process and how I accelerated the path from know nothing to know so well that I can explain things in a simple way. First, I'll talk a little about the Feynman Technique and what mental models are, the base of The Feynman Mental Model Technique, and how them fit together. Then, I'll present the systems I've been developing to apply this technique. Finally, I'll show that resistances exists and can beat you, even if you create the best system of the world.
 
 ## The Feynman Technique
 
-This technique was used by [Richard Feynman](/zettel/richard-feynman) while he was learning some subject. The method consists in four steps:
+[Richard Feynman](/zettel/richard-feynman) has created this technique to learn virtually anything. The method consists in four steps:
 
 > 1. Choose the subject you want to learn and write down everything you know about the topic.
 > 2. Try to explain what you know to a child. When you're speaking with a child, you should be clear and concise.
 > 3. Identify gaps in your explanation. If you're struggling to explain clearly, go back to the material.
 > 4. Review, organize and simplify.
 
-The [Feynman Technique](/zettel/the-feynman-technique) benefit is that it helps we assemble the puzzle in our head. When we force ourself to explain some topic to a child, we are forced to remove all complexities of our arguments, we have to figure out how to create the best connections. We can choose the least amount information that don't increase the complexity but that gives the most important overview of that topic - Pareto Principle. We can explain using 20% of the pieces and they give to our listener 80% of the topic overview. We don't need to talk about the huge amount of blue pieces of our puzzle that represents the sky as they aggregate less relevance to the picture.
+The [Feynman Technique](/zettel/the-feynman-technique) benefit is that it helps we assemble the puzzle in our head. When we force ourself to explain some topic to a child, we are forced to remove all complexities of our arguments ant to figure out how to create the best connections. We can choose the least amount information that don't increase the complexity but that gives the most important overview of that topic - Pareto Principle. We can explain using 20% of the pieces and they give to our listener 80% of the topic overview. We don't need to talk about the huge amount of blue pieces of our puzzle that represents the sky as they aggregate less relevance to the picture.
 
 ## Mental Models
 
@@ -90,6 +92,10 @@ For this methodology specifically, I created this blog to support it. I wanted X
 
 Your system's requisites may diverge a little bit. Depending on your choice, you can fork this blog, use Notion, Obsidian, or even paper notes. It doesn't matter which one you choose for yourself, as long as you eliminate most frictions and make your job easier.
 
-## The Last Resistance
+## The Resistance
 
-The last resistance is a barrier that doesn't allow applying this technique (or doing any other job). It's more difficult to sit to do the work than to do the work. Procrastination.
+It's a everyday internal battle that you may have whenever you need to do your job. You hit the wall and can't do anything, even if you create the most effective system to apply this technique. The resistance can assume te form of procrastination, perfeccionism or fear.
+
+The first step to overcoming the resistance is to be aware that it exists and that it can easily beat you. The second step, that worked for me, is to create a strong vision of what you deep want, your burning desire, and use it to support your motivation. You systems also will help you fight against the resistance—that's the reason you should create an environment that makes you do your job without much effort.
+
+The most interesting thing is that the resistance has tremendous power before you start doing your work. Once you commit yourself and start doing your job, it loses power. In the end, it's more difficult to sit to do the work than to do the work.
