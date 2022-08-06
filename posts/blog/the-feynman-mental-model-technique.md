@@ -5,6 +5,7 @@ tags:
   - feynman-technique
   - learning
   - mental-models
+  - first-principles-thinking
 date: '2022-08-06'
 excerpt: >-
   Once we have the building blocks of some topic, we can choose a subset of them
@@ -82,7 +83,9 @@ Explaining to a child (mentally) the topic I'm learning and figuring out which m
 
 We can only abstract some topic when we understand its fundamentals. There's a mental model called [First Principles Thinking](/zettel/first-principles-thinking), whose main idea is to break down the topic into basic elements and then resemble them again, which we can call "reasoning from first principles." The Feynman Technique (steps 1 to 4) is responsible for helping us break down the idea because we always simplifying and finding gaps in our understandings. There're two main advantages to reasoning from the first principles. First, we learn the basics of some topic (or problem) and then recreate it, removing impurity assumptions, conventions, and old paradigms.
 
-The second advantage is the main point of this article: we abstract and reuse the fundamentals in other contexts. We can see these fundamentals as mental building blocks for ideas. Once we have the building blocks of some topic, we can choose a subset of them to build new ideas, apply to understand other topics, solve problems, and so on. This is the essence of the fifth step of the Feynman Mental Model Technique.
+The second advantage is the main point of this article: we abstract and reuse the fundamentals in other contexts. We can see these fundamentals as mental building blocks for ideas. Once we have the building blocks of some topic, we can choose a subset of them to build new ideas, apply to understand other topics, solve problems, and so on. This is the essence of the fifth step of The Feynman Mental Model Technique.
+
+![The Feynman Mental Model Technique.](/images/originals/the-feynman-mental-models-technique.png)
 
 ## Applying the Technique
 
