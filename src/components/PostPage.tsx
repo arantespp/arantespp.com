@@ -7,7 +7,7 @@ import {
   NextSeo,
   NextSeoProps,
 } from 'next-seo';
-import { Box, Themed } from 'theme-ui';
+import { Box, Flex, Text, Themed } from 'theme-ui';
 import { Draft, Group, Post, Recommendation } from '../../lib/files';
 import { editPost } from '../../shortcuts';
 import { useContentEditable } from '../hooks/useContentEditable';
@@ -208,6 +208,24 @@ export const PostPage = ({
             <PostResume post={postOrContent.post} isPostPage />
           </Box>
         </Box>
+      )}
+      {isPost && postOrContent.post.draft && (
+        <Flex
+          sx={{
+            marginY: 5,
+            justifyContent: 'center',
+          }}
+        >
+          <Text
+            sx={{
+              fontSize: 6,
+              fontStyle: 'italic',
+              color: 'gray',
+            }}
+          >
+            This post is still a draft!
+          </Text>
+        </Flex>
       )}
       {isBook && (
         <Box sx={{ marginBottom: [5] }}>

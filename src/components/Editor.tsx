@@ -25,7 +25,7 @@ const TextAreaContainer = ({
           overflow: 'auto',
         }}
       >
-        <Container sx={{ maxWidth: '60em' }}>{children}</Container>
+        <Container sx={{ maxWidth: '52em' }}>{children}</Container>
       </Box>
     );
   }

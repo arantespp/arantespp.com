@@ -1,5 +1,11 @@
 ---
-book: null
+book:
+  authors:
+    - Steven Pressfield
+  link: >-
+    https://www.amazon.com.br/War-Art-Through-Creative-Battles/dp/1936891026
+  ISBN: 978-1936891023
+  image: /images/books/the-war-of-art.jpg
 draft: true
 tags: []
 date: '2022-07-26'

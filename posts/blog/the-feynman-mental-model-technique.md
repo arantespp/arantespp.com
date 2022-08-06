@@ -5,16 +5,15 @@ tags:
   - feynman-technique
   - learning
   - mental-models
-date: '2021-04-29'
+date: '2022-08-06'
 excerpt: >-
-  Explaining to a child (mentally) the topic I'm learning and figuring out which
-  mental models I can extract from it is the best way I found to retain
-  knowledge.
+  Once we have the building blocks of some topic, we can choose a subset of them
+  to build new ideas, apply to understand other topics, solve problems, and so
+  on.
 title: The Feynman Mental Model Technique
 group: blog
-formattedDate: 'April 29, 2021'
-updatedAt: '2022-08-04'
-formattedUpdatedAt: 'August 04, 2022'
+updatedAt: '2022-08-06'
+formattedUpdatedAt: 'August 06, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/blog/the-feynman-mental-model-technique.md
 href: /drafts/the-feynman-mental-model-technique
@@ -27,7 +26,7 @@ keywords:
   - feynman-technique
   - learning
   - mental-models
-readingTime: 6
+readingTime: 8
 references:
   - /zettel/zettelkasten
   - /zettel/the-feynman-technique
@@ -44,7 +43,9 @@ When we start understanding the subject, our brain creates connections while we'
 
 When we understand the whole subject, the connections in our brain are well defined and precise. When we reach this stage, we can plainly explain because we finished our puzzle, and, for every group of pieces we pick up, we can show how they fit together. We don't have to create complex explanations. It's straightforward.
 
-I wrote this article to share my learning process and how I accelerated the path from knowing nothing to knowing so well that I can explain things easily. First, I'll talk a little about the Feynman Technique, mental models, and what is The Feynman Mental Model Technique. Then, I'll present the systems I've been developing to apply the technique. Finally, I'll talk about resistance and how it can beat you, even if you create the best system in the world.
+![Simplicity and Density.](/images/originals/understanding-simplicity-density.png)
+
+I wrote this article to share my learning process and how I accelerated the path from knowing nothing to knowing well enough so that I can explain things easily. First, we'll talk a little about the Feynman Technique, mental models, and what is The Feynman Mental Model Technique. Then, we'll talk about the practical side of it—the systems we can create to support it and the resistance that can beat us.
 
 ## The Feynman Technique
 
@@ -67,7 +68,7 @@ Entropy states that the disorder of isolated or closed systems—no external for
 
 In our puzzle analogy, using the knowledge only in a specific context is like assembling the puzzle on a table so that we can't move it from there. Then, transforming it into a mental model, we put it in a frame. Finally, we can use the structure in our living room, bedroom, or another house.
 
-## Using Both Together
+## The Feynman Mental Model Technique
 
 The Feynman Mental Model Technique consists of adding the fifth step to the Feynman Technique:
 
@@ -77,26 +78,36 @@ The Feynman Mental Model Technique consists of adding the fifth step to the Feyn
 > 4. Review, organize and simplify.
 > 5. Abstract and generalize the concept to apply to another context—create a mental model.
 
-Explaining to a child (mentally) the topic I'm learning and figuring out which mental models I can extract from it is the best way I found to retain knowledge. It is the fundamentals of [metacognitive learning](/zettel/reading-metacognitively) applied at the highest level.
+Explaining to a child (mentally) the topic I'm learning and figuring out which mental models I can extract from it is the best way I found to retain knowledge. The fundamentals of [metacognitive learning](/zettel/reading-metacognitively) are applied at the highest level.
 
-## Systems
+We can only abstract some topic when we understand its fundamentals. There's a mental model called [First Principles Thinking](/zettel/first-principles-thinking), whose main idea is to break down the topic into basic elements and then resemble them again, which we can call "reasoning from first principles." The Feynman Technique (steps 1 to 4) is responsible for helping us break down the idea because we always simplifying and finding gaps in our understandings. There're two main advantages to reasoning from the first principles. First, we learn the basics of some topic (or problem) and then recreate it, removing impurity assumptions, conventions, and old paradigms.
 
-The last part of this technique is the systems you should create to support it. You can ask yourself, "How can I set up a system that makes me apply this technique so easily, and I don't need to rely on my motivation?" (You can ask this question to many others parts of your life—to create habits or be more productive in your work.) Creating systems creates a passive environment that supports you for whatever you want to accomplish.
+The second advantage is the main point of this article: we abstract and reuse the fundamentals in other contexts. We can see these fundamentals as mental building blocks for ideas. Once we have the building blocks of some topic, we can choose a subset of them to build new ideas, apply to understand other topics, solve problems, and so on. This is the essence of the fifth step of the Feynman Mental Model Technique.
 
-For this methodology specifically, I created this blog to support it. I aimed for three main requisites:
+## Applying the Technique
 
-1. A system in which I could write notes quickly.
-1. I could search and connect notes through tags and references.
-1. I could share it with many people.
+At this point of the article, we only talked about theories and the definition of the technique. Now, I want to share how I create a system to support me in the process and the resistance we can face when we do any cognitive task.
 
-The second requisite is the fundamentals of the [Zettelkasten technique](/zettel/zettelkasten). The third requisite forces me to read and understand the topic well because my notes will be online, and everyone can read them. But, even if I'm wrong or lack understanding, someone can show me the correct path. This is the magic of [learning in public](https://www.swyx.io/learn-in-public/).
+### Systems
 
-Your system's requisites may diverge a little bit. Depending on your choice, you can [fork this blog](https://github.com/arantespp/arantespp.com), use Notion, Obsidian, or even paper notes. It doesn't matter which one you choose for yourself, as long as you eliminate most frictions and make your job easier.
+You should create a system to support you. You can ask yourself, "How can I set up a system that makes me apply this technique so easily, and I don't need to rely on my motivation?" (You can ask this question to many others parts of your life—to create habits or be more productive in your work.) Creating systems creates a passive environment that supports you for whatever you want to accomplish.
 
-## The Resistance
+I created this blog for this case and aimed for three main requisites. I wanted a system:
 
-The resistance is an internal battle you may have whenever you need to do your job. You hit the wall and can't do anything, even if you create the most effective system to apply this technique. The resistance can assume the form of procrastination, perfectionism, indifference, doubts, or fear.
+1. I can write and edit notes quickly.
+1. I can search and connect notes through tags and references.
+1. I can share it with many people.
 
-The first step to overcoming the resistance is to be aware that it exists and that it can easily beat you. The second step that worked for me is to create a strong vision of what you deep want, your burning desire, and use it to support your motivation. Your systems also will help you fight against the resistance—that's why you should create an environment that makes you do your job without much effort.
+The second requisite is the essence of the [Zettelkasten technique](/zettel/zettelkasten)—you write down your thoughts in notes, tag, and connect them over time. The third requisite forces me to read, understand and summarize the topic well because my notes are public. But, even if I don't understand well and make some mistakes, being public allows others to show my understanding gaps and correct them. This is the magic of [learning in public](https://www.swyx.io/learn-in-public/).
 
-The most exciting thing is that the resistance has tremendous power before starting your work. But, once you commit and start doing your job, it loses power. Ultimately, it's more difficult to sit to do the work than to do it.
+Your system's requisites may diverge a little bit. Depending on your choice, you can create a similar system ([fork this blog](https://github.com/arantespp/arantespp.com)), use other tools like Notion or Obsidian, or even use paper notes. It doesn't matter which one you choose for yourself, as long as you eliminate most frictions and make your process easier.
+
+### The Resistance
+
+The resistance is an internal battle we may have whenever we need to do cognitive tasks. We hit the wall and can't do anything, even if we create the most effective system. The resistance can assume the form of procrastination, perfectionism, indifference, doubts, or fear. I do recommend the book [The War of Art](/books/the-war-of-art) that talks about resistance and the way to overcome it.
+
+The first step to overcoming the resistance is to be aware that it exists and that it can easily beat us. It doesn't matter if we create the best system in the world, plan our calendar and use the best tools. Nothing else matters if we get blocked and can't start doing our tasks.
+
+The second step that worked for me is to create a strong vision of what we deep want, our burning desire, and use it to support our motivation. Our systems also will help us fight against resistance—that's why we should create an environment that makes us do our job without much effort.
+
+The most interesting part is that the resistance has tremendous power before starting our work. But, once we commit and start doing our job, it loses power. So, ultimately, it's more difficult to sit to do the work than to do it.

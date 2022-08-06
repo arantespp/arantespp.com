@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { LinkProps, Link as LinkUi } from 'theme-ui';
 import NextLink from 'next/link';
 
