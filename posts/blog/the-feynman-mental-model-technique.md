@@ -1,6 +1,6 @@
 ---
 book: null
-draft: true
+draft: false
 tags:
   - feynman-technique
   - learning
@@ -61,13 +61,13 @@ The [Feynman Technique's](/zettel/the-feynman-technique) benefit is that it help
 
 ## Mental Models
 
-[Mental models](/zettel/mental-models) are information _templates_ we can use to [understand situations](/zettel/system-mental-models) in our lives or make [decisions](/zettel/decision-mental-models). Sometimes, when we learn a topic, we attach that topic to a specific context. When we extract a mental model from the topic we've learned, we can use that template in other contexts.
+[Mental models](/zettel/mental-models) are information _templates_ we can use to [understand life situations](/zettel/system-mental-models) or make [decisions](/zettel/decision-mental-models). Sometimes, when we learn a topic, we attach that topic to a specific context. When we extract a mental model from the topic we've learned, we can use that template in other contexts.
 
 For instance, when I first learned about [entropy](/zettel/entropy) in high school, I highly attached it to thermodynamics and physics, and I thought I could use it only in this context. However, if we transform entropy in a template or mental model, we may use it in other situations.
 
 Entropy states that the disorder of isolated or closed systems—no external forces—will always increase. Given that definition, we can apply it in the software development maintainability context. For example, the disorder of a codebase tends to increase over time if the team works freely on it—which generates technical debts and reduces quality. To avoid it, someone—an external force—needs to push the team to always follows good software development guidelines.
 
-In our puzzle analogy, using the knowledge only in a specific context is like assembling the puzzle on a table so that we can't move it from there. Then, transforming it into a mental model, we put it in a frame. Finally, we can use the structure in our living room, bedroom, or another house.
+In our puzzle analogy, using the knowledge only in a specific context is like assembling the puzzle on a table so that we can't move it from there. Then, transforming it into a mental model, we put it in a frame so we can use the structure in our living room, bedroom, or any other place.
 
 ## The Feynman Mental Model Technique
 
@@ -101,13 +101,13 @@ I created this blog for this case and aimed for three main requisites. I wanted 
 1. I can search and connect notes through tags and references.
 1. I can share it with many people.
 
-The second requisite is the essence of the [Zettelkasten technique](/zettel/zettelkasten)—you write down your thoughts in notes, tag, and connect them over time. The third requisite forces me to read, understand and summarize the topic well because my notes are public. But, even if I don't understand well and make some mistakes, being public allows others to show my understanding gaps and correct them. This is the magic of [learning in public](https://www.swyx.io/learn-in-public/).
+The second requisite is the essence of the [Zettelkasten technique](/zettel/zettelkasten)—you write down your thoughts in notes and tags and connect them over time. The third requisite forces me to read, understand and summarize the topic well because my notes are public. But, even if I don't understand well and make some mistakes, being public allows others to show my understanding gaps and correct them. This is the magic of [learning in public](https://www.swyx.io/learn-in-public/).
 
-Your system's requisites may diverge a little bit. Depending on your choice, you can create a similar system ([fork this blog](https://github.com/arantespp/arantespp.com)), use other tools like Notion or Obsidian, or even use paper notes. It doesn't matter which one you choose for yourself, as long as you eliminate most frictions and make your process easier.
+Your system's requisites may diverge a little bit. Depending on your choice, you can create a similar system [like this blog](https://github.com/arantespp/arantespp.com), use other tools like Notion or Obsidian, or even use paper notes. It doesn't matter which one you choose for yourself, as long as you eliminate most frictions and make your process easier.
 
 ### The Resistance
 
-The resistance is an internal battle we may have whenever we need to do cognitive tasks. We hit the wall and can't do anything, even if we create the most effective system. The resistance can assume the form of procrastination, perfectionism, indifference, doubts, or fear. I do recommend the book [The War of Art](/books/the-war-of-art) that talks about resistance and the way to overcome it.
+The resistance is an internal battle we may have whenever we need to do cognitive tasks. We hit the wall and can't do anything, even if we create the most effective system. The resistance can assume the form of procrastination, perfectionism, indifference, doubts, or fear. I do recommend the book [The War of Art](/books/the-war-of-art), which talks about resistance and the way to overcome it.
 
 The first step to overcoming the resistance is to be aware that it exists and that it can easily beat us. It doesn't matter if we create the best system in the world, plan our calendar and use the best tools. Nothing else matters if we get blocked and can't start doing our tasks.
 

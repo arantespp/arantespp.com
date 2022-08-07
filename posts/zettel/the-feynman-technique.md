@@ -55,6 +55,8 @@ backlinks: []
 
 - You're understanding something, not only learning the names of something.
 
+- It makes you admit what you don't know.
+
 ## References
 
 - [The Feynman Technique: The Best Way to Learn Anything](https://fs.blog/2012/04/feynman-technique/)
