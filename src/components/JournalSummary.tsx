@@ -4,7 +4,7 @@ import { useApiKey } from '../hooks/useApiKey';
 import { useQuery } from 'react-query';
 import Journal from './Journal';
 
-export const JournalSummary = ({ date }: { date: string }) => {
+export const useJournalSummary = ({ date }: { date: string }) => {
   const { apiKey } = useApiKey();
 
   const { data } = useQuery(
@@ -21,10 +21,16 @@ export const JournalSummary = ({ date }: { date: string }) => {
 
   const summary =
     data?.summary?.reduce((acc, { key, journal }) => {
-      const header = `### [${key} (${journal?.formattedDate})](/journal/${journal?.date})`;
+      const header = `## [${key} (${journal?.formattedDate})](/journal/${journal?.date})\n`;
 
-      return [acc, header, journal?.content].join('\n');
+      return [acc, header, journal?.content + '\n\n'].join('\n');
     }, '') || '';
+
+  return { summary };
+};
+
+export const JournalSummary = ({ date }: { date: string }) => {
+  const { summary } = useJournalSummary({ date });
 
   return <Journal markdown={summary} title={'Summary'} />;
 };
