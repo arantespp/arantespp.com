@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-06-26'
-formattedUpdatedAt: 'June 26, 2022'
+updatedAt: '2022-08-11'
+formattedUpdatedAt: 'August 11, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 22
+readingTime: 23
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -47,7 +47,7 @@ excerpt: ''
 
 ## Principles
 
-### Chapter 2 - The Economic View
+### 2. The Economic View
 
 _Why do you want to change the product development process?_ The answer: **to increase profits**.
 
@@ -172,7 +172,7 @@ Uncertain opportunities have large payoff asymmetries, making them the best sour
 
 Most corporations give control over financial resources to people who worry about the economics of their choices. To influence those people, you must speak the language of economics, not the language of [proxy variables](/zettel/proxy-variable). When you talk to those who control the money using the language of the money, you can get fast decisions and enthusiastic support.
 
-### Chapter 3 - Managing Queues
+### 3. Managing Queues
 
 **[Q1](#q1-the-principle-of-invisible-inventory-product-development-inventory-is-physically-and-financially-invisible) to [Q2](#q2-the-principle-of-queueing-waste-queues-are-the-root-cause-of-the-majority-of-economic-waste-in-product-development) - Why Queues Matter?** Queues matter because they're economically important, poorly managed, and they have the potential to be much better managed. They profoundly affect the economics of product development.
 
@@ -349,7 +349,7 @@ When situations like these happen, you need to make quick and forceful intervent
 
 **The more you monitor queues and the more quickly you intervene, the less queues will cost you.**
 
-### Chapter 4 - Exploiting Variability
+### 4 - Exploiting Variability
 
 #### V1: The Principle of Beneficial Variability: Variability can create economic value.
 
@@ -367,10 +367,30 @@ Choice A is the best economic choice and the most uncertain. Choice C has zero u
 
 The economics of each discrete choice depends on two factors: the probability and the payoff function. We can't make good economic choices if we only pay attention to probabilities. So you need to pay attention to both probability and payoff functions.
 
-### Controlling Flow Under Uncertainty
+### 7. Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
 
 Cadence enforces small batch size by forcing work products to move forward on a fixed rhythm. For example, if the review is every X time, the batch size is X time worth of work.
 
-It also enforces small batch sizes because it removes coordination overhead, and the transaction cost. Everyone knows that the event will occur on some date, so there is no overhead associated with setting up the event. With the lower transaction cost, small batches are economical.
+It also enforces small batch sizes to remove coordination overhead and transaction costs. Everyone knows the event will occur on some date, so there is no overhead associated with setting up the event. With the lower transaction cost, small batches are economical.
+
+### 9. Achieving Decentralized Control
+
+- D1 to D?: Balancing Centralization and Decentralization
+
+#### D1: The Second Perishability Principle: Decentralize control for problems and opportunities that age poorly.
+
+Certain problems and opportunities are perishable and best dealt with quickly. It's best to deal with fires quickly because they can turn into big fires. In constant, other types of problems are self-limiting, such as investing in a bad stock. The maximum amount of losses is the amount you've invested.
+
+The control strategy should focus on reacting most quickly to problems that age poorly, like the fire.
+
+How can you quickly solve problems that age poorly or seize fleeting opportunities? You need to decentralize control (it doesn't mean decentralizing responsibility). You need to decentralize authority to act and pre-position sufficient resources to make the action meaningful.
+
+#### D2: The Scale Principle: Centralize control for problems that are infrequent, large, or that have significant economies of scale.
+
+There are other kinds of problems that benefit from large-scale responses, different from perishables. Big fires are best handled by large trucks, not by individuals with garden hoses. You use centralized resources whenever you have infrequent but large excursions in demand, which is even more attractive if they have scale economies. In contrast, you should use decentralized resources for frequent, small-excursion, and low-variability demand with limited scale economies ([Principle D1](#d1-the-second-perishability-principle-decentralize-control-for-problems-and-opportunities-that-age-poorly)).
+
+Centralizing resources increases response time because it has more mass, so it has a high cost of delay. To ensure better time responses, you must give priority to it.
+
+In product development, rather than putting an expert (high mass) on every program, you centralize him.

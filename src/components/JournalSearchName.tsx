@@ -4,7 +4,12 @@ import { useApiKey } from '../hooks/useApiKey';
 import { useQuery } from 'react-query';
 import getCaretCoordinates from 'textarea-caret';
 
-type Contact = { firstName: string; completeName: string; url: string };
+type Contact = {
+  firstName: string;
+  completeName: string;
+  url: string;
+  nickname?: string;
+};
 
 const useMonicaContacts = () => {
   const { apiKey } = useApiKey();
@@ -90,7 +95,9 @@ export const JournalSearchName = ({
         return;
       }
 
-      const queryReplacer = `[${contact.firstName}](${contact.url})`;
+      const queryReplacer = `[${contact.nickname || contact.firstName}](${
+        contact.url
+      })`;
 
       const content = textAreaRef.current?.value.replace(query, queryReplacer);
 

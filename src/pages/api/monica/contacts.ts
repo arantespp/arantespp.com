@@ -8,6 +8,7 @@ type MonicaContactsResponse = {
     first_name: string;
     complete_name: string;
     hash_id: string;
+    nickname?: string;
   }[];
 };
 
@@ -124,11 +125,12 @@ const monicaContactsHandler = async (
     const { data }: MonicaContactsResponse = await response.json();
 
     const contacts = data
-      .map(({ first_name, complete_name, hash_id, id }) => ({
+      .map(({ first_name, complete_name, hash_id, id, nickname }) => ({
         id,
         firstName: first_name,
         completeName: complete_name,
         hashId: hash_id,
+        nickname,
         url: `${process.env.MONICA_ENDPOINT}/people/${hash_id}`,
       }))
       .sort((a, b) => a.completeName.localeCompare(b.completeName));
