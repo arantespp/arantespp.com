@@ -3,9 +3,9 @@ book: null
 draft: false
 tags:
   - feynman-technique
+  - first-principles-thinking
   - learning
   - mental-models
-  - first-principles-thinking
 date: '2022-08-06'
 excerpt: >-
   Once we have the building blocks of some topic, we can choose a subset of them
@@ -13,11 +13,12 @@ excerpt: >-
   on.
 title: The Feynman Mental Model Technique
 group: blog
-updatedAt: '2022-08-06'
-formattedUpdatedAt: 'August 06, 2022'
+formattedDate: 'August 06, 2022'
+updatedAt: '2022-08-13'
+formattedUpdatedAt: 'August 13, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/blog/the-feynman-mental-model-technique.md
-href: /drafts/the-feynman-mental-model-technique
+href: /the-feynman-mental-model-technique
 slug: the-feynman-mental-model-technique
 editLink: >-
   https://github.com/arantespp/arantespp.com/edit/main/posts/blog/the-feynman-mental-model-technique.md
@@ -25,6 +26,7 @@ url: 'https://arantespp.com/the-feynman-mental-model-technique'
 keywords:
   - blog
   - feynman-technique
+  - first-principles-thinking
   - learning
   - mental-models
 readingTime: 8
@@ -35,16 +37,19 @@ references:
   - /zettel/mental-models
   - /zettel/decision-mental-models
   - /zettel/system-mental-models
+  - /zettel/first-principles-thinking
 backlinks: []
 ---
 
-The simplicity of our explanations about things we're learning follows a sine curve. When we know a little, we explain simpler because we don't know so much, but the density of effective and helpful information is low.
+The simplicity of our explanations about things we're learning follows a bell curve. When we know a little, we explain simpler because we don't know so much, but the density of effective and helpful information is low.
 
 When we start understanding the subject, our brain creates connections while we're learning, but they're messy, and we don't have enough sufficient and permanent neuron connections. As a result, every piece of information looks independent but, at the same time, may be connected. We can't concisely explain at this point because we don't know how the pieces are correlated. It's like a thousand-piece puzzle that we just opened and threw on the table. Trying to explain is like catching pieces randomly and trying to create an explanation of how these pieces fit together, even if they don't.
 
 When we understand the whole subject, the connections in our brain are well defined and precise. When we reach this stage, we can plainly explain because we finished our puzzle, and, for every group of pieces we pick up, we can show how they fit together. We don't have to create complex explanations. It's straightforward.
 
-![Simplicity and Density.](/images/originals/understanding-simplicity-density.png)
+The chart below shows the theory of explaining with simplicity and information density as the speaker masters the subject. She doesn't have many things to discuss when she knows nothing, and the density is low because there isn't much helpful information per word. In the middle of the chart, she begins to understand the concepts better, but the complexity of her explanation increases. Finally, when she fully understands, she gives straightforward explanations, no big words, just the necessary to deliver the message. The density increases because she can deliver more useful with few words.
+
+![Complexity and Density.](/images/originals/understanding-complexity-density.png)
 
 I wrote this article to share my learning process and how I accelerated the path from knowing nothing to knowing well enough so that I can explain things easily. First, we'll talk a little about the Feynman Technique, mental models, and what is The Feynman Mental Model Technique. Then, we'll talk about the practical side of it—the systems we can create to support it and the resistance that can beat us.
 
@@ -107,10 +112,14 @@ Your system's requisites may diverge a little bit. Depending on your choice, you
 
 ### The Resistance
 
-The resistance is an internal battle we may have whenever we need to do cognitive tasks. We hit the wall and can't do anything, even if we create the most effective system. The resistance can assume the form of procrastination, perfectionism, indifference, doubts, or fear. I do recommend the book [The War of Art](/books/the-war-of-art), which talks about resistance and the way to overcome it.
+The resistance is an internal battle we may have whenever we need to do cognitive tasks. We hit the wall and can't do anything, even if we create the most effective system. The resistance can assume the form of procrastination, perfectionism, indifference, doubts, or fear. I do recommend the book [The War of Art](/books/the-war-of-art), which talks about resistance and how to overcome it.
 
 The first step to overcoming the resistance is to be aware that it exists and that it can easily beat us. It doesn't matter if we create the best system in the world, plan our calendar and use the best tools. Nothing else matters if we get blocked and can't start doing our tasks.
 
 The second step that worked for me is to create a strong vision of what we deep want, our burning desire, and use it to support our motivation. Our systems also will help us fight against resistance—that's why we should create an environment that makes us do our job without much effort.
 
 The most interesting part is that the resistance has tremendous power before starting our work. But, once we commit and start doing our job, it loses power. So, ultimately, it's more difficult to sit to do the work than to do it.
+
+## Conclusion
+
+So this is the technique and the systems I've been creating for myself over the last years. I hope that this article helps you somehow, especially in improving your clear thinking—one of the best [meta-skills](/zettel/meta-skills) you can enhance for yourself. I believe there is space to evolve this technique and the systems, and I'll keep working to find it. When I do, I share it with you in another blog post.
