@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-08-11'
-formattedUpdatedAt: 'August 11, 2022'
+updatedAt: '2022-08-13'
+formattedUpdatedAt: 'August 13, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 23
+readingTime: 24
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -41,6 +41,7 @@ references:
   - /zettel/queue-capacity-utilization
   - /zettel/cumulative-flow-diagram-cfd
   - /zettel/little-s-law
+  - /zettel/round-robin-scheduling
 backlinks: []
 excerpt: ''
 ---
@@ -374,6 +375,16 @@ The economics of each discrete choice depends on two factors: the probability an
 Cadence enforces small batch size by forcing work products to move forward on a fixed rhythm. For example, if the review is every X time, the batch size is X time worth of work.
 
 It also enforces small batch sizes to remove coordination overhead and transaction costs. Everyone knows the event will occur on some date, so there is no overhead associated with setting up the event. With the lower transaction cost, small batches are economical.
+
+#### F19: The Round-Robin Principle: When task duration is unknown, time-share capacity
+
+When you need to schedule a task and don't know its duration, you cannot predict how long it will block a resource. It's even worse if the task is impossible to complete and takes infinite time.
+
+In operating system design, you can solve this problem with the [round-robin (RR) scheduling](/zettel/round-robin-scheduling) method. Instead of giving all of the capacity of a processor to a single job until it is complete, you time-share the processor between multiple jobs. Each job has a quantum of time, and at the end of this time, you put the job back in the queue and start working on the next waiting job. This approach ensures that the short jobs will always be completed faster than long ones, even if you don't know their length.
+
+Deciding the size of the quantum is the key decision. The quantum behaves like a FIFO system if the quantum is very large. The system has high overhead and transactional costs due to context switching if it's very small.
+
+One heuristic for RR scheduling is ensuring the system clears 80 percent of the jobs through a single quantum of time.
 
 ### 9. Achieving Decentralized Control
 
