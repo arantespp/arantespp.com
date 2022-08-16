@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-08-13'
-formattedUpdatedAt: 'August 13, 2022'
+updatedAt: '2022-08-16'
+formattedUpdatedAt: 'August 16, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 24
+readingTime: 27
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -386,6 +386,18 @@ Deciding the size of the quantum is the key decision. The quantum behaves like a
 
 One heuristic for RR scheduling is ensuring the system clears 80 percent of the jobs through a single quantum of time.
 
+### 8. Using Fast Feedback
+
+#### FF5: The Moving Target Principle: Know when to pursue a dynamic goal.
+
+Many companies create economically destructive control systems because they don't appreciate the difference between static and dynamic goals. They assume that following the plan is correct, and a deviation is always harmful. They often discover it's cheaper to prevent deviations than it is to correct them, so they use control frameworks that prevent deviation, such as Six Sigma.
+
+This approach works in the repetitive manufacturing world but is very dangerous in product development. In product development, you continually get better information that makes the team reevaluate and shift the goals. Therefore, you need different control systems for dynamic and stable goals.
+
+If you have stable goals, you try to prevent deviations, often by increasing inertia and avoiding risk. If you have dynamic goals, you try to correct variations quickly by decreasing inertia and continuously reducing the gap between the current and the economically desired state.
+
+Because product development has inherently high variability, it's critical to recognize situations where your goals should be dynamic or stable.
+
 ### 9. Achieving Decentralized Control
 
 - D1 to D?: Balancing Centralization and Decentralization
@@ -398,10 +410,24 @@ The control strategy should focus on reacting most quickly to problems that age 
 
 How can you quickly solve problems that age poorly or seize fleeting opportunities? You need to decentralize control (it doesn't mean decentralizing responsibility). You need to decentralize authority to act and pre-position sufficient resources to make the action meaningful.
 
+_Note: you can think of centralized resources as the tasks you set with the team at the beginning of the work week. The decentralized is the slack where everyone on the team can fix minor problems without reporting._
+
 #### D2: The Scale Principle: Centralize control for problems that are infrequent, large, or that have significant economies of scale.
 
 There are other kinds of problems that benefit from large-scale responses, different from perishables. Big fires are best handled by large trucks, not by individuals with garden hoses. You use centralized resources whenever you have infrequent but large excursions in demand, which is even more attractive if they have scale economies. In contrast, you should use decentralized resources for frequent, small-excursion, and low-variability demand with limited scale economies ([Principle D1](#d1-the-second-perishability-principle-decentralize-control-for-problems-and-opportunities-that-age-poorly)).
 
-Centralizing resources increases response time because it has more mass, so it has a high cost of delay. To ensure better time responses, you must give priority to it.
+Centralizing resources increases response time because it has more mass, so it has a high cost of delay. Therefore, to ensure better time responses, you must prioritize it.
 
 In product development, rather than putting an expert (high mass) on every program, you centralize him.
+
+#### D3. The Principle of Layered Control: Adapt the control approach to emerging information about the problem.
+
+When you don't know if you should centralize or decentralize your problem, you can use two approaches: triage and escalation.
+
+Hospitals use the triage approach. When you have insufficient resources, you try to provide the maximum benefit to the maximum number of people. You do this by making tough sorting decisions at the intake point. You shouldn't use the scarce resources on unsolvable or not critical problems. Instead, you use your resources on issues that can become critical, and you can solve. Triage works whenever you have sufficient information to make sound judgments at the intake point.
+
+When you don't know which job will take the most time to run, you use the [round-robin](/zettel/round-robin-scheduling) approach discussed in [Principle F19](#f19-the-round-robin-principle-when-task-duration-is-unknown-time-share-capacity). You allocate a quantum time to each job and put the ones that don't finish at the end of the quantum back into the work queue. This way, you guarantee that long jobs won't block short ones.
+
+As in operating systems, you can divide the jobs into priority classes and service them in order of priority. To eliminate the risk of a low-priority job not getting resources, you escalate them when they have waited too long in the queue. A good escalation process prevents you from elevating all problems to centralized resources. At the same time, it prevents important problems from getting stuck at low levels.
+
+![Triage and Escalation](/images/originals/triage-and-escalation.png)

@@ -15,7 +15,7 @@ updatedAt: '2022-08-13'
 formattedUpdatedAt: 'August 13, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/round-robin-scheduling.md
-href: /drafts/zettel/round-robin-scheduling
+href: /zettel/round-robin-scheduling
 slug: round-robin-scheduling
 editLink: >-
   https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/round-robin-scheduling.md
@@ -33,7 +33,7 @@ backlinks: []
 
 - It's an algorithm to handle processes and tasks in [computing](/tags/computing).
 
-- It gives time slices, or time quanta, to each process in equal portion and circular order.
+- It gives time slices, or time quanta, to each process in equal portions and circular order.
 
 - With this algorithm, the system handles low-priority and doesn't get stuck in large jobs with uncertain time to complete.
 
