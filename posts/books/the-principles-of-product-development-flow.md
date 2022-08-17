@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-08-16'
-formattedUpdatedAt: 'August 16, 2022'
+updatedAt: '2022-08-17'
+formattedUpdatedAt: 'August 17, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 27
+readingTime: 28
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -431,3 +431,13 @@ When you don't know which job will take the most time to run, you use the [round
 As in operating systems, you can divide the jobs into priority classes and service them in order of priority. To eliminate the risk of a low-priority job not getting resources, you escalate them when they have waited too long in the queue. A good escalation process prevents you from elevating all problems to centralized resources. At the same time, it prevents important problems from getting stuck at low levels.
 
 ![Triage and Escalation](/images/originals/triage-and-escalation.png)
+
+#### D4. The Opportunistic Principle: Adjust the plan for unplanned obstacles and opportunities.
+
+Accordingly, with [Principle FF5](#ff5-the-moving-target-principle-know-when-to-pursue-a-dynamic-goal), you should focus on conformance when you have static goals. But, if you have dynamic goals, you continuously adapt.
+
+You should use plans to maintain alignment, not to get conformance. Your plans should form a baseline to synchronize complex changes. If you decide to launch in one day, the many activities required to make this happen call all be quickly aligned.
+
+If your plans are adaptable, you can take advantage of opportunities. Seize opportunities adds enormous value to product development. For example, as your team progresses, you may discover that a feature is ten times more expensive and add less value to consumers. A good process will recognize that this feature no longer makes economic sense.
+
+Similarly, you may discover that another feature is easier to implement and add more value to your customers. In this case, if you have adaptive plans, it's easier to change. On the other hand, it's pretty difficult to change in conformance-oriented processes.
