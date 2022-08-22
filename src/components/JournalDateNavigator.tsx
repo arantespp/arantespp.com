@@ -8,12 +8,16 @@ export const JournalDateNavigator = ({
   date,
   setDate,
 }: {
-  date: string;
+  date?: string;
   setDate: (date: string) => void;
 }) => {
   const { today } = useQueryParamsDateOrToday();
 
   const addToDate = (add: dateFns.Duration) => () => {
+    if (!date) {
+      return;
+    }
+
     const format = 'yyyy-MM-dd';
 
     const parsedDate = dateFns.parse(date, format, new Date());
@@ -22,6 +26,10 @@ export const JournalDateNavigator = ({
 
     setDate(dateFns.format(addDay, format));
   };
+
+  if (!date) {
+    return null;
+  }
 
   return (
     <Flex sx={{ flexDirection: 'column' }}>

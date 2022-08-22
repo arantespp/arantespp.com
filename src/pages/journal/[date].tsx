@@ -11,6 +11,7 @@ const JournalPage = () => {
   const { apiKey } = useApiKey();
 
   const router = useRouter();
+
   const { date } = router.query;
 
   const { data } = useQuery(
