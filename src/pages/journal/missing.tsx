@@ -24,6 +24,21 @@ const MissingDatesNumber = ({
   );
 };
 
+const MaxStreak = ({ maxStreak = 0 }: { maxStreak?: number }) => {
+  return (
+    <Text
+      sx={{
+        display: 'block',
+        marginBottom: 3,
+        color: 'gray',
+        fontStyle: 'italic',
+      }}
+    >
+      {maxStreak} days streak.
+    </Text>
+  );
+};
+
 const JournalMissingDates = () => {
   const router = useRouter();
 
@@ -40,6 +55,7 @@ const JournalMissingDates = () => {
         (
           r,
         ): Promise<{
+          maxStreak: number;
           missingDates: string[];
           groupedMissingDays: {
             label: string;
@@ -57,6 +73,7 @@ const JournalMissingDates = () => {
     <>
       <NextSeo noindex nofollow title="Journal - Missing Dates" />
       <Heading as="h1">Missing Dates</Heading>
+      <MaxStreak maxStreak={data?.maxStreak} />
       <MissingDatesNumber missingDatesNumber={data?.missingDates?.length} />
       <Flex sx={{ gap: 3, flexDirection: 'column' }}>
         {groupedMissingDays.map(({ label, dates }) => {

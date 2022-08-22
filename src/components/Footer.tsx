@@ -19,7 +19,7 @@ const Footer = () => (
         <Link
           key={name}
           sx={{
-            fontSize: 3,
+            fontSize: [1, 2, 3],
             marginX: [2],
           }}
           href={href}

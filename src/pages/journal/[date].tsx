@@ -1,4 +1,5 @@
 import { Flex } from 'theme-ui';
+import { JournalDateNavigator } from '../../components/JournalDateNavigator';
 import { NextSeo } from 'next-seo';
 import { useApiKey } from '../../hooks/useApiKey';
 import { useQuery } from 'react-query';
@@ -31,6 +32,12 @@ const JournalPage = () => {
   return (
     <>
       <NextSeo noindex nofollow title={title} />
+      <JournalDateNavigator
+        date={date as string}
+        setDate={(d) => {
+          router.push(`/journal/${d}`);
+        }}
+      />
       <Journal markdown={content} title={title} />
       <Flex sx={{ gap: 3 }}>
         <Link href={`/journal/editor?date=${date}`}>Edit</Link>

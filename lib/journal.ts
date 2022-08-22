@@ -275,10 +275,20 @@ export const getMissingDays = async ({
 
   let missingDates: string[] = [];
 
+  let maxStreak = 0;
+
+  let currentStreak = 0;
+
   while (!dateFns.isAfter(currentDate, parsedTo)) {
     const date = dateFns.format(currentDate, 'yyyy-MM-dd');
 
     const journalDate = journalDays.find((journalDay) => journalDay === date);
+
+    currentStreak = journalDate ? currentStreak + 1 : 0;
+
+    if (currentStreak > maxStreak) {
+      maxStreak = currentStreak;
+    }
 
     if (!journalDate) {
       missingDates.push(date);
@@ -308,5 +318,5 @@ export const getMissingDays = async ({
     return acc;
   }, [] as { label: string; dates: { date: string; day: string }[] }[]);
 
-  return { missingDates, groupedMissingDays };
+  return { missingDates, groupedMissingDays, maxStreak };
 };

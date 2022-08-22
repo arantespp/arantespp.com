@@ -4,22 +4,18 @@ import Tag from './Tag';
 
 const Newsletter = () => (
   <Box>
-    <Box sx={{ marginBottom: 3 }}>
+    <Box sx={{ marginBottom: 4 }}>
       <Text sx={{ fontSize: 5, fontFamily: 'heading', fontWeight: 'heading' }}>
         Newsletter
       </Text>
     </Box>
 
-    <Themed.p>
+    <Text>
       On Tuesday (not weekly), I publish my most recent readings and thoughts.
       Subscribe to my newsletter if you want to follow posts about{' '}
       <Tag tag="startups" />, <Tag tag="product-development" />
-      , <Tag tag="mental-models" />, and <Link href="/tags">more topics</Link>.
-      You can also check{' '}
-      <Link href="https://www.getrevue.co/profile/arantespp">
-        my past issues on Revue.
-      </Link>
-    </Themed.p>
+      , <Tag tag="mental-models" />, and <Link href="/tags">more</Link>.
+    </Text>
 
     <Flex
       sx={{
@@ -69,10 +65,21 @@ const Newsletter = () => (
               Subscribe
             </Button>
           </Flex>
-          <Text as="p" sx={{ fontSize: 1, color: 'gray', textAlign: 'center' }}>
+          <Text
+            as="p"
+            sx={{
+              fontSize: 1,
+              color: 'gray',
+              textAlign: 'center',
+            }}
+          >
             By subscribing, you agree with Revue’s{' '}
             <Link href="https://www.getrevue.co/terms">Terms</Link> and{' '}
-            <Link href="https://www.getrevue.co/privacy">Privacy Policy</Link>
+            <Link href="https://www.getrevue.co/privacy">Privacy Policy</Link>.
+            You can also check{' '}
+            <Link href="https://www.getrevue.co/profile/arantespp">
+              my past publications.
+            </Link>
           </Text>
         </form>
       </Box>
