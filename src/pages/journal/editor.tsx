@@ -1,12 +1,13 @@
 import * as React from 'react';
-import * as dateFns from 'date-fns';
-import { Box, Flex, Input, Text, Themed } from 'theme-ui';
+import { Box, Flex, Text, Themed } from 'theme-ui';
+import { InferGetStaticPropsType } from 'next';
 import { Journal } from '../../../lib/journal';
 import { JournalDateNavigator } from '../../components/JournalDateNavigator';
 import { JournalSearchName } from '../../components/JournalSearchName';
 import { JournalSummary } from '../../components/JournalSummary';
 import { Loading } from '../../components/Loading';
 import { NextSeo } from 'next-seo';
+import { readMarkdownFile } from '../../../lib/files';
 import { useApiKey } from '../../hooks/useApiKey';
 import { useDateInput } from '../../hooks/useDateInput';
 import { useDebounce } from 'use-debounce';
@@ -17,6 +18,22 @@ import Editor from '../../components/Editor';
 import ErrorMessage from '../../components/ErrorMessage';
 import Link from '../../components/Link';
 import Router, { useRouter } from 'next/router';
+
+export const getStaticProps = async () => {
+  const { content = '' } =
+    (await readMarkdownFile('journal/questions.md')) || {};
+
+  const questions = content
+    .split('\n')
+    .map((line) => line.trim().replace(/^- /, ''))
+    .filter((line) => line.length > 0);
+
+  return {
+    props: {
+      questions,
+    },
+  };
+};
 
 const AUTO_SAVE_DELAY = 200;
 
@@ -149,7 +166,13 @@ const useContent = ({ date }: { date: string }) => {
   return { content, setContent, date, isLoadingContent };
 };
 
-const EditorWithContent = ({ date }: { date: string }) => {
+const EditorWithContent = ({
+  date,
+  questions,
+}: {
+  date: string;
+  questions: string[];
+}) => {
   const { content, setContent, isLoadingContent } = useContent({ date });
 
   const { error, isSaving } = useAutoSave({ content, date });
@@ -160,7 +183,28 @@ const EditorWithContent = ({ date }: { date: string }) => {
 
   return (
     <>
-      <Box sx={{ marginY: 4 }}>
+      <Box sx={{ marginY: 0 }}>
+        <Box sx={{ marginY: 3 }}>
+          <Themed.ul>
+            {questions.map((question) => {
+              return (
+                <Themed.li key={question}>
+                  <Text
+                    sx={{ cursor: 'pointer', fontSize: 1 }}
+                    onClick={() => {
+                      setContent(
+                        (c) => c + `${c ? '\n' : ''}**${question}**\n`,
+                      );
+                      textAreaRef.current?.focus();
+                    }}
+                  >
+                    {question}
+                  </Text>
+                </Themed.li>
+              );
+            })}
+          </Themed.ul>
+        </Box>
         <Editor
           ref={textAreaRef}
           isValid={!!content}
@@ -206,7 +250,9 @@ const useIdleRedirect = ({ date }: { date: string }) => {
   });
 };
 
-const JournalEditor = () => {
+const JournalEditor = ({
+  questions,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { date } = useQueryParamsDateOrToday();
 
   useIdleRedirect({ date });
@@ -229,7 +275,7 @@ const JournalEditor = () => {
       <Themed.h1>{title}</Themed.h1>
       <JournalDateNavigator date={dateInput} setDate={setDateInput} />
       <React.Suspense fallback={<Loading />}>
-        <MemoizedEditorWithContent date={date} />
+        <MemoizedEditorWithContent date={date} questions={questions} />
       </React.Suspense>
       <Box sx={{ marginTop: 5 }}>
         <React.Suspense>

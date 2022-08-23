@@ -1,0 +1,6 @@
+- What's 1 thing I'm grateful for?
+- What's 1 thing I'm excited about?
+- What's 1 virtue I want to exhibit?
+- What's 1 thing I'm avoiding?
+- What's the 1 thing I need to do?
+- What's 1 insight I had?
