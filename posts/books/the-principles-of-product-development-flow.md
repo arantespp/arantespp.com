@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-08-17'
-formattedUpdatedAt: 'August 17, 2022'
+updatedAt: '2022-08-25'
+formattedUpdatedAt: 'August 25, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -380,17 +380,25 @@ It also enforces small batch sizes to remove coordination overhead and transacti
 
 When you need to schedule a task and don't know its duration, you cannot predict how long it will block a resource. It's even worse if the task is impossible to complete and takes infinite time.
 
-In operating system design, you can solve this problem with the [round-robin (RR) scheduling](/zettel/round-robin-scheduling) method. Instead of giving all of the capacity of a processor to a single job until it is complete, you time-share the processor between multiple jobs. Each job has a quantum of time, and at the end of this time, you put the job back in the queue and start working on the next waiting job. This approach ensures that the short jobs will always be completed faster than long ones, even if you don't know their length.
+In operating system design, you can solve this problem with the [round-robin (RR) scheduling](/zettel/round-robin-scheduling) method. Instead of giving all of the capacity of a processor to a single job until it is complete, you time-share the processor between multiple jobs. Each job has a quantum of time, and at the end of this time, you put the job back in the queue and start working on the next waiting job. This approach ensures that short jobs will always be completed faster than long ones, even if you don't know their length.
 
 Deciding the size of the quantum is the key decision. The quantum behaves like a FIFO system if the quantum is very large. The system has high overhead and transactional costs due to context switching if it's very small.
 
 One heuristic for RR scheduling is ensuring the system clears 80 percent of the jobs through a single quantum of time.
 
+#### F28: The Principle of Preplaned Flexibility: For fast responses, preplan and invest in flexibility.
+
+Flexibility is the result of advance choices and planning. Two examples below illustrate this planning.
+
+If you plan to jettison requirements to hold schedules, you should decide, in advance, which requirements are nonessential. For example, you can identify the requirements as mandatory, important, and optional at the beginning. This way, your team can architect the solution to couple these optional requirements loosely with the rest of the architecture.
+
+If you plan to pull resources to new queues, you should invest in making these resources productive on short notice. For example, you can keep the backup resources informed on the programs, so they'll have much faster response times when you need them.
+
 ### 8. Using Fast Feedback
 
 #### FF5: The Moving Target Principle: Know when to pursue a dynamic goal.
 
-Many companies create economically destructive control systems because they don't appreciate the difference between static and dynamic goals. They assume that following the plan is correct, and a deviation is always harmful. They often discover it's cheaper to prevent deviations than it is to correct them, so they use control frameworks that prevent deviation, such as Six Sigma.
+Many companies create economically destructive control systems because they don't appreciate the difference between static and dynamic goals. They assume that following the plan is correct and a deviation is always harmful. They often discover it's cheaper to prevent deviations than it is to correct them, so they use control frameworks that prevent deviation, such as Six Sigma.
 
 This approach works in the repetitive manufacturing world but is very dangerous in product development. In product development, you continually get better information that makes the team reevaluate and shift the goals. Therefore, you need different control systems for dynamic and stable goals.
 
@@ -406,7 +414,7 @@ Because product development has inherently high variability, it's critical to re
 
 Certain problems and opportunities are perishable and best dealt with quickly. It's best to deal with fires quickly because they can turn into big fires. In constant, other types of problems are self-limiting, such as investing in a bad stock. The maximum amount of losses is the amount you've invested.
 
-The control strategy should focus on reacting most quickly to problems that age poorly, like the fire.
+The control strategy should focus on reacting most quickly to problems that age poorly, like fire.
 
 How can you quickly solve problems that age poorly or seize fleeting opportunities? You need to decentralize control (it doesn't mean decentralizing responsibility). You need to decentralize authority to act and pre-position sufficient resources to make the action meaningful.
 
@@ -424,7 +432,7 @@ In product development, rather than putting an expert (high mass) on every progr
 
 When you don't know if you should centralize or decentralize your problem, you can use two approaches: triage and escalation.
 
-Hospitals use the triage approach. When you have insufficient resources, you try to provide the maximum benefit to the maximum number of people. You do this by making tough sorting decisions at the intake point. You shouldn't use the scarce resources on unsolvable or not critical problems. Instead, you use your resources on issues that can become critical, and you can solve. Triage works whenever you have sufficient information to make sound judgments at the intake point.
+Hospitals use the triage approach. When you have insufficient resources, you try to provide the maximum benefit to the maximum number of people. You do this by making tough sorting decisions at the intake point. You shouldn't use scarce resources on unsolvable or not critical problems. Instead, you use your resources on issues that can become critical, and you can solve. Triage works whenever you have sufficient information to make sound judgments at the intake point.
 
 When you don't know which job will take the most time to run, you use the [round-robin](/zettel/round-robin-scheduling) approach discussed in [Principle F19](#f19-the-round-robin-principle-when-task-duration-is-unknown-time-share-capacity). You allocate a quantum time to each job and put the ones that don't finish at the end of the quantum back into the work queue. This way, you guarantee that long jobs won't block short ones.
 
