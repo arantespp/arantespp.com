@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-08-25'
-formattedUpdatedAt: 'August 25, 2022'
+updatedAt: '2022-08-26'
+formattedUpdatedAt: 'August 26, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 28
+readingTime: 29
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -449,3 +449,11 @@ You should use plans to maintain alignment, not to get conformance. Your plans s
 If your plans are adaptable, you can take advantage of opportunities. Seize opportunities adds enormous value to product development. For example, as your team progresses, you may discover that a feature is ten times more expensive and add less value to consumers. A good process will recognize that this feature no longer makes economic sense.
 
 Similarly, you may discover that another feature is easier to implement and add more value to your customers. In this case, if you have adaptive plans, it's easier to change. On the other hand, it's pretty difficult to change in conformance-oriented processes.
+
+#### D5. The Principle of Virtual Centralization: Be able to quickly reorganize decentralized resources to create centralized power.
+
+Sometimes, it's not cost-effective to leave centralized resources idle while waiting for infrequent large demands. To avoid this inefficiency, you often use these resources for background activities and mobilize them as needed to create centralized power to deal with a big problem. You can get the combined benefits of having both centralized and decentralized resources.
+
+For example, a city can train civilians in firefighting and create a centralized virtual capacity. In addition, fire departments in adjacent communities provide mutual support. This strategy permits a community to cope with infrequent large fires without having a large fire department.
+
+In product development, some organizations use "tiger teams" that have experienced and highly productive people. The company calls the team when a program gets in unexpected and severe trouble. Yet, they work at their regular day jobs when there is no crisis. Therefore, the company can bring them quickly if they plan this strategy.
