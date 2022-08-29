@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-08-26'
-formattedUpdatedAt: 'August 26, 2022'
+updatedAt: '2022-08-29'
+formattedUpdatedAt: 'August 29, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -457,3 +457,9 @@ Sometimes, it's not cost-effective to leave centralized resources idle while wai
 For example, a city can train civilians in firefighting and create a centralized virtual capacity. In addition, fire departments in adjacent communities provide mutual support. This strategy permits a community to cope with infrequent large fires without having a large fire department.
 
 In product development, some organizations use "tiger teams" that have experienced and highly productive people. The company calls the team when a program gets in unexpected and severe trouble. Yet, they work at their regular day jobs when there is no crisis. Therefore, the company can bring them quickly if they plan this strategy.
+
+#### D6. The Inefficiency Principle: The inefficiency of decentralization can cost less than the value of faster response time.
+
+In many cases, it's better to pay the price of inefficient, decentralized resources to provide responsiveness. In these cases, response time is very valuable.
+
+So, don't assume that efficiency should have higher priority than response time by default. Instead, use your economic framework to make this choice.

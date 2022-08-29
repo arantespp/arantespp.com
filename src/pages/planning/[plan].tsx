@@ -1,5 +1,19 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import { NextSeo } from 'next-seo';
 import { Plan, getAllPlans } from '../../../lib/planning';
+import { PlanningNetworkGraphProps } from '../../components/PlanningNetworkGraph';
+import Heading from '../../components/Heading';
+import dynamic from 'next/dynamic';
+
+const PlanningNetworkGraph = dynamic<PlanningNetworkGraphProps>(
+  () =>
+    import('../../components/PlanningNetworkGraph').then(
+      (mod) => mod.PlanningNetworkGraph,
+    ),
+  {
+    ssr: false,
+  },
+);
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const plans = await getAllPlans();
@@ -19,13 +33,40 @@ export const getStaticProps = async ({
 
   const plan = plans.find((plan_) => plan_.slug === params.plan) as Plan;
 
-  return { props: { plan } };
+  const nodesMeta = plan.groups.flatMap((group) => {
+    return group.nodes.flatMap((node) => ({
+      id: node.name,
+      group: group.name,
+      supports: node.supports || [],
+      ...node,
+    }));
+  });
+
+  const nodes = nodesMeta.map(({ id, group }) => ({ id, group }));
+
+  const links = nodesMeta.flatMap((node) => {
+    return node.supports.map((support) => ({
+      source: node.name,
+      target: support,
+    }));
+  });
+
+  return {
+    props: { title: `Planning - ${plan.name}`, graphData: { nodes, links } },
+  };
 };
 
 const PlanningPlan = ({
-  plan,
+  title,
+  graphData,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return <pre>{JSON.stringify(plan, null, 2)}</pre>;
+  return (
+    <>
+      <NextSeo noindex nofollow title={title} />
+      <Heading as="h1">{title}</Heading>
+      <PlanningNetworkGraph graphData={graphData} />
+    </>
+  );
 };
 
 export default PlanningPlan;

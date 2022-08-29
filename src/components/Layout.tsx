@@ -17,7 +17,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <Container
         as="main"
         sx={{
-          marginTop: [4, 4, 5],
+          marginTop: [5],
           marginBottom: [5],
           /**
            * To text doesn't touch the screen border.

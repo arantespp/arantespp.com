@@ -3,8 +3,8 @@ import Link from './Link';
 import Tag from './Tag';
 
 const Newsletter = () => (
-  <Box>
-    <Box sx={{ marginBottom: 4 }}>
+  <Box sx={{ marginY: 0 }}>
+    <Box sx={{ marginBottom: 3 }}>
       <Text sx={{ fontSize: 5, fontFamily: 'heading', fontWeight: 'heading' }}>
         Newsletter
       </Text>
@@ -35,7 +35,7 @@ const Newsletter = () => (
         >
           <Flex
             sx={{
-              marginTop: 5,
+              marginTop: 4,
               marginBottom: 2,
               flexDirection: ['column', 'row'],
               alignItems: [null, 'baseline'],

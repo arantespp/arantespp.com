@@ -37,6 +37,7 @@ const parsePlansMachine = createMachine<
   Events
 >(
   {
+    predictableActionArguments: true,
     id: 'parsePlans',
     initial: 'noMarkdowns',
     context: {
@@ -46,6 +47,38 @@ const parsePlansMachine = createMachine<
       MARKDOWN: {
         target: 'newMarkdown',
       },
+      TOKEN: [
+        {
+          target: '#h1',
+          cond: {
+            type: 'matchToken',
+            token: {
+              type: 'heading_open',
+              tag: 'h1',
+            },
+          },
+        },
+        {
+          target: '#h2',
+          cond: {
+            type: 'matchToken',
+            token: {
+              type: 'heading_open',
+              tag: 'h2',
+            },
+          },
+        },
+        {
+          target: '#h3',
+          cond: {
+            type: 'matchToken',
+            token: {
+              type: 'heading_open',
+              tag: 'h3',
+            },
+          },
+        },
+      ],
     },
     states: {
       noMarkdowns: {},
@@ -61,15 +94,6 @@ const parsePlansMachine = createMachine<
             },
           }),
         ],
-        on: {
-          TOKEN: {
-            target: 'h1',
-            cond: {
-              type: 'isTokenTypeHeadingOpen',
-              tag: 'h1',
-            },
-          },
-        },
       },
       h1: {
         id: 'h1',
@@ -79,7 +103,12 @@ const parsePlansMachine = createMachine<
             on: {
               TOKEN: {
                 target: 'inline',
-                cond: 'isTokenTypeInline',
+                cond: {
+                  type: 'matchToken',
+                  token: {
+                    type: 'inline',
+                  },
+                },
               },
             },
           },
@@ -87,7 +116,12 @@ const parsePlansMachine = createMachine<
             on: {
               TOKEN: {
                 target: 'headingClose',
-                cond: 'isTokenTypeHeadingClose',
+                cond: {
+                  type: 'matchToken',
+                  token: {
+                    type: 'heading_close',
+                  },
+                },
               },
             },
             entry: [
@@ -101,17 +135,7 @@ const parsePlansMachine = createMachine<
               }),
             ],
           },
-          headingClose: {
-            on: {
-              TOKEN: {
-                target: 'h2',
-                cond: {
-                  type: 'isTokenTypeHeadingOpen',
-                  tag: 'h2',
-                },
-              },
-            },
-          },
+          headingClose: {},
           h2: {
             id: 'h2',
             initial: 'headingOpen',
@@ -120,7 +144,12 @@ const parsePlansMachine = createMachine<
                 on: {
                   TOKEN: {
                     target: 'inline',
-                    cond: 'isTokenTypeInline',
+                    cond: {
+                      type: 'matchToken',
+                      token: {
+                        type: 'inline',
+                      },
+                    },
                   },
                 },
               },
@@ -128,7 +157,12 @@ const parsePlansMachine = createMachine<
                 on: {
                   TOKEN: {
                     target: 'headingClose',
-                    cond: 'isTokenTypeHeadingClose',
+                    cond: {
+                      type: 'matchToken',
+                      token: {
+                        type: 'heading_close',
+                      },
+                    },
                   },
                 },
                 entry: [
@@ -146,17 +180,7 @@ const parsePlansMachine = createMachine<
                   }),
                 ],
               },
-              headingClose: {
-                on: {
-                  TOKEN: {
-                    target: 'h3',
-                    cond: {
-                      type: 'isTokenTypeHeadingOpen',
-                      tag: 'h3',
-                    },
-                  },
-                },
-              },
+              headingClose: {},
               h3: {
                 id: 'h3',
                 initial: 'headingOpen',
@@ -165,7 +189,12 @@ const parsePlansMachine = createMachine<
                     on: {
                       TOKEN: {
                         target: 'inline',
-                        cond: 'isTokenTypeInline',
+                        cond: {
+                          type: 'matchToken',
+                          token: {
+                            type: 'inline',
+                          },
+                        },
                       },
                     },
                   },
@@ -173,7 +202,12 @@ const parsePlansMachine = createMachine<
                     on: {
                       TOKEN: {
                         target: 'headingClose',
-                        cond: 'isTokenTypeHeadingClose',
+                        cond: {
+                          type: 'matchToken',
+                          token: {
+                            type: 'heading_close',
+                          },
+                        },
                       },
                     },
                     entry: [
@@ -184,6 +218,7 @@ const parsePlansMachine = createMachine<
 
                           group?.nodes.push({
                             name: token.content,
+                            supports: [],
                           });
 
                           return context.plans;
@@ -195,17 +230,12 @@ const parsePlansMachine = createMachine<
                     on: {
                       TOKEN: [
                         {
-                          target: '#h1',
+                          target: 'supports',
                           cond: {
-                            type: 'isTokenTypeHeadingOpen',
-                            tag: 'h1',
-                          },
-                        },
-                        {
-                          target: '#h2',
-                          cond: {
-                            type: 'isTokenTypeHeadingOpen',
-                            tag: 'h2',
+                            type: 'matchToken',
+                            token: {
+                              content: 'Supports:',
+                            },
                           },
                         },
                       ],
@@ -219,12 +249,61 @@ const parsePlansMachine = createMachine<
                         on: {
                           TOKEN: {
                             target: 'inline',
-                            cond: 'isTokenTypeInline',
+                            cond: {
+                              type: 'matchToken',
+                              token: {
+                                type: 'inline',
+                              },
+                            },
                           },
                         },
                       },
-                      inline: {},
-                      close: {},
+                      inline: {
+                        on: {
+                          TOKEN: {
+                            target: 'close',
+                            cond: {
+                              type: 'matchToken',
+                              token: {
+                                type: 'list_item_close',
+                                tag: 'li',
+                              },
+                            },
+                          },
+                        },
+                        entry: [
+                          assign({
+                            plans: (context, { token }: TokenEvent) => {
+                              const plan =
+                                context.plans[context.plans.length - 1];
+
+                              const group =
+                                plan.groups?.[plan.groups.length - 1];
+
+                              const node = group?.nodes[group.nodes.length - 1];
+
+                              node?.supports?.push(token.content);
+
+                              return context.plans;
+                            },
+                          }),
+                        ],
+                      },
+                      close: {
+                        on: {
+                          TOKEN: [
+                            {
+                              target: 'open',
+                              cond: {
+                                type: 'matchToken',
+                                token: {
+                                  type: 'list_item_open',
+                                },
+                              },
+                            },
+                          ],
+                        },
+                      },
                     },
                   },
                 },
@@ -237,123 +316,31 @@ const parsePlansMachine = createMachine<
   },
   {
     guards: {
-      isTokenTypeHeadingOpen: (_, { token }: TokenEvent, { cond }: any) =>
-        token.type === 'heading_open' && cond.tag === token.tag,
-      isTokenTypeInline: (_, { token }: TokenEvent) => token.type === 'inline',
-      isTokenTypeHeadingClose: (_, { token }: TokenEvent) =>
-        token.type === 'heading_close',
+      matchToken: (_, { token }: TokenEvent, { cond }: { cond: any }) => {
+        return Object.keys(cond.token).every((key) => {
+          return token[key] === cond.token[key];
+        });
+      },
     },
   },
 );
 
-const parsePlansService = interpret(parsePlansMachine).start();
-
 export const getAllPlans = async (): Promise<Plan[]> => {
+  const parsePlansService = interpret(parsePlansMachine).start();
+
   const markdowns = await readFolderMarkdowns({ folder: 'planning' });
 
-  const plans = markdowns.forEach((markdown) => {
+  markdowns.forEach((markdown) => {
     parsePlansService.send({ type: 'MARKDOWN', markdown });
 
     const tokens = md.parse(markdown.content, {});
 
     tokens.forEach((token) => {
       parsePlansService.send({ type: 'TOKEN', token });
-      console.log(parsePlansService.state.value);
     });
-
-    console.log(JSON.stringify(parsePlansService.state.context, null, 2));
-
-    // let plan: Plan = {
-    //   slug: markdown.slug,
-    //   name: '',
-    //   nodes: {},
-    // };
-    // let currentNodeGroup = '';
-    // let currentNode: PlanNode | undefined;
-    // let currentNodeLastStep: 'name' | 'description' | 'supports' | '' = '';
-    // let lastToken: Token | undefined;
-    // console.log('AAAAAAAAAAAAAAAAAAAas');
-    // for (const token of tokens) {
-    //   console.log(
-    //     JSON.stringify(
-    //       {
-    //         currentNodeGroup,
-    //         currentNode,
-    //         currentNodeLastStep,
-    //         plan,
-    //       },
-    //       null,
-    //       2,
-    //     ),
-    //     console.log('\n\n\n\n'),
-    //   );
-    //   if (!lastToken) {
-    //     lastToken = token;
-    //     continue;
-    //   }
-    //   if (lastToken.type === 'heading_open' && lastToken.tag === 'h1') {
-    //     plan.name = token.content;
-    //   }
-    //   /**
-    //    * Reset the current node group if we encounter a new h2 heading.
-    //    */
-    //   if (token.type === 'heading_open' && token.tag === 'h2') {
-    //     currentNodeGroup = '';
-    //   }
-    //   if (lastToken.type === 'heading_open' && lastToken.tag === 'h2') {
-    //     currentNodeGroup = token.content;
-    //   }
-    //   /**
-    //    * Reset the current node if we encounter a new h3 heading and push it to
-    //    * the current node group.
-    //    */
-    //   if (token.type === 'heading_open' && token.tag === 'h3') {
-    //     if (currentNode) {
-    //       plan.nodes[currentNodeGroup] = plan.nodes[currentNodeGroup] || [];
-    //       plan.nodes[currentNodeGroup].push(currentNode);
-    //     }
-    //     currentNode = undefined;
-    //   }
-    //   if (lastToken.type === 'heading_open' && lastToken.tag === 'h3') {
-    //     if (!currentNode) {
-    //       currentNode = {
-    //         name: token.content,
-    //       };
-    //     }
-    //     currentNode.name = token.content;
-    //     currentNodeLastStep = 'name';
-    //   }
-    //   if (
-    //     lastToken.type === 'paragraph_open' &&
-    //     currentNodeLastStep === 'name' &&
-    //     currentNode
-    //   ) {
-    //     currentNode.description = token.content;
-    //     currentNodeLastStep = 'description';
-    //   }
-    //   if (token.content === 'It supports:') {
-    //     currentNodeLastStep = 'supports';
-    //   }
-    //   if (
-    //     token.type === 'inline' &&
-    //     currentNodeLastStep === 'supports' &&
-    //     currentNode &&
-    //     token.content !== 'It supports:'
-    //   ) {
-    //     currentNode.supports = currentNode.supports || [];
-    //     currentNode.supports.push(token.content);
-    //   }
-    //   if (
-    //     token.type === 'bullet_list_close' &&
-    //     currentNodeLastStep === 'supports'
-    //   ) {
-    //     currentNodeLastStep = '';
-    //     currentNode = undefined;
-    //   }
-    //   lastToken = token;
-    // }
-    // return plan;
   });
 
-  return [];
+  const { state } = parsePlansService.stop();
+
+  return state.context.plans as Plan[];
 };
