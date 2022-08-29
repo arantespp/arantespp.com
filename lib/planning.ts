@@ -357,5 +357,3 @@ export const getAllPlans = async (): Promise<Plan[]> => {
 
   return [];
 };
-
-getAllPlans().then(console.log);

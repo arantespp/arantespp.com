@@ -40,7 +40,7 @@ const Recommendations = ({
         href="/all"
         sx={{
           fontSize: 1,
-          marginBottom: [4, 4],
+          marginBottom: [4, 5],
           textAlign: 'center',
         }}
       >
