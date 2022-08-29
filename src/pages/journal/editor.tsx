@@ -4,7 +4,6 @@ import { InferGetStaticPropsType } from 'next';
 import { Journal } from '../../../lib/journal';
 import { JournalDateNavigator } from '../../components/JournalDateNavigator';
 import { JournalSearchName } from '../../components/JournalSearchName';
-import { JournalSummary } from '../../components/JournalSummary';
 import { Loading } from '../../components/Loading';
 import { NextSeo } from 'next-seo';
 import { readMarkdownFile } from '../../../lib/files';
@@ -16,6 +15,7 @@ import { useQuery, useQueryClient } from 'react-query';
 import { useQueryParamsDateOrToday } from '../../hooks/useQueryParamsDateOrToday';
 import Editor from '../../components/Editor';
 import ErrorMessage from '../../components/ErrorMessage';
+import JournalComponent from '../../components/Journal';
 import Link from '../../components/Link';
 import Router, { useRouter } from 'next/router';
 
@@ -181,30 +181,22 @@ const EditorWithContent = ({
 
   const [debouncedIsSaving] = useDebounce(isSaving, 1000);
 
+  React.useEffect(() => {
+    if (isLoadingContent) {
+      return;
+    }
+
+    if (!content) {
+      setContent(
+        questions.map((question) => `**${question}**`).join('\n\n') +
+          '\n\n---\n\n',
+      );
+    }
+  }, [questions, content, setContent, isLoadingContent]);
+
   return (
     <>
-      <Box sx={{ marginY: 0 }}>
-        <Box sx={{ marginY: 3 }}>
-          <Themed.ul>
-            {questions.map((question) => {
-              return (
-                <Themed.li key={question}>
-                  <Text
-                    sx={{ cursor: 'pointer', fontSize: 1 }}
-                    onClick={() => {
-                      setContent(
-                        (c) => c + `${c ? '\n' : ''}**${question}**\n`,
-                      );
-                      textAreaRef.current?.focus();
-                    }}
-                  >
-                    {question}
-                  </Text>
-                </Themed.li>
-              );
-            })}
-          </Themed.ul>
-        </Box>
+      <Box sx={{ marginY: 3 }}>
         <Editor
           ref={textAreaRef}
           isValid={!!content}
@@ -231,6 +223,9 @@ const EditorWithContent = ({
       </Flex>
       <JournalSearchName {...{ date, setContent, textAreaRef }} />
       <ErrorMessage error={error} />
+      <Box sx={{ marginTop: 5 }}>
+        <JournalComponent markdown={content} title={date} />
+      </Box>
     </>
   );
 };
@@ -277,11 +272,6 @@ const JournalEditor = ({
       <React.Suspense fallback={<Loading />}>
         <MemoizedEditorWithContent date={date} questions={questions} />
       </React.Suspense>
-      <Box sx={{ marginTop: 5 }}>
-        <React.Suspense>
-          <JournalSummary date={date} />
-        </React.Suspense>
-      </Box>
     </>
   );
 };

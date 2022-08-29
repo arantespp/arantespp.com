@@ -45,9 +45,9 @@ The simplicity of our explanations about things we're learning follows a bell cu
 
 When we start understanding the subject, our brain creates connections while we're learning, but they're messy, and we don't have enough sufficient and permanent neuron connections. As a result, every piece of information looks independent but, at the same time, may be connected. We can't concisely explain at this point because we don't know how the pieces are correlated. It's like a thousand-piece puzzle that we just opened and threw on the table. Trying to explain is like catching pieces randomly and trying to create an explanation of how these pieces fit together, even if they don't.
 
-When we understand the whole subject, the connections in our brain are well defined and precise. When we reach this stage, we can plainly explain because we finished our puzzle, and, for every group of pieces we pick up, we can show how they fit together. We don't have to create complex explanations. It's straightforward.
+When we understand the whole subject, the connections in our brains are well-defined and precise. When we reach this stage, we can plainly explain because we finished our puzzle, and for every group of pieces we pick up, we can show how they fit together. We don't have to create complex explanations. It's straightforward.
 
-The chart below shows the theory of explaining with simplicity and information density as the speaker masters the subject. She doesn't have many things to discuss when she knows nothing, and the density is low because there isn't much helpful information per word. In the middle of the chart, she begins to understand the concepts better, but the complexity of her explanation increases. Finally, when she fully understands, she gives straightforward explanations, no big words, just the necessary to deliver the message. The density increases because she can deliver more useful with few words.
+The chart below shows the theory of explaining with simplicity and information density as the speaker masters the subject. She doesn't have many things to discuss when she knows nothing, and the density is low because there isn't much helpful information per word. In the middle of the chart, she begins to understand the concepts better, but the complexity of her explanation increases. Finally, when she fully understands, she gives straightforward explanations, no big words, just the necessary to deliver the message. The density increases because she can provide more useful with few words.
 
 ![Complexity and Density.](/images/originals/understanding-complexity-density.png)
 
@@ -62,7 +62,7 @@ I wrote this article to share my learning process and how I accelerated the path
 > 3. Identify gaps in your explanation. If you're struggling to explain clearly, go back to the material.
 > 4. Review, organize and simplify.
 
-The [Feynman Technique's](/zettel/the-feynman-technique) benefit is that it helps us assemble the puzzle. When we force ourselves to explain some topic to a child, we need to remove all complexities of our arguments and figure out how to create the best connections. We can choose the least amount of information that doesn't increase the complexity but gives the most important overview of that topic—the [Pareto Principle](zettel/pareto-principle). We can explain using 20% of the pieces, and they give our listener 80% of the topic overview. We don't need to talk about the massive amount of blue pieces of our puzzle representing the sky as they aggregate less information density to the picture.
+The [Feynman Technique's](/zettel/the-feynman-technique) benefit is that it helps us assemble the puzzle. When we force ourselves to explain some topic to a child, we need to remove all complexities of our arguments and figure out how to create the best connections. We can choose the least amount of information that doesn't increase the complexity but gives the most important overview of that topic—the [Pareto Principle](zettel/pareto-principle). We can explain using 20% of the pieces, and they give our listeners 80% of the topic overview. We don't need to talk about the massive amount of blue pieces of our puzzle representing the sky as they aggregate less information density to the picture.
 
 ## Mental Models
 
@@ -86,15 +86,15 @@ The Feynman Mental Model Technique consists of adding the fifth step to the Feyn
 
 Explaining to a child (mentally) the topic I'm learning and figuring out which mental models I can extract from it is the best way I found to retain knowledge. The fundamentals of [metacognitive learning](/zettel/reading-metacognitively) are applied at the highest level.
 
-We can only abstract some topic when we understand its fundamentals. There's a mental model called [First Principles Thinking](/zettel/first-principles-thinking), whose main idea is to break down the topic into basic elements and then resemble them again, which we can call "reasoning from first principles." The Feynman Technique (steps 1 to 4) is responsible for helping us break down the idea because we always simplifying and finding gaps in our understandings. There're two main advantages to reasoning from the first principles. First, we learn the basics of some topic (or problem) and then recreate it, removing impurity assumptions, conventions, and old paradigms.
+We can only abstract some topic when we understand its fundamentals. There's a mental model called [First Principles Thinking](/zettel/first-principles-thinking), whose main idea is to break down the topic into basic elements and then resemble them again, which we can call "reasoning from first principles." The Feynman Technique (steps 1 to 4) is responsible for helping us break down the idea because we're always simplifying and finding gaps in our understandings. There're two main advantages to reasoning from the first principles. First, we learn the basics of some topic (or problem) and then recreate it, removing impurity assumptions, conventions, and old paradigms.
 
-The second advantage is the main point of this article: we abstract and reuse the fundamentals in other contexts. We can see these fundamentals as mental building blocks for ideas. Once we have the building blocks of some topic, we can choose a subset of them to build new ideas, apply to understand other topics, solve problems, and so on. This is the essence of the fifth step of The Feynman Mental Model Technique.
+The second advantage is the main point of this article: we abstract and reuse the fundamentals in other contexts. We can see these fundamentals as mental building blocks for ideas. Once we have the building blocks of some topic, we can choose a subset of them to build new ideas, apply them to understand other topics, solve problems, and so on. This is the essence of the fifth step of The Feynman Mental Model Technique.
 
 ![The Feynman Mental Model Technique.](/images/originals/the-feynman-mental-models-technique.png)
 
 ## Applying the Technique
 
-At this point of the article, we only talked about theories and the definition of the technique. Now, I want to share how I create a system to support me in the process and the resistance we can face when we do any cognitive task.
+At this point, we only talked about theories and the definition of the technique. Now, I want to share how I create a system to support me in the process and the resistance we can face when we do any cognitive task.
 
 ### Systems
 
@@ -108,18 +108,18 @@ I created this blog for this case and aimed for three main requisites. I wanted 
 
 The second requisite is the essence of the [Zettelkasten technique](/zettel/zettelkasten)—you write down your thoughts in notes and tags and connect them over time. The third requisite forces me to read, understand and summarize the topic well because my notes are public. But, even if I don't understand well and make some mistakes, being public allows others to show my understanding gaps and correct them. This is the magic of [learning in public](https://www.swyx.io/learn-in-public/).
 
-Your system's requisites may diverge a little bit. Depending on your choice, you can create a similar system [like this blog](https://github.com/arantespp/arantespp.com), use other tools like Notion or Obsidian, or even use paper notes. It doesn't matter which one you choose for yourself, as long as you eliminate most frictions and make your process easier.
+Your system's requisites may diverge a little bit. Depending on your choice, you can create a similar system [like this blog](https://github.com/arantespp/arantespp.com), use other tools like Notion or Obsidian, or even use paper notes. It doesn't matter which one you choose for yourself, as long as you eliminate the most friction and make your process easier.
 
 ### The Resistance
 
-The resistance is an internal battle we may have whenever we need to do cognitive tasks. We hit the wall and can't do anything, even if we create the most effective system. The resistance can assume the form of procrastination, perfectionism, indifference, doubts, or fear. I do recommend the book [The War of Art](/books/the-war-of-art), which talks about resistance and how to overcome it.
+Resistance is an internal battle we may have whenever we need to do cognitive tasks. We hit the wall and can't do anything, even if we create the most effective system. The resistance can assume the form of procrastination, perfectionism, indifference, doubts, or fear. I do recommend the book [The War of Art](/books/the-war-of-art), which talks about resistance and how to overcome it.
 
-The first step to overcoming the resistance is to be aware that it exists and that it can easily beat us. It doesn't matter if we create the best system in the world, plan our calendar and use the best tools. Nothing else matters if we get blocked and can't start doing our tasks.
+The first step to overcoming resistance is to be aware that it exists and that it can easily beat us. It doesn't matter if we create the best system in the world, plan our calendar and use the best tools. Nothing else matters if we get blocked and can't start doing our tasks.
 
-The second step that worked for me is to create a strong vision of what we deep want, our burning desire, and use it to support our motivation. Our systems also will help us fight against resistance—that's why we should create an environment that makes us do our job without much effort.
+The second step is to create a strong vision of what we deeply want, our burning desire, and use it to support our motivation. Our systems also will help us fight against resistance—that's why we should create an environment that makes us do our job without much effort.
 
 The most interesting part is that the resistance has tremendous power before starting our work. But, once we commit and start doing our job, it loses power. So, ultimately, it's more difficult to sit to do the work than to do it.
 
 ## Conclusion
 
-So this is the technique and the systems I've been creating for myself over the last years. I hope that this article helps you somehow, especially in improving your clear thinking—one of the best [meta-skills](/zettel/meta-skills) you can enhance for yourself. I believe there is space to evolve this technique and the systems, and I'll keep working to find it. When I do, I share it with you in another blog post.
+So this is the technique and the systems I've been creating for myself over the last years. I hope this article helps you, especially in improving your clear thinking—one of the best [meta-skills](/zettel/meta-skills) you can enhance for yourself. I believe there is space to evolve this technique and the systems, and I'll keep working to find it. When I do, I share it with you in another blog post.

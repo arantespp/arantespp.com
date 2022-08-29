@@ -2,6 +2,7 @@ import * as dateFns from 'date-fns';
 import { GROUPS, Group } from './groups';
 import { getDateWithTimezone } from './getDateWithTimezone';
 import { paramCase } from 'change-case';
+import { postsDirectory } from './postsDirectory';
 import { titleCase } from 'title-case';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -15,8 +16,6 @@ const DOMAIN = 'https://arantespp.com';
 const GITHUB_PROJECT = 'https://github.com/arantespp/arantespp.com';
 
 const RECOMMENDATIONS_LIMIT = 5;
-
-export const postsDirectory = path.join(process.cwd(), 'posts');
 
 export const readMarkdownFile = async (filePathFromPostsDirectory: string) => {
   try {

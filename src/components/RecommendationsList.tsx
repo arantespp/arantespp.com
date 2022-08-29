@@ -13,7 +13,9 @@ const RecommendationsList = ({
       {recommendations.map((recommendation) => (
         <Box
           key={recommendation.href}
-          sx={{ paddingTop: 0, paddingBottom: [4, 5] }}
+          sx={{
+            marginY: 4,
+          }}
         >
           <RecommendationCard recommendation={recommendation} />
         </Box>

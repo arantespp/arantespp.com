@@ -4,7 +4,7 @@ const FullWidth = ({ children }) => {
   /**
    * 96 to avoid overflow X.
    */
-  const editorWidthInVw = 96;
+  const editorWidthInVw = 98;
 
   return (
     <Flex
@@ -15,6 +15,7 @@ const FullWidth = ({ children }) => {
         right: ['50%'],
         marginX: [`-${editorWidthInVw / 2}vw`],
         justifyContent: 'center',
+        overflowX: 'hidden',
       }}
     >
       {children}

@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Input, Text, Themed } from 'theme-ui';
+import { Box, Button, Flex, Input, Text } from 'theme-ui';
 import Link from './Link';
 import Tag from './Tag';
 
@@ -35,7 +35,7 @@ const Newsletter = () => (
         >
           <Flex
             sx={{
-              marginTop: 4,
+              marginTop: 5,
               marginBottom: 2,
               flexDirection: ['column', 'row'],
               alignItems: [null, 'baseline'],
@@ -68,7 +68,7 @@ const Newsletter = () => (
           <Text
             as="p"
             sx={{
-              fontSize: 1,
+              fontSize: 0,
               color: 'gray',
               textAlign: 'center',
             }}
@@ -76,10 +76,6 @@ const Newsletter = () => (
             By subscribing, you agree with Revue’s{' '}
             <Link href="https://www.getrevue.co/terms">Terms</Link> and{' '}
             <Link href="https://www.getrevue.co/privacy">Privacy Policy</Link>.
-            You can also check{' '}
-            <Link href="https://www.getrevue.co/profile/arantespp">
-              my past publications.
-            </Link>
           </Text>
         </form>
       </Box>

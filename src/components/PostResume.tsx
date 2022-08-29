@@ -23,10 +23,7 @@ const PostResume = ({
       }}
     >
       <Link href={href} sx={{ textDecoration: 'none' }}>
-        <Message
-          variant="excerpt"
-          sx={{ cursor: 'pointer', marginTop: 3, marginBottom: 1 }}
-        >
+        <Message variant="excerpt" sx={{ cursor: 'pointer' }}>
           {excerpt}
         </Message>
       </Link>
@@ -38,7 +35,10 @@ const PostResume = ({
         ))}
       </Flex>
       {isPostPage && (
-        <Text as="span" sx={{ color: 'gray', fontSize: [0, 1] }}>
+        <Text
+          as="span"
+          sx={{ color: 'gray', fontSize: [0, 1], marginY: 1, display: 'block' }}
+        >
           <Link href={`/${newGroup}`}>{pascalCase(newGroup)},</Link>{' '}
           {formattedDate}
         </Text>

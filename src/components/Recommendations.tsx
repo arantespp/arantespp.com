@@ -40,15 +40,13 @@ const Recommendations = ({
         href="/all"
         sx={{
           fontSize: 1,
-          marginBottom: [4, 5],
+          marginBottom: [4, 4],
           textAlign: 'center',
         }}
       >
         Do you want to see all posts instead?
       </Link>
-      <Box sx={{ marginTop: [4] }}>
-        <RecommendationsList recommendations={recommendations} />
-      </Box>
+      <RecommendationsList recommendations={recommendations} />
     </Flex>
   );
 };

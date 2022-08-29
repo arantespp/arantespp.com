@@ -249,6 +249,8 @@ export type JournalsSummary = NonNullable<
   ThenArg<ReturnType<typeof getJournalsSummary>>
 >;
 
+export type JournalsSummaryKeys = JournalsSummary[number]['key'];
+
 export const getMissingDays = async ({
   from = JOURNAL_FIRST_DATE,
   to = getToday(),

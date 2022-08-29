@@ -1,4 +1,5 @@
 import { Theme } from 'theme-ui';
+import breakpoints from '../breakpoints';
 
 /**
  * https://www.canva.com/colors/color-wheel/
@@ -68,6 +69,7 @@ const config = {
 export const theme: Theme = {
   config,
   colors,
+  breakpoints: breakpoints.map((b) => b + 'em'),
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: '"Open Sans", sans-serif',
@@ -92,8 +94,8 @@ export const theme: Theme = {
   shadows: ['none', '10px 10px 10px -10px #aaa'],
   styles: {
     root: {
+      fontSize: '16px',
       fontFamily: 'body',
-      fontSize: [1, 2],
       fontWeight: 'body',
       lineHeight: 'body',
       button: {
@@ -332,24 +334,19 @@ export const theme: Theme = {
     excerpt: {
       fontSize: [1, 2],
       fontStyle: 'italic',
-      padding: 2,
+      padding: 0,
       paddingLeft: 3,
       paddingRight: 0,
-      margin: 0,
+      marginY: 3,
       backgroundColor: 'transparent',
-      color: 'gray',
-      borderColor: 'muted',
     },
     quote: {
-      fontSize: [1, 2],
+      fontSize: [1],
       fontStyle: 'italic',
       padding: 0,
-      paddingLeft: [2, 3],
-      marginY: 2,
+      marginY: 4,
+      paddingLeft: [1, 2],
       backgroundColor: 'transparent',
-      color: 'gray',
-      borderColor: 'muted',
-      marginX: [3, 4],
     },
   },
   text: {

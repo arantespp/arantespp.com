@@ -12,10 +12,15 @@ const withMDX = require('@next/mdx')({
 
 const { getRedirects } = require('./lib/links');
 
+const breakpoints = require('./breakpoints');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async redirects() {
     return getRedirects();
+  },
+  images: {
+    deviceSizes: breakpoints.map((b) => b * 16),
   },
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 };
