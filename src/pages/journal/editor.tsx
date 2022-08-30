@@ -107,14 +107,26 @@ const useAutoSave = ({ content, date }: { content: string; date: string }) => {
   return { error, isSaving };
 };
 
-const useContent = ({ date }: { date: string }) => {
+const getQuestionsContent = ({ questions }: { questions: string[] }) => {
+  return (
+    questions.map((question) => `**${question}**`).join('\n\n') + '\n\n---\n\n'
+  );
+};
+
+const useContent = ({
+  date,
+  questions,
+}: {
+  date: string;
+  questions: string[];
+}) => {
   const queryClient = useQueryClient();
 
   const { apiKey } = useApiKey();
 
   const queryKey = [`/api/journal?date=${date}`, apiKey];
 
-  const { data, isLoading: isLoadingContent } = useQuery(
+  const { data, isFetched } = useQuery(
     queryKey,
     async ({ queryKey }) =>
       fetch(queryKey[0], {
@@ -127,15 +139,36 @@ const useContent = ({ date }: { date: string }) => {
 
   const contentFromApi = data?.journal?.content || '';
 
-  const [content, setContent] = React.useState(contentFromApi);
+  const isLoadingContent = !isFetched;
 
+  const [content, setContent] = React.useState('');
+
+  const [wasInitialContentSet, setWasInitialContentSet] = React.useState(false);
+
+  /**
+   * Set initial content if it hasn't been set yet.
+   */
   React.useEffect(() => {
-    if (!contentFromApi || !date) {
-      return setContent('');
+    if (!date) {
+      return;
     }
 
-    setContent(contentFromApi);
-  }, [date, contentFromApi]);
+    if (isLoadingContent) {
+      return;
+    }
+
+    if (wasInitialContentSet) {
+      return;
+    }
+
+    setContent((currentContent) => {
+      return (
+        currentContent || contentFromApi || getQuestionsContent({ questions })
+      );
+    });
+
+    setWasInitialContentSet(true);
+  }, [contentFromApi, date, isLoadingContent, questions, wasInitialContentSet]);
 
   /**
    * Update the cache with the new content.
@@ -173,26 +206,16 @@ const EditorWithContent = ({
   date: string;
   questions: string[];
 }) => {
-  const { content, setContent, isLoadingContent } = useContent({ date });
+  const { content, setContent, isLoadingContent } = useContent({
+    date,
+    questions,
+  });
 
   const { error, isSaving } = useAutoSave({ content, date });
 
   const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
 
   const [debouncedIsSaving] = useDebounce(isSaving, 1000);
-
-  React.useEffect(() => {
-    if (isLoadingContent) {
-      return;
-    }
-
-    if (!content) {
-      setContent(
-        questions.map((question) => `**${question}**`).join('\n\n') +
-          '\n\n---\n\n',
-      );
-    }
-  }, [questions, content, setContent, isLoadingContent]);
 
   return (
     <>
