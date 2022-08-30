@@ -69,7 +69,11 @@ const useAutoSave = ({ content, date }: { content: string; date: string }) => {
 
       return () => clearTimeout(timeout);
     }
-  }, [apiKey, content, date]);
+    /**
+     * Only save on content change.
+     */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [content]);
 
   /**
    * Warn User for Unsaved Form before Route Change
@@ -146,6 +150,13 @@ const useContent = ({
   const [wasInitialContentSet, setWasInitialContentSet] = React.useState(false);
 
   /**
+   * Reset when date changes.
+   */
+  React.useEffect(() => {
+    setWasInitialContentSet(false);
+  }, [date]);
+
+  /**
    * Set initial content if it hasn't been set yet.
    */
   React.useEffect(() => {
@@ -161,11 +172,7 @@ const useContent = ({
       return;
     }
 
-    setContent((currentContent) => {
-      return (
-        currentContent || contentFromApi || getQuestionsContent({ questions })
-      );
-    });
+    setContent(contentFromApi || getQuestionsContent({ questions }));
 
     setWasInitialContentSet(true);
   }, [contentFromApi, date, isLoadingContent, questions, wasInitialContentSet]);
@@ -217,12 +224,14 @@ const EditorWithContent = ({
 
   const [debouncedIsSaving] = useDebounce(isSaving, 1000);
 
+  const isValid = !!content;
+
   return (
     <>
       <Box sx={{ marginY: 3 }}>
         <Editor
           ref={textAreaRef}
-          isValid={!!content}
+          isValid={isValid}
           value={content}
           onChange={(e) => {
             setContent(e.target.value);
@@ -236,7 +245,7 @@ const EditorWithContent = ({
         </Flex>
         <Text
           sx={
-            debouncedIsSaving || isLoadingContent
+            debouncedIsSaving || isLoadingContent || !isValid
               ? { color: 'muted', fontStyle: 'italic' }
               : { color: 'text' }
           }
