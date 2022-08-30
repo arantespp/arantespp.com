@@ -19,7 +19,7 @@ const ForceGraph3D = dynamic(() => import('react-force-graph-3d'));
 
 const nodeColors: { [key: string]: string } = {
   post: theme.colors?.secondary as string,
-  tag: theme.colors?.highlight as string,
+  tag: theme.colors?.accent as string,
   selectedNode: theme.colors?.primary as string,
 };
 
@@ -89,19 +89,19 @@ const NetworkGraph = ({
   const forceGraph2DRef = React.useRef<ForceGraph2DMethods>();
   const forceGraph3DRef = React.useRef<ForceGraph3DMethods>();
 
-  const [show2D, setShow2D] = React.useState(true);
+  const [show2D, setShow2D] = React.useState(false);
 
   const [{ height, width }, setDimensions] = React.useState({
     height: 0,
     width: 0,
   });
 
-  const widthPercentage = useResponsiveValue([0.96, 0.9]);
+  const widthPercentage = useResponsiveValue([0.96, 0.95]);
 
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
       setDimensions({
-        height: 0.8 * window.innerHeight,
+        height: 0.96 * window.innerHeight,
         width: widthPercentage * window.innerWidth,
       });
     }
@@ -175,10 +175,12 @@ const NetworkGraph = ({
               return sprite;
             }}
             linkWidth={2}
+            linkDirectionalParticles={4}
+            linkDirectionalParticleWidth={3}
+            dagMode="td"
           />
         )}
       </React.Suspense>
-      <SearchInput setSelectedNodeId={setSelectedNodeId} allPosts={allPosts} />
       <Button
         sx={{
           ...buttonCommonProps,

@@ -11,7 +11,7 @@ const Footer = () => (
       flexDirection: ['column'],
       alignItems: 'center',
       justifyContent: 'center',
-      padding: [2, 3],
+      marginBottom: 2,
     }}
   >
     <Flex sx={{ flexWrap: 'wrap', justifyContent: 'center', marginTop: 2 }}>

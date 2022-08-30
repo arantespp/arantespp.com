@@ -22,7 +22,15 @@ const PostResume = ({
         paddingBottom: 2,
       }}
     >
-      <Link href={href} sx={{ textDecoration: 'none' }}>
+      <Link
+        href={href}
+        sx={{
+          textDecoration: 'none',
+          ':hover': {
+            color: 'lightGray',
+          },
+        }}
+      >
         <Message variant="excerpt" sx={{ cursor: 'pointer' }}>
           {excerpt}
         </Message>
