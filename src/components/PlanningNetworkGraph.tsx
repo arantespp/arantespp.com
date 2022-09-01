@@ -16,8 +16,7 @@ export const PlanningNetworkGraph = ({
     <FullWidth>
       <ForceGraph3D
         graphData={graphData}
-        dagMode="radialin"
-        dagLevelDistance={graphData.nodes.length * 2}
+        dagMode="zin"
         nodeLabel={() => ''}
         nodeAutoColorBy="group"
         nodeThreeObjectExtend={true}

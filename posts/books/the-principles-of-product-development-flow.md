@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-08-29'
-formattedUpdatedAt: 'August 29, 2022'
+updatedAt: '2022-09-01'
+formattedUpdatedAt: 'September 01, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 29
+readingTime: 30
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -463,3 +463,19 @@ In product development, some organizations use "tiger teams" that have experienc
 In many cases, it's better to pay the price of inefficient, decentralized resources to provide responsiveness. In these cases, response time is very valuable.
 
 So, don't assume that efficiency should have higher priority than response time by default. Instead, use your economic framework to make this choice.
+
+#### D7. The Principle of Alignment: There is more value created with overall alignment than local excellence.
+
+It has been said that one barbarian could defeat one Roman soldier in combat, but that 1,000 Roman soldiers could always defeat 1,000 barbarians. This is because the strength of the Roman army lay in its ability to coordinate and align its combat power.
+
+_Mass_ and _economy of force_ principles of war explain the power of alignment. Mass refers to the ability to concentrate force in one area. Economy of force refers to the ability to allocate minimum resources to all other activities. The effects of subordinating all activities to the main objective are not linearly proportional to effort.
+
+The same applies to product development. One percent excess over parity on 15 features creates no excitement, but a 15 percent advantage on a key attribute may shift customer preference.
+
+#### D8. The Principle of Mission: Specify the end state, its purpose, and the minimal possible constraints.
+
+In maneuver warfare, a mission is a key tool for creating alignment, which is communicated using "mission orders." Mission orders focus on the operation's intent rather than how the mission should be accomplished—it's the end state. It communicates the "why" of the operation, not the "what" or "how."
+
+When the intent is clear, the mission executors can select the right course of action. This is true when dealing with an emerging obstacle or opportunity. In many ways, the intent is simply a robust and compact way of providing direction.
+
+The mission statement for a project can be a powerful way of maintaining coordination. The most important part of this mission is the "why."

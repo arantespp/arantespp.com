@@ -30,6 +30,7 @@ Supports:
 
 - Build a successful company
 - Find an amazing woman
+- Do focused work
 
 ### Be light to others
 
@@ -52,6 +53,7 @@ Supports:
 Supports:
 
 - Live in full engagement mode
+- Improve my self-confidence
 
 ### Master spiritual energy
 
@@ -59,12 +61,14 @@ Supports:
 
 - Live in full engagement mode
 - Become a spiritualized person
+- Improve my self-confidence
 
 ### Be aware and fight resistances
 
 Supports:
 
 - Build a successful company
+- Do focused work
 
 ### Become the most important person for myself
 
@@ -79,6 +83,19 @@ Supports:
 Supports:
 
 - Be light to others
+
+### Become more charismatic
+
+Supports:
+
+- Create social capital
+
+### Improve my self-confidence
+
+Supports:
+
+- Become more charismatic
+- Find an amazing woman
 
 ## Actions
 
@@ -116,6 +133,7 @@ Supports:
 - Master spiritual energy
 - Be aware and fight resistances
 - Become the most important person for myself
+- Improve my self-confidence
 
 ### Eat healthy
 
@@ -139,6 +157,12 @@ Supports:
 
 - Workout at least 5 days a week
 - Read every day
+
+### Do focused work
+
+Supports:
+
+- Build a successful company
 
 ## Don'ts
 

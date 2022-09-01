@@ -158,6 +158,9 @@ const NetworkGraph = ({
             backgroundColor={theme.rawColors?.background as string}
             linkColor={() => theme.rawColors?.text as string}
             linkWidth={0.3}
+            linkDirectionalParticles={2}
+            linkDirectionalParticleWidth={3}
+            dagMode="radialin"
             // nodeCanvasObjectMode="replace"
             // nodeCanvasObject={(node, ctx, globalScale) => {
             // }}
