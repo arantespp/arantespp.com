@@ -1,11 +1,11 @@
 import { Flex } from 'theme-ui';
-import { JournalDateNavigator } from '../../components/JournalDateNavigator';
+import { JournalDateNavigator } from '../../../components/JournalDateNavigator';
 import { NextSeo } from 'next-seo';
-import { useApiKey } from '../../hooks/useApiKey';
+import { useApiKey } from '../../../hooks/useApiKey';
 import { useQuery } from 'react-query';
 import { useRouter } from 'next/router';
-import Journal from '../../components/Journal';
-import Link from '../../components/Link';
+import Journal from '../../../components/Journal';
+import Link from '../../../components/Link';
 
 const JournalPage = () => {
   const { apiKey } = useApiKey();
@@ -43,6 +43,7 @@ const JournalPage = () => {
       <Flex sx={{ gap: 3 }}>
         <Link href={`/journal/editor?date=${date}`}>Edit</Link>
         <Link href="/journal">Summary</Link>
+        <Link href={`/journal/backup/${date}`}>Backup</Link>
       </Flex>
     </>
   );

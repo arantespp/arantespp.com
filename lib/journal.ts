@@ -116,23 +116,23 @@ const putJournal = async ({ date, content }: SaveJournalArgs) => {
   );
 };
 
-/**
- * If someday I need it.
- */
-// const getBackupJournal = async ({ date }: { date: string }) => {
-//   const { Item } = await client.send(
-//     new GetItemCommand({
-//       TableName,
-//       Key: marshall({ pk: BACKUP_JOURNAL_PK, sk: date }),
-//     }),
-//   );
+export const getBackupJournal = async ({ date }: { date: string }) => {
+  const { Item } = await ddbDocClient.send(
+    new GetCommand({
+      TableName,
+      Key: { pk: BACKUP_JOURNAL_PK, sk: date },
+    }),
+  );
 
-//   if (!Item) {
-//     return undefined;
-//   }
+  if (!Item) {
+    return [];
+  }
 
-//   return unmarshall(Item);
-// };
+  return Object.entries(Item.history).map(([dateTime, content]) => ({
+    dateTime,
+    content,
+  }));
+};
 
 const backupJournal = async ({ date, content }: SaveJournalArgs) => {
   const now = dateFns.format(

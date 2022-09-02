@@ -226,6 +226,8 @@ const EditorWithContent = ({
 
   const isValid = !!content;
 
+  const deferredContent = React.useDeferredValue(content);
+
   return (
     <>
       <Box sx={{ marginY: 3 }}>
@@ -256,7 +258,7 @@ const EditorWithContent = ({
       <JournalSearchName {...{ date, setContent, textAreaRef }} />
       <ErrorMessage error={error} />
       <Box sx={{ marginTop: 5 }}>
-        <JournalComponent markdown={content} title={date} />
+        <JournalComponent markdown={deferredContent} title={date} />
       </Box>
     </>
   );
