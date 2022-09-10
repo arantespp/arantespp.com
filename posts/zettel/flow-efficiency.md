@@ -33,7 +33,7 @@ readingTime: 1
 
 ## Notes
 
-- Flow efficiency is the proportion of time where the team effectively spent active work within the total [cycle time](/zettel/cycle-time) of the task.
+- Flow efficiency is the proportion of time the team effectively spent on active work within the total [cycle time](/zettel/cycle-time) of the task.
 
 - Higher flow efficiency, higher active work, lower inactive work.
 
@@ -46,9 +46,9 @@ $$
   - In $10\%$ of the time, the team acted on the task.
   - In $90\%$ of the time, the team waited—waste. For instance, the team could have to wait until the strategic meeting to decide if the company would implement the task or if some bureaucratic process took months before shipping to customers.
 
-- A large creation chain can reduce the flow efficiency because the team does a little work and has to wait on a decision, which can take several months.
+- A large creation chain can reduce the flow efficiency because the team does little work and has to wait on a decision, which can take several months.
 
-- A system with much work in process (WIP) tends to decrease the flow efficiency. There is a difference if the team constantly jumps between ten or one task.
+- A system with much [work in process (WIP)](/zettel/work-in-process-wip) tends to decrease the flow efficiency. There is a difference if the team constantly jumps between ten or one task.
 
 ## References
 

@@ -1,38 +1,44 @@
 ---
-image: null
 book: null
-draft: true
+draft: false
 tags:
   - agile
   - agile-manifesto
   - software-development
-rating: 3
 date: '2021-01-25'
-excerpt: ''
+excerpt: >-
+  Agile emphasizes small, incremental changes to the product that the team can
+  deliver quickly and iteratively.
 title: Agile
-group: zettelkasten
+group: zettel
 formattedDate: 'January 25, 2021'
-updatedAt: 'November 08, 2021'
-updateHistory: >-
-  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/agile.md
-href: /zettelkasten/agile
-as: /z/agile
+updatedAt: '2022-09-10'
+formattedUpdatedAt: 'September 10, 2022'
+updateHistory: 'https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/agile.md'
+href: /drafts/zettel/agile
 slug: agile
-editLink: >-
-  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/agile.md
-url: 'https://arantespp.com/zettelkasten/agile'
+editLink: 'https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/agile.md'
+url: 'https://arantespp.com/zettel/agile'
 keywords:
-  - zettelkasten
+  - zettel
   - agile
   - agile-manifesto
   - software-development
+readingTime: 1
+references:
+  - /zettel/twelve-principles-of-agile-software
+backlinks: []
 ---
 
 ## Notes
 
-- At its core, you can see agile as a philosophy with four values and [12 principles](/zettel/twelve-principles-of-agile-software).
+- At its core, agile is a philosophy with four values and [12 principles](/zettel/twelve-principles-of-agile-software).
 
-- There are projects in which you can apply agile philosophy, but not necessarily an agile methodology. For example, in building a home, one can use an agile philosophy about working with the client to ensure that the end product is what she wants, but one can't strictly apply scrum methodology to such a project.
+- There are projects where you can apply agile philosophy, but not necessarily an agile methodology. For example, in building a home, one can use an agile philosophy about working with the client to ensure that the end product is what she wants, but one can't strictly apply scrum methodology to such a project.
+
+- Agile emphasizes small, incremental changes to the product that the team can deliver quickly and iteratively.
+
+- Agile's iterative approach encourages constant feedback from the customer, which the team can use to improve the product. In addition, it allows for changing the product's direction, even in the late stages of development.
 
 ## References
 

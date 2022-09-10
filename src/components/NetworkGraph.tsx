@@ -161,6 +161,7 @@ const NetworkGraph = ({
             linkDirectionalParticles={2}
             linkDirectionalParticleWidth={3}
             dagMode="radialin"
+            // dagLevelDistance={400}
             // nodeCanvasObjectMode="replace"
             // nodeCanvasObject={(node, ctx, globalScale) => {
             // }}
