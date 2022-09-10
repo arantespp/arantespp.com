@@ -11,7 +11,7 @@ import { useApiKey } from '../../hooks/useApiKey';
 import { useDateInput } from '../../hooks/useDateInput';
 import { useDebounce } from 'use-debounce';
 import { useIdleTimer } from 'react-idle-timer';
-import { useQuery, useQueryClient } from 'react-query';
+import { useQuery } from 'react-query';
 import { useQueryParamsDateOrToday } from '../../hooks/useQueryParamsDateOrToday';
 import Editor from '../../components/Editor';
 import ErrorMessage from '../../components/ErrorMessage';
@@ -35,7 +35,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const AUTO_SAVE_DELAY = 200;
+const AUTO_SAVE_DELAY = 1000;
 
 const useAutoSave = ({ content, date }: { content: string; date: string }) => {
   const { apiKey } = useApiKey();
@@ -124,8 +124,6 @@ const useContent = ({
   date: string;
   questions: string[];
 }) => {
-  const queryClient = useQueryClient();
-
   const { apiKey } = useApiKey();
 
   const queryKey = [`/api/journal?date=${date}`, apiKey];
@@ -137,7 +135,9 @@ const useContent = ({
         headers: {
           'x-api-key': queryKey[1],
         },
-      }).then((r): Promise<{ journal: Journal }> => r.json()),
+      }).then((r): Promise<{ journal: Journal }> => {
+        return r.json();
+      }),
     { enabled: !!apiKey },
   );
 
@@ -177,34 +177,22 @@ const useContent = ({
     setWasInitialContentSet(true);
   }, [contentFromApi, date, isLoadingContent, questions, wasInitialContentSet]);
 
-  /**
-   * Update the cache with the new content.
-   */
-  React.useEffect(() => {
-    if (!queryKey[1]) {
-      return;
-    }
-
-    const queryData = queryClient.getQueryData<{
-      journal: any;
-    }>(queryKey);
-
-    if (!queryData || !queryData.journal) {
-      return;
-    }
-
-    if (queryData.journal.content === content) {
-      return;
-    }
-
-    queryClient.setQueryData(queryKey, {
-      journal: { ...queryData.journal, content },
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [content]);
-
   return { content, setContent, date, isLoadingContent };
 };
+
+const JournalContent = ({
+  content,
+  date,
+}: {
+  content: string;
+  date: string;
+}) => {
+  const deferredContent = React.useDeferredValue(content);
+
+  return <JournalComponent markdown={deferredContent} title={date} />;
+};
+
+const MemoizedJournalContent = React.memo(JournalContent);
 
 const EditorWithContent = ({
   date,
@@ -226,7 +214,12 @@ const EditorWithContent = ({
 
   const isValid = !!content;
 
-  const deferredContent = React.useDeferredValue(content);
+  const handleEditorChange = React.useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setContent(e.target.value);
+    },
+    [setContent],
+  );
 
   return (
     <>
@@ -235,9 +228,7 @@ const EditorWithContent = ({
           ref={textAreaRef}
           isValid={isValid}
           value={content}
-          onChange={(e) => {
-            setContent(e.target.value);
-          }}
+          onChange={handleEditorChange}
           autoFocus
         />
       </Box>
@@ -258,7 +249,7 @@ const EditorWithContent = ({
       <JournalSearchName {...{ date, setContent, textAreaRef }} />
       <ErrorMessage error={error} />
       <Box sx={{ marginTop: 5 }}>
-        <JournalComponent markdown={deferredContent} title={date} />
+        <MemoizedJournalContent {...{ content, date }} />
       </Box>
     </>
   );

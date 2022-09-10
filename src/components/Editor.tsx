@@ -108,7 +108,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
       if (textAreaRef?.current && cursor) {
         textAreaRef.current.setSelectionRange(cursor, cursor);
       }
-    }, [cursor, value, textAreaRef]);
+    }, [cursor, textAreaRef]);
 
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       setCursor(e.target.selectionStart);
@@ -172,4 +172,4 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
   },
 );
 
-export default Editor;
+export default React.memo(Editor);
