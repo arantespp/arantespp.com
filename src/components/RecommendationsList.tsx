@@ -14,7 +14,7 @@ const RecommendationsList = ({
         <Box
           key={recommendation.href}
           sx={{
-            marginY: 4,
+            marginBottom: 5,
           }}
         >
           <RecommendationCard recommendation={recommendation} />

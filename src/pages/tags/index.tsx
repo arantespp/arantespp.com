@@ -1,4 +1,4 @@
-import { Box, Flex, Themed } from 'theme-ui';
+import { Box, Flex, Text, Themed } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 import { getAllTags } from '../../../lib/files';
@@ -15,8 +15,10 @@ const TagsIndex = ({
   <>
     <NextSeo title="Tags" />
     <Themed.h1>Tags</Themed.h1>
-    <Themed.p>Total of {tags.length} tags.</Themed.p>
-    <Flex sx={{ flexWrap: 'wrap', justifyContent: 'center' }}>
+    <Text as="p" sx={{ fontStyle: 'italic', marginBottom: 4 }}>
+      Total of {tags.length} tags.
+    </Text>
+    <Flex sx={{ flexWrap: 'wrap', justifyContent: 'flex-start' }}>
       {tags.map((tag) => (
         <Box sx={{ marginRight: 4, marginBottom: 3 }} key={tag}>
           <Tag tag={tag} />

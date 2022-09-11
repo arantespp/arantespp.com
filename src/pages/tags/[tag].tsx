@@ -1,5 +1,5 @@
 import { CarouselJsonLd } from 'next-seo';
-import { Flex, Text, Themed } from 'theme-ui';
+import { Divider, Flex, Text, Themed } from 'theme-ui';
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 import { getAllTags, getRecommendations } from '../../../lib/files';
@@ -20,7 +20,7 @@ export const getStaticProps = async ({
 }: {
   params: { tag: string };
 }) => {
-  const recommendations = await getRecommendations({ tag });
+  const recommendations = await getRecommendations({ tag, limit: Infinity });
   return {
     props: { tag, recommendations },
   };
@@ -44,15 +44,15 @@ const TagsIndex = ({
         }))}
       />
       <Themed.h1>{title}</Themed.h1>
-      <Text as="p" sx={{ marginY: 4 }}>
-        There are {recommendations.length} posts related to the tag{' '}
-        <Tag tag={tag} />. <Link href="/tags">Click here</Link> if you want to
-        see all tags instead.
+      <Text as="p" sx={{ fontStyle: 'italic', marginBottom: 2 }}>
+        There are {recommendations.length} posts related to <Tag tag={tag} />{' '}
+        tag.
+      </Text>
+      <Text as="p" sx={{ marginBottom: 5, display: 'flex', gap: 3 }}>
+        <Link href="/tags">All Tags</Link>
+        <NetworkLink nodeId={tag} />
       </Text>
       <RecommendationsList recommendations={recommendations} />
-      <Flex sx={{ flexDirection: 'column', marginTop: 4 }}>
-        <NetworkLink nodeId={tag} />
-      </Flex>
     </>
   );
 };

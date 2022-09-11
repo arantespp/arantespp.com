@@ -16,12 +16,7 @@ const PostResume = ({
   const newGroup = group === 'zettel' ? 'zettelkasten' : group;
 
   return (
-    <Box
-      sx={{
-        color: 'text',
-        paddingBottom: 2,
-      }}
-    >
+    <Box sx={{ color: 'text' }}>
       <Link
         href={href}
         sx={{

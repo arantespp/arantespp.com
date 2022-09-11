@@ -438,7 +438,8 @@ const getOnlyRecommendationProperties = (post: Post) => {
 export const getRecommendations = async ({
   group,
   tag,
-}: { group?: Group; tag?: string } = {}) => {
+  limit = RECOMMENDATIONS_LIMIT,
+}: { group?: Group; tag?: string; limit?: number } = {}) => {
   const fullRecommendations = await (async () => {
     if (tag) {
       const allPosts = await getPosts();
@@ -457,7 +458,7 @@ export const getRecommendations = async ({
 
   const recommendations = fullRecommendations
     .map(getOnlyRecommendationProperties)
-    .slice(0, RECOMMENDATIONS_LIMIT);
+    .slice(0, limit);
 
   return recommendations;
 };
@@ -525,9 +526,9 @@ export const getPostAndRecommendations = async (params: GetPostParams) => {
   });
 
   const groupScore: { [key in Group]: number } = {
-    blog: 1,
-    books: 2,
-    zettel: 0,
+    blog: 2,
+    books: 1,
+    zettel: 1,
   };
 
   const recommendations = Object.entries(scoreMap)
