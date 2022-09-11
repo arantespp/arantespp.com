@@ -29,7 +29,7 @@ const Recommendations = ({
         as="span"
         sx={{
           color: 'text',
-          fontSize: [4, 5],
+          fontSize: [4, 4],
           fontWeight: 'bold',
           textAlign: 'center',
         }}
@@ -39,8 +39,9 @@ const Recommendations = ({
       <Link
         href="/all"
         sx={{
-          fontSize: 1,
+          fontSize: [0, 1],
           textAlign: 'center',
+          marginBottom: 3,
         }}
       >
         Do you want to see all posts instead?

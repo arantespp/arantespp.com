@@ -46,7 +46,7 @@ const PostResume = ({
           {formattedDate}
         </Text>
       )}
-      {readingTime > 1 && (
+      {readingTime > 1 && isPostPage && (
         <Box>
           <Text sx={{ color: 'lightGray', fontSize: [0, 1] }}>
             Reading time: {readingTime} minutes

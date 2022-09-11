@@ -337,7 +337,7 @@ export const theme: Theme = {
       padding: 0,
       paddingLeft: 3,
       paddingRight: 0,
-      marginY: 3,
+      marginY: [2],
       backgroundColor: 'transparent',
     },
     quote: {

@@ -54,7 +54,6 @@ const profileJsonLd: SocialProfileJsonLdProps = {
   url: URL,
   sameAs: [
     socialMedias.Twitter.href,
-    socialMedias.Facebook.href,
     socialMedias.Instagram.href,
     socialMedias.LinkedIn.href,
   ],
