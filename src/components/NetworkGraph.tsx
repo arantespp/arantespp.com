@@ -181,7 +181,7 @@ const NetworkGraph = ({
             linkWidth={2}
             linkDirectionalParticles={4}
             linkDirectionalParticleWidth={3}
-            dagMode="td"
+            dagMode="bu"
           />
         )}
       </React.Suspense>
