@@ -1,2 +1,8 @@
-- What's the 1 thing I need to do? Why?
-- What's 1 insight I had?
+- What's 1 thing I need to do? Why?
+- What's 1 thing I need to stop doing? Why?
+- What's 1 thing I can improve? Why?
+- What's 1 thing I can do to make someone else's life better? Why?
+- What's 1 thing I'm grateful for? Why?
+- What's 1 thing I'm avoiding? Why?
+- What's 1 thing I'm excited about? Why?
+- What's 1 virtue I want to exhibit? Why?

@@ -9,6 +9,7 @@ import {
 } from '@aws-sdk/lib-dynamodb';
 import { getDateWithTimezone } from './getDateWithTimezone';
 import { getToday } from './getToday';
+import { readMarkdownFile } from './files';
 
 const client = new DynamoDBClient({
   credentials: {
@@ -200,6 +201,7 @@ export const getJournalsSummary = async ({ date }: { date: string | Date }) => {
     ['Last Two Years', dateFns.subYears(parsedDate, 2)],
     ['Last Year', dateFns.subYears(parsedDate, 1)],
     ['Last Month', dateFns.subMonths(parsedDate, 1)],
+    ['Last Week', dateFns.subWeeks(parsedDate, 1)],
     ['Today', parsedDate],
   ] as const;
 
@@ -318,4 +320,22 @@ export const getMissingDays = async ({
   }, [] as { label: string; dates: { date: string; day: string }[] }[]);
 
   return { missingDates, groupedMissingDays, maxStreak };
+};
+
+export const getQuestions = async () => {
+  const insightQuestion = "What's 1 insight I had?";
+
+  const { content = '' } =
+    (await readMarkdownFile('journal/questions.md')) || {};
+
+  const allQuestions = content
+    .split('\n')
+    .map((line) => line.trim().replace(/^- /, ''))
+    .filter((line) => line.length > 0);
+
+  const dayOfYear = dateFns.getDayOfYear(new Date());
+
+  const questionIndex = dayOfYear % allQuestions.length;
+
+  return [insightQuestion, allQuestions[questionIndex]];
 };

@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { Box, Flex, Text, Themed } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
-import { Journal } from '../../../lib/journal';
+import { Journal, getQuestions } from '../../../lib/journal';
 import { JournalDateNavigator } from '../../components/JournalDateNavigator';
 import { JournalSearchName } from '../../components/JournalSearchName';
 import { Loading } from '../../components/Loading';
 import { NextSeo } from 'next-seo';
-import { readMarkdownFile } from '../../../lib/files';
 import { useApiKey } from '../../hooks/useApiKey';
 import { useDateInput } from '../../hooks/useDateInput';
 import { useDebounce } from 'use-debounce';
@@ -20,13 +19,7 @@ import Link from '../../components/Link';
 import Router, { useRouter } from 'next/router';
 
 export const getStaticProps = async () => {
-  const { content = '' } =
-    (await readMarkdownFile('journal/questions.md')) || {};
-
-  const questions = content
-    .split('\n')
-    .map((line) => line.trim().replace(/^- /, ''))
-    .filter((line) => line.length > 0);
+  const questions = await getQuestions();
 
   return {
     props: {
