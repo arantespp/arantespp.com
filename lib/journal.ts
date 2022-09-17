@@ -202,6 +202,7 @@ export const getJournalsSummary = async ({ date }: { date: string | Date }) => {
     ['Last Year', dateFns.subYears(parsedDate, 1)],
     ['Last Month', dateFns.subMonths(parsedDate, 1)],
     ['Last Week', dateFns.subWeeks(parsedDate, 1)],
+    ['Yesterday', dateFns.subDays(parsedDate, 1)],
     ['Today', parsedDate],
   ] as const;
 

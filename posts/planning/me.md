@@ -6,6 +6,12 @@
 
 ## What I want to be?
 
+### To be a time wealth and minimalist person
+
+Supports:
+
+- Me
+
 ### To be a successful entrepreneur
 
 Supports:
@@ -101,6 +107,7 @@ Supports:
 
 Supports:
 
+- To be a time wealth and minimalist person
 - Connect with the universe
 - Build a successful company
 
@@ -194,6 +201,7 @@ Supports:
 
 - To be a person who is light to others
 - To be a great person to my family
+- To be a time wealth and minimalist person
 
 ### Eat healthy
 
