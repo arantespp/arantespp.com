@@ -98,23 +98,6 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
       }
     }, [textAreaRef, value, isFullScreen]);
 
-    /**
-     * React controlled input cursor jumps
-     * https://stackoverflow.com/a/68928267/8786986
-     */
-    const [cursor, setCursor] = React.useState<number>();
-
-    React.useEffect(() => {
-      if (textAreaRef?.current && cursor) {
-        textAreaRef.current.setSelectionRange(cursor, cursor);
-      }
-    }, [cursor, textAreaRef]);
-
-    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      setCursor(e.target.selectionStart);
-      onChange?.(e);
-    };
-
     return (
       <TextAreaContainer isFullScreen={isFullScreen}>
         <Box
@@ -135,7 +118,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
             }}
             {...props}
             value={value}
-            onChange={handleChange}
+            onChange={onChange}
             sx={{
               '&:disabled': {
                 color: 'muted',

@@ -89,6 +89,18 @@ export const JournalSearchName = ({
     | undefined
   >(undefined);
 
+  /**
+   * React controlled input cursor jumps
+   * https://stackoverflow.com/a/68928267/8786986
+   */
+  const [cursor, setCursor] = React.useState<number | undefined>();
+
+  React.useEffect(() => {
+    if (textAreaRef.current && cursor) {
+      textAreaRef.current.setSelectionRange(cursor, cursor);
+    }
+  }, [cursor, textAreaRef]);
+
   const replaceName = React.useCallback(
     (contact: Contact) => {
       if (!textAreaRef.current) {
@@ -107,9 +119,16 @@ export const JournalSearchName = ({
        */
       updateContactActivity({ date, content, contact });
 
+      const cursorPosition = textAreaRef.current.selectionStart;
+
       setContent(content);
 
       setQuery('');
+
+      /**
+       * Set the cursor position to the end of the replaced name plus one space.
+       */
+      setCursor(cursorPosition + queryReplacer.length - query.length + 1);
 
       textAreaRef.current.focus();
     },
