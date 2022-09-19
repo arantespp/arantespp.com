@@ -126,9 +126,9 @@ export const JournalSearchName = ({
       setQuery('');
 
       /**
-       * Set the cursor position to the end of the replaced name plus one space.
+       * Set the cursor position to the end of the replaced name.
        */
-      setCursor(cursorPosition + queryReplacer.length - query.length + 1);
+      setCursor(cursorPosition + queryReplacer.length - query.length);
 
       textAreaRef.current.focus();
     },
