@@ -10,7 +10,7 @@ import { useApiKey } from '../../hooks/useApiKey';
 import { useDateInput } from '../../hooks/useDateInput';
 import { useDebounce } from 'use-debounce';
 import { useIdleTimer } from 'react-idle-timer';
-import { useQuery } from 'react-query';
+import { useQuery, useQueryClient } from 'react-query';
 import { useQueryParamsDateOrToday } from '../../hooks/useQueryParamsDateOrToday';
 import Editor from '../../components/Editor';
 import ErrorMessage from '../../components/ErrorMessage';
@@ -119,6 +119,8 @@ const useContent = ({
 }) => {
   const { apiKey } = useApiKey();
 
+  const queryClient = useQueryClient();
+
   const queryKey = [`/api/journal?date=${date}`, apiKey];
 
   const { data, isFetched } = useQuery(
@@ -170,6 +172,32 @@ const useContent = ({
     setWasInitialContentSet(true);
   }, [contentFromApi, date, isLoadingContent, questions, wasInitialContentSet]);
 
+  /**
+   * Update the cache with the new content.
+   */
+  React.useEffect(() => {
+    if (!queryKey[1]) {
+      return;
+    }
+
+    const queryData = queryClient.getQueryData<{
+      journal: any;
+    }>(queryKey);
+
+    if (!queryData || !queryData.journal) {
+      return;
+    }
+
+    if (queryData.journal.content === content) {
+      return;
+    }
+
+    queryClient.setQueryData(queryKey, {
+      journal: { ...queryData.journal, content },
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [content]);
+
   return { content, setContent, date, isLoadingContent };
 };
 
@@ -217,6 +245,9 @@ const EditorWithContent = ({
   return (
     <>
       <Box sx={{ marginY: 3 }}>
+        <Flex sx={{ gap: 3, marginY: 2 }}>
+          <Link href="/journal">Summary</Link>
+        </Flex>
         <Editor
           ref={textAreaRef}
           isValid={isValid}
@@ -225,10 +256,7 @@ const EditorWithContent = ({
           autoFocus
         />
       </Box>
-      <Flex sx={{ justifyContent: 'space-between' }}>
-        <Flex sx={{ gap: 3 }}>
-          <Link href="/journal">Summary</Link>
-        </Flex>
+      <Flex sx={{ justifyContent: 'flex-end' }}>
         <Text
           sx={
             debouncedIsSaving || isLoadingContent || !isValid
@@ -243,6 +271,14 @@ const EditorWithContent = ({
       <ErrorMessage error={error} />
       <Box sx={{ marginTop: 5 }}>
         <MemoizedJournalContent {...{ content, date }} />
+      </Box>
+      <Box>
+        <Themed.h3>Questions</Themed.h3>
+        <Themed.ul>
+          {questions.map((question) => (
+            <Themed.li key={question}>{question}</Themed.li>
+          ))}
+        </Themed.ul>
       </Box>
     </>
   );
