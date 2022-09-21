@@ -323,9 +323,7 @@ export const getMissingDays = async ({
   return { missingDates, groupedMissingDays, maxStreak };
 };
 
-export const getQuestions = async () => {
-  const insightQuestion = "What's 1 insight I had?";
-
+export const getAllQuestions = async () => {
   const { content = '' } =
     (await readMarkdownFile('journal/questions.md')) || {};
 
@@ -338,5 +336,5 @@ export const getQuestions = async () => {
 
   const questionIndex = dayOfYear % allQuestions.length;
 
-  return [insightQuestion, allQuestions[questionIndex]];
+  return allQuestions;
 };

@@ -1,7 +1,8 @@
 import * as React from 'react';
+import * as dateFns from 'date-fns';
 import { Box, Flex, Text, Themed } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
-import { Journal, getQuestions } from '../../../lib/journal';
+import { Journal, getAllQuestions } from '../../../lib/journal';
 import { JournalDateNavigator } from '../../components/JournalDateNavigator';
 import { JournalSearchName } from '../../components/JournalSearchName';
 import { Loading } from '../../components/Loading';
@@ -19,11 +20,11 @@ import Link from '../../components/Link';
 import Router, { useRouter } from 'next/router';
 
 export const getStaticProps = async () => {
-  const questions = await getQuestions();
+  const allQuestions = await getAllQuestions();
 
   return {
     props: {
-      questions,
+      allQuestions,
     },
   };
 };
@@ -217,11 +218,21 @@ const MemoizedJournalContent = React.memo(JournalContent);
 
 const EditorWithContent = ({
   date,
-  questions,
+  allQuestions,
 }: {
   date: string;
-  questions: string[];
+  allQuestions: string[];
 }) => {
+  const questions = React.useMemo(() => {
+    const insightQuestion = "What's 1 insight I had?";
+
+    const dayOfYear = dateFns.getDayOfYear(dateFns.parseISO(date));
+
+    const questionIndex = dayOfYear % allQuestions.length;
+
+    return [insightQuestion, allQuestions[questionIndex]];
+  }, [allQuestions, date]);
+
   const { content, setContent, isLoadingContent } = useContent({
     date,
     questions,
@@ -300,7 +311,7 @@ const useIdleRedirect = ({ date }: { date: string }) => {
 };
 
 const JournalEditor = ({
-  questions,
+  allQuestions,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { date } = useQueryParamsDateOrToday();
 
@@ -324,7 +335,7 @@ const JournalEditor = ({
       <Themed.h1>{title}</Themed.h1>
       <JournalDateNavigator date={dateInput} setDate={setDateInput} />
       <React.Suspense fallback={<Loading />}>
-        <MemoizedEditorWithContent date={date} questions={questions} />
+        <MemoizedEditorWithContent date={date} allQuestions={allQuestions} />
       </React.Suspense>
     </>
   );
