@@ -94,6 +94,7 @@ export const theme: Theme = {
   shadows: ['none', '10px 10px 10px -10px #aaa'],
   styles: {
     root: {
+      overflowX: 'hidden',
       fontSize: '16px',
       fontFamily: 'body',
       fontWeight: 'body',

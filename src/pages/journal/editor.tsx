@@ -258,6 +258,7 @@ const EditorWithContent = ({
       <Box sx={{ marginY: 3 }}>
         <Flex sx={{ gap: 3, marginY: 2 }}>
           <Link href="/journal">Summary</Link>
+          <Link href="/planning/me">Me</Link>
         </Flex>
         <Editor
           ref={textAreaRef}

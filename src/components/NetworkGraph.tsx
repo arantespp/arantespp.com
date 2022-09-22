@@ -6,6 +6,7 @@ import { Loading } from './Loading';
 import { Recommendation } from '../../lib/files';
 import { theme } from '../theme';
 import { useResponsiveValue } from '@theme-ui/match-media';
+import { useScrollIntoView } from '../hooks/useScrollIntoView';
 import SpriteText from 'three-spritetext';
 import dynamic from 'next/dynamic';
 
@@ -74,13 +75,16 @@ const NetworkGraph = ({
   graphData,
   setSelectedNodeId,
   selectedNodeId,
-  allPosts,
 }: {
   graphData: { nodes: any; links: any };
   selectedNodeId?: string;
   setSelectedNodeId: (id: string) => void;
   allPosts: Recommendation[];
 }) => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  useScrollIntoView(containerRef);
+
   const { theme } = useThemeUI();
 
   const darkBackgroundColor = theme?.rawColors?.modes?.dark
@@ -96,12 +100,12 @@ const NetworkGraph = ({
     width: 0,
   });
 
-  const widthPercentage = useResponsiveValue([0.96, 0.95]);
+  const widthPercentage = useResponsiveValue([1, 1]);
 
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
       setDimensions({
-        height: 0.96 * window.innerHeight,
+        height: 1 * window.innerHeight,
         width: widthPercentage * window.innerWidth,
       });
     }
@@ -143,6 +147,7 @@ const NetworkGraph = ({
 
   return (
     <Flex
+      ref={containerRef}
       sx={{
         height,
         width,
@@ -188,8 +193,8 @@ const NetworkGraph = ({
       <Button
         sx={{
           ...buttonCommonProps,
-          right: 2,
-          top: 2,
+          right: 32,
+          top: 32,
         }}
         onClick={() => {
           setShow2D(!show2D);
@@ -200,8 +205,8 @@ const NetworkGraph = ({
       <Button
         sx={{
           ...buttonCommonProps,
-          bottom: 2,
-          right: 2,
+          bottom: 32,
+          right: 32,
         }}
         onClick={() => {
           if (forceGraph2DRef.current) {

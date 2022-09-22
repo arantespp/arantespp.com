@@ -1,26 +1,32 @@
+import * as React from 'react';
 import { Flex } from 'theme-ui';
 
-const FullWidth = ({ children }) => {
-  /**
-   * 96 to avoid overflow X.
-   */
-  const editorWidthInVw = 98;
+const editorWidthInVw = 100;
 
-  return (
-    <Flex
-      sx={{
-        width: [`${editorWidthInVw}vw`],
-        position: 'relative',
-        left: ['50%'],
-        right: ['50%'],
-        marginX: [`-${editorWidthInVw / 2}vw`],
-        justifyContent: 'center',
-        overflowX: 'hidden',
-      }}
-    >
-      {children}
-    </Flex>
-  );
+type FullWidthProps = {
+  children: React.ReactNode;
 };
+
+const FullWidth = React.forwardRef<HTMLElement, FullWidthProps>(
+  (props, ref) => {
+    return (
+      <Flex
+        ref={ref}
+        sx={{
+          width: [`${editorWidthInVw}vw`],
+          position: 'relative',
+          left: ['50%'],
+          right: ['50%'],
+          marginX: [`-${editorWidthInVw / 2}vw`],
+          justifyContent: 'center',
+        }}
+      >
+        {props.children}
+      </Flex>
+    );
+  },
+);
+
+FullWidth.displayName = 'FullWidth';
 
 export default FullWidth;

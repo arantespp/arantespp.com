@@ -1,4 +1,6 @@
+import * as React from 'react';
 import { GraphData } from 'react-force-graph-3d';
+import { useScrollIntoView } from '../hooks/useScrollIntoView';
 import FullWidth from './FullWidth';
 import SpriteText from 'three-spritetext';
 import dynamic from 'next/dynamic';
@@ -12,8 +14,12 @@ export type PlanningNetworkGraphProps = {
 export const PlanningNetworkGraph = ({
   graphData,
 }: PlanningNetworkGraphProps) => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  useScrollIntoView(containerRef);
+
   return (
-    <FullWidth>
+    <FullWidth ref={containerRef}>
       <ForceGraph3D
         graphData={graphData}
         dagMode="zin"
