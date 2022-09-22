@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-09-01'
-formattedUpdatedAt: 'September 01, 2022'
+updatedAt: '2022-09-22'
+formattedUpdatedAt: 'September 22, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 30
+readingTime: 31
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -479,3 +479,13 @@ In maneuver warfare, a mission is a key tool for creating alignment, which is co
 When the intent is clear, the mission executors can select the right course of action. This is true when dealing with an emerging obstacle or opportunity. In many ways, the intent is simply a robust and compact way of providing direction.
 
 The mission statement for a project can be a powerful way of maintaining coordination. The most important part of this mission is the "why."
+
+#### D9. The Principle of Boundaries: Establish clear roles and boundaries.
+
+The military doesn't approach warfare the way five-years-old approach soccer—everyone goes around the ball. The problem is that if everyone is near the ball, there is nobody else to receive it once someone kicks it.
+
+With decentralized control, the discipline of roles and boundaries becomes important. Both excessive overlap and gaps are dangerous.
+
+Clear role definition is equally important for product development teams. Poorly defined roles and boundaries increase the need for communication and the time spent in meetings. If your team doesn't have clear roles, your meetings can have 20 people vote on the color of a button. The information must be sent to 20 people; the only time the decision can be made is when all 20 people are present because you have excessive overlap. Well-defined roles make teams much more efficient.
+
+You also need to be alert for white spaces between roles and gaps that nobody feels responsible for.
