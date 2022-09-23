@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { GraphData } from 'react-force-graph-3d';
-import { useScrollIntoView } from '../hooks/useScrollIntoView';
 import FullWidth from './FullWidth';
 import SpriteText from 'three-spritetext';
 import dynamic from 'next/dynamic';
@@ -16,7 +15,7 @@ export const PlanningNetworkGraph = ({
 }: PlanningNetworkGraphProps) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  useScrollIntoView(containerRef);
+  const wasScrolledIntoView = React.useRef(false);
 
   return (
     <FullWidth ref={containerRef}>
@@ -37,6 +36,12 @@ export const PlanningNetworkGraph = ({
         linkDirectionalArrowRelPos={1}
         linkDirectionalParticles={3}
         linkDirectionalParticleWidth={1}
+        onEngineTick={() => {
+          if (!wasScrolledIntoView.current && containerRef.current) {
+            wasScrolledIntoView.current = true;
+            containerRef.current.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
       />
     </FullWidth>
   );

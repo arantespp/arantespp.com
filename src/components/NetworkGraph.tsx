@@ -5,8 +5,8 @@ import { ForceGraphMethods as ForceGraph3DMethods } from 'react-force-graph-3d';
 import { Loading } from './Loading';
 import { Recommendation } from '../../lib/files';
 import { theme } from '../theme';
-import { useResponsiveValue } from '@theme-ui/match-media';
-import { useScrollIntoView } from '../hooks/useScrollIntoView';
+// import { useResponsiveValue } from '@theme-ui/match-media';
+// import { useScrollIntoView } from '../hooks/useScrollIntoView';
 import SpriteText from 'three-spritetext';
 import dynamic from 'next/dynamic';
 
@@ -83,7 +83,7 @@ const NetworkGraph = ({
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  useScrollIntoView(containerRef);
+  const wasScrolledIntoView = React.useRef(false);
 
   const { theme } = useThemeUI();
 
@@ -95,29 +95,27 @@ const NetworkGraph = ({
 
   const [show2D, setShow2D] = React.useState(false);
 
-  const [{ height, width }, setDimensions] = React.useState({
-    height: 0,
-    width: 0,
-  });
+  // const [{ height, width }, setDimensions] = React.useState({
+  //   height: 0,
+  //   width: 0,
+  // });
 
-  const widthPercentage = useResponsiveValue([1, 1]);
+  // const widthPercentage = useResponsiveValue([1, 1]);
 
-  React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setDimensions({
-        height: 1 * window.innerHeight,
-        width: widthPercentage * window.innerWidth,
-      });
-    }
-  }, [widthPercentage]);
+  // React.useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     setDimensions({
+  //       height: 1 * window.innerHeight,
+  //       width: widthPercentage * window.innerWidth,
+  //     });
+  //   }
+  // }, [widthPercentage]);
 
-  if (height === 0 || width === 0) {
-    return null;
-  }
+  // if (height === 0 || width === 0) {
+  //   return null;
+  // }
 
   const graphCommonProps = {
-    height,
-    width,
     graphData,
     nodeOpacity: 0.9,
     nodeResolution: 32,
@@ -135,6 +133,12 @@ const NetworkGraph = ({
 
       return nodeColors.tag;
     },
+    onEngineTick: () => {
+      if (!wasScrolledIntoView.current && containerRef.current) {
+        wasScrolledIntoView.current = true;
+        containerRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
   };
 
   const buttonCommonProps = {
@@ -149,8 +153,8 @@ const NetworkGraph = ({
     <Flex
       ref={containerRef}
       sx={{
-        height,
-        width,
+        height: '100vh',
+        width: '100vw',
         position: 'relative',
         flexDirection: 'column',
       }}
