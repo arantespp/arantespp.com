@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-09-22'
-formattedUpdatedAt: 'September 22, 2022'
+updatedAt: '2022-09-23'
+formattedUpdatedAt: 'September 23, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 31
+readingTime: 32
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -489,3 +489,11 @@ With decentralized control, the discipline of roles and boundaries becomes impor
 Clear role definition is equally important for product development teams. Poorly defined roles and boundaries increase the need for communication and the time spent in meetings. If your team doesn't have clear roles, your meetings can have 20 people vote on the color of a button. The information must be sent to 20 people; the only time the decision can be made is when all 20 people are present because you have excessive overlap. Well-defined roles make teams much more efficient.
 
 You also need to be alert for white spaces between roles and gaps that nobody feels responsible for.
+
+#### D10. The Main Effort Principle: Designate a main effort and subordinate other activities.
+
+In executing a mission, the Marines designate one point of action as the main effort, where they focus on the maximum possible effort. They reduce forces in other areas to create maximum strength at the focal point.
+
+It's most desirable if the main effort is aimed at a point of weakness since it's desirable to concentrate strength against weakness. However, sometimes the main effort can be directed to a strong point—the center of gravity, the heart of their ability to fight. The choice of main effort depends on assessing both the cost and the benefit of attacking a particular point.
+
+In the same way, it's useful for product developers to designate the main effort for their projects. Only a small set of product attributes truly drive success. While the customer may be able to identify 200 features and explain what they want, only four to six of these features are capable of shifting preference from one brand to another. The entire team must focus on these preference-shifting features and let the other 195 features subordinate to achieving performance on these critical features.
