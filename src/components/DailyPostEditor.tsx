@@ -1,18 +1,31 @@
+import * as React from 'react';
 import * as yup from 'yup';
-import { Button, Flex, Input } from 'theme-ui';
-import { Control, Controller, useFieldArray, useForm } from 'react-hook-form';
+import { Button, Flex, Input, Text } from 'theme-ui';
+import {
+  Controller,
+  FormProvider,
+  UseFieldArrayInsert,
+  UseFieldArrayRemove,
+  useController,
+  useFieldArray,
+  useForm,
+  useFormContext,
+} from 'react-hook-form';
+import { ErrorMessage } from '@hookform/error-message';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Editor from './Editor';
 import Heading from './Heading';
 
+const TWEET_LENGTH = 280;
+
 const validationSchema = yup.object({
-  linkedInText: yup.string().required('Required'),
   blogPostUrl: yup.string().required('Required').url(),
+  linkedInText: yup.string().required('Required'),
   tweets: yup
     .array()
     .of(
       yup.object({
-        text: yup.string().required('Required'),
+        text: yup.string().required('Required').max(TWEET_LENGTH),
       }),
     )
     .required('Required'),
@@ -20,36 +33,108 @@ const validationSchema = yup.object({
 
 export type DailyPostFormValues = yup.InferType<typeof validationSchema>;
 
-const LinkedInEditor = ({
-  control,
-}: {
-  control: Control<DailyPostFormValues>;
-}) => {
+const LinkedInEditor = () => {
   return (
     <Flex sx={{ flexDirection: 'column', flex: 1 }}>
       <Heading as="h2">LinkedIn</Heading>
       <Controller
-        control={control}
         name="linkedInText"
-        render={({ field, fieldState }) => (
-          <Editor
-            {...field}
-            isInvalid={!!fieldState.error}
-            sx={{ height: '100%' }}
-          />
+        render={({ field, fieldState, formState }) => (
+          <>
+            <Editor {...field} isInvalid={!!fieldState.error} />
+            <ErrorMessage errors={formState.errors} name="linkedInText" />
+          </>
         )}
       />
     </Flex>
   );
 };
 
-const TwitterEditor = ({
-  control,
+const BREAK_THREAD = '\n\n\n';
+
+const SingleTweet = ({
+  index,
+  insert,
+  remove,
 }: {
-  control: Control<DailyPostFormValues>;
+  index: number;
+  insert: UseFieldArrayInsert<DailyPostFormValues, 'tweets'>;
+  remove: UseFieldArrayRemove;
 }) => {
-  const { fields, insert, remove } = useFieldArray({
-    control,
+  const { watch, setValue } = useFormContext<DailyPostFormValues>();
+
+  const singleTweetName = `tweets.${index}.text` as const;
+
+  const {
+    field,
+    fieldState: { error, isDirty },
+    formState,
+  } = useController({
+    name: singleTweetName,
+  });
+
+  const linkedInText = watch('linkedInText');
+
+  const numberOfTweets = watch('tweets').length;
+
+  const tweetValue = watch(singleTweetName);
+
+  React.useEffect(() => {
+    if (isDirty) {
+      return;
+    }
+
+    setValue(singleTweetName, linkedInText);
+  }, [isDirty, linkedInText, setValue, singleTweetName]);
+
+  React.useEffect(() => {
+    if (tweetValue?.includes(BREAK_THREAD)) {
+      const [first, second] = tweetValue.split(BREAK_THREAD);
+      setValue(singleTweetName, first);
+      insert(index + 1, { text: second });
+    }
+  }, [index, insert, setValue, singleTweetName, tweetValue]);
+
+  return (
+    <Flex sx={{ flexDirection: 'column', gap: 1, marginBottom: 4 }}>
+      <Text sx={{ fontWeight: 'bold' }}>Tweet #{index + 1}</Text>
+      <Editor {...field} isInvalid={!!error} />
+      <Text>
+        {field.value.length}/{TWEET_LENGTH}
+      </Text>
+      <ErrorMessage errors={formState.errors} name={singleTweetName} />
+      <Flex
+        sx={{
+          justifyContent: 'flex-start',
+          gap: 3,
+          alignItems: 'center',
+        }}
+      >
+        <Button
+          onClick={() => {
+            insert(index + 1, { text: '' });
+          }}
+        >
+          Append
+        </Button>
+        <Button
+          onDoubleClick={() => {
+            remove(index);
+          }}
+          disabled={numberOfTweets === 1}
+        >
+          Remove
+        </Button>
+      </Flex>
+    </Flex>
+  );
+};
+
+const TwitterEditor = () => {
+  const { fields, insert, remove } = useFieldArray<
+    DailyPostFormValues,
+    'tweets'
+  >({
     name: 'tweets',
   });
 
@@ -57,36 +142,12 @@ const TwitterEditor = ({
     <Flex sx={{ flexDirection: 'column', flex: 1 }}>
       <Heading as="h2">Twitter</Heading>
       {fields.map((field, index) => (
-        <Flex
+        <SingleTweet
           key={field.id}
-          sx={{ flexDirection: 'column', gap: 1, marginBottom: 4 }}
-        >
-          <Controller
-            control={control}
-            name={`tweets.${index}.text`}
-            render={({ field, fieldState }) => (
-              <Editor {...field} isInvalid={!!fieldState.error} />
-            )}
-          />
-          <Flex sx={{ justifyContent: 'space-between', gap: 3 }}>
-            <Button
-              sx={{ flex: 1 }}
-              onClick={() => {
-                insert(index + 1, { text: '' });
-              }}
-            >
-              Append
-            </Button>
-            <Button
-              sx={{ flex: 1 }}
-              onClick={() => {
-                remove(index);
-              }}
-            >
-              Remove
-            </Button>
-          </Flex>
-        </Flex>
+          index={index}
+          insert={insert}
+          remove={remove}
+        />
       ))}
     </Flex>
   );
@@ -97,12 +158,7 @@ export const DailyPostEditor = ({
 }: {
   onSubmit: (data: DailyPostFormValues) => Promise<any>;
 }) => {
-  const {
-    control,
-    handleSubmit,
-    register,
-    formState: { isSubmitting, isSubmitSuccessful },
-  } = useForm<DailyPostFormValues>({
+  const formMethods = useForm<DailyPostFormValues>({
     defaultValues: {
       tweets: [{ text: '' }],
     },
@@ -110,32 +166,40 @@ export const DailyPostEditor = ({
     resolver: yupResolver(validationSchema),
   });
 
+  const {
+    handleSubmit,
+    register,
+    formState: { isSubmitting, isSubmitSuccessful, errors },
+  } = formMethods;
+
   return (
-    <Flex
-      as="form"
-      onSubmit={handleSubmit(onSubmit)}
-      sx={{ gap: 0, flexDirection: 'column' }}
-    >
-      <Input {...register('blogPostUrl')} placeholder="blog url" />
+    <FormProvider {...formMethods}>
       <Flex
-        sx={{
-          width: '100%',
-          flexDirection: ['column', 'row'],
-          justifyContent: 'space-between',
-          alignItems: 'stretch',
-          gap: 4,
-        }}
+        as="form"
+        onSubmit={handleSubmit(onSubmit)}
+        sx={{ gap: 0, flexDirection: 'column' }}
       >
-        <LinkedInEditor control={control} />
-        <TwitterEditor control={control} />
+        <Input {...register('blogPostUrl')} placeholder="blog url" />
+        <ErrorMessage errors={errors} name="blogPostUrl" />
+        <Flex
+          sx={{
+            width: '100%',
+            flexDirection: ['column'],
+            justifyContent: 'space-between',
+            alignItems: 'stretch',
+          }}
+        >
+          <LinkedInEditor />
+          <TwitterEditor />
+        </Flex>
+        <Button
+          type="submit"
+          disabled={isSubmitting || isSubmitSuccessful}
+          sx={{ marginTop: 5 }}
+        >
+          Post
+        </Button>
       </Flex>
-      <Button
-        type="submit"
-        disabled={isSubmitting || isSubmitSuccessful}
-        sx={{ marginTop: 5 }}
-      >
-        Post
-      </Button>
-    </Flex>
+    </FormProvider>
   );
 };

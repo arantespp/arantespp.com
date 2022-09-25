@@ -125,7 +125,6 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
                 borderColor: 'muted',
                 cursor: 'not-allowed',
               },
-              minHeight: '250px',
               overflowY: 'hidden',
               overflowClipMargin: 5,
               ...(isInvalid
