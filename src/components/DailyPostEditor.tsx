@@ -46,7 +46,7 @@ export const DailyPostEditor = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Input {...register('blogPostUrl')} />
+      <Input {...register('blogPostUrl')} placeholder="blog url" />
       <LinkedInEditor control={control} />
       <Button type="submit" disabled={isSubmitting}>
         Post
