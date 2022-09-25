@@ -7,8 +7,12 @@ const linkedinAuthorizationUrlHandler = async (
   res: NextApiResponse,
 ) => {
   if (req.method === 'GET') {
-    const authorizationUrl = await getAuthorizationUrl();
-    res.status(200).json({ authorizationUrl });
+    try {
+      const authorizationUrl = await getAuthorizationUrl();
+      return res.status(200).json({ authorizationUrl });
+    } catch (error) {
+      return res.status(400).json({ message: error.message });
+    }
   }
 
   res.status(405).json({ message: 'Method not allowed' });
