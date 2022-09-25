@@ -374,9 +374,12 @@ export const theme: Theme = {
   forms: {
     checkbox: {},
     input: {
+      fontFamily: 'inherit',
       backgroundColor: 'background',
+      fontSize: [0, 1],
     },
     textarea: {
+      fontFamily: 'inherit',
       backgroundColor: 'background',
       fontSize: [0, 1],
     },

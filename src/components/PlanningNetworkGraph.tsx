@@ -21,9 +21,11 @@ export const PlanningNetworkGraph = ({
     <FullWidth ref={containerRef}>
       <ForceGraph3D
         graphData={graphData}
-        dagMode="zin"
+        dagMode="lr"
+        dagLevelDistance={1.5 * graphData.nodes.length}
         nodeLabel={() => ''}
         nodeAutoColorBy="group"
+        nodeResolution={2 ** 5}
         nodeThreeObjectExtend={true}
         nodeThreeObject={(node) => {
           const sprite = new SpriteText(node.id);

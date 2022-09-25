@@ -34,10 +34,11 @@ export const getStaticProps = async ({
   const plan = plans.find((plan_) => plan_.slug === params.plan) as Plan;
 
   const nodesMeta = plan.groups.flatMap((group) => {
-    return group.nodes.flatMap((node) => ({
+    return group.nodes.flatMap((node, index) => ({
       id: node.name,
       group: group.name,
       supports: node.supports || [],
+
       ...node,
     }));
   });

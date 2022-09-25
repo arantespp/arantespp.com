@@ -19,6 +19,7 @@ export const navigation = {
   np: '/editor', // New post
   nl: '/newsletter',
   ns: '/search',
+  dp: '/daily-post',
 };
 
 export const editPost = [

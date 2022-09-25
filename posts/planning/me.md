@@ -169,6 +169,17 @@ Supports:
 Supports:
 
 - Master mental energy
+- Learn business
+- Learn product development
+
+### Write every day
+
+Supports:
+
+- Read every day
+- Master mental energy
+- Learn business
+- Learn product development
 
 ### Workout five times a week
 
@@ -217,3 +228,40 @@ Supports:
 - Master physical energy
 - Workout five times a week
 - Fight resistances
+
+### Stretch every day
+
+Supports:
+
+- Master physical energy
+- Master mental energy
+
+### Plan the day
+
+Supports:
+
+- Master time management
+
+## Systems
+
+### MSJ Stack
+
+Meditation, stretching, and journaling stack before starting the day. I can only use mobile and check social media after completing it.
+
+Supports:
+
+- Meditate 30 minutes every day
+- Stretch every day
+- Journal every day
+
+### Planing and Writing Stack
+
+When I sit to work, I plan my day using BuJo and write a topic on my blog, create a thread on Twitter and a post on LinkedIn. No more than one hour and no social media.
+
+Supports:
+
+- Write every day
+- Create social capital
+- Become more focused
+- Work hard
+- Plan the day

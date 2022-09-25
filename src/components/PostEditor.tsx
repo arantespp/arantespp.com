@@ -240,7 +240,7 @@ const PostEditor = ({
         control={control}
         name="content"
         render={({ field: { value, onChange } }) => (
-          <Editor {...{ value, onChange, isValid: !errors.content }} />
+          <Editor {...{ value, onChange, isInvalid: !!errors.content }} />
         )}
       />
       <ErrorMessage errors={errors} name="content" />

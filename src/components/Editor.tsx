@@ -53,10 +53,10 @@ const useCombinedRefs = (
   return targetRef;
 };
 
-type EditorProps = TextareaProps & { isValid?: boolean };
+type EditorProps = TextareaProps & { isInvalid?: boolean };
 
 const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
-  ({ isValid, ...props }, ref) => {
+  ({ isInvalid, ...props }, ref) => {
     const innerRef = React.useRef(null);
 
     const textAreaRef = useCombinedRefs(ref, innerRef);
@@ -128,9 +128,9 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
               minHeight: '250px',
               overflowY: 'hidden',
               overflowClipMargin: 5,
-              ...(isValid
-                ? {}
-                : { borderColor: 'primary', outlineColor: 'primary' }),
+              ...(isInvalid
+                ? { borderColor: 'primary', outlineColor: 'primary' }
+                : {}),
             }}
           />
           <Text

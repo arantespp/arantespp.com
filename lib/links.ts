@@ -25,6 +25,10 @@ const pageLinks = [
     source: '/tsa',
     destination: '/tweets-scheduler/all',
   },
+  {
+    source: '/dp',
+    destination: '/daily-post',
+  },
 ];
 
 export const getRedirects = async () => {

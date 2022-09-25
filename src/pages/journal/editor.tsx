@@ -106,7 +106,7 @@ const useAutoSave = ({ content, date }: { content: string; date: string }) => {
 };
 
 const getQuestionsContent = ({ questions }: { questions: string[] }) => {
-  return [...questions, 'My day']
+  return [...questions, 'The day']
     .map((question) => `**${question}**`)
     .join('\n\n');
 };
@@ -244,7 +244,7 @@ const EditorWithContent = ({
 
   const [debouncedIsSaving] = useDebounce(isSaving, 1000);
 
-  const isValid = !!content;
+  const isInvalid = !content;
 
   const handleEditorChange = React.useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -262,7 +262,7 @@ const EditorWithContent = ({
         </Flex>
         <Editor
           ref={textAreaRef}
-          isValid={isValid}
+          isInvalid={isInvalid}
           value={content}
           onChange={handleEditorChange}
           autoFocus
@@ -271,7 +271,7 @@ const EditorWithContent = ({
       <Flex sx={{ justifyContent: 'flex-end' }}>
         <Text
           sx={
-            debouncedIsSaving || isLoadingContent || !isValid
+            debouncedIsSaving || isLoadingContent || isInvalid
               ? { color: 'muted', fontStyle: 'italic' }
               : { color: 'text' }
           }
@@ -301,13 +301,13 @@ const MemoizedEditorWithContent = React.memo(EditorWithContent);
 const useIdleRedirect = ({ date }: { date: string }) => {
   const { push } = useRouter();
 
-  const handleOnIdle = () => {
+  const redirect = React.useCallback(() => {
     push(`/journal/${date}`);
-  };
+  }, [date, push]);
 
   useIdleTimer({
     timeout: 1000 * 60 * 3, // 3 minutes
-    onIdle: handleOnIdle,
+    onIdle: redirect,
   });
 };
 
