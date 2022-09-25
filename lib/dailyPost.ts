@@ -1,15 +1,18 @@
+import { createThread, readTweet } from './twitter';
 import { sharePost } from './linkedIn';
 
 export type DailyPostInput = {
   linkedInAccessToken: string;
   linkedInText: string;
   blogPostUrl: string;
+  tweets: { text: string }[];
 };
 
 export const handleDailyPost = async ({
   linkedInAccessToken,
   linkedInText,
   blogPostUrl,
+  tweets,
 }: DailyPostInput) => {
   const linkedInResponse = await sharePost({
     accessToken: linkedInAccessToken,
@@ -17,8 +20,19 @@ export const handleDailyPost = async ({
     blogPostUrl,
   });
 
+  const linkedInPostUrl = `https://www.linkedin.com/feed/update/${linkedInResponse.id}/`;
+
+  const thread = await createThread({
+    tweets: [...tweets, { text: `Reference ${blogPostUrl}` }],
+  });
+
+  const { author_id: authorId } = await readTweet({ id: thread[0].data.id });
+
+  const tweetUrl = `https://twitter.com/${authorId}/status/${thread[0].data.id}`;
+
   const response = {
-    linkedInPostUrl: `https://www.linkedin.com/feed/update/${linkedInResponse.id}/`,
+    linkedInPostUrl,
+    tweetUrl,
   };
 
   return response;

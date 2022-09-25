@@ -114,11 +114,7 @@ export const shouldSkipDay = (date: Date) => {
   return SKIP_DAYS.includes(day);
 };
 
-export const getScheduledDate = ({
-  numberOfTweets = 0,
-}: {
-  numberOfTweets?: number;
-}): string => {
+export const getScheduledDate = (): string => {
   const today = new Date();
 
   /**
@@ -126,18 +122,16 @@ export const getScheduledDate = ({
    */
   let scheduledDate = dateFns.addDays(today, SCHEDULE_FROM);
 
-  const weights = [...new Array(SCHEDULE_RANGE + numberOfTweets)].map(
-    (_, i) => {
-      const currentDate = dateFns.addDays(scheduledDate, i);
-      const day = dateFns.getDay(currentDate);
+  const weights = [...new Array(SCHEDULE_RANGE)].map((_, i) => {
+    const currentDate = dateFns.addDays(scheduledDate, i);
+    const day = dateFns.getDay(currentDate);
 
-      if (day === 0 || day === 6) {
-        return WEEKEND_PROPORTION;
-      }
+    if (day === 0 || day === 6) {
+      return WEEKEND_PROPORTION;
+    }
 
-      return 1;
-    },
-  );
+    return 1;
+  });
 
   const randomAddDay = getWeightedRandomInt(weights);
 
@@ -162,7 +156,7 @@ export const getScheduledDate = ({
   scheduledDate = dateFns.setMinutes(scheduledDate, setRandomMinute);
 
   if (shouldSkipDay(scheduledDate)) {
-    return getScheduledDate({ numberOfTweets });
+    return getScheduledDate();
   }
 
   return dateFns.formatISO(scheduledDate);
@@ -185,14 +179,8 @@ type Body = {
   };
 };
 
-export const scheduleTweet = async ({
-  tweet,
-  numberOfTweets,
-}: {
-  tweet: string;
-  numberOfTweets?: number;
-}) => {
-  const scheduledAt = getScheduledDate({ numberOfTweets });
+export const scheduleTweet = async ({ tweet }: { tweet: string }) => {
+  const scheduledAt = getScheduledDate();
 
   const params = new URLSearchParams({
     scheduled_at: scheduledAt,

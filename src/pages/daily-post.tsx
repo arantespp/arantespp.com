@@ -4,6 +4,7 @@ import {
   DailyPostFormValues,
 } from '../components/DailyPostEditor';
 import { DailyPostInput, DailyPostOutput } from '../../lib/dailyPost';
+import { Flex } from 'theme-ui';
 import { useApiKey } from '../hooks/useApiKey';
 import { useLinkedInToken } from '../hooks/useLinkedInToken';
 import { useMutation } from 'react-query';
@@ -25,7 +26,7 @@ const useDailyPost = () => {
         linkedInAccessToken: token?.accessToken as string,
       };
 
-      const response = await fetch('/api/daily-post', {
+      const response = await fetch('/api/dailyPost', {
         method: 'POST',
         headers: {
           'x-api-key': apiKey,
@@ -55,13 +56,14 @@ const DailyPost = () => {
   const errorMessage = (error as any)?.message;
 
   return (
-    <>
+    <Flex sx={{ flexDirection: 'column', gap: 3 }}>
       <DailyPostEditor onSubmit={postDailyPost} />
       {dailyPost?.linkedInPostUrl && (
         <Link href={dailyPost?.linkedInPostUrl}>LinkedIn</Link>
       )}
+      {dailyPost?.tweetUrl && <Link href={dailyPost?.tweetUrl}>Twitter</Link>}
       {errorMessage && <div>{errorMessage}</div>}
-    </>
+    </Flex>
   );
 };
 

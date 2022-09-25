@@ -29,19 +29,13 @@ const usePostTweet = () => {
   const { apiKey } = useApiKey();
 
   const postTweet = React.useCallback(
-    async ({
-      tweet,
-      numberOfTweets,
-    }: {
-      tweet: string;
-      numberOfTweets: number;
-    }): Promise<PostTweetResponse> =>
+    async ({ tweet }: { tweet: string }): Promise<PostTweetResponse> =>
       fetch('/api/tweet', {
         method: 'POST',
         headers: {
           'x-api-key': apiKey,
         },
-        body: JSON.stringify({ tweet, numberOfTweets }),
+        body: JSON.stringify({ tweet }),
       }).then((res) => res.json()),
     [apiKey],
   );
@@ -461,7 +455,6 @@ export const TweetsScheduler = ({ singleTweet }: { singleTweet?: boolean }) => {
             try {
               const response = await postTweet({
                 tweet: finalTweet,
-                numberOfTweets: values.tweets.length,
               });
 
               if ('error' in response) {

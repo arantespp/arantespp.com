@@ -8,8 +8,8 @@ import { requireApiKey } from '../../../lib/hofs/requireApiKey';
 
 const tweetHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
-    const { tweet, numberOfTweets } = JSON.parse(req.body) as any;
-    const { data } = await scheduleTweet({ tweet, numberOfTweets });
+    const { tweet } = JSON.parse(req.body) as any;
+    const { data } = await scheduleTweet({ tweet });
     res.status(200).json({ tweet, ...data });
     return;
   }
