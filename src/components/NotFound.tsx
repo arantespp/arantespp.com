@@ -7,12 +7,17 @@ import Loading from './Loading';
 const NotFound = ({ draftsHrefs }: { draftsHrefs: string[] }) => {
   const { asPath, push } = useRouter();
 
+  /**
+   * Add /drafts at the beginning to compare with `draftsHrefs`.
+   */
   const draftHref = asPath.startsWith('/drafts') ? asPath : `/drafts${asPath}`;
 
   const [isChecking, setIsChecking] = React.useState(true);
 
   React.useEffect(() => {
-    if (draftsHrefs.includes(draftHref)) {
+    const draftHrefWithoutHashtag = draftHref.split('#')[0];
+
+    if (draftsHrefs.includes(draftHrefWithoutHashtag)) {
       push(draftHref).finally(() => setIsChecking(false));
     } else {
       setIsChecking(false);

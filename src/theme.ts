@@ -162,7 +162,7 @@ export const theme: Theme = {
       padding: 0,
       margin: 0,
       marginTop: 5,
-      marginBottom: 3,
+      marginBottom: 4,
       fontSize: 2,
       fontFamily: 'heading',
       lineHeight: 'heading',
