@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-09-23'
-formattedUpdatedAt: 'September 23, 2022'
+updatedAt: '2022-09-26'
+formattedUpdatedAt: 'September 26, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 32
+readingTime: 33
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -486,7 +486,7 @@ The military doesn't approach warfare the way five-years-old approach soccer—e
 
 With decentralized control, the discipline of roles and boundaries becomes important. Both excessive overlap and gaps are dangerous.
 
-Clear role definition is equally important for product development teams. Poorly defined roles and boundaries increase the need for communication and the time spent in meetings. If your team doesn't have clear roles, your meetings can have 20 people vote on the color of a button. The information must be sent to 20 people; the only time the decision can be made is when all 20 people are present because you have excessive overlap. Well-defined roles make teams much more efficient.
+Clear role definition is equally important for product development teams. Poorly defined roles and boundaries increase the need for communication and the time spent in meetings. For example, if your team doesn't have clear roles, your meetings can have 20 people vote on the color of a button. You must send the information to 20 people; the only time the team can decide is when all 20 people are present because you have excessive overlap. Well-defined roles make teams much more efficient.
 
 You also need to be alert for white spaces between roles and gaps that nobody feels responsible for.
 
@@ -497,3 +497,11 @@ In executing a mission, the Marines designate one point of action as the main ef
 It's most desirable if the main effort is aimed at a point of weakness since it's desirable to concentrate strength against weakness. However, sometimes the main effort can be directed to a strong point—the center of gravity, the heart of their ability to fight. The choice of main effort depends on assessing both the cost and the benefit of attacking a particular point.
 
 In the same way, it's useful for product developers to designate the main effort for their projects. Only a small set of product attributes truly drive success. While the customer may be able to identify 200 features and explain what they want, only four to six of these features are capable of shifting preference from one brand to another. The entire team must focus on these preference-shifting features and let the other 195 features subordinate to achieving performance on these critical features.
+
+#### D11. The Principle of Dynamic Alignment: The main effort may shift quickly when conditions change.
+
+The main effort may shift in the course of battle because it's fluid. One unit may be the main effort, and all supporting resources should help the main effort succeed.
+
+But the battlefield conditions may change. For example, when defenders oppose the main effort, they may create weakness in another area, which is attractive to designate a different location as the main effort.
+
+As you progress through a project, new information becomes available. You want to make the best economic choice using this further information. If the option involves shifting your focus, you must be able to do this easily and quickly.
