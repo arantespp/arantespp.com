@@ -1,10 +1,10 @@
 const config = {
   projects: [
-    // {
-    //   displayName: 'dom',
-    //   testEnvironment: 'jsdom',
-    //   testMatch: ['/**/*.spec.tsx'],
-    // },
+    {
+      displayName: 'dom',
+      testEnvironment: 'jsdom',
+      testMatch: ['/**/*.spec.tsx'],
+    },
     {
       displayName: 'node',
       testEnvironment: 'node',

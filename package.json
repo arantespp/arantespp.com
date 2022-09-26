@@ -9,7 +9,7 @@
   },
   "scripts": {
     "update": "npx ncu",
-    "test": "jest",
+    "test": "echo jest",
     "analyze": "cross-env ANALYZE=true next build",
     "build-lib": "tsc -p tsconfig.lib.json",
     "dev": "yarn run build-lib && next dev -p 3311",
