@@ -5,6 +5,8 @@ import Token from 'markdown-it/lib/token';
 
 const md = new MarkdownIt();
 
+const SUPPORTS_INDICATOR = 'Supports:';
+
 export type Plan = {
   name: string;
   slug: string;
@@ -230,15 +232,74 @@ const parsePlansMachine = createMachine<
                     on: {
                       TOKEN: [
                         {
+                          target: 'description',
+                          cond: {
+                            type: 'matchDescription',
+                          },
+                        },
+                        {
                           target: 'supports',
                           cond: {
                             type: 'matchToken',
                             token: {
-                              content: 'Supports:',
+                              content: SUPPORTS_INDICATOR,
                             },
                           },
                         },
                       ],
+                    },
+                  },
+                  description: {
+                    id: 'description',
+                    initial: 'inline',
+                    states: {
+                      inline: {
+                        on: {
+                          TOKEN: {
+                            target: 'close',
+                            cond: {
+                              type: 'matchToken',
+                              token: {
+                                type: 'paragraph_close',
+                              },
+                            },
+                          },
+                        },
+                        entry: [
+                          assign({
+                            plans: (context, { token }: TokenEvent) => {
+                              const plan =
+                                context.plans[context.plans.length - 1];
+
+                              const group =
+                                plan.groups?.[plan.groups.length - 1];
+
+                              const node = group?.nodes[group.nodes.length - 1];
+
+                              if (node) {
+                                node.description = token.content;
+                              }
+
+                              return context.plans;
+                            },
+                          }),
+                        ],
+                      },
+                      close: {
+                        on: {
+                          TOKEN: [
+                            {
+                              target: '#supports',
+                              cond: {
+                                type: 'matchToken',
+                                token: {
+                                  content: SUPPORTS_INDICATOR,
+                                },
+                              },
+                            },
+                          ],
+                        },
+                      },
                     },
                   },
                   supports: {
@@ -320,6 +381,17 @@ const parsePlansMachine = createMachine<
         return Object.keys(cond.token).every((key) => {
           return token[key] === cond.token[key];
         });
+      },
+      matchDescription: (_, { token }: TokenEvent) => {
+        if (token.type !== 'inline') {
+          return false;
+        }
+
+        if (token.content === SUPPORTS_INDICATOR) {
+          return false;
+        }
+
+        return true;
       },
     },
   },
