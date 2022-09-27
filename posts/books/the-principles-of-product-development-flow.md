@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-09-26'
-formattedUpdatedAt: 'September 26, 2022'
+updatedAt: '2022-09-27'
+formattedUpdatedAt: 'September 27, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 33
+readingTime: 34
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -405,6 +405,16 @@ This approach works in the repetitive manufacturing world but is very dangerous 
 If you have stable goals, you try to prevent deviations, often by increasing inertia and avoiding risk. If you have dynamic goals, you try to correct variations quickly by decreasing inertia and continuously reducing the gap between the current and the economically desired state.
 
 Because product development has inherently high variability, it's critical to recognize situations where your goals should be dynamic or stable.
+
+#### FF10: The First Agility Principle: We don't need long planning horizons when we have a short turning radius
+
+One way to make a control system more effective is to reduce the work it must do. You can achieve this by making your system more agile. Agility means the ability to change direction quickly while traveling at high speed. A physical analogy is of changing the direction of a moving object. The time it takes to change the momentum of an object is proportional to the mass and inversely proportional to the applied force. If you wish to quickly change the direction of motion of an object, pick a small object and apply a large force.
+
+The same logic applies to product development. To be agile, you need a less massive program and sufficient resources to redirect them. Megaprojects are difficult to redirect because they're so massive.
+
+In product development, you must quickly apply adequate resources to redirect programs. Organizations operating at 100 percent capacity utilization usually apply too few resources, too late to get a quick change in direction.
+
+You can proceed safely at a higher speed whenever you have a short turning radius and a quick reaction time. This permits you to operate at higher speeds in an uncertain environment and reduces the magnitude of your control problem.
 
 ### 9. Achieving Decentralized Control
 
