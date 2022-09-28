@@ -21,8 +21,6 @@ export const ApiKeyProvider = ({ children }: { children: React.ReactNode }) => {
 
     if (ak) {
       setApiKeyState(ak);
-    } else {
-      push('/');
     }
   }, [push]);
 

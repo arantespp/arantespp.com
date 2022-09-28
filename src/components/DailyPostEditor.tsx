@@ -88,12 +88,19 @@ const SingleTweet = ({
   }, [isDirty, linkedInText, setValue, singleTweetName]);
 
   React.useEffect(() => {
+    /**
+     * Only break the thread if it is dirty.
+     */
+    if (!isDirty) {
+      return;
+    }
+
     if (tweetValue?.includes(BREAK_THREAD)) {
       const [first, second] = tweetValue.split(BREAK_THREAD);
       setValue(singleTweetName, first);
       insert(index + 1, { text: second });
     }
-  }, [index, insert, setValue, singleTweetName, tweetValue]);
+  }, [index, insert, isDirty, setValue, singleTweetName, tweetValue]);
 
   return (
     <Flex sx={{ flexDirection: 'column', gap: 1, marginBottom: 4 }}>
