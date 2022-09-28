@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useRouter } from 'next/router';
 
 export const ApiKeyContext = React.createContext<{
   apiKey: string;
@@ -11,14 +12,19 @@ export const ApiKeyContext = React.createContext<{
 const LOCAL_STORAGE_KEY = 'arantespp-api-key';
 
 export const ApiKeyProvider = ({ children }: { children: React.ReactNode }) => {
+  const { push } = useRouter();
+
   const [apiKey, setApiKeyState] = React.useState('');
 
   React.useEffect(() => {
     const ak = localStorage.getItem(LOCAL_STORAGE_KEY);
+
     if (ak) {
       setApiKeyState(ak);
+    } else {
+      push('/');
     }
-  }, []);
+  }, [push]);
 
   const setApiKey = React.useCallback((ak: string) => {
     setApiKeyState(ak);

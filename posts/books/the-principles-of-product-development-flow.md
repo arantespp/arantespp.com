@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-09-27'
-formattedUpdatedAt: 'September 27, 2022'
+updatedAt: '2022-09-28'
+formattedUpdatedAt: 'September 28, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 34
+readingTime: 35
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -515,3 +515,19 @@ The main effort may shift in the course of battle because it's fluid. One unit m
 But the battlefield conditions may change. For example, when defenders oppose the main effort, they may create weakness in another area, which is attractive to designate a different location as the main effort.
 
 As you progress through a project, new information becomes available. You want to make the best economic choice using this further information. If the option involves shifting your focus, you must be able to do this easily and quickly.
+
+#### D12. The Second Agility Principle: Develop the ability to quickly shift focus.
+
+_The First Agility Principle: [Principle FF10](#ff10-the-first-agility-principle-we-don-t-need-long-planning-horizons-when-we-have-a-short-turning-radius)._
+
+It's not sufficient to decide to change focus quickly; one must execute this change quickly.
+
+In product development, you can change direction more quickly when you have:
+
+- A small team of highly skilled people instead of a late team.
+- A product with a streamlined feature set instead of one bloated with minor features.
+- Reserve capacity in your resources. It's tough to apply an extra burst of effort when people are working at total capacity.
+
+You can also exploit architecture as an enabler of rapid changes. You can project your architecture to absorb potential changes. For example, you might segregate uncertainty into one design zone and loosely couple it with the rest of the system.
+
+For example, some of Nokia's cellular handsets have colored faceplates, allowing them to change colors very late in the design process. They don't permit the uncertainty of color preference to permeate the entire design.

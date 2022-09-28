@@ -244,9 +244,9 @@ Supports:
 
 ## Systems
 
-### MSJ Stack
+### MJS Stack
 
-Meditation, stretching, and journaling stack before starting the day. I can only use mobile and check social media after completing it.
+Brushing teeth, meditating, journaling, stretching and making the bed before starting the day. I can only use my mobile and check social media after completing it.
 
 Supports:
 
