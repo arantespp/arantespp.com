@@ -86,14 +86,14 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
           textAreaRef.current.style.height = `${
             textAreaRef.current.scrollHeight + 50
           }px`;
-          /**
-           * https://stackoverflow.com/a/18262927/8786986
-           */
-          const scrollLeft =
-            window.pageXOffset || textAreaRef.current.scrollLeft;
-          const scrollTop = window.pageYOffset || textAreaRef.current.scrollTop;
+          // /**
+          //  * https://stackoverflow.com/a/18262927/8786986
+          //  */
+          // const scrollLeft =
+          //   window.pageXOffset || textAreaRef.current.scrollLeft;
+          // const scrollTop = window.pageYOffset || textAreaRef.current.scrollTop;
 
-          window.scrollTo(scrollLeft, scrollTop);
+          // window.scrollTo(scrollLeft, scrollTop);
         }
       }
     }, [textAreaRef, value, isFullScreen]);

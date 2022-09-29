@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-09-28'
-formattedUpdatedAt: 'September 28, 2022'
+updatedAt: '2022-09-29'
+formattedUpdatedAt: 'September 29, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -531,3 +531,11 @@ In product development, you can change direction more quickly when you have:
 You can also exploit architecture as an enabler of rapid changes. You can project your architecture to absorb potential changes. For example, you might segregate uncertainty into one design zone and loosely couple it with the rest of the system.
 
 For example, some of Nokia's cellular handsets have colored faceplates, allowing them to change colors very late in the design process. They don't permit the uncertainty of color preference to permeate the entire design.
+
+#### D13: The Principle of Peer-Level Coordination: Tactical coordination should be local.
+
+Maintaining alignment is easy with centralized control. It's much more difficult when we decentralize control and emphasize local initiative. The advantage of local communication is that it leads to a rapid realignment of adjacent units. The team doesn't need to send requests up the hierarchy chain and wait for instructions. Instead, they communicate directly with one another. Another advantage is that continuous peer-to-peer communication of adjacent teams is far more effective at responding to uncertainty than in a centralized project management organization.
+
+The Maines solve this problem with both explicit and implicit lateral peer-to-peer communication. Explicit is about face-to-face and voice communications, and they achieve implicit communications with doctrine and training. As a result, marines can predict how other Marines will act in similar situations with surprising accuracy. They can make this prediction because they have shared beliefs about the best way to fight, and they have trained extensively with their peers.
+
+This approach is different from that of many product development organizations. Such organizations typically try to achieve control by creating detailed plans and project management offices to manage these plans.
