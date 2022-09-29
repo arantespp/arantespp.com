@@ -35,7 +35,7 @@ const JournalAll = () => {
   const markdown = journals.reduce((acc, journal) => {
     return [
       acc,
-      `### [${journal?.formattedDate}](/journal/editor?date=${journal?.date})`,
+      `## [${journal?.formattedDate}](/journal/${journal?.date})`,
       journal?.content,
     ].join('\n');
   }, '');
@@ -43,11 +43,13 @@ const JournalAll = () => {
   return (
     <>
       <NextSeo noindex nofollow title="Journal - All" />
+      <Flex sx={{ marginY: 4 }}>
+        <Link href="/journal">Summary</Link>
+      </Flex>
       <Journal
         markdown={markdown}
         title={`Journal - All (${journals.length})`}
       />
-      <Link href="/journal">Summary</Link>
       {hasNextPage && (
         <Flex sx={{ justifyContent: 'center' }}>
           <Button

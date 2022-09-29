@@ -61,7 +61,7 @@ export const getJournals = async (
     }),
   );
 
-  return Items.filter(Boolean) as JournalFromDatabase[];
+  return (Items.filter(Boolean) as JournalFromDatabase[]).map(mapJournal);
 };
 
 const journalDateToSlug = (parsed: Date) =>
@@ -331,10 +331,6 @@ export const getAllQuestions = async () => {
     .split('\n')
     .map((line) => line.trim().replace(/^- /, ''))
     .filter((line) => line.length > 0);
-
-  const dayOfYear = dateFns.getDayOfYear(new Date());
-
-  const questionIndex = dayOfYear % allQuestions.length;
 
   return allQuestions;
 };

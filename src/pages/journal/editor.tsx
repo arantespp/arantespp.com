@@ -255,11 +255,7 @@ const EditorWithContent = ({
 
   return (
     <>
-      <Box sx={{ marginY: 3 }}>
-        <Flex sx={{ gap: 3, marginY: 2 }}>
-          <Link href="/journal">Summary</Link>
-          <Link href="/planning/me">Me</Link>
-        </Flex>
+      <Box sx={{ marginY: 4 }}>
         <Editor
           ref={textAreaRef}
           isInvalid={isInvalid}
@@ -333,8 +329,12 @@ const JournalEditor = ({
   return (
     <>
       <NextSeo noindex nofollow title={title} />
-      <Themed.h1>{title}</Themed.h1>
+      <Flex sx={{ gap: 3, marginY: 4 }}>
+        <Link href="/journal">Summary</Link>
+        <Link href="/planning/me">Me</Link>
+      </Flex>
       <JournalDateNavigator date={dateInput} setDate={setDateInput} />
+      <Themed.h1>{title}</Themed.h1>
       <React.Suspense fallback={<Loading />}>
         <MemoizedEditorWithContent date={date} allQuestions={allQuestions} />
       </React.Suspense>
