@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 35
+readingTime: 36
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -536,6 +536,6 @@ For example, some of Nokia's cellular handsets have colored faceplates, allowing
 
 Maintaining alignment is easy with centralized control. It's much more difficult when we decentralize control and emphasize local initiative. The advantage of local communication is that it leads to a rapid realignment of adjacent units. The team doesn't need to send requests up the hierarchy chain and wait for instructions. Instead, they communicate directly with one another. Another advantage is that continuous peer-to-peer communication of adjacent teams is far more effective at responding to uncertainty than in a centralized project management organization.
 
-The Maines solve this problem with both explicit and implicit lateral peer-to-peer communication. Explicit is about face-to-face and voice communications, and they achieve implicit communications with doctrine and training. As a result, marines can predict how other Marines will act in similar situations with surprising accuracy. They can make this prediction because they have shared beliefs about the best way to fight, and they have trained extensively with their peers.
+The Marines solve this problem with both explicit and implicit lateral peer-to-peer communication. Explicit is about face-to-face and voice communications, and they achieve implicit communications with doctrine and training. As a result, marines can predict how other Marines will act in similar situations with surprising accuracy. They can make this prediction because they have shared beliefs about the best way to fight, and they have trained extensively with their peers.
 
 This approach is different from that of many product development organizations. Such organizations typically try to achieve control by creating detailed plans and project management offices to manage these plans.
