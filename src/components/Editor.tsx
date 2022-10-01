@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Box, Container, Text, Textarea, TextareaProps } from 'theme-ui';
+import { Box, Container, Text } from 'theme-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCompress, faExpand } from '@fortawesome/free-solid-svg-icons';
+import Textarea, { TextAreaProps } from 'rc-textarea';
 
 const TextAreaContainer = ({
   children,
@@ -33,10 +34,8 @@ const TextAreaContainer = ({
   return <>{children}</>;
 };
 
-const useCombinedRefs = (
-  ...refs: React.ForwardedRef<HTMLTextAreaElement>[]
-) => {
-  const targetRef = React.useRef<HTMLTextAreaElement>(null);
+const useCombinedRefs = (...refs: React.ForwardedRef<any>[]) => {
+  const targetRef = React.useRef<any>(null);
 
   React.useEffect(() => {
     refs.forEach((ref) => {
@@ -53,50 +52,15 @@ const useCombinedRefs = (
   return targetRef;
 };
 
-type EditorProps = TextareaProps & { isInvalid?: boolean };
+type EditorProps = TextAreaProps & { isInvalid?: boolean };
 
-const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
+const Editor = React.forwardRef<any, EditorProps>(
   ({ isInvalid, ...props }, ref) => {
     const innerRef = React.useRef(null);
 
     const textAreaRef = useCombinedRefs(ref, innerRef);
 
     const [isFullScreen, setIsFullScreen] = React.useState(false);
-
-    const { value, onChange } = props;
-
-    React.useEffect(() => {
-      if (textAreaRef?.current) {
-        const textAreaHeight = Number(
-          textAreaRef.current.style.height.replace('px', ''),
-        );
-
-        const textHeight = textAreaRef.current.scrollHeight;
-
-        if (isFullScreen) {
-          if (textHeight > textAreaHeight) {
-            textAreaRef.current.style.height = 'auto';
-            textAreaRef.current.style.height = `${textHeight + 50}px`;
-          }
-        }
-
-        if (!isFullScreen) {
-          textAreaRef.current.style.height = 'auto';
-
-          textAreaRef.current.style.height = `${
-            textAreaRef.current.scrollHeight + 50
-          }px`;
-          // /**
-          //  * https://stackoverflow.com/a/18262927/8786986
-          //  */
-          // const scrollLeft =
-          //   window.pageXOffset || textAreaRef.current.scrollLeft;
-          // const scrollTop = window.pageYOffset || textAreaRef.current.scrollTop;
-
-          // window.scrollTo(scrollLeft, scrollTop);
-        }
-      }
-    }, [textAreaRef, value, isFullScreen]);
 
     return (
       <TextAreaContainer isFullScreen={isFullScreen}>
@@ -105,6 +69,18 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
             position: 'relative',
             width: '100%',
             height: '100%',
+            '.textarea': {
+              width: '100%',
+              '&:disabled': {
+                color: 'muted',
+                borderColor: 'muted',
+                cursor: 'not-allowed',
+              },
+              overflowY: 'hidden',
+              ...(isInvalid
+                ? { borderColor: 'primary', outlineColor: 'primary' }
+                : {}),
+            },
           }}
         >
           <Textarea
@@ -116,21 +92,14 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
                 e.preventDefault();
               }
             }}
-            {...props}
-            value={value}
-            onChange={onChange}
-            sx={{
-              '&:disabled': {
-                color: 'muted',
-                borderColor: 'muted',
-                cursor: 'not-allowed',
-              },
-              overflowY: 'hidden',
-              overflowClipMargin: 5,
-              ...(isInvalid
-                ? { borderColor: 'primary', outlineColor: 'primary' }
-                : {}),
+            className="textarea"
+            autoSize={{
+              minRows: 5,
             }}
+            onResize={(size) => {
+              console.log(size);
+            }}
+            {...props}
           />
           <Text
             onClick={() => {

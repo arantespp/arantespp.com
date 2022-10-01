@@ -1,8 +1,10 @@
 - What's 1 thing I need to do to achieve my goals?
-- What's 1 thing I need to stop doing?
+- What do I need to cut from my life to operate more efficiently?
 - What's 1 thing I can improve incrementally?
-- What's 1 thing I can do to make someone else's life better?
-- What's 1 thing I'm grateful for?
-- What's 1 thing I'm avoiding?
+- What can I do to make someone else's life better?
+- What am I grateful for?
+- What am I avoiding?
 - What's 1 thing I'm excited about?
-- What's 1 virtue I want to exhibit?
+- What virtue do I want to exhibit?
+- What really matters right now in my life? Am I dedicating the necessary energy to it?
+- Are my current systems and habits aligned with my long-term goals?

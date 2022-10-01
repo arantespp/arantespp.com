@@ -106,6 +106,16 @@ export const theme: Theme = {
           cursor: 'not-allowed',
         },
       },
+      textarea: {
+        fontFamily: 'body',
+        fontWeight: 'body',
+        lineHeight: 'body',
+        backgroundColor: 'background',
+        fontSize: [0, 1],
+        borderRadius: 1,
+        borderColor: 'black',
+        padding: 2,
+      },
       '.katex .mord.text': {
         fontSize: [0, 2],
         fontFamily: 'body',
@@ -374,14 +384,9 @@ export const theme: Theme = {
   forms: {
     checkbox: {},
     input: {
-      fontFamily: 'inherit',
-      backgroundColor: 'background',
-      fontSize: [0, 1],
-    },
-    textarea: {
-      fontFamily: 'inherit',
-      backgroundColor: 'background',
-      fontSize: [0, 1],
+      // fontFamily: 'inherit',
+      // backgroundColor: 'background',
+      // fontSize: [0, 1],
     },
   },
 };
