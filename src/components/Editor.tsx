@@ -124,6 +124,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
               top: 0,
               right: 0,
               marginTop: 2,
+              marginRight: 2,
               cursor: 'pointer',
               display: 'inline-flex',
             }}

@@ -16,6 +16,7 @@
     "build": "yarn run build-lib && next build",
     "postbuild": "next-sitemap",
     "start": "yarn run build-lib && next start -p 3311",
+    "start:local": "LOCAL=true yarn start",
     "lint": "next lint --fix",
     "cwebp": "./scripts/cwebp.sh"
   },

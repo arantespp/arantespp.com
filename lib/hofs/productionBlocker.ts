@@ -9,11 +9,11 @@ export const productionBlocker = (
 ) => {
   return async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
     /**
-     * If the request is not a GET, is PUT, POST or DELETE.
+     * If the request is not a GET, but is PUT, POST or DELETE.
      */
     if (req.method !== 'GET') {
       /**
-       * If `LOCAL` is true AND if `NODE_ENV` is not `development`.
+       * If `LOCAL` is true AND if `NODE_ENV` is not `development`, return 403.
        */
       if (
         !JSON.parse(process.env.LOCAL || 'false') &&

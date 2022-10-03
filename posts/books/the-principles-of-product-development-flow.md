@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-09-29'
-formattedUpdatedAt: 'September 29, 2022'
+updatedAt: '2022-10-03'
+formattedUpdatedAt: 'October 03, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 36
+readingTime: 37
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -539,3 +539,11 @@ Maintaining alignment is easy with centralized control. It's much more difficult
 The Marines solve this problem with both explicit and implicit lateral peer-to-peer communication. Explicit is about face-to-face and voice communications, and they achieve implicit communications with doctrine and training. As a result, marines can predict how other Marines will act in similar situations with surprising accuracy. They can make this prediction because they have shared beliefs about the best way to fight, and they have trained extensively with their peers.
 
 This approach is different from that of many product development organizations. Such organizations typically try to achieve control by creating detailed plans and project management offices to manage these plans.
+
+#### D14: The Principle of Flexible Plans: Use simple modular plans.
+
+You should carefully plan everything you can forecast reasonably well in advance.
+
+You know plans will change, so the best strategy is to focus on simpler, modular, and flexible plans because simplicity leads to fast adaptation. Modularity solves the problem of adaptation because you can configure different modules in different ways, depending on your context. You achieve flexibility by preplanning "branches" and "sequels." Branches are points where you can use different paths depending on existing conditions. Sequels are preplanned follow-up actions.
+
+This approach to planning increases the chance that you can maintain alignment when conditions change.
