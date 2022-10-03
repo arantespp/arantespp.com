@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Box, Container, Text } from 'theme-ui';
+import { Box, Container, Text, Textarea, TextareaProps } from 'theme-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCompress, faExpand } from '@fortawesome/free-solid-svg-icons';
-import Textarea, { TextAreaProps } from 'rc-textarea';
 
 const TextAreaContainer = ({
   children,
@@ -34,8 +33,10 @@ const TextAreaContainer = ({
   return <>{children}</>;
 };
 
-const useCombinedRefs = (...refs: React.ForwardedRef<any>[]) => {
-  const targetRef = React.useRef<any>(null);
+const useCombinedRefs = (
+  ...refs: React.ForwardedRef<HTMLTextAreaElement>[]
+) => {
+  const targetRef = React.useRef<HTMLTextAreaElement>(null);
 
   React.useEffect(() => {
     refs.forEach((ref) => {
@@ -52,15 +53,32 @@ const useCombinedRefs = (...refs: React.ForwardedRef<any>[]) => {
   return targetRef;
 };
 
-type EditorProps = TextAreaProps & { isInvalid?: boolean };
+type EditorProps = TextareaProps & { isInvalid?: boolean };
 
-const Editor = React.forwardRef<any, EditorProps>(
+const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
   ({ isInvalid, ...props }, ref) => {
     const innerRef = React.useRef(null);
 
     const textAreaRef = useCombinedRefs(ref, innerRef);
 
     const [isFullScreen, setIsFullScreen] = React.useState(false);
+
+    const { value, onChange } = props;
+
+    React.useEffect(() => {
+      if (textAreaRef?.current) {
+        const textAreaHeight = Number(
+          textAreaRef.current.style.height.replace('px', ''),
+        );
+
+        const textHeight = textAreaRef.current.scrollHeight;
+
+        if (textHeight >= textAreaHeight) {
+          textAreaRef.current.style.height = 'auto';
+          textAreaRef.current.style.height = `${textHeight + 50}px`;
+        }
+      }
+    }, [textAreaRef, value]);
 
     return (
       <TextAreaContainer isFullScreen={isFullScreen}>
@@ -69,18 +87,6 @@ const Editor = React.forwardRef<any, EditorProps>(
             position: 'relative',
             width: '100%',
             height: '100%',
-            '.textarea': {
-              width: '100%',
-              '&:disabled': {
-                color: 'muted',
-                borderColor: 'muted',
-                cursor: 'not-allowed',
-              },
-              overflowY: 'hidden',
-              ...(isInvalid
-                ? { borderColor: 'primary', outlineColor: 'primary' }
-                : {}),
-            },
           }}
         >
           <Textarea
@@ -92,14 +98,22 @@ const Editor = React.forwardRef<any, EditorProps>(
                 e.preventDefault();
               }
             }}
-            className="textarea"
-            autoSize={{
-              minRows: 5,
-            }}
-            onResize={(size) => {
-              console.log(size);
-            }}
             {...props}
+            value={value}
+            onChange={onChange}
+            sx={{
+              '&:disabled': {
+                color: 'muted',
+                borderColor: 'muted',
+                cursor: 'not-allowed',
+              },
+              overflowY: 'hidden',
+              overflowClipMargin: 5,
+              resize: 'vertical',
+              ...(isInvalid
+                ? { borderColor: 'primary', outlineColor: 'primary' }
+                : {}),
+            }}
           />
           <Text
             onClick={() => {
@@ -109,8 +123,7 @@ const Editor = React.forwardRef<any, EditorProps>(
               position: 'absolute',
               top: 0,
               right: 0,
-              marginTop: 1,
-              marginRight: 1,
+              marginTop: 2,
               cursor: 'pointer',
               display: 'inline-flex',
             }}
