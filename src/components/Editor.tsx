@@ -1,7 +1,11 @@
 import * as React from 'react';
-import { Box, Container, Text, Textarea, TextareaProps } from 'theme-ui';
+import { Box, Container, Flex, Text, Textarea, TextareaProps } from 'theme-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCompress, faExpand } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowDown,
+  faCompress,
+  faExpand,
+} from '@fortawesome/free-solid-svg-icons';
 
 const TextAreaContainer = ({
   children,
@@ -21,11 +25,17 @@ const TextAreaContainer = ({
           height: '100%',
           backgroundColor: 'background',
           padding: 4,
-          paddingBottom: 7,
           overflow: 'auto',
         }}
       >
-        <Container sx={{ maxWidth: '52em' }}>{children}</Container>
+        <Container
+          sx={{
+            maxWidth: '52em',
+            paddingBottom: 6,
+          }}
+        >
+          {children}
+        </Container>
       </Box>
     );
   }
@@ -65,7 +75,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
 
     const { value, onChange } = props;
 
-    React.useEffect(() => {
+    React.useLayoutEffect(() => {
       if (textAreaRef?.current) {
         const textAreaHeight = Number(
           textAreaRef.current.style.height.replace('px', ''),
@@ -73,12 +83,25 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
 
         const textHeight = textAreaRef.current.scrollHeight;
 
-        if (textHeight >= textAreaHeight) {
+        if (textHeight > textAreaHeight) {
           textAreaRef.current.style.height = 'auto';
           textAreaRef.current.style.height = `${textHeight + 50}px`;
         }
       }
-    }, [textAreaRef, value]);
+    }, [textAreaRef, value, isFullScreen]);
+
+    React.useLayoutEffect(() => {
+      const textAreaStyle = textAreaRef.current?.style;
+
+      return () => {
+        if (textAreaStyle) {
+          /**
+           * Reset the height when textarea changes.
+           */
+          textAreaStyle.height = '0px';
+        }
+      };
+    }, [textAreaRef]);
 
     return (
       <TextAreaContainer isFullScreen={isFullScreen}>
@@ -107,6 +130,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
                 borderColor: 'muted',
                 cursor: 'not-allowed',
               },
+              width: '100%',
               overflowY: 'hidden',
               overflowClipMargin: 5,
               resize: 'vertical',
@@ -115,22 +139,31 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
                 : {}),
             }}
           />
-          <Text
-            onClick={() => {
-              setIsFullScreen(!isFullScreen);
-            }}
+          <Flex
             sx={{
               position: 'absolute',
               top: 0,
               right: 0,
               marginTop: 2,
               marginRight: 2,
-              cursor: 'pointer',
-              display: 'inline-flex',
+              gap: 3,
+              '> *': {
+                cursor: 'pointer',
+                display: 'inline-flex',
+              },
             }}
           >
-            <FontAwesomeIcon icon={isFullScreen ? faCompress : faExpand} />
-          </Text>
+            <Text onClick={() => {}}>
+              <FontAwesomeIcon icon={faArrowDown} />
+            </Text>
+            <Text
+              onClick={() => {
+                setIsFullScreen(!isFullScreen);
+              }}
+            >
+              <FontAwesomeIcon icon={isFullScreen ? faCompress : faExpand} />
+            </Text>
+          </Flex>
         </Box>
       </TextAreaContainer>
     );

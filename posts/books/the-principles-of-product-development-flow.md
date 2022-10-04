@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-10-03'
-formattedUpdatedAt: 'October 03, 2022'
+updatedAt: '2022-10-04'
+formattedUpdatedAt: 'October 04, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -547,3 +547,9 @@ You should carefully plan everything you can forecast reasonably well in advance
 You know plans will change, so the best strategy is to focus on simpler, modular, and flexible plans because simplicity leads to fast adaptation. Modularity solves the problem of adaptation because you can configure different modules in different ways, depending on your context. You achieve flexibility by preplanning "branches" and "sequels." Branches are points where you can use different paths depending on existing conditions. Sequels are preplanned follow-up actions.
 
 This approach to planning increases the chance that you can maintain alignment when conditions change.
+
+D15: The Principle of Tactical Reserves: Decentralize a portion of reserves
+
+In product development, tactical reserves are capacity margins pre-positioned at various levels within the project organizational structure, such as human resources, budgetary capacity, or safety margin in key processes. This strategy permits support groups to absorb variation locally instead of elevating the issue to higher organizational levels.
+
+By holding reserves at each organizational level, even larger supplementary forces can help, albeit with longer delays. This allows the team to apply force at critical times instead of making guesses prior to the project.
