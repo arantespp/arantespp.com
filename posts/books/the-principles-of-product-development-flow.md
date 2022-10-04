@@ -548,7 +548,7 @@ You know plans will change, so the best strategy is to focus on simpler, modular
 
 This approach to planning increases the chance that you can maintain alignment when conditions change.
 
-D15: The Principle of Tactical Reserves: Decentralize a portion of reserves
+#### D15: The Principle of Tactical Reserves: Decentralize a portion of reserves
 
 In product development, tactical reserves are capacity margins pre-positioned at various levels within the project organizational structure, such as human resources, budgetary capacity, or safety margin in key processes. This strategy permits support groups to absorb variation locally instead of elevating the issue to higher organizational levels.
 
