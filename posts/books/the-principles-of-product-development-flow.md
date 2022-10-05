@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-10-04'
-formattedUpdatedAt: 'October 04, 2022'
+updatedAt: '2022-10-05'
+formattedUpdatedAt: 'October 05, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 37
+readingTime: 38
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -553,3 +553,11 @@ This approach to planning increases the chance that you can maintain alignment w
 In product development, tactical reserves are capacity margins pre-positioned at various levels within the project organizational structure, such as human resources, budgetary capacity, or safety margin in key processes. This strategy permits support groups to absorb variation locally instead of elevating the issue to higher organizational levels.
 
 By holding reserves at each organizational level, even larger supplementary forces can help, albeit with longer delays. This allows the team to apply force at critical times instead of making guesses prior to the project.
+
+#### D16: The Principle of Early Contact: Make early and meaningful contact with the problem.
+
+Marines make contact early with opposing forces to reduce uncertainty about the composition and disposition of enemy forces. This early contact allows them to judge the opposition accurately and resolves a great deal of uncertainty.
+
+In product development, your opposition forces are the market and technical risks you must overcome during the project. Therefore, you must apply meaningful effort to judge the severe risks and whether your team can overcome them. Focusing these early efforts on zones of high technical or market risk is critical, so it's important to do a quick proof-of-concept and early market feedback.
+
+This approach differs from the typical systematic top-down design of the entire system. Such top-down approaches appear logical, but they rarely resolve risks rapidly enough.

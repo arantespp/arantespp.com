@@ -1,7 +1,16 @@
 import * as React from 'react';
 import * as dateFns from 'date-fns';
 import * as yup from 'yup';
-import { Button, Checkbox, Flex, Label, Select, Text, Themed } from 'theme-ui';
+import {
+  Button,
+  Checkbox,
+  Flex,
+  Label,
+  Select,
+  Text,
+  Textarea,
+  Themed,
+} from 'theme-ui';
 import { Controller, useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import { GROUPS, Group } from '../../lib/groups';
@@ -9,7 +18,6 @@ import { Post } from '../../lib/files';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Editor from './Editor';
 import Link from './Link';
-import Textarea from 'rc-textarea';
 
 const schema = yup.object({
   group: yup
@@ -122,13 +130,13 @@ const PostEditor = ({
     reset(
       post
         ? { ...post, tags: post?.tags?.join('; ') }
-        : { ...defaultValues, title: watch('title') },
+        : { ...defaultValues, title },
       {
         keepDefaultValues: false,
         keepDirty: false,
       },
     );
-  }, [defaultValues, post, reset, watch]);
+  }, [defaultValues, post, reset, title]);
 
   const [error, setError] = React.useState('');
 
