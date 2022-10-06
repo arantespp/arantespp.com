@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-10-05'
-formattedUpdatedAt: 'October 05, 2022'
+updatedAt: '2022-10-06'
+formattedUpdatedAt: 'October 06, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -561,3 +561,11 @@ Marines make contact early with opposing forces to reduce uncertainty about the 
 In product development, your opposition forces are the market and technical risks you must overcome during the project. Therefore, you must apply meaningful effort to judge the severe risks and whether your team can overcome them. Focusing these early efforts on zones of high technical or market risk is critical, so it's important to do a quick proof-of-concept and early market feedback.
 
 This approach differs from the typical systematic top-down design of the entire system. Such top-down approaches appear logical, but they rarely resolve risks rapidly enough.
+
+#### D17: The Principle of Decentralized Information: For decentralized decisions, disseminate key information widely.
+
+Decentralizing control requires decentralizing the authority to make decisions and the necessary information to make these decisions correctly. Each person should understand the executives' intentions in the organization—generally, the company's vision.
+
+Many companies classify and keep important information closed. Unfortunately, this approach undermines the ability of decentralized actors to make decisions.
+
+This approach doesn't mean the organization should collect all information in isolated local pools. Instead, the executives can define system-level optimum trade-off rules and then send them to the team members, enabling them to quickly and correctly make small decisions. For example, a software company could define that everyone can refactor some old code only if they write tests before the refactoring to avoid regression and that it doesn't take more than one workday.
