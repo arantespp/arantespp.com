@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-10-06'
-formattedUpdatedAt: 'October 06, 2022'
+updatedAt: '2022-10-08'
+formattedUpdatedAt: 'October 08, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 38
+readingTime: 39
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -338,17 +338,17 @@ It's more manageable controlling queue size than cycle time. Cycle time is a lag
 
 #### Q15: The Diffusion Principle: Over time, queues will randomly spin seriously out of control and will remain in this state for long periods.
 
-A random process—a sequence of random variables event—can lead a system to specific states. In the case of product development, queues can reach high-queue states. When these states occur, you can't rely on randomness to correct the problems that randomness creates, which leads to the last principle.
+A random process—a sequence of random variables events—can lead a system to specific states. In the case of product development, queues can reach high-queue states. When these states occur, you can't rely on randomness to correct the problems that randomness creates, which leads to the last principle.
 
 #### Q16: The Intervention Principle: We cannot rely on randomness to correct a random queue.
 
-A queue that drifted into a sustained high-queue state won't easily and quickly drift back to a low-queue state.
+A queue that drifts into a sustained high-queue state won't easily and quickly drift back to a low-queue state.
 
 If you drifted 10 heads in a sequence, the probability of getting 10 tails in a row to cancel the first 10 heads is about 1 in 1,000.
 
-When situations like these happen, you need to make quick and forceful interventions. You might set limits on maximum queue size and intervene as your system approach these limits.
+You need to make quick and forceful interventions when situations like these happen. You might set limits on maximum queue size and intervene as your system approach these limits.
 
-**The more you monitor queues and the more quickly you intervene, the less queues will cost you.**
+**The more you monitor queues, and the more quickly you intervene, the fewer queues will cost you.**
 
 ### 4 - Exploiting Variability
 
@@ -568,4 +568,10 @@ Decentralizing control requires decentralizing the authority to make decisions a
 
 Many companies classify and keep important information closed. Unfortunately, this approach undermines the ability of decentralized actors to make decisions.
 
-This approach doesn't mean the organization should collect all information in isolated local pools. Instead, the executives can define system-level optimum trade-off rules and then send them to the team members, enabling them to quickly and correctly make small decisions. For example, a software company could define that everyone can refactor some old code only if they write tests before the refactoring to avoid regression and that it doesn't take more than one workday.
+This approach doesn't mean the organization should collect all information in isolated local pools. Instead, the executives can define system-level optimum trade-off rules and send them to the team members, enabling them to quickly and correctly make small decisions. For example, a software company could define that everyone can refactor some old code only if they write tests before the refactoring to avoid regression and that it doesn't take more than one workday.
+
+#### D18: The Frequency Response Principle: We can't respond faster than our frequency response.
+
+In product development, queues do more damage if we respond to them slowly ([Principle Q16](#q16-the-intervention-principle-we-cannot-rely-on-randomness-to-correct-a-random-queue)). As a result, you need to accelerate your decision-making speed. You do this involving few people and few layers of management. You must avoid overloading the limited bandwidth at high management levels by ensuring that low levels can correctly make most decisions.
+
+You need to give them authority, information, and practice to enable lower organization levels to make decisions. Without preparation and the freedom to fail upon occasion, they won't take control of these decisions.
