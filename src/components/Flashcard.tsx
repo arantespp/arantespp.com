@@ -1,34 +1,54 @@
+import { Box, Flex, Text } from 'theme-ui';
 import { Flashcard as FlashcardType } from '../../lib/getFlashcard';
-import { Flex, Text } from 'theme-ui';
+import { fetch } from '../fetch';
+import { useQuery } from 'react-query';
 import Link from './Link';
 import RecommendationCard from './RecommendationCard';
 
-const Flashcard = ({ flashcard }: { flashcard: FlashcardType }) => {
+const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
+
+export const useFlashcard = () => {
+  const { data } = useQuery<{ flashcard: FlashcardType }>(
+    '/api/flashcard',
+    async () => fetch('/api/flashcard').then((r) => r.json()),
+    {
+      cacheTime: twentyFourHoursInMs,
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      retry: 1,
+      staleTime: twentyFourHoursInMs,
+      suspense: false,
+    },
+  );
+
+  return { flashcard: data?.flashcard };
+};
+
+const description = 'How would you explain this note to a 12 years old child?';
+
+const FetchFlashcard = () => {
+  const { flashcard } = useFlashcard();
+
+  return <>{flashcard && <RecommendationCard recommendation={flashcard} />}</>;
+};
+
+export const Flashcard = () => {
   return (
-    <Flex sx={{ flexDirection: 'column', marginY: 5 }}>
-      <RecommendationCard recommendation={flashcard} />
-      <Flex sx={{ width: '100%', justifyContent: 'flex-end' }}>
-        <Text
-          sx={{
-            fontSize: 1,
-            fontStyle: 'italic',
-            color: 'gray',
-            textAlign: 'right',
-          }}
-        >
-          <Text>The note </Text>
-          <Link href={flashcard.href}>{flashcard.title}</Link>
-          <Text sx={{ fontWeight: 'bold' }}> </Text>
-          <Text>is </Text>
-          <Text sx={{ fontWeight: 'bold' }}>{flashcard.diffWeeks.weeks} </Text>
-          <Text>{flashcard.diffWeeks.i18nWeeks} and </Text>
-          <Text sx={{ fontWeight: 'bold' }}>{flashcard.diffWeeks.days} </Text>
-          <Text>{flashcard.diffWeeks.i18nDays}</Text>
-          <Text> old.</Text>
-        </Text>
-      </Flex>
-    </Flex>
+    <>
+      <Text
+        sx={{
+          fontWeight: 'normal',
+          marginY: 4,
+          display: 'block',
+          fontStyle: 'italic',
+        }}
+      >
+        {description}
+      </Text>
+      <FetchFlashcard />
+    </>
   );
 };
 
-export default Flashcard;
+Flashcard.description = description;

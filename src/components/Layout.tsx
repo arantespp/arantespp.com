@@ -29,7 +29,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </Container>
       <Box
         sx={{
-          marginY: [5, 5, 6],
+          marginTop: [5, 5, 6],
+          marginBottom: [5],
           padding: [4, 4],
           backgroundColor: '#f5f5f5',
         }}

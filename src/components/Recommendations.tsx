@@ -19,9 +19,10 @@ const Recommendations = ({
         display: 'flex',
         flexDirection: 'column',
         paddingTop: 4,
-        borderTopColor: 'muted',
-        borderWidth: 1,
-        borderTopStyle: 'solid',
+        borderColor: 'muted',
+        borderStyle: 'solid',
+        borderWidth: 0,
+        borderTopWidth: 1,
       }}
     >
       <Text
