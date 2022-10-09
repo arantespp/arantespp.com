@@ -244,9 +244,9 @@ Supports:
 
 ## Systems
 
-### MJS Stack
+### MJ Stack
 
-Brushing teeth, meditating, journaling, stretching and making the bed before starting the day. I can only use my mobile and check social media after completing it.
+Brushing teeth, meditating, journaling, and making the bed before starting the day. I can only use my mobile and check social media after completing it.
 
 Supports:
 
@@ -254,9 +254,9 @@ Supports:
 - Stretch every day
 - Journal every day
 
-### Planing and Writing Stack
+### Planing Stack
 
-When I sit to work, I plan my day using BuJo and write a topic on my blog, create a thread on Twitter and a post on LinkedIn. No more than one hour and no social media.
+When I finish my work day, I review the current day and plan the next using BuJo. When I sit to work, I review the plan and start working.
 
 Supports:
 
@@ -265,3 +265,16 @@ Supports:
 - Become more focused
 - Work hard
 - Plan the day
+- Working Blocks Stack
+
+### Working Blocks Stack
+
+I work in blocks of 45 minutes with 15 minutes of breaks. I start these blocks on minutes 0.
+
+Supports:
+
+- Work hard
+- Become more focused
+- Fight resistances
+- Master time management
+- Master mental energy
