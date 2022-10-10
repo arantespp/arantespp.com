@@ -572,6 +572,14 @@ This approach doesn't mean the organization should collect all information in is
 
 #### D18: The Frequency Response Principle: We can't respond faster than our frequency response.
 
-In product development, queues do more damage if we respond to them slowly ([Principle Q16](#q16-the-intervention-principle-we-cannot-rely-on-randomness-to-correct-a-random-queue)). As a result, you need to accelerate your decision-making speed. You do this involving few people and few layers of management. You must avoid overloading the limited bandwidth at high management levels by ensuring that low levels can correctly make most decisions.
+In product development, queues do more damage if we respond to them slowly ([Principle Q16](#q16-the-intervention-principle-we-cannot-rely-on-randomness-to-correct-a-random-queue)). As a result, you need to accelerate your decision-making speed. You do this involving few people and few layers of management. By ensuring that low levels can correctly make most decisions, you must avoid overloading the limited bandwidth at high management levels.
 
 You need to give them authority, information, and practice to enable lower organization levels to make decisions. Without preparation and the freedom to fail upon occasion, they won't take control of these decisions.
+
+#### D19: The Quality of Service Principle: When response time is important, measure response time.
+
+If the time on the [critical path](/zettel/critical-path) is worth a lot of money and a support group is on the critical path, you should measure this support group on response time, not efficiency.
+
+For example, in a development team, the developers are always on the critical path of projects. The managers always measure efficiency and keep all developers working heavily without [slack](/zettel/slack-and-efficiency). When they changed the metric to how long developers respond to changes, their behavior changed utterly.
+
+If response times drive economics, you should align measurements and incentives for support groups to respond time. A straightforward way to move in this direction is to create a quality service agreement that spells out the response in time that users can expect from the department.
