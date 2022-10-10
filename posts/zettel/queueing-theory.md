@@ -1,5 +1,4 @@
 ---
-image: null
 book: null
 draft: false
 tags:
@@ -10,34 +9,41 @@ tags:
   - product-development
   - queues
   - statistics
-rating: 3
 date: '2021-07-24'
 excerpt: >-
   It can provide essential insights to product developers because there're
   similar problems of unpredictable work arrival time and unpredictable task
   durations.
 title: Queueing Theory
-group: zettelkasten
+group: zettel
 formattedDate: 'July 24, 2021'
-updatedAt: 'August 04, 2021'
+updatedAt: '2022-10-10'
+formattedUpdatedAt: 'October 10, 2022'
 updateHistory: >-
-  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/queueing-theory.md
-href: /zettelkasten/queueing-theory
-as: /z/queueing-theory
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/queueing-theory.md
+href: /zettel/queueing-theory
 slug: queueing-theory
 editLink: >-
-  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/queueing-theory.md
-url: 'https://arantespp.com/zettelkasten/queueing-theory'
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/queueing-theory.md
+url: 'https://arantespp.com/zettel/queueing-theory'
 keywords:
-  - zettelkasten
-  - mathematics
-  - Statistics
-  - Agner Krarup Erlang
+  - zettel
+  - agner-krarup-erlang
+  - david-kendall
+  - kendal-notation
+  - math
   - product-development
-  - kendal notation
-  - David Kendall
   - queues
+  - statistics
 readingTime: 1
+references:
+  - /zettel/markov-process
+  - /zettel/queue-service-process
+backlinks:
+  - title: M/G/1 Queue
+    href: /zettel/m-g-1-queue
+  - title: Queue Capacity Utilization
+    href: /zettel/queue-capacity-utilization
 ---
 
 ## Notes
@@ -46,15 +52,15 @@ readingTime: 1
 
   - He accurately estimated the probability that a call would be blocked at different capacity utilization levels.
 
-- It can provide essential insights to product developers because there're similar problems of unpredictable work arrival time and unpredictable task durations.
+- It can provide essential insights to product developers because there're similar problems of unpredictable work arrival times and task durations.
 
 - Queueing systems:
 
   - **Queue**: the waiting work.
   - **Server**: the resource performing the work, whose time to complete the work may be unpredictable.
-  - **Arrival Process**: the pattern with which work arrives, which is usually unpredictable.
+  - **Arrival Process**: the pattern with which work arrives. It's usually unpredictable.
   - [**Service Process**](/zettel/queue-service-process): the process in which the server accomplishes the work.
-  - **Queueing discipline**: how queue handles the waiting work.
+  - **Queueing discipline**: how queue handles the waiting work, the rules under which an organization processes incoming items. For example, First Come, First Served, Last In First Out, First In Still Here, etc.
 
 - Kendall notation: $M/M/1/\infty$ queue.
   - The first $M$ refers to the **arrival process**, in this case, is the [Markov process](/zettel/markov-process).
