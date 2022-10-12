@@ -10,7 +10,6 @@ import {
 } from 'next-seo';
 import { PresentationLayout } from '../components/PresentationLayout';
 import { PresentationProviders } from '../providers/PresentationProviders';
-import { PresentationSlidePage } from '../components/PresentationSlidePage';
 import { socialMedias } from '../../lib/socialMedias';
 import Head from 'next/head';
 import Layout from '../components/Layout';

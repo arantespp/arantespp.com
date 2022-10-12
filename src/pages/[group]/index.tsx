@@ -30,8 +30,13 @@ export const getStaticProps = async ({
   if (indexes.includes(path)) {
     const { data = {}, content = '' } =
       (await readMarkdownFile(`${path}.md`)) || {};
+
     const group = path === 'zettelkasten' ? 'zettel' : 'blog';
-    const recommendations = await getRecommendations({ group });
+
+    const recommendations = ['now', 'me'].includes(path)
+      ? []
+      : await getRecommendations({ group });
+
     const { excerpt = null } = data;
 
     return {

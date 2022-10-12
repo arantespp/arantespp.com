@@ -1,14 +1,6 @@
 # What I'm Doing Now
 
-I'm an entrepreneur, engineer, architect, programmer, product developer, writer, sales guy, athlete, and dancer.
-
-I build businesses and products that solve problems for real people.
-
-_[Do you want to contact me?](/contact)_
-
-## Now
-
-I'm a product and full-stack web developer at [Triângulos Tecnologia](https://triangulostecnologia.com), a tech company founded by two other friends from university and me. I'm involved in many different areas like recruiting, business ideations, detecting people's real problems, and all the kinds of jobs you need to do when you have a young business.
+_[A little about myself.](/me)_
 
 I was living in [São Carlos, SP, Brazil](https://www.google.com.br/maps/place/S%C3%A3o+Carlos,+State+of+S%C3%A3o+Paulo/@-22.0184565,-47.9311626,13z/data=!3m1!4b1!4m5!3m4!1s0x94b87726bb9dd181:0xd9d7d71505999bc!8m2!3d-22.0087082!4d-47.8909263), but because of the pandemics, I'm living with my family in the countryside of [São Paulo state](https://www.google.com/maps/place/State+of+S%C3%A3o+Paulo/@-22.5254297,-50.8848527,7z/data=!3m1!4b1!4m5!3m4!1s0x94ce597d462f58ad:0x1e5241e2e17b7c17!8m2!3d-23.5431786!4d-46.6291845). I'm enjoying this nomadic life. This place's flexibility and close to my family and friends are some of the home office advantages.
 

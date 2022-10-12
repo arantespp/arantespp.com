@@ -10,7 +10,7 @@ export const getStaticProps = async () => {
 
   const seo = {
     title: "Pedro's Blog",
-    openGraph: { images: [{ url: 'https://arantespp.com/images/me.webp' }] },
+    openGraph: { images: [{ url: 'https://arantespp.com/me.webp' }] },
   };
 
   const recommendations = await getRecommendations();
