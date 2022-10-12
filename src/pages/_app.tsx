@@ -44,6 +44,7 @@ const defaultSeo: DefaultSeoProps = {
     type: 'website',
     title,
     description,
+    images: [{ url: `${URL}/me.webp` }],
   },
 };
 
