@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-10-08'
-formattedUpdatedAt: 'October 08, 2022'
+updatedAt: '2022-10-12'
+formattedUpdatedAt: 'October 12, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,10 +27,11 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 39
+readingTime: 41
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
+  - /zettel/slack-and-efficiency
   - /zettel/proxy-variable
   - /zettel/pareto-paradox
   - /zettel/sunk-cost
@@ -572,7 +573,7 @@ This approach doesn't mean the organization should collect all information in is
 
 #### D18: The Frequency Response Principle: We can't respond faster than our frequency response.
 
-In product development, queues do more damage if we respond to them slowly ([Principle Q16](#q16-the-intervention-principle-we-cannot-rely-on-randomness-to-correct-a-random-queue)). As a result, you need to accelerate your decision-making speed. You do this involving few people and few layers of management. By ensuring that low levels can correctly make most decisions, you must avoid overloading the limited bandwidth at high management levels.
+In product development, queues do more damage if we respond to them slowly ([The Intervention Principle, Q16](#q16-the-intervention-principle-we-cannot-rely-on-randomness-to-correct-a-random-queue)). As a result, you need to accelerate your decision-making speed. You do this involving few people and few layers of management. By ensuring that low levels can correctly make most decisions, you must avoid overloading the limited bandwidth at high management levels.
 
 You need to give them authority, information, and practice to enable lower organization levels to make decisions. Without preparation and the freedom to fail upon occasion, they won't take control of these decisions.
 
@@ -583,3 +584,13 @@ If the time on the [critical path](/zettel/critical-path) is worth a lot of mone
 For example, in a development team, the developers are always on the critical path of projects. The managers always measure efficiency and keep all developers working heavily without [slack](/zettel/slack-and-efficiency). When they changed the metric to how long developers respond to changes, their behavior changed utterly.
 
 If response times drive economics, you should align measurements and incentives for support groups to respond time. A straightforward way to move in this direction is to create a quality service agreement that spells out the response in time that users can expect from the department.
+
+#### D20: The Second Market Principle: Use internal and external markets to decentralized control.
+
+The [The First Market Principle, E14](#e14-the-first-market-principle-ensure-decision-makers-feel-both-cost-and-benefit) states that pricing allows markets to balance supply and demand more effectively than centralized control. When a service prices different levels with different values, the service user can make self-serving decisions to buy premium when it's most valuable.
+
+Most product development organizations only permit pricing to play a role when using external services, not from internal support groups. This culture creates infinite demand for premium service and forces them to allocate this service. To deconflict projects, they elevate the decision to a management level above that of the project, adding delays.
+
+Differential pricing solves this problem. It decentralizes control and ensures people make good economic choices. However, if all users are willing to pay for premium service, you have made the wrong balance between capacity and queue size.
+
+One variant of this decentralization is to allow users to buy premium services with a limited number of tokens rather than money. Managers would go to a support group and ask for assistance only if they give the token.
