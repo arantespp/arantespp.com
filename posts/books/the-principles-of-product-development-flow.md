@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-10-12'
-formattedUpdatedAt: 'October 12, 2022'
+updatedAt: '2022-10-13'
+formattedUpdatedAt: 'October 13, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -594,3 +594,9 @@ Most product development organizations only permit pricing to play a role when u
 Differential pricing solves this problem. It decentralizes control and ensures people make good economic choices. However, if all users are willing to pay for premium service, you have made the wrong balance between capacity and queue size.
 
 One variant of this decentralization is to allow users to buy premium services with a limited number of tokens rather than money. Managers would go to a support group and ask for assistance only if they give the token.
+
+#### D21: The Principle of Regenerative Initiative: Cultivating initiative enables us to use initiative.
+
+The Marine Corps view initiative as the most critical quality of a leader. They're susceptible to the risk created by stifling initiative. As a result, they consider inaction and lack of decisiveness to be much more dangerous than making a bad decision. They believe one of the biggest mistakes a leader could make is to stifle initiative.
+
+The more you encourage initiative, the more chances you have to provide positive reinforcement for this initiative. The more chances people have to use initiative, the more they'll feel this isn't a risky thing to do.

@@ -10,7 +10,7 @@ const twitter = new TwitterAdsAPI({
   access_token: process.env.TWITTER_ACCESS_TOKEN,
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
   sandbox: false,
-  api_version: '10',
+  api_version: '11',
 });
 
 const ONE_WEEK = 7;
