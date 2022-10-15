@@ -423,13 +423,13 @@ You can proceed safely at a higher speed whenever you have a short turning radiu
 
 #### D1: The Second Perishability Principle: Decentralize control for problems and opportunities that age poorly.
 
-Certain problems and opportunities are perishable and best dealt with quickly. It's best to deal with fires quickly because they can turn into big fires. In constant, other types of problems are self-limiting, such as investing in a bad stock. The maximum amount of losses is the amount you've invested.
+Certain problems and opportunities are perishable and best dealt with quickly. It's best to deal with fires quickly because they can turn into big fires. In contrast, other problems are self-limiting, such as investing in a bad stock. The maximum amount of losses is the amount you've invested.
 
 The control strategy should focus on reacting most quickly to problems that age poorly, like fire.
 
 How can you quickly solve problems that age poorly or seize fleeting opportunities? You need to decentralize control (it doesn't mean decentralizing responsibility). You need to decentralize authority to act and pre-position sufficient resources to make the action meaningful.
 
-_Note: you can think of centralized resources as the tasks you set with the team at the beginning of the work week. The decentralized is the slack where everyone on the team can fix minor problems without reporting._
+_Note: you can think of centralized resources as the tasks you set with the team at the beginning of the work week. The decentralized is slack, where everyone on the team has the resources to fix minor problems without reporting._
 
 #### D2: The Scale Principle: Centralize control for problems that are infrequent, large, or that have significant economies of scale.
 
