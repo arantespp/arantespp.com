@@ -14,16 +14,28 @@ In 2017, after defending my master's thesis, I decided to leave the academic wor
 
 ## My Life Philosophy
 
-I believe that everything changes. Everything I wrote here may be the truth for me in some moment of my life, but it may not be the truth for me in some other moment of my life. Everything changes depending on our experiences, motivations, and fundamental beliefs that we choose to have. So, I'm not attached to any conclusions but to the fundamentals that lead me to those conclusions.
+I believe that everything changes. Everything I wrote here may be the truth for me in some moment of my life, but it may not be the truth for me in some other moment of my life. Everything changes depending on our experiences, motivations, and fundamental beliefs that we choose to have. So, I'm not attached to any conclusions but to the fundamentals that lead me to those conclusions. I'm writing [My Personal Constitution](/my-personal-constitution) to help me to elucidate my fundamentals, principles, goals, and values. It's probably a lifelong work.
 
 Independently of the fundamentals I consider essential for me, I strongly agree with the following Socrates' quote: _"It is a shame for a man to grow old without seeing the beauty and strength of which his body is capable."_ For me, the body here doesn't refer only to the physical body but also to our mental, emotional and spiritual body. Once we strengthen these four bodies, we reach a state of [full engagement mode](/books/the-power-of-full-engagement), where we can achieve our full potential. I want to live in this mode.
 
-Among these four bodies, I'm most fascinated by spirituality. I believe that a state of complete presence and consciousness exists, which Jesus and Budha have told us. When we reach it, we don't identify anymore with our egoic mind, and the notion of time that we know doesn't make sense anymore. Only here and now exists—the timeless essence of our being.
+Among these four bodies, I'm most fascinated by spirituality. I believe that a state of complete presence and consciousness exists, which Jesus and Buddha have told us. When we reach it, we don't identify anymore with our egoic mind, and the notion of time that we know doesn't make sense anymore. Only here and now exists—the timeless essence of our being.
 
-## Interests
+## Art
 
-- **I like women a lot.** I make many decisions in my life based on how I can impress and attract women. They're muses for me. As far as I remember, I only made big changes in my life because of them, like [my dance teacher](/my-story-the-dance-teacher).
+If we consider that doing any creative work is an art, then I'm an artist because I'm an entrepreneur. In this case, my art is finding people's problems and creating the solutions they want.
+
+Mathematics has its beauty too. It's a little nerdy, but I consider math axions, theorems, proofs, and equations beautiful. Mathematics is the language of nature.
+
+I also love architecture. I love appreciating buildings, homes, decorations, colors, geometry, furniture positions, light, and empty spaces. In a certain way, these beautiful places make me feel good.
+
+Dancing is another form of art that I enjoy. The combination of music, movements, the connection with my partner, the balance between the firmness in conducting and the confidence to be led amazes me.
+
+Finally, I love taking photos with my mobile. So the question is, "How can I find the beauty of this place and capture it with my mobile?" I'm not a professional photographer, but I like that challenge.
+
+## More About Me
 
 - **I love kids.** I like them because they're full of life and energy. But, to be honest, I'll enjoy being with any person with such characteristics.
 
 - **I enjoy walking at the end of the day.** I like to walk alone or with someone at the end of the day to recharge my energy. The place doesn't matter so much since I get some time to disconnect from the world, especially the digital world.
+
+- **I can't stay up late.** My body is used to sleeping early because of [my five habits project](/five-habits-for-the-next-five-years). So when I hang out with friends or go to parties, I ask them if we can schedule it not too late because I can't stay up late.
