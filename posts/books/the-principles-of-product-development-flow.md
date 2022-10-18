@@ -423,9 +423,17 @@ One way to make a control system more effective is to reduce the work it must do
 
 The same logic applies to product development. To be agile, you need a less massive program and sufficient resources to redirect them. Megaprojects are difficult to redirect because they're so massive.
 
-In product development, you must quickly apply adequate resources to redirect programs. Organizations operating at 100 percent capacity utilization usually apply too few resources, too late to get a quick change in direction.
+In product development, you must quickly apply adequate resources to redirect programs. Organizations operating at 100 percent capacity utilization usually apply too few resources and too late to get a quick change in direction.
 
 You can proceed safely at a higher speed whenever you have a short turning radius and a quick reaction time. This permits you to operate at higher speeds in an uncertain environment and reduces the magnitude of your control problem.
+
+#### FF19: The Principle of Colocation: Colocation improves almost all aspects of communication.
+
+Face-to-face communications create fast feedback in a group—it's inherently real-time and combines verbal and nonverbal information. Colocate the team to increase face-to-face communication and accelerate feedback.
+
+[The Proximity Principle, B17,](#b17-the-proximity-principle-proximity-enables-small-batch-sizes) discusses the value of physical proximity. Physical proximity enables small transport batches. When people are at adjacent desks, it takes less effort to communicate. The transaction cost drops, and people share in many small frequent batches instead of in a few large batches. They address issues immediately instead of queueing them up for the next meeting.
+
+Interpersonal communications, which have nothing to do with the work, also increase when the effort to communicate decreases. It's important because it helps develop cohesive teams—when we get to know others as complex human beings because of task-related and non-task-related interpersonal communications, we tend to interpret the behavior of others less negatively.
 
 ### 9. Achieving Decentralized Control
 
