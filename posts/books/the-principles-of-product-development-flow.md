@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-10-13'
-formattedUpdatedAt: 'October 13, 2022'
+updatedAt: '2022-10-18'
+formattedUpdatedAt: 'October 18, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 41
+readingTime: 42
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -369,6 +369,16 @@ Choice A is the best economic choice and the most uncertain. Choice C has zero u
 
 The economics of each discrete choice depends on two factors: the probability and the payoff function. We can't make good economic choices if we only pay attention to probabilities. So you need to pay attention to both probability and payoff functions.
 
+### 5. Reducing Batch Size
+
+#### B17: The Proximity Principle: Proximity enables small batch sizes.
+
+When you colocate development teams, you enable communication in small batches. Communication on colocated teams is face-to-face, which is synchronous and real-time. The sender gets instant feedback, verbally and nonverbally.
+
+In contrast, physically-dispersed teams tend to use large-batch asynchronous communications. Even when they use small batch communication, like e-mail, it's asynchronous with long delays. This is a small batch size deprived of many of its benefits.
+
+Proximity also promotes flexibility that allows you to respond quickly to emerging queues.
+
 ### 7. Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
@@ -389,7 +399,7 @@ One heuristic for RR scheduling is ensuring the system clears 80 percent of the 
 
 #### F28: The Principle of Preplaned Flexibility: For fast responses, preplan and invest in flexibility.
 
-Flexibility is the result of advance choices and planning. Two examples below illustrate this planning.
+Flexibility is the result of advanced choices and planning. Two examples below illustrate this planning.
 
 If you plan to jettison requirements to hold schedules, you should decide, in advance, which requirements are nonessential. For example, you can identify the requirements as mandatory, important, and optional at the beginning. This way, your team can architect the solution to couple these optional requirements loosely with the rest of the architecture.
 
