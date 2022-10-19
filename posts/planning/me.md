@@ -181,7 +181,7 @@ Supports:
 - Learn business
 - Learn product development
 
-### Workout five times a week
+### Workout six times a week
 
 Supports:
 
@@ -219,14 +219,14 @@ Supports:
 Supports:
 
 - Master physical energy
-- Workout five times a week
+- Workout six times a week
 
 ### Sleep well
 
 Supports:
 
 - Master physical energy
-- Workout five times a week
+- Workout six times a week
 - Fight resistances
 
 ### Stretch every day
@@ -251,21 +251,48 @@ Brushing teeth, meditating, journaling, and making the bed before starting the d
 Supports:
 
 - Meditate 30 minutes every day
-- Stretch every day
 - Journal every day
+- Master spiritual energy
+- Master emotional energy
 
-### Planing Stack
+### Workout Stack
 
-When I finish my work day, I review the current day and plan the next using BuJo. When I sit to work, I review the plan and start working.
+Workout six times a week in the morning—three times going to the gym and three times doing stretching.
 
 Supports:
 
+- Workout six times a week
+- Master physical energy
+- Master mental energy
+- Master emotional energy
+- Master spiritual energy
+- Eat healthy
+- Sleep well
+- Stretch every day
+
+### Plan My Day Stack
+
+Planning my day before starting it. I check the Calendar, review the tasks I planned the day before on Finish My Day Stack, check ClickUp, and plan the day using BuJo. I also need to define a time to end the day.
+
+Supports:
+
+- RW-DP Stack
+- Working Blocks Stack
+- Work hard
+- Master time management
+- Become more focused
+- Plan the day
+- Finish My Day Stack
+
+### RW-DP Stack
+
+Reading, writing, and doing my daily post. I schedule what I read to write on my daily post after 28 days.
+
+Supports:
+
+- Read every day
 - Write every day
 - Create social capital
-- Become more focused
-- Work hard
-- Plan the day
-- Working Blocks Stack
 
 ### Working Blocks Stack
 
@@ -278,3 +305,15 @@ Supports:
 - Fight resistances
 - Master time management
 - Master mental energy
+
+### Finish My Day Stack
+
+When I finish my work day, I review the current day and plan the next using BuJo.
+
+Supports:
+
+- Sleep well
+- Master time management
+- Master mental energy
+- Become more focused
+- Plan My Day Stack

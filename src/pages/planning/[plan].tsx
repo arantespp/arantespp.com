@@ -48,12 +48,23 @@ export const getStaticProps = async ({
     description: description || '',
   }));
 
-  const links = nodesMeta.flatMap((node) => {
-    return node.supports.map((support) => ({
-      source: node.name,
-      target: support,
-    }));
-  });
+  const links = nodesMeta
+    .flatMap((node) => {
+      return node.supports.map((support) => ({
+        source: node.name,
+        target: support,
+      }));
+    })
+    /**
+     * Remove links that source and target are the same as target and source.
+     */
+    .filter((link, _, links) => {
+      const reverseLink = links.find(
+        (link_) => link_.source === link.target && link_.target === link.source,
+      );
+
+      return !reverseLink;
+    });
 
   return {
     props: { title: `Planning - ${plan.name}`, graphData: { nodes, links } },
