@@ -618,3 +618,11 @@ One variant of this decentralization is to allow users to buy premium services w
 The Marine Corps view initiative as the most critical quality of a leader. They're susceptible to the risk created by stifling initiative. As a result, they consider inaction and lack of decisiveness to be much more dangerous than making a bad decision. They believe one of the biggest mistakes a leader could make is to stifle initiative.
 
 The more you encourage initiative, the more chances you have to provide positive reinforcement for this initiative. The more chances people have to use initiative, the more they'll feel this isn't a risky thing to do.
+
+#### D22: The Principle of Face-to-Face Communication: Exploit the speed and bandwidth of face-to-face communications.
+
+As mentioned in D13, the Marines maintain alignment with lateral communications. They believe face-to-face communication is the best, followed by voice communication. Both have much higher bandwidth than textual alternatives. A spoken word is worth much more than a written word. Also, real-time communication shortens the feedback loop, which is valuable, as noted in [Chapter 8. Using Fast Feedback](#8-using-fast-feedback).
+
+One of the best ways to achieve this fast communication is with collocated teams, as discussed in [The Principle of Colocation, FF19](#ff19-the-principle-of-colocation-colocation-improves-almost-all-aspects-of-communication). Even if you can't collocate the entire team for the project's total duration, you can partially collocate either part of the team or part of the time.
+
+If you can't collocate the team members, you can emphasize voice conversation instead of written, like email. Verbal communication is much more effective in generating rapid feedback than email. If you can't collocate members for the entire duration of their activities, you should do it at frequent, predictable intervals, as discussed in [Chapter 7. Controlling Flow Under Uncertainty](#7-controlling-flow-under-uncertainty).
