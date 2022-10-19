@@ -427,7 +427,7 @@ In product development, you must quickly apply adequate resources to redirect pr
 
 You can proceed safely at a higher speed whenever you have a short turning radius and a quick reaction time. This permits you to operate at higher speeds in an uncertain environment and reduces the magnitude of your control problem.
 
-#### FF19: The Principle of Colocation: Colocation improves almost all aspects of communication.
+#### FF19: The Principle of Collocation: Collocation improves almost all aspects of communication.
 
 Face-to-face communications create fast feedback in a group—it's inherently real-time and combines verbal and nonverbal information. Colocate the team to increase face-to-face communication and accelerate feedback.
 
@@ -623,6 +623,6 @@ The more you encourage initiative, the more chances you have to provide positive
 
 As mentioned in D13, the Marines maintain alignment with lateral communications. They believe face-to-face communication is the best, followed by voice communication. Both have much higher bandwidth than textual alternatives. A spoken word is worth much more than a written word. Also, real-time communication shortens the feedback loop, which is valuable, as noted in [Chapter 8. Using Fast Feedback](#8-using-fast-feedback).
 
-One of the best ways to achieve this fast communication is with collocated teams, as discussed in [The Principle of Colocation, FF19](#ff19-the-principle-of-colocation-colocation-improves-almost-all-aspects-of-communication). Even if you can't collocate the entire team for the project's total duration, you can partially collocate either part of the team or part of the time.
+One of the best ways to achieve this fast communication is with collocated teams, as discussed in [The Principle of Collocation, FF19](#ff19-the-principle-of-collocation-collocation-improves-almost-all-aspects-of-communication). Even if you can't collocate the entire team for the project's total duration, you can partially collocate either part of the team or part of the time.
 
 If you can't collocate the team members, you can emphasize voice conversation instead of written, like email. Verbal communication is much more effective in generating rapid feedback than email. If you can't collocate members for the entire duration of their activities, you should do it at frequent, predictable intervals, as discussed in [Chapter 7. Controlling Flow Under Uncertainty](#7-controlling-flow-under-uncertainty).
