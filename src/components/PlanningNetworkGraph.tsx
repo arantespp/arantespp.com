@@ -35,7 +35,7 @@ export const PlanningNetworkGraph = ({
         <ForceGraph3D
           graphData={graphData}
           dagMode="lr"
-          dagLevelDistance={1.5 * graphData.nodes.length}
+          dagLevelDistance={1.2 * graphData.nodes.length}
           nodeLabel={(node) => {
             const { description } = node as any;
 

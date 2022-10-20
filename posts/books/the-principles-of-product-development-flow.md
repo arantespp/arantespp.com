@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-10-18'
-formattedUpdatedAt: 'October 18, 2022'
+updatedAt: '2022-10-20'
+formattedUpdatedAt: 'October 20, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -27,7 +27,7 @@ keywords:
   - books
   - donald-g-reinertsen
   - product-development
-readingTime: 42
+readingTime: 44
 bitLink: flow
 references:
   - /zettel/parkinson-s-law
@@ -43,6 +43,7 @@ references:
   - /zettel/cumulative-flow-diagram-cfd
   - /zettel/little-s-law
   - /zettel/round-robin-scheduling
+  - /zettel/social-expectancy-theory
 backlinks: []
 excerpt: ''
 ---
@@ -626,3 +627,11 @@ As mentioned in D13, the Marines maintain alignment with lateral communications.
 One of the best ways to achieve this fast communication is with collocated teams, as discussed in [The Principle of Collocation, FF19](#ff19-the-principle-of-collocation-collocation-improves-almost-all-aspects-of-communication). Even if you can't collocate the entire team for the project's total duration, you can partially collocate either part of the team or part of the time.
 
 If you can't collocate the team members, you can emphasize voice conversation instead of written, like email. Verbal communication is much more effective in generating rapid feedback than email. If you can't collocate members for the entire duration of their activities, you should do it at frequent, predictable intervals, as discussed in [Chapter 7. Controlling Flow Under Uncertainty](#7-controlling-flow-under-uncertainty).
+
+#### D23: The Trust Principle: Trust is built through experience
+
+The decentralized control is based on trust. Therefore, it must be present hierarchically and laterally—subordinates, superiors, and peers must trust each other.
+
+What builds trust? We trust someone when we think we can predict their behavior under challenging conditions. Psychologists use [social expectance theory](/zettel/social-expectancy-theory) to explain that people trust each other when they can predict others' behaviors.
+
+In product development, you can create trust throughout the organization. You can increase trust by maintaining continuity in your teams. Furthermore, if you have small batch-size activities, you expose team members to more learning cycles. With each learning cycle, your team predicts more the behavior of each member, increasing trust.
