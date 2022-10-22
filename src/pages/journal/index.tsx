@@ -22,7 +22,7 @@ const JournalIndex = () => {
         <Link href="/journal/all">All</Link>
         <Link href="/journal/editable">Editable</Link>
         <Link href="/journal/editor">Editor</Link>
-        <Link href="/journal/missing">Missing</Link>
+        <Link href="/journal/stats">Stats</Link>
       </Flex>
       <JournalDateNavigator date={date} setDate={setDate} />
       <React.Suspense fallback={<Loading />}>

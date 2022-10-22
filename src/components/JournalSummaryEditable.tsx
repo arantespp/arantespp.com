@@ -25,7 +25,7 @@ export const JournalSummaryEditable = ({ date }: { date: string }) => {
             }}
           />
         </Box>
-        <Box sx={{ flex: 1, overflowY: 'scroll' }}>
+        <Box sx={{ flex: 1, overflowY: 'scroll', maxWidth: 1000, paddingX: 3 }}>
           <Journal markdown={editable} title={'Summary'} />
         </Box>
       </Flex>

@@ -36,6 +36,7 @@ const JournalPage = () => {
       <Flex sx={{ gap: 3, marginY: 4 }}>
         <Link href={`/journal/editor?date=${date}`}>Edit</Link>
         <Link href="/journal">Summary</Link>
+        <Link href="/journal/editable?date=${date}">Editable</Link>
         <Link href={`/journal/backup/${date}`}>Backup</Link>
       </Flex>
       <JournalDateNavigator

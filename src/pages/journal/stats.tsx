@@ -6,25 +6,7 @@ import { useQuery } from 'react-query';
 import { useRouter } from 'next/router';
 import Heading from '../../components/Heading';
 
-const MissingDatesNumber = ({
-  missingDatesNumber = 0,
-}: {
-  missingDatesNumber?: number;
-}) => {
-  return (
-    <Text
-      sx={{
-        marginBottom: 3,
-        color: 'gray',
-        fontStyle: 'italic',
-      }}
-    >
-      {missingDatesNumber} missing dates.
-    </Text>
-  );
-};
-
-const MaxStreak = ({ maxStreak = 0 }: { maxStreak?: number }) => {
+const Stat = ({ children }: { children: React.ReactNode }) => {
   return (
     <Text
       sx={{
@@ -34,18 +16,34 @@ const MaxStreak = ({ maxStreak = 0 }: { maxStreak?: number }) => {
         fontStyle: 'italic',
       }}
     >
-      {maxStreak} days streak.
+      {children}
     </Text>
   );
 };
 
-const JournalMissingDates = () => {
+const MissingDatesNumber = ({
+  missingDatesNumber = 0,
+}: {
+  missingDatesNumber?: number;
+}) => <Stat>{missingDatesNumber} missing dates.</Stat>;
+
+const MaxStreak = ({ maxStreak = 0 }: { maxStreak?: number }) => (
+  <Stat>{maxStreak} days streak.</Stat>
+);
+
+const AllDatesNumber = ({
+  allDatesNumber = 0,
+}: {
+  allDatesNumber?: number;
+}) => <Stat>{allDatesNumber} total dates.</Stat>;
+
+const JournalStats = () => {
   const router = useRouter();
 
   const { apiKey } = useApiKey();
 
   const { data } = useQuery(
-    [`/api/journal/missing`, apiKey],
+    [`/api/journal/stats`, apiKey],
     async ({ queryKey }) => {
       return fetch(queryKey[0], {
         headers: {
@@ -61,6 +59,7 @@ const JournalMissingDates = () => {
             label: string;
             dates: { date: string; day: string }[];
           }[];
+          allDays: number;
         }> => r.json(),
       );
     },
@@ -72,10 +71,12 @@ const JournalMissingDates = () => {
   return (
     <>
       <NextSeo noindex nofollow title="Journal - Missing Dates" />
-      <Heading as="h1">Missing Dates</Heading>
+      <Heading as="h1">Stats</Heading>
+      <AllDatesNumber allDatesNumber={data?.allDays} />
       <MaxStreak maxStreak={data?.maxStreak} />
       <MissingDatesNumber missingDatesNumber={data?.missingDates?.length} />
-      <Flex sx={{ gap: 3, flexDirection: 'column' }}>
+      <Heading as="h2">Missing Dates</Heading>
+      <Flex sx={{ flexDirection: 'column' }}>
         {groupedMissingDays.map(({ label, dates }) => {
           return (
             <Flex
@@ -84,7 +85,7 @@ const JournalMissingDates = () => {
                 flexDirection: 'column',
               }}
             >
-              <Heading as="h2">{label}</Heading>
+              <Heading as="h3">{label}</Heading>
               <MissingDatesNumber missingDatesNumber={dates.length} />
               <Flex sx={{ gap: 3, flexWrap: 'wrap' }}>
                 {dates
@@ -123,4 +124,4 @@ const JournalMissingDates = () => {
   );
 };
 
-export default JournalMissingDates;
+export default JournalStats;

@@ -160,7 +160,7 @@ export const theme: Theme = {
     h3: {
       padding: 0,
       margin: 0,
-      marginTop: 5,
+      marginTop: 4,
       marginBottom: 4,
       fontSize: [3, 3],
       fontFamily: 'heading',

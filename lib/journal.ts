@@ -251,7 +251,7 @@ export type JournalsSummary = NonNullable<
 
 export type JournalsSummaryKeys = JournalsSummary[number]['key'];
 
-export const getMissingDays = async ({
+export const getStats = async ({
   from = JOURNAL_FIRST_DATE,
   to = getToday(),
 }: {
@@ -320,7 +320,12 @@ export const getMissingDays = async ({
     return acc;
   }, [] as { label: string; dates: { date: string; day: string }[] }[]);
 
-  return { missingDates, groupedMissingDays, maxStreak };
+  return {
+    missingDates,
+    groupedMissingDays,
+    maxStreak,
+    allDays: journalDays.length,
+  };
 };
 
 export const getAllQuestions = async () => {
