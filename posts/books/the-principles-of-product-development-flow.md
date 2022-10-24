@@ -2,8 +2,8 @@
 title: The Principles of Product Development Flow
 date: '2021-08-31'
 formattedDate: 'August 31, 2021'
-updatedAt: '2022-10-20'
-formattedUpdatedAt: 'October 20, 2022'
+updatedAt: '2022-10-24'
+formattedUpdatedAt: 'October 24, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/books/the-principles-of-product-development-flow.md
 href: /drafts/books/the-principles-of-product-development-flow
@@ -44,6 +44,8 @@ references:
   - /zettel/little-s-law
   - /zettel/round-robin-scheduling
   - /zettel/social-expectancy-theory
+  - >-
+    /zettel/queues-randomly-spin-seriously-out-of-control-and-remain-in-this-state-for-long-periods
 backlinks: []
 excerpt: ''
 ---
@@ -340,7 +342,9 @@ It's more manageable controlling queue size than cycle time. Cycle time is a lag
 
 #### Q15: The Diffusion Principle: Over time, queues will randomly spin seriously out of control and will remain in this state for long periods.
 
-A random process—a sequence of random variables events—can lead a system to specific states. In the case of product development, queues can reach high-queue states. When these states occur, you can't rely on randomness to correct the problems that randomness creates, which leads to the last principle.
+[Note: Queues Randomly Spin Seriously Out of Control and Remain in This State for Long Periods](/zettel/queues-randomly-spin-seriously-out-of-control-and-remain-in-this-state-for-long-periods)
+
+A random process—a sequence of random variable events—can lead a system to specific states. In the case of product development, queues can reach high-queue states. When these states occur, you can't rely on randomness to correct the problems that randomness creates, which leads to the last principle.
 
 #### Q16: The Intervention Principle: We cannot rely on randomness to correct a random queue.
 
