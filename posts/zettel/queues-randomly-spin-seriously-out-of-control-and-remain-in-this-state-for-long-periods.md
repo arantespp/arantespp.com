@@ -19,7 +19,7 @@ formattedUpdatedAt: 'October 24, 2022'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/queues-randomly-spin-seriously-out-of-control-and-remain-in-this-state-for-long-periods.md
 href: >-
-  /drafts/zettel/queues-randomly-spin-seriously-out-of-control-and-remain-in-this-state-for-long-periods
+  /zettel/queues-randomly-spin-seriously-out-of-control-and-remain-in-this-state-for-long-periods
 slug: >-
   queues-randomly-spin-seriously-out-of-control-and-remain-in-this-state-for-long-periods
 editLink: >-
@@ -37,7 +37,7 @@ backlinks: []
 
 ## Notes
 
-- A random process (sequence of random variables) has the chance to spin out from the mean because the variance of the accumulative total grows larger with time. If you flip a fair coin many times, there're chances that the commutative number of heads or tails to be equal diminishes over time.
+- A random process (sequence of random variables) has the chance to spin out from the mean because the variance of the accumulative total grows larger with time. If you flip a fair coin many times, the chances that the commutative number of heads or tails to be equal diminishes over time.
 
 - Even in a low-variance case, as in the case of the coin above, the spin out of control happens.
 

@@ -342,7 +342,7 @@ It's more manageable controlling queue size than cycle time. Cycle time is a lag
 
 #### Q15: The Diffusion Principle: Over time, queues will randomly spin seriously out of control and will remain in this state for long periods.
 
-[Note: Queues Randomly Spin Seriously Out of Control and Remain in This State for Long Periods](/zettel/queues-randomly-spin-seriously-out-of-control-and-remain-in-this-state-for-long-periods)
+_[Note: Queues Randomly Spin Seriously Out of Control and Remain in This State for Long Periods.](/zettel/queues-randomly-spin-seriously-out-of-control-and-remain-in-this-state-for-long-periods)_
 
 A random process—a sequence of random variable events—can lead a system to specific states. In the case of product development, queues can reach high-queue states. When these states occur, you can't rely on randomness to correct the problems that randomness creates, which leads to the last principle.
 
