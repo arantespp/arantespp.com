@@ -65,6 +65,7 @@ export const PlanningNetworkGraph = ({
               containerRef.current.scrollIntoView({ behavior: 'smooth' });
             }
           }}
+          onDagError={(loopNodeIds) => {}}
         />
       </FullWidth>
     </Box>

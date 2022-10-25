@@ -139,6 +139,7 @@ const NetworkGraph = ({
         containerRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     },
+    onDagError: (loopNodeIds) => {},
   };
 
   const buttonCommonProps = {
