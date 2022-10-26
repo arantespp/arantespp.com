@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box } from 'theme-ui';
-import { GraphData } from 'react-force-graph-3d';
+import { ForceGraphMethods, GraphData } from 'react-force-graph-3d';
 import FullWidth from './FullWidth';
 import SpriteText from 'three-spritetext';
 import dynamic from 'next/dynamic';
@@ -18,9 +18,12 @@ export const PlanningNetworkGraph = ({
 
   const wasScrolledIntoView = React.useRef(false);
 
+  const graphRef = React.useRef<ForceGraphMethods | undefined>(undefined);
+
   return (
     <Box
       sx={{
+        position: 'relative',
         '.nodeLabel': {
           backgroundColor: 'white',
           paddingX: 3,
@@ -33,18 +36,11 @@ export const PlanningNetworkGraph = ({
     >
       <FullWidth ref={containerRef}>
         <ForceGraph3D
+          ref={graphRef}
+          height={700}
           graphData={graphData}
           dagMode="lr"
           dagLevelDistance={1.2 * graphData.nodes.length}
-          nodeLabel={(node) => {
-            const { description } = node as any;
-
-            if (!description) {
-              return '';
-            }
-
-            return `<div class="nodeLabel"><p>${description}</p></div>`;
-          }}
           nodeAutoColorBy="group"
           nodeResolution={2 ** 5}
           nodeThreeObjectExtend={true}
@@ -66,6 +62,13 @@ export const PlanningNetworkGraph = ({
             }
           }}
           onDagError={(loopNodeIds) => {}}
+          onNodeClick={(node: any) => {
+            const { urlHash } = node;
+
+            if (urlHash) {
+              window.location.hash = urlHash;
+            }
+          }}
         />
       </FullWidth>
     </Box>

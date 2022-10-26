@@ -288,11 +288,21 @@ Supports:
 
 Reading, writing, and doing my daily post. I schedule what I read to write on my daily post after 28 days.
 
+Steps:
+
+1. Open kanban board
+1. Check the priority task
+1. Write about the priority task and move to FORGETTING status
+1. Daily post the task with due date equal to today and move to DONE
+1. Determine the next priority task and move to PRIORITIES status
+
 Supports:
 
 - Read every day
 - Write every day
 - Create social capital
+- Learn product development
+- Learn business
 
 ### Working Blocks Stack
 

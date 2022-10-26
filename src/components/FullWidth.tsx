@@ -13,6 +13,7 @@ const FullWidth = React.forwardRef<HTMLElement, FullWidthProps>(
       <Flex
         ref={ref}
         sx={{
+          height: '100%',
           width: [`${editorWidthInVw}vw`],
           position: 'relative',
           left: ['50%'],

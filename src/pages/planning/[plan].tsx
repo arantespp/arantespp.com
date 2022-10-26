@@ -2,7 +2,10 @@ import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 import { Plan, getAllPlans } from '../../../lib/planning';
 import { PlanningNetworkGraphProps } from '../../components/PlanningNetworkGraph';
+import { paramCase } from 'change-case';
+import { theme } from '../../theme';
 import Heading from '../../components/Heading';
+import Markdown from '../../components/Markdown';
 import dynamic from 'next/dynamic';
 
 const PlanningNetworkGraph = dynamic<PlanningNetworkGraphProps>(
@@ -38,15 +41,13 @@ export const getStaticProps = async ({
       id: node.name,
       group: group.name,
       supports: node.supports || [],
+      color: group.name === 'Systems' ? theme?.colors?.accent : null,
+      urlHash: paramCase(node.name),
       ...node,
     }));
   });
 
-  const nodes = nodesMeta.map(({ id, group, description }) => ({
-    id,
-    group,
-    description: description || '',
-  }));
+  const nodes = nodesMeta;
 
   const links = nodesMeta
     .flatMap((node) => {
@@ -66,20 +67,38 @@ export const getStaticProps = async ({
       return !reverseLink;
     });
 
+  const markdown = [...plan.groups].reverse().reduce((acc, group) => {
+    return [
+      acc,
+      `## ${group.name}`,
+      ...group.nodes.flatMap((node) => {
+        return [`### ${node.name}`, `${node.description || ''}`]
+          .filter((line) => line)
+          .join('\n');
+      }),
+    ].join('\n');
+  }, '');
+
   return {
-    props: { title: `Planning - ${plan.name}`, graphData: { nodes, links } },
+    props: {
+      title: `Planning - ${plan.name}`,
+      graphData: { nodes, links },
+      markdown,
+    },
   };
 };
 
 const PlanningPlan = ({
   title,
   graphData,
+  markdown,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <NextSeo noindex nofollow title={title} />
       <Heading as="h1">{title}</Heading>
       <PlanningNetworkGraph graphData={graphData} />
+      <Markdown content={markdown} />
     </>
   );
 };

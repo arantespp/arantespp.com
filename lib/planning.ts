@@ -277,7 +277,47 @@ const parsePlansMachine = createMachine<
                               const node = group?.nodes[group.nodes.length - 1];
 
                               if (node) {
-                                node.description = token.content;
+                                if (!node.description) {
+                                  node.description = '';
+                                }
+
+                                node.description += token.content + '\n\n';
+                              }
+
+                              return context.plans;
+                            },
+                          }),
+                        ],
+                      },
+                      listItem: {
+                        on: {
+                          TOKEN: {
+                            target: 'inline',
+                            cond: {
+                              type: 'matchToken',
+                              token: {
+                                type: 'inline',
+                              },
+                            },
+                          },
+                        },
+                        entry: [
+                          assign({
+                            plans: (context, { token }: TokenEvent) => {
+                              const plan =
+                                context.plans[context.plans.length - 1];
+
+                              const group =
+                                plan.groups?.[plan.groups.length - 1];
+
+                              const node = group?.nodes[group.nodes.length - 1];
+
+                              if (node) {
+                                if (!node.description) {
+                                  node.description = '';
+                                }
+
+                                node.description += `1. `;
                               }
 
                               return context.plans;
@@ -294,6 +334,24 @@ const parsePlansMachine = createMachine<
                                 type: 'matchToken',
                                 token: {
                                   content: SUPPORTS_INDICATOR,
+                                },
+                              },
+                            },
+                            {
+                              target: 'listItem',
+                              cond: {
+                                type: 'matchToken',
+                                token: {
+                                  type: 'list_item_open',
+                                },
+                              },
+                            },
+                            {
+                              target: 'inline',
+                              cond: {
+                                type: 'matchToken',
+                                token: {
+                                  type: 'inline',
                                 },
                               },
                             },
