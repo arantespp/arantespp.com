@@ -46,7 +46,7 @@ When you set a limit on [WIP](/zettel/work-in-process-wip), you create positive 
 
 ### Negative
 
-- Permanently reject potentially valuable demand.
+- Permanently reject potential valuable demand.
 - Reduce [capacity utilization](/zettel/queue-capacity-utilization) because you lose the demand you rejected during periods of congestion.
 
 ## References
