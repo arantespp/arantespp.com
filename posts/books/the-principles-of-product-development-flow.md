@@ -390,9 +390,13 @@ Proximity also promotes flexibility that allows you to respond quickly to emergi
 
 [The Diffusion Principle, Q15](#q15-the-diffusion-principle-over-time-queues-will-randomly-spin-seriously-out-of-control-and-will-remain-in-this-state-for-long-periods), states that high-queue states occur infrequently, yet, when they occur, they last a long time and do excessive economic damage. The simplest way to prevent this high-queue state is to block arrivals when the queue becomes large. This type of queuing is know as an $M/M/1/k$ qeueing system. It's the same as $M/M/1/\infty$, a system where k equals infinity.
 
-When you set a limit on WIP, you create one positive and two negative effects. The positive is to reduce average [cycle time](/zettel/cycle-time). The first negative effect is that you permanently reject potentially valuable demand. Second, you reduce your [capacity utilization](/zettel/queue-capacity-utilization) because you lose the demand you rejected during periods of congestion ([note](/zettel/effects-of-set-a-limit-on-wip-work-in-process)).
+When you set a limit on WIP, you create one positive and two negative effects. The positive is to reduce average [cycle time](/zettel/cycle-time). The first negative effect is that you permanently reject potentially valuable demand. Second, you reduce your [capacity utilization](/zettel/queue-capacity-utilization) because you lose the demand you rejected during periods of congestion.
 
 In the book, the author shows that the positive effect is about 10 times the economic costs of the opportunity cost of blocked jobs and capacity underutilization.
+
+#### W2: The Principle of Rate-Matching: WIP constraints force rate-matching.
+
+WIP constraints are the easiest way to force rate-matching between adjacent processes. By setting an upper limit on the pool size between two processes, you inherently force the average arrival rate into this pool to match the average rate of departure from it.
 
 ### 7. Controlling Flow Under Uncertainty
 
