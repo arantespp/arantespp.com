@@ -95,27 +95,29 @@ const NetworkGraph = ({
 
   const [show2D, setShow2D] = React.useState(false);
 
-  // const [{ height, width }, setDimensions] = React.useState({
-  //   height: 0,
-  //   width: 0,
-  // });
+  const [{ height, width }, setDimensions] = React.useState({
+    height: 0,
+    width: 0,
+  });
 
   // const widthPercentage = useResponsiveValue([1, 1]);
 
-  // React.useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     setDimensions({
-  //       height: 1 * window.innerHeight,
-  //       width: widthPercentage * window.innerWidth,
-  //     });
-  //   }
-  // }, [widthPercentage]);
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setDimensions({
+        height: 0.85 * window.innerHeight,
+        width: window.innerWidth,
+      });
+    }
+  }, []);
 
   // if (height === 0 || width === 0) {
   //   return null;
   // }
 
   const graphCommonProps = {
+    height,
+    width,
     graphData,
     nodeOpacity: 0.9,
     nodeResolution: 32,
@@ -154,7 +156,7 @@ const NetworkGraph = ({
     <Flex
       ref={containerRef}
       sx={{
-        height: '100vh',
+        height: '85vh',
         width: '100vw',
         position: 'relative',
         flexDirection: 'column',
@@ -209,6 +211,7 @@ const NetworkGraph = ({
       </Button>
       <Button
         sx={{
+          display: 'none',
           ...buttonCommonProps,
           bottom: 32,
           right: 32,

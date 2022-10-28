@@ -5,9 +5,9 @@ import {
   faLink,
   faPen,
 } from '@fortawesome/free-solid-svg-icons';
+import { PostResume } from './PostResume';
 import { Recommendation } from '../../lib/files';
 import Link from './Link';
-import PostResume from './PostResume';
 
 const IconText = ({ icon }: { icon: IconDefinition }) => (
   <Text

@@ -1,10 +1,11 @@
 import { Box, Flex, Message, Text } from 'theme-ui';
+import { NetworkLink } from './NetworkLink';
 import { Recommendation } from '../../lib/files';
 import { pascalCase } from 'change-case';
 import Link from './Link';
 import Tag from './Tag';
 
-const PostResume = ({
+export const PostResume = ({
   post,
   isPostPage,
 }: {
@@ -14,6 +15,8 @@ const PostResume = ({
   const { excerpt, group, formattedDate, tags, href, readingTime } = post;
 
   const newGroup = group === 'zettel' ? 'zettelkasten' : group;
+
+  const displayReadingTime = readingTime > 1 && isPostPage;
 
   return (
     <Box sx={{ color: 'text' }}>
@@ -40,21 +43,32 @@ const PostResume = ({
       {isPostPage && (
         <Text
           as="span"
-          sx={{ color: 'gray', fontSize: [0, 1], marginY: 1, display: 'block' }}
+          sx={{
+            color: 'gray',
+            fontSize: [0, 1],
+            marginY: 1,
+            display: 'block',
+          }}
         >
           <Link href={`/${newGroup}`}>{pascalCase(newGroup)},</Link>{' '}
-          {formattedDate}
+          {formattedDate}.
         </Text>
       )}
-      {readingTime > 1 && isPostPage && (
-        <Box>
-          <Text sx={{ color: 'lightGray', fontSize: [0, 1] }}>
-            Reading time: {readingTime} minutes
-          </Text>
-        </Box>
+      {isPostPage && (
+        <Flex
+          sx={{
+            justifyContent: displayReadingTime ? 'space-between' : 'flex-end',
+            width: '100%',
+            color: 'lightGray',
+            fontSize: [0, 1],
+          }}
+        >
+          {displayReadingTime && (
+            <Text>Reading time: {readingTime} minutes</Text>
+          )}
+          <NetworkLink nodeId={post.href} />
+        </Flex>
       )}
     </Box>
   );
 };
-
-export default PostResume;

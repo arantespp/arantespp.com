@@ -1,10 +1,10 @@
 import { CarouselJsonLd } from 'next-seo';
-import { Divider, Flex, Text, Themed } from 'theme-ui';
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import { NetworkLink } from '../../components/NetworkLink';
 import { NextSeo } from 'next-seo';
+import { Text, Themed } from 'theme-ui';
 import { getAllTags, getRecommendations } from '../../../lib/files';
 import Link from '../../components/Link';
-import NetworkLink from '../../components/NetworkLink';
 import RecommendationsList from '../../components/RecommendationsList';
 import Tag from '../../components/Tag';
 

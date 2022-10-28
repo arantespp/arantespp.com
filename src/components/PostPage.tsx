@@ -9,13 +9,13 @@ import {
 } from 'next-seo';
 import { Box, Flex, Text, Themed } from 'theme-ui';
 import { Draft, Group, Post, Recommendation } from '../../lib/files';
+import { PostFooter } from './PostFooter';
+import { PostResume } from './PostResume';
 import { editPost } from '../../shortcuts';
 import { useContentEditable } from '../hooks/useContentEditable';
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 import { useRouter } from 'next/router';
 import Markdown from './Markdown';
-import PostFooter from './PostFooter';
-import PostResume from './PostResume';
 import dynamic from 'next/dynamic';
 
 const BookHeader = dynamic(() => import('./BookHeader'));
