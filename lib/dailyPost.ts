@@ -1,3 +1,4 @@
+import { addItemToIssue } from './revue';
 import { createThread, readTweet } from './twitter';
 import { sharePost } from './linkedIn';
 
@@ -14,21 +15,33 @@ export const handleDailyPost = async ({
   blogPostUrl,
   tweets,
 }: DailyPostInput) => {
-  const linkedInResponse = await sharePost({
-    accessToken: linkedInAccessToken,
-    text: linkedInText,
-    blogPostUrl,
-  });
+  const shareLinkedInPost = async () => {
+    const linkedInResponse = await sharePost({
+      accessToken: linkedInAccessToken,
+      text: linkedInText,
+      blogPostUrl,
+    });
 
-  const linkedInPostUrl = `https://www.linkedin.com/feed/update/${linkedInResponse.id}/`;
+    return `https://www.linkedin.com/feed/update/${linkedInResponse.id}/`;
+  };
 
-  const thread = await createThread({
-    tweets: [...tweets, { text: `Reference ${blogPostUrl}` }],
-  });
+  const postThread = async () => {
+    const thread = await createThread({
+      tweets: [...tweets, { text: `Reference ${blogPostUrl}` }],
+    });
 
-  const { author_id: authorId } = await readTweet({ id: thread[0].data.id });
+    const { author_id: authorId } = await readTweet({
+      id: thread[0].data.id,
+    });
 
-  const tweetUrl = `https://twitter.com/${authorId}/status/${thread[0].data.id}`;
+    return `https://twitter.com/${authorId}/status/${thread[0].data.id}`;
+  };
+
+  const [, linkedInPostUrl, tweetUrl] = await Promise.all([
+    addItemToIssue({ url: blogPostUrl }),
+    shareLinkedInPost(),
+    postThread(),
+  ]);
 
   const response = {
     linkedInPostUrl,

@@ -75,7 +75,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
 
     const { value, onChange } = props;
 
-    React.useLayoutEffect(() => {
+    React.useEffect(() => {
       if (textAreaRef?.current) {
         const textAreaHeight = Number(
           textAreaRef.current.style.height.replace('px', ''),
@@ -90,7 +90,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
       }
     }, [textAreaRef, value, isFullScreen]);
 
-    React.useLayoutEffect(() => {
+    React.useEffect(() => {
       const textAreaStyle = textAreaRef.current?.style;
 
       return () => {
