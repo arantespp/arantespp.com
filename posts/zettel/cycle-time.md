@@ -40,7 +40,7 @@ backlinks:
 
 - Cycle time is how fast a team finishes some work, for example, a product or a feature.
 
-- It is the amount of time a task spends in the system.
+- It is the amount of time a task spends in the system through all steps.
 
 - The shorter the cycle time, the shorter the time-to-market.
 
