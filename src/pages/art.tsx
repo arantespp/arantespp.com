@@ -59,11 +59,11 @@ const Art = ({ arts }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Heading as="h1">Digital Art</Heading>
       <Themed.p>{description}</Themed.p>
       <Themed.p>
-        Below are some of the NFT&#39;s I&#39;ve minted on{' '}
-        <Link href="https://opensea.io/collection/arantespp">Opensea</Link>, in
-        most recent order. There&#39;s no specific theme, it&#39;s a collection
-        of digital arts I created with inspirations that I had at the time,
-        moment or by people I admire.
+        Below are some of the NFTs I&#39;ve minted on{' '}
+        <Link href="https://opensea.io/collection/arantespp">Opensea</Link>{' '}
+        sorted by most recent first. There&#39;s no specific theme, and it&#39;s
+        a collection of digital art I created with inspirations that I had at
+        the moment, place, or by people I admire.
       </Themed.p>
       <Box sx={{ marginTop: 5 }}>
         {arts.map((art) => {
