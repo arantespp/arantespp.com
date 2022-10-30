@@ -14,7 +14,7 @@ In 2017, after defending my master's thesis, I decided to leave the academic wor
 
 ## My Life Philosophy
 
-I believe that everything changes. Everything I wrote here may be the truth for me in some moment of my life, but it may not be the truth for me in some other moment of my life. Everything changes depending on our experiences, motivations, and fundamental beliefs that we choose to have. So, I'm not attached to any conclusions but to the fundamentals that lead me to those conclusions. I'm writing [My Personal Constitution](/my-personal-constitution) to help me to elucidate my fundamentals, principles, goals, and values. It's probably a lifelong work.
+I believe that everything changes. Everything I wrote here may be the truth for me in some moment of my life, but it may not be the truth for me in some other moment of my life. Everything changes depending on our experiences, motivations, and fundamental beliefs that we choose to have. So, I'm not attached to any conclusions but to the fundamentals that lead me to those conclusions. I'm writing [My Personal Constitution](/my-personal-constitution) to help me to elucidate my fundamentals, principles, goals, and values. It's probably lifelong work.
 
 Independently of the fundamentals I consider essential for me, I strongly agree with the following Socrates' quote: _"It is a shame for a man to grow old without seeing the beauty and strength of which his body is capable."_ For me, the body here doesn't refer only to the physical body but also to our mental, emotional and spiritual body. Once we strengthen these four bodies, we reach a state of [full engagement mode](/books/the-power-of-full-engagement), where we can achieve our full potential. I want to live in this mode.
 
@@ -24,13 +24,9 @@ Among these four bodies, I'm most fascinated by spirituality. I believe that a s
 
 If we consider that doing any creative work is an art, then I'm an artist because I'm an entrepreneur. In this case, my art is finding people's problems and creating the solutions they want.
 
-Mathematics has its beauty too. It's a little nerdy, but I consider math axions, theorems, proofs, and equations beautiful. Mathematics is the language of nature.
+Mathematics has its beauty too. It's a little nerdy, but I consider math axions, theorems, proofs, and equations beautiful. Mathematics is the language of nature. I also love architecture. I love appreciating buildings, homes, decorations, colors, geometry, furniture positions, light, and empty spaces. In a certain way, these beautiful places make me feel good. Dancing is another form of art that I enjoy. The combination of music, movements, the connection with my partner, the balance between the firmness in conducting, and the confidence to be led amazes me.
 
-I also love architecture. I love appreciating buildings, homes, decorations, colors, geometry, furniture positions, light, and empty spaces. In a certain way, these beautiful places make me feel good.
-
-Dancing is another form of art that I enjoy. The combination of music, movements, the connection with my partner, the balance between the firmness in conducting and the confidence to be led amazes me.
-
-Finally, I love taking photos with my mobile. So the question is, "How can I find the beauty of this place and capture it with my mobile?" I'm not a professional photographer, but I like that challenge.
+Finally, I love taking photos with my mobile. So the question is, "How can I find the beauty of this place and capture it with my mobile?" I'm not a professional photographer, but I like that challenge. I'm also fascinated by the aesthetics of digital art, and this is [my NFT digital art collection](/art) if you want to check it out.
 
 ## More About Me
 
