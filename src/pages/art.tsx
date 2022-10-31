@@ -22,13 +22,16 @@ declare global {
 }
 
 export const getStaticProps = async () => {
-  art.arts.reverse();
+  const arts = art.arts
+    .flatMap((art) =>
+      art.tokens.map((tokenId) => ({
+        contractAddress: art.contractAddress,
+        tokenId,
+      })),
+    )
+    .reverse();
 
-  return {
-    props: {
-      ...art,
-    },
-  };
+  return { props: { arts } };
 };
 
 const URL = process.env.NEXT_PUBLIC_URL as string;

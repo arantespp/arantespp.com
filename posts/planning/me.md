@@ -136,6 +136,9 @@ Supports:
 
 - To be a successful entrepreneur
 - Make a lot of money
+- arantespp.com
+- arantespp.art
+- Triângulos Tecnologia
 
 ### Master physical energy
 
@@ -198,6 +201,7 @@ Supports:
 Supports:
 
 - Build a successful company
+- Triângulos Tecnologia
 
 ### Create social capital
 
@@ -241,6 +245,34 @@ Supports:
 Supports:
 
 - Master time management
+
+## Companies
+
+### arantespp.com
+
+Supports:
+
+- Create social capital
+- Make a lot of money
+- Master mental energy
+
+### arantespp.art
+
+Supports:
+
+- Create social capital
+- Make a lot of money
+- Master emotional energy
+- Master spiritual energy
+
+### Triângulos Tecnologia
+
+Supports:
+
+- Create social capital
+- Make a lot of money
+- Master mental energy
+- Master spiritual energy
 
 ## Systems
 
