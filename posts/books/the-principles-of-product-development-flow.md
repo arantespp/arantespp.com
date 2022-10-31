@@ -398,6 +398,14 @@ In the book, the author shows that the positive effect is about 10 times the eco
 
 WIP constraints are the easiest way to force rate-matching between adjacent processes. By setting an upper limit on the pool size between two processes, you inherently force the average arrival rate into this pool to match the average rate of departure from it.
 
+#### W3: The Principle of Global Constraints: Use global constraints for predictable and permanent bottlenecks.
+
+[Theory of Constraints (TOC)](/zettel/theory-of-constraints-toc) is one approach for constraining [WIP](/zettel/work-in-process-wip). The theory suggests that you find the bottleneck in the process and release work into the system at its operating rate, which constrains the total pool WIP upstream of the bottleneck. Furthermore, the size of this global pool should only be large enough to ensure that the bottleneck is never starved for inventory, generating idleness.
+
+This approach is most useful for stable bottlenecks, like manufacturing, and less for the unpredictable, moving, and limited-duration bottlenecks of product development.
+
+It only requires a single global target for all WIP forward of the bottleneck and doesn't attempt to control interprocess WIP pools, which creates two disadvantages. First, only the primary bottleneck controls the process. A temporary bottleneck at another process won't generate any control signal until it causes WIP starvation at the primary bottleneck. Second, when the primary bottleneck capacity drops, WIP tends to concentrate in front of it.
+
 ### 7. Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
