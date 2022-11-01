@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Box } from 'theme-ui';
+import { Box, useThemeUI } from 'theme-ui';
 import { ForceGraphMethods, GraphData } from 'react-force-graph-3d';
+import { useRouter } from 'next/router';
 import FullWidth from './FullWidth';
 import SpriteText from 'three-spritetext';
 import dynamic from 'next/dynamic';
@@ -14,11 +15,25 @@ export type PlanningNetworkGraphProps = {
 export const PlanningNetworkGraph = ({
   graphData,
 }: PlanningNetworkGraphProps) => {
+  const { theme } = useThemeUI();
+
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   const wasScrolledIntoView = React.useRef(false);
 
   const graphRef = React.useRef<ForceGraphMethods | undefined>(undefined);
+
+  const [selectedNodeId, setSelectedNodeId] = React.useState<string>();
+
+  const { asPath, push } = useRouter();
+
+  const hash = asPath.split('#')[1];
+
+  React.useEffect(() => {
+    if (hash) {
+      setSelectedNodeId(hash);
+    }
+  }, [hash]);
 
   return (
     <Box
@@ -40,6 +55,13 @@ export const PlanningNetworkGraph = ({
           height={700}
           graphData={graphData}
           dagMode="lr"
+          nodeColor={(node: any) => {
+            if (node.id === selectedNodeId) {
+              return theme.rawColors?.primary;
+            }
+
+            return node.color;
+          }}
           dagLevelDistance={1.2 * graphData.nodes.length}
           nodeAutoColorBy="group"
           nodeResolution={2 ** 5}
@@ -63,11 +85,16 @@ export const PlanningNetworkGraph = ({
           }}
           onDagError={(loopNodeIds) => {}}
           onNodeClick={(node: any) => {
-            const { urlHash } = node;
-
-            if (urlHash) {
-              window.location.hash = urlHash;
+            /**
+             * Only anchor to the URL if the user clicked on the selected node.
+             */
+            if (selectedNodeId === node.id) {
+              push(`#${node.id}`, undefined, {
+                shallow: false,
+              });
             }
+
+            setSelectedNodeId(node.id);
           }}
         />
       </FullWidth>

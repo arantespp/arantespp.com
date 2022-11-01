@@ -37,14 +37,18 @@ export const getStaticProps = async ({
   const plan = plans.find((plan_) => plan_.slug === params.plan) as Plan;
 
   const nodesMeta = plan.groups.flatMap((group) => {
-    return group.nodes.flatMap((node) => ({
-      id: node.name,
-      group: group.name,
-      supports: node.supports || [],
-      color: group.name === 'Systems' ? theme?.colors?.accent : null,
-      urlHash: paramCase(node.name),
-      ...node,
-    }));
+    return group.nodes.flatMap((node) => {
+      const urlHash = paramCase(node.name);
+
+      return {
+        id: urlHash,
+        group: group.name,
+        supports: node.supports || [],
+        color: group.name === 'Systems' ? theme?.colors?.accent : null,
+        urlHash,
+        ...node,
+      };
+    });
   });
 
   const nodes = nodesMeta;
@@ -52,8 +56,8 @@ export const getStaticProps = async ({
   const links = nodesMeta
     .flatMap((node) => {
       return node.supports.map((support) => ({
-        source: node.name,
-        target: support,
+        source: node.id,
+        target: paramCase(support),
       }));
     })
     /**

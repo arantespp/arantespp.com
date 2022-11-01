@@ -306,6 +306,13 @@ Supports:
 
 Planning my day before starting it. I check the Calendar, review the tasks I planned the day before on Finish My Day Stack, check ClickUp, and plan the day using BuJo. I also need to define a time to end the day.
 
+Steps:
+
+1. Review the tasks I planned the day before on Finish My Day Stack
+1. Check the Calendar, ClickUp, Discord, and GitHub
+1. Plan the day using BuJo
+1. Define a time to end the day
+
 Supports:
 
 - RW-DP Stack
