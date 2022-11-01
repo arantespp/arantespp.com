@@ -38,7 +38,7 @@ backlinks: []
 ## Notes
 
 - Cross-functional teams are various organizational departments—such as product, engineering, design, and marketing—working together to achieve a common goal.
-- They promote the organization's [vision](#vision) because they work to complete a specific project or purpose.
+- They promote the organization's [vision](/tags/vision) because they work to complete a specific project or purpose.
 - They increase efficiency because they make decisions and receive feedback faster. In addition, they don't have the bureaucracy of sending and receiving requests between departments.
 - They can innovate more because they share different viewpoints and knowledge. They can see the perspectives of other functionalities.
 - A downside is that this configuration limits the professional growth of individual members because they're focused on achieving the goals.
