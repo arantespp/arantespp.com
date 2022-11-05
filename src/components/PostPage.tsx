@@ -26,12 +26,12 @@ const URL = process.env.NEXT_PUBLIC_URL;
 
 const getDefaultImage = (group: Group) => {
   const file: { [key in Group]: string } = {
-    blog: 'aaron-burden-CKlHKtCJZKk-unsplash.webp',
-    books: 'jess-bailey-X5gDoysLbBc-unsplash.webp',
-    zettel: 'david-travis-5bYxXawHOQg-unsplash.webp',
+    blog: `${URL}/images/creators/aaron-burden-CKlHKtCJZKk-unsplash.webp`,
+    books: `${URL}/images/creators/jess-bailey-X5gDoysLbBc-unsplash.webp`,
+    zettel: `${URL}/images/originals/zettel.webp`,
   };
 
-  return `${URL}/images/creators/${file[group]}`;
+  return file[group];
 };
 
 const JsonLd = ({ post }: { post: Post | Draft }) => {
