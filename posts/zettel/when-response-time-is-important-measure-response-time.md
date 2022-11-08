@@ -49,3 +49,7 @@ Higher efficiency doesn't always lead to a fast response time because higher eff
 If response times drive economics, you should align measurements and incentives for support groups to respond time. A straightforward way to move in this direction is to create a quality service agreement that spells out the response in time that users can expect from the department.
 
 For example, in a development team, the developers are always on the critical path of projects. So you should measure how fast they respond to changes, not how many tasks they deliver in a week. This is the core of [business agility](/zettel/business-agility).
+
+## References
+
+- [The Principles of Product Development Flow](/books/the-principles-of-product-development-flow#9-achieving-decentralized-control)
