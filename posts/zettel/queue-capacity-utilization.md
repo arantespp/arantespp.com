@@ -9,7 +9,7 @@ rating: 2
 
 ## Notes
 
-- Queue capacity utilization is the amount of time the [service process](/zettel/queueing-theory) is working (not idle).
+- Queue capacity utilization is the amount of time the [service process](/zettel/queue-service-process) is working (not idle).
 
 - Knowing capacity utilization allows you to predict:
 
