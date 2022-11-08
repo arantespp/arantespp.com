@@ -141,10 +141,8 @@ export type MarkdownProps = {
 };
 
 const Markdown = ({ content, components, noH1 }: MarkdownProps) => {
-  const ref = useContentEditable();
-
   return (
-    <Box ref={ref}>
+    <Box>
       <ReactMarkdown
         components={{ ...getMDXComponents({ noH1 }), ...components }}
         {...markdownPlugins}

@@ -12,7 +12,6 @@ import { Draft, Group, Post, Recommendation } from '../../lib/files';
 import { PostFooter } from './PostFooter';
 import { PostResume } from './PostResume';
 import { editPost } from '../../shortcuts';
-import { useContentEditable } from '../hooks/useContentEditable';
 import { useKeypressSequenceListener } from '../hooks/useKeypressSequenceListener';
 import { useRouter } from 'next/router';
 import Markdown from './Markdown';
@@ -82,8 +81,6 @@ export const PostPage = ({
   recommendations,
   ...postOrContent
 }: PostPageProps) => {
-  const contentEditableRef = useContentEditable();
-
   const isPost = 'post' in postOrContent;
 
   const isBook =
@@ -194,7 +191,7 @@ export const PostPage = ({
       <NextSeo {...newSeo} />
       {isPost && <JsonLd post={postOrContent.post} />}
       {isPost && (
-        <Box ref={contentEditableRef}>
+        <Box>
           <Themed.h1>{postOrContent.post.title}</Themed.h1>
           <Box
             sx={{

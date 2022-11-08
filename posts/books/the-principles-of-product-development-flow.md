@@ -638,11 +638,7 @@ You need to give them authority, information, and practice to enable lower organ
 
 #### D19: The Quality of Service Principle: When response time is important, measure response time.
 
-If the time on the [critical path](/zettel/critical-path) is worth a lot of money and a support group is on the critical path, you should measure this support group on response time, not efficiency.
-
-For example, in a development team, the developers are always on the critical path of projects. The managers always measure efficiency and keep all developers working heavily without [slack](/zettel/slack-and-efficiency). When they changed the metric to how long developers respond to changes, their behavior changed utterly.
-
-If response times drive economics, you should align measurements and incentives for support groups to respond time. A straightforward way to move in this direction is to create a quality service agreement that spells out the response in time that users can expect from the department.
+[Note: When Response Time Is Important, Measure Response Time](/zettel/when-response-time-is-important-measure-response-time).
 
 #### D20: The Second Market Principle: Use internal and external markets to decentralized control.
 
