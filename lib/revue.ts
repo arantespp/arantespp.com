@@ -31,7 +31,9 @@ const getCurrentIssue = async () => {
 export const addItemToIssue = async ({ url }: { url: string }) => {
   const { id } = await getCurrentIssue();
 
-  const { title, description, image } = await urlMetadata(url);
+  const { title, description, image } = await urlMetadata(url, {});
+
+  console.log(title, description, image);
 
   const formData = new URLSearchParams({
     issue_id: id.toString(),

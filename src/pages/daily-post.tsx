@@ -65,6 +65,10 @@ const DailyPost = () => {
           <Link href={dailyPost?.linkedInPostUrl}>LinkedIn</Link>
         )}
         {dailyPost?.tweetUrl && <Link href={dailyPost?.tweetUrl}>Twitter</Link>}
+        {dailyPost?.linkedInPostUrl && (
+          <Link href={dailyPost?.linkedInPostUrl}>LinkedIn</Link>
+        )}
+        {dailyPost?.revueUrl && <Link href={dailyPost?.revueUrl}>Revue</Link>}
         {errorMessage && <div>{errorMessage}</div>}
       </Flex>
     </>

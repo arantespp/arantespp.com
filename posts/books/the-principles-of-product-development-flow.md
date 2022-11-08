@@ -412,13 +412,13 @@ It only requires a single global target for all WIP forward of the bottleneck an
 
 It's called a [pull system](/zettel/kanban-pull-principle) because the upstream process can only take jobs when it has [capacity](/zettel/queue-capacity-utilization). This sets an upper limit on the amount of WIP between the two processes.
 
-[Kanban Uses WIP Constraints to Control the Cycle Time.](/zettel/kanban-uses-wip-constraints-to-control-the-cycle-time)
+[Kanban Uses WIP Constraints to Control the Cycle Time](/zettel/kanban-uses-wip-constraints-to-control-the-cycle-time).
 
-[The Kanban System Doesn't Make Assumptions About the Location of Bottlenecks](/zettel/the-kanban-system-doesn-t-make-assumptions-about-the-location-of-bottlenecks)
+[The Kanban System Doesn't Make Assumptions About the Location of Bottlenecks](/zettel/the-kanban-system-doesn-t-make-assumptions-about-the-location-of-bottlenecks).
 
-[The Local Constraints of the Kanban System Have an Impressive Feedback Speed.](/zettel/the-local-constraints-of-the-kanban-system-have-an-impressive-feedback-speed)
+[The Local Constraints of the Kanban System Have an Impressive Feedback Speed](/zettel/the-local-constraints-of-the-kanban-system-have-an-impressive-feedback-speed).
 
-[Enhance the Effectiveness of WIP Constraints by Cross-Training Workers.](/zettel/enhance-the-effectiveness-of-wip-constraints-by-cross-training-workers)
+[Enhance the Effectiveness of WIP Constraints by Cross-Training Workers](/zettel/enhance-the-effectiveness-of-wip-constraints-by-cross-training-workers).
 
 ### 7. Controlling Flow Under Uncertainty
 

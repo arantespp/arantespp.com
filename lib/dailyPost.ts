@@ -37,16 +37,30 @@ export const handleDailyPost = async ({
     return `https://twitter.com/${authorId}/status/${thread[0].data.id}`;
   };
 
-  const [, linkedInPostUrl, tweetUrl] = await Promise.all([
-    addItemToIssue({ url: blogPostUrl }),
-    shareLinkedInPost(),
-    postThread(),
-  ]);
-
   const response = {
-    linkedInPostUrl,
-    tweetUrl,
+    linkedInPostUrl: '',
+    tweetUrl: '',
+    revueUrl: '',
   };
+
+  // try {
+  //   response.linkedInPostUrl = await shareLinkedInPost();
+  // } catch (error) {
+  //   console.error('Error sharing LinkedIn post', error);
+  // }
+
+  // try {
+  //   response.tweetUrl = await postThread();
+  // } catch (error) {
+  //   console.error('Error posting Twitter thread', error);
+  // }
+
+  try {
+    await addItemToIssue({ url: blogPostUrl });
+    response.revueUrl = 'https://www.getrevue.co/app/issues/current';
+  } catch (error) {
+    console.error('Error adding item to Revue issue', error);
+  }
 
   return response;
 };
