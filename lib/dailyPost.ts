@@ -43,17 +43,17 @@ export const handleDailyPost = async ({
     revueUrl: '',
   };
 
-  // try {
-  //   response.linkedInPostUrl = await shareLinkedInPost();
-  // } catch (error) {
-  //   console.error('Error sharing LinkedIn post', error);
-  // }
+  try {
+    response.linkedInPostUrl = await shareLinkedInPost();
+  } catch (error) {
+    console.error('Error sharing LinkedIn post', error);
+  }
 
-  // try {
-  //   response.tweetUrl = await postThread();
-  // } catch (error) {
-  //   console.error('Error posting Twitter thread', error);
-  // }
+  try {
+    response.tweetUrl = await postThread();
+  } catch (error) {
+    console.error('Error posting Twitter thread', error);
+  }
 
   try {
     await addItemToIssue({ url: blogPostUrl });
