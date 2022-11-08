@@ -27,7 +27,7 @@ const getDefaultImage = (group: Group) => {
   const file: { [key in Group]: string } = {
     blog: `${URL}/images/creators/aaron-burden-CKlHKtCJZKk-unsplash.webp`,
     books: `${URL}/images/creators/jess-bailey-X5gDoysLbBc-unsplash.webp`,
-    zettel: `${URL}/images/originals/zettel.webp`,
+    zettel: `${URL}/images/creators/david-travis-5bYxXawHOQg-unsplash.webp`,
   };
 
   return file[group];
