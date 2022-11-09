@@ -5,6 +5,7 @@ tags:
   - agile
   - cycle-time
   - queue
+  - work-in-process
 date: '2022-09-10'
 excerpt: >-
   A high number of working in the process leads to a high queue capacity
@@ -26,6 +27,7 @@ keywords:
   - agile
   - cycle-time
   - queue
+  - work-in-process
 readingTime: 1
 references:
   - /zettel/queue-capacity-utilization

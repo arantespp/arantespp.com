@@ -4,7 +4,6 @@ draft: false
 tags:
   - cycle-time
   - queue
-  - wip
   - work-in-process
 date: '2022-10-24'
 excerpt: |
@@ -25,7 +24,6 @@ keywords:
   - zettel
   - cycle-time
   - queue
-  - wip
   - work-in-process
 readingTime: 1
 references:

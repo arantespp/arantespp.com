@@ -6,7 +6,7 @@ tags:
   - product-development
   - pull-principle
   - queues
-  - wip
+  - work-in-process
 date: '2022-11-07'
 excerpt: >-
   Because of the pull principle, the upstream processes can't send work to the
@@ -31,7 +31,7 @@ keywords:
   - product-development
   - pull-principle
   - queues
-  - wip
+  - work-in-process
 readingTime: 1
 references:
   - /zettel/work-in-process-wip

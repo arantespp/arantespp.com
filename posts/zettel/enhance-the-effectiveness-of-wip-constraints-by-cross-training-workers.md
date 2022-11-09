@@ -5,7 +5,7 @@ tags:
   - kanban
   - product-development
   - queues
-  - wip
+  - work-in-process
 date: '2022-11-07'
 excerpt: >-
   In this situation, if your team can execute the tasks of the bottleneck
@@ -28,7 +28,7 @@ keywords:
   - kanban
   - product-development
   - queues
-  - wip
+  - work-in-process
 readingTime: 1
 references:
   - /zettel/queue-capacity-utilization

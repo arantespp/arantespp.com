@@ -420,6 +420,12 @@ It's called a [pull system](/zettel/kanban-pull-principle) because the upstream 
 
 [Enhance the Effectiveness of WIP Constraints by Cross-Training Workers](/zettel/enhance-the-effectiveness-of-wip-constraints-by-cross-training-workers).
 
+#### W5: The Batch Size Decoupling Principle: Use WIP ranges to decouple batch sizes of adjacent processes.
+
+[Fixed WIP couples the batch sizes of adjacent processes](/zettel/fixed-wip-couples-the-batch-sizes-of-adjacent-processes) and isn't always desirable because they may have different economic lot sizes. For instance, the batch size of a manufacturing process may be 100 units, while the batch size of a downstream process may be ten units.
+
+To avoid this problem, the [kanban](/zettel/kanban) system permits interprocess WIP to cycle between an upper constraint and a lower limit of zero. Using a range of WIP, you decouple the batch sizes of adjacent processes and can use different and economically optimal batch sizes. Also, you create the flexibility to desynchronize the timing, and you can absorb temporary fluctuations in demand.
+
 ### 7. Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
