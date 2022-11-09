@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Text, TextProps, useThemeUI } from 'theme-ui';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
-const SHOW_COLOR_MODE = false;
+const SHOW_COLOR_MODE = true;
 
 export type HeaderColorModeProps = TextProps;
 

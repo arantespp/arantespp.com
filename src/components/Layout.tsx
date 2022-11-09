@@ -32,7 +32,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           marginTop: [5, 5, 6],
           marginBottom: [5],
           padding: [4, 4],
-          backgroundColor: '#f5f5f5',
+          backgroundColor: 'accentBackground',
         }}
       >
         <Container>

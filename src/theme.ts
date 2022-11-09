@@ -26,6 +26,7 @@ const lightLightGray = '#ddd';
 const light = {
   text: '#2a2a2a',
   background: '#fdfdfd',
+  accentBackground: '#f5f5f5',
   primary: palette.primary,
   secondary: palette.complementary,
   accent: palette.analogous1,
@@ -40,6 +41,7 @@ type BlogColorMode = typeof light;
 const dark: BlogColorMode = {
   text: '#ddd',
   background: '#212121',
+  accentBackground: '#2a2a2a',
   primary: '#ED975E',
   secondary: '#5EB4ED',
   accent: '#ED5E6D',
@@ -64,6 +66,7 @@ const colors = {
  */
 const config = {
   initialColorModeName: 'light',
+  useLocalStorage: false,
 };
 
 export const theme: Theme = {

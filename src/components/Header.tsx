@@ -79,6 +79,9 @@ const Header = () => {
             {label}
           </Link>
         ))}
+        <HeaderColorMode
+          sx={{ ...navSx, fontSize: [1, 2], color: undefined }}
+        />
         <HeaderTwitter
           sx={{
             ...navSx,
@@ -91,9 +94,6 @@ const Header = () => {
             top: [0, '2px'],
             fontSize: [3, 4],
           }}
-        />
-        <HeaderColorMode
-          sx={{ ...navSx, fontSize: [1, 2], color: undefined }}
         />
       </Flex>
     </Flex>

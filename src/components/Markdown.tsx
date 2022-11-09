@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Box, Flex, Message, Themed } from 'theme-ui';
-import { useContentEditable } from './../hooks/useContentEditable';
+import { Tweet, isTweet } from './Tweet';
 import CustomImage from './CustomImage';
 import Heading from './Heading';
 import Link from './Link';
 import ReactMarkdown, { Components } from 'react-markdown';
 import Tag from './Tag';
-import Tweet, { isTweet } from './Tweet';
+import dynamic from 'next/dynamic';
 import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';

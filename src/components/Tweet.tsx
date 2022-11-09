@@ -1,10 +1,6 @@
 import * as React from 'react';
-import { Box, useThemeUI } from 'theme-ui';
-import dynamic from 'next/dynamic';
-
-const TweetWidget = dynamic(() =>
-  import('react-twitter-widgets').then((mod) => mod.Tweet),
-);
+import { Box, Flex, Text, useThemeUI } from 'theme-ui';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 
 const getTweetStatus = (href: string) => {
   const { pathname } = new URL(href);
@@ -16,7 +12,7 @@ export const isTweet = (href: string) => {
   return href.startsWith('https://twitter.com/') && getTweetStatus(href);
 };
 
-const Tweet = ({ href }: { href: string }) => {
+export const Tweet = React.memo(({ href }: { href: string }) => {
   const { colorMode } = useThemeUI();
 
   if (!isTweet(href)) {
@@ -26,15 +22,18 @@ const Tweet = ({ href }: { href: string }) => {
   const status = getTweetStatus(href);
 
   return (
-    <Box data-testid="embed-tweet" sx={{ marginY: 4 }}>
-      <TweetWidget
+    <Box data-testid="embed-tweet" sx={{ marginY: 4, minHeight: 300 }}>
+      <TwitterTweetEmbed
         tweetId={status}
         options={{ align: 'center', theme: colorMode }}
+        placeholder={
+          <Flex>
+            <Text sx={{ textAlign: 'center', width: '100%' }}>
+              Loading tweet...
+            </Text>
+          </Flex>
+        }
       />
     </Box>
   );
-};
-
-Tweet.isTweet = isTweet;
-
-export default Tweet;
+});
