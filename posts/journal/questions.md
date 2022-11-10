@@ -1,10 +1,11 @@
-- What's 1 thing I need to do to achieve my goals?
+- What's one thing I need to do to achieve my goals?
 - What do I need to cut from my life to operate more efficiently?
-- What's 1 thing I can improve incrementally?
-- What can I do to make someone else's life better?
+- What are some things I could have done better today/this week?
 - What am I grateful for?
-- What am I avoiding?
-- What's 1 thing I'm excited about?
+- What are my biggest challenges right now? Am I avoiding it?
+- What's one thing I'm excited about?
 - What virtue do I want to exhibit?
 - What really matters right now in my life? Am I dedicating the necessary energy to it?
 - Are my current systems and habits aligned with my long-term goals?
+- What are my top priorities for this week?
+- What am I procrastinating on? Why?
