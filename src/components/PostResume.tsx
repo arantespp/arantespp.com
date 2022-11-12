@@ -45,8 +45,8 @@ export const PostResume = ({
           as="span"
           sx={{
             color: 'gray',
-            fontSize: [0, 1],
-            marginY: 1,
+            fontSize: [0],
+            marginTop: 2,
             display: 'block',
           }}
         >
@@ -60,7 +60,7 @@ export const PostResume = ({
             justifyContent: displayReadingTime ? 'space-between' : 'flex-end',
             width: '100%',
             color: 'lightGray',
-            fontSize: [0, 1],
+            fontSize: [0, 0],
           }}
         >
           {displayReadingTime && (
