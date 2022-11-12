@@ -1,34 +1,37 @@
 import * as dateFns from 'date-fns';
 import { URL } from 'url';
-
-import { db } from './database';
 import { getClosestLastWeekDay } from './getClosestLastWeekDay';
-import { getFlashcard } from './getFlashcard';
+import { getPosts } from './files';
 import { socialMedias } from './socialMedias';
 
 const format = 'yyyy-MM-dd';
 
-const SUBTRACT_MONTHS = 3;
+const formatDate = (date: Date) => dateFns.format(date, 'MMMM do');
 
 const getDateRange = () => {
-  const lastSunday = getClosestLastWeekDay('Sun');
+  const fromDay = getClosestLastWeekDay('Fri');
 
-  const since = dateFns.subMonths(lastSunday, SUBTRACT_MONTHS);
+  const since = fromDay;
 
   const until = dateFns.addWeeks(since, 1);
 
   return {
     since: dateFns.format(since, format),
+    formattedSince: formatDate(since),
     until: dateFns.format(until, format),
+    formattedUntil: formatDate(until),
   };
 };
 
 const generateTwitterSearchUrl = () => {
   const searchUrl = new URL('https://twitter.com/search');
 
+  const { since, until } = getDateRange();
+
   const searchObject = {
     from: socialMedias.Twitter.username,
-    ...getDateRange(),
+    since,
+    until,
     '-filter': 'replies',
   };
 
@@ -41,22 +44,30 @@ const generateTwitterSearchUrl = () => {
   return { href: searchUrl.href, ...searchObject };
 };
 
+const getPostsSince = async () => {
+  const { since } = getDateRange();
+
+  /**
+   * All posts since `since` date.
+   */
+  const posts = await getPosts();
+
+  return posts.filter((post) => post.date >= since);
+};
+
 /**
  * Data that is used to generate the newsletter.
  */
-export const getNewsletterData = async () => {
+export const getNewsletterContent = async () => {
   return {
-    flashcard: await getFlashcard(),
+    ...getDateRange(),
+    posts: await getPostsSince(),
     twitterSearchUrl: generateTwitterSearchUrl(),
   };
 };
 
 type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
 
-export type NewsletterData = ThenArg<ReturnType<typeof getNewsletterData>>;
-
-export const saveNewsletterItems = async (items: any) => {
-  db.push(`/newsletter/TODO`, { items }, false);
-
-  return 'TODO';
-};
+export type NewsletterContent = ThenArg<
+  ReturnType<typeof getNewsletterContent>
+>;
