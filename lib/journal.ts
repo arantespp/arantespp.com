@@ -47,7 +47,12 @@ export const getJournals = async (
     limit,
   }: {
     limit?: number;
-  } = { limit: 7 },
+  } = {
+    /**
+     * 8 because past one week plus the current day.
+     */
+    limit: 8,
+  },
 ) => {
   const { Items = [] } = await ddbDocClient.send(
     new QueryCommand({

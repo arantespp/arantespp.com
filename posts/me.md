@@ -22,11 +22,15 @@ Among these four bodies, I'm most fascinated by spirituality. I believe that a s
 
 ## Art
 
-If we consider that doing any creative work is an art, then I'm an artist because I'm an entrepreneur. In this case, my art is finding people's problems and creating the solutions they want.
+If we consider that doing any creative work is an art, then I'm an artist because I'm an entrepreneur. In this case, my art is finding people's problems and creating the solutions they need.
 
-Mathematics has its beauty too. It's a little nerdy, but I consider math axions, theorems, proofs, and equations beautiful. Mathematics is the language of nature. I also love architecture. I love appreciating buildings, homes, decorations, colors, geometry, furniture positions, light, and empty spaces. In a certain way, these beautiful places make me feel good. Dancing is another form of art that I enjoy. The combination of music, movements, the connection with my partner, the balance between the firmness in conducting, and the confidence to be led amazes me.
+Mathematics has its beauty too. It's a little nerdy, but I consider math axions, theorems, proofs, and equations beautiful. Mathematics is the language of nature. I also enjoy architecture, in appreciating buildings, homes, decorations, colors, geometry, furniture positions, light, and empty spaces. In a certain way, these beautiful places make me feel good. Dancing is another form of art that I relish. The combination of music, movements, the connection with my partner, the balance between the firmness in conducting, and the confidence to be led amazes me.
 
-Finally, I love taking photos with my mobile. So the question is, "How can I find the beauty of this place and capture it with my mobile?" I'm not a professional photographer, but I like that challenge. I'm also fascinated by the aesthetics of digital art, and this is [my NFT digital art collection](/art) if you want to check it out.
+Finally, I love taking photos with my mobile. So the question is, "How can I find the beauty of this place and capture it with my mobile?" I'm not a professional photographer, but I like that challenge. I'm also fascinated by the aesthetics of digital art, and this is [my NFT digital art collection](/art).
+
+## I'm a Minimalist
+
+I'm a minimalist person and I believe that there are many advantages to living a minimalist lifestyle. For one, it helps to declutter your life and live with less stuff. Having less stuff means that you have less to worry about and you can spend more time focusing on the things that are important to you. Additionally, minimalism can help you save money since you're not constantly buying new things that you don't really need. Finally, living a minimalist lifestyle can help reduce your environmental footprint since you're not consuming as many resources.
 
 ## More About Me
 
@@ -35,3 +39,5 @@ Finally, I love taking photos with my mobile. So the question is, "How can I fin
 - **I enjoy walking at the end of the day.** I like to walk alone or with someone at the end of the day to recharge my energy. The place doesn't matter so much since I get some time to disconnect from the world, especially the digital world.
 
 - **I can't stay up late.** My body is used to sleeping early because of [my five habits project](/five-habits-for-the-next-five-years). So when I hang out with friends or go to parties, I ask them if we can schedule it not too late because I can't stay up late.
+
+- **I post my "worst" photos on Instagram.** I don't like to post only photos that I consider "perfect" on Instagram, it's not fun. I don't take life so seriously, and I want to show that on my Instagram.
