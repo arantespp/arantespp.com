@@ -12,6 +12,9 @@ const Newsletter = () => {
   const { data } = useQuery<NewsletterContent>(
     `/api/newsletter/content`,
     async () => fetch(`/api/newsletter/content`).then((r) => r.json()),
+    {
+      suspense: false,
+    },
   );
 
   if (!data) {

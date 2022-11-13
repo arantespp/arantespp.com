@@ -59,8 +59,11 @@ const getPostsSince = async () => {
  * Data that is used to generate the newsletter.
  */
 export const getNewsletterContent = async () => {
+  const { formattedSince, formattedUntil } = getDateRange();
+
   return {
-    ...getDateRange(),
+    formattedSince,
+    formattedUntil,
     posts: await getPostsSince(),
     twitterSearchUrl: generateTwitterSearchUrl(),
   };
