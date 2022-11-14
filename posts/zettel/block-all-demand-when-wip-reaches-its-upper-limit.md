@@ -27,7 +27,8 @@ keywords:
   - queue
   - work-in-process
 readingTime: 1
-references: []
+references:
+  - /zettel/most-of-the-damage-done-by-a-queue-is-caused-by-high-queues-states
 backlinks: []
 ---
 
@@ -45,3 +46,7 @@ You can block queues in two ways:
 
 1. Eject the arriving job from the system.
 2. Hold back the job in an upstream queue. This approach doesn't reduce demand; it just shifts the location of the queue. In addition, it can generate economic benefits because different queues have different holding costs.
+
+## References
+
+- [The Principles of Product Development Flow. Chapter 6. Applying WIP Constraints](/books/the-principles-of-product-development-flow#w6-the-principle-of-demand-blocking-block-all-demand-when-wip-reaches-its-upper-limit).

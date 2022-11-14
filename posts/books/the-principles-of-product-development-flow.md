@@ -414,6 +414,10 @@ It's called a [pull system](/zettel/kanban-pull-principle) because the upstream 
 
 To avoid this problem, the [kanban](/zettel/kanban) system permits interprocess WIP to cycle between an upper constraint and a lower limit of zero. Using a range of WIP, you decouple the batch sizes of adjacent processes and can use different and economically optimal batch sizes. Also, you create the flexibility to desynchronize the timing, and you can absorb temporary fluctuations in demand.
 
+#### W6: The Principle of Demand Blocking: Block all demand when WIP reaches its upper limit.
+
+[Note: Block All Demand when WIP Reaches Its Upper Limit](/zettel/block-all-demand-when-wip-reaches-its-upper-limit).
+
 ### 7. Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
