@@ -107,7 +107,7 @@ const useAutoSave = ({ content, date }: { content: string; date: string }) => {
 
 const getQuestionsContent = ({ questions }: { questions: string[] }) => {
   return [...questions, 'My day']
-    .map((question) => `**${question}**`)
+    .map((question) => `### ${question}`)
     .join('\n\n');
 };
 

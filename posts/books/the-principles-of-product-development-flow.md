@@ -196,13 +196,7 @@ Inventory in product development isn't physical objects but information. Then, i
 Product development queues do much more damage than manufacturing queues for two reasons.
 
 1. Product development queues tend to be much bigger than manufacturing queues. No natural predators are controlling them because these [queues are invisible](#q1-the-principle-of-invisible-inventory-product-development-inventory-is-physically-and-financially-invisible). Then companies don't measure, manage, and realize that queues are a problem.
-2. Queues create many forms of economic waste.
-   - **Longer Cycle Time.** It takes longer to reach the front of an extensive line than a small one. Usually, delay costs rise linearly with queue size.
-   - **Increased Risk.** Queues increase the transit time through the product development pipeline. When transit time goes up, you're more vulnerable to changes in customer preference, preemption by competitors, and shifts in the underlying technology.
-   - **More Variability.** High levels of utilization tend to amplify variability.
-   - **More Overhead.** The more projects you have in process, the more you have to track and report status to your managers. Even worse, your team asks for more progress reports per project because queues lead to long transit times.
-   - **Lower Quality.** Queues reduce quality by delaying feedback from downstream processes. If a programmer makes a flawed assumption and must wait for 30 days to get this feedback, she'll embed the flawed assumption into 30 days' worth of code. Thus, following a wrong path typically increases exponentially, not linearly.
-   - **Less Motivation.** Queues undermine motivation and initiative. When the next process has a long time, you feel there is little value in hurrying to finish your work. [Parkinson's Law](/zettel/parkinson-s-law) explains this behavior.
+2. [Queues create many forms of economic waste](/zettel/economic-waste-that-queues-create).
 
 Queues off the [critical path](/zettel/critical-path) also create costs to the project because only one of these six wastes arises from the cost of delay. The other five wastes are still present even when the queues are off the [critical path](/zettel/critical-path).
 
@@ -220,13 +214,7 @@ This property is helpful from a practical perspective, but it's often tough to d
 
 #### Q4: The Principle of High-Queues States: Most of the damage done by a queue is caused by high-queues states.
 
-The probability of finding a queue in a specific quantitative state (low or high-queue state) is a function of capacity utilization. Low-queue states are more probable than high-queue states, but high-queue states are more important because they delay more jobs. As a result, they strongly influence cycle time and can cause more economic damage to the project.
-
-The $\text{State Probability}$ of an $M/M/1/\infty$ queue to have $n$ jobs in the system is:
-
-$$
-\text{State Probability} = \frac{1-\rho}{\rho^n}
-$$
+[Note: Most of the Damage Done by a Queue Is Caused by High-Queues States](/zettel/most-of-the-damage-done-by-a-queue-is-caused-by-high-queues-states).
 
 #### Q5: The Principle of Queueing Variability: Variability increases queues linearly.
 
