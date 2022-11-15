@@ -391,5 +391,8 @@ export const theme: Theme = {
       // backgroundColor: 'background',
       // fontSize: [0, 1],
     },
+    label: {
+      marginTop: 3,
+    },
   },
 };

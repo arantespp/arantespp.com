@@ -14,6 +14,7 @@ import {
 import { Controller, useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import { GROUPS, Group } from '../../lib/groups';
+import { GeneratePostMetadata } from '../../lib/ai';
 import { Post } from '../../lib/files';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Editor from './Editor';
@@ -66,6 +67,24 @@ const putPost = async (post: PostForm) => {
   });
 };
 
+const generatePostMetadata = async ({ content }: { content: string }) => {
+  if (!content) {
+    return {};
+  }
+
+  const query = new URLSearchParams({ content });
+
+  const response = await fetch(`/api/ai/post/metadata?${query.toString()}`);
+
+  if (!response.ok) {
+    return {};
+  }
+
+  const metadata: GeneratePostMetadata = await response.json();
+
+  return metadata;
+};
+
 const useLastAutoSaveTime = () => {
   const [currentTime, setCurrentTime] = React.useState(new Date());
 
@@ -103,6 +122,8 @@ const PostEditor = ({
     register,
     reset,
     watch,
+    setValue,
+    getValues,
   } = useForm<PostForm>({
     defaultValues,
     mode: 'onChange',
@@ -194,6 +215,30 @@ const PostEditor = ({
     return () => null;
   }, [handleSubmit, isDirty, isValid, onSubmit]);
 
+  const [isFetchingMetadata, setIsFetchingMetadata] = React.useState(false);
+
+  const [insight, setInsight] = React.useState('');
+
+  /**
+   * Generate post metadata callback.
+   */
+  const onGeneratePostMetadata = React.useCallback(async () => {
+    setIsFetchingMetadata(true);
+
+    const { content } = getValues();
+
+    const metadata = await generatePostMetadata({ content });
+
+    if (metadata) {
+      console.log(metadata);
+      setValue('excerpt', metadata.excerpt);
+      setValue('tags', metadata.tags);
+      setInsight(metadata.insight || '');
+    }
+
+    setIsFetchingMetadata(false);
+  }, [getValues, setValue]);
+
   return (
     <Flex
       as="form"
@@ -207,10 +252,6 @@ const PostEditor = ({
       <Label>Title</Label>
       <Textarea rows={2} {...register('title')} autoFocus />
       <ErrorMessage errors={errors} name="title" />
-
-      <Label>Excerpt</Label>
-      <Textarea rows={3} {...register('excerpt')} />
-      <ErrorMessage errors={errors} name="excerpt" />
 
       <Label>Group</Label>
       <Select
@@ -226,15 +267,6 @@ const PostEditor = ({
       </Select>
       <ErrorMessage errors={errors} name="group" />
 
-      <Label>Tags</Label>
-      <Textarea rows={3} {...register('tags')} />
-      <ErrorMessage errors={errors} name="tags" />
-
-      <Label>
-        <Checkbox {...register('draft')} />
-        Draft?
-      </Label>
-
       <Label>Content</Label>
       <Controller
         control={control}
@@ -243,9 +275,26 @@ const PostEditor = ({
           <Editor {...{ value, onChange, isInvalid: !!errors.content }} />
         )}
       />
+
       <ErrorMessage errors={errors} name="content" />
 
+      <Label>
+        <Checkbox {...register('draft')} />
+        Draft?
+      </Label>
+
+      <Label>Excerpt</Label>
+      <Textarea rows={3} {...register('excerpt')} />
+      <ErrorMessage errors={errors} name="excerpt" />
+
+      <Label>Tags</Label>
+      <Textarea rows={3} {...register('tags')} />
+      <ErrorMessage errors={errors} name="tags" />
+
       {error && <Themed.p>{error}</Themed.p>}
+
+      <Label>Insight</Label>
+      <Text sx={{ whiteSpace: 'pre-wrap' }}>{insight}</Text>
 
       {currentPost?.href && (
         <Link href={currentPost.href} target="_blank" rel="noopener noreferrer">
@@ -255,8 +304,15 @@ const PostEditor = ({
         </Link>
       )}
 
-      <Flex sx={{ justifyContent: 'center', marginTop: 4 }}>
+      <Flex sx={{ justifyContent: 'center', marginTop: 4, gap: 3 }}>
         <Button type="submit">Save</Button>
+        <Button
+          type="button"
+          disabled={isFetchingMetadata}
+          onClick={onGeneratePostMetadata}
+        >
+          Metadata
+        </Button>
       </Flex>
     </Flex>
   );
