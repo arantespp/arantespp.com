@@ -418,6 +418,10 @@ To avoid this problem, the [kanban](/zettel/kanban) system permits interprocess 
 
 [Note: Block All Demand when WIP Reaches Its Upper Limit](/zettel/block-all-demand-when-wip-reaches-its-upper-limit).
 
+#### W7: The Principle of WIP Purging: When WIP is high, purge low-value projects.
+
+When queues are high, jobs in the process generate high [delay costs](/zettel/cost-of-delay) because of the multiplier of [queues in the state of out control](/zettel/queues-randomly-spin-seriously-out-of-control-and-remain-in-this-state-for-long-periods). Therefore, you must ask whether it's appropriate to hold jobs in the queue using your economic framework. It's like a hospital moving noncritical patients from the limited number of emergency room beds to serve critical patients. _[Note: The Economics of Holding WIP Changes when Queue Size Changes](/zettel/the-economics-of-holding-wip-changes-when-queue-size-changes)_.
+
 ### 7. Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.

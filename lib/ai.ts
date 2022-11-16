@@ -84,7 +84,7 @@ export const generatePostMetadata = async ({
 
   return {
     excerpt,
-    tags: tags?.replaceAll(' ', ';').replaceAll('#', ''),
+    tags: tags?.replaceAll(/[#-]/g, '').replaceAll('\n', ' '),
     insight,
   };
 };
