@@ -10,18 +10,15 @@ tags:
   - biology
   - economics
   - psychology
-rating: 4
 ---
 
 ## Notes
 
+- A mental model is a simplified way of understanding how something works. It is a representation of reality that we use to understand and make decisions about the world around us.
+
 - Mental models are frameworks, worldviews, representations, or explanations of how something works. They're how we understand the world.
 
-- They shape the connections we create among systems.
-
 - They're thinking tools that we use to solve problems and make decisions.
-
-- They help us overcome the [hyperbolic discounting](/zettel/hyperbolic-discounting) problem.
 
 - Without mental models, you rely on your current emotions or instincts.
 

@@ -26,22 +26,21 @@ const schema = yup.object({
     .oneOf([...GROUPS])
     .required(),
   title: yup.string().required(),
-  excerpt: yup
-    .string()
-    .test(
-      'len',
-      'can be empty or with string at least 50 characters and not more than 160',
-      (val) => {
-        if (val === undefined) {
-          return true;
-        }
+  excerpt: yup.string().test(
+    'len',
+    ({ value }) =>
+      'Should be between 50 and 160 characters. Current: ' + value.length,
+    (val) => {
+      if (val === undefined) {
+        return true;
+      }
 
-        /**
-         * https://moz.com/learn/seo/meta-description
-         */
-        return val.length === 0 || (val.length >= 50 && val.length <= 160);
-      },
-    ),
+      /**
+       * https://moz.com/learn/seo/meta-description
+       */
+      return val.length === 0 || (val.length >= 50 && val.length <= 160);
+    },
+  ),
   date: yup.string(),
   tags: yup.string(),
   content: yup.string().required(),
@@ -225,14 +224,19 @@ const PostEditor = ({
   const onGeneratePostMetadata = React.useCallback(async () => {
     setIsFetchingMetadata(true);
 
-    const { content } = getValues();
+    const { content, title } = getValues();
 
-    const metadata = await generatePostMetadata({ content });
+    const metadata = await generatePostMetadata({
+      content: [title, content].join('\n'),
+    });
 
     if (metadata) {
       console.log(metadata);
-      setValue('excerpt', metadata.excerpt);
-      setValue('tags', metadata.tags);
+      /**
+       * Set isDirty to true to trigger the auto-save.
+       */
+      setValue('excerpt', metadata.excerpt, { shouldDirty: true });
+      setValue('tags', metadata.tags, { shouldDirty: true });
       setInsight(metadata.insight || '');
     }
 
