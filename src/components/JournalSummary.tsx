@@ -21,7 +21,7 @@ export const useJournalSummary = ({ date }: { date: string }) => {
 
   const summary =
     data?.summary?.reduce((acc, { key, journal }) => {
-      const header = `## [${key} - ${journal?.formattedDate})](/journal/${journal?.date}\n`;
+      const header = `## [${key} - ${journal?.formattedDate}](/journal/${journal?.date})\n`;
 
       return [acc, header, journal?.content + '\n\n'].join('\n');
     }, '') || '';
