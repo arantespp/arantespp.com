@@ -34,6 +34,7 @@ const JournalPage = () => {
     <>
       <NextSeo noindex nofollow title={title} />
       <Flex sx={{ gap: 3, marginY: 4 }}>
+        <Link href="/journal/all">All</Link>
         <Link href={`/journal/editor?date=${date}`}>Edit</Link>
         <Link href="/journal">Summary</Link>
         <Link href="/journal/editable?date=${date}">Editable</Link>
