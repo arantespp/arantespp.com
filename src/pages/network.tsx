@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Flex, Text } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
-import { getAllTags, getPosts } from '../../lib/files';
+import { Recommendation, getAllTags, getPosts } from '../../lib/files';
 import { useRouter } from 'next/router';
 import FullWidth from '../components/FullWidth';
 import RecommendationCard from '../components/RecommendationCard';
@@ -14,7 +14,8 @@ const NetworkGraph = dynamic(() => import('../components/NetworkGraph'), {
 });
 
 export const getStaticProps = async () => {
-  const allPosts = (await getPosts()).map(({ content, ...rest }) => rest);
+  const allPosts = await getPosts();
+
   const allTags = await getAllTags();
 
   const postsNodes = allPosts.map(({ href, title }) => ({
@@ -68,8 +69,32 @@ export const getStaticProps = async () => {
     ...link,
   }));
 
+  const recommendations: Recommendation[] = allPosts.map(
+    ({
+      title,
+      excerpt,
+      tags,
+      group,
+      href,
+      draft,
+      formattedDate,
+      readingTime,
+      url,
+    }) => ({
+      title,
+      excerpt,
+      tags,
+      group,
+      href,
+      draft,
+      formattedDate,
+      readingTime,
+      url,
+    }),
+  );
+
   return {
-    props: { allPosts, nodes, links },
+    props: { recommendations, nodes, links },
   };
 };
 
@@ -90,10 +115,13 @@ const Legend = ({ color, label }: { color: string; label: string }) => (
 );
 
 const Network = ({
-  allPosts,
+  recommendations,
   nodes,
   links,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  /**
+   * `selectedNodeId` is the same as post `href`.
+   */
   const [selectedNodeId, setSelectedNodeId] = React.useState('');
 
   const selectedNode = React.useMemo(() => {
@@ -127,14 +155,12 @@ const Network = ({
       <FullWidth>
         <NetworkGraph
           {...{
-            allPosts,
             selectedNodeId,
             setSelectedNodeId,
             graphData: { nodes, links },
           }}
         />
       </FullWidth>
-
       {selectedNode && (
         <Box
           sx={{
@@ -144,11 +170,10 @@ const Network = ({
           {selectedNode.group === 'post' && (
             <RecommendationCard
               recommendation={
-                allPosts.find((post) => post.href === selectedNode.id)!
+                recommendations.find((post) => post.href === selectedNode.id)!
               }
             />
           )}
-
           {selectedNode.group === 'tag' && <Tag tag={selectedNode.id} />}
         </Box>
       )}

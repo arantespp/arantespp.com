@@ -2,8 +2,8 @@
 book: null
 draft: false
 tags:
+  - decision-making
   - product-management
-  - strategic-decision-making
   - swot-analysis
 date: '2022-11-17'
 excerpt: >-
@@ -23,8 +23,8 @@ editLink: >-
 url: 'https://arantespp.com/zettel/swot-analysis'
 keywords:
   - zettel
+  - decision-making
   - product-management
-  - strategic-decision-making
   - swot-analysis
 readingTime: 1
 references: []

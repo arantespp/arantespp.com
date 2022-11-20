@@ -4,6 +4,7 @@ excerpt: Mental models are frameworks, worldviews, representations, or explanati
 date: 2021-04-06
 tags:
   - brain
+  - decision-making
   - mental-models
   - physics
   - chemistry

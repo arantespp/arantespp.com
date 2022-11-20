@@ -24,53 +24,6 @@ const nodeColors: { [key: string]: string } = {
   selectedNode: theme.colors?.primary as string,
 };
 
-const SearchInput = ({
-  setSelectedNodeId,
-  allPosts,
-}: {
-  setSelectedNodeId: (id: string) => void;
-  allPosts: Recommendation[];
-}) => {
-  const [inputValue, setInputValue] = React.useState('');
-
-  React.useEffect(() => {
-    const result = allPosts.find((r) => r.title === inputValue);
-    if (result) {
-      setSelectedNodeId(result.href);
-    }
-  }, [allPosts, inputValue, setSelectedNodeId]);
-
-  return (
-    <>
-      <Input
-        sx={{
-          position: 'absolute',
-          top: 2,
-          width: 500,
-          maxWidth: '96%',
-          left: 0,
-          right: 0,
-          margin: 'auto',
-          backgroundColor: 'background',
-        }}
-        list="results"
-        placeholder="What do you want to search?"
-        value={inputValue}
-        onChange={(e) => {
-          setInputValue(e.target.value);
-        }}
-      />
-      {inputValue.length > 1 && (
-        <Box as="datalist" id="results">
-          {allPosts.map((result) => (
-            <option key={result.href}>{result.title}</option>
-          ))}
-        </Box>
-      )}
-    </>
-  );
-};
-
 const NetworkGraph = ({
   graphData,
   setSelectedNodeId,
@@ -79,7 +32,6 @@ const NetworkGraph = ({
   graphData: { nodes: any; links: any };
   selectedNodeId?: string;
   setSelectedNodeId: (id: string) => void;
-  allPosts: Recommendation[];
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
 

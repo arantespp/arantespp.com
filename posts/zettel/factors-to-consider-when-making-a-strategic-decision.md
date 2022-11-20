@@ -6,7 +6,7 @@ tags:
   - resources
   - risks
   - stakeholders
-  - strategic-decision-making
+  - decision-making
 date: '2022-11-17'
 excerpt: >-
   The desired outcome of the decision, the resources available to achieve the
@@ -30,7 +30,7 @@ keywords:
   - resources
   - risks
   - stakeholders
-  - strategic-decision-making
+  - decision-making
 readingTime: 1
 references: []
 backlinks:
