@@ -4,7 +4,7 @@ draft: false
 tags:
   - kanban
   - product-development
-  - queues
+  - queueing-theory
   - work-in-process
 date: '2022-11-07'
 excerpt: >-
@@ -27,7 +27,7 @@ keywords:
   - zettel
   - kanban
   - product-development
-  - queues
+  - queueing-theory
   - work-in-process
 readingTime: 1
 references:

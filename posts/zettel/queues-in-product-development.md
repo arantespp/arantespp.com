@@ -3,7 +3,7 @@ book: null
 draft: false
 tags:
   - product-development
-  - queues
+  - queueing-theory
 date: '2022-10-10'
 excerpt: >-
   The idle time of waiting works in queues increases the work-in-process, which
@@ -23,7 +23,7 @@ url: 'https://arantespp.com/zettel/queues-in-product-development'
 keywords:
   - zettel
   - product-development
-  - queues
+  - queueing-theory
 readingTime: 1
 references:
   - /zettel/scrum

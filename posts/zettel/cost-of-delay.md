@@ -5,7 +5,7 @@ draft: false
 tags:
   - cost-of-delay
   - product-development
-  - queues
+  - queueing-theory
 rating: 3
 date: '2022-04-07'
 excerpt: >-
@@ -28,7 +28,7 @@ keywords:
   - zettelkasten
   - cost-of-delay
   - product-development
-  - queues
+  - queueing-theory
 readingTime: 1
 ---
 

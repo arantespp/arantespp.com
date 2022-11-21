@@ -6,7 +6,7 @@ tags:
   - cycle-time
   - lean
   - product-development
-  - queues
+  - queueing-theory
 date: '2022-11-14'
 excerpt: >-
   Queues create many forms of economic waste: longer cycle time, increased risk,
@@ -29,7 +29,7 @@ keywords:
   - cycle-time
   - lean
   - product-development
-  - queues
+  - queueing-theory
 readingTime: 1
 references:
   - /zettel/parkinson-s-law

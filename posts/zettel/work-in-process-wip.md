@@ -4,7 +4,7 @@ draft: false
 tags:
   - agile
   - cycle-time
-  - queue
+  - queueing-theory
   - work-in-process
 date: '2022-09-10'
 excerpt: >-
@@ -26,7 +26,7 @@ keywords:
   - zettel
   - agile
   - cycle-time
-  - queue
+  - queueing-theory
   - work-in-process
 readingTime: 1
 references:

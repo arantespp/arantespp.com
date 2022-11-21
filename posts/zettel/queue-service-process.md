@@ -3,7 +3,7 @@ title: Queue Service Process
 excerpt: The queue service process is the process in which the server accomplishes the work.
 date: 2021-08-04
 tags:
-  - queues
+  - queueing-theory
 rating: 3
 ---
 

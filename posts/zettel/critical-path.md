@@ -5,7 +5,7 @@ draft: false
 tags:
   - product-development
   - product-management
-  - queues
+  - queueing-theory
 rating: 3
 date: '2021-07-28'
 excerpt: >-
@@ -27,7 +27,7 @@ keywords:
   - zettelkasten
   - product-development
   - product-management
-  - queue
+  - queueing-theory
 readingTime: 1
 ---
 

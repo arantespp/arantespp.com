@@ -7,7 +7,7 @@ tags:
   - kendal-notation
   - math
   - product-development
-  - queues
+  - queueing-theory
   - statistics
 date: '2021-07-24'
 excerpt: >-
@@ -33,7 +33,7 @@ keywords:
   - kendal-notation
   - math
   - product-development
-  - queues
+  - queueing-theory
   - statistics
 readingTime: 1
 references:

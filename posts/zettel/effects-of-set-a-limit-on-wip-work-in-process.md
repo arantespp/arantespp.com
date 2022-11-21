@@ -3,7 +3,7 @@ book: null
 draft: false
 tags:
   - cycle-time
-  - queue
+  - queueing-theory
   - work-in-process
 date: '2022-10-24'
 excerpt: |
@@ -23,7 +23,7 @@ url: 'https://arantespp.com/zettel/effects-of-set-a-limit-on-wip-work-in-process
 keywords:
   - zettel
   - cycle-time
-  - queue
+  - queueing-theory
   - work-in-process
 readingTime: 1
 references:

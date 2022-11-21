@@ -1,6 +1,7 @@
 import * as dateFns from 'date-fns';
 import { GROUPS, Group } from './groups';
 import { getDateWithTimezone } from './getDateWithTimezone';
+import { normalizeTags } from './normalizeTags';
 import { paramCase } from 'change-case';
 import { postsDirectory } from './postsDirectory';
 import { titleCase } from 'title-case';
@@ -50,24 +51,6 @@ const getDate = (date: string | Date) => {
     formattedDate: dateFns.format(dt, 'MMMM dd, yyyy'),
   };
 };
-
-export const normalizeTags = (tags: string[] = []) =>
-  [...tags]
-    /**
-     * Remove invalid tags.
-     */
-    .filter((tag) => !!tag)
-    /**
-     * https://stackoverflow.com/a/37511463/8786986
-     */
-    .map((tag) => tag.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-    .map((tag) => paramCase(tag))
-    /**
-     * Remove duplicated tags.
-     * https://stackoverflow.com/a/56757215/8786986
-     */
-    .filter((tag, index, array) => array.indexOf(tag) === index)
-    .sort((tagA, tagB) => tagA.localeCompare(tagB));
 
 type GroupPostParams = {
   group: Group;

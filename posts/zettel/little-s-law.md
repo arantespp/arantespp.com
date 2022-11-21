@@ -4,7 +4,7 @@ book: null
 draft: false
 tags:
   - john-d-c-little
-  - queues
+  - queueing-theory
 rating: 2
 date: '2021-12-06'
 excerpt: >-
@@ -25,7 +25,7 @@ url: 'https://arantespp.com/zettelkasten/little-s-law'
 keywords:
   - zettelkasten
   - john-d-c-little
-  - queues
+  - queueing-theory
 readingTime: 1
 ---
 

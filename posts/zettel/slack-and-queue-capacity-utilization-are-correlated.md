@@ -3,7 +3,7 @@ book: null
 draft: false
 tags:
   - product-development
-  - queues
+  - queueing-theory
   - slack
 date: '2022-11-08'
 excerpt: >-

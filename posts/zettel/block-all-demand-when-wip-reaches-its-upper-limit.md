@@ -3,7 +3,7 @@ book: null
 draft: false
 tags:
   - product-development
-  - queue
+  - queueing-theory
   - work-in-process
 date: '2022-11-14'
 excerpt: >-
@@ -24,7 +24,7 @@ url: 'https://arantespp.com/zettel/block-all-demand-when-wip-reaches-its-upper-l
 keywords:
   - zettel
   - product-development
-  - queue
+  - queueing-theory
   - work-in-process
 readingTime: 1
 references:

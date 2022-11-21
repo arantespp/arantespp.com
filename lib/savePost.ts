@@ -1,9 +1,10 @@
 import * as dateFns from 'date-fns';
 import * as fs from 'fs';
 import * as path from 'path';
-import { Book, Post, getPost, normalizeTags } from './files';
+import { Book, Post, getPost } from './files';
 import { Group } from './groups';
 import { PostForm } from '../src/components/PostEditor';
+import { normalizeTags } from './normalizeTags';
 import { postTitleToSlug } from './postTitleToSlug';
 import { postsDirectory } from './postsDirectory';
 import { titleCase } from 'title-case';

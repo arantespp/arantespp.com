@@ -5,7 +5,7 @@ tags:
   - kanban
   - product-development
   - pull-principle
-  - queues
+  - queueing-theory
   - work-in-process
 date: '2022-11-07'
 excerpt: >-
@@ -30,7 +30,7 @@ keywords:
   - kanban
   - product-development
   - pull-principle
-  - queues
+  - queueing-theory
   - work-in-process
 readingTime: 1
 references:

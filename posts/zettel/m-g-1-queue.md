@@ -6,7 +6,7 @@ excerpt: >-
   Markovian, service has a general distribution, and a single server.
 rating: 3
 tags:
-  - queues
+  - queueing-theory
 ---
 
 ## Notes

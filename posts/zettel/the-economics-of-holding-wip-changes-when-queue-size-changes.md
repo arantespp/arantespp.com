@@ -5,7 +5,7 @@ tags:
   - cost-of-delay
   - economic-framework
   - high-state-queues
-  - queues
+  - queueing-theory
   - work-in-process
 date: '2022-11-16'
 excerpt: >-
@@ -30,7 +30,7 @@ keywords:
   - cost-of-delay
   - economic-framework
   - high-state-queues
-  - queues
+  - queueing-theory
   - work-in-process
 readingTime: 1
 references:
@@ -53,11 +53,7 @@ backlinks: []
 
 ## Theses
 
-- Therefore, the cost of a job when the queue state is low changes when the queue is in a high state.
-
-- It's logical to purge jobs of low value from the queue whenever there is a surplus of high-value jobs, ensuring open slots for other high-value jobs.
-
-- You must ask whether it's appropriate to hold jobs in the queue using your economic framework. It's like a hospital moving noncritical patients from the limited number of emergency room beds to serve critical patients.
+- Therefore, the cost of a job when the queue state is low increases when the queue is in a high state.
 
 ## Questions
 

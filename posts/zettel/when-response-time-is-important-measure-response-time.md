@@ -6,7 +6,7 @@ tags:
   - critical-path
   - efficiency
   - product-development
-  - queues
+  - queueing-theory
   - slack
 date: '2022-11-08'
 excerpt: >-
@@ -30,7 +30,7 @@ keywords:
   - critical-path
   - efficiency
   - product-development
-  - queues
+  - queueing-theory
   - slack
 readingTime: 1
 references:

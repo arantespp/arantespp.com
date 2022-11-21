@@ -4,7 +4,7 @@ draft: false
 tags:
   - cycle-time
   - product-development
-  - queues
+  - queueing-theory
   - statistics
 date: '2022-11-14'
 excerpt: >-
@@ -27,7 +27,7 @@ keywords:
   - zettel
   - cycle-time
   - product-development
-  - queues
+  - queueing-theory
   - statistics
 readingTime: 1
 references:

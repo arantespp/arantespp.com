@@ -3,7 +3,7 @@ title: Queue Capacity Utilization
 excerpt: Queue capacity utilization is the amount of time the service process is working (not idle).
 date: 2021-08-04
 tags:
-  - queues
+  - queueing-theory
 rating: 2
 ---
 

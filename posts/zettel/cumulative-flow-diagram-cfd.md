@@ -4,7 +4,7 @@ book: null
 draft: false
 tags:
   - cumulative-flow-diagram
-  - queues
+  - queueing-theory
 rating: 2
 date: '2021-12-01'
 excerpt: The cumulative flow diagram (CFD) is a helpful tool for managing queues.
@@ -23,7 +23,7 @@ url: 'https://arantespp.com/zettelkasten/cumulative-flow-diagram-cfd'
 keywords:
   - zettelkasten
   - cumulative-flow-diagram
-  - queues
+  - queueing-theory
 readingTime: 1
 ---
 

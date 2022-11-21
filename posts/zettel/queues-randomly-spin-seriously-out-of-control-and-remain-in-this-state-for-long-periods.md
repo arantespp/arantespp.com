@@ -3,7 +3,7 @@ book: null
 draft: false
 tags:
   - product-development
-  - queues
+  - queueing-theory
 date: '2022-10-24'
 excerpt: >-
   A random process (sequence of random variables) has the chance to spin out
@@ -29,7 +29,7 @@ url: >-
 keywords:
   - zettel
   - product-development
-  - queues
+  - queueing-theory
 readingTime: 1
 references: []
 backlinks: []

@@ -3,7 +3,7 @@ book: null
 draft: false
 tags:
   - computing
-  - queues
+  - queueing-theory
 date: '2022-08-13'
 excerpt: >-
   With this algorithm, the system handles low-priority and doesn't get stuck in
@@ -23,7 +23,7 @@ url: 'https://arantespp.com/zettel/round-robin-scheduling'
 keywords:
   - zettel
   - computing
-  - queues
+  - queueing-theory
 readingTime: 1
 references: []
 backlinks: []
