@@ -424,6 +424,10 @@ When queues are high, jobs in the process generate high [delay costs](/zettel/co
 
 Zombie projects are projects that aren't good enough to get resources and bad enough to kill. Unfortunately, many companies mistakenly starve them for resources, barely keeping them alive, because of the [sunk cost](/zettel/sunk-cost). The project managers believe that they can't kill the projects because of the resources they've already invested in these projects. _[Nome: Zombie Projects](/zettel/zombie-projects)_.
 
+#### W8: The Principle of Flexible Requirements: Control WIP by shedding requirements.
+
+When WIP becomes high, you can purge WIP by decreasing the batch size of your jobs. A way to achieve this is to shed the requirements of your jobs. The underlying logic is that the economic cost of retaining a requirement rises during periods of congestion because [the economics of holding WIP changes when queue size changes](/zettel/the-economics-of-holding-wip-changes-when-queue-size-changes). _[Note: Control WIP by Shedding Requirements](/zettel/control-wip-by-shedding-requirements)_.
+
 ### 7. Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
