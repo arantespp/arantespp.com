@@ -1,13 +1,32 @@
 ---
 title: Reactive Planning Model
-excerpt: When a team starts a project without planning ahead, it's possible that the reactive planning model ensues.
-date: 2021-06-06
+group: zettel
+slug: reactive-planning-model
+date: '2021-06-06'
+formattedDate: 'June 06, 2021'
+excerpt: >-
+  When a team starts a project without planning ahead, it's possible that the
+  reactive planning model ensues.
 tags:
-  - mental-models
-  - getting things done
-  - planning
   - brainstorming
-rating: 3
+  - getting-things-done
+  - mental-models
+  - planning
+  - reactive-planning-model
+href: /zettel/reactive-planning-model
+url: 'https://arantespp.com/zettel/reactive-planning-model'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/reactive-planning-model.md
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/reactive-planning-model.md
+keywords:
+  - zettel
+  - brainstorming
+  - getting-things-done
+  - mental-models
+  - planning
+  - reactive-planning-model
+readingTime: 1
 ---
 
 ## Notes

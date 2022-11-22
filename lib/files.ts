@@ -1,13 +1,13 @@
 import * as dateFns from 'date-fns';
+import * as fs from 'fs';
+import * as path from 'path';
 import { GROUPS, Group } from './groups';
 import { getDateWithTimezone } from './getDateWithTimezone';
 import { normalizeTags } from './normalizeTags';
 import { paramCase } from 'change-case';
+import { postTitleToSlug } from './postTitleToSlug';
 import { postsDirectory } from './postsDirectory';
-import { titleCase } from 'title-case';
-import fs from 'fs';
 import matter from 'gray-matter';
-import path from 'path';
 import readingTime from 'reading-time';
 
 export type { Group };
@@ -38,21 +38,7 @@ const insertFileProblem = async ({ description }: { description: string }) => {
   _problems.push(description);
 };
 
-/**
- * Group Posts
- */
-const getDate = (date: string | Date) => {
-  const dt = getDateWithTimezone(date);
-  return {
-    date: dateFns.format(dt, 'yyyy-MM-dd'),
-    /**
-     * Added formattedDate to don't need to use date-fns in the App.
-     */
-    formattedDate: dateFns.format(dt, 'MMMM dd, yyyy'),
-  };
-};
-
-type GroupPostParams = {
+type ReadPostParams = {
   group: Group;
   slug: string;
 };
@@ -65,136 +51,176 @@ export type Book = {
   ISBN?: string;
 };
 
-type GroupPostMarkdownMeta = Partial<{
+type SimplePost = {
   title: string;
-  excerpt: string;
-  draft: boolean;
-  date: string;
-  tags: string[];
-  book: Book;
-  bitLink: string;
-}>;
+  group: Group;
+  /**
+   * Slug is derived from the title, so it can be optional.
+   */
+  slug?: string;
+  excerpt?: string;
+  draft?: boolean;
+  date?: string;
+  tags?: string[];
+  book?: Book;
+  bitLink?: string;
+  content?: string;
+};
 
-const requiredPostProperties = [
+const requiredPostPropertiesToNotBeADraft = [
   'title',
   'excerpt',
   'date',
-  'formattedDate',
   'tags',
   'content',
 ] as const;
 
-const readGroupPost = async ({ group, slug }: GroupPostParams) => {
+const getDate = (date: string | Date) => {
+  const dt = getDateWithTimezone(date);
+  return {
+    date: dateFns.format(dt, 'yyyy-MM-dd'),
+    /**
+     * Added formattedDate to don't need to use date-fns in the App.
+     */
+    formattedDate: dateFns.format(dt, 'MMMM dd, yyyy'),
+  };
+};
+
+const getPostWithAllMeta = (post: SimplePost) => {
+  const { title, group } = post;
+
+  if (!title || !group) {
+    return undefined;
+  }
+
+  const slug = post.slug || postTitleToSlug(title);
+
+  /**
+   * Title and filename doesn't match.
+   */
+  if (title && slug !== paramCase(title)) {
+    insertFileProblem({ description: `${slug} and ${title} don't match` });
+    return undefined;
+  }
+
+  const { date, formattedDate } = getDate(post.date || new Date());
+
+  const draft = (() => {
+    if (post.draft) {
+      return true;
+    }
+
+    const postHasAllRequiredProperties =
+      requiredPostPropertiesToNotBeADraft.reduce(
+        (acc, property) => acc && !!post[property],
+        true,
+      );
+
+    if (!postHasAllRequiredProperties) {
+      return true;
+    }
+
+    return false;
+  })();
+
+  const tags = normalizeTags([
+    ...(post.tags || []),
+    ...(post.book?.authors || []),
+  ]);
+
+  const href = path.join(
+    '/',
+    draft ? 'drafts' : '',
+    group === 'blog' ? '' : group,
+    slug,
+  );
+
+  const content = post.content || '';
+
+  const excerpt = post.excerpt || '';
+
+  const postWithAllMeta = {
+    title,
+    group,
+    slug,
+    date,
+    formattedDate,
+    excerpt,
+    draft,
+    tags,
+    href,
+    book: post.book,
+    url: `${DOMAIN}${href}`,
+    updateHistory: `${GITHUB_PROJECT}/commits/main/posts/${group}/${slug}.md`,
+    editLink: `${GITHUB_PROJECT}/edit/main/posts/${group}/${slug}.md`,
+    readingTime: Math.round(readingTime(content).minutes) || 1,
+    content,
+    bitLink: post.bitLink,
+  };
+
+  /**
+   * Add book image.
+   */
+  if (postWithAllMeta.book) {
+    /**
+     * Check if image with same post name exists.
+     */
+    ['webp', 'jpg', 'png'].forEach((ext) => {
+      if (postWithAllMeta.book?.image) {
+        return;
+      }
+
+      const imageUrl = path.join('/', 'images', group, `${slug}.${ext}`);
+      const imageDir = path.join(process.cwd(), 'public', imageUrl);
+
+      if (fs.existsSync(imageDir) && postWithAllMeta.book) {
+        postWithAllMeta.book.image = imageUrl;
+      }
+    });
+  }
+
+  /**
+   * Remove all properties that are undefined.
+   */
+  Object.keys(postWithAllMeta).forEach((key) => {
+    if (postWithAllMeta[key] === undefined) {
+      delete postWithAllMeta[key];
+    }
+  });
+
+  return postWithAllMeta;
+};
+
+const readPost = async ({ group, slug }: ReadPostParams) => {
   try {
+    if (!group || !slug) {
+      return undefined;
+    }
+
     const pathFromPostsDirectory = path.join(group, `${slug}.md`);
-    const fullPath = path.join(postsDirectory, pathFromPostsDirectory);
-    const href = path.join('/', group === 'blog' ? '' : group, slug);
+
     const markdownFile = await readMarkdownFile(pathFromPostsDirectory);
 
     if (!markdownFile) {
       return undefined;
     }
 
-    const { data, content } = markdownFile;
+    const meta = markdownFile.data as Partial<SimplePost>;
 
-    const {
+    const { title } = meta;
+
+    if (!title) {
+      return undefined;
+    }
+
+    const postWithAllMeta = getPostWithAllMeta({
+      ...meta,
       title,
-      excerpt = '',
-      date,
-      tags = [],
-      draft,
-      book,
-      bitLink,
-    } = data as GroupPostMarkdownMeta;
-
-    /**
-     * Title and filename doesn't match.
-     */
-    if (title && slug !== paramCase(title)) {
-      insertFileProblem({ description: `${slug} and ${title} don't match` });
-      return undefined;
-    }
-
-    const { mtime } = await fs.promises.stat(fullPath);
-    const { date: updatedAt, formattedDate: formattedUpdatedAt } =
-      getDate(mtime);
-
-    /**
-     * Add book image.
-     */
-    (() => {
-      if (!book) {
-        return;
-      }
-
-      /**
-       * Check if image with same post name exists.
-       */
-      ['webp', 'jpg', 'png'].forEach((ext) => {
-        if (book.image) {
-          return;
-        }
-
-        const imageUrl = path.join('/', 'images', group, `${slug}.${ext}`);
-        const imageDir = path.join(process.cwd(), 'public', imageUrl);
-
-        if (fs.existsSync(imageDir)) {
-          book.image = imageUrl;
-        }
-      });
-    })();
-
-    /**
-     * Book authors become tags.
-     */
-    const allTags = normalizeTags([...tags, ...(book?.authors || [])]);
-
-    const post = {
-      title: titleCase(title || ''),
-      excerpt,
-      ...(date ? getDate(date) : { date: '', formattedDate: '' }),
-      updatedAt,
-      formattedUpdatedAt,
-      updateHistory: `${GITHUB_PROJECT}/commits/main/posts/${group}/${slug}.md`,
-      href: `${draft ? '/drafts' : ''}${href}`,
       group,
-      slug,
-      content,
-      tags: allTags,
-      draft,
-      book,
-      editLink: `${GITHUB_PROJECT}/edit/main/posts/${group}/${slug}.md`,
-      url: `${DOMAIN}${href}`,
-      keywords: [group, ...tags],
-      readingTime: Math.round(readingTime(content).minutes) || 1,
-      bitLink,
-    };
-
-    if (!href || !group || !slug) {
-      return undefined;
-    }
-
-    /**
-     * All properties most not have undefined to void this error:
-     * Reason: `undefined` cannot be serialized as JSON. Please use `null`
-     * or omit this value.
-     */
-    Object.entries(post).forEach(([key, value]) => {
-      if (!value) {
-        delete post[key];
-      }
+      content: markdownFile.content,
     });
 
-    const doesPostHaveAllRequiredProperties = requiredPostProperties.reduce(
-      (acc, property) => acc && !!post[property],
-      true,
-    );
-
-    if (!post.draft) {
-      post.draft = !doesPostHaveAllRequiredProperties;
-    }
-
-    return post;
+    return postWithAllMeta;
   } catch (err) {
     console.error(err);
     return undefined;
@@ -208,7 +234,7 @@ type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
  * references, for example.
  */
 type GroupPostFromMarkdownOptional = NonNullable<
-  ThenArg<ReturnType<typeof readGroupPost>>
+  ThenArg<ReturnType<typeof readPost>>
 >;
 
 /**
@@ -222,7 +248,7 @@ type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] };
  */
 type GroupPostFromMarkdown = WithRequired<
   GroupPostFromMarkdownOptional,
-  typeof requiredPostProperties[number]
+  typeof requiredPostPropertiesToNotBeADraft[number]
 >;
 
 const readAllPostsByGroup = async (group: Group) => {
@@ -247,7 +273,7 @@ const readAllPostsByGroup = async (group: Group) => {
   const allPostsByGroup = (
     await Promise.all(
       allSlugsInsideGroupFolder.map((slug) => {
-        return readGroupPost({ group, slug });
+        return readPost({ group, slug });
       }),
     )
   )
@@ -319,6 +345,39 @@ const getGroupPostsFromMarkdown = async ({
     .sort(sortByMostRecentFirst);
 };
 
+/**
+ * It could receive all posts properties.
+ */
+export type SavePostParams = SimplePost & Partial<Post>;
+
+export const savePost = async (post: SavePostParams) => {
+  const postWithAllMeta = getPostWithAllMeta(post);
+
+  if (!postWithAllMeta) {
+    throw new Error('Post is not valid');
+  }
+
+  const { content, ...meta } = postWithAllMeta;
+
+  /**
+   * Remove undefined properties to avoid errors.
+   * - YAMLException: unacceptable kind of an object to dump [object Undefined]
+   */
+  Object.keys(meta).forEach((key) => {
+    if (!meta[key]) {
+      delete meta[key];
+    }
+  });
+
+  const md = matter.stringify(content, meta);
+
+  const filePath = path.join(postsDirectory, meta.group, `${meta.slug}.md`);
+
+  await fs.promises.writeFile(filePath, md);
+
+  return postWithAllMeta;
+};
+
 export const getAllTags = async () => {
   const allMarkdownPosts = await getGroupPostsFromMarkdown({ draft: false });
 
@@ -330,6 +389,29 @@ export const getAllTags = async () => {
     .filter((tag, index, arr) => arr.indexOf(tag) === index)
     .sort((tagA, tagB) => tagA.localeCompare(tagB));
 
+  /**
+   * Add the tags that is the same as the post slug if all tags contains it
+   * but not the post.
+   */
+  await Promise.all(
+    allMarkdownPosts.map(async (post) => {
+      const postTags = post.tags || [];
+
+      const allTagsContainsPostSlug = tags.includes(post.slug);
+
+      const postTagsContainsPostSlug = postTags.includes(post.slug);
+
+      if (allTagsContainsPostSlug && !postTagsContainsPostSlug) {
+        postTags.push(post.slug);
+
+        await savePost({
+          ...post,
+          tags: postTags,
+        });
+      }
+    }),
+  );
+
   return normalizeTags(tags);
 };
 
@@ -339,7 +421,7 @@ export const getDrafts = async ({ group }: { group?: Group } = {}) => {
   );
 };
 
-export const getDraft = async ({ group, slug }: GroupPostParams) => {
+export const getDraft = async ({ group, slug }: ReadPostParams) => {
   const drafts = await getDrafts({ group });
   return drafts.find((draft) => draft.slug === slug);
 };
@@ -472,7 +554,7 @@ export const getPost = async (params: GetPostParams) => {
   /**
    * Read post again from markdown.
    */
-  const post = await readGroupPost(params);
+  const post = await readPost(params);
 
   if (post) {
     return addFinalParametersToPost(post);

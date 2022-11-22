@@ -1,46 +1,27 @@
 ---
-book: null
-draft: false
+title: The Economics of Holding WIP Changes when Queue Size Changes
+group: zettel
+slug: the-economics-of-holding-wip-changes-when-queue-size-changes
+date: '2022-11-16'
+formattedDate: 'November 16, 2022'
+excerpt: >-
+  Whenever WIP is high, queues are high. When queues are high, jobs in the
+  process generate high delay costs. Most of the damage is caused by high-state
+  queues.
 tags:
   - cost-of-delay
   - economic-framework
   - high-state-queues
   - queueing-theory
   - work-in-process
-date: '2022-11-16'
-excerpt: >-
-  Whenever WIP is high, queues are high. When queues are high, jobs in the
-  process generate high delay costs. Most of the damage is caused by high-state
-  queues.
-title: The Economics of Holding WIP Changes when Queue Size Changes
-group: zettel
-formattedDate: 'November 16, 2022'
-updatedAt: '2022-11-16'
-formattedUpdatedAt: 'November 16, 2022'
-updateHistory: >-
-  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/the-economics-of-holding-wip-changes-when-queue-size-changes.md
 href: /zettel/the-economics-of-holding-wip-changes-when-queue-size-changes
-slug: the-economics-of-holding-wip-changes-when-queue-size-changes
-editLink: >-
-  https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/the-economics-of-holding-wip-changes-when-queue-size-changes.md
 url: >-
   https://arantespp.com/zettel/the-economics-of-holding-wip-changes-when-queue-size-changes
-keywords:
-  - zettel
-  - cost-of-delay
-  - economic-framework
-  - high-state-queues
-  - queueing-theory
-  - work-in-process
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/the-economics-of-holding-wip-changes-when-queue-size-changes.md
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/the-economics-of-holding-wip-changes-when-queue-size-changes.md
 readingTime: 1
-references:
-  - /zettel/cost-of-delay
-  - /zettel/work-in-process-wip
-  - /zettel/queues-in-product-development
-  - >-
-    /zettel/queues-randomly-spin-seriously-out-of-control-and-remain-in-this-state-for-long-periods
-  - /zettel/most-of-the-damage-done-by-a-queue-is-caused-by-high-queues-states
-backlinks: []
 ---
 
 ## Hypotheses
@@ -53,7 +34,7 @@ backlinks: []
 
 ## Theses
 
-- Therefore, the cost of a job when the queue state is low increases when the queue is in a high state.
+Therefore, the cost of a job when the queue state is low increases when the queue is in a high state.
 
 ## Questions
 

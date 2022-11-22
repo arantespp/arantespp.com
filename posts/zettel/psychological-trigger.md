@@ -1,12 +1,30 @@
 ---
 title: Psychological Trigger
-excerpt: Psychological triggers are the stimulus that creates a reaction in a brain and/or body without he/she notices.
-date: 2020-06-29
+group: zettel
+slug: psychological-trigger
+date: '2020-06-29'
+formattedDate: 'June 29, 2020'
+excerpt: >-
+  Psychological triggers are the stimulus that creates a reaction in a brain
+  and/or body without he/she notices.
 tags:
   - brain
+  - psychological-trigger
   - psychological-triggers
   - psychology
-rating: 2
+href: /zettel/psychological-trigger
+url: 'https://arantespp.com/zettel/psychological-trigger'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/psychological-trigger.md
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/psychological-trigger.md
+keywords:
+  - zettel
+  - brain
+  - psychological-trigger
+  - psychological-triggers
+  - psychology
+readingTime: 1
 ---
 
 ## Notes

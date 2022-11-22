@@ -1,39 +1,32 @@
 ---
-book: null
-draft: false
-tags:
-  - agile
-  - business
-  - product-development
-  - time-to-market
+title: Cycle Time
+group: zettel
+slug: cycle-time
 date: '2022-04-21'
+formattedDate: 'April 21, 2022'
 excerpt: >-
   If a company takes ten days to deliver a feature to its customer on average,
   its cycle time is ten days.
-title: Cycle Time
-group: zettel
-formattedDate: 'April 21, 2022'
-updatedAt: 'May 01, 2022'
+tags:
+  - agile
+  - business
+  - cycle-time
+  - product-development
+  - time-to-market
+href: /zettel/cycle-time
+url: 'https://arantespp.com/zettel/cycle-time'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/cycle-time.md
-href: /zettel/cycle-time
-slug: cycle-time
 editLink: >-
   https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/cycle-time.md
-url: 'https://arantespp.com/zettel/cycle-time'
 keywords:
   - zettel
   - agile
   - business
+  - cycle-time
   - product-development
   - time-to-market
 readingTime: 1
-references:
-  - /zettel/little-s-law
-  - /zettel/business-agility
-backlinks:
-  - title: Flow Efficiency
-    href: /zettel/flow-efficiency
 ---
 
 ## Notes

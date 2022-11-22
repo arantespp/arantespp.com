@@ -34,7 +34,7 @@ const getDefaultImage = (group: Group) => {
 };
 
 const JsonLd = ({ post }: { post: Post | Draft }) => {
-  const { group, href, excerpt, title, date: createdAt, updatedAt } = post;
+  const { group, href, excerpt, title, date: createdAt } = post;
 
   const articleJsonLd: ArticleJsonLdProps = {
     url: URL + href,
@@ -42,7 +42,6 @@ const JsonLd = ({ post }: { post: Post | Draft }) => {
     description: excerpt,
     images: [getDefaultImage(group)],
     datePublished: createdAt,
-    dateModified: updatedAt,
     authorName: ['Pedro Arantes'],
     publisherName: 'Pedro Arantes',
     publisherLogo: URL + '/images/logo.jpg',
@@ -126,15 +125,7 @@ export const PostPage = ({
     if ('post' in postOrContent) {
       const { post } = postOrContent;
 
-      const {
-        title,
-        book,
-        href,
-        tags,
-        excerpt,
-        updatedAt,
-        date: createdAt,
-      } = post;
+      const { title, book, href, tags, excerpt, date: createdAt } = post;
 
       const openGraph: NextSeoProps['openGraph'] = {
         url: URL + href,
@@ -162,7 +153,6 @@ export const PostPage = ({
 
         openGraph.article = {
           publishedTime: createdAt,
-          modifiedTime: updatedAt,
           authors: ['Pedro Arantes'],
           tags,
         };
@@ -179,6 +169,12 @@ export const PostPage = ({
         title,
         description: excerpt,
         openGraph,
+        additionalMetaTags: [
+          {
+            property: 'keywords',
+            content: [post.group, ...tags].join(', ').replaceAll('-', ' '),
+          },
+        ],
         ...seo,
       };
     }

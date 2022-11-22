@@ -15,15 +15,15 @@ import { Controller, useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import { GROUPS, Group } from '../../lib/groups';
 import { GeneratePostMetadata } from '../../lib/ai';
-import { Post } from '../../lib/files';
+import { Post, SavePostParams } from '../../lib/files';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Editor from './Editor';
 import Link from './Link';
 
 const schema = yup.object({
   group: yup
-    .string()
-    .oneOf([...GROUPS])
+    .mixed<Group>()
+    .oneOf<Group>([...GROUPS])
     .required(),
   title: yup.string().required(),
   excerpt: yup.string().test(
@@ -59,7 +59,7 @@ const schema = yup.object({
 
 export type PostForm = yup.Asserts<typeof schema>;
 
-const putPost = async (post: PostForm) => {
+const putPost = async (post: SavePostParams) => {
   return fetch(`/api/post`, {
     method: 'PUT',
     body: JSON.stringify(post),
@@ -177,7 +177,11 @@ const PostEditor = ({
           keepDirty: false,
         });
 
-        const response = await putPost({ ...data });
+        const response = await putPost({
+          ...data,
+          tags: (data.tags || '').split(';'),
+          book: undefined,
+        });
 
         const json = await response.json();
 

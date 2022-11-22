@@ -1,18 +1,38 @@
 ---
 title: Network Effects
+group: zettel
+slug: network-effects
 date: '2021-08-19'
+formattedDate: 'August 19, 2021'
 excerpt: >-
   Network effects occur when a network's value increases for users as more
   people begin using it.
-rating: 3
 tags:
-  - economics
-  - network-effect
-  - startups
   - business
-  - social network
+  - economics
   - facebook
+  - network-effect
+  - network-effects
+  - social-network
+  - startups
   - twitter
+href: /zettel/network-effects
+url: 'https://arantespp.com/zettel/network-effects'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/network-effects.md
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/network-effects.md
+keywords:
+  - zettel
+  - business
+  - economics
+  - facebook
+  - network-effect
+  - network-effects
+  - social-network
+  - startups
+  - twitter
+readingTime: 1
 ---
 
 ## Notes

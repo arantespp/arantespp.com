@@ -1,39 +1,32 @@
 ---
-book: null
-draft: false
+title: Opportunity Cost
+group: zettel
+slug: opportunity-cost
+date: '2021-06-03'
+formattedDate: 'June 03, 2021'
+excerpt: >-
+  Opportunity cost is the loss of the benefit that could have been enjoyed if
+  the best choice was chosen instead.
 tags:
   - economics
   - investment
   - mental-models
   - microeconomics
-date: '2021-06-03'
-excerpt: >-
-  Opportunity cost is the loss of the benefit that could have been enjoyed if
-  the best choice was chosen instead.
-title: Opportunity Cost
-group: zettel
-formattedDate: 'June 03, 2021'
-updatedAt: '2022-10-09'
-formattedUpdatedAt: 'October 09, 2022'
+  - opportunity-cost
+href: /zettel/opportunity-cost
+url: 'https://arantespp.com/zettel/opportunity-cost'
 updateHistory: >-
   https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/opportunity-cost.md
-href: /zettel/opportunity-cost
-slug: opportunity-cost
 editLink: >-
   https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/opportunity-cost.md
-url: 'https://arantespp.com/zettel/opportunity-cost'
 keywords:
   - zettel
   - economics
   - investment
   - mental-models
   - microeconomics
+  - opportunity-cost
 readingTime: 1
-references:
-  - /zettel/decision-mental-models
-backlinks:
-  - title: From Reactive Planning Model to Natural Planning Model
-    href: /from-reactive-planning-model-to-natural-planning-model
 ---
 
 ## Notes

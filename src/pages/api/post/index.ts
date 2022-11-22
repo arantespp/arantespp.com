@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getDraft, getPost } from '../../../../lib/files';
+import { getDraft, getPost, savePost } from '../../../../lib/files';
 import { productionBlocker } from '../../../../lib/hofs/productionBlocker';
-import { savePost } from '../../../../lib/savePost';
 
 const putPostHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {

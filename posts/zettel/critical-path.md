@@ -1,30 +1,26 @@
 ---
-image: null
-book: null
-draft: false
-tags:
-  - product-development
-  - product-management
-  - queueing-theory
-rating: 3
+title: Critical Path
+group: zettel
+slug: critical-path
 date: '2021-07-28'
+formattedDate: 'July 28, 2021'
 excerpt: >-
   The critical path is the most extended sequence of activities in a project
   plan. The project is only completed on time only if you meet these activities.
-title: Critical Path
-group: zettelkasten
-formattedDate: 'July 28, 2021'
-updatedAt: 'April 08, 2022'
+tags:
+  - critical-path
+  - product-development
+  - product-management
+  - queueing-theory
+href: /zettel/critical-path
+url: 'https://arantespp.com/zettel/critical-path'
 updateHistory: >-
-  https://github.com/arantespp/arantespp.com/commits/main/posts/zettelkasten/critical-path.md
-href: /zettelkasten/critical-path
-as: /z/critical-path
-slug: critical-path
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/critical-path.md
 editLink: >-
-  https://github.com/arantespp/arantespp.com/edit/main/posts/zettelkasten/critical-path.md
-url: 'https://arantespp.com/zettelkasten/critical-path'
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/critical-path.md
 keywords:
-  - zettelkasten
+  - zettel
+  - critical-path
   - product-development
   - product-management
   - queueing-theory

@@ -1,11 +1,28 @@
 ---
 title: Sunk Cost
-excerpt: Sunk cost is a cost that has already occurred and cannot be recovered. In other words, a sunk cost is a sum paid in the past that is no longer relevant to decisions about the future.
-date: 2021-07-06
+group: zettel
+slug: sunk-cost
+date: '2021-07-06'
+formattedDate: 'July 06, 2021'
+excerpt: >-
+  Sunk cost is a cost that has already occurred and cannot be recovered. In
+  other words, a sunk cost is a sum paid in the past that is no longer relevant
+  to decisions about the future.
 tags:
-  - economics
   - business
-rating: 2
+  - economics
+  - sunk-cost
+href: /zettel/sunk-cost
+url: 'https://arantespp.com/zettel/sunk-cost'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/sunk-cost.md
+editLink: 'https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/sunk-cost.md'
+keywords:
+  - zettel
+  - business
+  - economics
+  - sunk-cost
+readingTime: 1
 ---
 
 ## Notes

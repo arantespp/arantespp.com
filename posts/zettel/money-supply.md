@@ -1,12 +1,30 @@
 ---
 title: Money Supply
-excerpt: In macroeconomics, money supply is the quantity of the money in circulation that an economy have in a point of time.
-date: 2021-02-18
-rating: 2
+group: zettel
+slug: money-supply
+date: '2021-02-18'
+formattedDate: 'February 18, 2021'
+excerpt: >-
+  In macroeconomics, money supply is the quantity of the money in circulation
+  that an economy have in a point of time.
 tags:
   - economics
-  - macroeconomics
   - inflation
+  - macroeconomics
+  - money-supply
+href: /zettel/money-supply
+url: 'https://arantespp.com/zettel/money-supply'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/money-supply.md
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/money-supply.md
+keywords:
+  - zettel
+  - economics
+  - inflation
+  - macroeconomics
+  - money-supply
+readingTime: 1
 ---
 
 ## Notes

@@ -1,14 +1,32 @@
 ---
 title: Natural Planning Model
-excerpt: It's the more effective way to think about projects and situations because it makes thinks happen sooner, better, and more successfully.
-date: 2021-06-07
+group: zettel
+slug: natural-planning-model
+date: '2021-06-07'
+formattedDate: 'June 07, 2021'
+excerpt: >-
+  It's the more effective way to think about projects and situations because it
+  makes thinks happen sooner, better, and more successfully.
 tags:
-  - mental-models
-  - mental-models
-  - getting things done
-  - planning
   - brainstorming
-rating: 3
+  - getting-things-done
+  - mental-models
+  - natural-planning-model
+  - planning
+href: /zettel/natural-planning-model
+url: 'https://arantespp.com/zettel/natural-planning-model'
+updateHistory: >-
+  https://github.com/arantespp/arantespp.com/commits/main/posts/zettel/natural-planning-model.md
+editLink: >-
+  https://github.com/arantespp/arantespp.com/edit/main/posts/zettel/natural-planning-model.md
+keywords:
+  - zettel
+  - brainstorming
+  - getting-things-done
+  - mental-models
+  - natural-planning-model
+  - planning
+readingTime: 1
 ---
 
 ## Notes
