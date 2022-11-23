@@ -428,6 +428,8 @@ Zombie projects are projects that aren't good enough to get resources and bad en
 
 When WIP becomes high, you can purge WIP by decreasing the batch size of your jobs. A way to achieve this is to shed the requirements of your jobs. The underlying logic is that the economic cost of retaining a requirement rises during periods of congestion because [the economics of holding WIP changes when queue size changes](/zettel/the-economics-of-holding-wip-changes-when-queue-size-changes). _[Note: Control WIP by Shedding Requirements](/zettel/control-wip-by-shedding-requirements)_.
 
+It's best to identify in advance which requirements you would consider eliminating or relaxing for two reasons. First, you can make a more well-reasoned decision before the pressure of a congestion crisis occurs. Second, if you preplan which requirements your team can scrap, you can structure your product architecture to make it easy to discard them—you loosely couple them to the rest of the system, so you can cut them loose quickly. _[Note: Identify in Advance Which Requirements You Would Consider Eliminating or Relaxing](/zettel/identify-in-advance-which-requirements-you-would-consider-eliminating-or-relaxing)_.
+
 ### 7. Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
