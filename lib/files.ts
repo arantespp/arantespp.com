@@ -7,6 +7,7 @@ import { normalizeTags } from './normalizeTags';
 import { paramCase } from 'change-case';
 import { postTitleToSlug } from './postTitleToSlug';
 import { postsDirectory } from './postsDirectory';
+import { titleCase } from 'title-case';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 
@@ -87,11 +88,13 @@ const getDate = (date: string | Date) => {
 };
 
 const getPostWithAllMeta = (post: SimplePost) => {
-  const { title, group } = post;
+  let { title, group } = post;
 
   if (!title || !group) {
     return undefined;
   }
+
+  title = titleCase(title.trim());
 
   const slug = post.slug || postTitleToSlug(title);
 
