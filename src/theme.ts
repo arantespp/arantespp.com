@@ -66,7 +66,7 @@ const colors = {
  */
 const config = {
   initialColorModeName: 'light',
-  useLocalStorage: false,
+  useLocalStorage: true,
 };
 
 export const theme: Theme = {

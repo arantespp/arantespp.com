@@ -220,7 +220,7 @@ const PostEditor = ({
 
   const [isFetchingMetadata, setIsFetchingMetadata] = React.useState(false);
 
-  const [insight, setInsight] = React.useState('');
+  const [insight, setInsight] = React.useState('...');
 
   /**
    * Generate post metadata callback.
@@ -291,6 +291,16 @@ const PostEditor = ({
         Draft?
       </Label>
 
+      <Flex sx={{ justifyContent: 'center', marginY: 2, gap: 3 }}>
+        <Button
+          type="button"
+          disabled={isFetchingMetadata}
+          onClick={onGeneratePostMetadata}
+        >
+          Insights
+        </Button>
+      </Flex>
+
       <Label>Excerpt</Label>
       <Textarea rows={3} {...register('excerpt')} />
       <ErrorMessage errors={errors} name="excerpt" />
@@ -304,24 +314,31 @@ const PostEditor = ({
       <Label>Insight</Label>
       <Text sx={{ whiteSpace: 'pre-wrap' }}>{insight}</Text>
 
-      {currentPost?.href && (
-        <Link href={currentPost.href} target="_blank" rel="noopener noreferrer">
-          <Text sx={{ fontStyle: 'italic' }}>
-            See post: {currentPost.title} (updated at {lastAutoSaveTime})
-          </Text>
-        </Link>
-      )}
-
-      <Flex sx={{ justifyContent: 'center', marginTop: 4, gap: 3 }}>
+      <Flex sx={{ justifyContent: 'center', marginY: 4, gap: 3 }}>
         <Button type="submit">Save</Button>
-        <Button
-          type="button"
-          disabled={isFetchingMetadata}
-          onClick={onGeneratePostMetadata}
-        >
-          Metadata
-        </Button>
       </Flex>
+
+      {currentPost?.href && (
+        <Flex sx={{ fontStyle: 'italic', flexDirection: 'column' }}>
+          <Link
+            href={currentPost.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Text>
+              See post: {currentPost.title} (updated at {lastAutoSaveTime})
+            </Text>
+          </Link>
+          <Text
+            sx={{ fontStyle: 'italic', cursor: 'pointer' }}
+            onClick={() => {
+              navigator.clipboard.writeText(currentPost.href);
+            }}
+          >
+            {currentPost.href}
+          </Text>
+        </Flex>
+      )}
     </Flex>
   );
 };

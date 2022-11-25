@@ -5,18 +5,20 @@ import HeaderTwitter from './HeaderTwitter';
 import Link from './Link';
 import PedroArantes from './PedroArantes';
 
+const SHOW_TWITTER = false;
+
 const navs = [
   {
     label: 'Home',
     href: '/',
   },
   {
-    label: 'Contact',
-    href: '/contact',
+    label: 'Blog',
+    href: '/blog',
   },
   {
-    label: 'Now',
-    href: '/now',
+    label: 'Me',
+    href: '/me',
   },
 ];
 
@@ -82,19 +84,21 @@ const Header = () => {
         <HeaderColorMode
           sx={{ ...navSx, fontSize: [1, 2], color: undefined }}
         />
-        <HeaderTwitter
-          sx={{
-            ...navSx,
-            width: 24,
-            color: 'twitter',
-            '&:hover': {
+        {SHOW_TWITTER && (
+          <HeaderTwitter
+            sx={{
+              ...navSx,
+              width: 24,
               color: 'twitter',
-            },
-            position: 'relative',
-            top: [0, '2px'],
-            fontSize: [3, 4],
-          }}
-        />
+              '&:hover': {
+                color: 'twitter',
+              },
+              position: 'relative',
+              top: [0, '2px'],
+              fontSize: [3, 4],
+            }}
+          />
+        )}
       </Flex>
     </Flex>
   );

@@ -6,6 +6,10 @@ I build businesses and products that solve problems for real people.
 
 ![Me :)](/me.webp)
 
+_[Do you want to connect with me?](/contact)_&nbsp;
+
+_[What I'm Doing Now](/now)_
+
 ## Professional
 
 I hold a degree (2011 - 2015) and an MSc (2016 - 2017) in Electrical and Computer Engineering from [EESC - USP](https://eesc.usp.br/). During my undergraduate studies, I was a member of the [Warthog Robotics](https://wr.sc.usp.br/en/home/) team, where I worked on architecting and creating electronics for the robots in the Electronics Division. In my last college year, I was the director of the Control Division, where we were responsible for modeling the robots' dynamics and creating the control algorithms. Also, in my last college year, I was awarded a scientific initiation scholarship on electromagnetism field theory, which was the subject of my [master's thesis](https://teses.usp.br/teses/disponiveis/18/18155/tde-10112017-093250/en.php).

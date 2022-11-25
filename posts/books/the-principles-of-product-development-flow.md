@@ -430,6 +430,8 @@ When WIP becomes high, you can purge WIP by decreasing the batch size of your jo
 
 It's best to identify in advance which requirements you would consider eliminating or relaxing for two reasons. First, you can make a more well-reasoned decision before the pressure of a congestion crisis occurs. Second, if you preplan which requirements your team can scrap, you can structure your product architecture to make it easy to discard them—you loosely couple them to the rest of the system, so you can cut them loose quickly. _[Note: Identify in Advance Which Requirements You Would Consider Eliminating or Relaxing](/zettel/identify-in-advance-which-requirements-you-would-consider-eliminating-or-relaxing)_.
 
+When [WIP](zettel/work-in-process-wip) becomes high, you can relax the targets for a unit cost at production, allowing for higher defects. This strategy will free up development resources to work on other tasks, but it will also increase the product's variance, increasing the costs associated with fixing those defects. _[Note: Control WIP by Relaxing the Targets for a Unit Cost at Production](/zettel/control-wip-by-relaxing-the-targets-for-a-unit-cost-at-production)_.
+
 ### 7. Controlling Flow Under Uncertainty
 
 #### F8: The Cadence Batch Size Enabling Principle: Use a regular cadence to enable small batch sizes.
