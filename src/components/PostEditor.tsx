@@ -235,7 +235,6 @@ const PostEditor = ({
     });
 
     if (metadata) {
-      console.log(metadata);
       /**
        * Set isDirty to true to trigger the auto-save.
        */
