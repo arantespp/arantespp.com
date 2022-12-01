@@ -16,19 +16,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
       params: { group, slug },
     }));
 
-  console.log(paths.length, p.length);
-
-  p.forEach((a) => {
-    if (
-      !paths.find(
-        (b) =>
-          a.params.group === b.params.group && a.params.slug === b.params.slug,
-      )
-    ) {
-      console.log(a);
-    }
-  });
-
   return {
     paths,
     fallback: false,
