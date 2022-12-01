@@ -14,7 +14,7 @@ export const PostResume = ({
 }) => {
   const { excerpt, group, formattedDate, tags, href, readingTime } = post;
 
-  const newGroup = group === 'zettel' ? 'zettelkasten' : group;
+  const newGroup = (group as string) === '/zettel' ? 'zettelkasten' : group;
 
   const displayReadingTime = readingTime > 1 && isPostPage;
 
