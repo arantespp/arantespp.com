@@ -1,7 +1,7 @@
 import { Box } from 'theme-ui';
 import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
-// import { zettelkasten } from '../../lib/zettelkasten';
+import { zettelkasten } from '../../lib/zettelkasten';
 import FullWidth from '../components/FullWidth';
 import dynamic from 'next/dynamic';
 
@@ -13,17 +13,9 @@ const KnowledgeGraph = dynamic(
 );
 
 export const getStaticProps = async () => {
-  /**
-   * TODO: This is not working yet. It takes too long to generate the graph data.
-   */
-  // const graphData = await zettelkasten.getGraphData();
+  const graphData = await zettelkasten.getGraphData();
   return {
-    props: {
-      graphData: {
-        nodes: [],
-        links: [],
-      },
-    },
+    props: { graphData },
   };
 };
 
