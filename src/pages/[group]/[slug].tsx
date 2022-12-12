@@ -1,28 +1,24 @@
 import { GetStaticPaths } from 'next';
+import { Group, getPostAndRecommendations, getPosts } from '../../../lib/files';
 import { PostPage } from '../../components/PostPage';
-import { zettelkasten } from '../../../lib/zettelkasten';
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = (
-    await zettelkasten.getPosts({ groups: ['/zettel', '/books'] })
-  ).map(({ group, slug }) => ({
-    params: { group: group.replace('/', ''), slug },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: (await getPosts())
+    .filter(({ group }) => group !== 'blog')
+    .map(({ group, slug }) => ({
+      params: { group, slug },
+    })),
+  fallback: false,
+});
 
 export const getStaticProps = async ({
   params: { group, slug },
 }: {
-  params: { group: string; slug: string };
+  params: { group: Group; slug: string };
 }) => {
-  const post = await zettelkasten.getPost({
+  const { post, recommendations } = await getPostAndRecommendations({
     slug,
-    group: `/${group}`,
+    group,
   });
 
   if (!post) {
@@ -30,7 +26,7 @@ export const getStaticProps = async ({
   }
 
   return {
-    props: { post, recommendations: post.recommendations },
+    props: { post, recommendations },
   };
 };
 
