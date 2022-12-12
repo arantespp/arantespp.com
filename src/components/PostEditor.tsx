@@ -121,7 +121,6 @@ const PostEditor = ({
     register,
     reset,
     watch,
-    setValue,
     getValues,
   } = useForm<PostForm>({
     defaultValues,
@@ -238,13 +237,11 @@ const PostEditor = ({
       /**
        * Set isDirty to true to trigger the auto-save.
        */
-      setValue('excerpt', metadata.excerpt, { shouldDirty: true });
-      setValue('tags', metadata.tags, { shouldDirty: true });
       setInsight(metadata.insight || '');
     }
 
     setIsFetchingMetadata(false);
-  }, [getValues, setValue]);
+  }, [getValues]);
 
   return (
     <Flex

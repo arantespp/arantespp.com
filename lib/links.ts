@@ -56,33 +56,8 @@ export const getRedirects = async () => {
       };
     });
 
-  const oldUrls = [
-    {
-      source: '/z/:path*',
-      destination: '/zettel/:path*',
-    },
-    {
-      source: '/zettelkasten/:path',
-      destination: '/zettel/:path',
-    },
-    {
-      source: '/a/:path*',
-      destination: '/blog/:path*',
-    },
-    {
-      source: '/articles/:path*',
-      destination: '/blog/:path*',
-    },
-    {
-      source: '/b/:path*',
-      destination: '/books/:path*',
-    },
-  ];
-
-  return [...bitLinks, ...pageLinks, ...oldDrafts, ...oldUrls].map(
-    (redirects) => ({
-      ...redirects,
-      permanent: false,
-    }),
-  );
+  return [...bitLinks, ...pageLinks, ...oldDrafts].map((redirects) => ({
+    ...redirects,
+    permanent: false,
+  }));
 };

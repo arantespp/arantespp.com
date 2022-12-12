@@ -9,8 +9,6 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export type GeneratePostMetadata = {
-  excerpt?: string;
-  tags?: string;
   insight?: string;
 };
 
@@ -26,7 +24,7 @@ export const generatePostMetadata = async ({
     const prompt = `${instruction}\n\n${content}`;
 
     const response = await openai.createCompletion({
-      model: 'text-davinci-002',
+      model: 'text-davinci-003',
       prompt,
       ...completion,
     });
@@ -38,53 +36,45 @@ export const generatePostMetadata = async ({
     return firstChoice;
   };
 
-  const getExcerpt = async () => {
-    const instruction =
-      'Write an excerpt of this text with a maximum of 160 characters:';
+  // const getExcerpt = async () => {
+  //   const instruction =
+  //     'Write an excerpt of this text with a maximum of 160 characters:';
 
-    return handleCreateCompletion({
-      instruction,
-      max_tokens: 100,
-      temperature: 0.5,
-      presence_penalty: 0,
-      frequency_penalty: 0,
-    });
-  };
+  //   return handleCreateCompletion({
+  //     instruction,
+  //     max_tokens: 100,
+  //     temperature: 0.5,
+  //     presence_penalty: 0,
+  //     frequency_penalty: 0,
+  //   });
+  // };
 
-  const getTags = async () => {
-    const instruction = 'Write a list of tags for this text:';
+  // const getTags = async () => {
+  //   const instruction = 'Write a list of tags for this text:';
 
-    return handleCreateCompletion({
-      instruction,
-      max_tokens: 50,
-      temperature: 0.5,
-      presence_penalty: 0,
-      frequency_penalty: 0,
-    });
-  };
+  //   return handleCreateCompletion({
+  //     instruction,
+  //     max_tokens: 50,
+  //     temperature: 0.5,
+  //     presence_penalty: 0,
+  //     frequency_penalty: 0,
+  //   });
+  // };
 
   const getInsight = async () => {
     const instruction =
-      'what questions and further topics can I have from this text:';
+      'what questions, insights, and further topics can I have from this text:';
 
     return handleCreateCompletion({
       instruction,
-      max_tokens: 2000,
+      max_tokens: 20,
       temperature: 0.9,
       presence_penalty: 1.8,
       frequency_penalty: 1.8,
     });
   };
 
-  const [excerpt, tags, insight] = await Promise.all([
-    getExcerpt(),
-    getTags(),
-    getInsight(),
-  ]);
+  const insight = await getInsight();
 
-  return {
-    excerpt,
-    tags: tags?.replaceAll(/[#-]/g, '').replaceAll('\n', ' '),
-    insight,
-  };
+  return { insight };
 };

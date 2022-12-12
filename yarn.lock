@@ -3100,24 +3100,21 @@
   dependencies:
     defer-to-connect "^2.0.1"
 
-"@tereza-tech/zettel@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@tereza-tech/zettel/-/zettel-0.11.1.tgz#1c42e82ec8b162d65f2efbc3869e047578d3a532"
-  integrity sha512-cFxN/+NjFpOgzLp4qS+4onYhYckCM046elxl8q2dbQeHClrXlQXTDkNITBZicTkzzhmSeIAxLrAG0pJN8RTQjg==
+"@tereza-tech/react-zettel@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@tereza-tech/react-zettel/-/react-zettel-0.3.0.tgz#c27d18cf907be74e67e65ef3ec9f4827d2afee0b"
+  integrity sha512-DOCQE8efKvlwotJ4Wl4uvY7Hp4JAQbGUeZ1jDOAnPgl41uLvDLSB1syWVrQ8j/nr2esNtZD2L99riy2+Dm2zxQ==
+  dependencies:
+    react-force-graph-2d "^1.23.13"
+    react-force-graph-3d "^1.21.15"
+    three-spritetext "^1.6.5"
+
+"@tereza-tech/zettel@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@tereza-tech/zettel/-/zettel-0.13.0.tgz#8e0ff5debaaacafb8461071e69c0206c95f05559"
+  integrity sha512-BBx5kppjD6XRND0IWx2lZUelGOrd/qSHBJsIkYBmKteNSuyq03AxUZo8PyG01yLjNGh9UpzVMRoscNDUgSDsgQ==
   dependencies:
     "@ttoss/config" "^1.20.0"
-    change-case "^4.1.2"
-    date-fns "^2.29.3"
-    gray-matter "^4.0.3"
-    reading-time "^1.5.0"
-    title-case "^3.0.3"
-
-"@terezatech/zettel@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@terezatech/zettel/-/zettel-0.10.0.tgz#4c971f8a01290571ecad083e40bc0c2779e75c38"
-  integrity sha512-o2iu1/jgin0vzmjzTjB3AfUQwn/NMrvl4dMqK32MowdOoXu1KjntXOyoOoRfhhgn69S/8eGCK/FWtGrBDro4Nw==
-  dependencies:
-    "@ttoss/config" "^1.18.3"
     change-case "^4.1.2"
     date-fns "^2.29.3"
     gray-matter "^4.0.3"
@@ -3279,21 +3276,6 @@
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.3.tgz#472eaab5f15c1ffdd7f8628bd4c4f753995ec79e"
   integrity sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==
-
-"@ttoss/config@^1.18.3":
-  version "1.18.3"
-  resolved "https://registry.yarnpkg.com/@ttoss/config/-/config-1.18.3.tgz#a5f3def13fb4f250cb675d8fcf0dab68b6bf8d2f"
-  integrity sha512-TA0xHPdAtYLepD0jGDat7eh5hJjghqEazkIM8VG3rzJQDo5QawMtnCmQTh5Nznag4hBRvSO5HLM+7NIq8pp5Pw==
-  dependencies:
-    "@babel/preset-env" "^7.18.6"
-    "@babel/preset-react" "^7.18.6"
-    "@babel/preset-typescript" "^7.18.6"
-    "@commitlint/config-conventional" "^17.0.3"
-    "@formatjs/ts-transformer" "^3.9.8"
-    babel-plugin-formatjs "^10.3.24"
-    deepmerge "^4.2.2"
-    identity-obj-proxy "^3.0.0"
-    prettier-package-json "^2.6.4"
 
 "@ttoss/config@^1.20.0":
   version "1.20.0"
@@ -10442,10 +10424,28 @@ react-force-graph-2d@^1.23.11:
     prop-types "^15.8"
     react-kapsule "^2.2"
 
+react-force-graph-2d@^1.23.13:
+  version "1.23.14"
+  resolved "https://registry.yarnpkg.com/react-force-graph-2d/-/react-force-graph-2d-1.23.14.tgz#9de5bdaf49ea3da0216e6b0e615f84aa76dc6545"
+  integrity sha512-9ml23OWoZwXOjiPMnfFJl1qmO5NK9oH613v5LeaiXSAGsayim9K2+2nt+8RZxlqbOGw78BlZAaw3h1l+fFv7Uw==
+  dependencies:
+    force-graph "^1.42"
+    prop-types "^15.8"
+    react-kapsule "^2.2"
+
 react-force-graph-3d@^1.21.13:
   version "1.21.13"
   resolved "https://registry.yarnpkg.com/react-force-graph-3d/-/react-force-graph-3d-1.21.13.tgz#76a255161fafb33339f82b2e507de8a83dbd60e6"
   integrity sha512-9l1NSMlTaXvUSWV9m2H3waFMnuoixDSbKmUobF4pd8H/Tdn5tm9ZUiLTAG2lz6G0GpdzKstC5nH65N0R9g0d5w==
+  dependencies:
+    "3d-force-graph" "^1.70"
+    prop-types "^15.8"
+    react-kapsule "^2.2"
+
+react-force-graph-3d@^1.21.15:
+  version "1.21.16"
+  resolved "https://registry.yarnpkg.com/react-force-graph-3d/-/react-force-graph-3d-1.21.16.tgz#81ab2d80c8ac9d7d549dd5c100678d3735370488"
+  integrity sha512-+KFIvIKPvZoeEnRaJlaZO5U4oMPRhyJhfvc4vSNqFH3VtQUCREWSOE97kwPdMjwKZI1jmQZ9CHV5Z/EEs2dBSA==
   dependencies:
     "3d-force-graph" "^1.70"
     prop-types "^15.8"
