@@ -33,7 +33,6 @@ const NetworkGraph = ({
   selectedNodeId?: string;
   setSelectedNodeId: (id: string) => void;
 }) => {
-  
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   const wasScrolledIntoView = React.useRef(false);
@@ -146,7 +145,7 @@ const NetworkGraph = ({
             linkWidth={2}
             linkDirectionalParticles={4}
             linkDirectionalParticleWidth={3}
-            dagMode="radialout"
+            dagMode="bu"
           />
         )}
       </React.Suspense>

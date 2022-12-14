@@ -2,8 +2,8 @@
 title: Common Strategic Decision-Making Pitfalls and How to Avoid Them
 group: blog
 slug: common-strategic-decision-making-pitfalls-and-how-to-avoid-them
-date: '2022-11-17'
-formattedDate: 'November 17, 2022'
+date: '2022-12-14'
+formattedDate: 'December 14, 2022'
 excerpt: >-
   Strategic decision-making pitfalls happen by the lack of a clear process or
   communication, a poor problem's understanding, and a bunch of cognitive
