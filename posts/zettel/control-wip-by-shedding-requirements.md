@@ -11,7 +11,7 @@ tags:
   - cycle-time
   - job-batching
   - queueing-theory
-  - work-in-progress
+  - work-in-process
 href: /zettel/control-wip-by-shedding-requirements
 url: 'https://arantespp.com/zettel/control-wip-by-shedding-requirements'
 updateHistory: >-

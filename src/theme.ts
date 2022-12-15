@@ -174,8 +174,8 @@ export const theme: Theme = {
     h4: {
       padding: 0,
       margin: 0,
-      marginTop: 5,
-      marginBottom: 4,
+      marginTop: 4,
+      marginBottom: 3,
       fontSize: 2,
       fontFamily: 'heading',
       lineHeight: 'heading',
@@ -185,7 +185,7 @@ export const theme: Theme = {
     h5: {
       padding: 0,
       margin: 0,
-      marginTop: 4,
+      marginTop: 3,
       marginBottom: 3,
       fontSize: 2,
       fontFamily: 'heading',
