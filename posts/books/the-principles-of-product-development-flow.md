@@ -202,7 +202,9 @@ Queues off the [critical path](/zettel/critical-path) also create costs to the p
 
 #### Q3: The Principle of Queueing Capacity Utilization: Capacity utilization increases queues exponentially.
 
-[Queue capacity utilization](/zettel/queue-capacity-utilization) is the most critical factor that affects queue size. As you approach 100% of the queue capacity, queues become exponentially large. Knowing capacity utilization allows you to predict:
+[Queue capacity utilization](/zettel/queue-capacity-utilization) is the most critical factor that affects queue size. As you approach 100% of the queue capacity, queues become exponentially large. _[Note: Capacity Utilization Increases Queues Exponentially](/zettel/capacity-utilization-increases-queues-exponentially)._
+
+Knowing capacity utilization allows you to predict many queues characteristics. For example:
 
 - the percent of the time that the arriving work will find the server busy;
 - the average number of items in the queue;
@@ -210,11 +212,11 @@ Queues off the [critical path](/zettel/critical-path) also create costs to the p
 - the percent of overall cycle time is queue time;
 - the ratio of cycle time to value-added time.
 
-This property is helpful from a practical perspective, but it's often tough to directly measure capacity utilization ($\rho$) in product development processes. Moreover, it's problematic because the ratio of **demand** and **capacity** are individually hard to estimate.
+_[Note: Queue Capacity Utilization Allows You to Predict Many Queues Characteristics](zettel/queue-capacity-utilization-allows-you-to-predict-many-queues-characteristics)._
 
 #### Q4: The Principle of High-Queues States: Most of the damage done by a queue is caused by high-queues states.
 
-[Note: Most of the Damage Done by a Queue Is Caused by High-Queues States](/zettel/most-of-the-damage-done-by-a-queue-is-caused-by-high-queues-states).
+_[Note: Most of the Damage Done by a Queue Is Caused by High-Queues States](/zettel/most-of-the-damage-done-by-a-queue-is-caused-by-high-queues-states)._
 
 #### Q5: The Principle of Queueing Variability: Variability increases queues linearly.
 
@@ -431,6 +433,12 @@ When WIP becomes high, you can purge WIP by decreasing the batch size of your jo
 It's best to identify in advance which requirements you would consider eliminating or relaxing for two reasons. First, you can make a more well-reasoned decision before the pressure of a congestion crisis occurs. Second, if you preplan which requirements your team can scrap, you can structure your product architecture to make it easy to discard them—you loosely couple them to the rest of the system, so you can cut them loose quickly. _[Note: Identify in Advance Which Requirements You Would Consider Eliminating or Relaxing](/zettel/identify-in-advance-which-requirements-you-would-consider-eliminating-or-relaxing)_.
 
 When [WIP](zettel/work-in-process-wip) becomes high, you can relax the targets for a unit cost at production, allowing for higher defects. This strategy will free up development resources to work on other tasks, but it will also increase the product's variance, increasing the costs associated with fixing those defects. _[Note: Control WIP by Relaxing the Targets for a Unit Cost at Production](/zettel/control-wip-by-relaxing-the-targets-for-a-unit-cost-at-production)_.
+
+#### W9: The Principle of Resource Pulling: Quickly apply extra resources to an emerging queue.
+
+To make supply-focused approaches effective, you must minimize the time between the onset of [congestion](/zettel/high-states-congested-queues) and the application of added resources because [queues grow faster than can shrink](/zettel/at-high-utilization-levels-queues-grow-much-faster-than-they-can-shrink), and these approaches have longer response times. _[Note: Quickly Apply Extra Resources to an Emerging Queue](/zettel/quickly-apply-extra-resources-to-an-emerging-queue)_.
+
+TODO - add "how much extra resource to we have to apply to an emerging queue?"
 
 ### 7. Controlling Flow Under Uncertainty
 

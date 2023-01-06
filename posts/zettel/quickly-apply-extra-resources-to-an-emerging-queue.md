@@ -30,7 +30,7 @@ readingTime: 1
 
 ## Thesis
 
-To make supply-focused approaches effective, you must minimize the time between the onset of congestion and the application of added resources because queues grow faster than you can shrink, and these approaches have longer response times.
+To make supply-focused approaches effective, you must minimize the time between the onset of [congestion](/zettel/high-states-congested-queues) and the application of added resources because [queues grow faster than can shrink](/zettel/at-high-utilization-levels-queues-grow-much-faster-than-they-can-shrink), and these approaches have longer response times.
 
 ## Questions
 
